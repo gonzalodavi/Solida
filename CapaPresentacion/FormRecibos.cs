@@ -1,0 +1,298 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using CapaNegocio;
+using CapaComun.Cache;
+
+namespace CapaPresentacion
+{
+    public partial class FormRecibos : Form
+    {
+        CN_CtaCte objeto = new CN_CtaCte();
+
+        public FormRecibos()
+        {
+            InitializeComponent();
+        }
+
+        private void FormRecibos_Load(object sender, EventArgs e)
+        {
+            CargarComboBoxClientes();
+            CargarGrillaRecibos();
+        }
+
+        private void BuscaNumeroRecibo()
+        {
+        }
+
+        private void CargarComboBoxClientes()
+        {
+            cbCliente.DataSource = objeto.CargaClientes();
+            cbCliente.DisplayMember = "NOMBRE";
+            cbCliente.ValueMember = "DNI";
+            cbCliente.Text = "Consumidor Final";            
+        }
+
+        //Mostrar Mensaje de Confirmacion
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAceptaRecibo_Click(object sender, EventArgs e)
+        {
+            Decimal efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            Decimal valores = Convert.ToDecimal(tbValores.Text.ToString());
+            Decimal banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            Decimal Suma = efectivo + valores + banco;
+            lblTotalRecibo.Text = Suma.ToString("0.00");
+
+            if (tbEfectivo.Text == "" && tbBanco.Text == "" && tbValores.Text == "")
+            {
+                MensajeError("Por Favor Ingrese el Importe del Recibo");
+            }
+
+            else
+            {
+                if (tbEfectivo.Text == "0,00" && tbBanco.Text == "0,00" && tbValores.Text == "0,00")
+                {
+                    MensajeError("Por Favor Ingrese el Importe del Recibo");
+                }
+                else
+                {
+                    decimal totrec = Convert.ToDecimal(lblTotalRecibo.Text);
+                    if (totrec < 0 || tbNumRecibo.Text == "")
+                    {
+                        MensajeError("Ingrese Importe y numero de Recibo");
+                    }
+                    else
+                    {
+                        try
+                        {
+                            string rpta = "";
+
+                            DialogResult Opcion;
+
+                            Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (Opcion == DialogResult.OK)
+                            {
+                                string Estado = "ACTIVO";
+                                rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, cbCliente.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores,banco,Suma,tbDetalleRecibo.Text,Estado);
+                                decimal debe = 0,haber= Suma;
+
+                                if (rpta.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se Generó con éxito el Comprobante");
+                                    rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe,haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
+                                    if (rpta.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se registro en cuenta corriente");
+                                    }
+                                    else
+                                    {
+                                        this.MensajeError(rpta);
+                                    }
+                                    ResetRecibo();
+                                    CargarGrillaRecibos();
+                                    tabRecibos.SelectedTab = tabConsultaRecibos;
+                                }
+                                else
+                                {
+                                    this.MensajeError(rpta);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message + ex.StackTrace);
+                        }
+                    }
+                }
+                
+            }
+        }
+
+        private void ResetRecibo()
+        {
+            tbBanco.Text = "0,00";
+            tbValores.Text = "0,00";
+            tbEfectivo.Text = "0,00";
+            lblTotalRecibo.Text = "0,00";
+            tbDetalleRecibo.Text = "";
+            tbNumRecibo.Text = "";
+            cbCliente.Text = "Consumidor Final";
+        }
+
+        private void tbEfectivo_Leave(object sender, EventArgs e)
+        {
+            Decimal efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            Decimal valores = Convert.ToDecimal(tbValores.Text.ToString());
+            Decimal banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            Decimal Suma = efectivo + valores + banco;
+            lblTotalRecibo.Text = Suma.ToString("0.00");
+        }
+
+        private void tbValores_Leave(object sender, EventArgs e)
+        {
+            Decimal efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            Decimal valores = Convert.ToDecimal(tbValores.Text.ToString());
+            Decimal banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            Decimal Suma = efectivo + valores + banco;
+            lblTotalRecibo.Text = Suma.ToString("0.00");
+        }
+
+        private void tbBanco_Leave(object sender, EventArgs e)
+        {
+            Decimal efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            Decimal valores = Convert.ToDecimal(tbValores.Text.ToString());
+            Decimal banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            Decimal Suma = efectivo + valores + banco;
+            lblTotalRecibo.Text = Suma.ToString("0.00");
+        }
+
+        private void tbEfectivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbValores_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbBanco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnActualizaLista_Click(object sender, EventArgs e)
+        {
+            CargarGrillaRecibos();
+        }
+
+        private void CargarGrillaRecibos()
+        {
+            this.dgvRecibos.DataSource = CN_Recibo.Mostrar();
+            this.dgvRecibos.Columns[0].Visible = false;
+            this.dgvRecibos.Columns[3].Visible = false;
+            this.dgvRecibos.Columns[7].Visible = false;
+
+            this.dgvRecibos.Columns[1].Width = 80;
+            this.dgvRecibos.Columns[2].Width = 50;
+            this.dgvRecibos.Columns[6].Width = 80;
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvRecibos.SelectedRows.Count > 0)
+            {
+                if (dgvRecibos.CurrentRow.Cells[7].Value.ToString() != "ANULADO")
+                {
+                    DialogResult opcion;
+                    opcion = MessageBox.Show("Desea ANULAR el comprobante seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (opcion == DialogResult.OK)
+                    {
+                        CN_Recibo objetoCN = new CN_Recibo();
+                        int idRecibo = Convert.ToInt32(dgvRecibos.CurrentRow.Cells[0].Value.ToString());
+                        objetoCN.AnularRecibo(idRecibo);
+
+                        MessageBox.Show("SE ANULÓ CORRECTAMENTE EL RECIBO SELECCIONADO");
+                        string rpta = CN_CtaCte.AnularRegistroCtaCte(dgvRecibos.CurrentRow.Cells[2].Value.ToString(), "RECIBO DE PAGO");
+                        if (rpta.Equals("OK"))
+                        {
+                            MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
+                        }
+                        else
+                        {
+                            this.MensajeError(rpta);
+                        }
+                        CargarGrillaRecibos();
+                    }
+                }
+                else
+                {
+                    MensajeError("EL COMPROBANTE SELECCIONADO SE ENCUENTRA ANULADO");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Por Favor seleccione un comprobante");
+            }
+        }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            tabRecibos.SelectedTab = tabNuevoRecibo;
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargaGrillaCtaCte(cbCliente.SelectedValue.ToString());
+        }
+
+        private void CargaGrillaCtaCte(string dni)
+        {
+            this.dgvDetCtaCte.DataSource = CN_CtaCte.MostrarDetalleCtaCteCompleto(dni);
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (dgvRecibos.SelectedRows.Count > 0)
+            {
+                FormReporteRecibo form = new FormReporteRecibo();
+                form.IdRecibo = Convert.ToInt32(this.dgvRecibos.CurrentRow.Cells["ID_RECIBO"].Value);
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por Favor seleccione un comprobante");
+            }
+        }
+    }
+}
