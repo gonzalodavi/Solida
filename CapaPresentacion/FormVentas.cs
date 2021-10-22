@@ -34,8 +34,6 @@ namespace CapaPresentacion
             BuscarUltimaVenta();
         }
 
-
-
         private void BuscarUltimaVenta()
         {
             int numFact = objeto.MostrarUltimaVenta();
@@ -70,7 +68,6 @@ namespace CapaPresentacion
 
             }
         }
-
 
         private void limpiarCampos()
         {
@@ -220,6 +217,7 @@ namespace CapaPresentacion
             tbProducto.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
             tbIVAVenta.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
             tbImporteVenta.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
+            tbStockProd.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
             tabVentas.SelectedTab = tabNuevaVenta;
             this.dgvProductos.Columns.Clear();
             panelProductos.Enabled = false;
@@ -251,42 +249,98 @@ namespace CapaPresentacion
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
             if (tbCantidad.Text != "" && tbProducto.Text != "")
-            {
-                bool existe = false;
-                int numeroFila = 0;
-
-                if (contadorFila == 0)
+            {      
+                if (Convert.ToInt32(tbStockProd.Text)< Convert.ToInt32(tbCantidad.Text))
                 {
-                    DataRow row = DTDetalles.NewRow();
-
-                    row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                    row["CANT"] = Convert.ToInt32(tbCantidad.Text);
-                    row["IDPRODUCTO"] = Convert.ToInt32(tbIDprod.Text);
-                    row["PRECIO"] = Convert.ToDecimal(tbImporteVenta.Text);
-                    row["IVA"] = Convert.ToDecimal(tbSubtotalIVA.Text);
-                    row["SUBTOTAL"] = Convert.ToDecimal(tbSubtotal.Text);
-
-                    TotIva += Convert.ToDouble(row["IVA"].ToString());
-                    tbTotalIVA.Text = TotIva.ToString("0.00");
-
-                    Totales += Convert.ToDouble(row["SUBTOTAL"].ToString());
-                    tbTotalFact.Text = Totales.ToString("0.00");
-
-                    DTDetalles.Rows.Add(row);
-                    LimpiarDatosCarga();
-                    contadorFila++;
+                    string Rpta = "";
+                    DialogResult Opcion;
+                    Opcion = MessageBox.Show("El Stock es Insufuciente\nDesea agregar de todos modos? ", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (Opcion == DialogResult.OK)
+                    {
+                        InsertarEnDetalle();
+                    }
                 }
                 else
                 {
-                    foreach (DataGridViewRow Fila in dgvDetVent.Rows)
+                    InsertarEnDetalle();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un producto de la lista y la cantidad deseada");
+            }
+        }
+
+        private void InsertarEnDetalle()
+        {
+            bool existe = false;
+            int numeroFila = 0;
+
+            if (contadorFila == 0)
+            {
+                DataRow row = DTDetalles.NewRow();
+
+                row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
+                row["CANT"] = Convert.ToInt32(tbCantidad.Text);
+                row["IDPRODUCTO"] = Convert.ToInt32(tbIDprod.Text);
+                row["PRECIO"] = Convert.ToDecimal(tbImporteVenta.Text);
+                row["IVA"] = Convert.ToDecimal(tbSubtotalIVA.Text);
+                row["SUBTOTAL"] = Convert.ToDecimal(tbSubtotal.Text);
+
+                TotIva += Convert.ToDouble(row["IVA"].ToString());
+                tbTotalIVA.Text = TotIva.ToString("0.00");
+
+                Totales += Convert.ToDouble(row["SUBTOTAL"].ToString());
+                tbTotalFact.Text = Totales.ToString("0.00");
+
+                DTDetalles.Rows.Add(row);
+                LimpiarDatosCarga();
+                contadorFila++;
+            }
+            else
+            {
+                foreach (DataGridViewRow Fila in dgvDetVent.Rows)
+                {
+                    if (Fila.Cells[2].Value.ToString() == tbIDprod.Text)
                     {
-                        if (Fila.Cells[2].Value.ToString() == tbIDprod.Text)
+                        existe = true;
+                        numeroFila = Fila.Index;
+                    }
+                }
+                if (existe == true)
+                {
+                    if (Convert.ToInt32(tbStockProd.Text) < (Convert.ToInt32(tbCantidad.Text) + Convert.ToInt32(dgvDetVent.Rows[numeroFila].Cells[1].Value)))
+                    {                        
+                        DialogResult Opcion1;
+                        Opcion1 = MessageBox.Show("El Stock es Insufuciente\nDesea agregar de todos modos? ", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (Opcion1 == DialogResult.OK)
                         {
-                            existe = true;
-                            numeroFila = Fila.Index;
+                            dgvDetVent.Rows[numeroFila].Cells[1].Value = Convert.ToInt32(tbCantidad.Text) + Convert.ToInt32(dgvDetVent.Rows[numeroFila].Cells[1].Value);
+
+                            double importeSubtotal = (Convert.ToDouble(dgvDetVent.Rows[numeroFila].Cells[1].Value)) * (Convert.ToDouble(dgvDetVent.Rows[numeroFila].Cells[3].Value));
+                            tbSubtotal.Text = importeSubtotal.ToString("0.00");
+                            dgvDetVent.Rows[numeroFila].Cells[5].Value = Convert.ToDecimal(tbSubtotal.Text);
+
+                            double importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDouble(tbIVAVenta.Text)) / 100) + 1));
+                            tbSubtotalIVA.Text = importeIVA.ToString("0.00");
+                            dgvDetVent.Rows[numeroFila].Cells[4].Value = Convert.ToDecimal(tbSubtotalIVA.Text);
+
+                            Totales = 0;
+                            TotIva = 0;
+
+                            foreach (DataGridViewRow r in dgvDetVent.Rows)
+                            {
+                                TotIva += Convert.ToDouble(r.Cells["IVA"].Value);
+                                Totales += Convert.ToDouble(r.Cells["SUBTOTAL"].Value);
+                            }
+
+                            tbTotalFact.Text = Totales.ToString("0.00");
+                            tbTotalIVA.Text = TotIva.ToString("0.00");
+
+                            LimpiarDatosCarga();
                         }
                     }
-                    if (existe == true)
+                    else
                     {
                         dgvDetVent.Rows[numeroFila].Cells[1].Value = Convert.ToInt32(tbCantidad.Text) + Convert.ToInt32(dgvDetVent.Rows[numeroFila].Cells[1].Value);
 
@@ -312,32 +366,28 @@ namespace CapaPresentacion
 
                         LimpiarDatosCarga();
                     }
-                    else
-                    {
-                        DataRow row = DTDetalles.NewRow();
-
-                        row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                        row["CANT"] = Convert.ToInt32(tbCantidad.Text);
-                        row["IDPRODUCTO"] = Convert.ToInt32(tbIDprod.Text);
-                        row["PRECIO"] = Convert.ToDecimal(tbImporteVenta.Text);
-                        row["IVA"] = Convert.ToDecimal(tbSubtotalIVA.Text);
-                        row["SUBTOTAL"] = Convert.ToDecimal(tbSubtotal.Text);
-
-                        TotIva += Convert.ToDouble(row["IVA"].ToString());
-                        tbTotalIVA.Text = TotIva.ToString("0.00");
-
-                        Totales += Convert.ToDouble(row["SUBTOTAL"].ToString());
-                        tbTotalFact.Text = Totales.ToString("0.00");
-
-                        DTDetalles.Rows.Add(row);
-                        LimpiarDatosCarga();
-                        contadorFila++;
-                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un producto de la lista y la cantidad deseada");
+                else
+                {
+                    DataRow row = DTDetalles.NewRow();
+
+                    row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
+                    row["CANT"] = Convert.ToInt32(tbCantidad.Text);
+                    row["IDPRODUCTO"] = Convert.ToInt32(tbIDprod.Text);
+                    row["PRECIO"] = Convert.ToDecimal(tbImporteVenta.Text);
+                    row["IVA"] = Convert.ToDecimal(tbSubtotalIVA.Text);
+                    row["SUBTOTAL"] = Convert.ToDecimal(tbSubtotal.Text);
+
+                    TotIva += Convert.ToDouble(row["IVA"].ToString());
+                    tbTotalIVA.Text = TotIva.ToString("0.00");
+
+                    Totales += Convert.ToDouble(row["SUBTOTAL"].ToString());
+                    tbTotalFact.Text = Totales.ToString("0.00");
+
+                    DTDetalles.Rows.Add(row);
+                    LimpiarDatosCarga();
+                    contadorFila++;
+                }
             }
         }
 

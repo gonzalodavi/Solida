@@ -131,6 +131,7 @@
             this.btnBuscaProd = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.tbBuscaProductos = new System.Windows.Forms.TextBox();
+            this.tbStockProd = new System.Windows.Forms.TextBox();
             this.panelFormCompras.SuspendLayout();
             this.tabVentas.SuspendLayout();
             this.tabListadoVentas.SuspendLayout();
@@ -505,6 +506,7 @@
             this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvVentas.ColumnHeadersVisible = false;
+            this.dgvVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvVentas.Location = new System.Drawing.Point(70, 68);
@@ -615,6 +617,7 @@
             // gbDetalleCompra
             // 
             this.gbDetalleCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbDetalleCompra.Controls.Add(this.tbStockProd);
             this.gbDetalleCompra.Controls.Add(this.label20);
             this.gbDetalleCompra.Controls.Add(this.label16);
             this.gbDetalleCompra.Controls.Add(this.label17);
@@ -821,6 +824,7 @@
             this.dgvDetVent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetVent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetVent.ColumnHeadersVisible = false;
+            this.dgvDetVent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvDetVent.EnableHeadersVisualStyles = false;
             this.dgvDetVent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvDetVent.Location = new System.Drawing.Point(26, 109);
@@ -1371,6 +1375,7 @@
             this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvClientes.ColumnHeadersVisible = false;
+            this.dgvClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvClientes.EnableHeadersVisualStyles = false;
             this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvClientes.Location = new System.Drawing.Point(58, 113);
@@ -1606,6 +1611,7 @@
             this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProductos.ColumnHeadersVisible = false;
+            this.dgvProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProductos.Location = new System.Drawing.Point(61, 112);
@@ -1702,6 +1708,20 @@
             this.tbBuscaProductos.Name = "tbBuscaProductos";
             this.tbBuscaProductos.Size = new System.Drawing.Size(265, 22);
             this.tbBuscaProductos.TabIndex = 95;
+            // 
+            // tbStockProd
+            // 
+            this.tbStockProd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbStockProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbStockProd.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStockProd.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbStockProd.Location = new System.Drawing.Point(320, 19);
+            this.tbStockProd.Name = "tbStockProd";
+            this.tbStockProd.ReadOnly = true;
+            this.tbStockProd.Size = new System.Drawing.Size(81, 15);
+            this.tbStockProd.TabIndex = 115;
+            this.tbStockProd.TabStop = false;
+            this.tbStockProd.Visible = false;
             // 
             // FormVentas
             // 
@@ -1832,5 +1852,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label31;
+        public System.Windows.Forms.TextBox tbStockProd;
     }
 }

@@ -501,6 +501,7 @@
             this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProductos.ColumnHeadersVisible = false;
+            this.dgvProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProductos.Location = new System.Drawing.Point(26, 129);

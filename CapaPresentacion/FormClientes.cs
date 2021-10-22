@@ -152,6 +152,7 @@ namespace CapaPresentacion
             lblErrorDNI.Visible = false;
             lblErrorIVA.Visible = false;
             lblErrorNom.Visible = false;
+            Editar = false;           
         }
 
 
@@ -224,22 +225,31 @@ namespace CapaPresentacion
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
+                string cuit = dgvClientes.CurrentRow.Cells["DNI/CUIT"].Value.ToString();
                 tabClientes.SelectedTab = tabNuevoCliente;
                 lblSubTitutlo.Text = "Modificar Cliente";
-                limpiarCampos();               
-
+                limpiarCampos();     
                 
                 tbDNI.Enabled = false;
-                if (tbDNI.Text.Length > 8)
+                if (cuit.Length > 8)
                 {
-                    cbDNICUIT.Text = "CUIT";
+                    cbDNICUIT.Text = "CUIT";                    
+                    string cadena = cuit;
+                    string doscaracteres = cadena.Substring(0, 2);
+                    cbPreF.Text= doscaracteres;
+                    string ultimocaracter = cadena.Substring(cadena.Length - 1, 1);
+                    cbSuF.Text = ultimocaracter;
+                    string cadena2 = cadena.Remove(0, 2);
+                    cuit = cadena2.Remove(8, 1);
                 }
                 else
                 {
                     cbDNICUIT.Text = "DNI";
                 }
                 cbDNICUIT.Enabled = false;
-                tbDNI.Text = dgvClientes.CurrentRow.Cells["DNI/CUIT"].Value.ToString();
+                cbSuF.Enabled = false;
+                cbPreF.Enabled = false;
+                tbDNI.Text = cuit;
                 tbNombre.Text = dgvClientes.CurrentRow.Cells["NOMBRE"].Value.ToString();
                 tbApellido.Text = dgvClientes.CurrentRow.Cells["APELLIDO"].Value.ToString();
                 tbTel.Text = dgvClientes.CurrentRow.Cells["TEL"].Value.ToString();
@@ -393,8 +403,14 @@ namespace CapaPresentacion
                                     {
                                         nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
                                     }
+                                    string dnicuit = this.tbDNI.Text.Trim();
 
-                                    Rpta = CN_Cliente.Modificar(this.tbDNI.Text.Trim(), this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
+                                    if (cbDNICUIT.Text == "CUIT")
+                                    {
+                                        dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
+                                    }
+
+                                    Rpta = CN_Cliente.Modificar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
                                     if (Rpta.Equals("OK"))
                                     {
                                         this.MensajeOk("Se modificaron correctamente los datos del Cliente");
@@ -604,6 +620,7 @@ namespace CapaPresentacion
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
+            limpiarCampos();
             tabClientes.SelectedTab = tabNuevoCliente;
         }
 
