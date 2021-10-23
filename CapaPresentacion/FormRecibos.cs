@@ -15,6 +15,7 @@ namespace CapaPresentacion
     public partial class FormRecibos : Form
     {
         CN_CtaCte objeto = new CN_CtaCte();
+        CN_Recibo objeto1 = new CN_Recibo();
 
         public FormRecibos()
         {
@@ -23,12 +24,23 @@ namespace CapaPresentacion
 
         private void FormRecibos_Load(object sender, EventArgs e)
         {
+            fechaHoy();
             CargarComboBoxClientes();
             CargarGrillaRecibos();
+            CargaSaldoCtaCte();
+            BuscaNumeroRecibo();
+        }
+        private void fechaHoy()
+        {
+            dtpFechaRecibo.Value = DateTime.Now;
+            dtpFecha1.Value = DateTime.Now;
+            dtpFecha2.Value = DateTime.Now;
         }
 
         private void BuscaNumeroRecibo()
         {
+            int numRecibo = objeto1.MostrarUltimoRecibo();
+            tbNumRecibo.Text = (numRecibo + 1).ToString();
         }
 
         private void CargarComboBoxClientes()
@@ -216,15 +228,33 @@ namespace CapaPresentacion
 
         private void CargarGrillaRecibos()
         {
-            this.dgvRecibos.DataSource = CN_Recibo.Mostrar();
-            this.dgvRecibos.Columns[0].Visible = false;
-            this.dgvRecibos.Columns[3].Visible = false;
-            this.dgvRecibos.Columns[7].Visible = false;
+            if (chekVerAnulados.Checked == false)
+            {
+                this.dgvRecibos.DataSource = CN_Recibo.Mostrar();
+                this.dgvRecibos.Columns[0].Visible = false;
+                this.dgvRecibos.Columns[3].Visible = false;
+                this.dgvRecibos.Columns[7].Visible = false;
 
-            this.dgvRecibos.Columns[1].Width = 80;
-            this.dgvRecibos.Columns[2].Width = 50;
-            this.dgvRecibos.Columns[6].Width = 80;
+                this.dgvRecibos.Columns[1].Width = 80;
+                this.dgvRecibos.Columns[2].Width = 50;
+                this.dgvRecibos.Columns[4].Width = 100;
+                this.dgvRecibos.Columns[5].Width = 100;
 
+                this.dgvRecibos.Columns[6].Width = 80;
+
+            }
+            else
+            {
+                this.dgvRecibos.DataSource = CN_Recibo.MostrarAnulados();
+                this.dgvRecibos.Columns[0].Visible = false;
+                this.dgvRecibos.Columns[3].Visible = false;
+                this.dgvRecibos.Columns[7].Visible = false;
+
+                this.dgvRecibos.Columns[1].Width = 80;
+                this.dgvRecibos.Columns[2].Width = 50;
+                this.dgvRecibos.Columns[6].Width = 80;
+
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -274,11 +304,27 @@ namespace CapaPresentacion
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargaGrillaCtaCte(cbCliente.SelectedValue.ToString());
+            CargaSaldoCtaCte();
         }
 
         private void CargaGrillaCtaCte(string dni)
         {
             this.dgvDetCtaCte.DataSource = CN_CtaCte.MostrarDetalleCtaCteCompleto(dni);
+        }
+
+        private void CargaSaldoCtaCte()
+        {
+            CN_CtaCte obsaldo = new CN_CtaCte();
+
+            decimal suma = 0;
+            foreach (DataGridViewRow row in dgvDetCtaCte.Rows)
+            {
+                if (row.Cells["TOTAL"].Value != null)
+                    suma += (Decimal)row.Cells["TOTAL"].Value;
+            }
+            decimal saldo = obsaldo.MostrarSaldo(cbCliente.SelectedValue.ToString());
+
+            this.lblSaldo.Text = saldo.ToString();
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -293,6 +339,40 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Por Favor seleccione un comprobante");
             }
+        }
+
+        private void tbNumRecibo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            BuscarRegistros();
+        }
+
+        private void BuscarRegistros()
+        {
+            if (chekVerAnulados.Checked == false)
+            {
+                dgvRecibos.DataSource = CN_Recibo.BuscarRegistros(dtpFecha1.Value.ToString("dd/MM/yyyy"), dtpFecha2.Value.ToString("dd/MM/yyyy"));
+                this.dgvRecibos.Columns[0].Visible = false;
+            }
+            else
+            {
+                dgvRecibos.DataSource = CN_Recibo.BuscarRegistrosAnulados(dtpFecha1.Value.ToString("dd/MM/yyyy"), dtpFecha2.Value.ToString("dd/MM/yyyy"));
+                this.dgvRecibos.Columns[0].Visible = false;
+            }
+        }
+
+        private void chekVerAnulados_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarGrillaRecibos();
         }
     }
 }

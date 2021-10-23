@@ -14,11 +14,14 @@ namespace CapaPresentacion
 {
     public partial class FormVentas : Form
     {
+        CN_Recibo objeto1 = new CN_Recibo();
         CN_Ventas objeto = new CN_Ventas();
         private DataTable DTDetalles;
         private double TotIva;
         private double Totales;
         public static int contadorFila = 0;
+        private string comprobte;
+        private string nroRecibo;
 
         public FormVentas()
         {
@@ -27,11 +30,19 @@ namespace CapaPresentacion
 
         private void FormVentas_Load(object sender, EventArgs e)
         {
+            fechaHoy();
             CargarGrilla();
             CargarSucursal();
             CrearTabla();
             chekConsumidorFinal.Checked = true;
             BuscarUltimaVenta();
+        }
+
+        private void fechaHoy()
+        {
+            dtpFecha1.Value = DateTime.Now;
+            dtpFecha2.Value = DateTime.Now;
+            dtpFecha.Value = DateTime.Now;
         }
 
         private void BuscarUltimaVenta()
@@ -445,7 +456,7 @@ namespace CapaPresentacion
                             if (Opcion == DialogResult.OK)
                             {
 
-                                string comprobte = tbNumComp.Text;
+                                comprobte = tbNumComp.Text;
                                 if (tbNumComp.Text.Length.ToString().Equals("1"))
                                 {
                                     comprobte = "0000" + comprobte;
@@ -470,6 +481,7 @@ namespace CapaPresentacion
                                 if (rpta.Equals("OK"))
                                 {
                                     this.MensajeOk("Se Generó con éxito el Comprobante");
+                                    
                                     rpta = CN_CtaCte.Insertar(tbDni.Text,dtpFecha.Value,tbNumComp.Text,"FACTURA DE VENTA",Convert.ToDecimal(tbTotalFact.Text),0,0,0,0, Convert.ToDecimal(tbTotalFact.Text),0,0,"N",estado);
                                     if (rpta.Equals("OK"))
                                     {
@@ -480,8 +492,15 @@ namespace CapaPresentacion
                                     {
                                         this.MensajeError(rpta);
                                     }
-                                    limpiarCampos();
 
+                                    DialogResult Opcion1;
+                                    Opcion1 = MessageBox.Show("Desea Registrar el Pago de la factura?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                    if (Opcion1 == DialogResult.OK)
+                                    {
+                                        HacerRecibo();
+                                    }
+
+                                    limpiarCampos();
                                     CargarGrilla();
                                     DTDetalles.Rows.Clear();
                                     BuscarUltimaVenta();
@@ -506,10 +525,49 @@ namespace CapaPresentacion
             }
         }
 
-        private void chekVerAnulados_CheckedChanged(object sender, EventArgs e)
+        private void BuscaNumeroRecibo()
         {
-            CargarGrilla();
+            int numRecibo = objeto1.MostrarUltimoRecibo();
+            nroRecibo = (numRecibo + 1).ToString();
         }
+
+        private void HacerRecibo()
+        {           
+            try
+            {
+                Decimal Importe = Convert.ToDecimal(tbTotalFact.Text.ToString());
+
+                BuscaNumeroRecibo(); 
+                string Estado = "ACTIVO";
+                string rpta = CN_Recibo.Insertar(nroRecibo, dtpFecha.Value, tbDni.Text, Convert.ToInt32(UserLoginCache.UserId), Importe, 0, 0, Importe, "PAGO A: "+cbSucursal.Text+"-"+comprobte, Estado);
+                decimal debe = 0, haber = Importe;
+
+                if (rpta.Equals("OK"))
+                {
+                    this.MensajeOk("Se Generó con éxito el RECIBO");
+                    rpta = CN_CtaCte.Insertar(tbDni.Text, dtpFecha.Value, nroRecibo, "RECIBO DE PAGO", debe, haber, 0, Importe, 0, (debe - haber), 0, 0, "N", Estado);
+                    if (rpta.Equals("OK"))
+                    {
+                        this.MensajeOk("Se registro en cuenta corriente");
+                    }
+                    else
+                    {
+                        this.MensajeError(rpta);
+                    }
+
+                }
+                else
+                {
+                    this.MensajeError(rpta);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        
 
         private void btnBuscarReg_Click(object sender, EventArgs e)
         {
@@ -715,6 +773,11 @@ namespace CapaPresentacion
                     MyRow.Cells[5].Value = "Consumidor Final";
                 }
             }
+        }
+
+        private void chekVerAnulados_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarGrilla();
         }
     }
 }

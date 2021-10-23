@@ -144,6 +144,29 @@ namespace CapaDatos
             return DtResultado;
         }
 
+        public DataTable MostrarAnulados()
+        {
+            DataTable DtResultado = new DataTable("recibosA");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarRecibosAnulados";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
         //METODO INSERTAR
         public string Insertar(CD_Recibo Recibo)
         {
@@ -337,6 +360,57 @@ namespace CapaDatos
                 if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
             }
             return rpta;
+        }
+        public int ConsultarIDRecibo()
+        {
+            int numero = 0;
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarUltimoRecibo";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                numero = Convert.ToInt32(leer["NRO_RECIBO"].ToString());
+            }
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return numero;
+        }
+
+        public DataTable BuscarRegistros(string fechainicial, string fechafin)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("BuscarRecibosPorFecha", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@fechainicio", fechainicial);
+            command.Parameters.AddWithValue("@fechafin", fechafin);
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
+        }
+
+        public DataTable BuscarRegistrosAnulados(string fechainicial, string fechafin)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("BuscarRecibosPorFechaAnulados", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@fechainicio", fechainicial);
+            command.Parameters.AddWithValue("@fechafin", fechafin);
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
         }
     }
 }

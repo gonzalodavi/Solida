@@ -322,5 +322,21 @@ namespace CapaDatos
             }
             return rpta;
         }
+
+        public int ConsultarIDNota()
+        {
+            int numero = 0;
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarUltimaNota";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                numero = Convert.ToInt32(leer["NRO_NOTA"].ToString());
+            }
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return numero;
+        }
     }
 }

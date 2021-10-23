@@ -15,6 +15,7 @@ namespace CapaPresentacion
     public partial class FormNotaDBCR : Form
     {
         CN_CtaCte objeto = new CN_CtaCte();
+        CN_NotaCRDB objeto1 = new CN_NotaCRDB();
 
         public FormNotaDBCR()
         {
@@ -23,9 +24,17 @@ namespace CapaPresentacion
 
         private void FormNotaDBCR_Load(object sender, EventArgs e)
         {
-            //CargarUltimoComprobante();
+            fechaHoy();
+            ObtenerUltimoComprob();
             CargarComboBoxClientes();
             CargarGrillaNotas();
+        }
+
+        private void fechaHoy()
+        {
+            dtpFecha1.Value = DateTime.Now;
+            dtpFecha2.Value = DateTime.Now;
+            dtpFechaNota.Value = DateTime.Now;
         }
 
         private void CargarGrillaNotas()
@@ -40,6 +49,22 @@ namespace CapaPresentacion
             this.dgvNotasDBCR.Columns[2].Width = 50;
             this.dgvNotasDBCR.Columns[6].Width = 70;
             this.dgvNotasDBCR.Columns[8].Width = 70;
+        }
+
+        private void LimpiarCampos()
+        {
+            tbDetalleNota.Text = "";
+            tbImporte.Text = "0,00";
+            cbCliente.Text = "Consumidor Final";
+            ObtenerUltimoComprob();
+            rbCredito.Checked = false;
+            rbDebito.Checked = false;
+        }
+
+        private void ObtenerUltimoComprob()
+        {
+            int numNota = objeto1.MostrarUltimaNota();
+            tbNumNota.Text = (numNota + 1).ToString();
         }
 
         //Mostrar Mensaje de Confirmación
@@ -59,11 +84,6 @@ namespace CapaPresentacion
             cbCliente.DisplayMember = "NOMBRE";
             cbCliente.ValueMember = "DNI";
             cbCliente.Text = "Consumidor Final";
-        }
-
-        private void CargarUltimoComprobante()
-        {
-            //int comprob = 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -129,15 +149,17 @@ namespace CapaPresentacion
                                     {
                                         this.MensajeError(rpta);
                                     }
-                                    //ResetRecibo();
-                                    //CargarGrillaRecibos();
-                                    tabNotasDBCR.SelectedTab = tabListaNotas;
+
                                 }
                                 else
                                 {
                                     this.MensajeError(rpta);
                                 }
                             }
+                            LimpiarCampos();
+                            CargarGrillaNotas();
+                            tabNotasDBCR.SelectedTab = tabListaNotas;
+
                         }
                         catch (Exception ex)
                         {
@@ -148,6 +170,8 @@ namespace CapaPresentacion
 
             }
         }
+
+       
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
@@ -207,6 +231,16 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Por Favor seleccione un comprobante");
             }
+        }
+
+        private void btnBuscarReg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            CargarGrillaNotas();
         }
     }
 }

@@ -7,6 +7,8 @@ namespace CapaNegocio
 {
     public class CN_NotaCRDB
     {
+        CD_NotaCRDB objetoCD = new CD_NotaCRDB();
+
         public static string Insertar(int userID, DateTime fecha, string nronota, string dni, decimal importe, string detalle, string estado, string tipo)
         {
              
@@ -35,6 +37,11 @@ namespace CapaNegocio
             objeto.Id = id;
             objeto.Tipo = tipo;
             objeto.AnularNota(objeto);
+        }
+        public int MostrarUltimaNota()
+        {
+            int numero = objetoCD.ConsultarIDNota();
+            return numero;
         }
     }
 }

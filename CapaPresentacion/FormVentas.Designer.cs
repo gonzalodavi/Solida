@@ -46,18 +46,17 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tabVentas = new System.Windows.Forms.TabControl();
             this.tabListadoVentas = new System.Windows.Forms.TabPage();
+            this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.chekVerAnulados = new System.Windows.Forms.CheckBox();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.btnBuscarReg = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.btnAnular = new FontAwesome.Sharp.IconButton();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
-            this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
-            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
             this.lblFecha2 = new System.Windows.Forms.Label();
             this.lblFecha1 = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
@@ -67,6 +66,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tbTotalIVA = new System.Windows.Forms.TextBox();
             this.gbDetalleCompra = new System.Windows.Forms.GroupBox();
+            this.tbStockProd = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -104,7 +104,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblImpTotal = new System.Windows.Forms.Label();
             this.tabClientes = new System.Windows.Forms.TabPage();
             this.panelClientes = new System.Windows.Forms.Panel();
@@ -131,7 +130,9 @@
             this.btnBuscaProd = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.tbBuscaProductos = new System.Windows.Forms.TextBox();
-            this.tbStockProd = new System.Windows.Forms.TextBox();
+            this.chekVerAnulados = new Guna.UI.WinForms.GunaSwitch();
+            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
+            this.dtpFecha = new Guna.UI.WinForms.GunaDateTimePicker();
             this.panelFormCompras.SuspendLayout();
             this.tabVentas.SuspendLayout();
             this.tabListadoVentas.SuspendLayout();
@@ -218,18 +219,19 @@
             // tabListadoVentas
             // 
             this.tabListadoVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabListadoVentas.Controls.Add(this.lblChekAnul);
+            this.tabListadoVentas.Controls.Add(this.chekVerAnulados);
+            this.tabListadoVentas.Controls.Add(this.dtpFecha2);
+            this.tabListadoVentas.Controls.Add(this.dtpFecha1);
             this.tabListadoVentas.Controls.Add(this.label9);
             this.tabListadoVentas.Controls.Add(this.label7);
             this.tabListadoVentas.Controls.Add(this.label6);
             this.tabListadoVentas.Controls.Add(this.label3);
-            this.tabListadoVentas.Controls.Add(this.chekVerAnulados);
             this.tabListadoVentas.Controls.Add(this.btnActualizar);
             this.tabListadoVentas.Controls.Add(this.btnBuscarReg);
             this.tabListadoVentas.Controls.Add(this.btnNuevo);
             this.tabListadoVentas.Controls.Add(this.btnAnular);
             this.tabListadoVentas.Controls.Add(this.btnImprimir);
-            this.tabListadoVentas.Controls.Add(this.dtpFecha2);
-            this.tabListadoVentas.Controls.Add(this.dtpFecha1);
             this.tabListadoVentas.Controls.Add(this.lblFecha2);
             this.tabListadoVentas.Controls.Add(this.lblFecha1);
             this.tabListadoVentas.Controls.Add(this.dgvVentas);
@@ -241,6 +243,56 @@
             this.tabListadoVentas.Size = new System.Drawing.Size(948, 578);
             this.tabListadoVentas.TabIndex = 0;
             this.tabListadoVentas.Text = "Listado";
+            // 
+            // dtpFecha2
+            // 
+            this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha2.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.CustomFormat = null;
+            this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha2.Location = new System.Drawing.Point(773, 238);
+            this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha2.Name = "dtpFecha2";
+            this.dtpFecha2.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha2.Radius = 10;
+            this.dtpFecha2.Size = new System.Drawing.Size(116, 30);
+            this.dtpFecha2.TabIndex = 112;
+            this.dtpFecha2.Text = "22/10/2021";
+            this.dtpFecha2.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
+            // dtpFecha1
+            // 
+            this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha1.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.CustomFormat = null;
+            this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha1.Location = new System.Drawing.Point(773, 180);
+            this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha1.Radius = 10;
+            this.dtpFecha1.Size = new System.Drawing.Size(116, 30);
+            this.dtpFecha1.TabIndex = 112;
+            this.dtpFecha1.Text = "22/10/2021";
+            this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
             // 
             // label9
             // 
@@ -298,18 +350,6 @@
             this.label3.Text = "FECHA";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // chekVerAnulados
-            // 
-            this.chekVerAnulados.AutoSize = true;
-            this.chekVerAnulados.ForeColor = System.Drawing.SystemColors.Control;
-            this.chekVerAnulados.Location = new System.Drawing.Point(412, 517);
-            this.chekVerAnulados.Name = "chekVerAnulados";
-            this.chekVerAnulados.Size = new System.Drawing.Size(95, 17);
-            this.chekVerAnulados.TabIndex = 102;
-            this.chekVerAnulados.Text = "ANULADOS";
-            this.chekVerAnulados.UseVisualStyleBackColor = true;
-            this.chekVerAnulados.CheckedChanged += new System.EventHandler(this.chekVerAnulados_CheckedChanged);
-            // 
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -350,7 +390,7 @@
             this.btnBuscarReg.IconColor = System.Drawing.Color.White;
             this.btnBuscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarReg.IconSize = 25;
-            this.btnBuscarReg.Location = new System.Drawing.Point(773, 277);
+            this.btnBuscarReg.Location = new System.Drawing.Point(773, 288);
             this.btnBuscarReg.Name = "btnBuscarReg";
             this.btnBuscarReg.Size = new System.Drawing.Size(116, 31);
             this.btnBuscarReg.TabIndex = 98;
@@ -436,26 +476,6 @@
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // dtpFecha2
-            // 
-            this.dtpFecha2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpFecha2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(773, 239);
-            this.dtpFecha2.Name = "dtpFecha2";
-            this.dtpFecha2.Size = new System.Drawing.Size(116, 22);
-            this.dtpFecha2.TabIndex = 96;
-            // 
-            // dtpFecha1
-            // 
-            this.dtpFecha1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpFecha1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(773, 181);
-            this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.Size = new System.Drawing.Size(116, 22);
-            this.dtpFecha1.TabIndex = 95;
-            // 
             // lblFecha2
             // 
             this.lblFecha2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -523,6 +543,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVentas.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(637, 400);
             this.dgvVentas.TabIndex = 92;
@@ -648,6 +669,20 @@
             this.gbDetalleCompra.TabIndex = 48;
             this.gbDetalleCompra.TabStop = false;
             this.gbDetalleCompra.Text = "DETALLE";
+            // 
+            // tbStockProd
+            // 
+            this.tbStockProd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbStockProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbStockProd.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStockProd.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbStockProd.Location = new System.Drawing.Point(320, 19);
+            this.tbStockProd.Name = "tbStockProd";
+            this.tbStockProd.ReadOnly = true;
+            this.tbStockProd.Size = new System.Drawing.Size(81, 15);
+            this.tbStockProd.TabIndex = 115;
+            this.tbStockProd.TabStop = false;
+            this.tbStockProd.Visible = false;
             // 
             // label20
             // 
@@ -1031,6 +1066,7 @@
             // gbEncabezadoFactura
             // 
             this.gbEncabezadoFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbEncabezadoFactura.Controls.Add(this.dtpFecha);
             this.gbEncabezadoFactura.Controls.Add(this.chekConsumidorFinal);
             this.gbEncabezadoFactura.Controls.Add(this.cbSucursal);
             this.gbEncabezadoFactura.Controls.Add(this.btnElijeCliente);
@@ -1044,7 +1080,6 @@
             this.gbEncabezadoFactura.Controls.Add(this.label1);
             this.gbEncabezadoFactura.Controls.Add(this.label13);
             this.gbEncabezadoFactura.Controls.Add(this.lblFecha);
-            this.gbEncabezadoFactura.Controls.Add(this.dtpFecha);
             this.gbEncabezadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbEncabezadoFactura.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
             this.gbEncabezadoFactura.ForeColor = System.Drawing.Color.LightSkyBlue;
@@ -1228,17 +1263,6 @@
             this.lblFecha.Size = new System.Drawing.Size(51, 14);
             this.lblFecha.TabIndex = 43;
             this.lblFecha.Text = "Fecha:";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpFecha.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(711, 74);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(156, 22);
-            this.dtpFecha.TabIndex = 0;
-            this.dtpFecha.TabStop = false;
             // 
             // lblImpTotal
             // 
@@ -1709,19 +1733,54 @@
             this.tbBuscaProductos.Size = new System.Drawing.Size(265, 22);
             this.tbBuscaProductos.TabIndex = 95;
             // 
-            // tbStockProd
+            // chekVerAnulados
             // 
-            this.tbStockProd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbStockProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbStockProd.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStockProd.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbStockProd.Location = new System.Drawing.Point(320, 19);
-            this.tbStockProd.Name = "tbStockProd";
-            this.tbStockProd.ReadOnly = true;
-            this.tbStockProd.Size = new System.Drawing.Size(81, 15);
-            this.tbStockProd.TabIndex = 115;
-            this.tbStockProd.TabStop = false;
-            this.tbStockProd.Visible = false;
+            this.chekVerAnulados.BaseColor = System.Drawing.SystemColors.Control;
+            this.chekVerAnulados.CheckedOffColor = System.Drawing.Color.DarkGray;
+            this.chekVerAnulados.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekVerAnulados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chekVerAnulados.FillColor = System.Drawing.Color.White;
+            this.chekVerAnulados.Location = new System.Drawing.Point(502, 514);
+            this.chekVerAnulados.Name = "chekVerAnulados";
+            this.chekVerAnulados.Size = new System.Drawing.Size(28, 20);
+            this.chekVerAnulados.TabIndex = 113;
+            this.chekVerAnulados.CheckedChanged += new System.EventHandler(this.chekVerAnulados_CheckedChanged);
+            // 
+            // lblChekAnul
+            // 
+            this.lblChekAnul.AutoSize = true;
+            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
+            this.lblChekAnul.Location = new System.Drawing.Point(425, 517);
+            this.lblChekAnul.Name = "lblChekAnul";
+            this.lblChekAnul.Size = new System.Drawing.Size(71, 15);
+            this.lblChekAnul.TabIndex = 114;
+            this.lblChekAnul.Text = "ANULADAS";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha.CustomFormat = null;
+            this.dtpFecha.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(711, 74);
+            this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha.Radius = 10;
+            this.dtpFecha.Size = new System.Drawing.Size(156, 30);
+            this.dtpFecha.TabIndex = 113;
+            this.dtpFecha.Text = "22/10/2021";
+            this.dtpFecha.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
             // 
             // FormVentas
             // 
@@ -1771,14 +1830,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox chekVerAnulados;
         private FontAwesome.Sharp.IconButton btnActualizar;
         private FontAwesome.Sharp.IconButton btnBuscarReg;
         private FontAwesome.Sharp.IconButton btnNuevo;
         private FontAwesome.Sharp.IconButton btnAnular;
         private FontAwesome.Sharp.IconButton btnImprimir;
-        private System.Windows.Forms.DateTimePicker dtpFecha2;
-        private System.Windows.Forms.DateTimePicker dtpFecha1;
         private System.Windows.Forms.Label lblFecha2;
         private System.Windows.Forms.Label lblFecha1;
         private System.Windows.Forms.DataGridView dgvVentas;
@@ -1799,7 +1855,6 @@
         private System.Windows.Forms.Label lblCuit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.TabPage tabClientes;
         private System.Windows.Forms.Panel panelClientes;
         private System.Windows.Forms.DataGridView dgvClientes;
@@ -1853,5 +1908,10 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label31;
         public System.Windows.Forms.TextBox tbStockProd;
+        private Guna.UI.WinForms.GunaDateTimePicker dtpFecha1;
+        private Guna.UI.WinForms.GunaDateTimePicker dtpFecha2;
+        private Guna.UI.WinForms.GunaSwitch chekVerAnulados;
+        private Guna.UI.WinForms.GunaLabel lblChekAnul;
+        private Guna.UI.WinForms.GunaDateTimePicker dtpFecha;
     }
 }
