@@ -126,6 +126,29 @@ namespace CapaDatos
             return DtResultado;
         }
 
+        public DataTable MostrarAnuladas()
+        {
+            DataTable DtResultado = new DataTable("notasA");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarNotasAnuladas";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }        
+
         //METODO INSERTAR
         public string Insertar(CD_NotaCRDB Nota)
         {
@@ -337,6 +360,42 @@ namespace CapaDatos
             comando.Parameters.Clear();
             conexion.CerrarConexion();
             return numero;
+        }
+
+        public DataTable BuscarRegistros(string fechainicial, string fechafin)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("BuscarNotasPorFecha", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@fechainicio", fechainicial);
+            command.Parameters.AddWithValue("@fechafin", fechafin);
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
+        }
+
+        public DataTable BuscarRegistrosAnulados(string fechainicial, string fechafin)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("BuscarNotasPorFechaAnuladas", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@fechainicio", fechainicial);
+            command.Parameters.AddWithValue("@fechafin", fechafin);
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
         }
     }
 }

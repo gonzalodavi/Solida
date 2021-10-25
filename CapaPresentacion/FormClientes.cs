@@ -17,8 +17,7 @@ namespace CapaPresentacion
         CN_Domicilio objeto = new CN_Domicilio();
         private bool Editar = false;
         private bool EditarDom = false;
-        private string idProvSelec;
-        private int NroProvincia;
+        
 
         public FormClientes()
         {
@@ -152,7 +151,8 @@ namespace CapaPresentacion
             lblErrorDNI.Visible = false;
             lblErrorIVA.Visible = false;
             lblErrorNom.Visible = false;
-            Editar = false;           
+            Editar = false;  
+            
         }
 
 
@@ -736,13 +736,14 @@ namespace CapaPresentacion
                     limpiarCampos();
                     tabClientes.SelectedTab = tabConsulta;
                     dgvClientes.Enabled = true;
+                    lblSubTitutlo.Text = "Nuevo Cliente";
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-            
+            }            
         }
 
         private void tbDNI_Leave(object sender, EventArgs e)

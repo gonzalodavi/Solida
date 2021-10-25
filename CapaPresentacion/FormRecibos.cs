@@ -70,75 +70,70 @@ namespace CapaPresentacion
 
         private void btnAceptaRecibo_Click(object sender, EventArgs e)
         {
-            Decimal efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
-            Decimal valores = Convert.ToDecimal(tbValores.Text.ToString());
-            Decimal banco = Convert.ToDecimal(tbBanco.Text.ToString());
-            Decimal Suma = efectivo + valores + banco;
-            lblTotalRecibo.Text = Suma.ToString("0.00");
-
-            if (tbEfectivo.Text == "" && tbBanco.Text == "" && tbValores.Text == "")
+            decimal totrec = Convert.ToDecimal(lblTotalRecibo.Text);
+            if (totrec <= 0 || tbNumRecibo.Text == "")
             {
-                MensajeError("Por Favor Ingrese el Importe del Recibo");
+                MensajeError("Ingrese Importe y numero de Recibo");
             }
-
             else
             {
-                if (tbEfectivo.Text == "0,00" && tbBanco.Text == "0,00" && tbValores.Text == "0,00")
+                try
                 {
-                    MensajeError("Por Favor Ingrese el Importe del Recibo");
-                }
-                else
-                {
-                    decimal totrec = Convert.ToDecimal(lblTotalRecibo.Text);
-                    if (totrec < 0 || tbNumRecibo.Text == "")
+                    Decimal efectivo = 0, valores = 0, banco = 0;
+                    if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
                     {
-                        MensajeError("Ingrese Importe y numero de Recibo");
+                        efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
                     }
-                    else
+                    if (tbValores.Text != "," && tbValores.Text != "")
                     {
-                        try
+                        valores = Convert.ToDecimal(tbValores.Text.ToString());
+                    }
+                    if (tbBanco.Text != "," && tbBanco.Text != "")
+                    {
+                        banco = Convert.ToDecimal(tbBanco.Text.ToString());
+                    }
+                    Decimal Suma = efectivo + valores + banco;
+
+                    lblTotalRecibo.Text = Suma.ToString("0.00");
+
+                    string rpta = "";
+
+                    DialogResult Opcion;
+
+                    Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (Opcion == DialogResult.OK)
+                    {
+                        string Estado = "ACTIVO";
+                        rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, cbCliente.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores, banco, Suma, tbDetalleRecibo.Text, Estado);
+                        decimal debe = 0, haber = Suma;
+
+                        if (rpta.Equals("OK"))
                         {
-                            string rpta = "";
-
-                            DialogResult Opcion;
-
-                            Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (Opcion == DialogResult.OK)
+                            this.MensajeOk("Se Generó con éxito el Comprobante");
+                            rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe, haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
+                            if (rpta.Equals("OK"))
                             {
-                                string Estado = "ACTIVO";
-                                rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, cbCliente.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores,banco,Suma,tbDetalleRecibo.Text,Estado);
-                                decimal debe = 0,haber= Suma;
-
-                                if (rpta.Equals("OK"))
-                                {
-                                    this.MensajeOk("Se Generó con éxito el Comprobante");
-                                    rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe,haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
-                                    if (rpta.Equals("OK"))
-                                    {
-                                        this.MensajeOk("Se registro en cuenta corriente");
-                                    }
-                                    else
-                                    {
-                                        this.MensajeError(rpta);
-                                    }
-                                    ResetRecibo();
-                                    CargarGrillaRecibos();
-                                    tabRecibos.SelectedTab = tabConsultaRecibos;
-                                }
-                                else
-                                {
-                                    this.MensajeError(rpta);
-                                }
+                                this.MensajeOk("Se registro en cuenta corriente");
                             }
+                            else
+                            {
+                                this.MensajeError(rpta);
+                            }
+                            ResetRecibo();
+                            CargarGrillaRecibos();
+                            tabRecibos.SelectedTab = tabConsultaRecibos;
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show(ex.Message + ex.StackTrace);
+                            this.MensajeError(rpta);
                         }
                     }
                 }
-                
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }            
         }
 
         private void ResetRecibo()
@@ -154,27 +149,57 @@ namespace CapaPresentacion
 
         private void tbEfectivo_Leave(object sender, EventArgs e)
         {
-            Decimal efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
-            Decimal valores = Convert.ToDecimal(tbValores.Text.ToString());
-            Decimal banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            Decimal efectivo = 0, valores = 0, banco = 0;
+            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+            {
+                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            }
+            if (tbValores.Text != "," && tbValores.Text != "")
+            {
+                valores = Convert.ToDecimal(tbValores.Text.ToString());
+            }
+            if (tbBanco.Text != "," && tbBanco.Text != "")
+            {
+                banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            }
             Decimal Suma = efectivo + valores + banco;
             lblTotalRecibo.Text = Suma.ToString("0.00");
         }
 
         private void tbValores_Leave(object sender, EventArgs e)
         {
-            Decimal efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
-            Decimal valores = Convert.ToDecimal(tbValores.Text.ToString());
-            Decimal banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            Decimal efectivo = 0, valores = 0, banco = 0;
+            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+            {
+                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            }
+            if (tbValores.Text != "," && tbValores.Text != "")
+            {
+                valores = Convert.ToDecimal(tbValores.Text.ToString());
+            }
+            if (tbBanco.Text != "," && tbBanco.Text != "")
+            {
+                banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            }
             Decimal Suma = efectivo + valores + banco;
             lblTotalRecibo.Text = Suma.ToString("0.00");
         }
 
         private void tbBanco_Leave(object sender, EventArgs e)
         {
-            Decimal efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
-            Decimal valores = Convert.ToDecimal(tbValores.Text.ToString());
-            Decimal banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            Decimal efectivo = 0, valores = 0, banco = 0;
+            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+            {
+                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            }
+            if (tbValores.Text != "," && tbValores.Text != "")
+            {
+                valores = Convert.ToDecimal(tbValores.Text.ToString());
+            }
+            if (tbBanco.Text != "," && tbBanco.Text != "")
+            {
+                banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            }
             Decimal Suma = efectivo + valores + banco;
             lblTotalRecibo.Text = Suma.ToString("0.00");
         }
@@ -239,7 +264,6 @@ namespace CapaPresentacion
                 this.dgvRecibos.Columns[2].Width = 50;
                 this.dgvRecibos.Columns[4].Width = 100;
                 this.dgvRecibos.Columns[5].Width = 100;
-
                 this.dgvRecibos.Columns[6].Width = 80;
 
             }
@@ -252,6 +276,8 @@ namespace CapaPresentacion
 
                 this.dgvRecibos.Columns[1].Width = 80;
                 this.dgvRecibos.Columns[2].Width = 50;
+                this.dgvRecibos.Columns[4].Width = 100;
+                this.dgvRecibos.Columns[5].Width = 100;
                 this.dgvRecibos.Columns[6].Width = 80;
 
             }

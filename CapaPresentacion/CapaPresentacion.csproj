@@ -133,12 +133,6 @@
     <Compile Include="FormComodin.Designer.cs">
       <DependentUpon>FormComodin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCompra.Designer.cs">
-      <DependentUpon>FormCompra.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,9 +336,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormComodin.resx">
       <DependentUpon>FormComodin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCompra.resx">
-      <DependentUpon>FormCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCompras.resx">
       <DependentUpon>FormCompras.cs</DependentUpon>

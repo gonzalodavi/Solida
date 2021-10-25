@@ -11,6 +11,10 @@ namespace CapaDatos
     {
         SqlConnection conectar = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
 
+        private CD_Conexion conexion = new CD_Conexion();
+        private SqlDataReader leer;
+        private SqlCommand comando = new SqlCommand();
+
         //Variables
         private int _IdRemito;
         private string _TipoRemito;
@@ -108,6 +112,23 @@ namespace CapaDatos
             }
             return DtResultado;
         }
+
+        public int ConsultarIdRemito()
+        {
+            int numero = 0;
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarUltimoRemito";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                numero = Convert.ToInt32(leer["ID_REMITO"].ToString());
+            }
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return numero;
+        }
+
         public DataTable MostrarAnulados()
         {
             DataTable DtResultado = new DataTable("remitos");

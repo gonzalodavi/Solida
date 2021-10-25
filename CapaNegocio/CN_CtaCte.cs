@@ -45,14 +45,17 @@ namespace CapaNegocio
             dt = Obj.CargarComboBoxCliente();
             return dt;
         }
+
         public static DataTable MostrarDetalleCtaCte(string dni,string fecha1, string fecha2)
         {
             return new CD_CtaCte().MostrarDetCta(dni,fecha1,fecha2);
         }
+
         public static DataTable MostrarDetalleCtaCteCompleto(string dni)
         {
             return new CD_CtaCte().MostrarDetCtaCompleto(dni);
         }
+
         public Decimal MostrarSaldo(string idcliente)
         {
             CD_CtaCte Obj = new CD_CtaCte();
@@ -60,5 +63,62 @@ namespace CapaNegocio
             return saldo;
         }
 
+
+        // PROVEEDORES
+
+        public static string InsertarP(string cuit, DateTime fecha, string comprobante, string concepto, decimal debe, decimal haber, decimal vcheque, decimal vefect, decimal vbanco, decimal total, decimal asignado, decimal interes, string asigna, string estado)
+        {
+            CD_CtaCte Obj = new CD_CtaCte();
+            Obj.Cuit = cuit;
+            Obj.Fecha = fecha;
+            Obj.Comprobante = comprobante;
+            Obj.Concepto = concepto;
+            Obj.Debe = debe;
+            Obj.Haber = haber;
+            Obj.ValorCheque = vcheque;
+            Obj.ValorEfectivo = vefect;
+            Obj.ValorBanco = vbanco;
+            Obj.Total = total;
+            Obj.Asignado = asignado;
+            Obj.Interes = interes;
+            Obj.Asigna = asigna;
+            Obj.Estado = estado;
+
+
+            return Obj.InsertarP(Obj);
+        }
+
+        public static string AnularRegistroCtaCteP(string comprobante, string concepto)
+        {
+            CD_CtaCte Obj = new CD_CtaCte();
+            Obj.Comprobante = comprobante;
+            Obj.Concepto = concepto;
+            return Obj.ModificarRegistroCtaCteP(Obj);
+        }
+
+        public DataTable CargaProveedores()
+        {
+            CD_CtaCte Obj = new CD_CtaCte();
+            DataTable dt = new DataTable();
+            dt = Obj.CargarComboBoxProveedor();
+            return dt;
+        }
+
+        public static DataTable MostrarDetalleCtaCteP(string cuit, string fecha1, string fecha2)
+        {
+            return new CD_CtaCte().MostrarDetCtaP(cuit, fecha1, fecha2);
+        }
+
+        public static DataTable MostrarDetalleCtaCteCompletoP(string cuit)
+        {
+            return new CD_CtaCte().MostrarDetCtaCompletoP(cuit);
+        }
+
+        public Decimal MostrarSaldoP(string idproveedor)
+        {
+            CD_CtaCte Obj = new CD_CtaCte();
+            decimal saldo = Obj.MostrarSaldoP(idproveedor);
+            return saldo;
+        }
     }
 }

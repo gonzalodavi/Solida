@@ -16,7 +16,7 @@ namespace CapaPresentacion
     public partial class FormRemitos : FormBase
     {
         private DataTable DTDetallesRemito;
-
+        CN_Remito objeto = new CN_Remito();
 
         public FormRemitos()
         {
@@ -25,8 +25,23 @@ namespace CapaPresentacion
 
         private void FormRemitos_Load(object sender, EventArgs e)
         {
+            fechaHoy();
             CrearTabla();
             CargarGrilla();
+            BuscarUltimoComprob();
+        }
+
+        private void BuscarUltimoComprob()
+        {
+            int numFact = objeto.MostrarUltimoComprobante();
+            tbNumRemito.Text = (numFact + 1).ToString();
+        }
+
+        private void fechaHoy()
+        {
+            dtpFecha1.Value = DateTime.Now;
+            dtpFecha2.Value = DateTime.Now;
+            dtpFecha.Value = DateTime.Now;
         }
 
         private void CargarGrilla()
@@ -49,6 +64,13 @@ namespace CapaPresentacion
             this.dgvProveedor.DataSource = CN_Proveedor.Mostrar();
             this.dgvProveedor.Columns[6].Visible = false;
             this.dgvProveedor.Columns[7].Visible = false;
+
+            this.dgvProveedor.Columns[0].Width = 80;
+            this.dgvProveedor.Columns[1].Width = 100;
+            this.dgvProveedor.Columns[2].Width = 90;
+            this.dgvProveedor.Columns[3].Width = 90;
+            this.dgvProveedor.Columns[4].Width = 150;
+            this.dgvProveedor.Columns[5].Width = 110;
         }
         
 
@@ -56,9 +78,27 @@ namespace CapaPresentacion
         {
             CN_Productos obj = new CN_Productos();
             this.dgvProductos.DataSource = obj.MostrarProducto();
-            
-            //this.dgvProveedor.Columns[6].Visible = false;
-            //this.dgvProveedor.Columns[7].Visible = false;
+
+            //dgvProductos.Columns[0].Visible = false;
+            //dgvProductos.Columns[1].Visible = false;
+            dgvProductos.Columns[2].Visible = false;
+            //dgvProductos.Columns[3].Visible = false;
+            dgvProductos.Columns[4].Visible = false;
+            //dgvProductos.Columns[5].Visible = false;
+            //dgvProductos.Columns[6].Visible = false;
+            //dgvProductos.Columns[7].Visible = false;
+            dgvProductos.Columns[8].Visible = false;
+            //dgvProductos.Columns[9].Visible = false;
+            //dgvProductos.Columns[10].Visible = false;
+
+            this.dgvProductos.Columns[0].Width = 40;
+            this.dgvProductos.Columns[1].Width = 150;
+            this.dgvProductos.Columns[3].Width = 100;
+            this.dgvProductos.Columns[5].Width = 70;
+            this.dgvProductos.Columns[6].Width = 70;
+            this.dgvProductos.Columns[7].Width = 40;
+            this.dgvProductos.Columns[9].Width = 100;
+            this.dgvProductos.Columns[10].Width = 100;
         }
 
         //Mostrar Mensaje de Confirmación
@@ -92,6 +132,7 @@ namespace CapaPresentacion
 
 
             dgvDetRem.DataSource = DTDetallesRemito;
+            dgvDetRem.Columns["ID_PRODUCTO"].Visible = false;
 
             //dgvDetRem.Columns["ID_PRODUCTO"].Visible = false;
             //dgvDetRem.Columns["ID"].Width = 80;
@@ -115,24 +156,13 @@ namespace CapaPresentacion
             panelProductos.Enabled = true;
             tabRemitos.SelectedTab = tabProductos;
             CargarGrillaProductos();
-            OcultarColumnas();
-        }
-
-        private void OcultarColumnas()
-        {
-            this.dgvProductos.Columns[0].Visible = false;
-            this.dgvProductos.Columns[2].Visible = false;
-            this.dgvProductos.Columns[4].Visible = false;
-            this.dgvProductos.Columns[5].Visible = false;
-            this.dgvProductos.Columns[6].Visible = false;
-            this.dgvProductos.Columns[8].Visible = false;
-        }
+        }       
 
         public static int contadorFila = 0;
 
         private void btnAgrega_Click(object sender, EventArgs e)
         {
-            if (tbCantidad.Text != "" && tbProducto.Text != "<= SELECCIONE PRODUCTO")
+            if (tbCantidad.Text != "" && tbProducto.Text != "")
             {
                 bool existe = false;
                 int numeroFila = 0;
@@ -189,11 +219,11 @@ namespace CapaPresentacion
         {
             tbCantidad.Text = "";
             tbIDProducto.Text = "";
-            tbProducto.Text = "<= SELECCIONE PRODUCTO";
+            tbProducto.Text = "";
         }
         private void LimpiarEncabezadoRemito()
         {
-            tbDestinatario.Text = "<= SELECCIONE PROVEEDOR";
+            tbDestinatario.Text = "";
             tbNumRemito.Text = "";
             tbIdDestinatario.Text = "";
             rbEntrada.Checked = false;
@@ -274,8 +304,10 @@ namespace CapaPresentacion
                                         this.MensajeOk("Se Generó con éxito el Comprobante");
 
                                         ResetRemito();
-                                        CargarGrilla();
                                         tabRemitos.SelectedTab = tabListadoRemitos;
+                                        BuscarUltimoComprob();
+                                        CargarGrilla();
+
                                     }
                                     else
                                     {
@@ -314,11 +346,13 @@ namespace CapaPresentacion
             tbProducto.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
             tabRemitos.SelectedTab = tabRemito;
             panelProveedores.Enabled = false;
+            tbCantidad.Focus();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             tabRemitos.SelectedTab = tabRemito;
+            BuscarUltimoComprob();
         }
 
         private void btnBuscarReg_Click(object sender, EventArgs e)
@@ -383,10 +417,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void chekVerAnuladas_CheckedChanged(object sender, EventArgs e)
-        {
-            CargarGrilla();
-        }
+        
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -434,7 +465,7 @@ namespace CapaPresentacion
         private void btnActualizaListaProd_Click(object sender, EventArgs e)
         {
             CargarGrillaProductos();
-            btnBuscaProd.Text = "";
+            tbBuscaProductos.Text = "";
         }
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
@@ -469,6 +500,41 @@ namespace CapaPresentacion
         {
             CargarGrillaProveedores();
             tbBuscaProveedor.Text = "";
+        }
+
+        private void chekVerAnulados_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarGrilla();
+        }
+
+        private void dgvProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow MyRow in dgvProductos.Rows)
+            {
+                if (Convert.ToInt32(MyRow.Cells[7].Value) <= Convert.ToInt32(MyRow.Cells[8].Value))
+                {
+                    MyRow.DefaultCellStyle.BackColor = Color.Orange;
+                    MyRow.DefaultCellStyle.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void tbProducto_TextChanged(object sender, EventArgs e)
+        {
+            if (tbProducto.Text != "")
+            {
+                tbCantidad.Text = "1";
+            }
+        }
+
+        private void tbCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

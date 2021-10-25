@@ -185,18 +185,27 @@ namespace CapaPresentacion
         {
             CN_Productos obj = new CN_Productos();
             this.dgvProductos.DataSource = obj.MostrarProducto();
-            this.dgvProductos.Columns[0].Visible = false;
-            this.dgvProductos.Columns[2].Visible = false;            
-            this.dgvProductos.Columns[4].Visible = false;
-            this.dgvProductos.Columns[5].Visible = false;
-            this.dgvProductos.Columns[8].Visible = false;
 
-            this.dgvProductos.Columns[1].Width = 100;
-            this.dgvProductos.Columns[3].Width = 95;
-            this.dgvProductos.Columns[6].Width = 80;
-            this.dgvProductos.Columns[7].Width = 50;
-            this.dgvProductos.Columns[9].Width = 90;
-            this.dgvProductos.Columns[10].Width = 90;
+            //dgvProductos.Columns[0].Visible = false;
+            //dgvProductos.Columns[1].Visible = false;
+            dgvProductos.Columns[2].Visible = false;
+            //dgvProductos.Columns[3].Visible = false;
+            dgvProductos.Columns[4].Visible = false;
+            //dgvProductos.Columns[5].Visible = false;
+            //dgvProductos.Columns[6].Visible = false;
+            //dgvProductos.Columns[7].Visible = false;
+            dgvProductos.Columns[8].Visible = false;
+            //dgvProductos.Columns[9].Visible = false;
+            //dgvProductos.Columns[10].Visible = false;
+
+            this.dgvProductos.Columns[0].Width = 40;
+            this.dgvProductos.Columns[1].Width = 150;
+            this.dgvProductos.Columns[3].Width = 100;
+            this.dgvProductos.Columns[5].Width = 70;
+            this.dgvProductos.Columns[6].Width = 70;
+            this.dgvProductos.Columns[7].Width = 40;
+            this.dgvProductos.Columns[9].Width = 100;
+            this.dgvProductos.Columns[10].Width = 100;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -208,14 +217,7 @@ namespace CapaPresentacion
 
         private void dgvClientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ((dgvClientes.CurrentRow.Cells[6].Value.ToString())!= "")
-            {
-                tbCliente.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
-            }
-            else
-            {
-                tbCliente.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString()+ " " + dgvClientes.CurrentRow.Cells[1].Value.ToString();
-            }
+            tbCliente.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString() + " " + dgvClientes.CurrentRow.Cells[1].Value.ToString();
             tbDni.Text = dgvClientes.CurrentRow.Cells[0].Value.ToString();
             tabVentas.SelectedTab = tabNuevaVenta;
             this.dgvClientes.Columns.Clear();
@@ -482,7 +484,7 @@ namespace CapaPresentacion
                                 {
                                     this.MensajeOk("Se Generó con éxito el Comprobante");
                                     
-                                    rpta = CN_CtaCte.Insertar(tbDni.Text,dtpFecha.Value,tbNumComp.Text,"FACTURA DE VENTA",Convert.ToDecimal(tbTotalFact.Text),0,0,0,0, Convert.ToDecimal(tbTotalFact.Text),0,0,"N",estado);
+                                    rpta = CN_CtaCte.Insertar(tbDni.Text,dtpFecha.Value, comprobte, "FACTURA DE VENTA",Convert.ToDecimal(tbTotalFact.Text),0,0,0,0, Convert.ToDecimal(tbTotalFact.Text),0,0,"N",estado);
                                     if (rpta.Equals("OK"))
                                     {
                                         this.MensajeOk("Se registro en cuenta corriente");
@@ -720,14 +722,14 @@ namespace CapaPresentacion
 
         private void dgvProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (this.dgvProductos.Columns[e.ColumnIndex].Name == "STOCK")
+            foreach (DataGridViewRow MyRow in dgvProductos.Rows)
             {
-                if (Convert.ToInt32(e.Value) <= 10)
-                {
-                    e.CellStyle.ForeColor = Color.Red;
-                    e.CellStyle.BackColor = Color.Orange;
+                if (Convert.ToInt32(MyRow.Cells[7].Value) <= Convert.ToInt32(MyRow.Cells[8].Value))
+                {                    
+                    MyRow.DefaultCellStyle.BackColor = Color.Orange;
+                    MyRow.DefaultCellStyle.ForeColor = Color.Red;
                 }
-            }
+            }           
         }
 
         private void tbProducto_TextChanged(object sender, EventArgs e)
@@ -779,5 +781,36 @@ namespace CapaPresentacion
         {
             CargarGrilla();
         }
+
+        private void btnPago_Click(object sender, EventArgs e)
+        {
+            
+        }
+        /*
+         Form formBG = new Form();
+            using (FormRecibos mm = new FormRecibos()){
+
+                mm.cbCliente.Text = tbCliente.Text;
+                mm.dtpFechaRecibo.Text = dtpFecha.Text;
+                mm.tbDetalleRecibo.Text = "PAGO FACTURA: " + cbSucursal.Text + "-" + tbNumComp.Text+"\n"+tbCliente.Text + "\n" +tbDni.Text;
+
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .70d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                mm.Owner = formBG;
+                mm.ShowDialog();
+                
+                
+
+                formBG.Dispose();
+            }
+         */
     }
 }

@@ -204,11 +204,90 @@ namespace CapaDatos
                 {
                     SqlTra.Commit();
                     AumentarStock(this.IdCompra);
+                    this.IdCompra = Convert.ToInt32(SqlCmd.Parameters["@idcompra"].Value);
+                    DisminuyeSaldoProveedor(Compra.IdCompra);
                 }
                 else
                 {
                     SqlTra.Rollback();
                 }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
+        public string AumentaSaldoProveedor(int idcompra)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "AumentaSaldo_ProveedorFactura";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdCompra = new SqlParameter();
+                ParIdCompra.ParameterName = "@id";
+                ParIdCompra.SqlDbType = SqlDbType.Int;
+                ParIdCompra.Value = idcompra;
+                SqlCmd.Parameters.Add(ParIdCompra);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Aumentó el saldo del proveedor";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
+        public string DisminuyeSaldoProveedor(int idcompra)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "DisminuyeSaldo_ProveedorFactura";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdCompra = new SqlParameter();
+                ParIdCompra.ParameterName = "@id";
+                ParIdCompra.SqlDbType = SqlDbType.Int;
+                ParIdCompra.Value = idcompra;
+                SqlCmd.Parameters.Add(ParIdCompra);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Disminuyó el saldo del proveedor";
+
+
+
             }
             catch (Exception ex)
             {
@@ -307,6 +386,7 @@ namespace CapaDatos
             command.ExecuteNonQuery();
             conectar.Close();
             DisminuirStock(compra.IdCompra);
+            AumentaSaldoProveedor(compra.IdCompra);
         }
 
         public DataTable BuscarRegistros(string fechainicial, string fechafin)
@@ -345,6 +425,22 @@ namespace CapaDatos
             return dt;
         }
 
+        public int ConsultarIdCompra()
+        {
+            int numero = 0;
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarUltimaComp";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                numero = Convert.ToInt32(leer["ID_COMPRA"].ToString());
+            }
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return numero;
+        }
+
 
         /*public DataTable CargarComboBoxProd()
         {
@@ -368,21 +464,7 @@ namespace CapaDatos
             return dt;
         }
 
-        public int ConsultarIdCompra()
-        {
-            int numero = 0;
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "BuscarUltimaComp";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            if (leer.Read())
-            {
-                numero = Convert.ToInt32(leer["ID_COMPRA"].ToString());
-            }
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-            return numero;
-        }
+        
         public string ConsultarDomicilio(string cuit)
         {
             string cadena = "";

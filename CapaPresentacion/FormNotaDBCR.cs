@@ -39,16 +39,35 @@ namespace CapaPresentacion
 
         private void CargarGrillaNotas()
         {
-            this.dgvNotasDBCR.DataSource = CN_NotaCRDB.Mostrar();
-            this.dgvNotasDBCR.Columns[0].Visible = false;
-            this.dgvNotasDBCR.Columns[3].Visible = false;
-            this.dgvNotasDBCR.Columns[5].Visible = false;
-            this.dgvNotasDBCR.Columns[7].Visible = false;
+            if (chekVerAnulados.Checked == false)
+            {
+                this.dgvNotasDBCR.DataSource = CN_NotaCRDB.Mostrar();
+                this.dgvNotasDBCR.Columns[0].Visible = false;
+                this.dgvNotasDBCR.Columns[3].Visible = false;
+                this.dgvNotasDBCR.Columns[5].Visible = false;
+                this.dgvNotasDBCR.Columns[7].Visible = false;
+                this.dgvNotasDBCR.Columns[1].Width = 50;
+                this.dgvNotasDBCR.Columns[2].Width = 30;
+                this.dgvNotasDBCR.Columns[4].Width = 100;
+                this.dgvNotasDBCR.Columns[6].Width = 50;
+                this.dgvNotasDBCR.Columns[8].Width = 70;
 
-            this.dgvNotasDBCR.Columns[1].Width = 80;
-            this.dgvNotasDBCR.Columns[2].Width = 50;
-            this.dgvNotasDBCR.Columns[6].Width = 70;
-            this.dgvNotasDBCR.Columns[8].Width = 70;
+            }
+            else
+            {
+                this.dgvNotasDBCR.DataSource = CN_NotaCRDB.MostrarAnuladas();
+                this.dgvNotasDBCR.Columns[0].Visible = false;
+                this.dgvNotasDBCR.Columns[3].Visible = false;
+                this.dgvNotasDBCR.Columns[5].Visible = false;
+                this.dgvNotasDBCR.Columns[7].Visible = false;
+                this.dgvNotasDBCR.Columns[1].Width = 50;
+                this.dgvNotasDBCR.Columns[2].Width = 30;
+                this.dgvNotasDBCR.Columns[4].Width = 100;
+                this.dgvNotasDBCR.Columns[6].Width = 50;
+                this.dgvNotasDBCR.Columns[8].Width = 70;
+            }
+
+            
         }
 
         private void LimpiarCampos()
@@ -59,6 +78,7 @@ namespace CapaPresentacion
             ObtenerUltimoComprob();
             rbCredito.Checked = false;
             rbDebito.Checked = false;
+            lblTotalNota.Text = "0,00";
         }
 
         private void ObtenerUltimoComprob()
@@ -94,8 +114,9 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            decimal import = Convert.ToDecimal(tbImporte.Text);
-            if (tbImporte.Text == "" || import <= 0)
+            decimal import = Convert.ToDecimal(lblTotalNota.Text);
+
+            if (import <= 0)
             {
                 MensajeError("Por Favor Ingrese el Importe del Comprobante");
             }
@@ -167,7 +188,6 @@ namespace CapaPresentacion
                         }
                     }
                 }
-
             }
         }
 
@@ -235,12 +255,66 @@ namespace CapaPresentacion
 
         private void btnBuscarReg_Click(object sender, EventArgs e)
         {
+            BuscarRegistros();
+        }
 
+        private void BuscarRegistros()
+        {
+            if (chekVerAnulados.Checked == false)
+            {
+                dgvNotasDBCR.DataSource = CN_NotaCRDB.BuscarRegistros(dtpFecha1.Value.ToString("dd/MM/yyyy"), dtpFecha2.Value.ToString("dd/MM/yyyy"));
+                this.dgvNotasDBCR.Columns[0].Visible = false;
+            }
+            else
+            {
+                dgvNotasDBCR.DataSource = CN_NotaCRDB.BuscarRegistrosAnulados(dtpFecha1.Value.ToString("dd/MM/yyyy"), dtpFecha2.Value.ToString("dd/MM/yyyy"));
+                this.dgvNotasDBCR.Columns[0].Visible = false;
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             CargarGrillaNotas();
+        }
+
+        private void tbNumNota_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void tbImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void chekVerAnulados_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarGrillaNotas();
+        }
+
+        private void tbImporte_Leave(object sender, EventArgs e)
+        {
+            Decimal suma = 0;
+            if (tbImporte.Text != "," && tbImporte.Text != "")
+            {
+                suma = Convert.ToDecimal(tbImporte.Text.ToString());
+            }           
+            
+            lblTotalNota.Text = suma.ToString("0.00");
         }
     }
 }

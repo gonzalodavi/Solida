@@ -31,6 +31,13 @@ namespace CapaNegocio
         {
             return new CD_NotaCRDB().Mostrar();
         }
+
+        public static DataTable MostrarAnuladas()
+        {
+            return new CD_NotaCRDB().MostrarAnuladas();
+        }
+
+        
         public void AnularComprobante(int id, string tipo)
         {
             CD_NotaCRDB objeto = new CD_NotaCRDB();
@@ -42,6 +49,15 @@ namespace CapaNegocio
         {
             int numero = objetoCD.ConsultarIDNota();
             return numero;
+        }
+
+        public static DataTable BuscarRegistros(string fechainicial, string fechafin)
+        {
+            return new CD_NotaCRDB().BuscarRegistros(fechainicial, fechafin);
+        }
+        public static DataTable BuscarRegistrosAnulados(string fechainicial, string fechafin)
+        {
+            return new CD_NotaCRDB().BuscarRegistrosAnulados(fechainicial, fechafin);
         }
     }
 }

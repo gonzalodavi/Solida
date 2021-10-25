@@ -11,6 +11,8 @@ namespace CapaNegocio
 {    
     public class CN_Remito
     {
+        CD_Remito objetoCD = new CD_Remito();
+
         public static DataTable Mostrar()
         {
             return new CD_Remito().Mostrar();
@@ -66,6 +68,12 @@ namespace CapaNegocio
             objeto.IdRemito = idRemito;
             objeto.TipoRemito = tipo;
             objeto.AnularCompobanteSalida(objeto);
+        }
+
+        public int MostrarUltimoComprobante()
+        {
+            int numero = objetoCD.ConsultarIdRemito();
+            return numero;
         }
     }
 }

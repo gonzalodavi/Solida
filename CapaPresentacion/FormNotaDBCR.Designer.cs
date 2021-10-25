@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabNotasDBCR = new System.Windows.Forms.TabControl();
             this.tabListaNotas = new System.Windows.Forms.TabPage();
+            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
+            this.chekVerAnulados = new Guna.UI.WinForms.GunaSwitch();
+            this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,6 +57,7 @@
             this.lbl4 = new System.Windows.Forms.Label();
             this.cbCliente = new System.Windows.Forms.ComboBox();
             this.gpDetinatario = new System.Windows.Forms.GroupBox();
+            this.dtpFechaNota = new Guna.UI.WinForms.GunaDateTimePicker();
             this.tbNumNota = new System.Windows.Forms.TextBox();
             this.rbCredito = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,11 +69,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.panelContenedor = new Guna.UI.WinForms.GunaPanel();
-            this.dtpFechaNota = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
-            this.chekVerAnulados = new Guna.UI.WinForms.GunaSwitch();
+            this.lblTotalNota = new System.Windows.Forms.Label();
             this.tabNotasDBCR.SuspendLayout();
             this.tabListaNotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotasDBCR)).BeginInit();
@@ -120,6 +121,80 @@
             this.tabListaNotas.TabIndex = 0;
             this.tabListaNotas.Text = "Consulta";
             // 
+            // lblChekAnul
+            // 
+            this.lblChekAnul.AutoSize = true;
+            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
+            this.lblChekAnul.Location = new System.Drawing.Point(779, 297);
+            this.lblChekAnul.Name = "lblChekAnul";
+            this.lblChekAnul.Size = new System.Drawing.Size(71, 15);
+            this.lblChekAnul.TabIndex = 148;
+            this.lblChekAnul.Text = "ANULADAS";
+            // 
+            // chekVerAnulados
+            // 
+            this.chekVerAnulados.BaseColor = System.Drawing.SystemColors.Control;
+            this.chekVerAnulados.CheckedOffColor = System.Drawing.Color.DarkGray;
+            this.chekVerAnulados.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekVerAnulados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chekVerAnulados.FillColor = System.Drawing.Color.White;
+            this.chekVerAnulados.Location = new System.Drawing.Point(856, 294);
+            this.chekVerAnulados.Name = "chekVerAnulados";
+            this.chekVerAnulados.Size = new System.Drawing.Size(28, 20);
+            this.chekVerAnulados.TabIndex = 147;
+            this.chekVerAnulados.CheckedChanged += new System.EventHandler(this.chekVerAnulados_CheckedChanged);
+            // 
+            // dtpFecha1
+            // 
+            this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha1.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.CustomFormat = null;
+            this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha1.Location = new System.Drawing.Point(61, 44);
+            this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha1.Radius = 10;
+            this.dtpFecha1.Size = new System.Drawing.Size(121, 28);
+            this.dtpFecha1.TabIndex = 146;
+            this.dtpFecha1.Text = "22/10/2021";
+            this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
+            // dtpFecha2
+            // 
+            this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha2.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.CustomFormat = null;
+            this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha2.Location = new System.Drawing.Point(221, 44);
+            this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha2.Name = "dtpFecha2";
+            this.dtpFecha2.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha2.Radius = 10;
+            this.dtpFecha2.Size = new System.Drawing.Size(121, 28);
+            this.dtpFecha2.TabIndex = 145;
+            this.dtpFecha2.Text = "22/10/2021";
+            this.dtpFecha2.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -127,9 +202,9 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label9.Location = new System.Drawing.Point(805, 117);
+            this.label9.Location = new System.Drawing.Point(638, 117);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 18);
+            this.label9.Size = new System.Drawing.Size(74, 18);
             this.label9.TabIndex = 103;
             this.label9.Text = "TIPO";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -141,9 +216,9 @@
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label8.Location = new System.Drawing.Point(711, 117);
+            this.label8.Location = new System.Drawing.Point(518, 117);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 18);
+            this.label8.Size = new System.Drawing.Size(121, 18);
             this.label8.TabIndex = 103;
             this.label8.Text = "IMPORTE";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -155,9 +230,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label7.Location = new System.Drawing.Point(308, 117);
+            this.label7.Location = new System.Drawing.Point(275, 117);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(404, 18);
+            this.label7.Size = new System.Drawing.Size(246, 18);
             this.label7.TabIndex = 103;
             this.label7.Text = "CLIENTE";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -169,9 +244,9 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label6.Location = new System.Drawing.Point(193, 117);
+            this.label6.Location = new System.Drawing.Point(181, 117);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 18);
+            this.label6.Size = new System.Drawing.Size(97, 18);
             this.label6.TabIndex = 103;
             this.label6.Text = "Nº";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -185,7 +260,7 @@
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label3.Location = new System.Drawing.Point(66, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 18);
+            this.label3.Size = new System.Drawing.Size(116, 18);
             this.label3.TabIndex = 103;
             this.label3.Text = "FECHA";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -205,7 +280,7 @@
             this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizar.IconSize = 25;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(773, 35);
+            this.btnActualizar.Location = new System.Drawing.Point(773, 42);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(116, 31);
             this.btnActualizar.TabIndex = 97;
@@ -230,7 +305,7 @@
             this.btnBuscarReg.IconColor = System.Drawing.Color.White;
             this.btnBuscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarReg.IconSize = 25;
-            this.btnBuscarReg.Location = new System.Drawing.Point(391, 35);
+            this.btnBuscarReg.Location = new System.Drawing.Point(391, 42);
             this.btnBuscarReg.Name = "btnBuscarReg";
             this.btnBuscarReg.Size = new System.Drawing.Size(116, 31);
             this.btnBuscarReg.TabIndex = 98;
@@ -255,7 +330,7 @@
             this.btnNuevo.IconColor = System.Drawing.Color.White;
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevo.IconSize = 25;
-            this.btnNuevo.Location = new System.Drawing.Point(66, 498);
+            this.btnNuevo.Location = new System.Drawing.Point(773, 154);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(116, 31);
             this.btnNuevo.TabIndex = 99;
@@ -279,7 +354,7 @@
             this.btnAnular.IconColor = System.Drawing.Color.White;
             this.btnAnular.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAnular.IconSize = 25;
-            this.btnAnular.Location = new System.Drawing.Point(224, 498);
+            this.btnAnular.Location = new System.Drawing.Point(773, 250);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(116, 31);
             this.btnAnular.TabIndex = 100;
@@ -322,7 +397,7 @@
             this.lblFecha2.AutoSize = true;
             this.lblFecha2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha2.Location = new System.Drawing.Point(233, 22);
+            this.lblFecha2.Location = new System.Drawing.Point(233, 25);
             this.lblFecha2.Name = "lblFecha2";
             this.lblFecha2.Size = new System.Drawing.Size(91, 16);
             this.lblFecha2.TabIndex = 94;
@@ -335,7 +410,7 @@
             this.lblFecha1.AutoSize = true;
             this.lblFecha1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha1.Location = new System.Drawing.Point(71, 22);
+            this.lblFecha1.Location = new System.Drawing.Point(71, 25);
             this.lblFecha1.Name = "lblFecha1";
             this.lblFecha1.Size = new System.Drawing.Size(100, 16);
             this.lblFecha1.TabIndex = 93;
@@ -347,22 +422,22 @@
             this.dgvNotasDBCR.AllowUserToDeleteRows = false;
             this.dgvNotasDBCR.AllowUserToResizeColumns = false;
             this.dgvNotasDBCR.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvNotasDBCR.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvNotasDBCR.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvNotasDBCR.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvNotasDBCR.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNotasDBCR.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvNotasDBCR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvNotasDBCR.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvNotasDBCR.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotasDBCR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotasDBCR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvNotasDBCR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvNotasDBCR.ColumnHeadersVisible = false;
             this.dgvNotasDBCR.EnableHeadersVisualStyles = false;
@@ -374,21 +449,22 @@
             this.dgvNotasDBCR.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvNotasDBCR.RowHeadersVisible = false;
             this.dgvNotasDBCR.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvNotasDBCR.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvNotasDBCR.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvNotasDBCR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNotasDBCR.Size = new System.Drawing.Size(823, 320);
+            this.dgvNotasDBCR.Size = new System.Drawing.Size(646, 391);
             this.dgvNotasDBCR.TabIndex = 92;
             this.dgvNotasDBCR.TabStop = false;
             // 
             // tabNuevaNotasDBCR
             // 
             this.tabNuevaNotasDBCR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevaNotasDBCR.Controls.Add(this.lblTotalNota);
             this.tabNuevaNotasDBCR.Controls.Add(this.tbImporte);
             this.tabNuevaNotasDBCR.Controls.Add(this.lbl5);
             this.tabNuevaNotasDBCR.Controls.Add(this.tbDetalleNota);
@@ -417,6 +493,8 @@
             this.tbImporte.TabStop = false;
             this.tbImporte.Text = "0,00";
             this.tbImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbImporte_KeyPress);
+            this.tbImporte.Leave += new System.EventHandler(this.tbImporte_Leave);
             // 
             // lbl5
             // 
@@ -490,6 +568,31 @@
             this.gpDetinatario.TabIndex = 88;
             this.gpDetinatario.TabStop = false;
             // 
+            // dtpFechaNota
+            // 
+            this.dtpFechaNota.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFechaNota.BaseColor = System.Drawing.Color.White;
+            this.dtpFechaNota.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFechaNota.CustomFormat = null;
+            this.dtpFechaNota.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFechaNota.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFechaNota.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFechaNota.ForeColor = System.Drawing.Color.Black;
+            this.dtpFechaNota.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNota.Location = new System.Drawing.Point(230, 56);
+            this.dtpFechaNota.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFechaNota.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaNota.Name = "dtpFechaNota";
+            this.dtpFechaNota.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFechaNota.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFechaNota.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFechaNota.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFechaNota.Radius = 10;
+            this.dtpFechaNota.Size = new System.Drawing.Size(121, 28);
+            this.dtpFechaNota.TabIndex = 144;
+            this.dtpFechaNota.Text = "22/10/2021";
+            this.dtpFechaNota.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
             // tbNumNota
             // 
             this.tbNumNota.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -502,6 +605,7 @@
             this.tbNumNota.TabIndex = 135;
             this.tbNumNota.TabStop = false;
             this.tbNumNota.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNumNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumNota_KeyPress);
             // 
             // rbCredito
             // 
@@ -658,103 +762,19 @@
             this.panelContenedor.Size = new System.Drawing.Size(1026, 749);
             this.panelContenedor.TabIndex = 89;
             // 
-            // dtpFechaNota
+            // lblTotalNota
             // 
-            this.dtpFechaNota.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFechaNota.BaseColor = System.Drawing.Color.White;
-            this.dtpFechaNota.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFechaNota.CustomFormat = null;
-            this.dtpFechaNota.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFechaNota.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFechaNota.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFechaNota.ForeColor = System.Drawing.Color.Black;
-            this.dtpFechaNota.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNota.Location = new System.Drawing.Point(230, 56);
-            this.dtpFechaNota.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFechaNota.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaNota.Name = "dtpFechaNota";
-            this.dtpFechaNota.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFechaNota.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFechaNota.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFechaNota.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFechaNota.Radius = 10;
-            this.dtpFechaNota.Size = new System.Drawing.Size(121, 28);
-            this.dtpFechaNota.TabIndex = 144;
-            this.dtpFechaNota.Text = "22/10/2021";
-            this.dtpFechaNota.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // dtpFecha2
-            // 
-            this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFecha2.BaseColor = System.Drawing.Color.White;
-            this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFecha2.CustomFormat = null;
-            this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
-            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(221, 41);
-            this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha2.Name = "dtpFecha2";
-            this.dtpFecha2.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFecha2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFecha2.Radius = 10;
-            this.dtpFecha2.Size = new System.Drawing.Size(121, 28);
-            this.dtpFecha2.TabIndex = 145;
-            this.dtpFecha2.Text = "22/10/2021";
-            this.dtpFecha2.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // dtpFecha1
-            // 
-            this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFecha1.BaseColor = System.Drawing.Color.White;
-            this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFecha1.CustomFormat = null;
-            this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
-            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(61, 41);
-            this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFecha1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFecha1.Radius = 10;
-            this.dtpFecha1.Size = new System.Drawing.Size(121, 28);
-            this.dtpFecha1.TabIndex = 146;
-            this.dtpFecha1.Text = "22/10/2021";
-            this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // lblChekAnul
-            // 
-            this.lblChekAnul.AutoSize = true;
-            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(388, 505);
-            this.lblChekAnul.Name = "lblChekAnul";
-            this.lblChekAnul.Size = new System.Drawing.Size(71, 15);
-            this.lblChekAnul.TabIndex = 148;
-            this.lblChekAnul.Text = "ANULADAS";
-            // 
-            // chekVerAnulados
-            // 
-            this.chekVerAnulados.BaseColor = System.Drawing.SystemColors.Control;
-            this.chekVerAnulados.CheckedOffColor = System.Drawing.Color.DarkGray;
-            this.chekVerAnulados.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.chekVerAnulados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chekVerAnulados.FillColor = System.Drawing.Color.White;
-            this.chekVerAnulados.Location = new System.Drawing.Point(465, 502);
-            this.chekVerAnulados.Name = "chekVerAnulados";
-            this.chekVerAnulados.Size = new System.Drawing.Size(28, 20);
-            this.chekVerAnulados.TabIndex = 147;
+            this.lblTotalNota.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalNota.AutoEllipsis = true;
+            this.lblTotalNota.AutoSize = true;
+            this.lblTotalNota.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblTotalNota.Location = new System.Drawing.Point(653, 282);
+            this.lblTotalNota.Name = "lblTotalNota";
+            this.lblTotalNota.Size = new System.Drawing.Size(40, 16);
+            this.lblTotalNota.TabIndex = 137;
+            this.lblTotalNota.Text = "0,00";
+            this.lblTotalNota.Visible = false;
             // 
             // FormNotaDBCR
             // 
@@ -821,5 +841,6 @@
         private Guna.UI.WinForms.GunaDateTimePicker dtpFechaNota;
         private Guna.UI.WinForms.GunaLabel lblChekAnul;
         private Guna.UI.WinForms.GunaSwitch chekVerAnulados;
+        private System.Windows.Forms.Label lblTotalNota;
     }
 }

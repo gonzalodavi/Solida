@@ -62,6 +62,12 @@ namespace CapaNegocio
             return new CD_Compras().BuscarRegistrosAnulados(fechainicial, fechafin);
         }
 
+        public int MostrarUltimaCompra()
+        {
+            int numero = objetoCD.ConsultarIdCompra();
+            return numero;
+        }
+
         /*public DataTable CargarComboBoxProd()
         {
             DataTable dt = new DataTable();

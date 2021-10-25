@@ -35,8 +35,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabRecibos = new System.Windows.Forms.TabControl();
             this.tabConsultaRecibos = new System.Windows.Forms.TabPage();
+            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
+            this.chekVerAnulados = new Guna.UI.WinForms.GunaSwitch();
+            this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.lblFecha2 = new System.Windows.Forms.Label();
+            this.lblFecha1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +56,15 @@
             this.dgvRecibos = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.tabNuevoRecibo = new System.Windows.Forms.TabPage();
+            this.dtpFechaRecibo = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.lblSaldo = new System.Windows.Forms.Label();
+            this.lblTitSaldo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.dgvDetCtaCte = new System.Windows.Forms.DataGridView();
             this.tbBanco = new System.Windows.Forms.TextBox();
             this.tbDetalleRecibo = new System.Windows.Forms.TextBox();
@@ -68,22 +84,6 @@
             this.btnAceptaRecibo = new FontAwesome.Sharp.IconButton();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblSaldo = new System.Windows.Forms.Label();
-            this.lblTitSaldo = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dtpFechaRecibo = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.lblFecha2 = new System.Windows.Forms.Label();
-            this.lblFecha1 = new System.Windows.Forms.Label();
-            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
-            this.chekVerAnulados = new Guna.UI.WinForms.GunaSwitch();
             this.panel1.SuspendLayout();
             this.tabRecibos.SuspendLayout();
             this.tabConsultaRecibos.SuspendLayout();
@@ -103,6 +103,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1026, 749);
             this.panel1.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoEllipsis = true;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label12.Location = new System.Drawing.Point(425, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(174, 18);
+            this.label12.TabIndex = 81;
+            this.label12.Text = "RECIBOS DE PAGO";
             // 
             // tabRecibos
             // 
@@ -147,6 +160,106 @@
             this.tabConsultaRecibos.TabIndex = 0;
             this.tabConsultaRecibos.Text = "Consulta";
             // 
+            // lblChekAnul
+            // 
+            this.lblChekAnul.AutoSize = true;
+            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
+            this.lblChekAnul.Location = new System.Drawing.Point(781, 261);
+            this.lblChekAnul.Name = "lblChekAnul";
+            this.lblChekAnul.Size = new System.Drawing.Size(72, 15);
+            this.lblChekAnul.TabIndex = 152;
+            this.lblChekAnul.Text = "ANULADOS";
+            // 
+            // chekVerAnulados
+            // 
+            this.chekVerAnulados.BaseColor = System.Drawing.SystemColors.Control;
+            this.chekVerAnulados.CheckedOffColor = System.Drawing.Color.DarkGray;
+            this.chekVerAnulados.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekVerAnulados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chekVerAnulados.FillColor = System.Drawing.Color.White;
+            this.chekVerAnulados.Location = new System.Drawing.Point(858, 258);
+            this.chekVerAnulados.Name = "chekVerAnulados";
+            this.chekVerAnulados.Size = new System.Drawing.Size(28, 20);
+            this.chekVerAnulados.TabIndex = 151;
+            this.chekVerAnulados.CheckedChanged += new System.EventHandler(this.chekVerAnulados_CheckedChanged);
+            // 
+            // dtpFecha1
+            // 
+            this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha1.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.CustomFormat = null;
+            this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha1.Location = new System.Drawing.Point(62, 42);
+            this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha1.Radius = 10;
+            this.dtpFecha1.Size = new System.Drawing.Size(121, 28);
+            this.dtpFecha1.TabIndex = 150;
+            this.dtpFecha1.Text = "22/10/2021";
+            this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
+            // dtpFecha2
+            // 
+            this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha2.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.CustomFormat = null;
+            this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha2.Location = new System.Drawing.Point(222, 42);
+            this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha2.Name = "dtpFecha2";
+            this.dtpFecha2.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha2.Radius = 10;
+            this.dtpFecha2.Size = new System.Drawing.Size(121, 28);
+            this.dtpFecha2.TabIndex = 149;
+            this.dtpFecha2.Text = "22/10/2021";
+            this.dtpFecha2.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
+            // lblFecha2
+            // 
+            this.lblFecha2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFecha2.AutoEllipsis = true;
+            this.lblFecha2.AutoSize = true;
+            this.lblFecha2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha2.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblFecha2.Location = new System.Drawing.Point(234, 23);
+            this.lblFecha2.Name = "lblFecha2";
+            this.lblFecha2.Size = new System.Drawing.Size(91, 16);
+            this.lblFecha2.TabIndex = 148;
+            this.lblFecha2.Text = "Fecha Final";
+            // 
+            // lblFecha1
+            // 
+            this.lblFecha1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFecha1.AutoEllipsis = true;
+            this.lblFecha1.AutoSize = true;
+            this.lblFecha1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha1.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblFecha1.Location = new System.Drawing.Point(72, 23);
+            this.lblFecha1.Name = "lblFecha1";
+            this.lblFecha1.Size = new System.Drawing.Size(100, 16);
+            this.lblFecha1.TabIndex = 147;
+            this.lblFecha1.Text = "Fecha Inicial";
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -168,9 +281,9 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label9.Location = new System.Drawing.Point(196, 106);
+            this.label9.Location = new System.Drawing.Point(263, 106);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(195, 18);
+            this.label9.Size = new System.Drawing.Size(156, 18);
             this.label9.TabIndex = 129;
             this.label9.Text = "CLIENTE";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -182,9 +295,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label7.Location = new System.Drawing.Point(389, 106);
+            this.label7.Location = new System.Drawing.Point(418, 106);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(189, 18);
+            this.label7.Size = new System.Drawing.Size(158, 18);
             this.label7.TabIndex = 130;
             this.label7.Text = "CONCEPTO";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -198,7 +311,7 @@
             this.label6.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label6.Location = new System.Drawing.Point(45, 106);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 18);
+            this.label6.Size = new System.Drawing.Size(125, 18);
             this.label6.TabIndex = 131;
             this.label6.Text = "FECHA";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -210,9 +323,9 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label3.Location = new System.Drawing.Point(143, 106);
+            this.label3.Location = new System.Drawing.Point(169, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
+            this.label3.Size = new System.Drawing.Size(95, 18);
             this.label3.TabIndex = 132;
             this.label3.Text = "Nº";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -368,15 +481,13 @@
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btnBuscar.IconColor = System.Drawing.Color.White;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 18;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.IconSize = 25;
             this.btnBuscar.Location = new System.Drawing.Point(394, 39);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(116, 31);
             this.btnBuscar.TabIndex = 85;
             this.btnBuscar.TabStop = false;
             this.btnBuscar.Text = " BUSCAR";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -416,6 +527,139 @@
             this.tabNuevoRecibo.Size = new System.Drawing.Size(948, 578);
             this.tabNuevoRecibo.TabIndex = 4;
             this.tabNuevoRecibo.Text = "NUEVO";
+            // 
+            // dtpFechaRecibo
+            // 
+            this.dtpFechaRecibo.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFechaRecibo.BaseColor = System.Drawing.Color.White;
+            this.dtpFechaRecibo.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFechaRecibo.CustomFormat = null;
+            this.dtpFechaRecibo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFechaRecibo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFechaRecibo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFechaRecibo.ForeColor = System.Drawing.Color.Black;
+            this.dtpFechaRecibo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRecibo.Location = new System.Drawing.Point(212, 69);
+            this.dtpFechaRecibo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFechaRecibo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaRecibo.Name = "dtpFechaRecibo";
+            this.dtpFechaRecibo.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFechaRecibo.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFechaRecibo.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFechaRecibo.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFechaRecibo.Radius = 10;
+            this.dtpFechaRecibo.Size = new System.Drawing.Size(121, 28);
+            this.dtpFechaRecibo.TabIndex = 143;
+            this.dtpFechaRecibo.Text = "22/10/2021";
+            this.dtpFechaRecibo.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
+            // lblSaldo
+            // 
+            this.lblSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSaldo.AutoSize = true;
+            this.lblSaldo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldo.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSaldo.Location = new System.Drawing.Point(788, 519);
+            this.lblSaldo.Name = "lblSaldo";
+            this.lblSaldo.Size = new System.Drawing.Size(17, 16);
+            this.lblSaldo.TabIndex = 141;
+            this.lblSaldo.Text = "0";
+            // 
+            // lblTitSaldo
+            // 
+            this.lblTitSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitSaldo.AutoSize = true;
+            this.lblTitSaldo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitSaldo.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTitSaldo.Location = new System.Drawing.Point(715, 519);
+            this.lblTitSaldo.Name = "lblTitSaldo";
+            this.lblTitSaldo.Size = new System.Drawing.Size(74, 16);
+            this.lblTitSaldo.TabIndex = 142;
+            this.lblTitSaldo.Text = "SALDO: $";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoEllipsis = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label2.Location = new System.Drawing.Point(746, 251);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 18);
+            this.label2.TabIndex = 140;
+            this.label2.Text = "SUBTOTAL";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoEllipsis = true;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label11.Location = new System.Drawing.Point(611, 251);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(135, 18);
+            this.label11.TabIndex = 139;
+            this.label11.Text = "HABER";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoEllipsis = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label4.Location = new System.Drawing.Point(476, 251);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 18);
+            this.label4.TabIndex = 134;
+            this.label4.Text = "DEBE";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoEllipsis = true;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label5.Location = new System.Drawing.Point(328, 251);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(149, 18);
+            this.label5.TabIndex = 135;
+            this.label5.Text = "CONCEPTO";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoEllipsis = true;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label8.Location = new System.Drawing.Point(66, 251);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(130, 18);
+            this.label8.TabIndex = 136;
+            this.label8.Text = "FECHA";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoEllipsis = true;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label10.Location = new System.Drawing.Point(195, 251);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(134, 18);
+            this.label10.TabIndex = 137;
+            this.label10.Text = "Nº";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dgvDetCtaCte
             // 
@@ -733,252 +977,6 @@
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Recibos de Ingreso";
             // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoEllipsis = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label4.Location = new System.Drawing.Point(476, 251);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 18);
-            this.label4.TabIndex = 134;
-            this.label4.Text = "DEBE";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoEllipsis = true;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label5.Location = new System.Drawing.Point(328, 251);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 18);
-            this.label5.TabIndex = 135;
-            this.label5.Text = "CONCEPTO";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoEllipsis = true;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label8.Location = new System.Drawing.Point(66, 251);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(130, 18);
-            this.label8.TabIndex = 136;
-            this.label8.Text = "FECHA";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoEllipsis = true;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label10.Location = new System.Drawing.Point(195, 251);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 18);
-            this.label10.TabIndex = 137;
-            this.label10.Text = "Nº";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label11.AutoEllipsis = true;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label11.Location = new System.Drawing.Point(611, 251);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(135, 18);
-            this.label11.TabIndex = 139;
-            this.label11.Text = "HABER";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoEllipsis = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(746, 251);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 18);
-            this.label2.TabIndex = 140;
-            this.label2.Text = "SUBTOTAL";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblSaldo
-            // 
-            this.lblSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSaldo.Location = new System.Drawing.Point(788, 519);
-            this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(17, 16);
-            this.lblSaldo.TabIndex = 141;
-            this.lblSaldo.Text = "0";
-            // 
-            // lblTitSaldo
-            // 
-            this.lblTitSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitSaldo.AutoSize = true;
-            this.lblTitSaldo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitSaldo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTitSaldo.Location = new System.Drawing.Point(715, 519);
-            this.lblTitSaldo.Name = "lblTitSaldo";
-            this.lblTitSaldo.Size = new System.Drawing.Size(74, 16);
-            this.lblTitSaldo.TabIndex = 142;
-            this.lblTitSaldo.Text = "SALDO: $";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoEllipsis = true;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label12.Location = new System.Drawing.Point(425, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(174, 18);
-            this.label12.TabIndex = 81;
-            this.label12.Text = "RECIBOS DE PAGO";
-            // 
-            // dtpFechaRecibo
-            // 
-            this.dtpFechaRecibo.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFechaRecibo.BaseColor = System.Drawing.Color.White;
-            this.dtpFechaRecibo.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFechaRecibo.CustomFormat = null;
-            this.dtpFechaRecibo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFechaRecibo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFechaRecibo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFechaRecibo.ForeColor = System.Drawing.Color.Black;
-            this.dtpFechaRecibo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaRecibo.Location = new System.Drawing.Point(212, 69);
-            this.dtpFechaRecibo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFechaRecibo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaRecibo.Name = "dtpFechaRecibo";
-            this.dtpFechaRecibo.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFechaRecibo.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFechaRecibo.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFechaRecibo.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFechaRecibo.Radius = 10;
-            this.dtpFechaRecibo.Size = new System.Drawing.Size(121, 28);
-            this.dtpFechaRecibo.TabIndex = 143;
-            this.dtpFechaRecibo.Text = "22/10/2021";
-            this.dtpFechaRecibo.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // dtpFecha1
-            // 
-            this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFecha1.BaseColor = System.Drawing.Color.White;
-            this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFecha1.CustomFormat = null;
-            this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
-            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(62, 42);
-            this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFecha1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFecha1.Radius = 10;
-            this.dtpFecha1.Size = new System.Drawing.Size(121, 28);
-            this.dtpFecha1.TabIndex = 150;
-            this.dtpFecha1.Text = "22/10/2021";
-            this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // dtpFecha2
-            // 
-            this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFecha2.BaseColor = System.Drawing.Color.White;
-            this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFecha2.CustomFormat = null;
-            this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
-            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(222, 42);
-            this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha2.Name = "dtpFecha2";
-            this.dtpFecha2.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFecha2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFecha2.Radius = 10;
-            this.dtpFecha2.Size = new System.Drawing.Size(121, 28);
-            this.dtpFecha2.TabIndex = 149;
-            this.dtpFecha2.Text = "22/10/2021";
-            this.dtpFecha2.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // lblFecha2
-            // 
-            this.lblFecha2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFecha2.AutoEllipsis = true;
-            this.lblFecha2.AutoSize = true;
-            this.lblFecha2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha2.Location = new System.Drawing.Point(234, 23);
-            this.lblFecha2.Name = "lblFecha2";
-            this.lblFecha2.Size = new System.Drawing.Size(91, 16);
-            this.lblFecha2.TabIndex = 148;
-            this.lblFecha2.Text = "Fecha Final";
-            // 
-            // lblFecha1
-            // 
-            this.lblFecha1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFecha1.AutoEllipsis = true;
-            this.lblFecha1.AutoSize = true;
-            this.lblFecha1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha1.Location = new System.Drawing.Point(72, 23);
-            this.lblFecha1.Name = "lblFecha1";
-            this.lblFecha1.Size = new System.Drawing.Size(100, 16);
-            this.lblFecha1.TabIndex = 147;
-            this.lblFecha1.Text = "Fecha Inicial";
-            // 
-            // lblChekAnul
-            // 
-            this.lblChekAnul.AutoSize = true;
-            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(781, 261);
-            this.lblChekAnul.Name = "lblChekAnul";
-            this.lblChekAnul.Size = new System.Drawing.Size(72, 15);
-            this.lblChekAnul.TabIndex = 152;
-            this.lblChekAnul.Text = "ANULADOS";
-            // 
-            // chekVerAnulados
-            // 
-            this.chekVerAnulados.BaseColor = System.Drawing.SystemColors.Control;
-            this.chekVerAnulados.CheckedOffColor = System.Drawing.Color.DarkGray;
-            this.chekVerAnulados.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.chekVerAnulados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chekVerAnulados.FillColor = System.Drawing.Color.White;
-            this.chekVerAnulados.Location = new System.Drawing.Point(858, 258);
-            this.chekVerAnulados.Name = "chekVerAnulados";
-            this.chekVerAnulados.Size = new System.Drawing.Size(28, 20);
-            this.chekVerAnulados.TabIndex = 151;
-            this.chekVerAnulados.CheckedChanged += new System.EventHandler(this.chekVerAnulados_CheckedChanged);
-            // 
             // FormRecibos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -990,6 +988,7 @@
             this.Name = "FormRecibos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRecibos";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormRecibos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1023,12 +1022,10 @@
         private System.Windows.Forms.TextBox tbValores;
         private System.Windows.Forms.TextBox tbEfectivo;
         private System.Windows.Forms.TextBox tbNumRecibo;
-        private System.Windows.Forms.ComboBox cbCliente;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.TextBox tbDetalleRecibo;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lblTotalRecibo;
         private System.Windows.Forms.Label lbl8;
@@ -1049,12 +1046,14 @@
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Label lblTitSaldo;
         private System.Windows.Forms.Label label12;
-        private Guna.UI.WinForms.GunaDateTimePicker dtpFechaRecibo;
         private Guna.UI.WinForms.GunaDateTimePicker dtpFecha1;
         private Guna.UI.WinForms.GunaDateTimePicker dtpFecha2;
         private System.Windows.Forms.Label lblFecha2;
         private System.Windows.Forms.Label lblFecha1;
         private Guna.UI.WinForms.GunaLabel lblChekAnul;
         private Guna.UI.WinForms.GunaSwitch chekVerAnulados;
+        public System.Windows.Forms.ComboBox cbCliente;
+        public System.Windows.Forms.TextBox tbDetalleRecibo;
+        public Guna.UI.WinForms.GunaDateTimePicker dtpFechaRecibo;
     }
 }

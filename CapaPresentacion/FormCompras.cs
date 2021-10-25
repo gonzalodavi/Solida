@@ -14,10 +14,13 @@ namespace CapaPresentacion
 {
     public partial class FormCompras : Form
     {
+        CN_Compras objeto = new CN_Compras();
+
         private DataTable DTDetalles;
         private double TotIva;
         private double Totales;
         public static int contadorFila = 0;
+        private string comprobte;
 
 
         public FormCompras()
@@ -27,9 +30,24 @@ namespace CapaPresentacion
 
         private void FormCompras_Load(object sender, EventArgs e)
         {
+            fechaHoy();
             CrearTabla();
             CargarGrilla();
-        }       
+            BuscarUltimaCompra();
+        }
+
+        private void BuscarUltimaCompra()
+        {
+            int numFact = objeto.MostrarUltimaCompra();
+            tbNumComp.Text = (numFact + 1).ToString();
+        }
+
+        private void fechaHoy()
+        {
+            dtpFecha1.Value = DateTime.Now;
+            dtpFecha2.Value = DateTime.Now;
+            dtpFecha.Value = DateTime.Now;
+        }
 
         private void MensajeOk(string mensaje)
         {
@@ -95,22 +113,40 @@ namespace CapaPresentacion
             this.dgvProveedor.DataSource = CN_Proveedor.Mostrar();
             this.dgvProveedor.Columns[6].Visible = false;
             this.dgvProveedor.Columns[7].Visible = false;
+
+            this.dgvProveedor.Columns[0].Width = 80;
+            this.dgvProveedor.Columns[1].Width = 100;
+            this.dgvProveedor.Columns[2].Width = 90;
+            this.dgvProveedor.Columns[3].Width = 90;
+            this.dgvProveedor.Columns[4].Width = 150;
+            this.dgvProveedor.Columns[5].Width = 110;
         }
 
         private void CargarGrillaProductos()
         {
             CN_Productos obj = new CN_Productos();
             this.dgvProductos.DataSource = obj.MostrarProducto();
-            this.dgvProductos.Columns[0].Visible = false;
-            this.dgvProductos.Columns[2].Visible = false;
-            this.dgvProductos.Columns[4].Visible = false;
-            this.dgvProductos.Columns[6].Visible = false;
-            this.dgvProductos.Columns[8].Visible = false;
 
-            this.dgvProductos.Columns[5].Width = 80;
-            this.dgvProductos.Columns[7].Width = 50;
-            this.dgvProductos.Columns[9].Width = 90;
-            this.dgvProductos.Columns[10].Width = 90;
+            //dgvProductos.Columns[0].Visible = false;
+            //dgvProductos.Columns[1].Visible = false;
+            dgvProductos.Columns[2].Visible = false;
+            //dgvProductos.Columns[3].Visible = false;
+            dgvProductos.Columns[4].Visible = false;
+            //dgvProductos.Columns[5].Visible = false;
+            //dgvProductos.Columns[6].Visible = false;
+            //dgvProductos.Columns[7].Visible = false;
+            dgvProductos.Columns[8].Visible = false;
+            //dgvProductos.Columns[9].Visible = false;
+            //dgvProductos.Columns[10].Visible = false;
+
+            this.dgvProductos.Columns[0].Width = 40;
+            this.dgvProductos.Columns[1].Width = 150;
+            this.dgvProductos.Columns[3].Width = 100;
+            this.dgvProductos.Columns[5].Width = 70;
+            this.dgvProductos.Columns[6].Width = 70;
+            this.dgvProductos.Columns[7].Width = 40;
+            this.dgvProductos.Columns[9].Width = 100;
+            this.dgvProductos.Columns[10].Width = 100;
         }
 
         private void dgvProveedor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -137,6 +173,7 @@ namespace CapaPresentacion
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+            BuscarUltimaCompra();
             tabCompras.SelectedTab = tabNuevaCompra;
         }
 
@@ -336,17 +373,49 @@ namespace CapaPresentacion
                             Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                             if (Opcion == DialogResult.OK)
                             {
+                                comprobte = tbNumComp.Text;
+                                if (tbNumComp.Text.Length.ToString().Equals("1"))
+                                {
+                                    comprobte = "0000" + comprobte;
+                                }
+                                if (tbNumComp.Text.Length.ToString().Equals("2"))
+                                {
+                                    comprobte = "000" + comprobte;
+                                }
+                                if (tbNumComp.Text.Length.ToString().Equals("3"))
+                                {
+                                    comprobte = "00" + comprobte;
+                                }
+                                if (tbNumComp.Text.Length.ToString().Equals("4"))
+                                {
+                                    comprobte = "0" + comprobte;
+                                }
+
                                 string estado = "ACTIVO";
-                                rpta = CN_Compras.Insertar(tbNumComp.Text, dtpFecha.Value, estado, tbCuit.Text, Convert.ToInt32(UserLoginCache.UserId), DTDetalles);
+
+                                rpta = CN_Compras.Insertar(comprobte, dtpFecha.Value, estado, tbCuit.Text, Convert.ToInt32(UserLoginCache.UserId), DTDetalles);
 
 
                                 if (rpta.Equals("OK"))
                                 {
                                     this.MensajeOk("Se Generó con éxito el Comprobante");
+
+                                    rpta = CN_CtaCte.InsertarP(tbCuit.Text, dtpFecha.Value, comprobte, "FACTURA DE COMPRA", 0,Convert.ToDecimal(tbTotalFact.Text), 0, 0, 0, Convert.ToDecimal(tbTotalFact.Text)*-1, 0, 0, "N", estado);
+                                    if (rpta.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se registro en cuenta corriente");
+
+                                    }
+                                    else
+                                    {
+                                        this.MensajeError(rpta);
+                                    }
+
                                     limpiarCampos();
                                     CargarGrilla();
                                     DTDetalles.Rows.Clear();
                                     tabCompras.SelectedTab = tabListadoCompras;
+                                    BuscarUltimaCompra();
                                 }
                                 else
                                 {
@@ -387,6 +456,18 @@ namespace CapaPresentacion
                         objetoCN.AnularComprobantes(idCompra);
 
                         MessageBox.Show("El Comprobante se ANULÓ CORRECTAMENTE");
+
+
+                        string rpta = CN_CtaCte.AnularRegistroCtaCteP(dgvCompras.CurrentRow.Cells["NUM_COMPRA"].Value.ToString(), "FACTURA DE COMPRA");
+                        if (rpta.Equals("OK"))
+                        {
+                            MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
+                        }
+                        else
+                        {
+                            this.MensajeError(rpta);
+                        }
+
                         CargarGrilla();
                     }
                 }
@@ -526,13 +607,26 @@ namespace CapaPresentacion
 
         private void dgvProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (this.dgvProductos.Columns[e.ColumnIndex].Name == "STOCK")
+            foreach (DataGridViewRow MyRow in dgvProductos.Rows)
             {
-                if (Convert.ToInt32(e.Value) <= 10)
+                if (Convert.ToInt32(MyRow.Cells[7].Value) <= Convert.ToInt32(MyRow.Cells[8].Value))
                 {
-                    e.CellStyle.ForeColor = Color.Red;
-                    e.CellStyle.BackColor = Color.Orange;
+                    MyRow.DefaultCellStyle.BackColor = Color.Orange;
+                    MyRow.DefaultCellStyle.ForeColor = Color.Red;
                 }
+            }
+        }
+
+        private void chekVerAnulados_CheckedChanged_1(object sender, EventArgs e)
+        {
+            CargarGrilla();
+        }
+
+        private void tbProducto_TextChanged(object sender, EventArgs e)
+        {
+            if (tbProducto.Text != "")
+            {
+                tbCantidad.Text = "1";
             }
         }
     }
