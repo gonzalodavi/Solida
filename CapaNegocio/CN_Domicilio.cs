@@ -126,5 +126,20 @@ namespace CapaNegocio
             Obj.IdProvincia = idprovincia;
             return Obj.MostrarLocalidad(Obj);
         }
+
+        public static string ConsultaLocalidadExiste(int id,string nombre)
+        {
+            CD_Domicilio Obj = new CD_Domicilio();
+            string rpta = Obj.ConsultaExisteLocalidad(id, nombre);
+            return rpta;
+        }
+
+        public static string ConsultaBarrioExiste(int id, string nombre)
+        {
+            CD_Domicilio Obj = new CD_Domicilio();
+            string rpta = Obj.ConsultaExisteBarrio(id, nombre);
+            return rpta;
+        }
+
     }
 }

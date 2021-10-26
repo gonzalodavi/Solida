@@ -64,28 +64,34 @@ namespace CapaPresentacion
         {
             cbProvincia.DisplayMember = "DES_PROVINCIA";
             cbProvincia.ValueMember = "ID_PROVINCIA";
-            cbProvincia.DataSource = objeto.CargaProvincia();           
+            cbProvincia.DataSource = objeto.CargaProvincia();
+            cbProvincia.SelectedIndex = -1;
+            cbLocalidad.SelectedIndex = -1;
+            cbLocalidad.DataSource = null;
         }
 
         private void CargarComboBoxLocalidad()
         {
-            if (cbProvincia.Text != "")
+            if (cbProvincia.SelectedIndex != -1)
             {
                 int idp = Convert.ToInt32(cbProvincia.SelectedValue);
                 cbLocalidad.DisplayMember = "DES_LOCALIDAD";
                 cbLocalidad.ValueMember = "ID_LOCALIDAD";
                 cbLocalidad.DataSource = CN_Domicilio.CargaLocalidadEnComboBox(idp);
-            }            
+                cbLocalidad.SelectedIndex = -1;
+                cbBarrio.DataSource = null;
+            }
         }
 
         private void CargarComboBoxBarrio()
         {
-            if (cbLocalidad.Text != "")
+            if (cbLocalidad.SelectedIndex != -1)
             {
                 int idl = Convert.ToInt32(cbLocalidad.SelectedValue);
                 cbBarrio.DisplayMember = "DES_BARRIO";
                 cbBarrio.ValueMember = "ID_BARRIO";
                 cbBarrio.DataSource = CN_Domicilio.CargaBarrio(idl);
+                cbBarrio.SelectedIndex = -1;
             }
         }
 
@@ -119,6 +125,7 @@ namespace CapaPresentacion
 
         private void LimpiarTabDomicilio()
         {
+            cbProvincia.SelectedIndex = -1;
             lblSeleDom.Text = "Nuevo Domicilio";
             tbCalle.Text = "";
             tbNro.Text = "";
@@ -515,7 +522,7 @@ namespace CapaPresentacion
 
         private void cbProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbProvincia.Text != "")
+            if (cbProvincia.SelectedIndex != -1)
             {
                 cbBarrio.DataSource=null;
                 panelDomicilio.Enabled = false;                
@@ -762,7 +769,7 @@ namespace CapaPresentacion
 
         private void cbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbLocalidad.Text != "")
+            if (cbLocalidad.SelectedIndex != -1)
             {
                 cbBarrio.DataSource = null;
                 panelDomicilio.Enabled = false;
@@ -773,7 +780,7 @@ namespace CapaPresentacion
 
         private void cbBarrio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbBarrio.Text == "")
+            if (cbBarrio.SelectedIndex == -1)
             {
                 panelDomicilio.Enabled = false;
             }
@@ -890,6 +897,59 @@ namespace CapaPresentacion
             {
                 lblErrorIVA.Visible = false;
             }
+        }
+
+        private void btnAgregaLoc_Click(object sender, EventArgs e)
+        {
+            int Provi = Convert.ToInt32(cbProvincia.SelectedValue);
+            Form formBG = new Form();
+            using (FormLocalidad mm = new FormLocalidad())
+            {              
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .70d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                mm.Owner = formBG;
+                mm.ShowDialog();
+
+                formBG.Dispose();
+            }
+            cbProvincia.SelectedIndex = -1;
+            cbProvincia.SelectedValue = Provi;            
+        }
+
+        private void btnAgregaBarr_Click(object sender, EventArgs e)
+        {
+            int Provi = Convert.ToInt32(cbProvincia.SelectedValue);
+            int Loca = Convert.ToInt32(cbLocalidad.SelectedValue);
+            Form formBG1 = new Form();
+            using (FormBarrio mm = new FormBarrio())
+            {
+                formBG1.StartPosition = FormStartPosition.Manual;
+                formBG1.FormBorderStyle = FormBorderStyle.None;
+                formBG1.Opacity = .70d;
+                formBG1.BackColor = Color.Black;
+                formBG1.WindowState = FormWindowState.Maximized;
+                formBG1.TopMost = true;
+                formBG1.Location = this.Location;
+                formBG1.ShowInTaskbar = false;
+                formBG1.Show();
+
+                mm.Owner = formBG1;
+                mm.ShowDialog();
+
+                formBG1.Dispose();
+            }
+            cbProvincia.SelectedIndex = -1;
+            cbProvincia.SelectedValue = Provi;
+            cbLocalidad.SelectedIndex = -1;
+            cbLocalidad.SelectedValue = Loca;
         }
     }
 }

@@ -272,3 +272,5 @@ G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormReport
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormDetalleCtaCteClienteSimple.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormReporteNotas.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\Guna.UI.dll
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormLocalidad.resources
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormBarrio.resources
