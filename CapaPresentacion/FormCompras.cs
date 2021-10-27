@@ -153,9 +153,11 @@ namespace CapaPresentacion
         {
             tbCuit.Text = dgvProveedor.CurrentRow.Cells[0].Value.ToString();
             tbProveedor.Text = dgvProveedor.CurrentRow.Cells[1].Value.ToString();
+            this.dgvProveedor.Columns.Clear();
             panelProveedores.Enabled = false; 
             tabCompras.SelectedTab = tabNuevaCompra;
             tbBuscaProveedor.Text = "";
+
         }
 
         private void dgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -164,6 +166,7 @@ namespace CapaPresentacion
             tbProducto.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
             tbIVACompra.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
             tbImporteCompra.Text = dgvProductos.CurrentRow.Cells[5].Value.ToString();
+            this.dgvProductos.Columns.Clear();
             panelProductos.Enabled = false;
             tabCompras.SelectedTab = tabNuevaCompra;
             tbBuscaProductos.Text = "";
@@ -193,6 +196,9 @@ namespace CapaPresentacion
             tbTotalFact.Text = "";
             tbTotalIVA.Text = "";
             tbDescripcion.Text = "";
+            this.dgvProveedor.Columns.Clear();
+            this.dgvProductos.Columns.Clear();
+
         }
         private void LimpiarDatosCarga()
         {
@@ -203,6 +209,8 @@ namespace CapaPresentacion
             tbSubtotal.Text = "";
             tbSubtotalIVA.Text = "";
             tbIDprod.Text = "";
+            this.dgvProductos.Columns.Clear();
+            this.dgvProveedor.Columns.Clear();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

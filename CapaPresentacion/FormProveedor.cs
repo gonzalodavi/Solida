@@ -78,6 +78,77 @@ namespace CapaPresentacion
             this.dgvDomCompleto.DataSource = CN_Domicilio.MostrarDomicilioEnGrilla(Convert.ToInt32(tbIdDom.Text));
         }
 
+        //CARGAR LOS COMBOBOX DE BARRIO, LOCALIDAD Y PROVINCIA
+
+        private void CargarComboBoxProvincia()
+        {
+            cbProvincia.DisplayMember = "DES_PROVINCIA";
+            cbProvincia.ValueMember = "ID_PROVINCIA";
+            cbProvincia.DataSource = objeto.CargaProvincia();
+            cbProvincia.SelectedIndex = -1;
+            cbLocalidad.SelectedIndex = -1;
+            cbLocalidad.DataSource = null;
+        }
+
+        private void cbProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbProvincia.SelectedIndex != -1)
+            {
+                cbBarrio.DataSource = null;
+                panelDomicilio.Enabled = false;
+                CargarComboBoxLocalidad();
+            }
+        }
+
+        private void CargarComboBoxLocalidad()
+        {
+            if (cbProvincia.SelectedIndex != -1)
+            {
+                int idp = Convert.ToInt32(cbProvincia.SelectedValue);
+                cbLocalidad.DisplayMember = "DES_LOCALIDAD";
+                cbLocalidad.ValueMember = "ID_LOCALIDAD";
+                cbLocalidad.DataSource = CN_Domicilio.CargaLocalidadEnComboBox(idp);
+                cbLocalidad.SelectedIndex = -1;
+                cbBarrio.DataSource = null;
+            }
+        }
+
+        private void cbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLocalidad.SelectedIndex != -1)
+            {
+                cbBarrio.DataSource = null;
+                panelDomicilio.Enabled = false;
+
+                CargarComboBoxBarrio();
+            }
+        }
+
+        private void CargarComboBoxBarrio()
+        {
+            if (cbLocalidad.SelectedIndex != -1)
+            {
+                int idl = Convert.ToInt32(cbLocalidad.SelectedValue);
+                cbBarrio.DisplayMember = "DES_BARRIO";
+                cbBarrio.ValueMember = "ID_BARRIO";
+                cbBarrio.DataSource = CN_Domicilio.CargaBarrio(idl);
+                cbBarrio.SelectedIndex = -1;
+            }
+        }
+
+        private void cbBarrio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbBarrio.SelectedIndex == -1)
+            {
+                panelDomicilio.Enabled = false;
+            }
+            else
+            {
+                panelDomicilio.Enabled = true;
+            }
+        }
+
+
 
         private void limpiarCampos()
         {
@@ -105,83 +176,35 @@ namespace CapaPresentacion
             lblErrorDire.Visible = false;
             lblErrorEmpresa.Visible = false;
             lblErrorNom.Visible = false;
-        }
-
-        private void btnModificarProv_Click(object sender, EventArgs e)
-        {
-            if (dgvProveedor.SelectedRows.Count > 0)
-            {
-                string cuit = dgvProveedor.CurrentRow.Cells["CUIT"].Value.ToString();
-                tabProveedor.SelectedTab = tabPMant;
-                lblSubTitutlo.Text = "Modificar Proveedor";
-                limpiarCampos();
-
-                string cadena = cuit;
-                string doscaracteres = cadena.Substring(0, 2);
-                cbPreF.Text = doscaracteres;
-                string ultimocaracter = cadena.Substring(cadena.Length - 1, 1);
-                cbSuF.Text = ultimocaracter;
-                string cadena2 = cadena.Remove(0, 2);
-                cuit = cadena2.Remove(8, 1);
-
-                tbCuit.Enabled = false;
-                cbSuF.Enabled = false;
-                cbPreF.Enabled = false;
-
-                tbCuit.Text = cuit;
-
-                tbEmpresa.Text = dgvProveedor.CurrentRow.Cells["EMPRESA"].Value.ToString();
-                tbNombre.Text = dgvProveedor.CurrentRow.Cells["NOMBRE"].Value.ToString();
-                tbApellido.Text = dgvProveedor.CurrentRow.Cells["APELLIDO"].Value.ToString();
-                tbMail.Text = dgvProveedor.CurrentRow.Cells["MAIL"].Value.ToString();
-                tbTel.Text = dgvProveedor.CurrentRow.Cells["TEL"].Value.ToString();
-                tbIdDom.Text = dgvProveedor.CurrentRow.Cells["IDDOM"].Value.ToString();
-                tbDescripcion.Text = dgvProveedor.CurrentRow.Cells["DESCRIPCION"].Value.ToString();
-
-
-                CN_Domicilio Odir = new CN_Domicilio();
-                tbDireccion.Text = Odir.BuscarDomicilio(Convert.ToInt32(tbIdDom.Text));
-
-                CargarDomicilio();
-                dgvProveedor.Enabled = false;
-                Editar = true;
-            }
-            else
-            {
-                MessageBox.Show("seleccione una fila por favor");
-            }            
-        }
-
-        private void btnCancela_Click(object sender, EventArgs e)
-        {
-            DialogResult Opcion;
-            Opcion = MessageBox.Show("Desea Cancelar la Operación?", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            try
-            {
-                if (Opcion == DialogResult.OK)
-                {
-                    limpiarCampos();
-                    tabProveedor.SelectedTab = tabPConsulta;
-                    dgvProveedor.Enabled = true;
-                    lblSubTitutlo.Text = "Nuevo Proveedor";
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-            /*EditarDom = false;
-            tbCuit.Enabled = true;            
             Editar = false;
-            btnEliminar.Visible = true;
-            btnModificar.Visible = true;*/
+
         }
 
+        private void LimpiarTabDomicilio()
+        {
+            cbProvincia.SelectedIndex = -1;
+            lblSeleDom.Text = "Nuevo Domicilio";
+            tbCalle.Text = "";
+            tbNro.Text = "";
+            tbPiso.Text = "";
+            tbDpto.Text = "";
+            cbProvincia.SelectedIndex = -1;
+            tbProvinciaSeleccionada.Visible = false;
+            tbProvinciaSeleccionada.Text = "";
+            cbLocalidad.DataSource = null;
+            cbBarrio.DataSource = null;
+        }
+
+
+        private void btnNuevoProveedor_Click(object sender, EventArgs e)
+        {
+            tabProveedor.SelectedTab = tabPMant;
+            cbPreF.Focus();
+        }
 
 
         private void btAceptar_Click(object sender, EventArgs e)
-        {   
+        {
             agregaNuevoProveedor();
         }
 
@@ -265,6 +288,77 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnModificarProv_Click(object sender, EventArgs e)
+        {
+            if (dgvProveedor.SelectedRows.Count > 0)
+            {
+                string cuit = dgvProveedor.CurrentRow.Cells["CUIT"].Value.ToString();
+                tabProveedor.SelectedTab = tabPMant;
+                lblSubTitutlo.Text = "Modificar Proveedor";
+                limpiarCampos();
+
+                string cadena = cuit;
+                string doscaracteres = cadena.Substring(0, 2);
+                cbPreF.Text = doscaracteres;
+                string ultimocaracter = cadena.Substring(cadena.Length - 1, 1);
+                cbSuF.Text = ultimocaracter;
+                string cadena2 = cadena.Remove(0, 2);
+                cuit = cadena2.Remove(8, 1);
+
+                tbCuit.Enabled = false;
+                cbSuF.Enabled = false;
+                cbPreF.Enabled = false;
+
+                tbCuit.Text = cuit;
+
+                tbEmpresa.Text = dgvProveedor.CurrentRow.Cells["EMPRESA"].Value.ToString();
+                tbNombre.Text = dgvProveedor.CurrentRow.Cells["NOMBRE"].Value.ToString();
+                tbApellido.Text = dgvProveedor.CurrentRow.Cells["APELLIDO"].Value.ToString();
+                tbMail.Text = dgvProveedor.CurrentRow.Cells["MAIL"].Value.ToString();
+                tbTel.Text = dgvProveedor.CurrentRow.Cells["TEL"].Value.ToString();
+                tbIdDom.Text = dgvProveedor.CurrentRow.Cells["IDDOM"].Value.ToString();
+                tbDescripcion.Text = dgvProveedor.CurrentRow.Cells["DESCRIPCION"].Value.ToString();                  
+
+                CN_Domicilio Odir = new CN_Domicilio();
+                tbDireccion.Text = Odir.BuscarDomicilio(Convert.ToInt32(tbIdDom.Text));
+
+                CargarDomicilio();
+                dgvProveedor.Enabled = false;
+                Editar = true;
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }            
+        }
+
+        private void btnCancela_Click(object sender, EventArgs e)
+        {
+            DialogResult Opcion;
+            Opcion = MessageBox.Show("Desea Cancelar la Operación?", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            try
+            {
+                if (Opcion == DialogResult.OK)
+                {
+                    limpiarCampos();
+                    tabProveedor.SelectedTab = tabPConsulta;
+                    dgvProveedor.Enabled = true;
+                    lblSubTitutlo.Text = "Nuevo Proveedor";
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            /*EditarDom = false;
+            tbCuit.Enabled = true;            
+            Editar = false;
+            btnEliminar.Visible = true;
+            btnModificar.Visible = true;*/
+        }
+
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvProveedor.SelectedRows.Count > 0)
@@ -307,6 +401,16 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnActualizaLista_Click(object sender, EventArgs e)
+        {
+            CargarGrilla();
+            tbBusca.Text = "";
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            buscarProveedor();
+        }
 
 
         private void buscarProveedor()
@@ -332,22 +436,18 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+
+        private void btnSeleccionaDireccion_Click(object sender, EventArgs e)
         {
-            buscarProveedor();
+            tabProveedor.SelectedTab = tabListaDom;
         }
 
-        private void btnActualizaLista_Click(object sender, EventArgs e)
-        {
-            CargarGrilla();
-            tbBusca.Text = "";
-        }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
+        private void btnNuevaDireccion_Click(object sender, EventArgs e)
         {
-            this.Close();
+            LimpiarTabDomicilio();
+            tabProveedor.SelectedTab = tabManDomicilios;
         }
-
 
         private void btnAceptaDom_Click(object sender, EventArgs e)
         {            
@@ -442,78 +542,14 @@ namespace CapaPresentacion
             {
                 MensajeError("Por Favor Ingrese el Nombre de la Calle");
             }          
-        }       
-
-        
-
-        private void LimpiarTabDomicilio()
-        {
-            lblSeleDom.Text = "Selección de Domicilio";
-            tbCalle.Text = "";
-            tbNro.Text = "";
-            tbPiso.Text = "";
-            tbDpto.Text = "";
-            cbProvincia.SelectedIndex = 1;
-            tbProvinciaSeleccionada.Visible = false;
-            tbProvinciaSeleccionada.Text = "";
         }
 
-
-        private void btnSeleccionaDireccion_Click(object sender, EventArgs e)
-        {
-            tabProveedor.SelectedTab = tabListaDom;            
-        }      
-             
-
-        private void cbProvincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbProvincia.Text != "")
-            {
-                cbBarrio.DataSource = null;
-                panelDomicilio.Enabled = false;
-                string elid = cbProvincia.SelectedValue.ToString();
-                int numero = Convert.ToInt32(elid);
-                CargarComboBoxLocalidad();
-            }
-        }
-
-        private void CargarComboBoxLocalidad()
-        {
-            if (cbProvincia.Text != "")
-            {
-                int idp = Convert.ToInt32(cbProvincia.SelectedValue);
-                cbLocalidad.DisplayMember = "DES_LOCALIDAD";
-                cbLocalidad.ValueMember = "ID_LOCALIDAD";
-                cbLocalidad.DataSource = CN_Domicilio.CargaLocalidadEnComboBox(idp);
-            }
-        }
-
-        //CARGAR LOS COMBOBOX DE LOCALIDAD Y PROVINCIA
-
-        private void CargarComboBoxProvincia()
-        {
-            cbProvincia.DisplayMember = "DES_PROVINCIA";
-            cbProvincia.ValueMember = "ID_PROVINCIA";
-            cbProvincia.DataSource = objeto.CargaProvincia();
-
-        }
-
-        private void CargarComboBoxLocalidad(int NroProvincia)
-        {
-            cbLocalidad.DisplayMember = "DES_LOCALIDAD";
-            cbLocalidad.ValueMember = "ID_LOCALIDAD";
-            cbLocalidad.DataSource = CN_Domicilio.CargaLocalidadEnComboBox(NroProvincia);
-        }
-
-       
         private void btnCancelaDom_Click(object sender, EventArgs e)
         {
             dgvDomicilios.Enabled = true;
             tabProveedor.SelectedTab = tabListaDom;
             LimpiarTabDomicilio();
         }
-
-
 
         private void btnModificaDom_Click(object sender, EventArgs e)
         {
@@ -540,87 +576,11 @@ namespace CapaPresentacion
                 tbNro.Text = nro;
                 tbPiso.Text = piso;
                 tbDpto.Text = dgvDomicilios.CurrentRow.Cells["DPTO"].Value.ToString();
-                
+
             }
             else
             {
                 MensajeError("Seleccione una Direccion de la lista para modificar");
-            }
-        }
-
-        private void btnNuevaDireccion_Click(object sender, EventArgs e)
-        {
-            LimpiarTabDomicilio();
-            tabProveedor.SelectedTab = tabManDomicilios;
-        }
-
-        private void dgvDomicilios_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tbIdDom.Text = dgvDomicilios.CurrentRow.Cells["ID"].Value.ToString();
-            tbDireccion.Text = dgvDomicilios.CurrentRow.Cells["CALLE"].Value.ToString() + " " + dgvDomicilios.CurrentRow.Cells["NRO"].Value.ToString(); ;
-            tabProveedor.SelectedTab = tabPMant;
-        }
-
-        private void btnBuscaDom_Click(object sender, EventArgs e)
-        {
-            BuscarDomicilios();
-        }
-
-        private void BuscarDomicilios()
-        {
-            if (tbBuscarDomicilio.Text == "")
-            {
-                CargarGrilla();
-                MessageBox.Show("Para Buscar un domicilio debe ingresar su calle");
-            }
-            else
-            {
-                CN_Domicilio objetob = new CN_Domicilio();
-                dgvDomicilios.DataSource = objetob.BuscaUnDomicilio(tbBuscarDomicilio.Text);
-                if (dgvDomicilios.SelectedRows.Count < 1)
-                {
-                    MessageBox.Show("No existen registros");
-                }
-            }
-        }
-
-        private void btnActualizaListaDom_Click(object sender, EventArgs e)
-        {
-            CargarGrillaDomicilios();
-            tbBuscarDomicilio.Text = "";
-        }
-
-        private void cbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbLocalidad.Text != "")
-            {
-                cbBarrio.DataSource = null;
-                panelDomicilio.Enabled = false;
-
-                CargarComboBoxBarrio();
-            }
-        }
-
-        private void CargarComboBoxBarrio()
-        {
-            if (cbLocalidad.Text != "")
-            {
-                int idl = Convert.ToInt32(cbLocalidad.SelectedValue);
-                cbBarrio.DisplayMember = "DES_BARRIO";
-                cbBarrio.ValueMember = "ID_BARRIO";
-                cbBarrio.DataSource = CN_Domicilio.CargaBarrio(idl);
-            }
-        }
-
-        private void cbBarrio_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbBarrio.Text == "")
-            {
-                panelDomicilio.Enabled = false;
-            }
-            else
-            {
-                panelDomicilio.Enabled = true;
             }
         }
 
@@ -662,11 +622,43 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnNuevoProveedor_Click(object sender, EventArgs e)
+        private void btnActualizaListaDom_Click(object sender, EventArgs e)
         {
-            tabProveedor.SelectedTab = tabPMant;
-            cbPreF.Focus();
+            CargarGrillaDomicilios();
+            tbBuscarDomicilio.Text = "";
         }
+
+        private void btnBuscaDom_Click(object sender, EventArgs e)
+        {
+            BuscarDomicilios();
+        }
+
+        private void BuscarDomicilios()
+        {
+            if (tbBuscarDomicilio.Text == "")
+            {
+                CargarGrilla();
+                MessageBox.Show("Para Buscar un domicilio debe ingresar su calle");
+            }
+            else
+            {
+                CN_Domicilio objetob = new CN_Domicilio();
+                dgvDomicilios.DataSource = objetob.BuscaUnDomicilio(tbBuscarDomicilio.Text);
+                if (dgvDomicilios.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("No existen registros");
+                }
+            }
+        }
+
+
+        private void dgvDomicilios_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbIdDom.Text = dgvDomicilios.CurrentRow.Cells["ID"].Value.ToString();
+            tbDireccion.Text = dgvDomicilios.CurrentRow.Cells["CALLE"].Value.ToString() + " " + dgvDomicilios.CurrentRow.Cells["NRO"].Value.ToString(); ;
+            tabProveedor.SelectedTab = tabPMant;
+        }
+
 
         private void tbCuit_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -677,8 +669,7 @@ namespace CapaPresentacion
                 return;
             }
         }
-
-        
+                
 
         private void panelCUIT_Leave(object sender, EventArgs e)
         {
@@ -692,6 +683,64 @@ namespace CapaPresentacion
             {
                 lblErrorCUIT.Visible = false;
             }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAgregaLoc_Click(object sender, EventArgs e)
+        {
+            int Provi = Convert.ToInt32(cbProvincia.SelectedValue);
+            Form formBG = new Form();
+            using (FormLocalidad mm = new FormLocalidad())
+            {
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .70d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                mm.Owner = formBG;
+                mm.ShowDialog();
+
+                formBG.Dispose();
+            }
+            cbProvincia.SelectedIndex = -1;
+            cbProvincia.SelectedValue = Provi;
+        }
+
+        private void btnAgregaBarr_Click(object sender, EventArgs e)
+        {
+            int Provi = Convert.ToInt32(cbProvincia.SelectedValue);
+            int Loca = Convert.ToInt32(cbLocalidad.SelectedValue);
+            Form formBG1 = new Form();
+            using (FormBarrio mm = new FormBarrio())
+            {
+                formBG1.StartPosition = FormStartPosition.Manual;
+                formBG1.FormBorderStyle = FormBorderStyle.None;
+                formBG1.Opacity = .70d;
+                formBG1.BackColor = Color.Black;
+                formBG1.WindowState = FormWindowState.Maximized;
+                formBG1.TopMost = true;
+                formBG1.Location = this.Location;
+                formBG1.ShowInTaskbar = false;
+                formBG1.Show();
+
+                mm.Owner = formBG1;
+                mm.ShowDialog();
+
+                formBG1.Dispose();
+            }
+            cbProvincia.SelectedIndex = -1;
+            cbProvincia.SelectedValue = Provi;
+            cbLocalidad.SelectedIndex = -1;
+            cbLocalidad.SelectedValue = Loca;
         }
     }
 }

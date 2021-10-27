@@ -56,8 +56,6 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.tabNuevoProducto = new System.Windows.Forms.TabPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -92,6 +90,9 @@
             this.cbRubro = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             this.tabProductos.SuspendLayout();
             this.tabConsultaProducto.SuspendLayout();
@@ -528,6 +529,7 @@
             // tabNuevoProducto
             // 
             this.tabNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevoProducto.Controls.Add(this.label23);
             this.tabNuevoProducto.Controls.Add(this.label22);
             this.tabNuevoProducto.Controls.Add(this.label18);
             this.tabNuevoProducto.Controls.Add(this.label21);
@@ -571,30 +573,6 @@
             this.tabNuevoProducto.TabIndex = 1;
             this.tabNuevoProducto.Text = "Mantenimiento";
             // 
-            // label22
-            // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Yellow;
-            this.label22.Location = new System.Drawing.Point(755, 350);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(17, 16);
-            this.label22.TabIndex = 138;
-            this.label22.Text = "*";
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Yellow;
-            this.label18.Location = new System.Drawing.Point(755, 304);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 16);
-            this.label18.TabIndex = 138;
-            this.label18.Text = "*";
-            // 
             // label21
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -625,7 +603,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Yellow;
-            this.label20.Location = new System.Drawing.Point(755, 161);
+            this.label20.Location = new System.Drawing.Point(783, 161);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(17, 16);
             this.label20.TabIndex = 138;
@@ -661,6 +639,7 @@
             this.tbStock.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStock.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbStock.Location = new System.Drawing.Point(676, 302);
+            this.tbStock.MaxLength = 5;
             this.tbStock.Name = "tbStock";
             this.tbStock.Size = new System.Drawing.Size(73, 22);
             this.tbStock.TabIndex = 9;
@@ -756,6 +735,7 @@
             this.tbStockMin.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStockMin.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbStockMin.Location = new System.Drawing.Point(676, 348);
+            this.tbStockMin.MaxLength = 5;
             this.tbStockMin.Name = "tbStockMin";
             this.tbStockMin.Size = new System.Drawing.Size(73, 22);
             this.tbStockMin.TabIndex = 10;
@@ -1019,6 +999,42 @@
             this.label8.TabIndex = 136;
             this.label8.Text = "%";
             // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Yellow;
+            this.label18.Location = new System.Drawing.Point(478, 256);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(17, 16);
+            this.label18.TabIndex = 139;
+            this.label18.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Yellow;
+            this.label22.Location = new System.Drawing.Point(478, 304);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(17, 16);
+            this.label22.TabIndex = 140;
+            this.label22.Text = "*";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Yellow;
+            this.label23.Location = new System.Drawing.Point(478, 351);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(17, 16);
+            this.label23.TabIndex = 141;
+            this.label23.Text = "*";
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1100,11 +1116,12 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label18;
     }
 }

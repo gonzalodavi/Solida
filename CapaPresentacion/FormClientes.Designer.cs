@@ -1287,10 +1287,10 @@
             // tabNuevoDom
             // 
             this.tabNuevoDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevoDom.Controls.Add(this.label25);
             this.tabNuevoDom.Controls.Add(this.btnAgregaBarr);
             this.tabNuevoDom.Controls.Add(this.btnAgregaLoc);
             this.tabNuevoDom.Controls.Add(this.label24);
-            this.tabNuevoDom.Controls.Add(this.label23);
             this.tabNuevoDom.Controls.Add(this.label22);
             this.tabNuevoDom.Controls.Add(this.label4);
             this.tabNuevoDom.Controls.Add(this.cbBarrio);
@@ -1327,7 +1327,7 @@
             this.btnAgregaBarr.IconColor = System.Drawing.Color.White;
             this.btnAgregaBarr.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregaBarr.IconSize = 25;
-            this.btnAgregaBarr.Location = new System.Drawing.Point(490, 301);
+            this.btnAgregaBarr.Location = new System.Drawing.Point(496, 301);
             this.btnAgregaBarr.Name = "btnAgregaBarr";
             this.btnAgregaBarr.Size = new System.Drawing.Size(29, 29);
             this.btnAgregaBarr.TabIndex = 169;
@@ -1351,7 +1351,7 @@
             this.btnAgregaLoc.IconColor = System.Drawing.Color.White;
             this.btnAgregaLoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregaLoc.IconSize = 25;
-            this.btnAgregaLoc.Location = new System.Drawing.Point(490, 216);
+            this.btnAgregaLoc.Location = new System.Drawing.Point(496, 216);
             this.btnAgregaLoc.Name = "btnAgregaLoc";
             this.btnAgregaLoc.Size = new System.Drawing.Size(29, 29);
             this.btnAgregaLoc.TabIndex = 169;
@@ -1378,7 +1378,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Yellow;
-            this.label23.Location = new System.Drawing.Point(467, 222);
+            this.label23.Location = new System.Drawing.Point(303, 31);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(17, 16);
             this.label23.TabIndex = 167;
@@ -1440,11 +1440,11 @@
             // 
             // panelDomicilio
             // 
-            this.panelDomicilio.Controls.Add(this.label25);
             this.panelDomicilio.Controls.Add(this.tbDpto);
             this.panelDomicilio.Controls.Add(this.lblCalle);
             this.panelDomicilio.Controls.Add(this.tbPiso);
             this.panelDomicilio.Controls.Add(this.lblNro);
+            this.panelDomicilio.Controls.Add(this.label23);
             this.panelDomicilio.Controls.Add(this.lblDpto);
             this.panelDomicilio.Controls.Add(this.tbCalle);
             this.panelDomicilio.Controls.Add(this.tbNro);
@@ -1461,7 +1461,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Yellow;
-            this.label25.Location = new System.Drawing.Point(303, 31);
+            this.label25.Location = new System.Drawing.Point(467, 222);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(17, 16);
             this.label25.TabIndex = 169;

@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tabRemitos = new System.Windows.Forms.TabControl();
             this.tabListadoRemitos = new System.Windows.Forms.TabPage();
@@ -63,6 +63,8 @@
             this.dgvRemitos = new System.Windows.Forms.DataGridView();
             this.tabRemito = new System.Windows.Forms.TabPage();
             this.gbDetalleRem = new System.Windows.Forms.GroupBox();
+            this.tbCantidad = new Guna.UI.WinForms.GunaNumeric();
+            this.btnBuscaProducto = new FontAwesome.Sharp.IconButton();
             this.dgvDetRem = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -72,19 +74,17 @@
             this.tbProducto = new System.Windows.Forms.TextBox();
             this.tbIDProducto = new System.Windows.Forms.TextBox();
             this.btnQuitar = new FontAwesome.Sharp.IconButton();
-            this.btnBuscaProducto = new FontAwesome.Sharp.IconButton();
             this.btnAgrega = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.tbCantidad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarPc = new FontAwesome.Sharp.IconButton();
             this.dtpFecha = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.tbDestinatario = new System.Windows.Forms.TextBox();
             this.tbIdDestinatario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarPC = new FontAwesome.Sharp.IconButton();
             this.rbEntrada = new System.Windows.Forms.RadioButton();
             this.rbSalida = new System.Windows.Forms.RadioButton();
             this.tbNumRemito = new System.Windows.Forms.TextBox();
@@ -518,22 +518,22 @@
             this.dgvRemitos.AllowUserToDeleteRows = false;
             this.dgvRemitos.AllowUserToResizeColumns = false;
             this.dgvRemitos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvRemitos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvRemitos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRemitos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvRemitos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRemitos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvRemitos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRemitos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvRemitos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRemitos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRemitos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRemitos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRemitos.ColumnHeadersVisible = false;
             this.dgvRemitos.EnableHeadersVisualStyles = false;
@@ -545,13 +545,13 @@
             this.dgvRemitos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvRemitos.RowHeadersVisible = false;
             this.dgvRemitos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvRemitos.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvRemitos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRemitos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRemitos.Size = new System.Drawing.Size(650, 389);
             this.dgvRemitos.TabIndex = 92;
@@ -573,6 +573,8 @@
             // gbDetalleRem
             // 
             this.gbDetalleRem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbDetalleRem.Controls.Add(this.tbCantidad);
+            this.gbDetalleRem.Controls.Add(this.btnBuscaProducto);
             this.gbDetalleRem.Controls.Add(this.dgvDetRem);
             this.gbDetalleRem.Controls.Add(this.label16);
             this.gbDetalleRem.Controls.Add(this.label14);
@@ -582,11 +584,9 @@
             this.gbDetalleRem.Controls.Add(this.tbProducto);
             this.gbDetalleRem.Controls.Add(this.tbIDProducto);
             this.gbDetalleRem.Controls.Add(this.btnQuitar);
-            this.gbDetalleRem.Controls.Add(this.btnBuscaProducto);
             this.gbDetalleRem.Controls.Add(this.btnAgrega);
             this.gbDetalleRem.Controls.Add(this.label10);
             this.gbDetalleRem.Controls.Add(this.lblCantidad);
-            this.gbDetalleRem.Controls.Add(this.tbCantidad);
             this.gbDetalleRem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbDetalleRem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDetalleRem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -597,48 +597,92 @@
             this.gbDetalleRem.TabStop = false;
             this.gbDetalleRem.Text = "Detalle Remito";
             // 
+            // tbCantidad
+            // 
+            this.tbCantidad.BackColor = System.Drawing.Color.Transparent;
+            this.tbCantidad.BaseColor = System.Drawing.Color.White;
+            this.tbCantidad.BorderColor = System.Drawing.Color.Silver;
+            this.tbCantidad.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tbCantidad.ButtonForeColor = System.Drawing.Color.White;
+            this.tbCantidad.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.tbCantidad.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCantidad.ForeColor = System.Drawing.Color.Black;
+            this.tbCantidad.Location = new System.Drawing.Point(135, 88);
+            this.tbCantidad.Maximum = ((long)(99999));
+            this.tbCantidad.Minimum = ((long)(1));
+            this.tbCantidad.Name = "tbCantidad";
+            this.tbCantidad.Radius = 10;
+            this.tbCantidad.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbCantidad.Size = new System.Drawing.Size(99, 30);
+            this.tbCantidad.TabIndex = 171;
+            this.tbCantidad.Value = ((long)(1));
+            // 
+            // btnBuscaProducto
+            // 
+            this.btnBuscaProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscaProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscaProducto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscaProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscaProducto.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscaProducto.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaProducto.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnBuscaProducto.IconColor = System.Drawing.Color.White;
+            this.btnBuscaProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscaProducto.IconSize = 25;
+            this.btnBuscaProducto.Location = new System.Drawing.Point(331, 37);
+            this.btnBuscaProducto.Name = "btnBuscaProducto";
+            this.btnBuscaProducto.Size = new System.Drawing.Size(29, 29);
+            this.btnBuscaProducto.TabIndex = 170;
+            this.btnBuscaProducto.TabStop = false;
+            this.btnBuscaProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscaProducto.UseVisualStyleBackColor = false;
+            this.btnBuscaProducto.Click += new System.EventHandler(this.btnBuscaProducto_Click_1);
+            // 
             // dgvDetRem
             // 
             this.dgvDetRem.AllowUserToAddRows = false;
             this.dgvDetRem.AllowUserToDeleteRows = false;
             this.dgvDetRem.AllowUserToResizeColumns = false;
             this.dgvDetRem.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvDetRem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvDetRem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetRem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvDetRem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetRem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvDetRem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDetRem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDetRem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetRem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetRem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetRem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetRem.ColumnHeadersVisible = false;
             this.dgvDetRem.EnableHeadersVisualStyles = false;
             this.dgvDetRem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvDetRem.Location = new System.Drawing.Point(408, 61);
+            this.dgvDetRem.Location = new System.Drawing.Point(420, 61);
             this.dgvDetRem.MaximumSize = new System.Drawing.Size(9000, 500);
             this.dgvDetRem.Name = "dgvDetRem";
             this.dgvDetRem.ReadOnly = true;
             this.dgvDetRem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvDetRem.RowHeadersVisible = false;
             this.dgvDetRem.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDetRem.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDetRem.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetRem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetRem.Size = new System.Drawing.Size(452, 208);
+            this.dgvDetRem.Size = new System.Drawing.Size(440, 211);
             this.dgvDetRem.TabIndex = 86;
             this.dgvDetRem.TabStop = false;
             // 
@@ -650,9 +694,9 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label16.Location = new System.Drawing.Point(405, 58);
+            this.label16.Location = new System.Drawing.Point(418, 58);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(459, 217);
+            this.label16.Size = new System.Drawing.Size(446, 217);
             this.label16.TabIndex = 106;
             this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -663,9 +707,9 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label14.Location = new System.Drawing.Point(633, 40);
+            this.label14.Location = new System.Drawing.Point(642, 42);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(231, 18);
+            this.label14.Size = new System.Drawing.Size(222, 18);
             this.label14.TabIndex = 104;
             this.label14.Text = "CANTIDAD";
             this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -677,9 +721,9 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label15.Location = new System.Drawing.Point(405, 40);
+            this.label15.Location = new System.Drawing.Point(418, 42);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(230, 18);
+            this.label15.Size = new System.Drawing.Size(227, 18);
             this.label15.TabIndex = 105;
             this.label15.Text = "PRODUCTO";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -702,7 +746,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(366, 113);
+            this.label12.Location = new System.Drawing.Point(366, 154);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 14);
             this.label12.TabIndex = 89;
@@ -715,10 +759,10 @@
             this.tbProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbProducto.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbProducto.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbProducto.Location = new System.Drawing.Point(107, 41);
+            this.tbProducto.Location = new System.Drawing.Point(61, 41);
             this.tbProducto.Name = "tbProducto";
             this.tbProducto.ReadOnly = true;
-            this.tbProducto.Size = new System.Drawing.Size(253, 22);
+            this.tbProducto.Size = new System.Drawing.Size(264, 22);
             this.tbProducto.TabIndex = 88;
             this.tbProducto.TextChanged += new System.EventHandler(this.tbProducto_TextChanged);
             // 
@@ -729,7 +773,7 @@
             this.tbIDProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbIDProducto.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDProducto.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbIDProducto.Location = new System.Drawing.Point(130, 20);
+            this.tbIDProducto.Location = new System.Drawing.Point(6, 288);
             this.tbIDProducto.Name = "tbIDProducto";
             this.tbIDProducto.Size = new System.Drawing.Size(88, 15);
             this.tbIDProducto.TabIndex = 85;
@@ -760,31 +804,6 @@
             this.btnQuitar.UseVisualStyleBackColor = false;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
-            // btnBuscaProducto
-            // 
-            this.btnBuscaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscaProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscaProducto.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscaProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscaProducto.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscaProducto.ForeColor = System.Drawing.Color.White;
-            this.btnBuscaProducto.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnBuscaProducto.IconColor = System.Drawing.Color.White;
-            this.btnBuscaProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscaProducto.IconSize = 5;
-            this.btnBuscaProducto.Location = new System.Drawing.Point(302, 69);
-            this.btnBuscaProducto.Name = "btnBuscaProducto";
-            this.btnBuscaProducto.Size = new System.Drawing.Size(58, 22);
-            this.btnBuscaProducto.TabIndex = 83;
-            this.btnBuscaProducto.TabStop = false;
-            this.btnBuscaProducto.Text = "Elegir";
-            this.btnBuscaProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscaProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscaProducto.UseVisualStyleBackColor = false;
-            this.btnBuscaProducto.Click += new System.EventHandler(this.btnBuscaProducto_Click);
-            // 
             // btnAgrega
             // 
             this.btnAgrega.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -800,7 +819,7 @@
             this.btnAgrega.IconColor = System.Drawing.Color.White;
             this.btnAgrega.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgrega.IconSize = 25;
-            this.btnAgrega.Location = new System.Drawing.Point(244, 105);
+            this.btnAgrega.Location = new System.Drawing.Point(244, 146);
             this.btnAgrega.Name = "btnAgrega";
             this.btnAgrega.Size = new System.Drawing.Size(116, 32);
             this.btnAgrega.TabIndex = 84;
@@ -816,7 +835,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(30, 44);
+            this.label10.Location = new System.Drawing.Point(58, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 14);
             this.label10.TabIndex = 82;
@@ -828,35 +847,22 @@
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidad.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCantidad.Location = new System.Drawing.Point(31, 114);
+            this.lblCantidad.Location = new System.Drawing.Point(59, 96);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(70, 14);
             this.lblCantidad.TabIndex = 82;
             this.lblCantidad.Text = "Cantidad:";
             // 
-            // tbCantidad
-            // 
-            this.tbCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCantidad.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCantidad.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCantidad.Location = new System.Drawing.Point(107, 112);
-            this.tbCantidad.Name = "tbCantidad";
-            this.tbCantidad.Size = new System.Drawing.Size(122, 22);
-            this.tbCantidad.TabIndex = 82;
-            this.tbCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCantidad_KeyPress);
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.btnBuscarPc);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.tbDestinatario);
             this.groupBox1.Controls.Add(this.tbIdDestinatario);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnBuscarPC);
             this.groupBox1.Controls.Add(this.rbEntrada);
             this.groupBox1.Controls.Add(this.rbSalida);
             this.groupBox1.Controls.Add(this.tbNumRemito);
@@ -871,6 +877,30 @@
             this.groupBox1.TabIndex = 87;
             this.groupBox1.TabStop = false;
             // 
+            // btnBuscarPc
+            // 
+            this.btnBuscarPc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscarPc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscarPc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarPc.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscarPc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscarPc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscarPc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscarPc.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarPc.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnBuscarPc.IconColor = System.Drawing.Color.White;
+            this.btnBuscarPc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarPc.IconSize = 25;
+            this.btnBuscarPc.Location = new System.Drawing.Point(331, 49);
+            this.btnBuscarPc.Name = "btnBuscarPc";
+            this.btnBuscarPc.Size = new System.Drawing.Size(29, 29);
+            this.btnBuscarPc.TabIndex = 171;
+            this.btnBuscarPc.TabStop = false;
+            this.btnBuscarPc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscarPc.UseVisualStyleBackColor = false;
+            this.btnBuscarPc.Click += new System.EventHandler(this.btnBuscarPc_Click);
+            // 
             // dtpFecha
             // 
             this.dtpFecha.BackColor = System.Drawing.Color.Transparent;
@@ -882,7 +912,7 @@
             this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(744, 65);
+            this.dtpFecha.Location = new System.Drawing.Point(744, 48);
             this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha.Name = "dtpFecha";
@@ -902,7 +932,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(20, 28);
+            this.label11.Location = new System.Drawing.Point(58, 30);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 14);
             this.label11.TabIndex = 89;
@@ -915,10 +945,10 @@
             this.tbDestinatario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbDestinatario.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDestinatario.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbDestinatario.Location = new System.Drawing.Point(107, 25);
+            this.tbDestinatario.Location = new System.Drawing.Point(61, 54);
             this.tbDestinatario.Name = "tbDestinatario";
             this.tbDestinatario.ReadOnly = true;
-            this.tbDestinatario.Size = new System.Drawing.Size(253, 22);
+            this.tbDestinatario.Size = new System.Drawing.Size(264, 22);
             this.tbDestinatario.TabIndex = 89;
             // 
             // tbIdDestinatario
@@ -928,7 +958,7 @@
             this.tbIdDestinatario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbIdDestinatario.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIdDestinatario.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbIdDestinatario.Location = new System.Drawing.Point(13, 45);
+            this.tbIdDestinatario.Location = new System.Drawing.Point(6, 103);
             this.tbIdDestinatario.Name = "tbIdDestinatario";
             this.tbIdDestinatario.Size = new System.Drawing.Size(88, 15);
             this.tbIdDestinatario.TabIndex = 87;
@@ -940,7 +970,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(659, 28);
+            this.label2.Location = new System.Drawing.Point(621, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 14);
             this.label2.TabIndex = 53;
@@ -952,36 +982,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(450, 28);
+            this.label1.Location = new System.Drawing.Point(415, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 14);
             this.label1.TabIndex = 52;
             this.label1.Text = "Tipo de Remito:";
-            // 
-            // btnBuscarPC
-            // 
-            this.btnBuscarPC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscarPC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarPC.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscarPC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscarPC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscarPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarPC.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPC.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarPC.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnBuscarPC.IconColor = System.Drawing.Color.White;
-            this.btnBuscarPC.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarPC.IconSize = 5;
-            this.btnBuscarPC.Location = new System.Drawing.Point(302, 55);
-            this.btnBuscarPC.Name = "btnBuscarPC";
-            this.btnBuscarPC.Size = new System.Drawing.Size(58, 22);
-            this.btnBuscarPC.TabIndex = 82;
-            this.btnBuscarPC.TabStop = false;
-            this.btnBuscarPC.Text = "Elegir";
-            this.btnBuscarPC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarPC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarPC.UseVisualStyleBackColor = false;
-            this.btnBuscarPC.Click += new System.EventHandler(this.btnBuscarPC_Click);
             // 
             // rbEntrada
             // 
@@ -989,7 +994,7 @@
             this.rbEntrada.AutoSize = true;
             this.rbEntrada.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbEntrada.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbEntrada.Location = new System.Drawing.Point(472, 55);
+            this.rbEntrada.Location = new System.Drawing.Point(418, 55);
             this.rbEntrada.Name = "rbEntrada";
             this.rbEntrada.Size = new System.Drawing.Size(76, 17);
             this.rbEntrada.TabIndex = 51;
@@ -1003,7 +1008,7 @@
             this.rbSalida.AutoSize = true;
             this.rbSalida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbSalida.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbSalida.Location = new System.Drawing.Point(472, 78);
+            this.rbSalida.Location = new System.Drawing.Point(418, 78);
             this.rbSalida.Name = "rbSalida";
             this.rbSalida.Size = new System.Drawing.Size(65, 17);
             this.rbSalida.TabIndex = 51;
@@ -1017,7 +1022,7 @@
             this.tbNumRemito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbNumRemito.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNumRemito.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbNumRemito.Location = new System.Drawing.Point(744, 26);
+            this.tbNumRemito.Location = new System.Drawing.Point(603, 54);
             this.tbNumRemito.Name = "tbNumRemito";
             this.tbNumRemito.Size = new System.Drawing.Size(116, 22);
             this.tbNumRemito.TabIndex = 49;
@@ -1029,7 +1034,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFecha.Location = new System.Drawing.Point(687, 73);
+            this.lblFecha.Location = new System.Drawing.Point(773, 30);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(51, 14);
             this.lblFecha.TabIndex = 43;
@@ -1193,22 +1198,22 @@
             this.dgvProveedor.AllowUserToDeleteRows = false;
             this.dgvProveedor.AllowUserToResizeColumns = false;
             this.dgvProveedor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvProveedor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvProveedor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProveedor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProveedor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProveedor.ColumnHeadersVisible = false;
             this.dgvProveedor.EnableHeadersVisualStyles = false;
@@ -1220,13 +1225,13 @@
             this.dgvProveedor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProveedor.RowHeadersVisible = false;
             this.dgvProveedor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvProveedor.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvProveedor.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProveedor.Size = new System.Drawing.Size(900, 419);
             this.dgvProveedor.TabIndex = 86;
@@ -1471,22 +1476,22 @@
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AllowUserToResizeColumns = false;
             this.dgvProductos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProductos.ColumnHeadersVisible = false;
             this.dgvProductos.EnableHeadersVisualStyles = false;
@@ -1498,13 +1503,13 @@
             this.dgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(900, 425);
             this.dgvProductos.TabIndex = 96;
@@ -1648,16 +1653,13 @@
         private System.Windows.Forms.TextBox tbNumRemito;
         private System.Windows.Forms.Label lblFecha;
         public System.Windows.Forms.TextBox tbIdDestinatario;
-        private FontAwesome.Sharp.IconButton btnBuscarPC;
         private System.Windows.Forms.GroupBox gbDetalleRem;
         private System.Windows.Forms.DataGridView dgvDetRem;
         public System.Windows.Forms.TextBox tbIDProducto;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnQuitar;
-        private FontAwesome.Sharp.IconButton btnBuscaProducto;
         private FontAwesome.Sharp.IconButton btnAgrega;
         private System.Windows.Forms.Label lblCantidad;
-        private System.Windows.Forms.TextBox tbCantidad;
         private System.Windows.Forms.TabPage tabProveedores;
         private System.Windows.Forms.Panel panelProveedores;
         private System.Windows.Forms.TabPage tabProductos;
@@ -1715,5 +1717,8 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
+        private FontAwesome.Sharp.IconButton btnBuscaProducto;
+        private FontAwesome.Sharp.IconButton btnBuscarPc;
+        private Guna.UI.WinForms.GunaNumeric tbCantidad;
     }
 }

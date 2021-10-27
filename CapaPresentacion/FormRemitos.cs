@@ -113,6 +113,10 @@ namespace CapaPresentacion
             DTDetallesRemito.Rows.Clear();
             LimpiarCamposProductos();
             LimpiarEncabezadoRemito();
+            this.dgvProductos.Columns.Clear();
+            this.dgvProveedor.Columns.Clear();
+            panelProductos.Enabled = false;
+            panelProductos.Enabled = false;
         }
 
 
@@ -143,26 +147,13 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-
-        private void btnBuscarPC_Click(object sender, EventArgs e)
-        {
-            panelProveedores.Enabled = true;
-            tabRemitos.SelectedTab = tabProveedores;
-            CargarGrillaProveedores();
-        }
-
-        private void btnBuscaProducto_Click(object sender, EventArgs e)
-        {
-            panelProductos.Enabled = true;
-            tabRemitos.SelectedTab = tabProductos;
-            CargarGrillaProductos();
-        }       
+         
 
         public static int contadorFila = 0;
 
         private void btnAgrega_Click(object sender, EventArgs e)
         {
-            if (tbCantidad.Text != "" && tbProducto.Text != "")
+            if (tbCantidad.Value != 0 && tbProducto.Text != "")
             {
                 bool existe = false;
                 int numeroFila = 0;
@@ -173,7 +164,7 @@ namespace CapaPresentacion
 
                     row["ID_PRODUCTO"] = Convert.ToInt32(tbIDProducto.Text);
                     row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                    row["CANTIDAD"] = Convert.ToInt32(tbCantidad.Text);
+                    row["CANTIDAD"] = tbCantidad.Value;
                     //dgvDetRem.Columns[3].Visible = false;
 
                     DTDetallesRemito.Rows.Add(row);
@@ -192,7 +183,7 @@ namespace CapaPresentacion
                     }
                     if (existe == true)
                     {
-                        dgvDetRem.Rows[numeroFila].Cells[2].Value = Convert.ToInt32(tbCantidad.Text) + Convert.ToInt32(dgvDetRem.Rows[numeroFila].Cells[2].Value);
+                        dgvDetRem.Rows[numeroFila].Cells[2].Value = tbCantidad.Value + Convert.ToInt32(dgvDetRem.Rows[numeroFila].Cells[2].Value);
                         LimpiarCamposProductos();
                     }
                     else
@@ -201,7 +192,7 @@ namespace CapaPresentacion
 
                         row["ID_PRODUCTO"] = Convert.ToInt32(tbIDProducto.Text);
                         row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                        row["CANTIDAD"] = Convert.ToInt32(tbCantidad.Text);
+                        row["CANTIDAD"] = tbCantidad.Value;
 
                         DTDetallesRemito.Rows.Add(row);
                         LimpiarCamposProductos();
@@ -217,7 +208,7 @@ namespace CapaPresentacion
 
         private void LimpiarCamposProductos()
         {
-            tbCantidad.Text = "";
+            tbCantidad.Value = 1;
             tbIDProducto.Text = "";
             tbProducto.Text = "";
         }
@@ -335,6 +326,7 @@ namespace CapaPresentacion
             tbIdDestinatario.Text = dgvProveedor.CurrentRow.Cells["CUIT"].Value.ToString();
             tbDestinatario.Text = dgvProveedor.CurrentRow.Cells["EMPRESA"].Value.ToString()+" - "+ dgvProveedor.CurrentRow.Cells["APELLIDO"].Value.ToString() + ", " + dgvProveedor.CurrentRow.Cells["NOMBRE"].Value.ToString();
             tabRemitos.SelectedTab = tabRemito;
+            this.dgvProveedor.Columns.Clear();
             panelProveedores.Enabled = false;
         }     
 
@@ -345,7 +337,9 @@ namespace CapaPresentacion
             tbIDProducto.Text = dgvProductos.CurrentRow.Cells[0].Value.ToString();
             tbProducto.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
             tabRemitos.SelectedTab = tabRemito;
+            this.dgvProductos.Columns.Clear();
             panelProveedores.Enabled = false;
+            tbCantidad.Value = 1;
             tbCantidad.Focus();
         }
 
@@ -523,18 +517,32 @@ namespace CapaPresentacion
         {
             if (tbProducto.Text != "")
             {
-                tbCantidad.Text = "1";
+                tbCantidad.Value = 1;
             }
         }
 
-        private void tbCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        
+
+        private void btnBuscaProducto_Click_1(object sender, EventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            panelProductos.Enabled = true;
+            tabRemitos.SelectedTab = tabProductos;
+            CargarGrillaProductos();
+        }
+
+        private void btnBuscarPc_Click(object sender, EventArgs e)
+        {
+            panelProveedores.Enabled = true;
+            tabRemitos.SelectedTab = tabProveedores;
+            CargarGrillaProveedores();
+        }
+        /*
+         if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
                 MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
-        }
+         */
     }
 }

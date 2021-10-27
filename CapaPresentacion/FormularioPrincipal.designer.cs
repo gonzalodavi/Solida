@@ -615,7 +615,6 @@
             // 
             this.btnOPago.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOPago.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOPago.Enabled = false;
             this.btnOPago.FlatAppearance.BorderSize = 0;
             this.btnOPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnOPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

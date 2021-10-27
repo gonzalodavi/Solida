@@ -97,6 +97,9 @@ namespace CapaPresentacion
             tbTotalIVA.Text = "";
             chekConsumidorFinal.Checked = false;
             chekConsumidorFinal.Checked = true;
+            this.dgvClientes.Columns.Clear();
+            this.dgvProductos.Columns.Clear();
+
         }
 
         private void LimpiarDatosCarga()
@@ -108,6 +111,9 @@ namespace CapaPresentacion
             tbSubtotal.Text = "";
             tbSubtotalIVA.Text = "";
             tbIDprod.Text = "";
+            this.dgvClientes.Columns.Clear();
+            this.dgvProductos.Columns.Clear();
+
         }
 
         private void CargarSucursal()

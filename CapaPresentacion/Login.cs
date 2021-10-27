@@ -108,8 +108,25 @@ namespace Presentacion
 
         private void btnRecupera_Click(object sender, EventArgs e)
         {
-            var f = new FormRecuperoClave();
-            f.ShowDialog();
+            Form formBG2 = new Form();
+            using (FormRecuperoClave mm = new FormRecuperoClave())
+            {
+                formBG2.StartPosition = FormStartPosition.Manual;
+                formBG2.FormBorderStyle = FormBorderStyle.None;
+                formBG2.Opacity = .70d;
+                formBG2.BackColor = Color.Black;
+                formBG2.WindowState = FormWindowState.Maximized;
+                formBG2.TopMost = true;
+                formBG2.Location = this.Location;
+                formBG2.ShowInTaskbar = false;
+                formBG2.Show();
+
+                mm.Owner = formBG2;
+                mm.ShowDialog();
+
+                formBG2.Dispose();
+            }
+
         }
 
 
