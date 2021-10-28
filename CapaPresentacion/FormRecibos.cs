@@ -70,70 +70,77 @@ namespace CapaPresentacion
 
         private void btnAceptaRecibo_Click(object sender, EventArgs e)
         {
-            decimal totrec = Convert.ToDecimal(lblTotalRecibo.Text);
-            if (totrec <= 0 || tbNumRecibo.Text == "")
+            if (lblTotalRecibo.Text != "")
             {
-                MensajeError("Ingrese Importe y numero de Recibo");
-            }
-            else
-            {
-                try
+                decimal totrec = Convert.ToDecimal(lblTotalRecibo.Text);
+                if (totrec <= 0 || tbNumRecibo.Text == "")
                 {
-                    Decimal efectivo = 0, valores = 0, banco = 0;
-                    if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+                    MensajeError("Ingrese Importe y numero de Recibo");
+                }
+                else
+                {
+                    try
                     {
-                        efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
-                    }
-                    if (tbValores.Text != "," && tbValores.Text != "")
-                    {
-                        valores = Convert.ToDecimal(tbValores.Text.ToString());
-                    }
-                    if (tbBanco.Text != "," && tbBanco.Text != "")
-                    {
-                        banco = Convert.ToDecimal(tbBanco.Text.ToString());
-                    }
-                    Decimal Suma = efectivo + valores + banco;
-
-                    lblTotalRecibo.Text = Suma.ToString("0.00");
-
-                    string rpta = "";
-
-                    DialogResult Opcion;
-
-                    Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (Opcion == DialogResult.OK)
-                    {
-                        string Estado = "ACTIVO";
-                        rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, cbCliente.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores, banco, Suma, tbDetalleRecibo.Text, Estado);
-                        decimal debe = 0, haber = Suma;
-
-                        if (rpta.Equals("OK"))
+                        Decimal efectivo = 0, valores = 0, banco = 0;
+                        if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
                         {
-                            this.MensajeOk("Se Generó con éxito el Comprobante");
-                            rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe, haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
+                            efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+                        }
+                        if (tbValores.Text != "," && tbValores.Text != "")
+                        {
+                            valores = Convert.ToDecimal(tbValores.Text.ToString());
+                        }
+                        if (tbBanco.Text != "," && tbBanco.Text != "")
+                        {
+                            banco = Convert.ToDecimal(tbBanco.Text.ToString());
+                        }
+                        Decimal Suma = efectivo + valores + banco;
+
+                        lblTotalRecibo.Text = Suma.ToString("0.00");
+
+                        string rpta = "";
+
+                        DialogResult Opcion;
+
+                        Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (Opcion == DialogResult.OK)
+                        {
+                            string Estado = "ACTIVO";
+                            rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, cbCliente.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores, banco, Suma, tbDetalleRecibo.Text, Estado);
+                            decimal debe = 0, haber = Suma;
+
                             if (rpta.Equals("OK"))
                             {
-                                this.MensajeOk("Se registro en cuenta corriente");
+                                this.MensajeOk("Se Generó con éxito el Comprobante");
+                                rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe, haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
+                                if (rpta.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se registro en cuenta corriente");
+                                }
+                                else
+                                {
+                                    this.MensajeError(rpta);
+                                }
+                                ResetRecibo();
+                                CargarGrillaRecibos();
+                                tabRecibos.SelectedTab = tabConsultaRecibos;
                             }
                             else
                             {
                                 this.MensajeError(rpta);
                             }
-                            ResetRecibo();
-                            CargarGrillaRecibos();
-                            tabRecibos.SelectedTab = tabConsultaRecibos;
-                        }
-                        else
-                        {
-                            this.MensajeError(rpta);
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
-                }
-            }            
+            }
+            else
+            {
+                MensajeError("Por Favor Ingrese un Importe");
+            }                   
         }
 
         private void ResetRecibo()
@@ -345,8 +352,8 @@ namespace CapaPresentacion
             decimal suma = 0;
             foreach (DataGridViewRow row in dgvDetCtaCte.Rows)
             {
-                if (row.Cells["TOTAL"].Value != null)
-                    suma += (Decimal)row.Cells["TOTAL"].Value;
+                if (row.Cells["IMPORTE"].Value != null)
+                    suma += (Decimal)row.Cells["IMPORTE"].Value;
             }
             decimal saldo = obsaldo.MostrarSaldo(cbCliente.SelectedValue.ToString());
 

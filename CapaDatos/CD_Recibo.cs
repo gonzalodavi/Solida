@@ -412,5 +412,299 @@ namespace CapaDatos
             da.Dispose();
             return dt;
         }
+
+
+        //METODO MOSTRAR ORDEN DE PAGO
+
+        public DataTable MostrarOP()
+        {
+            DataTable DtResultado = new DataTable("oPagos");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarOPagos";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
+        public DataTable MostrarAnuladosOP()
+        {
+            DataTable DtResultado = new DataTable("oPagosA");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarOPagosAnulados";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
+        //METODO INSERTAR
+        public string InsertarOP(CD_Recibo OPago)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Insertar_OPago";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParId = new SqlParameter();
+                ParId.ParameterName = "@id";
+                ParId.SqlDbType = SqlDbType.Int;
+                ParId.Direction = ParameterDirection.Output;
+                SqlCmd.Parameters.Add(ParId);
+
+                SqlParameter ParNroOPago = new SqlParameter();
+                ParNroOPago.ParameterName = "@nroOPago";
+                ParNroOPago.SqlDbType = SqlDbType.VarChar;
+                ParNroOPago.Size = 20;
+                ParNroOPago.Value = OPago.NroRecibo;
+                SqlCmd.Parameters.Add(ParNroOPago);
+
+                SqlParameter ParFecha = new SqlParameter();
+                ParFecha.ParameterName = "@fecha";
+                ParFecha.SqlDbType = SqlDbType.Date;
+                ParFecha.Value = OPago.Fecha;
+                SqlCmd.Parameters.Add(ParFecha);
+
+                SqlParameter ParCuit = new SqlParameter();
+                ParCuit.ParameterName = "@cuit";
+                ParCuit.SqlDbType = SqlDbType.VarChar;
+                ParCuit.Size = 50;
+                ParCuit.Value = OPago.Dni;
+                SqlCmd.Parameters.Add(ParCuit);
+
+                SqlParameter ParUsuario = new SqlParameter();
+                ParUsuario.ParameterName = "@usuario";
+                ParUsuario.SqlDbType = SqlDbType.Int;
+                ParUsuario.Value = OPago.User;
+                SqlCmd.Parameters.Add(ParUsuario);
+
+                SqlParameter ParEfectivo = new SqlParameter();
+                ParEfectivo.ParameterName = "@efectivo";
+                ParEfectivo.SqlDbType = SqlDbType.Money;
+                ParEfectivo.Value = OPago.Efectivo;
+                SqlCmd.Parameters.Add(ParEfectivo);
+
+                SqlParameter ParValores = new SqlParameter();
+                ParValores.ParameterName = "@valores";
+                ParValores.SqlDbType = SqlDbType.Money;
+                ParValores.Value = OPago.Valores;
+                SqlCmd.Parameters.Add(ParValores);
+
+                SqlParameter ParBanco = new SqlParameter();
+                ParBanco.ParameterName = "@banco";
+                ParBanco.SqlDbType = SqlDbType.Money;
+                ParBanco.Value = OPago.Banco;
+                SqlCmd.Parameters.Add(ParBanco);
+
+                SqlParameter ParTotal = new SqlParameter();
+                ParTotal.ParameterName = "@total";
+                ParTotal.SqlDbType = SqlDbType.Money;
+                ParTotal.Value = OPago.Total;
+                SqlCmd.Parameters.Add(ParTotal);
+
+                SqlParameter ParDetalle = new SqlParameter();
+                ParDetalle.ParameterName = "@detalle";
+                ParDetalle.SqlDbType = SqlDbType.VarChar;
+                ParDetalle.Size = 500;
+                ParDetalle.Value = OPago.Detalle;
+                SqlCmd.Parameters.Add(ParDetalle);
+
+                SqlParameter ParEstado = new SqlParameter();
+                ParEstado.ParameterName = "@estado";
+                ParEstado.SqlDbType = SqlDbType.VarChar;
+                ParEstado.Size = 15;
+                ParEstado.Value = OPago.Estado;
+                SqlCmd.Parameters.Add(ParEstado);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                if (rpta.Equals("OK"))
+                {
+                    this.Id = Convert.ToInt32(SqlCmd.Parameters["@id"].Value);
+
+                    AumentarSaldoProveedor(OPago.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+        public void AnularOPago(CD_Recibo oPago)
+        {
+            SqlCommand command = new SqlCommand("AnularOPago", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            conectar.Open();
+            command.Parameters.AddWithValue("@idOPago", oPago.Id);
+            command.ExecuteNonQuery();
+            conectar.Close();
+            DisminuirSaldoProveedor(oPago.Id);
+        }
+
+        public string DisminuirSaldoProveedor(int idOPago)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "DisminuirSaldo_Proveedor";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdOPago = new SqlParameter();
+                ParIdOPago.ParameterName = "@id";
+                ParIdOPago.SqlDbType = SqlDbType.Int;
+                ParIdOPago.Value = idOPago;
+                SqlCmd.Parameters.Add(ParIdOPago);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Disminuyó el saldo del Proveedor";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
+        public string AumentarSaldoProveedor(int idOPago)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "AumentarSaldo_Proveedor";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdOPago = new SqlParameter();
+                ParIdOPago.ParameterName = "@id";
+                ParIdOPago.SqlDbType = SqlDbType.Int;
+                ParIdOPago.Value = idOPago;
+                SqlCmd.Parameters.Add(ParIdOPago);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Aumento el saldo del Proveedor";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+        public int ConsultarIDOPago()
+        {
+            int numero = 0;
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarUltimaOPago";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                numero = Convert.ToInt32(leer["NRO_OPAGO"].ToString());
+            }
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return numero;
+        }
+
+        public DataTable BuscarRegistrosOP(string fechainicial, string fechafin)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("BuscarOpagosPorFecha", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@fechainicio", fechainicial);
+            command.Parameters.AddWithValue("@fechafin", fechafin);
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
+        }
+
+        public DataTable BuscarRegistrosAnuladosOP(string fechainicial, string fechafin)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("BuscarOPagosPorFechaAnulados", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@fechainicio", fechainicial);
+            command.Parameters.AddWithValue("@fechafin", fechafin);
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
+        }
     }
 }

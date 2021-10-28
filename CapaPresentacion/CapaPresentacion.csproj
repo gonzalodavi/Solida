@@ -193,6 +193,12 @@
     <Compile Include="FormNotaDBCR.Designer.cs">
       <DependentUpon>FormNotaDBCR.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOPagos.Designer.cs">
+      <DependentUpon>FormOPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNotaDBCR.resx">
       <DependentUpon>FormNotaDBCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOPagos.resx">
+      <DependentUpon>FormOPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>

@@ -330,7 +330,8 @@ namespace Presentacion
 
         private void btnOPago_Click(object sender, EventArgs e)
         {
-            //hideSubMenu();
+            hideSubMenu();
+            openChildForm(new FormOPagos());
         }
 
         private void btnRemitos_Click(object sender, EventArgs e)
