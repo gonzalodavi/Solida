@@ -122,7 +122,7 @@ namespace CapaDatos
             leer = comando.ExecuteReader();
             if (leer.Read())
             {
-                numero = Convert.ToInt32(leer["ID_REMITO"].ToString());
+                numero = Convert.ToInt32(leer["NRO_REMITO"].ToString());
             }
             comando.Parameters.Clear();
             conexion.CerrarConexion();

@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.tabRecibos = new System.Windows.Forms.TabControl();
@@ -62,6 +62,10 @@
             this.dgvRecibos = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.tabNuevoRecibo = new System.Windows.Forms.TabPage();
+            this.lblSaldoPendiente = new System.Windows.Forms.TextBox();
+            this.lblSaldo = new System.Windows.Forms.TextBox();
+            this.lblTotalRecibo = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.btnAgregaTransf = new FontAwesome.Sharp.IconButton();
             this.btnAgregaValores = new FontAwesome.Sharp.IconButton();
             this.dtpFechaRecibo = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -89,6 +93,7 @@
             this.lbl3 = new System.Windows.Forms.Label();
             this.btnAceptaRecibo = new FontAwesome.Sharp.IconButton();
             this.tabValores = new System.Windows.Forms.TabPage();
+            this.tbImporteCheq = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -121,11 +126,6 @@
             this.dgvTransferencias = new System.Windows.Forms.DataGridView();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.tbImporteCheq = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.lblTotalRecibo = new System.Windows.Forms.TextBox();
-            this.lblSaldoPendiente = new System.Windows.Forms.TextBox();
-            this.lblSaldo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabRecibos.SuspendLayout();
             this.tabConsultaRecibos.SuspendLayout();
@@ -476,22 +476,22 @@
             this.dgvRecibos.AllowUserToDeleteRows = false;
             this.dgvRecibos.AllowUserToResizeColumns = false;
             this.dgvRecibos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvRecibos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvRecibos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
             this.dgvRecibos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvRecibos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecibos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvRecibos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRecibos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvRecibos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dgvRecibos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRecibos.ColumnHeadersVisible = false;
             this.dgvRecibos.EnableHeadersVisualStyles = false;
@@ -503,13 +503,13 @@
             this.dgvRecibos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvRecibos.RowHeadersVisible = false;
             this.dgvRecibos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvRecibos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecibos.Size = new System.Drawing.Size(612, 400);
             this.dgvRecibos.TabIndex = 86;
@@ -580,6 +580,66 @@
             this.tabNuevoRecibo.Size = new System.Drawing.Size(948, 578);
             this.tabNuevoRecibo.TabIndex = 4;
             this.tabNuevoRecibo.Text = "Nuevo Recibo";
+            // 
+            // lblSaldoPendiente
+            // 
+            this.lblSaldoPendiente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSaldoPendiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.lblSaldoPendiente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSaldoPendiente.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoPendiente.ForeColor = System.Drawing.Color.Yellow;
+            this.lblSaldoPendiente.Location = new System.Drawing.Point(212, 199);
+            this.lblSaldoPendiente.Name = "lblSaldoPendiente";
+            this.lblSaldoPendiente.ReadOnly = true;
+            this.lblSaldoPendiente.Size = new System.Drawing.Size(113, 22);
+            this.lblSaldoPendiente.TabIndex = 174;
+            this.lblSaldoPendiente.TabStop = false;
+            this.lblSaldoPendiente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblSaldo
+            // 
+            this.lblSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSaldo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.lblSaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSaldo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblSaldo.Location = new System.Drawing.Point(763, 513);
+            this.lblSaldo.Name = "lblSaldo";
+            this.lblSaldo.ReadOnly = true;
+            this.lblSaldo.Size = new System.Drawing.Size(113, 22);
+            this.lblSaldo.TabIndex = 173;
+            this.lblSaldo.TabStop = false;
+            this.lblSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblSaldo.TextChanged += new System.EventHandler(this.lblTotalRecibo_TextChanged_1);
+            // 
+            // lblTotalRecibo
+            // 
+            this.lblTotalRecibo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.lblTotalRecibo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotalRecibo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRecibo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblTotalRecibo.Location = new System.Drawing.Point(455, 199);
+            this.lblTotalRecibo.Name = "lblTotalRecibo";
+            this.lblTotalRecibo.ReadOnly = true;
+            this.lblTotalRecibo.Size = new System.Drawing.Size(113, 22);
+            this.lblTotalRecibo.TabIndex = 173;
+            this.lblTotalRecibo.TabStop = false;
+            this.lblTotalRecibo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblTotalRecibo.TextChanged += new System.EventHandler(this.lblTotalRecibo_TextChanged_1);
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label28.AutoEllipsis = true;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Gold;
+            this.label28.Location = new System.Drawing.Point(64, 202);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(147, 16);
+            this.label28.TabIndex = 171;
+            this.label28.Text = "Saldo Pendiente:  $";
             // 
             // btnAgregaTransf
             // 
@@ -755,22 +815,22 @@
             this.dgvDetCtaCte.AllowUserToDeleteRows = false;
             this.dgvDetCtaCte.AllowUserToResizeColumns = false;
             this.dgvDetCtaCte.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvDetCtaCte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvDetCtaCte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvDetCtaCte.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvDetCtaCte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetCtaCte.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvDetCtaCte.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDetCtaCte.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDetCtaCte.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetCtaCte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetCtaCte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dgvDetCtaCte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetCtaCte.ColumnHeadersVisible = false;
             this.dgvDetCtaCte.EnableHeadersVisualStyles = false;
@@ -782,13 +842,13 @@
             this.dgvDetCtaCte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvDetCtaCte.RowHeadersVisible = false;
             this.dgvDetCtaCte.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDetCtaCte.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDetCtaCte.RowsDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvDetCtaCte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetCtaCte.Size = new System.Drawing.Size(823, 216);
             this.dgvDetCtaCte.TabIndex = 132;
@@ -808,6 +868,7 @@
             this.tbBanco.TabStop = false;
             this.tbBanco.Text = "0,00";
             this.tbBanco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbBanco.TextChanged += new System.EventHandler(this.tbBanco_TextChanged);
             this.tbBanco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbBanco_KeyPress);
             this.tbBanco.Leave += new System.EventHandler(this.tbBanco_Leave);
             // 
@@ -838,6 +899,7 @@
             this.tbValores.TabStop = false;
             this.tbValores.Text = "0,00";
             this.tbValores.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbValores.TextChanged += new System.EventHandler(this.tbValores_TextChanged);
             this.tbValores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValores_KeyPress);
             this.tbValores.Leave += new System.EventHandler(this.tbValores_Leave);
             // 
@@ -854,6 +916,7 @@
             this.tbEfectivo.TabStop = false;
             this.tbEfectivo.Text = "0,00";
             this.tbEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbEfectivo.TextChanged += new System.EventHandler(this.tbEfectivo_TextChanged);
             this.tbEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEfectivo_KeyPress);
             this.tbEfectivo.Leave += new System.EventHandler(this.tbEfectivo_Leave);
             // 
@@ -1055,6 +1118,22 @@
             this.tabValores.Size = new System.Drawing.Size(948, 578);
             this.tabValores.TabIndex = 5;
             this.tabValores.Text = "Valores";
+            // 
+            // tbImporteCheq
+            // 
+            this.tbImporteCheq.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbImporteCheq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tbImporteCheq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbImporteCheq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbImporteCheq.ForeColor = System.Drawing.Color.Yellow;
+            this.tbImporteCheq.Location = new System.Drawing.Point(773, 177);
+            this.tbImporteCheq.Name = "tbImporteCheq";
+            this.tbImporteCheq.ReadOnly = true;
+            this.tbImporteCheq.Size = new System.Drawing.Size(116, 22);
+            this.tbImporteCheq.TabIndex = 167;
+            this.tbImporteCheq.TabStop = false;
+            this.tbImporteCheq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbImporteCheq.Visible = false;
             // 
             // label27
             // 
@@ -1489,22 +1568,22 @@
             this.dgvValores.AllowUserToDeleteRows = false;
             this.dgvValores.AllowUserToResizeColumns = false;
             this.dgvValores.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvValores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvValores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dgvValores.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvValores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvValores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvValores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvValores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvValores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvValores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvValores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.dgvValores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvValores.ColumnHeadersVisible = false;
             this.dgvValores.EnableHeadersVisualStyles = false;
@@ -1516,13 +1595,13 @@
             this.dgvValores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvValores.RowHeadersVisible = false;
             this.dgvValores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvValores.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvValores.RowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvValores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvValores.Size = new System.Drawing.Size(863, 252);
             this.dgvValores.TabIndex = 134;
@@ -1545,22 +1624,22 @@
             this.dgvTransferencias.AllowUserToDeleteRows = false;
             this.dgvTransferencias.AllowUserToResizeColumns = false;
             this.dgvTransferencias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvTransferencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvTransferencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
             this.dgvTransferencias.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvTransferencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTransferencias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvTransferencias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTransferencias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTransferencias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.dgvTransferencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTransferencias.ColumnHeadersVisible = false;
             this.dgvTransferencias.EnableHeadersVisualStyles = false;
@@ -1572,13 +1651,13 @@
             this.dgvTransferencias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvTransferencias.RowHeadersVisible = false;
             this.dgvTransferencias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTransferencias.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTransferencias.RowsDefaultCellStyle = dataGridViewCellStyle36;
             this.dgvTransferencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTransferencias.Size = new System.Drawing.Size(582, 216);
             this.dgvTransferencias.TabIndex = 133;
@@ -1622,82 +1701,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(177, 18);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Recibos de Ingreso";
-            // 
-            // tbImporteCheq
-            // 
-            this.tbImporteCheq.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbImporteCheq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.tbImporteCheq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbImporteCheq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbImporteCheq.ForeColor = System.Drawing.Color.Yellow;
-            this.tbImporteCheq.Location = new System.Drawing.Point(773, 177);
-            this.tbImporteCheq.Name = "tbImporteCheq";
-            this.tbImporteCheq.ReadOnly = true;
-            this.tbImporteCheq.Size = new System.Drawing.Size(116, 22);
-            this.tbImporteCheq.TabIndex = 167;
-            this.tbImporteCheq.TabStop = false;
-            this.tbImporteCheq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbImporteCheq.Visible = false;
-            // 
-            // label28
-            // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label28.AutoEllipsis = true;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.Gold;
-            this.label28.Location = new System.Drawing.Point(64, 202);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(147, 16);
-            this.label28.TabIndex = 171;
-            this.label28.Text = "Saldo Pendiente:  $";
-            // 
-            // lblTotalRecibo
-            // 
-            this.lblTotalRecibo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTotalRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.lblTotalRecibo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTotalRecibo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRecibo.ForeColor = System.Drawing.Color.Yellow;
-            this.lblTotalRecibo.Location = new System.Drawing.Point(455, 199);
-            this.lblTotalRecibo.Name = "lblTotalRecibo";
-            this.lblTotalRecibo.ReadOnly = true;
-            this.lblTotalRecibo.Size = new System.Drawing.Size(113, 22);
-            this.lblTotalRecibo.TabIndex = 173;
-            this.lblTotalRecibo.TabStop = false;
-            this.lblTotalRecibo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.lblTotalRecibo.TextChanged += new System.EventHandler(this.lblTotalRecibo_TextChanged_1);
-            // 
-            // lblSaldoPendiente
-            // 
-            this.lblSaldoPendiente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSaldoPendiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.lblSaldoPendiente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSaldoPendiente.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoPendiente.ForeColor = System.Drawing.Color.Yellow;
-            this.lblSaldoPendiente.Location = new System.Drawing.Point(212, 199);
-            this.lblSaldoPendiente.Name = "lblSaldoPendiente";
-            this.lblSaldoPendiente.ReadOnly = true;
-            this.lblSaldoPendiente.Size = new System.Drawing.Size(113, 22);
-            this.lblSaldoPendiente.TabIndex = 174;
-            this.lblSaldoPendiente.TabStop = false;
-            this.lblSaldoPendiente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblSaldo
-            // 
-            this.lblSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSaldo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.lblSaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSaldo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldo.ForeColor = System.Drawing.Color.Yellow;
-            this.lblSaldo.Location = new System.Drawing.Point(763, 513);
-            this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.ReadOnly = true;
-            this.lblSaldo.Size = new System.Drawing.Size(113, 22);
-            this.lblSaldo.TabIndex = 173;
-            this.lblSaldo.TabStop = false;
-            this.lblSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.lblSaldo.TextChanged += new System.EventHandler(this.lblTotalRecibo_TextChanged_1);
             // 
             // FormRecibos
             // 

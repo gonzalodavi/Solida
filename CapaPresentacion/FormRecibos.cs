@@ -53,19 +53,19 @@ namespace CapaPresentacion
         private void ConsultaPorCheque()
         {
             string rpta = CN_Cheque.ConsultaSiExisteCheque("PENDIENTE");
-            if (rpta == "OK")
+            if (rpta.Equals("OK"))
             {
-                EliminarChequesPendientes();
+                
             }
             else
             {
-                if (rpta == "NO")
+                if (rpta.Equals("NO"))
                 {
-                    MensajeOk("No Hay Cheques COMO PENDIENTES");
+                    //MensajeOk("No Hay Cheques COMO PENDIENTES");
                 }
                 else
                 {
-                    MensajeError(rpta);
+                   // MensajeError(rpta);
                 }
             }
         }
@@ -98,7 +98,7 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void EliminarChequesPendientes()
+        /*private void EliminarChequesPendientes()
         {
             try
             {
@@ -117,7 +117,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-        }
+        }*/
 
         private void btnAceptaRecibo_Click(object sender, EventArgs e)
         {
@@ -171,12 +171,12 @@ namespace CapaPresentacion
                                 this.MensajeOk("Se Generó con éxito el Comprobante");
                                 if (valores > 0)
                                 {
-                                    CN_Cheque o = new CN_Cheque();
-                                    rpta1 = o.ConfirmarCheque();
+                                    
+                                    rpta1 = CN_Cheque.ConfirmarCheque("ACTIVO");
 
                                     if (rpta1.Equals("OK"))
                                     {
-                                        MensajeOk("Cheques Activos");
+                                        //MensajeOk("Cheques Activos");
                                     }
                                     else
                                     {
@@ -228,7 +228,6 @@ namespace CapaPresentacion
             tbCheqNumero.Text = "";
             tbCheqTitular.Text = "";
             tbCheqTotal.Text = "";
-            tbCheqBanco.Text = "0,00";
             dgvValores.Columns.Clear();
             cbCliente.Text = "Consumidor Final";
         }
@@ -490,6 +489,7 @@ namespace CapaPresentacion
         private void CrearTabla()
         {
             DTDetalles = new DataTable();
+            DTDetalles.Columns.Add("ID_CHEQUE", Type.GetType("System.Int32"));
             DTDetalles.Columns.Add("NUM_CHEQUE", Type.GetType("System.String"));
             DTDetalles.Columns.Add("FECHA_EMISION", Type.GetType("System.DateTime"));
             DTDetalles.Columns.Add("FECHA_CREDITO", Type.GetType("System.DateTime"));
@@ -500,7 +500,8 @@ namespace CapaPresentacion
 
             
             this.dgvValores.DataSource = DTDetalles;
-            //dgvDetVent.Columns["IDPRODUCTO"].Visible = false;
+
+            dgvValores.Columns["ID_CHEQUE"].Visible = false;
 
             /*this.dgvDetComp.Columns["PRODUCTO"].Visible = false;
             this.dgvDetComp.Columns["PRECIO"].Width = 50;
@@ -562,65 +563,12 @@ namespace CapaPresentacion
 
         private void InsertarCheque()
         {
-            bool existe = false;
-
-            if (contadorFila == 0)
+            try 
             {
-                DataRow row = DTDetalles.NewRow();
+                bool existe = false;
 
-                string numcheq = Convert.ToString(tbCheqNumero.Text);
-                DateTime fecE = Convert.ToDateTime(dtpCheqEmision.Text);
-                DateTime fecC = Convert.ToDateTime(dtpCheqCredito.Text);
-                string Bco = Convert.ToString(tbCheqBanco.Text);
-                string Titu = Convert.ToString(tbCheqTitular.Text);
-                string Bene = Convert.ToString(tbCheqBenef.Text);
-                decimal Import = Convert.ToDecimal(tbCheqImporte.Text);
-                string estad = "PENDIENTE";
-
-
-                row["NUM_CHEQUE"] = numcheq;
-                row["FECHA_EMISION"] = fecE;
-                row["FECHA_CREDITO"] = fecC;
-                row["BANCO"] = Bco;
-                row["TITULAR"] = Titu;
-                row["BENEF"] = Bene;
-                row["IMPORTE"] = Import;
-
-                DTDetalles.Rows.Add(row);
-
-                tbCheqImporte.Text = "0,00";
-                tbImporteCheq.Text = "";
-                tbCheqNumero.Text = (Convert.ToInt64(tbCheqNumero.Text) + 1).ToString();
-                contadorFila++;               
-
-                string rpta1 = CN_Cheque.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numcheq, fecE, fecC, Bco, Titu, Bene, Import, estad);
-
-                if (rpta1.Equals("OK"))
+                if (contadorFila == 0)
                 {
-                    MensajeOk("Cheque Insertado");
-                }
-                else 
-                {
-                    MensajeError(rpta1);
-                }
-            }
-            else
-            {
-                foreach (DataGridViewRow Fila in dgvValores.Rows)
-                {
-                    if (Fila.Cells[0].Value.ToString() == tbCheqNumero.Text && Fila.Cells[3].Value.ToString() == tbCheqBanco.Text)
-                    {
-                        existe = true;
-                    }
-                }
-                if (existe == true)
-                {
-                    MensajeError("El cheque a ingresar ya existe");
-                }
-                else
-                {
-                    DataRow row = DTDetalles.NewRow();
-
                     string numcheq = Convert.ToString(tbCheqNumero.Text);
                     DateTime fecE = Convert.ToDateTime(dtpCheqEmision.Text);
                     DateTime fecC = Convert.ToDateTime(dtpCheqCredito.Text);
@@ -630,42 +578,97 @@ namespace CapaPresentacion
                     decimal Import = Convert.ToDecimal(tbCheqImporte.Text);
                     string estad = "PENDIENTE";
 
-
-                    row["NUM_CHEQUE"] = numcheq;
-                    row["FECHA_EMISION"] = fecE;
-                    row["FECHA_CREDITO"] = fecC;
-                    row["BANCO"] = Bco;
-                    row["TITULAR"] = Titu;
-                    row["BENEF"] = Bene;
-                    row["IMPORTE"] = Import;
-
-                    DTDetalles.Rows.Add(row);
-
-                    tbCheqImporte.Text = "0,00";
-                    tbImporteCheq.Text = "";
-                    tbCheqNumero.Text = (Convert.ToInt64(tbCheqNumero.Text) + 1).ToString();
-                    contadorFila++;
-
                     string rpta1 = CN_Cheque.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numcheq, fecE, fecC, Bco, Titu, Bene, Import, estad);
 
                     if (rpta1.Equals("OK"))
                     {
-                        MensajeOk("Cheque Insertado");
+                        int id = CN_Cheque.ConsultaUltimoCheque();
+
+                        DataRow row = DTDetalles.NewRow();
+
+                        row["ID_CHEQUE"] = id;
+                        row["NUM_CHEQUE"] = numcheq;
+                        row["FECHA_EMISION"] = fecE;
+                        row["FECHA_CREDITO"] = fecC;
+                        row["BANCO"] = Bco;
+                        row["TITULAR"] = Titu;
+                        row["BENEF"] = Bene;
+                        row["IMPORTE"] = Import;
+
+                        DTDetalles.Rows.Add(row);
+
+                        tbCheqImporte.Text = "0,00";
+                        tbImporteCheq.Text = "";
+                        tbCheqNumero.Text = (Convert.ToInt64(tbCheqNumero.Text) + 1).ToString();
+                        contadorFila++;
                     }
                     else
                     {
                         MensajeError(rpta1);
                     }
                 }
+                else
+                {
+                    foreach (DataGridViewRow Fila in dgvValores.Rows)
+                    {
+                        if (Fila.Cells[0].Value.ToString() == tbCheqNumero.Text && Fila.Cells[3].Value.ToString() == tbCheqBanco.Text)
+                        {
+                            existe = true;
+                        }
+                    }
+                    if (existe == true)
+                    {
+                        MensajeError("El cheque a ingresar ya existe");
+                    }
+                    else
+                    {
+                        string numcheq = Convert.ToString(tbCheqNumero.Text);
+                        DateTime fecE = Convert.ToDateTime(dtpCheqEmision.Text);
+                        DateTime fecC = Convert.ToDateTime(dtpCheqCredito.Text);
+                        string Bco = Convert.ToString(tbCheqBanco.Text);
+                        string Titu = Convert.ToString(tbCheqTitular.Text);
+                        string Bene = Convert.ToString(tbCheqBenef.Text);
+                        decimal Import = Convert.ToDecimal(tbCheqImporte.Text);
+                        string estad = "PENDIENTE";
+
+                        string rpta1 = CN_Cheque.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numcheq, fecE, fecC, Bco, Titu, Bene, Import, estad);
+
+                        if (rpta1.Equals("OK"))
+                        {
+                            int id = CN_Cheque.ConsultaUltimoCheque();
+
+                            DataRow row = DTDetalles.NewRow();
+
+                            row["ID_CHEQUE"] = id;
+                            row["NUM_CHEQUE"] = numcheq;
+                            row["FECHA_EMISION"] = fecE;
+                            row["FECHA_CREDITO"] = fecC;
+                            row["BANCO"] = Bco;
+                            row["TITULAR"] = Titu;
+                            row["BENEF"] = Bene;
+                            row["IMPORTE"] = Import;
+
+                            DTDetalles.Rows.Add(row);
+
+                            tbCheqImporte.Text = "0,00";
+                            tbImporteCheq.Text = "";
+                            tbCheqNumero.Text = (Convert.ToInt64(tbCheqNumero.Text) + 1).ToString();
+                            contadorFila++;
+                        }
+                        else
+                        {
+                            MensajeError(rpta1);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeError("No se pudo cargar los datos por:\n\n" + ex);
             }
         }
 
-        private void LimpiarDatosCarga()
-        {
-            tbCheqImporte.Text = "";
-            tbCheqNumero.Text = (Convert.ToInt32(tbCheqNumero.Text) + 1).ToString();
-            
-        }
+
 
         private void tbCheqImporte_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -698,20 +701,35 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    int IndiceFila = dgvValores.CurrentCell.RowIndex;
-                    DataRow row = DTDetalles.Rows[IndiceFila];                                       
+                    DialogResult opcion;
+                    opcion = MessageBox.Show("Desea ELIMINAR el CHEQUE seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (opcion == DialogResult.OK)
+                    {
 
-                    DTDetalles.Rows.Remove(row);
-                    tbCheqImporte.Text = "0,00";
-                    tbImporteCheq.Text = "";
-                    contadorFila--;
-                    AcomodaTabla();
-                    SumaCheques();
-                    MessageBox.Show("Se elimino el cheque de la lista");
+                        int idCheq = Convert.ToInt32(dgvValores.CurrentRow.Cells["ID_CHEQUE"].Value.ToString());
+                        string rpta = CN_Cheque.EliminarCheq(idCheq);
+                        if (rpta.Equals("OK"))
+                        {
+                            int IndiceFila = dgvValores.CurrentCell.RowIndex;
+                            DataRow row = DTDetalles.Rows[IndiceFila];
+
+                            DTDetalles.Rows.Remove(row);
+                            tbCheqImporte.Text = "0,00";
+                            tbImporteCheq.Text = "";
+                            contadorFila--;
+                            AcomodaTabla();
+                            SumaCheques();
+                            MessageBox.Show("Se elimino el cheque de la lista");
+                        }
+                        else
+                        {
+                            MensajeError("No se pudo eliminar el cheque por: \n\n" + rpta);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo cargar los datos por:\n\n" + ex);
+                    MensajeError("No se pudo ejecutar la operacion:\n\n" + ex);
                 }
             }
             else
@@ -721,18 +739,7 @@ namespace CapaPresentacion
         }
 
         private void btnAgregaValores_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow ElRow in dgvValores.Rows)
-            {
-                string DetNumCheq = ElRow.Cells["NUM_CHEQUE"].ToString();
-                string DetNomBan = ElRow.Cells["BANCO"].ToString();
-                string DetImporte = ElRow.Cells["IMPORTE"].ToString();
-                
-                if (DetNomBan != "" && DetImporte != "" && DetNumCheq != "")
-                {
-                    tbDetalleRecibo.Text += "Valor: "+DetNumCheq + " - Banco: " +DetNomBan+" - $"+DetImporte+"\n";
-                }                
-            }
+        {           
             tabRecibos.SelectedTab = tabValores;
             tbCheqNumero.Focus();
         }
@@ -740,7 +747,19 @@ namespace CapaPresentacion
         private void btnGuardarValores_Click(object sender, EventArgs e)
         {
             if (dgvValores.SelectedRows.Count > 0)
-            {                
+            {
+                foreach (DataGridViewRow ElRow in dgvValores.Rows)
+                {
+                    string DetNumCheq = ElRow.Cells["NUM_CHEQUE"].Value.ToString();
+                    string DetNomBan = ElRow.Cells["BANCO"].Value.ToString();
+                    string DetFecC = Convert.ToDateTime(ElRow.Cells["FECHA_CREDITO"].Value).ToString("yyyy-MM-dd");
+                    string DetImporte = ElRow.Cells["IMPORTE"].Value.ToString();
+
+                    if (DetNomBan != "" && DetImporte != "" && DetNumCheq != "")
+                    {
+                        tbDetalleRecibo.Text += "Valor Nº " + DetNumCheq + " de Banco " + DetNomBan + " al " + DetFecC + " con importe $"+DetImporte+ " // ";
+                    }
+                }
                 dgvValores.Enabled = false;
                 tbValores.Text = tbCheqTotal.Text;
                 tabRecibos.SelectedTab = tabNuevoRecibo;
@@ -784,6 +803,61 @@ namespace CapaPresentacion
             }
         }
 
-        
+        private void tbValores_TextChanged(object sender, EventArgs e)
+        {
+            Decimal efectivo = 0, valores = 0, banco = 0;
+            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+            {
+                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            }
+            if (tbValores.Text != "," && tbValores.Text != "")
+            {
+                valores = Convert.ToDecimal(tbValores.Text.ToString());
+            }
+            if (tbBanco.Text != "," && tbBanco.Text != "")
+            {
+                banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            }
+            Decimal Suma = efectivo + valores + banco;
+            lblTotalRecibo.Text = Suma.ToString("0.00");
+        }
+
+        private void tbBanco_TextChanged(object sender, EventArgs e)
+        {
+            Decimal efectivo = 0, valores = 0, banco = 0;
+            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+            {
+                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            }
+            if (tbValores.Text != "," && tbValores.Text != "")
+            {
+                valores = Convert.ToDecimal(tbValores.Text.ToString());
+            }
+            if (tbBanco.Text != "," && tbBanco.Text != "")
+            {
+                banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            }
+            Decimal Suma = efectivo + valores + banco;
+            lblTotalRecibo.Text = Suma.ToString("0.00");
+        }
+
+        private void tbEfectivo_TextChanged(object sender, EventArgs e)
+        {
+            Decimal efectivo = 0, valores = 0, banco = 0;
+            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+            {
+                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            }
+            if (tbValores.Text != "," && tbValores.Text != "")
+            {
+                valores = Convert.ToDecimal(tbValores.Text.ToString());
+            }
+            if (tbBanco.Text != "," && tbBanco.Text != "")
+            {
+                banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            }
+            Decimal Suma = efectivo + valores + banco;
+            lblTotalRecibo.Text = Suma.ToString("0.00");
+        }
     }
 }

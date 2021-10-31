@@ -456,7 +456,6 @@
             // 
             this.btnInfCheques.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfCheques.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInfCheques.Enabled = false;
             this.btnInfCheques.FlatAppearance.BorderSize = 0;
             this.btnInfCheques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfCheques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

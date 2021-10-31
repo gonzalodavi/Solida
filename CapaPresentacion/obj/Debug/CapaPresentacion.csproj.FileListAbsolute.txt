@@ -276,3 +276,4 @@ G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormLocali
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormBarrio.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormOPagos.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\Reportes\rptComprobanteVenta.rdlc
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormCheques.resources

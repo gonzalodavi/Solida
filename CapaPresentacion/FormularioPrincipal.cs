@@ -360,6 +360,7 @@ namespace Presentacion
         private void btnInfCheques_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            openChildForm(new FormCheques());
         }
 
         private void btnInfVtas_Click(object sender, EventArgs e)

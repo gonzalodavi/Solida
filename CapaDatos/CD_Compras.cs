@@ -434,7 +434,7 @@ namespace CapaDatos
             leer = comando.ExecuteReader();
             if (leer.Read())
             {
-                numero = Convert.ToInt32(leer["ID_COMPRA"].ToString());
+                numero = Convert.ToInt32(leer["NUM_COMPRA"].ToString());
             }
             comando.Parameters.Clear();
             conexion.CerrarConexion();

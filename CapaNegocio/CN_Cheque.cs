@@ -10,6 +10,33 @@ namespace CapaNegocio
     {
         private CD_Cheque objetoCD = new CD_Cheque();
 
+        public static DataTable Mostrar(string estado)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.Estado = estado;
+            return Obj.Mostrar(Obj);
+        }
+        public static DataTable MostrarXFecha(string estado)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.Estado = estado;
+            return Obj.MostrarXFecha(Obj);
+        }
+
+        public static int CantidadCheques(string estado)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.Estado = estado;        
+            return Obj.CantidadCheques(Obj); ;
+        }
+
+        public static string TotalCheques(string estado)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.Estado = estado;
+            return Obj.TotalCheques(Obj); ;
+        }
+
         public static string Insertar(string numComprobante, string tipoComprob, string numcheq, DateTime fecE, DateTime fecC, string Bco, string Titu, string Bene, decimal Import, string estad)
         {
             CD_Cheque Obj = new CD_Cheque();
@@ -28,23 +55,37 @@ namespace CapaNegocio
             return Obj.Insertar(Obj);
         }
 
+        public static int ConsultaUltimoCheque()
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            int nro = Obj.ConsultarUltimoCheque();
+            return nro;
+        }
+
         public static string ConsultaSiExisteCheque(string estado)
         {
             CD_Cheque Obj = new CD_Cheque();
             string rpta = Obj.ConsultaExisteCheques(estado);
             return rpta;
         }
-
-        public string ConfirmarCheque()
+        public static string ConfirmarCheque(string estado)
         {
-            string rpta = objetoCD.ConfirmaCheque();
-            return rpta;
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.Estado = estado;
+            return Obj.ConfirmaCheque(Obj);
         }
 
         public string Eliminar_Cheques()
         {
             string rpta = objetoCD.Eliminar_Cheques();
             return rpta;
+        }
+
+        public static string EliminarCheq(int id)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.IdCheque = id;
+            return Obj.Eliminar(Obj);
         }
 
     }

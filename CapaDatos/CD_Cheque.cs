@@ -116,6 +116,137 @@ namespace CapaDatos
             this.Estado = estado;
         }
 
+        public DataTable Mostrar(CD_Cheque cheque)
+        {
+            DataTable DtResultado = new DataTable("cheques");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Mostrar_Cheques";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParEstado = new SqlParameter();
+                ParEstado.ParameterName = "@estado";
+                ParEstado.SqlDbType = SqlDbType.VarChar;
+                ParEstado.Size = 15;
+                ParEstado.Value = cheque.Estado;
+                SqlCmd.Parameters.Add(ParEstado);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
+        public DataTable MostrarXFecha(CD_Cheque cheque)
+        {
+            DataTable DtResultado = new DataTable("cheques");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Mostrar_ChequesXFecha";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParEstado = new SqlParameter();
+                ParEstado.ParameterName = "@estado";
+                ParEstado.SqlDbType = SqlDbType.VarChar;
+                ParEstado.Size = 15;
+                ParEstado.Value = cheque.Estado;
+                SqlCmd.Parameters.Add(ParEstado);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
+        public int CantidadCheques(CD_Cheque cheq)
+        {
+            int nro = 0;
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Mostrar_CantidadCheques";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParEstado = new SqlParameter();
+                ParEstado.ParameterName = "@estado";
+                ParEstado.SqlDbType = SqlDbType.VarChar;
+                ParEstado.Size = 15;
+                ParEstado.Value = cheq.Estado;
+                SqlCmd.Parameters.Add(ParEstado);
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    nro = Convert.ToInt32(registro["CANTIDAD"]);
+                }
+            }
+            catch
+            {
+                nro = 0;
+            }
+            return nro;
+        }
+
+        public string TotalCheques(CD_Cheque cheqs)
+        {
+            string total = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Mostrar_SaldoCheques";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParEstado = new SqlParameter();
+                ParEstado.ParameterName = "@estado";
+                ParEstado.SqlDbType = SqlDbType.VarChar;
+                ParEstado.Size = 15;
+                ParEstado.Value = cheqs.Estado;
+                SqlCmd.Parameters.Add(ParEstado);
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    total = registro["TOTAL"].ToString();
+                }
+            }
+            catch
+            {
+                total = "";
+            }
+            return total;
+        }
+
+
         public string Insertar(CD_Cheque Cheques)
         {
             string rpta = "";
@@ -245,6 +376,7 @@ namespace CapaDatos
                 if (registro.Read())
                 {
                     rpta = "OK";
+                    Eliminar_Cheques();
                 }
                 else
                 {
@@ -258,34 +390,69 @@ namespace CapaDatos
             return rpta;
         }
 
-        public string ConfirmaCheque()
+        public int ConsultarUltimoCheque()
         {
+            int nro = 0;
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "ConsultaUltCheq";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
 
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    nro = Convert.ToInt32(registro["ID_CHEQUE"]);
+                }
+            }
+            catch
+            {
+                nro = 0;
+            }
+            return nro;
+        }
+
+        public string ConfirmaCheque(CD_Cheque Cheque)
+        {
             string rpta = "";
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCon.Open();
+                
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "Confirma_Cheques";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Modificar";
+                SqlParameter ParEstado = new SqlParameter();
+                ParEstado.ParameterName = "@estado";
+                ParEstado.SqlDbType = SqlDbType.VarChar;
+                ParEstado.Size = 15;
+                ParEstado.Value = Cheque.Estado;
+                SqlCmd.Parameters.Add(ParEstado);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Modificar EL CHEQUE de PENDIENTE A ACTIVO";
 
             }
             catch (Exception ex)
             {
                 rpta = ex.Message;
             }
-
             finally
             {
                 if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
             }
-
             return rpta;
         }
 
@@ -317,6 +484,45 @@ namespace CapaDatos
                 if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
             }
 
+            return rpta;
+        }
+
+        public string Eliminar(CD_Cheque Cheq)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "EliminarCheque";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdCheque = new SqlParameter();
+                ParIdCheque.ParameterName = "@idcheque";
+                ParIdCheque.SqlDbType = SqlDbType.Int;
+                ParIdCheque.Value = Cheq.IdCheque;
+                SqlCmd.Parameters.Add(ParIdCheque);
+
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
             return rpta;
         }
 
