@@ -58,6 +58,7 @@
             this.btnBuscarReg = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.btnAnular = new FontAwesome.Sharp.IconButton();
+            this.btnEnviarMail = new FontAwesome.Sharp.IconButton();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.lblFecha2 = new System.Windows.Forms.Label();
             this.lblFecha1 = new System.Windows.Forms.Label();
@@ -136,6 +137,8 @@
             this.btnBuscaProd = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.tbBuscaProductos = new System.Windows.Forms.TextBox();
+            this.gunaRadioButton1 = new Guna.UI.WinForms.GunaRadioButton();
+            this.gunaRadioButton2 = new Guna.UI.WinForms.GunaRadioButton();
             this.panelFormCompras.SuspendLayout();
             this.tabVentas.SuspendLayout();
             this.tabListadoVentas.SuspendLayout();
@@ -234,6 +237,7 @@
             this.tabListadoVentas.Controls.Add(this.btnBuscarReg);
             this.tabListadoVentas.Controls.Add(this.btnNuevo);
             this.tabListadoVentas.Controls.Add(this.btnAnular);
+            this.tabListadoVentas.Controls.Add(this.btnEnviarMail);
             this.tabListadoVentas.Controls.Add(this.btnImprimir);
             this.tabListadoVentas.Controls.Add(this.lblFecha2);
             this.tabListadoVentas.Controls.Add(this.lblFecha1);
@@ -477,6 +481,31 @@
             this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAnular.UseVisualStyleBackColor = false;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // btnEnviarMail
+            // 
+            this.btnEnviarMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnEnviarMail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnviarMail.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEnviarMail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEnviarMail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEnviarMail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarMail.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarMail.ForeColor = System.Drawing.Color.White;
+            this.btnEnviarMail.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnEnviarMail.IconColor = System.Drawing.Color.White;
+            this.btnEnviarMail.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEnviarMail.IconSize = 25;
+            this.btnEnviarMail.Location = new System.Drawing.Point(773, 437);
+            this.btnEnviarMail.Name = "btnEnviarMail";
+            this.btnEnviarMail.Size = new System.Drawing.Size(116, 31);
+            this.btnEnviarMail.TabIndex = 101;
+            this.btnEnviarMail.TabStop = false;
+            this.btnEnviarMail.Text = "enviar";
+            this.btnEnviarMail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEnviarMail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEnviarMail.UseVisualStyleBackColor = false;
+            this.btnEnviarMail.Click += new System.EventHandler(this.btnEnviarMail_Click);
             // 
             // btnImprimir
             // 
@@ -1093,6 +1122,8 @@
             // gbEncabezadoFactura
             // 
             this.gbEncabezadoFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbEncabezadoFactura.Controls.Add(this.gunaRadioButton2);
+            this.gbEncabezadoFactura.Controls.Add(this.gunaRadioButton1);
             this.gbEncabezadoFactura.Controls.Add(this.dtpFecha);
             this.gbEncabezadoFactura.Controls.Add(this.chekConsumidorFinal);
             this.gbEncabezadoFactura.Controls.Add(this.cbSucursal);
@@ -1233,6 +1264,7 @@
             // 
             this.tbNumComp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbNumComp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNumComp.Enabled = false;
             this.tbNumComp.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNumComp.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNumComp.Location = new System.Drawing.Point(751, 34);
@@ -1830,6 +1862,30 @@
             this.tbBuscaProductos.Size = new System.Drawing.Size(265, 22);
             this.tbBuscaProductos.TabIndex = 95;
             // 
+            // gunaRadioButton1
+            // 
+            this.gunaRadioButton1.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaRadioButton1.CheckedOffColor = System.Drawing.Color.Gray;
+            this.gunaRadioButton1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaRadioButton1.FillColor = System.Drawing.Color.White;
+            this.gunaRadioButton1.Location = new System.Drawing.Point(446, 73);
+            this.gunaRadioButton1.Name = "gunaRadioButton1";
+            this.gunaRadioButton1.Size = new System.Drawing.Size(170, 20);
+            this.gunaRadioButton1.TabIndex = 114;
+            this.gunaRadioButton1.Text = "gunaRadioButton1";
+            // 
+            // gunaRadioButton2
+            // 
+            this.gunaRadioButton2.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaRadioButton2.CheckedOffColor = System.Drawing.Color.Gray;
+            this.gunaRadioButton2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaRadioButton2.FillColor = System.Drawing.Color.White;
+            this.gunaRadioButton2.Location = new System.Drawing.Point(446, 99);
+            this.gunaRadioButton2.Name = "gunaRadioButton2";
+            this.gunaRadioButton2.Size = new System.Drawing.Size(170, 20);
+            this.gunaRadioButton2.TabIndex = 115;
+            this.gunaRadioButton2.Text = "gunaRadioButton2";
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1964,5 +2020,8 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
+        private FontAwesome.Sharp.IconButton btnEnviarMail;
+        private Guna.UI.WinForms.GunaRadioButton gunaRadioButton2;
+        private Guna.UI.WinForms.GunaRadioButton gunaRadioButton1;
     }
 }

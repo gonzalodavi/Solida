@@ -1020,6 +1020,7 @@
             // 
             this.tbNumRemito.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbNumRemito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNumRemito.Enabled = false;
             this.tbNumRemito.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNumRemito.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNumRemito.Location = new System.Drawing.Point(603, 54);

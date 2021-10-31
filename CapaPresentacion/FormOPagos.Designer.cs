@@ -772,6 +772,7 @@
             // 
             this.tbNumOPago.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbNumOPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbNumOPago.Enabled = false;
             this.tbNumOPago.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNumOPago.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNumOPago.Location = new System.Drawing.Point(66, 71);

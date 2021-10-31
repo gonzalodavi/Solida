@@ -477,7 +477,9 @@
     <EmbeddedResource Include="Reportes\rptComprobanteNotas.rdlc" />
     <EmbeddedResource Include="Reportes\rptComprobanteRecibo.rdlc" />
     <EmbeddedResource Include="Reportes\rptComprobanteRemito.rdlc" />
-    <EmbeddedResource Include="Reportes\rptComprobanteVenta.rdlc" />
+    <EmbeddedResource Include="Reportes\rptComprobanteVenta.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptProductosCompradosxCant.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosCompradosxImporte.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosVendidosxCant.rdlc" />

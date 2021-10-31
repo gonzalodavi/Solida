@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaComun.Cache;
+using Microsoft.Reporting.WebForms;
+using System.Net.Mail;
+using System.IO;
 
 namespace CapaPresentacion
 {
@@ -535,8 +538,7 @@ namespace CapaPresentacion
 
         private void BuscaNumeroRecibo()
         {
-            int numRecibo = objeto1.MostrarUltimoRecibo();
-            nroRecibo = (numRecibo + 1).ToString();
+            
         }
 
         private void HacerRecibo()
@@ -544,8 +546,9 @@ namespace CapaPresentacion
             try
             {
                 Decimal Importe = Convert.ToDecimal(tbTotalFact.Text.ToString());
-
-                BuscaNumeroRecibo(); 
+                int numRecibo = objeto1.MostrarUltimoRecibo();
+                nroRecibo = (numRecibo + 1).ToString();
+                
                 string Estado = "ACTIVO";
                 string rpta = CN_Recibo.Insertar(nroRecibo, dtpFecha.Value, tbDni.Text, Convert.ToInt32(UserLoginCache.UserId), Importe, 0, 0, Importe, "PAGO A: "+cbSucursal.Text+"-"+comprobte, Estado);
                 decimal debe = 0, haber = Importe;
@@ -792,31 +795,36 @@ namespace CapaPresentacion
         {
             
         }
+
+        private void btnEnviarMail_Click(object sender, EventArgs e)
+        {
+            
+        }
         /*
-         Form formBG = new Form();
-            using (FormRecibos mm = new FormRecibos()){
+Form formBG = new Form();
+   using (FormRecibos mm = new FormRecibos()){
 
-                mm.cbCliente.Text = tbCliente.Text;
-                mm.dtpFechaRecibo.Text = dtpFecha.Text;
-                mm.tbDetalleRecibo.Text = "PAGO FACTURA: " + cbSucursal.Text + "-" + tbNumComp.Text+"\n"+tbCliente.Text + "\n" +tbDni.Text;
+       mm.cbCliente.Text = tbCliente.Text;
+       mm.dtpFechaRecibo.Text = dtpFecha.Text;
+       mm.tbDetalleRecibo.Text = "PAGO FACTURA: " + cbSucursal.Text + "-" + tbNumComp.Text+"\n"+tbCliente.Text + "\n" +tbDni.Text;
 
-                formBG.StartPosition = FormStartPosition.Manual;
-                formBG.FormBorderStyle = FormBorderStyle.None;
-                formBG.Opacity = .70d;
-                formBG.BackColor = Color.Black;
-                formBG.WindowState = FormWindowState.Maximized;
-                formBG.TopMost = true;
-                formBG.Location = this.Location;
-                formBG.ShowInTaskbar = false;
-                formBG.Show();
+       formBG.StartPosition = FormStartPosition.Manual;
+       formBG.FormBorderStyle = FormBorderStyle.None;
+       formBG.Opacity = .70d;
+       formBG.BackColor = Color.Black;
+       formBG.WindowState = FormWindowState.Maximized;
+       formBG.TopMost = true;
+       formBG.Location = this.Location;
+       formBG.ShowInTaskbar = false;
+       formBG.Show();
 
-                mm.Owner = formBG;
-                mm.ShowDialog();
-                
-                
+       mm.Owner = formBG;
+       mm.ShowDialog();
 
-                formBG.Dispose();
-            }
-         */
+
+
+       formBG.Dispose();
+   }
+*/
     }
 }

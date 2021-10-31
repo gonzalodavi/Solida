@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabNotasDBCR = new System.Windows.Forms.TabControl();
             this.tabListaNotas = new System.Windows.Forms.TabPage();
             this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
@@ -51,6 +51,7 @@
             this.lblFecha1 = new System.Windows.Forms.Label();
             this.dgvNotasDBCR = new System.Windows.Forms.DataGridView();
             this.tabNuevaNotasDBCR = new System.Windows.Forms.TabPage();
+            this.lblTotalNota = new System.Windows.Forms.Label();
             this.tbImporte = new System.Windows.Forms.TextBox();
             this.lbl5 = new System.Windows.Forms.Label();
             this.tbDetalleNota = new System.Windows.Forms.TextBox();
@@ -69,7 +70,6 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.panelContenedor = new Guna.UI.WinForms.GunaPanel();
-            this.lblTotalNota = new System.Windows.Forms.Label();
             this.tabNotasDBCR.SuspendLayout();
             this.tabListaNotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotasDBCR)).BeginInit();
@@ -422,22 +422,22 @@
             this.dgvNotasDBCR.AllowUserToDeleteRows = false;
             this.dgvNotasDBCR.AllowUserToResizeColumns = false;
             this.dgvNotasDBCR.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvNotasDBCR.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvNotasDBCR.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNotasDBCR.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvNotasDBCR.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNotasDBCR.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvNotasDBCR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvNotasDBCR.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvNotasDBCR.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotasDBCR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotasDBCR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNotasDBCR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvNotasDBCR.ColumnHeadersVisible = false;
             this.dgvNotasDBCR.EnableHeadersVisualStyles = false;
@@ -449,13 +449,13 @@
             this.dgvNotasDBCR.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvNotasDBCR.RowHeadersVisible = false;
             this.dgvNotasDBCR.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvNotasDBCR.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvNotasDBCR.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNotasDBCR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotasDBCR.Size = new System.Drawing.Size(646, 391);
             this.dgvNotasDBCR.TabIndex = 92;
@@ -479,6 +479,20 @@
             this.tabNuevaNotasDBCR.Size = new System.Drawing.Size(948, 578);
             this.tabNuevaNotasDBCR.TabIndex = 1;
             this.tabNuevaNotasDBCR.Text = "Nuevo";
+            // 
+            // lblTotalNota
+            // 
+            this.lblTotalNota.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalNota.AutoEllipsis = true;
+            this.lblTotalNota.AutoSize = true;
+            this.lblTotalNota.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblTotalNota.Location = new System.Drawing.Point(653, 282);
+            this.lblTotalNota.Name = "lblTotalNota";
+            this.lblTotalNota.Size = new System.Drawing.Size(40, 16);
+            this.lblTotalNota.TabIndex = 137;
+            this.lblTotalNota.Text = "0,00";
+            this.lblTotalNota.Visible = false;
             // 
             // tbImporte
             // 
@@ -597,6 +611,7 @@
             // 
             this.tbNumNota.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbNumNota.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbNumNota.Enabled = false;
             this.tbNumNota.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNumNota.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNumNota.Location = new System.Drawing.Point(58, 58);
@@ -761,20 +776,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1026, 749);
             this.panelContenedor.TabIndex = 89;
-            // 
-            // lblTotalNota
-            // 
-            this.lblTotalNota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTotalNota.AutoEllipsis = true;
-            this.lblTotalNota.AutoSize = true;
-            this.lblTotalNota.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblTotalNota.Location = new System.Drawing.Point(653, 282);
-            this.lblTotalNota.Name = "lblTotalNota";
-            this.lblTotalNota.Size = new System.Drawing.Size(40, 16);
-            this.lblTotalNota.TabIndex = 137;
-            this.lblTotalNota.Text = "0,00";
-            this.lblTotalNota.Visible = false;
             // 
             // FormNotaDBCR
             // 
