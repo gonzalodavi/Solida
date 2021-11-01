@@ -32,7 +32,9 @@ namespace CapaPresentacion
 
         private void fechaHoy()
         {
-            dtpFecha1.Value = DateTime.Now;
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;
+            dtpFecha1.Value = new DateTime(year, month, 1);            
             dtpFecha2.Value = DateTime.Now;
             dtpFechaNota.Value = DateTime.Now;
         }

@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.tabRecibos = new System.Windows.Forms.TabControl();
@@ -55,19 +55,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizaLista = new FontAwesome.Sharp.IconButton();
             this.dgvRecibos = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.tabNuevoRecibo = new System.Windows.Forms.TabPage();
             this.lblSaldoPendiente = new System.Windows.Forms.TextBox();
             this.lblSaldo = new System.Windows.Forms.TextBox();
             this.lblTotalRecibo = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.btnAgregaTransf = new FontAwesome.Sharp.IconButton();
-            this.btnAgregaValores = new FontAwesome.Sharp.IconButton();
             this.dtpFechaRecibo = new Guna.UI.WinForms.GunaDateTimePicker();
             this.lblTitSaldo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -91,7 +86,6 @@
             this.lbl6 = new System.Windows.Forms.Label();
             this.lbl5 = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
-            this.btnAceptaRecibo = new FontAwesome.Sharp.IconButton();
             this.tabValores = new System.Windows.Forms.TabPage();
             this.tbImporteCheq = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -101,12 +95,9 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnGuardarValores = new FontAwesome.Sharp.IconButton();
             this.label20 = new System.Windows.Forms.Label();
             this.tbCheqTotal = new System.Windows.Forms.TextBox();
             this.lblTotalIva = new System.Windows.Forms.Label();
-            this.btnQuitar = new FontAwesome.Sharp.IconButton();
-            this.btnAgregaCheques = new FontAwesome.Sharp.IconButton();
             this.label19 = new System.Windows.Forms.Label();
             this.tbCheqImporte = new System.Windows.Forms.TextBox();
             this.tbCheqBenef = new System.Windows.Forms.TextBox();
@@ -124,8 +115,17 @@
             this.dgvValores = new System.Windows.Forms.DataGridView();
             this.tabTransferencias = new System.Windows.Forms.TabPage();
             this.dgvTransferencias = new System.Windows.Forms.DataGridView();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.btnActualizaLista = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnAgregaTransf = new FontAwesome.Sharp.IconButton();
+            this.btnAgregaValores = new FontAwesome.Sharp.IconButton();
+            this.btnAceptaRecibo = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarValores = new FontAwesome.Sharp.IconButton();
+            this.btnQuitar = new FontAwesome.Sharp.IconButton();
+            this.btnAgregaCheques = new FontAwesome.Sharp.IconButton();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.tabRecibos.SuspendLayout();
             this.tabConsultaRecibos.SuspendLayout();
@@ -378,32 +378,6 @@
             this.label3.Text = "Nº";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnImprimir.IconColor = System.Drawing.Color.White;
-            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.IconSize = 25;
-            this.btnImprimir.Location = new System.Drawing.Point(773, 478);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(116, 31);
-            this.btnImprimir.TabIndex = 128;
-            this.btnImprimir.TabStop = false;
-            this.btnImprimir.Text = "IMPRIMIR";
-            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // btnNuevoCliente
             // 
             this.btnNuevoCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -444,54 +418,28 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnActualizaLista
-            // 
-            this.btnActualizaLista.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizaLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnActualizaLista.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizaLista.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnActualizaLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizaLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnActualizaLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizaLista.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizaLista.ForeColor = System.Drawing.Color.White;
-            this.btnActualizaLista.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.btnActualizaLista.IconColor = System.Drawing.Color.White;
-            this.btnActualizaLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaLista.IconSize = 18;
-            this.btnActualizaLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizaLista.Location = new System.Drawing.Point(773, 39);
-            this.btnActualizaLista.Name = "btnActualizaLista";
-            this.btnActualizaLista.Size = new System.Drawing.Size(116, 31);
-            this.btnActualizaLista.TabIndex = 88;
-            this.btnActualizaLista.TabStop = false;
-            this.btnActualizaLista.Text = " ACTUALIZAR";
-            this.btnActualizaLista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizaLista.UseVisualStyleBackColor = false;
-            this.btnActualizaLista.Click += new System.EventHandler(this.btnActualizaLista_Click);
-            // 
             // dgvRecibos
             // 
             this.dgvRecibos.AllowUserToAddRows = false;
             this.dgvRecibos.AllowUserToDeleteRows = false;
             this.dgvRecibos.AllowUserToResizeColumns = false;
             this.dgvRecibos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvRecibos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvRecibos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRecibos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvRecibos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecibos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvRecibos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRecibos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvRecibos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecibos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRecibos.ColumnHeadersVisible = false;
             this.dgvRecibos.EnableHeadersVisualStyles = false;
@@ -503,42 +451,17 @@
             this.dgvRecibos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvRecibos.RowHeadersVisible = false;
             this.dgvRecibos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecibos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecibos.Size = new System.Drawing.Size(612, 400);
             this.dgvRecibos.TabIndex = 86;
             this.dgvRecibos.TabStop = false;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscar.IconColor = System.Drawing.Color.White;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(394, 39);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(116, 31);
-            this.btnBuscar.TabIndex = 85;
-            this.btnBuscar.TabStop = false;
-            this.btnBuscar.Text = " BUSCAR";
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // tabNuevoRecibo
             // 
@@ -547,8 +470,6 @@
             this.tabNuevoRecibo.Controls.Add(this.lblSaldo);
             this.tabNuevoRecibo.Controls.Add(this.lblTotalRecibo);
             this.tabNuevoRecibo.Controls.Add(this.label28);
-            this.tabNuevoRecibo.Controls.Add(this.btnAgregaTransf);
-            this.tabNuevoRecibo.Controls.Add(this.btnAgregaValores);
             this.tabNuevoRecibo.Controls.Add(this.dtpFechaRecibo);
             this.tabNuevoRecibo.Controls.Add(this.lblTitSaldo);
             this.tabNuevoRecibo.Controls.Add(this.label2);
@@ -572,6 +493,8 @@
             this.tabNuevoRecibo.Controls.Add(this.lbl6);
             this.tabNuevoRecibo.Controls.Add(this.lbl5);
             this.tabNuevoRecibo.Controls.Add(this.lbl3);
+            this.tabNuevoRecibo.Controls.Add(this.btnAgregaTransf);
+            this.tabNuevoRecibo.Controls.Add(this.btnAgregaValores);
             this.tabNuevoRecibo.Controls.Add(this.btnAceptaRecibo);
             this.tabNuevoRecibo.ForeColor = System.Drawing.Color.Gold;
             this.tabNuevoRecibo.Location = new System.Drawing.Point(4, 25);
@@ -640,53 +563,6 @@
             this.label28.Size = new System.Drawing.Size(147, 16);
             this.label28.TabIndex = 171;
             this.label28.Text = "Saldo Pendiente:  $";
-            // 
-            // btnAgregaTransf
-            // 
-            this.btnAgregaTransf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaTransf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaTransf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaTransf.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaTransf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaTransf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaTransf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaTransf.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregaTransf.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaTransf.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregaTransf.IconColor = System.Drawing.Color.White;
-            this.btnAgregaTransf.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaTransf.IconSize = 25;
-            this.btnAgregaTransf.Location = new System.Drawing.Point(566, 147);
-            this.btnAgregaTransf.Name = "btnAgregaTransf";
-            this.btnAgregaTransf.Size = new System.Drawing.Size(29, 29);
-            this.btnAgregaTransf.TabIndex = 170;
-            this.btnAgregaTransf.TabStop = false;
-            this.btnAgregaTransf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaTransf.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregaValores
-            // 
-            this.btnAgregaValores.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaValores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaValores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaValores.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaValores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaValores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaValores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaValores.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregaValores.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaValores.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregaValores.IconColor = System.Drawing.Color.White;
-            this.btnAgregaValores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaValores.IconSize = 25;
-            this.btnAgregaValores.Location = new System.Drawing.Point(566, 105);
-            this.btnAgregaValores.Name = "btnAgregaValores";
-            this.btnAgregaValores.Size = new System.Drawing.Size(29, 29);
-            this.btnAgregaValores.TabIndex = 170;
-            this.btnAgregaValores.TabStop = false;
-            this.btnAgregaValores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaValores.UseVisualStyleBackColor = false;
-            this.btnAgregaValores.Click += new System.EventHandler(this.btnAgregaValores_Click);
             // 
             // dtpFechaRecibo
             // 
@@ -815,22 +691,22 @@
             this.dgvDetCtaCte.AllowUserToDeleteRows = false;
             this.dgvDetCtaCte.AllowUserToResizeColumns = false;
             this.dgvDetCtaCte.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvDetCtaCte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvDetCtaCte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetCtaCte.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvDetCtaCte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetCtaCte.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvDetCtaCte.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDetCtaCte.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDetCtaCte.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetCtaCte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetCtaCte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetCtaCte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetCtaCte.ColumnHeadersVisible = false;
             this.dgvDetCtaCte.EnableHeadersVisualStyles = false;
@@ -842,13 +718,13 @@
             this.dgvDetCtaCte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvDetCtaCte.RowHeadersVisible = false;
             this.dgvDetCtaCte.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDetCtaCte.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDetCtaCte.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetCtaCte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetCtaCte.Size = new System.Drawing.Size(823, 216);
             this.dgvDetCtaCte.TabIndex = 132;
@@ -1054,32 +930,6 @@
             this.lbl3.TabIndex = 122;
             this.lbl3.Text = "Fecha:";
             // 
-            // btnAceptaRecibo
-            // 
-            this.btnAceptaRecibo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptaRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAceptaRecibo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptaRecibo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAceptaRecibo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAceptaRecibo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAceptaRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptaRecibo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptaRecibo.ForeColor = System.Drawing.Color.White;
-            this.btnAceptaRecibo.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnAceptaRecibo.IconColor = System.Drawing.Color.White;
-            this.btnAceptaRecibo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAceptaRecibo.IconSize = 25;
-            this.btnAceptaRecibo.Location = new System.Drawing.Point(773, 193);
-            this.btnAceptaRecibo.Name = "btnAceptaRecibo";
-            this.btnAceptaRecibo.Size = new System.Drawing.Size(116, 31);
-            this.btnAceptaRecibo.TabIndex = 79;
-            this.btnAceptaRecibo.TabStop = false;
-            this.btnAceptaRecibo.Text = "GRABAR";
-            this.btnAceptaRecibo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptaRecibo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptaRecibo.UseVisualStyleBackColor = false;
-            this.btnAceptaRecibo.Click += new System.EventHandler(this.btnAceptaRecibo_Click);
-            // 
             // tabValores
             // 
             this.tabValores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
@@ -1091,12 +941,9 @@
             this.tabValores.Controls.Add(this.label23);
             this.tabValores.Controls.Add(this.label24);
             this.tabValores.Controls.Add(this.label25);
-            this.tabValores.Controls.Add(this.btnGuardarValores);
             this.tabValores.Controls.Add(this.label20);
             this.tabValores.Controls.Add(this.tbCheqTotal);
             this.tabValores.Controls.Add(this.lblTotalIva);
-            this.tabValores.Controls.Add(this.btnQuitar);
-            this.tabValores.Controls.Add(this.btnAgregaCheques);
             this.tabValores.Controls.Add(this.label19);
             this.tabValores.Controls.Add(this.tbCheqImporte);
             this.tabValores.Controls.Add(this.tbCheqBenef);
@@ -1112,6 +959,9 @@
             this.tabValores.Controls.Add(this.dtpCheqEmision);
             this.tabValores.Controls.Add(this.tbCheqNumero);
             this.tabValores.Controls.Add(this.dgvValores);
+            this.tabValores.Controls.Add(this.btnGuardarValores);
+            this.tabValores.Controls.Add(this.btnQuitar);
+            this.tabValores.Controls.Add(this.btnAgregaCheques);
             this.tabValores.Location = new System.Drawing.Point(4, 25);
             this.tabValores.Name = "tabValores";
             this.tabValores.Padding = new System.Windows.Forms.Padding(3);
@@ -1233,33 +1083,6 @@
             this.label25.Text = "F. EMISIÓN";
             this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnGuardarValores
-            // 
-            this.btnGuardarValores.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGuardarValores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnGuardarValores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarValores.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnGuardarValores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGuardarValores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnGuardarValores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarValores.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarValores.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarValores.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardarValores.IconColor = System.Drawing.Color.White;
-            this.btnGuardarValores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardarValores.IconSize = 25;
-            this.btnGuardarValores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarValores.Location = new System.Drawing.Point(773, 513);
-            this.btnGuardarValores.Name = "btnGuardarValores";
-            this.btnGuardarValores.Size = new System.Drawing.Size(116, 31);
-            this.btnGuardarValores.TabIndex = 159;
-            this.btnGuardarValores.TabStop = false;
-            this.btnGuardarValores.Text = "GUARDAR";
-            this.btnGuardarValores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarValores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardarValores.UseVisualStyleBackColor = false;
-            this.btnGuardarValores.Click += new System.EventHandler(this.btnGuardarValores_Click);
-            // 
             // label20
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1298,60 +1121,6 @@
             this.lblTotalIva.Size = new System.Drawing.Size(45, 14);
             this.lblTotalIva.TabIndex = 157;
             this.lblTotalIva.Text = "Total:";
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnQuitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.ForeColor = System.Drawing.Color.White;
-            this.btnQuitar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnQuitar.IconColor = System.Drawing.Color.White;
-            this.btnQuitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQuitar.IconSize = 25;
-            this.btnQuitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuitar.Location = new System.Drawing.Point(147, 513);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(116, 31);
-            this.btnQuitar.TabIndex = 155;
-            this.btnQuitar.TabStop = false;
-            this.btnQuitar.Text = "ELIMINAR";
-            this.btnQuitar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuitar.UseVisualStyleBackColor = false;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
-            // btnAgregaCheques
-            // 
-            this.btnAgregaCheques.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaCheques.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaCheques.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaCheques.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaCheques.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaCheques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaCheques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaCheques.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregaCheques.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaCheques.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.btnAgregaCheques.IconColor = System.Drawing.Color.White;
-            this.btnAgregaCheques.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaCheques.IconSize = 25;
-            this.btnAgregaCheques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregaCheques.Location = new System.Drawing.Point(773, 140);
-            this.btnAgregaCheques.Name = "btnAgregaCheques";
-            this.btnAgregaCheques.Size = new System.Drawing.Size(116, 31);
-            this.btnAgregaCheques.TabIndex = 154;
-            this.btnAgregaCheques.TabStop = false;
-            this.btnAgregaCheques.Text = "AGREGAR";
-            this.btnAgregaCheques.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregaCheques.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaCheques.UseVisualStyleBackColor = false;
-            this.btnAgregaCheques.Click += new System.EventHandler(this.btnAgregaCheques_Click);
             // 
             // label19
             // 
@@ -1568,22 +1337,22 @@
             this.dgvValores.AllowUserToDeleteRows = false;
             this.dgvValores.AllowUserToResizeColumns = false;
             this.dgvValores.AllowUserToResizeRows = false;
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvValores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvValores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvValores.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvValores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvValores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvValores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvValores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvValores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvValores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvValores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvValores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvValores.ColumnHeadersVisible = false;
             this.dgvValores.EnableHeadersVisualStyles = false;
@@ -1595,13 +1364,13 @@
             this.dgvValores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvValores.RowHeadersVisible = false;
             this.dgvValores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvValores.RowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvValores.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvValores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvValores.Size = new System.Drawing.Size(863, 252);
             this.dgvValores.TabIndex = 134;
@@ -1624,22 +1393,22 @@
             this.dgvTransferencias.AllowUserToDeleteRows = false;
             this.dgvTransferencias.AllowUserToResizeColumns = false;
             this.dgvTransferencias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvTransferencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvTransferencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvTransferencias.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvTransferencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTransferencias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvTransferencias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTransferencias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTransferencias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvTransferencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTransferencias.ColumnHeadersVisible = false;
             this.dgvTransferencias.EnableHeadersVisualStyles = false;
@@ -1651,17 +1420,262 @@
             this.dgvTransferencias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvTransferencias.RowHeadersVisible = false;
             this.dgvTransferencias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTransferencias.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTransferencias.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvTransferencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTransferencias.Size = new System.Drawing.Size(582, 216);
             this.dgvTransferencias.TabIndex = 133;
             this.dgvTransferencias.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitulo.AutoEllipsis = true;
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblTitulo.Location = new System.Drawing.Point(430, 100);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(177, 18);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Recibos de Ingreso";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnImprimir.IconColor = System.Drawing.Color.White;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.IconSize = 25;
+            this.btnImprimir.Location = new System.Drawing.Point(773, 478);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(116, 31);
+            this.btnImprimir.TabIndex = 128;
+            this.btnImprimir.TabStop = false;
+            this.btnImprimir.Text = "IMPRIMIR";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnActualizaLista
+            // 
+            this.btnActualizaLista.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActualizaLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizaLista.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizaLista.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizaLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizaLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizaLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizaLista.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizaLista.ForeColor = System.Drawing.Color.White;
+            this.btnActualizaLista.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.btnActualizaLista.IconColor = System.Drawing.Color.White;
+            this.btnActualizaLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizaLista.IconSize = 18;
+            this.btnActualizaLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizaLista.Location = new System.Drawing.Point(773, 39);
+            this.btnActualizaLista.Name = "btnActualizaLista";
+            this.btnActualizaLista.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizaLista.TabIndex = 88;
+            this.btnActualizaLista.TabStop = false;
+            this.btnActualizaLista.Text = " ACTUALIZAR";
+            this.btnActualizaLista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizaLista.UseVisualStyleBackColor = false;
+            this.btnActualizaLista.Click += new System.EventHandler(this.btnActualizaLista_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 25;
+            this.btnBuscar.Location = new System.Drawing.Point(394, 39);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(116, 31);
+            this.btnBuscar.TabIndex = 85;
+            this.btnBuscar.TabStop = false;
+            this.btnBuscar.Text = " BUSCAR";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnAgregaTransf
+            // 
+            this.btnAgregaTransf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaTransf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaTransf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaTransf.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaTransf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaTransf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaTransf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaTransf.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaTransf.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaTransf.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaTransf.IconColor = System.Drawing.Color.White;
+            this.btnAgregaTransf.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaTransf.IconSize = 25;
+            this.btnAgregaTransf.Location = new System.Drawing.Point(566, 147);
+            this.btnAgregaTransf.Name = "btnAgregaTransf";
+            this.btnAgregaTransf.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaTransf.TabIndex = 170;
+            this.btnAgregaTransf.TabStop = false;
+            this.btnAgregaTransf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaTransf.UseVisualStyleBackColor = false;
+            this.btnAgregaTransf.Click += new System.EventHandler(this.btnAgregaTransf_Click);
+            // 
+            // btnAgregaValores
+            // 
+            this.btnAgregaValores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaValores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaValores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaValores.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaValores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaValores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaValores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaValores.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaValores.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaValores.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaValores.IconColor = System.Drawing.Color.White;
+            this.btnAgregaValores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaValores.IconSize = 25;
+            this.btnAgregaValores.Location = new System.Drawing.Point(566, 105);
+            this.btnAgregaValores.Name = "btnAgregaValores";
+            this.btnAgregaValores.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaValores.TabIndex = 170;
+            this.btnAgregaValores.TabStop = false;
+            this.btnAgregaValores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaValores.UseVisualStyleBackColor = false;
+            this.btnAgregaValores.Click += new System.EventHandler(this.btnAgregaValores_Click);
+            // 
+            // btnAceptaRecibo
+            // 
+            this.btnAceptaRecibo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAceptaRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAceptaRecibo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptaRecibo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAceptaRecibo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAceptaRecibo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAceptaRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptaRecibo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptaRecibo.ForeColor = System.Drawing.Color.White;
+            this.btnAceptaRecibo.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnAceptaRecibo.IconColor = System.Drawing.Color.White;
+            this.btnAceptaRecibo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAceptaRecibo.IconSize = 25;
+            this.btnAceptaRecibo.Location = new System.Drawing.Point(773, 193);
+            this.btnAceptaRecibo.Name = "btnAceptaRecibo";
+            this.btnAceptaRecibo.Size = new System.Drawing.Size(116, 31);
+            this.btnAceptaRecibo.TabIndex = 79;
+            this.btnAceptaRecibo.TabStop = false;
+            this.btnAceptaRecibo.Text = "GRABAR";
+            this.btnAceptaRecibo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptaRecibo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptaRecibo.UseVisualStyleBackColor = false;
+            this.btnAceptaRecibo.Click += new System.EventHandler(this.btnAceptaRecibo_Click);
+            // 
+            // btnGuardarValores
+            // 
+            this.btnGuardarValores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardarValores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnGuardarValores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarValores.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardarValores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardarValores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnGuardarValores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarValores.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarValores.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarValores.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardarValores.IconColor = System.Drawing.Color.White;
+            this.btnGuardarValores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardarValores.IconSize = 25;
+            this.btnGuardarValores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarValores.Location = new System.Drawing.Point(773, 513);
+            this.btnGuardarValores.Name = "btnGuardarValores";
+            this.btnGuardarValores.Size = new System.Drawing.Size(116, 31);
+            this.btnGuardarValores.TabIndex = 159;
+            this.btnGuardarValores.TabStop = false;
+            this.btnGuardarValores.Text = "GUARDAR";
+            this.btnGuardarValores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarValores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardarValores.UseVisualStyleBackColor = false;
+            this.btnGuardarValores.Click += new System.EventHandler(this.btnGuardarValores_Click);
+            // 
+            // btnQuitar
+            // 
+            this.btnQuitar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnQuitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitar.ForeColor = System.Drawing.Color.White;
+            this.btnQuitar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnQuitar.IconColor = System.Drawing.Color.White;
+            this.btnQuitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnQuitar.IconSize = 25;
+            this.btnQuitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuitar.Location = new System.Drawing.Point(147, 513);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(116, 31);
+            this.btnQuitar.TabIndex = 155;
+            this.btnQuitar.TabStop = false;
+            this.btnQuitar.Text = "ELIMINAR";
+            this.btnQuitar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuitar.UseVisualStyleBackColor = false;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
+            // btnAgregaCheques
+            // 
+            this.btnAgregaCheques.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaCheques.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaCheques.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaCheques.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaCheques.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaCheques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaCheques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaCheques.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregaCheques.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaCheques.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.btnAgregaCheques.IconColor = System.Drawing.Color.White;
+            this.btnAgregaCheques.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaCheques.IconSize = 25;
+            this.btnAgregaCheques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregaCheques.Location = new System.Drawing.Point(773, 140);
+            this.btnAgregaCheques.Name = "btnAgregaCheques";
+            this.btnAgregaCheques.Size = new System.Drawing.Size(116, 31);
+            this.btnAgregaCheques.TabIndex = 154;
+            this.btnAgregaCheques.TabStop = false;
+            this.btnAgregaCheques.Text = "AGREGAR";
+            this.btnAgregaCheques.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregaCheques.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaCheques.UseVisualStyleBackColor = false;
+            this.btnAgregaCheques.Click += new System.EventHandler(this.btnAgregaCheques_Click);
             // 
             // btnRegresar
             // 
@@ -1688,19 +1702,6 @@
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitulo.AutoEllipsis = true;
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblTitulo.Location = new System.Drawing.Point(430, 100);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(177, 18);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Recibos de Ingreso";
             // 
             // FormRecibos
             // 

@@ -28,14 +28,57 @@ namespace CapaPresentacion
             fechaHoy();
             CargarComboBoxProveedores();
             CargarGrillaOPagos();
+            CargaGrillaCheques();
+            CargaGrillaChequesSelect();
             CargaSaldoCtaCte();
             BuscaNumeroOPago();
+            ConsultaPorCheque();
+        }       
+
+        private void CargaGrillaCheques()
+        {
+            this.dgvCheques.DataSource = CN_Cheque.MostrarXFecha("ACTIVO");
+            this.dgvCheques.Columns[0].Visible = false;
+            this.dgvCheques.Columns[1].Visible = false;
+            this.dgvCheques.Columns[2].Visible = false;
+            this.dgvCheques.Columns[8].Visible = false;
+            this.dgvCheques.Columns[10].Visible = false;
+
+            CantidadYSuma();
+            
+            /*this.dgvValores.Columns[3].Width = 80;
+            this.dgvValores.Columns[4].Width = 80;
+            this.dgvValores.Columns[5].Width = 80;
+            this.dgvValores.Columns[6].Width = 90;
+            this.dgvValores.Columns[7].Width = 100;
+            this.dgvValores.Columns[9].Width = 100;*/
+        }
+
+        private void CargaGrillaChequesSelect()
+        {
+            this.dgvValoresSeleccionados.DataSource = CN_Cheque.MostrarXFecha("SELECCIONADO");
+            this.dgvValoresSeleccionados.Columns[0].Visible = false;
+            this.dgvValoresSeleccionados.Columns[1].Visible = false;
+            this.dgvValoresSeleccionados.Columns[2].Visible = false;
+            this.dgvValoresSeleccionados.Columns[8].Visible = false;
+            this.dgvValoresSeleccionados.Columns[10].Visible = false;
+
+            CantidadYSumaSeleccionados();
+
+            /*this.dgvValoresSeleccionados.Columns[3].Width = 80;
+            this.dgvValoresSeleccionados.Columns[4].Width = 80;
+            this.dgvValoresSeleccionados.Columns[5].Width = 80;
+            this.dgvValoresSeleccionados.Columns[6].Width = 90;
+            this.dgvValoresSeleccionados.Columns[7].Width = 100;
+            this.dgvValoresSeleccionados.Columns[9].Width = 100;*/
         }
 
         private void fechaHoy()
         {
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;
             dtpFechaRecibo.Value = DateTime.Now;
-            dtpFecha1.Value = DateTime.Now;
+            dtpFecha1.Value = new DateTime(year, month, 1);
             dtpFecha2.Value = DateTime.Now;
         }
 
@@ -69,7 +112,84 @@ namespace CapaPresentacion
             }
         }
 
-        private void ResetRecibo()
+        private void ConsultaPorCheque()
+        {
+            try
+            {
+                string rpta = CN_Cheque.ConsultaSiExisteChequeOP("SELECCIONADO");
+                if (rpta.Equals("OK"))
+                {
+                    string rpta1 = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "ACTIVO");
+                    if (rpta1.Equals("OK"))
+                    {
+                        //MensajeOk("Cheques ENCONTRADOS SUELTOS VOLVIERON A CARTERA");
+                    }
+                    else
+                    {
+                        MensajeError(rpta1);
+                    }
+                }
+                else
+                {
+                    if (rpta.Equals("NO"))
+                    {
+                        //MensajeOk("No Hay Cheques COMO PENDIENTES");
+                    }
+                    else
+                    {
+                        MensajeError(rpta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeError("No se pudo ejecutar la operacion:\n\n" + ex);
+            }
+        }
+
+        private void CantidadYSuma()
+        {
+            try
+            {                
+                if (dgvCheques.Rows.Count > 0)
+                {
+                    string total = CN_Cheque.TotalCheques("ACTIVO");
+                    int cantidad = CN_Cheque.CantidadCheques("ACTIVO");
+                    tbCANTCheq.Text = cantidad.ToString();
+                    tbSUMACheq.Text = Convert.ToDecimal(total).ToString("0.00");
+                }
+                else
+                {
+                    tbCANTCheq.Text = "0";
+                    tbSUMACheq.Text = "0,00";
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeError("No se pudo ejecutar la operacion:\n\n" + ex);
+            }
+        }
+        private void CantidadYSumaSeleccionados()
+        {
+            try
+            {
+                if (dgvValoresSeleccionados.Rows.Count > 0)
+                {
+                    string total = CN_Cheque.TotalCheques("SELECCIONADO");
+                    tbCheqTotal.Text = Convert.ToDecimal(total).ToString("0.00");
+                }
+                else
+                {                    
+                    tbCheqTotal.Text = "0,00";
+                }               
+            }
+            catch (Exception ex)
+            {
+                MensajeError("No se pudo ejecutar la operacion:\n\n" + ex);
+            }
+        }
+
+        private void ResetOPago()
         {
             tbBanco.Text = "0,00";
             tbValores.Text = "0,00";
@@ -78,6 +198,8 @@ namespace CapaPresentacion
             tbDetalleOPago.Text = "";
             tbNumOPago.Text = "";
             cbProveedor.SelectedIndex = -1;
+            CargaGrillaChequesSelect();
+            CargaGrillaCheques();
         }
 
         private void BuscaNumeroOPago()
@@ -179,6 +301,7 @@ namespace CapaPresentacion
                             lblTotalOPago.Text = Suma.ToString("0.00");
 
                             string rpta = "";
+                            string rpta1 = "";
 
                             DialogResult Opcion;
 
@@ -192,6 +315,22 @@ namespace CapaPresentacion
                                 if (rpta.Equals("OK"))
                                 {
                                     this.MensajeOk("Se Generó con éxito el Comprobante");
+
+                                    if (valores > 0)
+                                    {
+
+                                        rpta1 = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO");
+
+                                        if (rpta1.Equals("OK"))
+                                        {
+                                            MensajeOk("Cheques ESTADO: PAGADO");
+                                        }
+                                        else
+                                        {
+                                            MensajeError(rpta1);
+                                        }
+                                    }
+
                                     rpta = CN_CtaCte.InsertarP(cbProveedor.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumOPago.Text, "ORDEN DE PAGO", debe, haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
                                     if (rpta.Equals("OK"))
                                     {
@@ -201,7 +340,7 @@ namespace CapaPresentacion
                                     {
                                         this.MensajeError(rpta);
                                     }
-                                    ResetRecibo();
+                                    ResetOPago();
                                     CargarGrillaOPagos();
                                     tabOrdenPagos.SelectedTab = tabConsultaOPagos;
                                 }
@@ -420,7 +559,148 @@ namespace CapaPresentacion
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
+            ConsultaPorCheque();
             this.Close();
+        }
+
+        private void btnAgregaCheques_Click(object sender, EventArgs e)
+        {
+            if (dgvCheques.SelectedRows.Count > 0)
+            {
+                SeleccionaCheques();
+                CargaGrillaCheques();
+                CargaGrillaChequesSelect();
+            }
+            else
+            {
+                MensajeError("No existen Cheques para Agregar la Lista");
+            }
+        }
+
+        private void SeleccionaCheques()
+        {
+            try
+            {
+                CN_Cheque.ModificarCheque(Convert.ToInt32(dgvCheques.CurrentRow.Cells["ID_CHEQUE"].Value.ToString()), "ACTIVO", "SELECCIONADO");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnQuitaCheque_Click(object sender, EventArgs e)
+        {
+            if (dgvValoresSeleccionados.SelectedRows.Count > 0)
+            {                
+                QuitaCheques();
+                CargaGrillaCheques();
+                CargaGrillaChequesSelect();
+            }
+            else
+            {
+                MensajeError("No existen Cheques a Eliminar de la Lista");
+            }
+        }
+
+        private void QuitaCheques()
+        {
+            try
+            {
+                CN_Cheque.ModificarCheque(Convert.ToInt32(dgvValoresSeleccionados.CurrentRow.Cells["ID_CHEQUE"].Value.ToString()), "SELECCIONADO", "ACTIVO");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnGuardarValores_Click(object sender, EventArgs e)
+        {
+            if (dgvValoresSeleccionados.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow ElRow in dgvValoresSeleccionados.Rows)
+                {
+                    string DetNumCheq = ElRow.Cells["NUM_CHEQUE"].Value.ToString();
+                    string DetNomBan = ElRow.Cells["NOM_BANCO"].Value.ToString();
+                    string DetFecC = Convert.ToDateTime(ElRow.Cells["FECHA_CREDITO"].Value).ToString("yyyy-MM-dd");
+                    string DetImporte = ElRow.Cells["IMPORTE"].Value.ToString();
+
+                    if (DetNomBan != "" && DetImporte != "" && DetNumCheq != "")
+                    {
+                        tbDetalleOPago.Text += "Valor Nº " + DetNumCheq + " de Banco " + DetNomBan + " al " + DetFecC + " con importe $" + DetImporte + " // ";
+                    }
+                }
+                
+                tbValores.Text = tbCheqTotal.Text;
+                tabOrdenPagos.SelectedTab = tabNuevaOPago;
+            }
+            else
+            {
+                DialogResult opcion;
+                opcion = MessageBox.Show("No se cargo ningun cheque, Desea ir al Pago?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (opcion == DialogResult.OK)
+                {
+                    tbValores.Text = "0,00";
+                    tabOrdenPagos.SelectedTab = tabNuevaOPago;
+                }
+            }
+        }
+
+        private void tbValores_TextChanged(object sender, EventArgs e)
+        {
+            Decimal efectivo = 0, valores = 0, banco = 0;
+            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+            {
+                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+            }
+            if (tbValores.Text != "," && tbValores.Text != "")
+            {
+                valores = Convert.ToDecimal(tbValores.Text.ToString());
+            }
+            if (tbBanco.Text != "," && tbBanco.Text != "")
+            {
+                banco = Convert.ToDecimal(tbBanco.Text.ToString());
+            }
+            Decimal Suma = efectivo + valores + banco;
+            lblTotalOPago.Text = Suma.ToString("0.00");
+        }
+
+        private void lblTotalOPago_TextChanged(object sender, EventArgs e)
+        {
+            if (lblTotalOPago.Text != "")
+            {
+                Decimal importePend = Convert.ToDecimal(lblTotalOPago.Text);
+                if (importePend > 0)
+                {
+                    Decimal saldo = Convert.ToDecimal(lblSaldo.Text) - Convert.ToDecimal(lblTotalOPago.Text);
+                    if (saldo == 0)
+                    {
+                        lblSaldoPendiente.Text = "0,00";
+                    }
+                    lblSaldoPendiente.Text = saldo.ToString("0.00");
+                }
+                else
+                {
+                    lblSaldoPendiente.Text = "";
+                }
+            }
+            else
+            {
+                lblSaldoPendiente.Text = "";
+            }
+        }
+
+        private void btnAgregaValores_Click(object sender, EventArgs e)
+        {
+            tabOrdenPagos.SelectedTab = tabValores;
+        }
+
+        private void btnAgregaTransf_Click(object sender, EventArgs e)
+        {
+            tabOrdenPagos.SelectedTab = tabTransferencias;
         }
     }
 }

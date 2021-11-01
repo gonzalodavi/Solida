@@ -37,8 +37,10 @@ namespace CapaPresentacion
 
         private void fechaHoy()
         {
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;            
             dtpFechaRecibo.Value = DateTime.Now;
-            dtpFecha1.Value = DateTime.Now;
+            dtpFecha1.Value = new DateTime(year,month,1);
             dtpFecha2.Value = DateTime.Now;
             dtpCheqEmision.Value = DateTime.Now;
             dtpCheqCredito.Value = DateTime.Now;            
@@ -172,7 +174,7 @@ namespace CapaPresentacion
                                 if (valores > 0)
                                 {
                                     
-                                    rpta1 = CN_Cheque.ConfirmarCheque("ACTIVO");
+                                    rpta1 = CN_Cheque.ModificarEstadoCheque("PENDIENTE","ACTIVO");
 
                                     if (rpta1.Equals("OK"))
                                     {
@@ -760,7 +762,6 @@ namespace CapaPresentacion
                         tbDetalleRecibo.Text += "Valor Nº " + DetNumCheq + " de Banco " + DetNomBan + " al " + DetFecC + " con importe $"+DetImporte+ " // ";
                     }
                 }
-                dgvValores.Enabled = false;
                 tbValores.Text = tbCheqTotal.Text;
                 tabRecibos.SelectedTab = tabNuevoRecibo;
             }
@@ -770,7 +771,6 @@ namespace CapaPresentacion
                 opcion = MessageBox.Show("No se cargo ningun cheque, Desea ir al Recibo?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (opcion == DialogResult.OK)
                 {
-                    dgvValores.Enabled = false;
                     tbValores.Text = "0,00";
                     tabRecibos.SelectedTab = tabNuevoRecibo;
                 }
@@ -858,6 +858,11 @@ namespace CapaPresentacion
             }
             Decimal Suma = efectivo + valores + banco;
             lblTotalRecibo.Text = Suma.ToString("0.00");
+        }
+
+        private void btnAgregaTransf_Click(object sender, EventArgs e)
+        {
+            tabRecibos.SelectedTab = tabTransferencias;
         }
     }
 }

@@ -55,6 +55,15 @@ namespace CapaNegocio
             return Obj.Insertar(Obj);
         }
 
+        public static string ModificarCheque(int idcheque,string estadoActual, string estadoNuevo)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.IdCheque = idcheque;
+            Obj.Estado = estadoActual;
+            Obj.EstadoNuevo = estadoNuevo;
+            return Obj.ModificarCheque(Obj);
+        }
+
         public static int ConsultaUltimoCheque()
         {
             CD_Cheque Obj = new CD_Cheque();
@@ -68,11 +77,21 @@ namespace CapaNegocio
             string rpta = Obj.ConsultaExisteCheques(estado);
             return rpta;
         }
-        public static string ConfirmarCheque(string estado)
+
+        public static string ConsultaSiExisteChequeOP(string estado)
         {
             CD_Cheque Obj = new CD_Cheque();
-            Obj.Estado = estado;
-            return Obj.ConfirmaCheque(Obj);
+            string rpta = Obj.ConsultaExisteChequesOP(estado);
+            return rpta;
+        }
+
+
+        public static string ModificarEstadoCheque(string estadoActual, string estadoNuevo)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.Estado = estadoActual;
+            Obj.EstadoNuevo = estadoNuevo;
+            return Obj.ModificaEstadoCheque(Obj);
         }
 
         public string Eliminar_Cheques()
