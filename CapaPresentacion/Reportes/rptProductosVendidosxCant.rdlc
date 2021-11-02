@@ -547,6 +547,7 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Margin>True</Margin>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -556,6 +557,7 @@
                       </Style>
                     </ChartMajorGridLines>
                     <ChartMinorGridLines>
+                      <Enabled>True</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -582,6 +584,9 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <PreventLabelOffset>true</PreventLabelOffset>
+                    <AllowLabelRotation>None</AllowLabelRotation>
+                    <MaxFontSize>7pt</MaxFontSize>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -754,6 +759,9 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
@@ -811,10 +819,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>1.08162cm</Top>
-            <Left>2.01378cm</Left>
-            <Height>6.79917cm</Height>
-            <Width>15.88729cm</Width>
+            <Top>0.60537cm</Top>
+            <Left>1.18828cm</Left>
+            <Height>8.05215cm</Height>
+            <Width>17.68584cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

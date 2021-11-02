@@ -275,7 +275,11 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ID_PRODUCTO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>DarkBlue</Color>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -453,7 +457,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>8.80745cm</Top>
+            <Top>8.54287cm</Top>
             <Left>1.71662cm</Left>
             <Height>1.2cm</Height>
             <Width>19.1675cm</Width>
@@ -477,6 +481,21 @@
                       <Value>=Fields!ID_PRODUCTO.Value</Value>
                     </SortExpression>
                   </SortExpressions>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart1_CategoryGroup1">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!DES_PRODUCTO.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!DES_PRODUCTO.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <Label>=Fields!DES_PRODUCTO.Value</Label>
+                    </ChartMember>
+                  </ChartMembers>
                   <Label>=Fields!ID_PRODUCTO.Value</Label>
                 </ChartMember>
               </ChartMembers>
@@ -497,9 +516,16 @@
                         <Y>=Sum(Fields!TOTAL.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style />
+                        <Style>
+                          <Format>'$'0;('$'0)</Format>
+                          <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
+                        </Style>
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>SeaGreen</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
@@ -534,8 +560,10 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>DarkBlue</Color>
                     </Style>
                     <ChartAxisTitle>
                       <Caption />
@@ -579,6 +607,8 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <PreventLabelOffset>true</PreventLabelOffset>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -647,8 +677,12 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>'$'#,0;('$'#,0)</Format>
+                      <Color>Green</Color>
+                      <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                     </Style>
                     <ChartAxisTitle>
                       <Caption />
@@ -809,10 +843,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>1.00224cm</Top>
-            <Left>3.07891cm</Left>
-            <Height>7.11667cm</Height>
-            <Width>16.66813cm</Width>
+            <Top>0.49953cm</Top>
+            <Left>0.31433cm</Left>
+            <Height>7.68174cm</Height>
+            <Width>21.97208cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

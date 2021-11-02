@@ -125,5 +125,16 @@ namespace CapaPresentacion
                 MessageBox.Show("Por Favor seleccione un comprobante");
             }
         }
+
+        private void dgvVentas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow MyRow in dgvVentas.Rows)
+            {
+                if (MyRow.Cells[5].Value.ToString() == "0")
+                {
+                    MyRow.Cells[5].Value = "Consumidor Final";
+                }
+            }
+        }
     }
 }

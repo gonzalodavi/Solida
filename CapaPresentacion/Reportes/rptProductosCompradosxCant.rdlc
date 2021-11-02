@@ -275,7 +275,11 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ID_PRODUCTO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>Maroon</Color>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -477,6 +481,21 @@
                       <Value>=Fields!ID_PRODUCTO.Value</Value>
                     </SortExpression>
                   </SortExpressions>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart1_CategoryGroup1">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!DES_PRODUCTO.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!DES_PRODUCTO.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <Label>=Fields!DES_PRODUCTO.Value</Label>
+                    </ChartMember>
+                  </ChartMembers>
                   <Label>=Fields!ID_PRODUCTO.Value</Label>
                 </ChartMember>
               </ChartMembers>
@@ -497,9 +516,17 @@
                         <Y>=Sum(Fields!CANTIDADCOMPRAS.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style />
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>MidnightBlue</Color>
+                        </Style>
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>Brown</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
@@ -537,8 +564,10 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>Maroon</Color>
                     </Style>
                     <ChartAxisTitle>
                       <Caption />
@@ -582,6 +611,7 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <PreventLabelOffset>true</PreventLabelOffset>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -650,8 +680,10 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>MidnightBlue</Color>
                     </Style>
                     <ChartAxisTitle>
                       <Caption />
@@ -812,9 +844,9 @@
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.55245cm</Top>
-            <Left>2.98662cm</Left>
+            <Left>0.57891cm</Left>
             <Height>6.95854cm</Height>
-            <Width>18.37438cm</Width>
+            <Width>23.05751cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

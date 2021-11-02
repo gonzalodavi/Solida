@@ -9,22 +9,25 @@
               <Width>0.07938cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.72759cm</Width>
+              <Width>2.45545cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.9603cm</Width>
+              <Width>2.03212cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.32678cm</Width>
+              <Width>7.47726cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.83343cm</Width>
+              <Width>2.68583cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.56884cm</Width>
+              <Width>2.52152cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.67468cm</Width>
+              <Width>3.2492cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.32149cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -279,6 +282,42 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>SALDO</Value>
+                              <Style>
+                                <FontFamily>verdana</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Orange</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -479,14 +518,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TOTAL">
+                    <Textbox Name="IMPORTE">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TOTAL.Value</Value>
+                              <Value>=Fields!IMPORTE.Value</Value>
                               <Style>
                                 <Format>'$' #,0.00</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
@@ -498,7 +537,41 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TOTAL</rd:DefaultName>
+                      <rd:DefaultName>IMPORTE</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="SALDO">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!SALDO.Value</Value>
+                              <Style>
+                                <Format>'$' #,0.00</Format>
+                                <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>SALDO</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -517,6 +590,11 @@
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+            </TablixMember>
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -540,7 +618,7 @@
         <Top>0.62328cm</Top>
         <Left>0.4145cm</Left>
         <Height>1.2cm</Height>
-        <Width>20.171cm</Width>
+        <Width>23.82225cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -577,8 +655,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox30</rd:DefaultName>
-        <Top>2.19287cm</Top>
-        <Left>14.85758cm</Left>
+        <Top>2.82787cm</Top>
+        <Left>18.50883cm</Left>
         <Height>0.6cm</Height>
         <Width>5.72792cm</Width>
         <ZIndex>1</ZIndex>
@@ -593,10 +671,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>27cm</Height>
+    <Height>22.95188cm</Height>
     <Style />
   </Body>
-  <Width>21cm</Width>
+  <Width>24.66008cm</Width>
   <Page>
     <PageHeader>
       <Height>4.52148cm</Height>
@@ -639,10 +717,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox17</rd:DefaultName>
-          <Top>1.37972cm</Top>
-          <Left>10.80946cm</Left>
+          <Top>1.35847cm</Top>
+          <Left>12.50855cm</Left>
           <Height>1.06327cm</Height>
-          <Width>9.77604cm</Width>
+          <Width>11.7282cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -676,9 +754,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.65264cm</Top>
-          <Left>10.80946cm</Left>
+          <Left>12.50855cm</Left>
           <Height>0.6cm</Height>
-          <Width>9.77604cm</Width>
+          <Width>11.7282cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -876,7 +954,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.99333cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -897,8 +975,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.97cm</Top>
-          <Left>7.67573cm</Left>
+          <Top>0.67896cm</Top>
+          <Left>9.54891cm</Left>
           <Height>0.6cm</Height>
           <Width>5.64854cm</Width>
           <Style>
@@ -944,6 +1022,38 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="ID_CCC">
+          <DataField>ID_CCC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FECHA_CCC">
+          <DataField>FECHA_CCC</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CMPBTE">
+          <DataField>CMPBTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CONCEPTO">
+          <DataField>CONCEPTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DEBE">
+          <DataField>DEBE</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="HABER">
+          <DataField>HABER</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="IMPORTE">
+          <DataField>IMPORTE</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="SALDO">
+          <DataField>SALDO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
         <Field Name="DNI">
           <DataField>DNI</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -968,34 +1078,6 @@
           <DataField>RAZON_SOCIAL</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FECHA_CCC">
-          <DataField>FECHA_CCC</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="ID_CCC">
-          <DataField>ID_CCC</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="CMPBTE">
-          <DataField>CMPBTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CONCEPTO">
-          <DataField>CONCEPTO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DEBE">
-          <DataField>DEBE</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="HABER">
-          <DataField>HABER</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="TOTAL">
-          <DataField>TOTAL</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="SALDOC">
           <DataField>SALDOC</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -1004,10 +1086,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>dsPrincipal</rd:DataSetName>
         <rd:SchemaPath>G:\Proyecto Solida\Solida\CapaPresentacion\dsPrincipal.xsd</rd:SchemaPath>
-        <rd:TableName>ReporteSimpleCtaCte</rd:TableName>
+        <rd:TableName>ReporteSimpleCtaCte1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ReporteSimpleCtaCteTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>ReporteSimpleCtaCte1TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

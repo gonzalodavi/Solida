@@ -275,7 +275,11 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ID_PRODUCTO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>DarkBlue</Color>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -477,6 +481,21 @@
                       <Value>=Fields!ID_PRODUCTO.Value</Value>
                     </SortExpression>
                   </SortExpressions>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart1_CategoryGroup1">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!DES_PRODUCTO.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!DES_PRODUCTO.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <Label>=Fields!DES_PRODUCTO.Value</Label>
+                    </ChartMember>
+                  </ChartMembers>
                   <Label>=Fields!ID_PRODUCTO.Value</Label>
                 </ChartMember>
               </ChartMembers>
@@ -497,7 +516,13 @@
                         <Y>=Sum(Fields!CANTIDADVENTAS.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style />
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>White</Color>
+                        </Style>
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -506,6 +531,7 @@
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
+                  <Subtype>Stacked</Subtype>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -534,11 +560,13 @@
                   <ChartAxis Name="Primary">
                     <Style>
                       <Border>
-                        <Color>Gainsboro</Color>
-                        <Style>None</Style>
+                        <Color>Silver</Color>
+                        <Style>Solid</Style>
                       </Border>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>DarkBlue</Color>
                     </Style>
                     <ChartAxisTitle>
                       <Caption />
@@ -547,6 +575,8 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Margin>True</Margin>
+                    <IntervalType>Default</IntervalType>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -564,12 +594,14 @@
                       </Style>
                     </ChartMinorGridLines>
                     <ChartMajorTickMarks>
+                      <Enabled>False</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
-                          <Style>None</Style>
                         </Border>
                       </Style>
+                      <Length>0</Length>
+                      <IntervalType>Number</IntervalType>
                     </ChartMajorTickMarks>
                     <ChartMinorTickMarks>
                       <Style>
@@ -582,6 +614,10 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <PreventLabelOffset>true</PreventLabelOffset>
+                    <PreventWordWrap>true</PreventWordWrap>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                    <MaxFontSize>7pt</MaxFontSize>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -650,8 +686,10 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>Olive</Color>
                     </Style>
                     <ChartAxisTitle>
                       <Caption />
@@ -663,7 +701,9 @@
                     <ChartMajorGridLines>
                       <Style>
                         <Border>
-                          <Color>Gainsboro</Color>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
                       </Style>
                     </ChartMajorGridLines>
@@ -694,6 +734,7 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <PreventLabelOffset>true</PreventLabelOffset>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -755,8 +796,11 @@
                   </ChartAxis>
                 </ChartValueAxes>
                 <Style>
-                  <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
+                  <BackgroundGradientEndColor>#00ffffff</BackgroundGradientEndColor>
+                  <BackgroundHatchType>None</BackgroundHatchType>
+                  <ShadowColor>#00ffffff</ShadowColor>
+                  <ShadowOffset>1.5pt</ShadowOffset>
                 </Style>
               </ChartArea>
             </ChartAreas>
@@ -793,7 +837,7 @@
                 <Position>TopLeft</Position>
               </ChartTitle>
             </ChartTitles>
-            <Palette>Pacific</Palette>
+            <Palette>SeaGreen</Palette>
             <ChartBorderSkin>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
@@ -811,10 +855,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.65828cm</Top>
-            <Left>2.44391cm</Left>
-            <Height>6.5875cm</Height>
-            <Width>16.27125cm</Width>
+            <Top>0.44661cm</Top>
+            <Left>0.2614cm</Left>
+            <Height>7.52299cm</Height>
+            <Width>20.83437cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

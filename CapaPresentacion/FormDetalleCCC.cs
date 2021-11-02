@@ -13,6 +13,7 @@ namespace CapaPresentacion
 {
     public partial class FormDetalleCCC : Form
     {
+        private bool SiImprimirProveedor = false;
         CN_CtaCte objeto = new CN_CtaCte();
         public FormDetalleCCC()
         {
@@ -66,7 +67,7 @@ namespace CapaPresentacion
                 MensajeError("Seleccione un proveedor Por Favor");
             }
             else
-            {
+            {                
                 CargarDetalleCtaCteP();
             }
         }
@@ -85,6 +86,15 @@ namespace CapaPresentacion
                 OcultaYAcomodaTabla();
                 CargaSaldoCtaCte();
             }
+            if (dgvDetCtaCte.SelectedRows.Count > 0)
+            {
+                btnImprimir.Enabled = true;
+            }
+            else
+            {
+                btnImprimir.Enabled = false;
+                MensajeError("No Existen Registros en la Cuenta Corriente Seleccionada");
+            }
         }
 
         private void CargarDetalleCtaCteP()
@@ -100,6 +110,15 @@ namespace CapaPresentacion
                 this.dgvDetCtaCteProveedores.DataSource = CN_CtaCte.MostrarDetalleCtaCteCompletoP(cbProveedores.SelectedValue.ToString());
                 OcultaYAcomodaTablaP();
                 CargaSaldoCtaCteP();
+            }
+            if (dgvDetCtaCteProveedores.SelectedRows.Count > 0)
+            {
+                btnImprimirProv.Enabled = true;
+            }
+            else
+            {
+                btnImprimirProv.Enabled = false;
+                MensajeError("No Existen Registros en la Cuenta Corriente Seleccionada");
             }
         }
 
@@ -216,12 +235,29 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("No se selecciono Ningun Cliente");
+                MensajeError("No se selecciono Ningun Cliente");
             }
         }
         private void btnImprimirProv_Click(object sender, EventArgs e)
         {
-            /*CONFIGURAR IGUAL AL DE CLIENTES*/
+            if (cbProveedores.SelectedIndex != -1)
+            {
+                if (dgvDetCtaCteProveedores.SelectedRows.Count > 0)
+                {
+                    FormDetalleCtaCteProveedorSimple form = new FormDetalleCtaCteProveedorSimple();
+                    form.Cuit = cbProveedores.SelectedValue.ToString();
+                    form.ShowDialog();
+                }
+                else
+                {
+                    MensajeError("No Existen Registros");
+
+                }
+            }
+            else
+            {
+                MensajeError("No se selecciono Ningun Proveedor");
+            }
         }
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -229,6 +265,8 @@ namespace CapaPresentacion
             if (dgvDetCtaCte.SelectedRows.Count > 0)
             {
                 dgvDetCtaCte.Columns.Clear();
+                btnImprimir.Enabled = false;
+                lblSaldo.Text = "0,00";
             }
         }
 
@@ -237,6 +275,8 @@ namespace CapaPresentacion
             if (dgvDetCtaCteProveedores.SelectedRows.Count > 0)
             {
                 dgvDetCtaCteProveedores.Columns.Clear();
+                btnImprimirProv.Enabled = false;
+                lblSaldoProv.Text = "0,00";
             }
         }
 
@@ -272,7 +312,5 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-
-        
     }
 }

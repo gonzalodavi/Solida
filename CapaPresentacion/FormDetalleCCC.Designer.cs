@@ -40,6 +40,11 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tabVentas = new System.Windows.Forms.TabControl();
             this.tabClientes = new System.Windows.Forms.TabPage();
+            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
+            this.chekFecha = new Guna.UI.WinForms.GunaSwitch();
+            this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCliente = new System.Windows.Forms.ComboBox();
@@ -55,11 +60,6 @@
             this.lblFecha1 = new System.Windows.Forms.Label();
             this.dgvDetCtaCte = new System.Windows.Forms.DataGridView();
             this.tabProveedores = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
-            this.chekFecha = new Guna.UI.WinForms.GunaSwitch();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.chekFechaProv = new Guna.UI.WinForms.GunaSwitch();
             this.dtpFecha1Prov = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -183,6 +183,94 @@
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
             // 
+            // lblChekAnul
+            // 
+            this.lblChekAnul.AutoSize = true;
+            this.lblChekAnul.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
+            this.lblChekAnul.Location = new System.Drawing.Point(778, 294);
+            this.lblChekAnul.Name = "lblChekAnul";
+            this.lblChekAnul.Size = new System.Drawing.Size(78, 13);
+            this.lblChekAnul.TabIndex = 154;
+            this.lblChekAnul.Text = "POR FECHA";
+            // 
+            // chekFecha
+            // 
+            this.chekFecha.BaseColor = System.Drawing.SystemColors.Control;
+            this.chekFecha.CheckedOffColor = System.Drawing.Color.DarkGray;
+            this.chekFecha.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekFecha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chekFecha.FillColor = System.Drawing.Color.White;
+            this.chekFecha.Location = new System.Drawing.Point(856, 291);
+            this.chekFecha.Name = "chekFecha";
+            this.chekFecha.Size = new System.Drawing.Size(28, 20);
+            this.chekFecha.TabIndex = 153;
+            this.chekFecha.CheckedChanged += new System.EventHandler(this.chekFecha_CheckedChanged);
+            // 
+            // dtpFecha1
+            // 
+            this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha1.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.CustomFormat = null;
+            this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha1.Enabled = false;
+            this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha1.Location = new System.Drawing.Point(773, 185);
+            this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha1.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha1.Radius = 10;
+            this.dtpFecha1.Size = new System.Drawing.Size(116, 28);
+            this.dtpFecha1.TabIndex = 152;
+            this.dtpFecha1.Text = "22/10/2021";
+            this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
+            // dtpFecha2
+            // 
+            this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha2.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.CustomFormat = null;
+            this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha2.Enabled = false;
+            this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha2.Location = new System.Drawing.Point(773, 249);
+            this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha2.Name = "dtpFecha2";
+            this.dtpFecha2.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha2.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha2.Radius = 10;
+            this.dtpFecha2.Size = new System.Drawing.Size(116, 28);
+            this.dtpFecha2.TabIndex = 151;
+            this.dtpFecha2.Text = "22/10/2021";
+            this.dtpFecha2.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Gold;
+            this.label5.Location = new System.Drawing.Point(622, 519);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 16);
+            this.label5.TabIndex = 121;
+            this.label5.Text = "$";
+            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -234,9 +322,9 @@
             this.lblSaldo.ForeColor = System.Drawing.Color.Gold;
             this.lblSaldo.Location = new System.Drawing.Point(635, 519);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(17, 16);
+            this.lblSaldo.Size = new System.Drawing.Size(40, 16);
             this.lblSaldo.TabIndex = 110;
-            this.lblSaldo.Text = "0";
+            this.lblSaldo.Text = "0,00";
             // 
             // lblTitSaldo
             // 
@@ -321,6 +409,7 @@
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.Enabled = false;
             this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -454,94 +543,6 @@
             this.tabProveedores.Size = new System.Drawing.Size(948, 578);
             this.tabProveedores.TabIndex = 1;
             this.tabProveedores.Text = "Proveedores";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gold;
-            this.label5.Location = new System.Drawing.Point(622, 519);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 16);
-            this.label5.TabIndex = 121;
-            this.label5.Text = "$";
-            // 
-            // dtpFecha1
-            // 
-            this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFecha1.BaseColor = System.Drawing.Color.White;
-            this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFecha1.CustomFormat = null;
-            this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFecha1.Enabled = false;
-            this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
-            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(773, 185);
-            this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFecha1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha1.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFecha1.Radius = 10;
-            this.dtpFecha1.Size = new System.Drawing.Size(116, 28);
-            this.dtpFecha1.TabIndex = 152;
-            this.dtpFecha1.Text = "22/10/2021";
-            this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // dtpFecha2
-            // 
-            this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFecha2.BaseColor = System.Drawing.Color.White;
-            this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFecha2.CustomFormat = null;
-            this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFecha2.Enabled = false;
-            this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
-            this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(773, 249);
-            this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha2.Name = "dtpFecha2";
-            this.dtpFecha2.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFecha2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha2.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFecha2.Radius = 10;
-            this.dtpFecha2.Size = new System.Drawing.Size(116, 28);
-            this.dtpFecha2.TabIndex = 151;
-            this.dtpFecha2.Text = "22/10/2021";
-            this.dtpFecha2.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // lblChekAnul
-            // 
-            this.lblChekAnul.AutoSize = true;
-            this.lblChekAnul.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(778, 294);
-            this.lblChekAnul.Name = "lblChekAnul";
-            this.lblChekAnul.Size = new System.Drawing.Size(78, 13);
-            this.lblChekAnul.TabIndex = 154;
-            this.lblChekAnul.Text = "POR FECHA";
-            // 
-            // chekFecha
-            // 
-            this.chekFecha.BaseColor = System.Drawing.SystemColors.Control;
-            this.chekFecha.CheckedOffColor = System.Drawing.Color.DarkGray;
-            this.chekFecha.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.chekFecha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chekFecha.FillColor = System.Drawing.Color.White;
-            this.chekFecha.Location = new System.Drawing.Point(856, 291);
-            this.chekFecha.Name = "chekFecha";
-            this.chekFecha.Size = new System.Drawing.Size(28, 20);
-            this.chekFecha.TabIndex = 153;
-            this.chekFecha.CheckedChanged += new System.EventHandler(this.chekFecha_CheckedChanged);
             // 
             // gunaLabel1
             // 
@@ -682,9 +683,9 @@
             this.lblSaldoProv.ForeColor = System.Drawing.Color.Gold;
             this.lblSaldoProv.Location = new System.Drawing.Point(635, 519);
             this.lblSaldoProv.Name = "lblSaldoProv";
-            this.lblSaldoProv.Size = new System.Drawing.Size(17, 16);
+            this.lblSaldoProv.Size = new System.Drawing.Size(40, 16);
             this.lblSaldoProv.TabIndex = 165;
-            this.lblSaldoProv.Text = "0";
+            this.lblSaldoProv.Text = "0,00";
             // 
             // label12
             // 
@@ -769,6 +770,7 @@
             // 
             this.btnImprimirProv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnImprimirProv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimirProv.Enabled = false;
             this.btnImprimirProv.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnImprimirProv.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnImprimirProv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;

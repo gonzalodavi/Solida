@@ -112,6 +112,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bd2DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsPrincipal.cs">
+      <DependentUpon>dsPrincipal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsPrincipal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -317,6 +320,12 @@
     <Compile Include="Reportes\FormDetalleCtaCteClienteSimple.Designer.cs">
       <DependentUpon>FormDetalleCtaCteClienteSimple.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FormDetalleCtaCteProveedorSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormDetalleCtaCteProveedorSimple.Designer.cs">
+      <DependentUpon>FormDetalleCtaCteProveedorSimple.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FormReporteCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +337,12 @@
     </Compile>
     <Compile Include="Reportes\FormReporteNotas.Designer.cs">
       <DependentUpon>FormReporteNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormReporteOPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReporteOPago.Designer.cs">
+      <DependentUpon>FormReporteOPago.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FormReporteProductos.cs">
       <SubType>Form</SubType>
@@ -487,11 +502,17 @@
     <EmbeddedResource Include="Reportes\FormDetalleCtaCteClienteSimple.resx">
       <DependentUpon>FormDetalleCtaCteClienteSimple.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormDetalleCtaCteProveedorSimple.resx">
+      <DependentUpon>FormDetalleCtaCteProveedorSimple.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteCompra.resx">
       <DependentUpon>FormReporteCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteNotas.resx">
       <DependentUpon>FormReporteNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReporteOPago.resx">
+      <DependentUpon>FormReporteOPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteProductos.resx">
       <DependentUpon>FormReporteProductos.cs</DependentUpon>
@@ -518,10 +539,12 @@
       <DependentUpon>FormTop20ProdVendPrecio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\InformeDetalleCtaCteCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\InformeDetalleCtaCteProveedor.rdlc" />
     <EmbeddedResource Include="Reportes\InformeProductosMasVendidosCantidad.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteMASVENTAS.rdlc" />
     <EmbeddedResource Include="Reportes\rptComprobanteCompra.rdlc" />
     <EmbeddedResource Include="Reportes\rptComprobanteNotas.rdlc" />
+    <EmbeddedResource Include="Reportes\rptComprobanteOPago.rdlc" />
     <EmbeddedResource Include="Reportes\rptComprobanteRecibo.rdlc" />
     <EmbeddedResource Include="Reportes\rptComprobanteRemito.rdlc" />
     <EmbeddedResource Include="Reportes\rptComprobanteVenta.rdlc">

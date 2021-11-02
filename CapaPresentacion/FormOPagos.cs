@@ -534,16 +534,16 @@ namespace CapaPresentacion
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            /*if (dgvOPago.SelectedRows.Count > 0)
+            if (dgvOPago.SelectedRows.Count > 0)
             {
-                FormReporteRecibo form = new FormReporteRecibo();
-                form.IdRecibo = Convert.ToInt32(this.dgvOPago.CurrentRow.Cells["ID_RECIBO"].Value);
+                FormReporteOPago form = new FormReporteOPago();
+                form.IdOPago = Convert.ToInt32(this.dgvOPago.CurrentRow.Cells["ID_OPAGO"].Value);
                 form.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Por Favor seleccione un comprobante");
-            }*/
+            }
         }
 
         private void tbNumOPago_KeyPress(object sender, KeyPressEventArgs e)

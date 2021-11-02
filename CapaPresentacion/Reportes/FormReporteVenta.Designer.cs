@@ -32,18 +32,38 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReporteVenta));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
             this.ReporteVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ReporteVentasTableAdapter = new CapaPresentacion.dsPrincipalTableAdapters.ReporteVentasTableAdapter();
-            this.bd2DataSet = new CapaPresentacion.bd2DataSet();
+            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
             this.DatosEmpresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bd2DataSet = new CapaPresentacion.bd2DataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ReporteVentasTableAdapter = new CapaPresentacion.dsPrincipalTableAdapters.ReporteVentasTableAdapter();
             this.DatosEmpresaTableAdapter = new CapaPresentacion.bd2DataSetTableAdapters.DatosEmpresaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteVentasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bd2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatosEmpresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bd2DataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReporteVentasBindingSource
+            // 
+            this.ReporteVentasBindingSource.DataMember = "ReporteVentas";
+            this.ReporteVentasBindingSource.DataSource = this.dsPrincipal;
+            // 
+            // dsPrincipal
+            // 
+            this.dsPrincipal.DataSetName = "dsPrincipal";
+            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DatosEmpresaBindingSource
+            // 
+            this.DatosEmpresaBindingSource.DataMember = "DatosEmpresa";
+            this.DatosEmpresaBindingSource.DataSource = this.bd2DataSet;
+            // 
+            // bd2DataSet
+            // 
+            this.bd2DataSet.DataSetName = "bd2DataSet";
+            this.bd2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -61,29 +81,9 @@
             this.reportViewer1.Size = new System.Drawing.Size(707, 592);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dsPrincipal
-            // 
-            this.dsPrincipal.DataSetName = "dsPrincipal";
-            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ReporteVentasBindingSource
-            // 
-            this.ReporteVentasBindingSource.DataMember = "ReporteVentas";
-            this.ReporteVentasBindingSource.DataSource = this.dsPrincipal;
-            // 
             // ReporteVentasTableAdapter
             // 
             this.ReporteVentasTableAdapter.ClearBeforeFill = true;
-            // 
-            // bd2DataSet
-            // 
-            this.bd2DataSet.DataSetName = "bd2DataSet";
-            this.bd2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DatosEmpresaBindingSource
-            // 
-            this.DatosEmpresaBindingSource.DataMember = "DatosEmpresa";
-            this.DatosEmpresaBindingSource.DataSource = this.bd2DataSet;
             // 
             // DatosEmpresaTableAdapter
             // 
@@ -101,10 +101,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FACTURA DE VENTA";
             this.Load += new System.EventHandler(this.FormReporteVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteVentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bd2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatosEmpresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bd2DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
