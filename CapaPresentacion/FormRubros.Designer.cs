@@ -157,11 +157,10 @@
             this.lblRubro.AutoSize = true;
             this.lblRubro.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRubro.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblRubro.Location = new System.Drawing.Point(32, 402);
+            this.lblRubro.Location = new System.Drawing.Point(34, 386);
             this.lblRubro.Name = "lblRubro";
-            this.lblRubro.Size = new System.Drawing.Size(160, 16);
+            this.lblRubro.Size = new System.Drawing.Size(0, 16);
             this.lblRubro.TabIndex = 159;
-            this.lblRubro.Text = "Ingrese Nuevo Rubro";
             // 
             // btnAceptaRubro
             // 
@@ -233,6 +232,7 @@
             this.btnNuevo.TabStop = false;
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblTitulo
             // 
@@ -241,7 +241,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblTitulo.Location = new System.Drawing.Point(125, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(125, 21);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(233, 18);
             this.lblTitulo.TabIndex = 165;

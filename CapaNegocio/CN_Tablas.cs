@@ -17,6 +17,32 @@ namespace CapaNegocio
             dt = objetoCD.CargaRubros();
             return dt;
         }
+        public static string ConsultaRubroExiste(string nombre)
+        {
+            CD_Tablas Obj = new CD_Tablas();
+            string rpta = Obj.ConsultaExisteRubro(nombre);
+            return rpta;
+        }
+
+        public static string ConsultaMarcaExiste(string nombre)
+        {
+            CD_Tablas Obj = new CD_Tablas();
+            string rpta = Obj.ConsultaExisteMarca(nombre);
+            return rpta;
+        }
+
+        public static string ConsultaModeloExiste(string nombre)
+        {
+            CD_Tablas Obj = new CD_Tablas();
+            string rpta = Obj.ConsultaExisteModelo(nombre);
+            return rpta;
+        }
+        public static string ConsultaAlicExiste(float nombre)
+        {
+            CD_Tablas Obj = new CD_Tablas();
+            string rpta = Obj.ConsultaExisteAlic(nombre);
+            return rpta;
+        }
 
         public DataTable CargarAlicuotas()
         {

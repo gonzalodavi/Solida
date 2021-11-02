@@ -344,7 +344,7 @@ namespace Presentacion
         private void btnRubros_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            openChildForm(new FormTablas());
+
         }
 
         private void btnInfCaja_Click(object sender, EventArgs e)

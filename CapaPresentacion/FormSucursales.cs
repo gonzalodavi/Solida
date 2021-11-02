@@ -36,6 +36,7 @@ namespace CapaPresentacion
 
         private void FormSucursales_Load(object sender, EventArgs e)
         {
+            rbEmpresa.Checked = true;
             //CargarGrillaSucursales();
             CargarCampos();
             CargaTextBox();

@@ -70,7 +70,7 @@ namespace CapaPresentacion
             cbRubro.DataSource = objeto.CargaComboBoxRubro();
             cbRubro.DisplayMember = "RUBRO";
             cbRubro.ValueMember = "ID";
-            cbRubro.Text = "Varios";            
+            cbRubro.SelectedIndex = -1;            
         }
 
         private void CargaAlicComboBox()
@@ -85,14 +85,14 @@ namespace CapaPresentacion
             cbMarca.DataSource = objeto.CargaComboBoxMarca();
             cbMarca.DisplayMember = "MARCA";
             cbMarca.ValueMember = "ID";
-            cbMarca.Text = "Sin Marca";           
+            cbMarca.SelectedIndex = -1;           
         }
         private void CargaModeloComboBox()
         {
             cbModelo.DataSource = objeto.CargaComboBoxModelo();
             cbModelo.DisplayMember = "MODELO";
             cbModelo.ValueMember = "ID";
-            cbModelo.Text = "Sin Modelo";          
+            cbModelo.SelectedIndex = -1;
         }
 
         private void limpiarCampos()
@@ -108,9 +108,9 @@ namespace CapaPresentacion
             tbStockMin.Text = "";            
             tbVenta.Text = "";
             cbAli.Text = "21";
-            cbMarca.Text = "Sin Marca";
-            cbModelo.Text = "Sin Modelo";
-            cbRubro.Text = "Varios";            
+            cbMarca.SelectedIndex = -1;
+            cbModelo.SelectedIndex = -1;
+            cbRubro.SelectedIndex = -1;
         }     
 
         private void haceCalculo()
@@ -455,7 +455,57 @@ namespace CapaPresentacion
 
                 formBG.Dispose();
             }
-            cbRubro.SelectedIndex = -1;            
+            CargaRubrosComboBox();
+            cbRubro.SelectedIndex = -1;
         }
+
+        private void btnAgregaMarca_Click(object sender, EventArgs e)
+        {
+            Form formBG = new Form();
+            using (FormMarcas mm = new FormMarcas())
+            {
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .70d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                mm.Owner = formBG;
+                mm.ShowDialog();
+
+                formBG.Dispose();
+            }
+            CargaMarcaComboBox();
+            cbMarca.SelectedIndex = -1;
+        }
+
+        private void btnAgregaModelo_Click(object sender, EventArgs e)
+        {
+            Form formBG = new Form();
+            using (FormModelo mm = new FormModelo())
+            {
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .70d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                mm.Owner = formBG;
+                mm.ShowDialog();
+
+                formBG.Dispose();
+            }
+            CargaModeloComboBox();
+            cbModelo.SelectedIndex = -1;
+        } 
+        
     }
 }

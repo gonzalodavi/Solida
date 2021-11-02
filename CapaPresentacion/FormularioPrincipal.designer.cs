@@ -52,7 +52,6 @@
             this.btnInfCaja = new FontAwesome.Sharp.IconButton();
             this.btnInformes = new FontAwesome.Sharp.IconButton();
             this.panelSubMenuCompras = new System.Windows.Forms.Panel();
-            this.btnTablas = new FontAwesome.Sharp.IconButton();
             this.btnRemitos = new FontAwesome.Sharp.IconButton();
             this.btnOPago = new FontAwesome.Sharp.IconButton();
             this.btnFactCompra = new FontAwesome.Sharp.IconButton();
@@ -200,7 +199,7 @@
             this.panelSubMenuAjustes.Controls.Add(this.btnSesionesUsuarios);
             this.panelSubMenuAjustes.Controls.Add(this.btnAdminUsuarios);
             this.panelSubMenuAjustes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuAjustes.Location = new System.Drawing.Point(0, 970);
+            this.panelSubMenuAjustes.Location = new System.Drawing.Point(0, 935);
             this.panelSubMenuAjustes.Name = "panelSubMenuAjustes";
             this.panelSubMenuAjustes.Size = new System.Drawing.Size(213, 125);
             this.panelSubMenuAjustes.TabIndex = 5;
@@ -288,7 +287,7 @@
             this.btnAjustes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAjustes.IconSize = 40;
             this.btnAjustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjustes.Location = new System.Drawing.Point(0, 910);
+            this.btnAjustes.Location = new System.Drawing.Point(0, 875);
             this.btnAjustes.Name = "btnAjustes";
             this.btnAjustes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnAjustes.Size = new System.Drawing.Size(213, 60);
@@ -311,7 +310,7 @@
             this.panelSubMenuInformes.Controls.Add(this.btnInfBanco);
             this.panelSubMenuInformes.Controls.Add(this.btnInfCaja);
             this.panelSubMenuInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuInformes.Location = new System.Drawing.Point(0, 625);
+            this.panelSubMenuInformes.Location = new System.Drawing.Point(0, 590);
             this.panelSubMenuInformes.Name = "panelSubMenuInformes";
             this.panelSubMenuInformes.Size = new System.Drawing.Size(213, 285);
             this.panelSubMenuInformes.TabIndex = 4;
@@ -494,7 +493,7 @@
             this.btnInformes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnInformes.IconSize = 40;
             this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(0, 565);
+            this.btnInformes.Location = new System.Drawing.Point(0, 530);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnInformes.Size = new System.Drawing.Size(213, 60);
@@ -509,7 +508,6 @@
             // panelSubMenuCompras
             // 
             this.panelSubMenuCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
-            this.panelSubMenuCompras.Controls.Add(this.btnTablas);
             this.panelSubMenuCompras.Controls.Add(this.btnRemitos);
             this.panelSubMenuCompras.Controls.Add(this.btnOPago);
             this.panelSubMenuCompras.Controls.Add(this.btnFactCompra);
@@ -518,31 +516,8 @@
             this.panelSubMenuCompras.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuCompras.Location = new System.Drawing.Point(0, 325);
             this.panelSubMenuCompras.Name = "panelSubMenuCompras";
-            this.panelSubMenuCompras.Size = new System.Drawing.Size(213, 240);
+            this.panelSubMenuCompras.Size = new System.Drawing.Size(213, 205);
             this.panelSubMenuCompras.TabIndex = 3;
-            // 
-            // btnTablas
-            // 
-            this.btnTablas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTablas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTablas.FlatAppearance.BorderSize = 0;
-            this.btnTablas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
-            this.btnTablas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTablas.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTablas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTablas.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnTablas.IconColor = System.Drawing.Color.Black;
-            this.btnTablas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTablas.Location = new System.Drawing.Point(0, 200);
-            this.btnTablas.Name = "btnTablas";
-            this.btnTablas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnTablas.Size = new System.Drawing.Size(213, 40);
-            this.btnTablas.TabIndex = 1;
-            this.btnTablas.TabStop = false;
-            this.btnTablas.Text = "MANTENIMIENTO DE TABLAS";
-            this.btnTablas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTablas.UseVisualStyleBackColor = true;
-            this.btnTablas.Click += new System.EventHandler(this.btnRubros_Click);
             // 
             // btnRemitos
             // 
@@ -1086,7 +1061,6 @@
         private System.Windows.Forms.Label lblFecha;
         private FontAwesome.Sharp.IconButton btnSesionesUsuarios;
         private System.Windows.Forms.Timer timer1;
-        private FontAwesome.Sharp.IconButton btnTablas;
         private FontAwesome.Sharp.IconButton btnConfSucursal;
     }
 }

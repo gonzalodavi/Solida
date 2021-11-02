@@ -34,7 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.tabProductos = new System.Windows.Forms.TabControl();
             this.tabConsultaProducto = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
@@ -46,10 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnActualizaListaProd = new FontAwesome.Sharp.IconButton();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.tbBusca = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -91,10 +87,13 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.btAceptar = new System.Windows.Forms.Button();
             this.cbRubro = new System.Windows.Forms.ComboBox();
-            this.btnAgregaMarca = new FontAwesome.Sharp.IconButton();
-            this.btnAgregaModelo = new FontAwesome.Sharp.IconButton();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
+            this.btnActualizaListaProd = new FontAwesome.Sharp.IconButton();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.btnAgregaRubro = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnAgregaModelo = new FontAwesome.Sharp.IconButton();
+            this.btnAgregaMarca = new FontAwesome.Sharp.IconButton();
             this.panelContenedor.SuspendLayout();
             this.tabProductos.SuspendLayout();
             this.tabConsultaProducto.SuspendLayout();
@@ -126,31 +125,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(122, 18);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "PRODUCTOS";
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnRegresar.IconColor = System.Drawing.Color.White;
-            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(849, 28);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
-            this.btnRegresar.TabIndex = 84;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // tabProductos
             // 
@@ -322,56 +296,6 @@
             this.label10.Text = "NOMBRE";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnActualizaListaProd
-            // 
-            this.btnActualizaListaProd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizaListaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnActualizaListaProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizaListaProd.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnActualizaListaProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizaListaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnActualizaListaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizaListaProd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnActualizaListaProd.ForeColor = System.Drawing.Color.White;
-            this.btnActualizaListaProd.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnActualizaListaProd.IconColor = System.Drawing.Color.White;
-            this.btnActualizaListaProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaListaProd.IconSize = 5;
-            this.btnActualizaListaProd.Location = new System.Drawing.Point(810, 31);
-            this.btnActualizaListaProd.Name = "btnActualizaListaProd";
-            this.btnActualizaListaProd.Size = new System.Drawing.Size(116, 31);
-            this.btnActualizaListaProd.TabIndex = 132;
-            this.btnActualizaListaProd.TabStop = false;
-            this.btnActualizaListaProd.Text = "ACTUALIZAR";
-            this.btnActualizaListaProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizaListaProd.UseVisualStyleBackColor = false;
-            this.btnActualizaListaProd.Click += new System.EventHandler(this.btnActualizaListaProd_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnImprimir.IconColor = System.Drawing.Color.White;
-            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.IconSize = 25;
-            this.btnImprimir.Location = new System.Drawing.Point(810, 531);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(116, 31);
-            this.btnImprimir.TabIndex = 84;
-            this.btnImprimir.TabStop = false;
-            this.btnImprimir.Text = "IMPRIMIR";
-            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // btnNuevoProducto
             // 
             this.btnNuevoProducto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -391,31 +315,6 @@
             this.btnNuevoProducto.Text = "NUEVO";
             this.btnNuevoProducto.UseVisualStyleBackColor = false;
             this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscar.IconColor = System.Drawing.Color.White;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(365, 31);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(116, 31);
-            this.btnBuscar.TabIndex = 119;
-            this.btnBuscar.TabStop = false;
-            this.btnBuscar.Text = " BUSCAR";
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // tbBusca
             // 
@@ -531,7 +430,6 @@
             // tabNuevoProducto
             // 
             this.tabNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.tabNuevoProducto.Controls.Add(this.iconButton1);
             this.tabNuevoProducto.Controls.Add(this.btnAgregaRubro);
             this.tabNuevoProducto.Controls.Add(this.btnAgregaModelo);
             this.tabNuevoProducto.Controls.Add(this.btnAgregaMarca);
@@ -1015,51 +913,105 @@
             this.cbRubro.Size = new System.Drawing.Size(223, 22);
             this.cbRubro.TabIndex = 3;
             // 
-            // btnAgregaMarca
+            // btnRegresar
             // 
-            this.btnAgregaMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaMarca.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaMarca.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregaMarca.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaMarca.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregaMarca.IconColor = System.Drawing.Color.White;
-            this.btnAgregaMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaMarca.IconSize = 25;
-            this.btnAgregaMarca.Location = new System.Drawing.Point(501, 298);
-            this.btnAgregaMarca.Name = "btnAgregaMarca";
-            this.btnAgregaMarca.Size = new System.Drawing.Size(29, 29);
-            this.btnAgregaMarca.TabIndex = 170;
-            this.btnAgregaMarca.TabStop = false;
-            this.btnAgregaMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaMarca.UseVisualStyleBackColor = false;
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 25;
+            this.btnRegresar.Location = new System.Drawing.Point(849, 28);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
+            this.btnRegresar.TabIndex = 84;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // btnAgregaModelo
+            // btnActualizaListaProd
             // 
-            this.btnAgregaModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaModelo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaModelo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaModelo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaModelo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaModelo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregaModelo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaModelo.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregaModelo.IconColor = System.Drawing.Color.White;
-            this.btnAgregaModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaModelo.IconSize = 25;
-            this.btnAgregaModelo.Location = new System.Drawing.Point(501, 344);
-            this.btnAgregaModelo.Name = "btnAgregaModelo";
-            this.btnAgregaModelo.Size = new System.Drawing.Size(29, 29);
-            this.btnAgregaModelo.TabIndex = 171;
-            this.btnAgregaModelo.TabStop = false;
-            this.btnAgregaModelo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaModelo.UseVisualStyleBackColor = false;
+            this.btnActualizaListaProd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActualizaListaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizaListaProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizaListaProd.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizaListaProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizaListaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizaListaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizaListaProd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizaListaProd.ForeColor = System.Drawing.Color.White;
+            this.btnActualizaListaProd.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnActualizaListaProd.IconColor = System.Drawing.Color.White;
+            this.btnActualizaListaProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizaListaProd.IconSize = 5;
+            this.btnActualizaListaProd.Location = new System.Drawing.Point(810, 31);
+            this.btnActualizaListaProd.Name = "btnActualizaListaProd";
+            this.btnActualizaListaProd.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizaListaProd.TabIndex = 132;
+            this.btnActualizaListaProd.TabStop = false;
+            this.btnActualizaListaProd.Text = "ACTUALIZAR";
+            this.btnActualizaListaProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizaListaProd.UseVisualStyleBackColor = false;
+            this.btnActualizaListaProd.Click += new System.EventHandler(this.btnActualizaListaProd_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnImprimir.IconColor = System.Drawing.Color.White;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.IconSize = 25;
+            this.btnImprimir.Location = new System.Drawing.Point(810, 531);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(116, 31);
+            this.btnImprimir.TabIndex = 84;
+            this.btnImprimir.TabStop = false;
+            this.btnImprimir.Text = "IMPRIMIR";
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 25;
+            this.btnBuscar.Location = new System.Drawing.Point(365, 31);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(116, 31);
+            this.btnBuscar.TabIndex = 119;
+            this.btnBuscar.TabStop = false;
+            this.btnBuscar.Text = " BUSCAR";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregaRubro
             // 
@@ -1085,28 +1037,53 @@
             this.btnAgregaRubro.UseVisualStyleBackColor = false;
             this.btnAgregaRubro.Click += new System.EventHandler(this.btnAgregaRubro_Click);
             // 
-            // iconButton1
+            // btnAgregaModelo
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(797, 109);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(29, 29);
-            this.iconButton1.TabIndex = 173;
-            this.iconButton1.TabStop = false;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnAgregaModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaModelo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaModelo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaModelo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaModelo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaModelo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaModelo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaModelo.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaModelo.IconColor = System.Drawing.Color.White;
+            this.btnAgregaModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaModelo.IconSize = 25;
+            this.btnAgregaModelo.Location = new System.Drawing.Point(501, 344);
+            this.btnAgregaModelo.Name = "btnAgregaModelo";
+            this.btnAgregaModelo.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaModelo.TabIndex = 171;
+            this.btnAgregaModelo.TabStop = false;
+            this.btnAgregaModelo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaModelo.UseVisualStyleBackColor = false;
+            this.btnAgregaModelo.Click += new System.EventHandler(this.btnAgregaModelo_Click);
+            // 
+            // btnAgregaMarca
+            // 
+            this.btnAgregaMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaMarca.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaMarca.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaMarca.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaMarca.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaMarca.IconColor = System.Drawing.Color.White;
+            this.btnAgregaMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaMarca.IconSize = 25;
+            this.btnAgregaMarca.Location = new System.Drawing.Point(501, 298);
+            this.btnAgregaMarca.Name = "btnAgregaMarca";
+            this.btnAgregaMarca.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaMarca.TabIndex = 170;
+            this.btnAgregaMarca.TabStop = false;
+            this.btnAgregaMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaMarca.UseVisualStyleBackColor = false;
+            this.btnAgregaMarca.Click += new System.EventHandler(this.btnAgregaMarca_Click);
             // 
             // FormProductos
             // 
@@ -1194,7 +1171,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label18;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnAgregaRubro;
         private FontAwesome.Sharp.IconButton btnAgregaModelo;
         private FontAwesome.Sharp.IconButton btnAgregaMarca;

@@ -24,19 +24,42 @@ namespace CapaPresentacion
         private void FormRubros_Load(object sender, EventArgs e)
         {
             CargarGrillaRubros();
-            AcomodaTablaRubro();
+            AcomodaTabla();
         }
 
-        private void AcomodaTablaRubro()
+        //Mostrar Mensaje de Confirmacion
+        private void MensajeOk(string mensaje)
         {
-            this.dgvRubros.Columns[0].Width = 70;
-            
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        
         private void CargarGrillaRubros()
         {
             dgvRubros.DataSource = objeto.CargarRubros();
             //dgvRubros.Columns[0].Visible = false;            
+        }
+
+        private void AcomodaTabla()
+        {
+            this.dgvRubros.Columns[0].Width = 70;
+        }
+
+        private void DeshabilitarEdicion()
+        {
+            btnModRubro.Enabled = true;
+            btnEliminaRubro.Enabled = true;
+            btnNuevo.Enabled = true;
+            dgvRubros.Enabled = true;
+            lblRubro.Text = "";
+            tbRubro.Enabled = false;
+            Editar = false;
+            tbRubro.Text = "";
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -44,66 +67,36 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void btnAceptaRubro_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-            if (tbRubro.Text != "")
+            btnModRubro.Enabled = false;
+            btnEliminaRubro.Enabled = false;
+            btnNuevo.Enabled = false;
+            dgvRubros.Enabled = false;
+            lblRubro.Text = "Nuevo Rubro";
+            tbRubro.Enabled = true;
+            tbRubro.Text = "";
+            tbRubro.Focus();
+        }
+
+
+        private void btnModRubro_Click(object sender, EventArgs e)
+        {
+            if (dgvRubros.SelectedRows.Count > 0)
             {
-                if (Editar == false)
-                {
-                    if (MessageBox.Show("¿Desea Registrar el Rubro?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            objeto.NuevoRubro(tbRubro.Text);
-                            MessageBox.Show("Nuevo Rubro Agregado");
-                            Editar = false;
-                            CargarGrillaRubros();
-                            tbRubro.Text = "";
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
-                        }
-                    }
-                }
-                else
-                {
-                    if (MessageBox.Show("¿Desea Modificar el Rubro Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            string idRubro = dgvRubros.CurrentRow.Cells["ID"].Value.ToString();
-                            objeto.ModificarRubro(tbRubro.Text, idRubro);
-                            MessageBox.Show("Se Modificaron los datos del Rubro");
-                            Editar = false;
-                            CargarGrillaRubros();
-                            dgvRubros.Enabled = true;
-                            tbRubro.Text = "";
-                            btnModRubro.Visible = true;
-                            btnEliminaRubro.Visible = true;
-                            lblRubro.Text = "Ingrese Nuevo Producto";
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
-                        }
-                    }
-                }
+                btnModRubro.Enabled = false;
+                btnEliminaRubro.Enabled = false;
+                btnNuevo.Enabled = false;
+                dgvRubros.Enabled = false;
+                lblRubro.Text = "Modificar Rubro";
+                tbRubro.Enabled = true;
+                tbRubro.Text = dgvRubros.CurrentRow.Cells["RUBRO"].Value.ToString();
+                Editar = true;
             }
             else
             {
-                MessageBox.Show("El Nombre del Rubro esta vacío");
+                MessageBox.Show("Seleccione una fila por favor");
             }
-        }
-
-        private void btnCancelaRubro_Click(object sender, EventArgs e)
-        {
-            btnModRubro.Visible = true;
-            btnEliminaRubro.Visible = true;
-            dgvRubros.Enabled = true;
-            lblRubro.Text = "Ingrese Nuevo Rubro";
-            Editar = false;
-            tbRubro.Text = "";
         }
 
         private void btnEliminaRubro_Click(object sender, EventArgs e)
@@ -118,6 +111,7 @@ namespace CapaPresentacion
                         objeto.EliminarRubro(idRubro);
                         MessageBox.Show("Se eliminó correctamente el Rubro seleccionado");
                         CargarGrillaRubros();
+                        AcomodaTabla();
                     }
                     catch (Exception ex)
                     {
@@ -131,23 +125,66 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnModRubro_Click(object sender, EventArgs e)
+        private void btnAceptaRubro_Click(object sender, EventArgs e)
         {
-            if (dgvRubros.SelectedRows.Count > 0)
+            if (tbRubro.Text != "")
             {
-                btnModRubro.Visible = false;
-                btnEliminaRubro.Visible = false;
-                dgvRubros.Enabled = false;
-                lblRubro.Text = "Modificación del Rubro";
-                tbRubro.Text = dgvRubros.CurrentRow.Cells["RUBRO"].Value.ToString();
-                Editar = true;
+                try
+                {
+                    string rpta = CN_Tablas.ConsultaRubroExiste(this.tbRubro.Text.Trim());
+                    if (rpta == "OK")
+                    {
+                        MensajeError("Ya existe un Rubro con ese Nombre");
+                    }
+                    else
+                    {
+                        if (rpta == "NO")
+                        {
+                            if (Editar == false)
+                            {
+                                if (MessageBox.Show("¿Desea Registrar el Rubro?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                {
+                                    objeto.NuevoRubro(tbRubro.Text);
+                                    MessageBox.Show("Nuevo Rubro Agregado");
+                                    DeshabilitarEdicion();
+                                    CargarGrillaRubros();
+                                    AcomodaTabla();
+                                }                                
+                            }
+                            else
+                            {
+                                if (MessageBox.Show("¿Desea Modificar el Rubro Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                {
+                                    string idRubro = dgvRubros.CurrentRow.Cells["ID"].Value.ToString();
+                                    objeto.ModificarRubro(tbRubro.Text, idRubro);
+                                    MessageBox.Show("Se Modificaron los datos del Rubro");
+                                    DeshabilitarEdicion();
+                                    CargarGrillaRubros();
+                                    AcomodaTabla();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rpta);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
+                }
             }
             else
             {
-                MessageBox.Show("Seleccione una fila por favor");
+                MessageBox.Show("El Nombre del Rubro esta vacío");
             }
         }
 
 
+        private void btnCancelaRubro_Click(object sender, EventArgs e)
+        {
+            DeshabilitarEdicion();            
+        }
     }
 }

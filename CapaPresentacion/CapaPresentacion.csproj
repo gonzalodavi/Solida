@@ -117,6 +117,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPrincipal.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormAlicuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlicuota.Designer.cs">
+      <DependentUpon>FormAlicuota.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBarrio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,18 @@
     </Compile>
     <Compile Include="FormLocalidad.Designer.cs">
       <DependentUpon>FormLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMarcas.Designer.cs">
+      <DependentUpon>FormMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModelo.Designer.cs">
+      <DependentUpon>FormModelo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormNotaDBCR.cs">
       <SubType>Form</SubType>
@@ -360,6 +378,9 @@
       <DependentUpon>FormTop20ProdVendPrecio.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FormAlicuota.resx">
+      <DependentUpon>FormAlicuota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBarrio.resx">
       <DependentUpon>FormBarrio.cs</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +419,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLocalidad.resx">
       <DependentUpon>FormLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMarcas.resx">
+      <DependentUpon>FormMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModelo.resx">
+      <DependentUpon>FormModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNotaDBCR.resx">
       <DependentUpon>FormNotaDBCR.cs</DependentUpon>
