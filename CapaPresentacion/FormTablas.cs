@@ -461,12 +461,7 @@ namespace CapaPresentacion
 
         private void reiniciaRubros()
         {
-            btnModRubro.Visible = true;
-            btnEliminaRubro.Visible = true;
-            dgvRubros.Enabled = true;
-            lblRubro.Text = "Ingrese Nuevo Rubro";
-            Editar = false;
-            tbRubro.Text = "";
+            
         }
 
         private void reiniciaAlicuotas()

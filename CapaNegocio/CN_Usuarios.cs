@@ -12,11 +12,9 @@ namespace CapaNegocio
         private CD_Usuarios objetoCD = new CD_Usuarios();
 
 
-        public DataTable MostrarUsuarios()
+        public static DataTable MostrarUsuarios()
         {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.Mostrar();
-            return tabla;
+            return new CD_Usuarios().Mostrar();
         }
 
         public DataTable MostrarSesiones()

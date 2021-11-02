@@ -15,17 +15,30 @@ namespace CapaDatos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
+
         public DataTable Mostrar()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "MostrarUsuarios";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-            return tabla;
+            DataTable DtResultado = new DataTable("usuarios");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarUsuarios";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
         }
+       
 
         public DataTable MostrarSesion()
         {

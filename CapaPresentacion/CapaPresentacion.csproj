@@ -237,6 +237,12 @@
     <Compile Include="FormRemitos.Designer.cs">
       <DependentUpon>FormRemitos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRubros.Designer.cs">
+      <DependentUpon>FormRubros.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSucursales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRemitos.resx">
       <DependentUpon>FormRemitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRubros.resx">
+      <DependentUpon>FormRubros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSucursales.resx">
       <DependentUpon>FormSucursales.cs</DependentUpon>

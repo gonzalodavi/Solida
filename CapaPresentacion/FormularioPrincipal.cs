@@ -415,7 +415,24 @@ namespace Presentacion
         {
             hideSubMenu();
             DisableButton();
-            openChildForm(new FormEditarUsuario());
+            Form formBG = new Form();
+            using (FormEditarUsuario mm = new FormEditarUsuario())
+            {
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .70d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                mm.Owner = formBG;
+                mm.ShowDialog();
+
+                formBG.Dispose();
+            }
         }
 
 
@@ -436,7 +453,7 @@ namespace Presentacion
             }
         }
 
-        private void btnRestaurar_Click(object sender, EventArgs e)
+        /*private void btnRestaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
             btnRestaurar.Visible = false;
@@ -448,7 +465,7 @@ namespace Presentacion
             this.WindowState = FormWindowState.Maximized;
             btnMaximizar.Visible = false;
             btnRestaurar.Visible = true;
-        }
+        }*/
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {

@@ -85,31 +85,54 @@ namespace CapaPresentacion
 
         private void dgvCheques_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            foreach (DataGridViewRow MyRow in dgvCheques.Rows)
+        }
+
+        private void chekCLASIFICA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chekCLASIFICA.Checked == true)
             {
-                if (Convert.ToDateTime(MyRow.Cells[5].Value) <= DateTime.Now && Convert.ToDateTime(MyRow.Cells[5].Value).AddDays(25) >= DateTime.Now)
+                dgvCheques.ClearSelection();
+                lblCobrar.Visible = true;
+                lblVencer.Visible = true;
+                lblVencido.Visible = true;
+
+                foreach (DataGridViewRow MyRow in dgvCheques.Rows)
                 {
-                    MyRow.DefaultCellStyle.BackColor = Color.Green;
-                    MyRow.DefaultCellStyle.ForeColor = Color.Gold;
-                }
-                else
-                {
-                    if (Convert.ToDateTime(MyRow.Cells[5].Value).AddDays(25) <= DateTime.Now && Convert.ToDateTime(MyRow.Cells[5].Value).AddDays(30) > DateTime.Now)
+                    if (Convert.ToDateTime(MyRow.Cells[5].Value) <= DateTime.Now && Convert.ToDateTime(MyRow.Cells[5].Value).AddDays(25) >= DateTime.Now)
                     {
-                        MyRow.DefaultCellStyle.BackColor = Color.Gold;
-                        MyRow.DefaultCellStyle.ForeColor = Color.Maroon;
+                        MyRow.DefaultCellStyle.BackColor = Color.Green;
+                        MyRow.DefaultCellStyle.ForeColor = Color.Gold;
                     }
                     else
                     {
-                        if (Convert.ToDateTime(MyRow.Cells[5].Value).AddDays(30) < DateTime.Now)
+                        if (Convert.ToDateTime(MyRow.Cells[5].Value).AddDays(25) <= DateTime.Now && Convert.ToDateTime(MyRow.Cells[5].Value).AddDays(30) > DateTime.Now)
                         {
-                            MyRow.DefaultCellStyle.BackColor = Color.Orange;
-                            MyRow.DefaultCellStyle.ForeColor = Color.Red;
+                            MyRow.DefaultCellStyle.BackColor = Color.Gold;
+                            MyRow.DefaultCellStyle.ForeColor = Color.Maroon;
                         }
+                        else
+                        {
+                            if (Convert.ToDateTime(MyRow.Cells[5].Value).AddDays(30) < DateTime.Now)
+                            {
+                                MyRow.DefaultCellStyle.BackColor = Color.Orange;
+                                MyRow.DefaultCellStyle.ForeColor = Color.Red;
+                            }
 
+                        }
                     }
-                }               
-            }           
-        }        
+                }
+            }
+            else
+            {
+                lblCobrar.Visible = false;
+                lblVencer.Visible = false;
+                lblVencido.Visible = false;
+                foreach (DataGridViewRow MyRow in dgvCheques.Rows)
+                {
+                    MyRow.DefaultCellStyle.BackColor = Color.FromArgb(12, 52, 119);
+                    MyRow.DefaultCellStyle.ForeColor = Color.White;
+                }
+            }
+        }
     }
 }

@@ -176,5 +176,25 @@ namespace CapaPresentacion
                 return;
             }
         }
+
+        private void chekEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void rbEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarCampos();
+            CargaTextBox();
+            panelEmpresa.Enabled = true;
+            panelSucursal.Enabled = false;
+        }
+
+        private void rbSucursal_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarSucursales();
+            panelEmpresa.Enabled = false;
+            panelSucursal.Enabled = true;
+        }
     }
 }

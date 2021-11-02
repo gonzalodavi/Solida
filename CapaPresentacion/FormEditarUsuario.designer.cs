@@ -52,9 +52,9 @@
             this.btnCancelaClave = new System.Windows.Forms.Button();
             this.tBRol = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +64,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(23, 32);
+            this.label1.Location = new System.Drawing.Point(27, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 0;
@@ -77,7 +77,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(23, 78);
+            this.label2.Location = new System.Drawing.Point(27, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
             this.label2.TabIndex = 0;
@@ -89,7 +89,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(23, 124);
+            this.label3.Location = new System.Drawing.Point(27, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 0;
@@ -101,7 +101,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(23, 171);
+            this.label4.Location = new System.Drawing.Point(27, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 16);
             this.label4.TabIndex = 0;
@@ -113,7 +113,7 @@
             this.lblConfirmaClave.AutoSize = true;
             this.lblConfirmaClave.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmaClave.ForeColor = System.Drawing.Color.White;
-            this.lblConfirmaClave.Location = new System.Drawing.Point(78, 368);
+            this.lblConfirmaClave.Location = new System.Drawing.Point(82, 372);
             this.lblConfirmaClave.Name = "lblConfirmaClave";
             this.lblConfirmaClave.Size = new System.Drawing.Size(173, 16);
             this.lblConfirmaClave.TabIndex = 0;
@@ -126,7 +126,7 @@
             this.tBUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBUsuario.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBUsuario.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBUsuario.Location = new System.Drawing.Point(26, 51);
+            this.tBUsuario.Location = new System.Drawing.Point(30, 55);
             this.tBUsuario.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBUsuario.Name = "tBUsuario";
             this.tBUsuario.Size = new System.Drawing.Size(271, 15);
@@ -139,7 +139,7 @@
             this.tBNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBNombre.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBNombre.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBNombre.Location = new System.Drawing.Point(26, 97);
+            this.tBNombre.Location = new System.Drawing.Point(30, 101);
             this.tBNombre.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBNombre.Name = "tBNombre";
             this.tBNombre.Size = new System.Drawing.Size(271, 15);
@@ -152,7 +152,7 @@
             this.tBApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBApellido.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBApellido.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBApellido.Location = new System.Drawing.Point(26, 143);
+            this.tBApellido.Location = new System.Drawing.Point(30, 147);
             this.tBApellido.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBApellido.Name = "tBApellido";
             this.tBApellido.Size = new System.Drawing.Size(271, 15);
@@ -165,7 +165,7 @@
             this.tBEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBEmail.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBEmail.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBEmail.Location = new System.Drawing.Point(26, 190);
+            this.tBEmail.Location = new System.Drawing.Point(30, 194);
             this.tBEmail.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBEmail.Name = "tBEmail";
             this.tBEmail.Size = new System.Drawing.Size(271, 15);
@@ -178,7 +178,7 @@
             this.tBClaveNueva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBClaveNueva.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBClaveNueva.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBClaveNueva.Location = new System.Drawing.Point(26, 345);
+            this.tBClaveNueva.Location = new System.Drawing.Point(30, 349);
             this.tBClaveNueva.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBClaveNueva.Name = "tBClaveNueva";
             this.tBClaveNueva.Size = new System.Drawing.Size(271, 15);
@@ -193,7 +193,7 @@
             this.tBClaveConfirma.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBClaveConfirma.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBClaveConfirma.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBClaveConfirma.Location = new System.Drawing.Point(26, 387);
+            this.tBClaveConfirma.Location = new System.Drawing.Point(30, 391);
             this.tBClaveConfirma.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBClaveConfirma.Name = "tBClaveConfirma";
             this.tBClaveConfirma.Size = new System.Drawing.Size(271, 15);
@@ -210,7 +210,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(105, 2);
+            this.label7.Location = new System.Drawing.Point(109, 6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 16);
             this.label7.TabIndex = 0;
@@ -222,7 +222,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(23, 219);
+            this.label8.Location = new System.Drawing.Point(27, 223);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 16);
             this.label8.TabIndex = 0;
@@ -234,7 +234,7 @@
             this.tBClaveActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBClaveActual.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBClaveActual.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBClaveActual.Location = new System.Drawing.Point(26, 302);
+            this.tBClaveActual.Location = new System.Drawing.Point(30, 306);
             this.tBClaveActual.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBClaveActual.Name = "tBClaveActual";
             this.tBClaveActual.Size = new System.Drawing.Size(271, 15);
@@ -246,13 +246,13 @@
             this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(26, 465);
+            this.btnRegresar.Location = new System.Drawing.Point(30, 469);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(122, 40);
             this.btnRegresar.TabIndex = 0;
@@ -267,7 +267,7 @@
             this.lblClaveNueva.AutoSize = true;
             this.lblClaveNueva.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClaveNueva.ForeColor = System.Drawing.Color.White;
-            this.lblClaveNueva.Location = new System.Drawing.Point(92, 326);
+            this.lblClaveNueva.Location = new System.Drawing.Point(96, 330);
             this.lblClaveNueva.Name = "lblClaveNueva";
             this.lblClaveNueva.Size = new System.Drawing.Size(147, 16);
             this.lblClaveNueva.TabIndex = 0;
@@ -279,13 +279,13 @@
             this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(175, 465);
+            this.btnGuardar.Location = new System.Drawing.Point(179, 469);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(122, 40);
             this.btnGuardar.TabIndex = 0;
@@ -299,13 +299,13 @@
             this.btnCambiarClave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCambiarClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnCambiarClave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarClave.FlatAppearance.BorderSize = 0;
+            this.btnCambiarClave.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCambiarClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCambiarClave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnCambiarClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarClave.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarClave.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarClave.Location = new System.Drawing.Point(60, 356);
+            this.btnCambiarClave.Location = new System.Drawing.Point(64, 360);
             this.btnCambiarClave.Name = "btnCambiarClave";
             this.btnCambiarClave.Size = new System.Drawing.Size(201, 40);
             this.btnCambiarClave.TabIndex = 0;
@@ -319,13 +319,13 @@
             this.btnGuardaClave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGuardaClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnGuardaClave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardaClave.FlatAppearance.BorderSize = 0;
+            this.btnGuardaClave.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGuardaClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGuardaClave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnGuardaClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardaClave.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardaClave.ForeColor = System.Drawing.Color.White;
-            this.btnGuardaClave.Location = new System.Drawing.Point(175, 413);
+            this.btnGuardaClave.Location = new System.Drawing.Point(179, 417);
             this.btnGuardaClave.Name = "btnGuardaClave";
             this.btnGuardaClave.Size = new System.Drawing.Size(122, 39);
             this.btnGuardaClave.TabIndex = 0;
@@ -341,7 +341,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(92, 283);
+            this.label9.Location = new System.Drawing.Point(96, 287);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 16);
             this.label9.TabIndex = 0;
@@ -352,13 +352,13 @@
             this.btnCancelaClave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelaClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnCancelaClave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelaClave.FlatAppearance.BorderSize = 0;
+            this.btnCancelaClave.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCancelaClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancelaClave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnCancelaClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelaClave.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelaClave.ForeColor = System.Drawing.Color.White;
-            this.btnCancelaClave.Location = new System.Drawing.Point(26, 413);
+            this.btnCancelaClave.Location = new System.Drawing.Point(30, 417);
             this.btnCancelaClave.Name = "btnCancelaClave";
             this.btnCancelaClave.Size = new System.Drawing.Size(122, 39);
             this.btnCancelaClave.TabIndex = 0;
@@ -375,7 +375,7 @@
             this.tBRol.Enabled = false;
             this.tBRol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBRol.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBRol.Location = new System.Drawing.Point(26, 238);
+            this.tBRol.Location = new System.Drawing.Point(30, 242);
             this.tBRol.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBRol.Name = "tBRol";
             this.tBRol.Size = new System.Drawing.Size(271, 15);
@@ -385,8 +385,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.panel1.Controls.Add(this.tBRol);
@@ -411,29 +410,36 @@
             this.panel1.Controls.Add(this.btnGuardaClave);
             this.panel1.Controls.Add(this.btnRegresar);
             this.panel1.Controls.Add(this.btnGuardar);
-            this.panel1.Location = new System.Drawing.Point(207, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(318, 528);
+            this.panel1.Size = new System.Drawing.Size(326, 537);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // btnSalir
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(722, 573);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnSalir.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalir.IconSize = 26;
+            this.btnSalir.Location = new System.Drawing.Point(325, -1);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(26, 26);
+            this.btnSalir.TabIndex = 155;
+            this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FormEditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.ClientSize = new System.Drawing.Size(722, 573);
+            this.ClientSize = new System.Drawing.Size(350, 561);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -444,7 +450,7 @@
             this.Load += new System.EventHandler(this.FormEditarUsuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,6 +480,6 @@
         private System.Windows.Forms.Button btnCancelaClave;
         private System.Windows.Forms.TextBox tBRol;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconPictureBox btnSalir;
     }
 }

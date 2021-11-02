@@ -46,7 +46,15 @@ namespace Presentacion
 
         private void MostrarUsuarios()
         {
-            dgvUsuarios.DataSource = objetoCN.MostrarUsuarios();
+            this.dgvUsuarios.DataSource = CN_Usuarios.MostrarUsuarios();
+            this.dgvUsuarios.Columns[0].Visible = false;
+            this.dgvUsuarios.Columns[2].Visible = false;
+
+            this.dgvUsuarios.Columns[1].Width = 50;
+            this.dgvUsuarios.Columns[3].Width = 50;
+            this.dgvUsuarios.Columns[4].Width = 50;
+            this.dgvUsuarios.Columns[5].Width = 50;
+            this.dgvUsuarios.Columns[6].Width = 200;
         }
 
         private void btnAgregarUser_Click(object sender, EventArgs e)
@@ -62,9 +70,12 @@ namespace Presentacion
                             try
                             {
                                 objetoCN.InsertarUsuarios(tbUsuario.Text, tbClave.Text, tbNombre.Text, tbApellido.Text, cbRoles.Text, tbEmail.Text);
-                                MessageBox.Show("Se insertó correctamente el nuevo usuario, salga y vuelva a entrar del formulario para ver los cambios");
+                                MessageBox.Show("Se insertó correctamente el nuevo usuario");
                                 limpiarCampos();
-                                
+                                MostrarUsuarios();
+                                DeshabilitarEdicion();
+                                lblNuevoOModUser.Text = "Nuevo Usuario";
+                                lblNuevoOModUser.Visible = false;
                             }
                             catch (Exception ex)
                             {
@@ -80,11 +91,14 @@ namespace Presentacion
                             try
                             {
                                 objetoCN.EditarUsuarios(tbUsuario.Text, tbClave.Text, tbNombre.Text, tbApellido.Text, cbRoles.Text, tbEmail.Text, idUsuario);
-                                MessageBox.Show("Se modificaron correctamente los datos del usuario, salga y vuelva a entrar del formulario para ver los cambios");
-                                btnModificarUser.Visible = true;
-                                btnEliminarUser.Visible = true;
+                                MessageBox.Show("Se modificaron correctamente los datos del usuario");
+                                
                                 Editar = false;
-                                limpiarCampos();       
+                                limpiarCampos();
+                                MostrarUsuarios();
+                                DeshabilitarEdicion();
+                                lblNuevoOModUser.Text = "Nuevo Usuario";
+                                lblNuevoOModUser.Visible = false;
                             }
                             catch (Exception ex)
                             {
@@ -113,7 +127,8 @@ namespace Presentacion
             tbNombre.Text = "";
             cbRoles.Text = "";
             tbUsuario.Text = "";
-            tbEmail.Text = "";            
+            tbEmail.Text = "";
+            Editar = false;
         }
 
         private void btnModificarUser_Click(object sender, EventArgs e)
@@ -121,8 +136,9 @@ namespace Presentacion
             if (dgvUsuarios.SelectedRows.Count > 0)
             {
                 Editar = true;
-                btnModificarUser.Visible = false;
-                btnEliminarUser.Visible = false;
+                HabilitarEdicion();
+                lblNuevoOModUser.Text = "Modificar Usuario";
+                lblNuevoOModUser.Visible = true;
                 tbUsuario.Text = dgvUsuarios.CurrentRow.Cells["USUARIO"].Value.ToString();
                 tbClave.Text = dgvUsuarios.CurrentRow.Cells["CLAVE"].Value.ToString();
                 tbNombre.Text = dgvUsuarios.CurrentRow.Cells["NOMBRE"].Value.ToString();
@@ -153,7 +169,8 @@ namespace Presentacion
                 {
                     idUsuario = dgvUsuarios.CurrentRow.Cells["ID"].Value.ToString();
                     objetoCN.EliminarUsuario(idUsuario);
-                    MessageBox.Show("Se eliminó correctamente el usuario seleccionado, salga y vuelva a entrar del formulario para ver los cambios");
+                    MessageBox.Show("Se eliminó correctamente el usuario seleccionado");
+                    MostrarUsuarios();
                 }                
             }
             else
@@ -164,9 +181,51 @@ namespace Presentacion
 
         private void btnCancela_Click(object sender, EventArgs e)
         {
-            btnModificarUser.Visible = true;
-            btnEliminarUser.Visible = true;
+            btnModificarUser.Enabled = true;
+            btnEliminarUser.Enabled = true;
             limpiarCampos();
+            DeshabilitarEdicion();
+            lblNuevoOModUser.Text = "Nuevo Usuario";
+            lblNuevoOModUser.Visible = false;
+        }
+        
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            HabilitarEdicion();
+            tbUsuario.Focus();
+            lblNuevoOModUser.Text = "Nuevo Usuario";
+            lblNuevoOModUser.Visible = true;
+        }
+
+        private void HabilitarEdicion()
+        {
+            dgvUsuarios.Enabled = false;
+            btnNuevo.Enabled = false;
+            btnModificarUser.Enabled = false;
+            btnEliminarUser.Enabled = false;
+            tbApellido.Enabled = true;
+            tbClave.Enabled = true;
+            tbEmail.Enabled = true;
+            tbNombre.Enabled = true;
+            tbUsuario.Enabled = true;
+            cbRoles.Enabled = true;
+            cbRoles.SelectedIndex = -1;
+        }
+
+        private void DeshabilitarEdicion()
+        {
+            dgvUsuarios.Enabled = true;
+            btnNuevo.Enabled = true;
+            btnModificarUser.Enabled = true;
+            btnEliminarUser.Enabled = true;
+            tbApellido.Enabled = false;
+            tbClave.Enabled = false;
+            tbEmail.Enabled = false;
+            tbNombre.Enabled = false;
+            tbUsuario.Enabled = false;
+            cbRoles.Enabled = false;
+            cbRoles.SelectedIndex = -1;
         }
     }
 }
