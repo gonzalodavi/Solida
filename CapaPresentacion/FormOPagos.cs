@@ -119,14 +119,14 @@ namespace CapaPresentacion
                 string rpta = CN_Cheque.ConsultaSiExisteChequeOP("SELECCIONADO");
                 if (rpta.Equals("OK"))
                 {
-                    string rpta1 = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "ACTIVO");
+                    string rpta1 = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "ACTIVO",0);
                     if (rpta1.Equals("OK"))
                     {
                         //MensajeOk("Cheques ENCONTRADOS SUELTOS VOLVIERON A CARTERA");
                     }
                     else
                     {
-                        MensajeError(rpta1);
+                        //MensajeError(rpta1);
                     }
                 }
                 else
@@ -137,7 +137,7 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MensajeError(rpta);
+                        //MensajeError(rpta);
                     }
                 }
             }
@@ -200,6 +200,7 @@ namespace CapaPresentacion
             cbProveedor.SelectedIndex = -1;
             CargaGrillaChequesSelect();
             CargaGrillaCheques();
+            BuscaNumeroOPago();
         }
 
         private void BuscaNumeroOPago()
@@ -207,6 +208,8 @@ namespace CapaPresentacion
             int numOPago = objeto1.MostrarUltimaOPago();
             tbNumOPago.Text = (numOPago + 1).ToString();
         }
+
+
 
         private void CargarComboBoxProveedores()
         {
@@ -241,6 +244,21 @@ namespace CapaPresentacion
         private void CargaGrillaCtaCte(string cuit)
         {
             this.dgvDetCtaCte.DataSource = CN_CtaCte.MostrarDetalleCtaCteCompletoP(cuit);
+            AcomodaTablaCtaCte();
+        }
+
+        private void AcomodaTablaCtaCte()
+        {
+            this.dgvDetCtaCte.Columns[0].Visible = false;
+            this.dgvDetCtaCte.Columns[6].Visible = false;
+
+            /*this.dgvValores.Columns["FECHA_EMISION"].Width = 50;
+            this.dgvValores.Columns["FECHA_CREDITO"].Width = 50;
+            this.dgvValores.Columns["FECHA_EMISION"].Width = 50;
+            this.dgvValores.Columns["BANCO"].Width = 90;
+            this.dgvValores.Columns["TITULAR"].Width = 100;
+            this.dgvValores.Columns["BENEF"].Width = 100;
+            this.dgvValores.Columns["IMPORTE"].Width = 80;*/
         }
 
         private void CargaSaldoCtaCte()
@@ -315,26 +333,28 @@ namespace CapaPresentacion
                                 if (rpta.Equals("OK"))
                                 {
                                     this.MensajeOk("Se Generó con éxito el Comprobante");
+                                    int idOPago= objeto1.BuscarUltimoIDOPago();
+                                    
 
                                     if (valores > 0)
                                     {
 
-                                        rpta1 = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO");
+                                        rpta1 = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO",idOPago);
 
                                         if (rpta1.Equals("OK"))
                                         {
-                                            MensajeOk("Cheques ESTADO: PAGADO");
+                                           // MensajeOk("Cheques ESTADO: PAGADO");
                                         }
                                         else
                                         {
-                                            MensajeError(rpta1);
+                                           // MensajeError(rpta1);
                                         }
                                     }
 
                                     rpta = CN_CtaCte.InsertarP(cbProveedor.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumOPago.Text, "ORDEN DE PAGO", debe, haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
                                     if (rpta.Equals("OK"))
                                     {
-                                        this.MensajeOk("Se registro en cuenta corriente");
+                                        //this.MensajeOk("Se registro en cuenta corriente");
                                     }
                                     else
                                     {

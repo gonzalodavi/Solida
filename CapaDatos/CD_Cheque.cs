@@ -28,6 +28,7 @@ namespace CapaDatos
         private decimal _Importe;
         private string _Estado;
         private string _EstadoNuevo;
+        private int _IdOPago;
 
         public int IdCheque
         {
@@ -100,6 +101,11 @@ namespace CapaDatos
             get { return _EstadoNuevo; }
             set { _EstadoNuevo = value; }
         }
+        public int IdOPago
+        {
+            get { return _IdOPago; }
+            set { _IdOPago = value; }
+        }
 
 
         public CD_Cheque()
@@ -107,7 +113,7 @@ namespace CapaDatos
         }
 
         public CD_Cheque(int idcheque, string numComprobante, string tipoComprob, string numCheque, DateTime fechaEmision, DateTime fechaCredito,
-            string banco, string titular, string beneficiario, decimal importe, string estado, string estadoNuevo)
+            string banco, string titular, string beneficiario, decimal importe, string estado, string estadoNuevo, int idOPago)
         {
             this.IdCheque = idcheque;
             this.NumComprobante = numComprobante;
@@ -120,8 +126,8 @@ namespace CapaDatos
             this.Beneficiario = beneficiario;
             this.Importe = importe;
             this.Estado = estado;
-            this.EstadoNuevo= estadoNuevo;
-
+            this.EstadoNuevo = estadoNuevo;
+            this.IdOPago = idOPago;
         }
 
         public DataTable Mostrar(CD_Cheque cheque)
@@ -152,6 +158,41 @@ namespace CapaDatos
                 DtResultado = null;
             }
             return DtResultado;
+        }
+
+        public string ConsultarEstadoCheque(string estado,string nrocomprob)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "ConsultaEstadoCheque";
+                SqlCmd.Parameters.AddWithValue("@estado", estado);
+                SqlCmd.Parameters.AddWithValue("@nrocomprob", nrocomprob);                
+
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
         }
 
         public DataTable MostrarXFecha(CD_Cheque cheque)
@@ -437,7 +478,7 @@ namespace CapaDatos
                 if (registro.Read())
                 {
                     rpta = "OK";
-                    Eliminar_Cheques();
+                    Eliminar_Cheques(estado);
                 }
                 else
                 {
@@ -543,6 +584,12 @@ namespace CapaDatos
                 ParEstadoNuevo.Value = Cheque.EstadoNuevo;
                 SqlCmd.Parameters.Add(ParEstadoNuevo);
 
+                SqlParameter ParIdOPago = new SqlParameter();
+                ParIdOPago.ParameterName = "@idopago";
+                ParIdOPago.SqlDbType = SqlDbType.Int;
+                ParIdOPago.Value = Cheque.IdOPago;
+                SqlCmd.Parameters.Add(ParIdOPago);
+
                 //Ejecutamos nuestro comando
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Modificar LOS ESTADOS DE LOS CHEQUES";
@@ -559,7 +606,7 @@ namespace CapaDatos
             return rpta;
         }
 
-        public string Eliminar_Cheques()
+        public string Eliminar_Cheques(string estado)
         {
 
             string rpta = "";
@@ -572,6 +619,7 @@ namespace CapaDatos
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "Eliminar_Cheques";
+                SqlCmd.Parameters.AddWithValue("@estadoNuevo", estado);
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Eliminar";
@@ -590,7 +638,45 @@ namespace CapaDatos
             return rpta;
         }
 
-        
+        public string Anular_Cheques(CD_Cheque cheques)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "AnularCheques";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParComprobante = new SqlParameter();
+                ParComprobante.ParameterName = "@nrocomprob";
+                ParComprobante.SqlDbType = SqlDbType.VarChar;
+                ParComprobante.Size = 20;
+                ParComprobante.Value = cheques.NumComprobante;
+                SqlCmd.Parameters.Add(ParComprobante);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Modificar EL ESTADO DEL CHEQUE";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
+
 
         public string Eliminar(CD_Cheque Cheq)
         {

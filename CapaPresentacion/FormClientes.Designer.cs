@@ -107,20 +107,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDomicilios = new System.Windows.Forms.DataGridView();
             this.tabNuevoDom = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
             this.btnAgregaBarr = new FontAwesome.Sharp.IconButton();
             this.btnAgregaLoc = new FontAwesome.Sharp.IconButton();
             this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbBarrio = new System.Windows.Forms.ComboBox();
             this.cbLocalidad = new System.Windows.Forms.ComboBox();
             this.panelDomicilio = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
             this.tbDpto = new System.Windows.Forms.TextBox();
             this.lblCalle = new System.Windows.Forms.Label();
             this.tbPiso = new System.Windows.Forms.TextBox();
             this.lblNro = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.lblDpto = new System.Windows.Forms.Label();
             this.tbCalle = new System.Windows.Forms.TextBox();
             this.tbNro = new System.Windows.Forms.TextBox();
@@ -1312,6 +1312,18 @@
             this.tabNuevoDom.TabIndex = 5;
             this.tabNuevoDom.Text = "Domicilios";
             // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Yellow;
+            this.label25.Location = new System.Drawing.Point(467, 222);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(17, 16);
+            this.label25.TabIndex = 169;
+            this.label25.Text = "*";
+            // 
             // btnAgregaBarr
             // 
             this.btnAgregaBarr.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1371,18 +1383,6 @@
             this.label24.Size = new System.Drawing.Size(17, 16);
             this.label24.TabIndex = 168;
             this.label24.Text = "*";
-            // 
-            // label23
-            // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Yellow;
-            this.label23.Location = new System.Drawing.Point(303, 31);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(17, 16);
-            this.label23.TabIndex = 167;
-            this.label23.Text = "*";
             // 
             // label22
             // 
@@ -1455,18 +1455,6 @@
             this.panelDomicilio.Size = new System.Drawing.Size(351, 277);
             this.panelDomicilio.TabIndex = 161;
             // 
-            // label25
-            // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Yellow;
-            this.label25.Location = new System.Drawing.Point(467, 222);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(17, 16);
-            this.label25.TabIndex = 169;
-            this.label25.Text = "*";
-            // 
             // tbDpto
             // 
             this.tbDpto.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1510,6 +1498,18 @@
             this.lblNro.Size = new System.Drawing.Size(70, 16);
             this.lblNro.TabIndex = 150;
             this.lblNro.Text = "Número:";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Yellow;
+            this.label23.Location = new System.Drawing.Point(303, 31);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(17, 16);
+            this.label23.TabIndex = 167;
+            this.label23.Text = "*";
             // 
             // lblDpto
             // 

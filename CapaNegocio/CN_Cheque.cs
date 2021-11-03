@@ -16,6 +16,13 @@ namespace CapaNegocio
             Obj.Estado = estado;
             return Obj.Mostrar(Obj);
         }
+
+        public string ConsultarEstadoCheque(string estado, string numComp)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            string rpta = Obj.ConsultarEstadoCheque(estado, numComp);
+            return rpta;
+        }
         public static DataTable MostrarXFecha(string estado)
         {
             CD_Cheque Obj = new CD_Cheque();
@@ -86,18 +93,20 @@ namespace CapaNegocio
         }
 
 
-        public static string ModificarEstadoCheque(string estadoActual, string estadoNuevo)
+        public static string ModificarEstadoCheque(string estadoActual, string estadoNuevo, int idOPago)
         {
             CD_Cheque Obj = new CD_Cheque();
             Obj.Estado = estadoActual;
             Obj.EstadoNuevo = estadoNuevo;
+            Obj.IdOPago = idOPago;
             return Obj.ModificaEstadoCheque(Obj);
         }
 
-        public string Eliminar_Cheques()
+        public static string Anular_Cheques(string nrocomprob)
         {
-            string rpta = objetoCD.Eliminar_Cheques();
-            return rpta;
+            CD_Cheque Obj = new CD_Cheque();            
+            Obj.NumComprobante = nrocomprob;
+            return Obj.Anular_Cheques(Obj);
         }
 
         public static string EliminarCheq(int id)

@@ -671,6 +671,22 @@ namespace CapaDatos
             return numero;
         }
 
+        public int BuscarUltimoIDOPago()
+        {
+            int numero = 0;
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscaUltimoID_OPago";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                numero = Convert.ToInt32(leer["ID_OPAGO"].ToString());
+            }
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return numero;
+        }
+
         public DataTable BuscarRegistrosOP(string fechainicial, string fechafin)
         {
             DataTable dt = new DataTable();

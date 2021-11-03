@@ -100,6 +100,12 @@ namespace CapaNegocio
             return numero;
         }
 
+        public int BuscarUltimoIDOPago()
+        {
+            int numero = objetoCD.BuscarUltimoIDOPago();
+            return numero;
+        }
+
         public static DataTable BuscarRegistrosOP(string fechainicial, string fechafin)
         {
             return new CD_Recibo().BuscarRegistrosOP(fechainicial, fechafin);

@@ -199,7 +199,6 @@ namespace CapaPresentacion
         private void btnNuevoProveedor_Click(object sender, EventArgs e)
         {
             tabProveedor.SelectedTab = tabPMant;
-            cbPreF.Focus();
         }
 
 
@@ -741,6 +740,78 @@ namespace CapaPresentacion
             cbProvincia.SelectedValue = Provi;
             cbLocalidad.SelectedIndex = -1;
             cbLocalidad.SelectedValue = Loca;
+        }
+
+        private void tbEmpresa_Leave(object sender, EventArgs e)
+        {
+            if (tbEmpresa.Text == "")
+            {
+                lblErrorEmpresa.Visible = true;
+            }
+            else
+            {
+                lblErrorEmpresa.Visible = false;
+            }
+        }
+
+        private void tbNombre_Leave(object sender, EventArgs e)
+        {
+            if (tbNombre.Text == "")
+            {
+                lblErrorNom.Visible = true;
+            }
+            else
+            {
+                lblErrorNom.Visible = false;
+            }
+        }
+
+        private void tbApellido_Leave(object sender, EventArgs e)
+        {
+            if (tbApellido.Text == "")
+            {
+                lblErrorApe.Visible = true;
+            }
+            else
+            {
+                lblErrorApe.Visible = false;
+            }
+        }
+
+        private void tbDireccion_Leave(object sender, EventArgs e)
+        {
+            if (tbDireccion.Text == "")
+            {
+                lblErrorDire.Visible = true;
+            }
+            else
+            {
+                lblErrorDire.Visible = false;
+            }
+        }
+
+        private void tbDireccion_TextChanged(object sender, EventArgs e)
+        {
+            if (tbDireccion.Text == "")
+            {
+                lblErrorDire.Visible = true;
+            }
+            else
+            {
+                lblErrorDire.Visible = false;
+            }
+        }
+
+        private void btnSeleccionaDireccion_Leave(object sender, EventArgs e)
+        {
+            if (tbDireccion.Text == "")
+            {
+                lblErrorDire.Visible = true;
+            }
+            else
+            {
+                lblErrorDire.Visible = false;
+            }
         }
     }
 }

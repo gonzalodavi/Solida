@@ -111,6 +111,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvDomicilios = new System.Windows.Forms.DataGridView();
             this.tabManDomicilios = new System.Windows.Forms.TabPage();
+            this.btnAgregaBarr = new FontAwesome.Sharp.IconButton();
+            this.btnAgregaLoc = new FontAwesome.Sharp.IconButton();
             this.label34 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -137,8 +139,6 @@
             this.cbProvincia = new System.Windows.Forms.ComboBox();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnAgregaBarr = new FontAwesome.Sharp.IconButton();
-            this.btnAgregaLoc = new FontAwesome.Sharp.IconButton();
             this.panelContenedor.SuspendLayout();
             this.tabProveedor.SuspendLayout();
             this.tabPConsulta.SuspendLayout();
@@ -570,7 +570,7 @@
             this.tbCuit.MaxLength = 8;
             this.tbCuit.Name = "tbCuit";
             this.tbCuit.Size = new System.Drawing.Size(99, 22);
-            this.tbCuit.TabIndex = 2;
+            this.tbCuit.TabIndex = 4;
             this.tbCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCuit_KeyPress);
             // 
             // label7
@@ -607,7 +607,7 @@
             this.cbPreF.Location = new System.Drawing.Point(125, 10);
             this.cbPreF.Name = "cbPreF";
             this.cbPreF.Size = new System.Drawing.Size(45, 22);
-            this.cbPreF.TabIndex = 1;
+            this.cbPreF.TabIndex = 3;
             // 
             // cbSuF
             // 
@@ -632,7 +632,7 @@
             this.cbSuF.Location = new System.Drawing.Point(316, 10);
             this.cbSuF.Name = "cbSuF";
             this.cbSuF.Size = new System.Drawing.Size(37, 22);
-            this.cbSuF.TabIndex = 3;
+            this.cbSuF.TabIndex = 5;
             // 
             // lblErrorCUIT
             // 
@@ -810,11 +810,11 @@
             this.btnSeleccionaDireccion.Location = new System.Drawing.Point(490, 305);
             this.btnSeleccionaDireccion.Name = "btnSeleccionaDireccion";
             this.btnSeleccionaDireccion.Size = new System.Drawing.Size(116, 31);
-            this.btnSeleccionaDireccion.TabIndex = 7;
-            this.btnSeleccionaDireccion.TabStop = false;
+            this.btnSeleccionaDireccion.TabIndex = 9;
             this.btnSeleccionaDireccion.Text = "SELECCIONA";
             this.btnSeleccionaDireccion.UseVisualStyleBackColor = false;
             this.btnSeleccionaDireccion.Click += new System.EventHandler(this.btnSeleccionaDireccion_Click);
+            this.btnSeleccionaDireccion.Leave += new System.EventHandler(this.btnSeleccionaDireccion_Leave);
             // 
             // tbDireccion
             // 
@@ -828,6 +828,8 @@
             this.tbDireccion.Size = new System.Drawing.Size(228, 22);
             this.tbDireccion.TabIndex = 0;
             this.tbDireccion.TabStop = false;
+            this.tbDireccion.TextChanged += new System.EventHandler(this.tbDireccion_TextChanged);
+            this.tbDireccion.Leave += new System.EventHandler(this.tbDireccion_Leave);
             // 
             // btnCancela
             // 
@@ -859,7 +861,7 @@
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(228, 123);
-            this.tbDescripcion.TabIndex = 10;
+            this.tbDescripcion.TabIndex = 12;
             // 
             // label6
             // 
@@ -919,7 +921,8 @@
             this.tbNombre.Location = new System.Drawing.Point(233, 209);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(228, 22);
-            this.tbNombre.TabIndex = 5;
+            this.tbNombre.TabIndex = 7;
+            this.tbNombre.Leave += new System.EventHandler(this.tbNombre_Leave);
             // 
             // btAceptar
             // 
@@ -950,7 +953,7 @@
             this.tbTel.Location = new System.Drawing.Point(661, 107);
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(228, 22);
-            this.tbTel.TabIndex = 8;
+            this.tbTel.TabIndex = 10;
             // 
             // lblTel
             // 
@@ -985,7 +988,8 @@
             this.tbEmpresa.Location = new System.Drawing.Point(233, 158);
             this.tbEmpresa.Name = "tbEmpresa";
             this.tbEmpresa.Size = new System.Drawing.Size(228, 22);
-            this.tbEmpresa.TabIndex = 4;
+            this.tbEmpresa.TabIndex = 6;
+            this.tbEmpresa.Leave += new System.EventHandler(this.tbEmpresa_Leave);
             // 
             // tbMail
             // 
@@ -996,7 +1000,7 @@
             this.tbMail.Location = new System.Drawing.Point(661, 161);
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(228, 22);
-            this.tbMail.TabIndex = 9;
+            this.tbMail.TabIndex = 11;
             // 
             // lblApellido
             // 
@@ -1019,7 +1023,8 @@
             this.tbApellido.Location = new System.Drawing.Point(233, 261);
             this.tbApellido.Name = "tbApellido";
             this.tbApellido.Size = new System.Drawing.Size(228, 22);
-            this.tbApellido.TabIndex = 6;
+            this.tbApellido.TabIndex = 8;
+            this.tbApellido.Leave += new System.EventHandler(this.tbApellido_Leave);
             // 
             // lblMail
             // 
@@ -1333,6 +1338,54 @@
             this.tabManDomicilios.Size = new System.Drawing.Size(948, 578);
             this.tabManDomicilios.TabIndex = 2;
             this.tabManDomicilios.Text = "Domicilios";
+            // 
+            // btnAgregaBarr
+            // 
+            this.btnAgregaBarr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaBarr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaBarr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaBarr.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaBarr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaBarr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaBarr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaBarr.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaBarr.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaBarr.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaBarr.IconColor = System.Drawing.Color.White;
+            this.btnAgregaBarr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaBarr.IconSize = 25;
+            this.btnAgregaBarr.Location = new System.Drawing.Point(491, 300);
+            this.btnAgregaBarr.Name = "btnAgregaBarr";
+            this.btnAgregaBarr.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaBarr.TabIndex = 176;
+            this.btnAgregaBarr.TabStop = false;
+            this.btnAgregaBarr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaBarr.UseVisualStyleBackColor = false;
+            this.btnAgregaBarr.Click += new System.EventHandler(this.btnAgregaBarr_Click);
+            // 
+            // btnAgregaLoc
+            // 
+            this.btnAgregaLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaLoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaLoc.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaLoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaLoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaLoc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaLoc.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaLoc.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaLoc.IconColor = System.Drawing.Color.White;
+            this.btnAgregaLoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaLoc.IconSize = 25;
+            this.btnAgregaLoc.Location = new System.Drawing.Point(491, 215);
+            this.btnAgregaLoc.Name = "btnAgregaLoc";
+            this.btnAgregaLoc.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaLoc.TabIndex = 177;
+            this.btnAgregaLoc.TabStop = false;
+            this.btnAgregaLoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaLoc.UseVisualStyleBackColor = false;
+            this.btnAgregaLoc.Click += new System.EventHandler(this.btnAgregaLoc_Click);
             // 
             // label34
             // 
@@ -1724,54 +1777,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(143, 18);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "PROVEEDORES";
-            // 
-            // btnAgregaBarr
-            // 
-            this.btnAgregaBarr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaBarr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaBarr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaBarr.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaBarr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaBarr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaBarr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaBarr.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregaBarr.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaBarr.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregaBarr.IconColor = System.Drawing.Color.White;
-            this.btnAgregaBarr.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaBarr.IconSize = 25;
-            this.btnAgregaBarr.Location = new System.Drawing.Point(491, 300);
-            this.btnAgregaBarr.Name = "btnAgregaBarr";
-            this.btnAgregaBarr.Size = new System.Drawing.Size(29, 29);
-            this.btnAgregaBarr.TabIndex = 176;
-            this.btnAgregaBarr.TabStop = false;
-            this.btnAgregaBarr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaBarr.UseVisualStyleBackColor = false;
-            this.btnAgregaBarr.Click += new System.EventHandler(this.btnAgregaBarr_Click);
-            // 
-            // btnAgregaLoc
-            // 
-            this.btnAgregaLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaLoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaLoc.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaLoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaLoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaLoc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregaLoc.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaLoc.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregaLoc.IconColor = System.Drawing.Color.White;
-            this.btnAgregaLoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaLoc.IconSize = 25;
-            this.btnAgregaLoc.Location = new System.Drawing.Point(491, 215);
-            this.btnAgregaLoc.Name = "btnAgregaLoc";
-            this.btnAgregaLoc.Size = new System.Drawing.Size(29, 29);
-            this.btnAgregaLoc.TabIndex = 177;
-            this.btnAgregaLoc.TabStop = false;
-            this.btnAgregaLoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaLoc.UseVisualStyleBackColor = false;
-            this.btnAgregaLoc.Click += new System.EventHandler(this.btnAgregaLoc_Click);
             // 
             // FormProveedor
             // 
