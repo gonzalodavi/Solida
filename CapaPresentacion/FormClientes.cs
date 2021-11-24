@@ -188,13 +188,13 @@ namespace CapaPresentacion
             tbDNI.Enabled = true;
             cbDNICUIT.Enabled = true;
             cbDNICUIT.Text = "DNI";
+            cbCondIVA.SelectedIndex = -1;
             lblErrorApe.Visible = false;
             lblErrorDire.Visible = false;
             lblErrorDNI.Visible = false;
             lblErrorIVA.Visible = false;
             lblErrorNom.Visible = false;
-            Editar = false;  
-            
+            Editar = false;
         }
 
 
@@ -828,6 +828,18 @@ namespace CapaPresentacion
             }
         }
 
+        private void tbNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (tbNombre.Text == "")
+            {
+                lblErrorNom.Visible = true;
+            }
+            else
+            {
+                lblErrorNom.Visible = false;
+            }
+        }
+
         private void cbCondIVA_Leave(object sender, EventArgs e)
         {
             if (cbCondIVA.SelectedIndex == -1)
@@ -875,8 +887,7 @@ namespace CapaPresentacion
                 lblErrorDire.Visible = false;
             }
         }
-
-        private void tbApellido_KeyPress(object sender, KeyPressEventArgs e)
+        private void tbApellido_TextChanged(object sender, EventArgs e)
         {
             if (tbApellido.Text == "")
             {
@@ -969,6 +980,20 @@ namespace CapaPresentacion
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbDNI_TextChanged(object sender, EventArgs e)
+        {
+            var cadena = tbDNI.Text;
+
+            if (cadena.Length < 8)
+            {
+                lblErrorDNI.Visible = true;
+            }
+            else
+            {
+                lblErrorDNI.Visible = false;
+            }
         }
     }
 }
