@@ -1,5 +1,4 @@
 G:\Proyecto Solida\Solida\CapaNegocio\bin\Debug\netstandard2.0\CapaDatos.dll
-G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.csprojAssemblyReference.cache
 G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.AssemblyInfoInputs.cache
 G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.AssemblyInfo.cs
 G:\Proyecto Solida\Solida\CapaNegocio\bin\Debug\netstandard2.0\CapaNegocio.deps.json
@@ -8,7 +7,6 @@ G:\Proyecto Solida\Solida\CapaNegocio\bin\Debug\netstandard2.0\CapaNegocio.pdb
 G:\Proyecto Solida\Solida\CapaNegocio\bin\Debug\netstandard2.0\CapaComun.dll
 G:\Proyecto Solida\Solida\CapaNegocio\bin\Debug\netstandard2.0\CapaComun.pdb
 G:\Proyecto Solida\Solida\CapaNegocio\bin\Debug\netstandard2.0\CapaDatos.pdb
-G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.csproj.CopyComplete
 G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.dll
 G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.pdb
 G:\Proyecto Solida\Solida\CapaNegocio\bin\Debug\netstandard2.0\CapaEntidades.dll
@@ -30,3 +28,6 @@ H:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.cspro
 H:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.csproj.CopyComplete
 H:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.dll
 H:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.pdb
+G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.csproj.AssemblyReference.cache
+G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+G:\Proyecto Solida\Solida\CapaNegocio\obj\Debug\netstandard2.0\CapaNegocio.csproj.CopyComplete

@@ -102,6 +102,15 @@ namespace CapaNegocio
             return Obj.ModificaEstadoCheque(Obj);
         }
 
+        public static string EstadoCheque(string estadoActual, string estadoNuevo, int idOPago)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.Estado = estadoActual;
+            Obj.EstadoNuevo = estadoNuevo;
+            Obj.IdOPago = idOPago;
+            return Obj.EstadoCheque(Obj);
+        }
+
         public static string Anular_Cheques(string nrocomprob)
         {
             CD_Cheque Obj = new CD_Cheque();            

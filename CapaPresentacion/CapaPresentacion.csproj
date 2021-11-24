@@ -126,6 +126,12 @@
     <Compile Include="FormAlicuota.Designer.cs">
       <DependentUpon>FormAlicuota.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBanco.Designer.cs">
+      <DependentUpon>FormBanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBarrio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,14 +153,8 @@
     <Compile Include="FormClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClientes.Designer.cs">
+    <Compile Include="FormClientes.designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormComodin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormComodin.Designer.cs">
-      <DependentUpon>FormComodin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCompras.cs">
       <SubType>Form</SubType>
@@ -294,18 +294,6 @@
     <Compile Include="FormVentas.Designer.cs">
       <DependentUpon>FormVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListadoProductos1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListadoProductos1.Designer.cs">
-      <DependentUpon>ListadoProductos1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListaProveedores1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListaProveedores1.Designer.cs">
-      <DependentUpon>ListaProveedores1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +384,9 @@
     <EmbeddedResource Include="FormAlicuota.resx">
       <DependentUpon>FormAlicuota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBanco.resx">
+      <DependentUpon>FormBanco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBarrio.resx">
       <DependentUpon>FormBarrio.cs</DependentUpon>
     </EmbeddedResource>
@@ -407,9 +398,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormComodin.resx">
-      <DependentUpon>FormComodin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCompras.resx">
       <DependentUpon>FormCompras.cs</DependentUpon>
@@ -479,12 +467,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListadoProductos1.resx">
-      <DependentUpon>ListadoProductos1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListaProveedores1.resx">
-      <DependentUpon>ListaProveedores1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

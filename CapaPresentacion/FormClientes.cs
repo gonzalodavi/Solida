@@ -267,87 +267,102 @@ namespace CapaPresentacion
                         {
                             if (Editar == false)
                             {
-                                string Rpta = "";
-                                int nroiddireccion = 0;
-                                DialogResult Opcion;
-                                Opcion = MessageBox.Show("Desea registrar un Nuevo Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                if (Opcion == DialogResult.OK)
+                                try
                                 {
-                                    if (tbIdDom.Text == "")
+                                    string Rpta = "";
+                                    int nroiddireccion = 0;
+                                    DialogResult Opcion;
+                                    Opcion = MessageBox.Show("Desea registrar un Nuevo Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                    if (Opcion == DialogResult.OK)
                                     {
-                                        nroiddireccion = 0;
-                                    }
-                                    else
-                                    {
-                                        nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
-                                    }
+                                        if (tbIdDom.Text == "")
+                                        {
+                                            nroiddireccion = 0;
+                                        }
+                                        else
+                                        {
+                                            nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
+                                        }
 
-                                    string dnicuit = this.tbDNI.Text.Trim();
+                                        string dnicuit = this.tbDNI.Text.Trim();
 
-                                    if (cbDNICUIT.Text == "CUIT")
-                                    {
-                                        dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
-                                    }
+                                        if (cbDNICUIT.Text == "CUIT")
+                                        {
+                                            dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
+                                        }
 
-                                    Rpta = CN_Cliente.Insertar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
-                                    if (Rpta.Equals("OK"))
-                                    {
-                                        this.MensajeOk("Se insertó correctamente el nuevo Cliente");
+                                        Rpta = CN_Cliente.Insertar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
+                                        if (Rpta.Equals("OK"))
+                                        {
+                                            this.MensajeOk("Se insertó correctamente el nuevo Cliente");
 
-                                        dgvClientes.Enabled = true;
-                                        CargarGrilla();
-                                        LimpiarTabDomicilio();
-                                        limpiarCampos();
-                                        tabClientes.SelectedTab = tabConsulta;
-                                    }
-                                    else
-                                    {
-                                        this.MensajeError(Rpta);
+                                            dgvClientes.Enabled = true;
+                                            CargarGrilla();
+                                            LimpiarTabDomicilio();
+                                            limpiarCampos();
+                                            tabClientes.SelectedTab = tabConsulta;
+                                        }
+                                        else
+                                        {
+                                            this.MensajeError(Rpta);
+                                        }
                                     }
                                 }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message + ex.StackTrace);
+                                }
+                                
                             }
                             if (Editar == true)
                             {
-                                string Rpta = "";
-                                DialogResult Opcion;
-                                int nroiddireccion = 0;
-                                Opcion = MessageBox.Show("¿Desea Modificar los datos del Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                if (Opcion == DialogResult.OK)
+                                try
                                 {
-                                    if (tbIdDom.Text == "")
+                                    string Rpta = "";
+                                    DialogResult Opcion;
+                                    int nroiddireccion = 0;
+                                    Opcion = MessageBox.Show("¿Desea Modificar los datos del Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                    if (Opcion == DialogResult.OK)
                                     {
-                                        nroiddireccion = 0;
-                                    }
-                                    else
-                                    {
-                                        nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
-                                    }
-                                    string dnicuit = this.tbDNI.Text.Trim();
+                                        if (tbIdDom.Text == "")
+                                        {
+                                            nroiddireccion = 0;
+                                        }
+                                        else
+                                        {
+                                            nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
+                                        }
+                                        string dnicuit = this.tbDNI.Text.Trim();
 
-                                    if (cbDNICUIT.Text == "CUIT")
-                                    {
-                                        dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
-                                    }
+                                        if (cbDNICUIT.Text == "CUIT")
+                                        {
+                                            dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
+                                        }
 
-                                    Rpta = CN_Cliente.Modificar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
-                                    if (Rpta.Equals("OK"))
-                                    {
-                                        this.MensajeOk("Se modificaron correctamente los datos del Cliente");
-                                        dgvClientes.Enabled = true;
-                                        CargarGrilla();
-                                        LimpiarTabDomicilio();
-                                        limpiarCampos();
-                                        tabClientes.SelectedTab = tabConsulta;
-                                        lblSubTitutlo.Text = "Nuevo Cliente";
-                                        dgvClientes.Enabled = true;
-                                        Editar = false;
-                                        EditarDom = false;
-                                    }
-                                    else
-                                    {
-                                        this.MensajeError(Rpta);
+                                        Rpta = CN_Cliente.Modificar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
+                                        if (Rpta.Equals("OK"))
+                                        {
+                                            this.MensajeOk("Se modificaron correctamente los datos del Cliente");
+                                            dgvClientes.Enabled = true;
+                                            CargarGrilla();
+                                            LimpiarTabDomicilio();
+                                            limpiarCampos();
+                                            tabClientes.SelectedTab = tabConsulta;
+                                            lblSubTitutlo.Text = "Nuevo Cliente";
+                                            dgvClientes.Enabled = true;
+                                            Editar = false;
+                                            EditarDom = false;
+                                        }
+                                        else
+                                        {
+                                            this.MensajeError(Rpta);
+                                        }
                                     }
                                 }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message + ex.StackTrace);
+                                }                                
                             }
                         }
                     }
@@ -367,7 +382,6 @@ namespace CapaPresentacion
                     tabClientes.SelectedTab = tabConsulta;
                     dgvClientes.Enabled = true;
                     lblSubTitutlo.Text = "Nuevo Cliente";
-
                 }
             }
             catch (Exception ex)
@@ -415,7 +429,7 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor");
             }
         }
 
@@ -465,7 +479,7 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor");
             }
         }
 

@@ -78,6 +78,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnCuentasBanco = new FontAwesome.Sharp.IconButton();
             this.panelArriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -195,13 +196,14 @@
             // panelSubMenuAjustes
             // 
             this.panelSubMenuAjustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
+            this.panelSubMenuAjustes.Controls.Add(this.btnCuentasBanco);
             this.panelSubMenuAjustes.Controls.Add(this.btnConfSucursal);
             this.panelSubMenuAjustes.Controls.Add(this.btnSesionesUsuarios);
             this.panelSubMenuAjustes.Controls.Add(this.btnAdminUsuarios);
             this.panelSubMenuAjustes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuAjustes.Location = new System.Drawing.Point(0, 935);
             this.panelSubMenuAjustes.Name = "panelSubMenuAjustes";
-            this.panelSubMenuAjustes.Size = new System.Drawing.Size(213, 125);
+            this.panelSubMenuAjustes.Size = new System.Drawing.Size(213, 166);
             this.panelSubMenuAjustes.TabIndex = 5;
             // 
             // btnConfSucursal
@@ -222,7 +224,7 @@
             this.btnConfSucursal.Size = new System.Drawing.Size(213, 40);
             this.btnConfSucursal.TabIndex = 2;
             this.btnConfSucursal.TabStop = false;
-            this.btnConfSucursal.Text = "CONFIGURAR SUCURSAL Y DATOS EMPRESA";
+            this.btnConfSucursal.Text = "DATOS EMPRESA Y SUCURSALES";
             this.btnConfSucursal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfSucursal.UseVisualStyleBackColor = true;
             this.btnConfSucursal.Click += new System.EventHandler(this.btnConfSucursal_Click);
@@ -977,6 +979,29 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnCuentasBanco
+            // 
+            this.btnCuentasBanco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCuentasBanco.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCuentasBanco.FlatAppearance.BorderSize = 0;
+            this.btnCuentasBanco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
+            this.btnCuentasBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCuentasBanco.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuentasBanco.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCuentasBanco.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCuentasBanco.IconColor = System.Drawing.Color.Black;
+            this.btnCuentasBanco.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCuentasBanco.Location = new System.Drawing.Point(0, 120);
+            this.btnCuentasBanco.Name = "btnCuentasBanco";
+            this.btnCuentasBanco.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnCuentasBanco.Size = new System.Drawing.Size(213, 40);
+            this.btnCuentasBanco.TabIndex = 3;
+            this.btnCuentasBanco.TabStop = false;
+            this.btnCuentasBanco.Text = "CUENTAS DE BANCO";
+            this.btnCuentasBanco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCuentasBanco.UseVisualStyleBackColor = true;
+            this.btnCuentasBanco.Click += new System.EventHandler(this.btnCuentasBanco_Click);
+            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1062,5 +1087,6 @@
         private FontAwesome.Sharp.IconButton btnSesionesUsuarios;
         private System.Windows.Forms.Timer timer1;
         private FontAwesome.Sharp.IconButton btnConfSucursal;
+        private FontAwesome.Sharp.IconButton btnCuentasBanco;
     }
 }

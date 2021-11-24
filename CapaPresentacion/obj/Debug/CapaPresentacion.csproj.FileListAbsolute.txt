@@ -1,4 +1,3 @@
-G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.csprojAssemblyReference.cache
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\Presentacion.FormularioPrincipal.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
@@ -18,7 +17,6 @@ G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\CapaDatos.dll
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\CapaComun.pdb
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\CapaNegocio.pdb
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\CapaDatos.pdb
-G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\System.Data.SqlClient.dll
@@ -122,8 +120,6 @@ G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\zh-CHT\Microsoft.ReportView
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormBase.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormClientes.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormRemitos.resources
-G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.ListaProveedores1.resources
-G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.ListadoProductos1.resources
 H:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 H:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 H:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -252,7 +248,6 @@ H:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.Cop
 H:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 H:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 H:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormComodin.resources
-G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormComodin.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormReporteRemito.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormCompras.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormReporteCompra.resources
@@ -283,3 +278,5 @@ G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormModelo
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormAlicuota.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormDetalleCtaCteProveedorSimple.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormReporteOPago.resources
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormBanco.resources

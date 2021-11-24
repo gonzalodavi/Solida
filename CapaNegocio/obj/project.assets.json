@@ -1434,6 +1434,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "projectReferences": {
             "G:\\Proyecto Solida\\Solida\\CapaComun\\CapaComun.csproj": {
               "projectPath": "G:\\Proyecto Solida\\Solida\\CapaComun\\CapaComun.csproj"
@@ -1455,6 +1456,7 @@
     },
     "frameworks": {
       "netstandard2.0": {
+        "targetAlias": "netstandard2.0",
         "dependencies": {
           "FontAwesome.Sharp": {
             "target": "Package",
@@ -1489,7 +1491,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   },

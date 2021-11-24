@@ -210,13 +210,14 @@ namespace CapaPresentacion
         }
 
 
-
         private void CargarComboBoxProveedores()
         {
             cbProveedor.DataSource = objeto.CargaProveedores();
             cbProveedor.DisplayMember = "NOMBRE";
-            cbProveedor.ValueMember = "CUIL_CUIT";           
+            cbProveedor.ValueMember = "CUIL_CUIT";
+            cbProveedor.SelectedIndex = -1;
         }
+
 
         private void cbProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -263,17 +264,24 @@ namespace CapaPresentacion
 
         private void CargaSaldoCtaCte()
         {
-            CN_CtaCte obsaldo = new CN_CtaCte();
-
-            decimal suma = 0;
-            foreach (DataGridViewRow row in dgvDetCtaCte.Rows)
+            if (cbProveedor.SelectedIndex != -1)
             {
-                if (row.Cells["IMPORTE"].Value != null)
-                    suma += (Decimal)row.Cells["IMPORTE"].Value;
-            }
-            decimal saldo = obsaldo.MostrarSaldoP(cbProveedor.SelectedValue.ToString());
+                CN_CtaCte obsaldo = new CN_CtaCte();
 
-            this.lblSaldo.Text = saldo.ToString();
+                decimal suma = 0;
+                foreach (DataGridViewRow row in dgvDetCtaCte.Rows)
+                {
+                    if (row.Cells["IMPORTE"].Value != null)
+                        suma += (Decimal)row.Cells["IMPORTE"].Value;
+                }
+                decimal saldo = obsaldo.MostrarSaldoP(cbProveedor.SelectedValue.ToString());
+
+                this.lblSaldo.Text = saldo.ToString();
+            }
+            else
+            {
+                this.lblSaldo.Text = "0,00";
+            }
         }
 
 
@@ -394,10 +402,13 @@ namespace CapaPresentacion
                     if (opcion == DialogResult.OK)
                     {
                         CN_Recibo objetoCN = new CN_Recibo();
-                        int idOPago = Convert.ToInt32(dgvOPago.CurrentRow.Cells[0].Value.ToString());
+                        int idOPago = Convert.ToInt32(dgvOPago.CurrentRow.Cells["ID_OPAGO"].Value.ToString());
                         objetoCN.AnularOPago(idOPago);
 
                         MessageBox.Show("SE ANULÓ CORRECTAMENTE EL RECIBO SELECCIONADO");
+
+                        string rptaID = CN_Cheque.EstadoCheque("PAGADO", "ACTIVO", idOPago);                        
+
                         string rpta = CN_CtaCte.AnularRegistroCtaCteP(dgvOPago.CurrentRow.Cells[2].Value.ToString(), "ORDEN DE PAGO");
                         if (rpta.Equals("OK"))
                         {
@@ -695,7 +706,7 @@ namespace CapaPresentacion
                 Decimal importePend = Convert.ToDecimal(lblTotalOPago.Text);
                 if (importePend > 0)
                 {
-                    Decimal saldo = Convert.ToDecimal(lblSaldo.Text) - Convert.ToDecimal(lblTotalOPago.Text);
+                    Decimal saldo = Convert.ToDecimal(lblSaldo.Text) + Convert.ToDecimal(lblTotalOPago.Text);
                     if (saldo == 0)
                     {
                         lblSaldoPendiente.Text = "0,00";

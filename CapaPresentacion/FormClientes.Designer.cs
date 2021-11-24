@@ -48,10 +48,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizaLista = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.tbBusca = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.tabNuevoCliente = new System.Windows.Forms.TabPage();
@@ -99,17 +97,13 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.btnEliminaDom = new System.Windows.Forms.Button();
-            this.btnActualizaListaDom = new FontAwesome.Sharp.IconButton();
             this.btnModificaDom = new System.Windows.Forms.Button();
             this.btnNuevaDireccion = new System.Windows.Forms.Button();
-            this.btnBuscaDom = new FontAwesome.Sharp.IconButton();
             this.tbBuscarDomicilio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDomicilios = new System.Windows.Forms.DataGridView();
             this.tabNuevoDom = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnAgregaBarr = new FontAwesome.Sharp.IconButton();
-            this.btnAgregaLoc = new FontAwesome.Sharp.IconButton();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -136,6 +130,12 @@
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
+            this.btnActualizaLista = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnActualizaListaDom = new FontAwesome.Sharp.IconButton();
+            this.btnBuscaDom = new FontAwesome.Sharp.IconButton();
+            this.btnAgregaBarr = new FontAwesome.Sharp.IconButton();
+            this.btnAgregaLoc = new FontAwesome.Sharp.IconButton();
             this.panelContenedor.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.tabConsulta.SuspendLayout();
@@ -306,31 +306,6 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnActualizaLista
-            // 
-            this.btnActualizaLista.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizaLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnActualizaLista.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizaLista.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnActualizaLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizaLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnActualizaLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizaLista.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnActualizaLista.ForeColor = System.Drawing.Color.White;
-            this.btnActualizaLista.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnActualizaLista.IconColor = System.Drawing.Color.White;
-            this.btnActualizaLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaLista.IconSize = 5;
-            this.btnActualizaLista.Location = new System.Drawing.Point(791, 41);
-            this.btnActualizaLista.Name = "btnActualizaLista";
-            this.btnActualizaLista.Size = new System.Drawing.Size(116, 31);
-            this.btnActualizaLista.TabIndex = 88;
-            this.btnActualizaLista.TabStop = false;
-            this.btnActualizaLista.Text = " ACTUALIZAR";
-            this.btnActualizaLista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizaLista.UseVisualStyleBackColor = false;
-            this.btnActualizaLista.Click += new System.EventHandler(this.btnActualizaLista_Click);
-            // 
             // btnModificar
             // 
             this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -396,31 +371,6 @@
             this.dgvClientes.Size = new System.Drawing.Size(900, 386);
             this.dgvClientes.TabIndex = 86;
             this.dgvClientes.TabStop = false;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscar.IconColor = System.Drawing.Color.White;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(365, 41);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(116, 31);
-            this.btnBuscar.TabIndex = 85;
-            this.btnBuscar.TabStop = false;
-            this.btnBuscar.Text = " BUSCAR";
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // tbBusca
             // 
@@ -1021,13 +971,13 @@
             this.tabListaDom.Controls.Add(this.label18);
             this.tabListaDom.Controls.Add(this.label21);
             this.tabListaDom.Controls.Add(this.btnEliminaDom);
-            this.tabListaDom.Controls.Add(this.btnActualizaListaDom);
             this.tabListaDom.Controls.Add(this.btnModificaDom);
             this.tabListaDom.Controls.Add(this.btnNuevaDireccion);
-            this.tabListaDom.Controls.Add(this.btnBuscaDom);
             this.tabListaDom.Controls.Add(this.tbBuscarDomicilio);
             this.tabListaDom.Controls.Add(this.label1);
             this.tabListaDom.Controls.Add(this.dgvDomicilios);
+            this.tabListaDom.Controls.Add(this.btnActualizaListaDom);
+            this.tabListaDom.Controls.Add(this.btnBuscaDom);
             this.tabListaDom.Location = new System.Drawing.Point(4, 25);
             this.tabListaDom.Name = "tabListaDom";
             this.tabListaDom.Padding = new System.Windows.Forms.Padding(3);
@@ -1125,31 +1075,6 @@
             this.btnEliminaDom.UseVisualStyleBackColor = false;
             this.btnEliminaDom.Click += new System.EventHandler(this.btnEliminaDom_Click);
             // 
-            // btnActualizaListaDom
-            // 
-            this.btnActualizaListaDom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizaListaDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnActualizaListaDom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizaListaDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnActualizaListaDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizaListaDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnActualizaListaDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizaListaDom.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnActualizaListaDom.ForeColor = System.Drawing.Color.White;
-            this.btnActualizaListaDom.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnActualizaListaDom.IconColor = System.Drawing.Color.White;
-            this.btnActualizaListaDom.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaListaDom.IconSize = 5;
-            this.btnActualizaListaDom.Location = new System.Drawing.Point(791, 43);
-            this.btnActualizaListaDom.Name = "btnActualizaListaDom";
-            this.btnActualizaListaDom.Size = new System.Drawing.Size(116, 31);
-            this.btnActualizaListaDom.TabIndex = 121;
-            this.btnActualizaListaDom.TabStop = false;
-            this.btnActualizaListaDom.Text = " ACTUALIZAR";
-            this.btnActualizaListaDom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizaListaDom.UseVisualStyleBackColor = false;
-            this.btnActualizaListaDom.Click += new System.EventHandler(this.btnActualizaListaDom_Click);
-            // 
             // btnModificaDom
             // 
             this.btnModificaDom.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -1189,31 +1114,6 @@
             this.btnNuevaDireccion.Text = "NUEVA";
             this.btnNuevaDireccion.UseVisualStyleBackColor = false;
             this.btnNuevaDireccion.Click += new System.EventHandler(this.btnNuevaDireccion_Click);
-            // 
-            // btnBuscaDom
-            // 
-            this.btnBuscaDom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscaDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscaDom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscaDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscaDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscaDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscaDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscaDom.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnBuscaDom.ForeColor = System.Drawing.Color.White;
-            this.btnBuscaDom.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscaDom.IconColor = System.Drawing.Color.White;
-            this.btnBuscaDom.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscaDom.IconSize = 25;
-            this.btnBuscaDom.Location = new System.Drawing.Point(365, 43);
-            this.btnBuscaDom.Name = "btnBuscaDom";
-            this.btnBuscaDom.Size = new System.Drawing.Size(116, 31);
-            this.btnBuscaDom.TabIndex = 119;
-            this.btnBuscaDom.TabStop = false;
-            this.btnBuscaDom.Text = " BUSCAR";
-            this.btnBuscaDom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscaDom.UseVisualStyleBackColor = false;
-            this.btnBuscaDom.Click += new System.EventHandler(this.btnBuscaDom_Click);
             // 
             // tbBuscarDomicilio
             // 
@@ -1288,8 +1188,6 @@
             // 
             this.tabNuevoDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.tabNuevoDom.Controls.Add(this.label25);
-            this.tabNuevoDom.Controls.Add(this.btnAgregaBarr);
-            this.tabNuevoDom.Controls.Add(this.btnAgregaLoc);
             this.tabNuevoDom.Controls.Add(this.label24);
             this.tabNuevoDom.Controls.Add(this.label22);
             this.tabNuevoDom.Controls.Add(this.label4);
@@ -1305,6 +1203,8 @@
             this.tabNuevoDom.Controls.Add(this.label3);
             this.tabNuevoDom.Controls.Add(this.label2);
             this.tabNuevoDom.Controls.Add(this.lblProvincia);
+            this.tabNuevoDom.Controls.Add(this.btnAgregaBarr);
+            this.tabNuevoDom.Controls.Add(this.btnAgregaLoc);
             this.tabNuevoDom.Location = new System.Drawing.Point(4, 25);
             this.tabNuevoDom.Name = "tabNuevoDom";
             this.tabNuevoDom.Padding = new System.Windows.Forms.Padding(3);
@@ -1323,54 +1223,6 @@
             this.label25.Size = new System.Drawing.Size(17, 16);
             this.label25.TabIndex = 169;
             this.label25.Text = "*";
-            // 
-            // btnAgregaBarr
-            // 
-            this.btnAgregaBarr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaBarr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaBarr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaBarr.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaBarr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaBarr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaBarr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaBarr.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregaBarr.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaBarr.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregaBarr.IconColor = System.Drawing.Color.White;
-            this.btnAgregaBarr.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaBarr.IconSize = 25;
-            this.btnAgregaBarr.Location = new System.Drawing.Point(496, 301);
-            this.btnAgregaBarr.Name = "btnAgregaBarr";
-            this.btnAgregaBarr.Size = new System.Drawing.Size(29, 29);
-            this.btnAgregaBarr.TabIndex = 169;
-            this.btnAgregaBarr.TabStop = false;
-            this.btnAgregaBarr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaBarr.UseVisualStyleBackColor = false;
-            this.btnAgregaBarr.Click += new System.EventHandler(this.btnAgregaBarr_Click);
-            // 
-            // btnAgregaLoc
-            // 
-            this.btnAgregaLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregaLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAgregaLoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregaLoc.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregaLoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAgregaLoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAgregaLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregaLoc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregaLoc.ForeColor = System.Drawing.Color.White;
-            this.btnAgregaLoc.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregaLoc.IconColor = System.Drawing.Color.White;
-            this.btnAgregaLoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregaLoc.IconSize = 25;
-            this.btnAgregaLoc.Location = new System.Drawing.Point(496, 216);
-            this.btnAgregaLoc.Name = "btnAgregaLoc";
-            this.btnAgregaLoc.Size = new System.Drawing.Size(29, 29);
-            this.btnAgregaLoc.TabIndex = 169;
-            this.btnAgregaLoc.TabStop = false;
-            this.btnAgregaLoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregaLoc.UseVisualStyleBackColor = false;
-            this.btnAgregaLoc.Click += new System.EventHandler(this.btnAgregaLoc_Click);
             // 
             // label24
             // 
@@ -1773,6 +1625,154 @@
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // btnActualizaLista
+            // 
+            this.btnActualizaLista.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActualizaLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizaLista.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizaLista.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizaLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizaLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizaLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizaLista.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizaLista.ForeColor = System.Drawing.Color.White;
+            this.btnActualizaLista.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnActualizaLista.IconColor = System.Drawing.Color.White;
+            this.btnActualizaLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizaLista.IconSize = 5;
+            this.btnActualizaLista.Location = new System.Drawing.Point(791, 41);
+            this.btnActualizaLista.Name = "btnActualizaLista";
+            this.btnActualizaLista.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizaLista.TabIndex = 88;
+            this.btnActualizaLista.TabStop = false;
+            this.btnActualizaLista.Text = " ACTUALIZAR";
+            this.btnActualizaLista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizaLista.UseVisualStyleBackColor = false;
+            this.btnActualizaLista.Click += new System.EventHandler(this.btnActualizaLista_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 25;
+            this.btnBuscar.Location = new System.Drawing.Point(365, 41);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(116, 31);
+            this.btnBuscar.TabIndex = 85;
+            this.btnBuscar.TabStop = false;
+            this.btnBuscar.Text = " BUSCAR";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnActualizaListaDom
+            // 
+            this.btnActualizaListaDom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActualizaListaDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizaListaDom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizaListaDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizaListaDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizaListaDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizaListaDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizaListaDom.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizaListaDom.ForeColor = System.Drawing.Color.White;
+            this.btnActualizaListaDom.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnActualizaListaDom.IconColor = System.Drawing.Color.White;
+            this.btnActualizaListaDom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizaListaDom.IconSize = 5;
+            this.btnActualizaListaDom.Location = new System.Drawing.Point(791, 43);
+            this.btnActualizaListaDom.Name = "btnActualizaListaDom";
+            this.btnActualizaListaDom.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizaListaDom.TabIndex = 121;
+            this.btnActualizaListaDom.TabStop = false;
+            this.btnActualizaListaDom.Text = " ACTUALIZAR";
+            this.btnActualizaListaDom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizaListaDom.UseVisualStyleBackColor = false;
+            this.btnActualizaListaDom.Click += new System.EventHandler(this.btnActualizaListaDom_Click);
+            // 
+            // btnBuscaDom
+            // 
+            this.btnBuscaDom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscaDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscaDom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscaDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscaDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscaDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscaDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscaDom.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscaDom.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaDom.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscaDom.IconColor = System.Drawing.Color.White;
+            this.btnBuscaDom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscaDom.IconSize = 25;
+            this.btnBuscaDom.Location = new System.Drawing.Point(365, 43);
+            this.btnBuscaDom.Name = "btnBuscaDom";
+            this.btnBuscaDom.Size = new System.Drawing.Size(116, 31);
+            this.btnBuscaDom.TabIndex = 119;
+            this.btnBuscaDom.TabStop = false;
+            this.btnBuscaDom.Text = " BUSCAR";
+            this.btnBuscaDom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscaDom.UseVisualStyleBackColor = false;
+            this.btnBuscaDom.Click += new System.EventHandler(this.btnBuscaDom_Click);
+            // 
+            // btnAgregaBarr
+            // 
+            this.btnAgregaBarr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaBarr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaBarr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaBarr.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaBarr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaBarr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaBarr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaBarr.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaBarr.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaBarr.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaBarr.IconColor = System.Drawing.Color.White;
+            this.btnAgregaBarr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaBarr.IconSize = 25;
+            this.btnAgregaBarr.Location = new System.Drawing.Point(496, 301);
+            this.btnAgregaBarr.Name = "btnAgregaBarr";
+            this.btnAgregaBarr.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaBarr.TabIndex = 169;
+            this.btnAgregaBarr.TabStop = false;
+            this.btnAgregaBarr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaBarr.UseVisualStyleBackColor = false;
+            this.btnAgregaBarr.Click += new System.EventHandler(this.btnAgregaBarr_Click);
+            // 
+            // btnAgregaLoc
+            // 
+            this.btnAgregaLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaLoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaLoc.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaLoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaLoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaLoc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaLoc.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaLoc.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaLoc.IconColor = System.Drawing.Color.White;
+            this.btnAgregaLoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaLoc.IconSize = 25;
+            this.btnAgregaLoc.Location = new System.Drawing.Point(496, 216);
+            this.btnAgregaLoc.Name = "btnAgregaLoc";
+            this.btnAgregaLoc.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaLoc.TabIndex = 169;
+            this.btnAgregaLoc.TabStop = false;
+            this.btnAgregaLoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaLoc.UseVisualStyleBackColor = false;
+            this.btnAgregaLoc.Click += new System.EventHandler(this.btnAgregaLoc_Click);
             // 
             // FormClientes
             // 

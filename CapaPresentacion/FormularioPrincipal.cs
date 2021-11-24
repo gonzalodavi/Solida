@@ -399,6 +399,18 @@ namespace Presentacion
             openChildForm(new FormSesionesUsuario());
         }
 
+        private void btnConfSucursal_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            openChildForm(new FormSucursales());
+        }
+
+        private void btnCuentasBanco_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            openChildForm(new FormBanco());
+        }
+
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -470,12 +482,6 @@ namespace Presentacion
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnConfSucursal_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            openChildForm(new FormSucursales());
-        }
+        }              
     }
 }

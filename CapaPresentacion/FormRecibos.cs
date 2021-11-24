@@ -78,7 +78,7 @@ namespace CapaPresentacion
             cbCliente.DataSource = objeto.CargaClientes();
             cbCliente.DisplayMember = "NOMBRE";
             cbCliente.ValueMember = "DNI";
-            cbCliente.Text = "Consumidor Final";            
+            cbCliente.SelectedIndex = -1;
         }
 
         //Mostrar Mensaje de Confirmacion
@@ -451,9 +451,13 @@ namespace CapaPresentacion
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargaGrillaCtaCte(cbCliente.SelectedValue.ToString());
-            CargaSaldoCtaCte();
-            AcomodaTablaCtaCte();
+            if (cbCliente.SelectedIndex != -1)
+            {
+                CargaGrillaCtaCte(cbCliente.SelectedValue.ToString());
+                CargaSaldoCtaCte();
+                AcomodaTablaCtaCte();
+            }
+            
        
         }
 
@@ -479,17 +483,25 @@ namespace CapaPresentacion
 
         private void CargaSaldoCtaCte()
         {
-            CN_CtaCte obsaldo = new CN_CtaCte();
-
-            decimal suma = 0;
-            foreach (DataGridViewRow row in dgvDetCtaCte.Rows)
+            if (cbCliente.SelectedIndex != -1)
             {
-                if (row.Cells["IMPORTE"].Value != null)
-                    suma += (Decimal)row.Cells["IMPORTE"].Value;
-            }
-            decimal saldo = obsaldo.MostrarSaldo(cbCliente.SelectedValue.ToString());
+                CN_CtaCte obsaldo = new CN_CtaCte();
 
-            this.lblSaldo.Text = saldo.ToString();
+                decimal suma = 0;
+                foreach (DataGridViewRow row in dgvDetCtaCte.Rows)
+                {
+                    if (row.Cells["IMPORTE"].Value != null)
+                        suma += (Decimal)row.Cells["IMPORTE"].Value;
+                }
+                decimal saldo = obsaldo.MostrarSaldo(cbCliente.SelectedValue.ToString());
+
+                this.lblSaldo.Text = saldo.ToString();
+            }
+            else
+            {
+                this.lblSaldo.Text = "0,00";
+            }
+            
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)

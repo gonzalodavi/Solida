@@ -606,6 +606,57 @@ namespace CapaDatos
             return rpta;
         }
 
+        public string EstadoCheque(CD_Cheque Cheque)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "DevuelveChequesaActivos";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParEstadoActual = new SqlParameter();
+                ParEstadoActual.ParameterName = "@estadoActual";
+                ParEstadoActual.SqlDbType = SqlDbType.VarChar;
+                ParEstadoActual.Size = 15;
+                ParEstadoActual.Value = Cheque.Estado;
+                SqlCmd.Parameters.Add(ParEstadoActual);
+
+                SqlParameter ParEstadoNuevo = new SqlParameter();
+                ParEstadoNuevo.ParameterName = "@estadoNuevo";
+                ParEstadoNuevo.SqlDbType = SqlDbType.VarChar;
+                ParEstadoNuevo.Size = 15;
+                ParEstadoNuevo.Value = Cheque.EstadoNuevo;
+                SqlCmd.Parameters.Add(ParEstadoNuevo);
+
+                SqlParameter ParIdOPago = new SqlParameter();
+                ParIdOPago.ParameterName = "@idopago";
+                ParIdOPago.SqlDbType = SqlDbType.Int;
+                ParIdOPago.Value = Cheque.IdOPago;
+                SqlCmd.Parameters.Add(ParIdOPago);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Modificar LOS ESTADOS DE LOS CHEQUES";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
         public string Eliminar_Cheques(string estado)
         {
 
