@@ -52,7 +52,7 @@
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnAceptar.IconColor = System.Drawing.Color.White;
@@ -91,11 +91,11 @@
             this.lblSeleDom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSeleDom.AutoEllipsis = true;
             this.lblSeleDom.AutoSize = true;
-            this.lblSeleDom.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeleDom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblSeleDom.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblSeleDom.Location = new System.Drawing.Point(106, 10);
+            this.lblSeleDom.Location = new System.Drawing.Point(114, 10);
             this.lblSeleDom.Name = "lblSeleDom";
-            this.lblSeleDom.Size = new System.Drawing.Size(102, 16);
+            this.lblSeleDom.Size = new System.Drawing.Size(89, 17);
             this.lblSeleDom.TabIndex = 160;
             this.lblSeleDom.Text = "Nuevo Barrio";
             // 
@@ -103,11 +103,11 @@
             // 
             this.tbBarrio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbBarrio.Enabled = false;
-            this.tbBarrio.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBarrio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBarrio.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBarrio.Location = new System.Drawing.Point(40, 235);
             this.tbBarrio.Name = "tbBarrio";
-            this.tbBarrio.Size = new System.Drawing.Size(246, 22);
+            this.tbBarrio.Size = new System.Drawing.Size(246, 25);
             this.tbBarrio.TabIndex = 159;
             // 
             // cbProvincia
@@ -115,13 +115,13 @@
             this.cbProvincia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbProvincia.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.cbProvincia.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbProvincia.FormattingEnabled = true;
-            this.cbProvincia.ItemHeight = 14;
+            this.cbProvincia.ItemHeight = 17;
             this.cbProvincia.Location = new System.Drawing.Point(40, 83);
             this.cbProvincia.Name = "cbProvincia";
-            this.cbProvincia.Size = new System.Drawing.Size(246, 22);
+            this.cbProvincia.Size = new System.Drawing.Size(246, 25);
             this.cbProvincia.TabIndex = 156;
             this.cbProvincia.SelectedIndexChanged += new System.EventHandler(this.cbProvincia_SelectedIndexChanged);
             // 
@@ -129,11 +129,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(99, 216);
+            this.label1.Location = new System.Drawing.Point(107, 216);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 16);
+            this.label1.Size = new System.Drawing.Size(103, 17);
             this.label1.TabIndex = 157;
             this.label1.Text = "Nombre Barrio:";
             // 
@@ -141,11 +141,11 @@
             // 
             this.lblProvincia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblProvincia.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblProvincia.Location = new System.Drawing.Point(102, 64);
+            this.lblProvincia.Location = new System.Drawing.Point(110, 64);
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(115, 16);
+            this.lblProvincia.Size = new System.Drawing.Size(99, 17);
             this.lblProvincia.TabIndex = 158;
             this.lblProvincia.Text = "Elija Provincia:";
             // 
@@ -153,11 +153,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(102, 129);
+            this.label2.Location = new System.Drawing.Point(110, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 16);
+            this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 158;
             this.label2.Text = "Elija Localidad:";
             // 
@@ -167,13 +167,13 @@
             this.cbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLocalidad.Enabled = false;
             this.cbLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbLocalidad.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.cbLocalidad.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbLocalidad.FormattingEnabled = true;
-            this.cbLocalidad.ItemHeight = 14;
+            this.cbLocalidad.ItemHeight = 17;
             this.cbLocalidad.Location = new System.Drawing.Point(40, 148);
             this.cbLocalidad.Name = "cbLocalidad";
-            this.cbLocalidad.Size = new System.Drawing.Size(246, 22);
+            this.cbLocalidad.Size = new System.Drawing.Size(246, 25);
             this.cbLocalidad.TabIndex = 156;
             this.cbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cbLocalidad_SelectedIndexChanged);
             // 
@@ -181,11 +181,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(101, 272);
+            this.label3.Location = new System.Drawing.Point(109, 272);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 16);
+            this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 157;
             this.label3.Text = "Codigo Postal:";
             // 
@@ -193,11 +193,11 @@
             // 
             this.tbCodPostal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbCodPostal.Enabled = false;
-            this.tbCodPostal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCodPostal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCodPostal.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbCodPostal.Location = new System.Drawing.Point(40, 291);
             this.tbCodPostal.Name = "tbCodPostal";
-            this.tbCodPostal.Size = new System.Drawing.Size(246, 22);
+            this.tbCodPostal.Size = new System.Drawing.Size(246, 25);
             this.tbCodPostal.TabIndex = 159;
             // 
             // FormBarrio

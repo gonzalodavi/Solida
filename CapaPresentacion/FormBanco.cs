@@ -206,6 +206,7 @@ namespace CapaPresentacion
             }
         }
 
+
         private void agregarNuevaCuenta()
         {
             try
