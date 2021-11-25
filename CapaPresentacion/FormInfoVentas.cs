@@ -30,6 +30,8 @@ namespace CapaPresentacion
         {
             this.dgvVentas.DataSource = CN_Ventas.Mostrar();
             this.dgvVentas.Columns[0].Visible = false;
+            this.dgvVentas.Columns[1].Visible = false;
+
         }
 
         private void FechaHoy()

@@ -58,7 +58,6 @@ namespace CapaPresentacion
 
         private void btnAceptaMarca_Click(object sender, EventArgs e)
         {
-
             if (tbMarca.Text != "")
             {
                 try

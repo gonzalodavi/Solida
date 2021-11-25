@@ -98,24 +98,24 @@
             // 
             this.tBusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.tBusuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBusuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBusuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.tBusuario.Location = new System.Drawing.Point(63, 232);
             this.tBusuario.MaxLength = 20;
             this.tBusuario.Name = "tBusuario";
-            this.tBusuario.Size = new System.Drawing.Size(178, 23);
+            this.tBusuario.Size = new System.Drawing.Size(178, 25);
             this.tBusuario.TabIndex = 1;
             // 
             // tBclave
             // 
             this.tBclave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.tBclave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBclave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBclave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBclave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.tBclave.Location = new System.Drawing.Point(63, 295);
             this.tBclave.MaxLength = 20;
             this.tBclave.Name = "tBclave";
-            this.tBclave.Size = new System.Drawing.Size(178, 23);
+            this.tBclave.Size = new System.Drawing.Size(178, 25);
             this.tBclave.TabIndex = 2;
             this.tBclave.UseSystemPasswordChar = true;
             // 
@@ -127,7 +127,7 @@
             this.btnIniciar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnIniciar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIniciar.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnIniciar.Location = new System.Drawing.Point(63, 364);
             this.btnIniciar.Name = "btnIniciar";
@@ -141,37 +141,38 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.label1.Location = new System.Drawing.Point(117, 209);
+            this.label1.Location = new System.Drawing.Point(118, 209);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 21);
+            this.label1.Size = new System.Drawing.Size(67, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.label2.Location = new System.Drawing.Point(99, 272);
+            this.label2.Location = new System.Drawing.Point(106, 272);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 21);
+            this.label2.Size = new System.Drawing.Size(92, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Contraseña:";
             // 
             // lError
             // 
             this.lError.AutoSize = true;
-            this.lError.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lError.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.lError.Image = ((System.Drawing.Image)(resources.GetObject("lError.Image")));
             this.lError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lError.Location = new System.Drawing.Point(58, 332);
             this.lError.Name = "lError";
-            this.lError.Size = new System.Drawing.Size(110, 16);
+            this.lError.Size = new System.Drawing.Size(97, 15);
             this.lError.TabIndex = 0;
             this.lError.Text = "MENSAJE ERROR";
+            this.lError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lError.Visible = false;
             // 
             // btnRecupera
@@ -182,6 +183,7 @@
             this.btnRecupera.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRecupera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRecupera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecupera.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecupera.ForeColor = System.Drawing.Color.White;
             this.btnRecupera.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnRecupera.IconColor = System.Drawing.Color.Black;

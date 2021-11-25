@@ -44,13 +44,13 @@
             this.cbProvincia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbProvincia.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.cbProvincia.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbProvincia.FormattingEnabled = true;
-            this.cbProvincia.ItemHeight = 14;
+            this.cbProvincia.ItemHeight = 17;
             this.cbProvincia.Location = new System.Drawing.Point(40, 107);
             this.cbProvincia.Name = "cbProvincia";
-            this.cbProvincia.Size = new System.Drawing.Size(246, 22);
+            this.cbProvincia.Size = new System.Drawing.Size(246, 25);
             this.cbProvincia.TabIndex = 145;
             this.cbProvincia.SelectedIndexChanged += new System.EventHandler(this.cbProvincia_SelectedIndexChanged);
             // 
@@ -58,11 +58,11 @@
             // 
             this.lblProvincia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblProvincia.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblProvincia.Location = new System.Drawing.Point(103, 78);
+            this.lblProvincia.Location = new System.Drawing.Point(112, 85);
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(115, 16);
+            this.lblProvincia.Size = new System.Drawing.Size(99, 17);
             this.lblProvincia.TabIndex = 146;
             this.lblProvincia.Text = "Elija Provincia:";
             // 
@@ -70,22 +70,22 @@
             // 
             this.tbLocalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbLocalidad.Enabled = false;
-            this.tbLocalidad.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLocalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbLocalidad.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbLocalidad.Location = new System.Drawing.Point(40, 210);
             this.tbLocalidad.Name = "tbLocalidad";
-            this.tbLocalidad.Size = new System.Drawing.Size(246, 22);
+            this.tbLocalidad.Size = new System.Drawing.Size(246, 25);
             this.tbLocalidad.TabIndex = 147;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(88, 174);
+            this.label1.Location = new System.Drawing.Point(99, 188);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 16);
+            this.label1.Size = new System.Drawing.Size(125, 17);
             this.label1.TabIndex = 146;
             this.label1.Text = "Nombre Localidad:";
             // 
@@ -94,11 +94,11 @@
             this.lblSeleDom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSeleDom.AutoEllipsis = true;
             this.lblSeleDom.AutoSize = true;
-            this.lblSeleDom.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeleDom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblSeleDom.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblSeleDom.Location = new System.Drawing.Point(102, 10);
+            this.lblSeleDom.Location = new System.Drawing.Point(92, 10);
             this.lblSeleDom.Name = "lblSeleDom";
-            this.lblSeleDom.Size = new System.Drawing.Size(127, 16);
+            this.lblSeleDom.Size = new System.Drawing.Size(138, 21);
             this.lblSeleDom.TabIndex = 153;
             this.lblSeleDom.Text = "Nueva Localidad";
             // 
@@ -128,7 +128,7 @@
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnAceptar.IconColor = System.Drawing.Color.White;

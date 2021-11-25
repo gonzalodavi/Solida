@@ -30,6 +30,7 @@ namespace CapaPresentacion
             CargarGrilla();
             CargarGrillaDomicilios();
             CargarComboBoxProvincia();
+            limpiarCampos();
             cbDNICUIT.Text = "DNI";
         }
 
@@ -85,8 +86,6 @@ namespace CapaPresentacion
             tabClientes.SelectedTab = tabNuevoCliente;
         }
 
-
-
         //CARGAR LOS COMBOBOX DE BARRIO, LOCALIDAD Y PROVINCIA
 
         private void CargarComboBoxProvincia()
@@ -106,7 +105,12 @@ namespace CapaPresentacion
                 cbBarrio.DataSource = null;
                 panelDomicilio.Enabled = false;
                 CargarComboBoxLocalidad();
+                lblErrorProvincia.Visible = false;
             }
+            else
+            {
+                lblErrorProvincia.Visible = true;
+            }            
         }
 
         private void CargarComboBoxLocalidad()
@@ -128,8 +132,12 @@ namespace CapaPresentacion
             {
                 cbBarrio.DataSource = null;
                 panelDomicilio.Enabled = false;
-
                 CargarComboBoxBarrio();
+                lblErrorLocalidad.Visible = false;
+            }
+            else
+            {
+                lblErrorLocalidad.Visible = true;
             }
         }
 
@@ -150,11 +158,13 @@ namespace CapaPresentacion
             if (cbBarrio.SelectedIndex == -1)
             {
                 panelDomicilio.Enabled = false;
+                lblErrorBarrio.Visible = true;
             }
             else
             {
                 panelDomicilio.Enabled = true;
-            }
+                lblErrorBarrio.Visible = false;
+            }            
         }
 
 
@@ -171,6 +181,10 @@ namespace CapaPresentacion
             tbProvinciaSeleccionada.Text = "";
             cbLocalidad.DataSource = null;
             cbBarrio.DataSource = null;
+            lblErrorProvincia.Visible = false;
+            lblErrorLocalidad.Visible = false;
+            lblErrorBarrio.Visible = false;
+            lblErrorCalle.Visible = false;
         }
 
         private void limpiarCampos()
@@ -194,6 +208,10 @@ namespace CapaPresentacion
             lblErrorDNI.Visible = false;
             lblErrorIVA.Visible = false;
             lblErrorNom.Visible = false;
+            lblErrorProvincia.Visible = false;
+            lblErrorLocalidad.Visible = false;
+            lblErrorBarrio.Visible = false;
+            lblErrorCalle.Visible = false;
             Editar = false;
         }
 
@@ -206,164 +224,164 @@ namespace CapaPresentacion
 
         private void btAceptar_Click(object sender, EventArgs e)
         {
-            if (tbDNI.Text == "")
+            var cadena1 = tbDNI.Text;
+
+            if (cadena1.Length < 8 && cbDNICUIT.Text == "CUIT")
             {
-                if (cbDNICUIT.Text == "DNI")
-                {
-                    MensajeError("Por Favor, Ingrese Número de DNI para agregar un Nuevo Cliente.");
-                }
-                else
-                {
-                    MensajeError("Por Favor, Ingrese Número de CUIT para agregar un Nuevo Cliente.");
-                }
+                MessageBox.Show("El CUIT debe contener 11 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorDNI.Visible = true;
             }
             else
             {
-                if (tbApellido.Text == "")
+                lblErrorDNI.Visible = false;
+
+                if (cadena1.Length < 8 && cbDNICUIT.Text == "DNI")
                 {
-                    MensajeError("Por Favor, Ingrese un Apellido para agregar Nuevo Cliente.");
+                    MessageBox.Show("El DNI debe contener 8 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblErrorDNI.Visible = true;
                 }
                 else
                 {
-                    if (tbNombre.Text == "")
+                    lblErrorDNI.Visible = false;
+                    if (tbApellido.Text == "")
                     {
-                        MensajeError("Por Favor, Ingrese un Nombre para agregar Nuevo Cliente.");
+                        MensajeError("Por Favor, Ingrese un Apellido para agregar Nuevo Cliente.");
+                        lblErrorApe.Visible = true;
                     }
                     else
                     {
-                        agregarCliente();
+                        lblErrorApe.Visible = false;
+                        if (tbNombre.Text == "")
+                        {
+                            MensajeError("Por Favor, Ingrese un Nombre para agregar Nuevo Cliente.");
+                            lblErrorNom.Visible = true;
+                        }
+                        else
+                        {
+                            lblErrorNom.Visible = false;
+                            agregarCliente();
+                        }
                     }
                 }
-            }
+            }            
         }
 
         private void agregarCliente()
         {
-            var cadena = tbDNI.Text;
-
-            if (cadena.Length < 8 && cbDNICUIT.Text == "CUIT")
+            if (cbCondIVA.SelectedIndex == -1)
             {
-                MessageBox.Show("El CUIT debe contener 11 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeError("Seleccione una condicion de IVA del cliente a cargar");
+                lblErrorIVA.Visible = true;
             }
             else
             {
-                if (cadena.Length < 8 && cbDNICUIT.Text == "DNI")
+                lblErrorIVA.Visible = false;
+
+                if (tbIdDom.Text == "")
                 {
-                    MessageBox.Show("El DNI debe contener 8 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeError("Por Favor, Seleccione o Agregue una Nueva Dirección");
+                    lblErrorDire.Visible = true;
                 }
                 else
                 {
-                    if (cbCondIVA.Text == "")
+                    lblErrorDire.Visible = false;
+                    if (Editar == false)
                     {
-                        MensajeError("Seleccione una condicion de IVA del cliente a cargar");
-                    }
-                    else
-                    {
-                        if (tbIdDom.Text == "")
+                        try
                         {
-                            MensajeError("Por Favor, Seleccione o Agregue una Nueva Dirección");
+                            string Rpta = "";
+                            int nroiddireccion = 0;
+                            DialogResult Opcion;
+                            Opcion = MessageBox.Show("Desea registrar un Nuevo Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (Opcion == DialogResult.OK)
+                            {
+                                if (tbIdDom.Text == "")
+                                {
+                                    nroiddireccion = 0;
+                                }
+                                else
+                                {
+                                    nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
+                                }
+
+                                string dnicuit = this.tbDNI.Text.Trim();
+
+                                if (cbDNICUIT.Text == "CUIT")
+                                {
+                                    dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
+                                }
+
+                                Rpta = CN_Cliente.Insertar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
+                                if (Rpta.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se insertó correctamente el nuevo Cliente");
+
+                                    dgvClientes.Enabled = true;
+                                    CargarGrilla();
+                                    LimpiarTabDomicilio();
+                                    limpiarCampos();
+                                    tabClientes.SelectedTab = tabConsulta;
+                                }
+                                else
+                                {
+                                    this.MensajeError(Rpta);
+                                }
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            if (Editar == false)
+                            MessageBox.Show(ex.Message + ex.StackTrace);
+                        }
+
+                    }
+                    if (Editar == true)
+                    {
+                        try
+                        {
+                            string Rpta = "";
+                            DialogResult Opcion;
+                            int nroiddireccion = 0;
+                            Opcion = MessageBox.Show("¿Desea Modificar los datos del Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (Opcion == DialogResult.OK)
                             {
-                                try
+                                if (tbIdDom.Text == "")
                                 {
-                                    string Rpta = "";
-                                    int nroiddireccion = 0;
-                                    DialogResult Opcion;
-                                    Opcion = MessageBox.Show("Desea registrar un Nuevo Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                    if (Opcion == DialogResult.OK)
-                                    {
-                                        if (tbIdDom.Text == "")
-                                        {
-                                            nroiddireccion = 0;
-                                        }
-                                        else
-                                        {
-                                            nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
-                                        }
-
-                                        string dnicuit = this.tbDNI.Text.Trim();
-
-                                        if (cbDNICUIT.Text == "CUIT")
-                                        {
-                                            dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
-                                        }
-
-                                        Rpta = CN_Cliente.Insertar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
-                                        if (Rpta.Equals("OK"))
-                                        {
-                                            this.MensajeOk("Se insertó correctamente el nuevo Cliente");
-
-                                            dgvClientes.Enabled = true;
-                                            CargarGrilla();
-                                            LimpiarTabDomicilio();
-                                            limpiarCampos();
-                                            tabClientes.SelectedTab = tabConsulta;
-                                        }
-                                        else
-                                        {
-                                            this.MensajeError(Rpta);
-                                        }
-                                    }
+                                    nroiddireccion = 0;
                                 }
-                                catch (Exception ex)
+                                else
                                 {
-                                    MessageBox.Show(ex.Message + ex.StackTrace);
+                                    nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
                                 }
-                                
+                                string dnicuit = this.tbDNI.Text.Trim();
+
+                                if (cbDNICUIT.Text == "CUIT")
+                                {
+                                    dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
+                                }
+
+                                Rpta = CN_Cliente.Modificar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
+                                if (Rpta.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se modificaron correctamente los datos del Cliente");
+                                    dgvClientes.Enabled = true;
+                                    CargarGrilla();
+                                    LimpiarTabDomicilio();
+                                    limpiarCampos();
+                                    tabClientes.SelectedTab = tabConsulta;
+                                    lblSubTitutlo.Text = "Nuevo Cliente";
+                                    dgvClientes.Enabled = true;
+                                    Editar = false;
+                                    EditarDom = false;
+                                }
+                                else
+                                {
+                                    this.MensajeError(Rpta);
+                                }
                             }
-                            if (Editar == true)
-                            {
-                                try
-                                {
-                                    string Rpta = "";
-                                    DialogResult Opcion;
-                                    int nroiddireccion = 0;
-                                    Opcion = MessageBox.Show("¿Desea Modificar los datos del Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                    if (Opcion == DialogResult.OK)
-                                    {
-                                        if (tbIdDom.Text == "")
-                                        {
-                                            nroiddireccion = 0;
-                                        }
-                                        else
-                                        {
-                                            nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
-                                        }
-                                        string dnicuit = this.tbDNI.Text.Trim();
-
-                                        if (cbDNICUIT.Text == "CUIT")
-                                        {
-                                            dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
-                                        }
-
-                                        Rpta = CN_Cliente.Modificar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
-                                        if (Rpta.Equals("OK"))
-                                        {
-                                            this.MensajeOk("Se modificaron correctamente los datos del Cliente");
-                                            dgvClientes.Enabled = true;
-                                            CargarGrilla();
-                                            LimpiarTabDomicilio();
-                                            limpiarCampos();
-                                            tabClientes.SelectedTab = tabConsulta;
-                                            lblSubTitutlo.Text = "Nuevo Cliente";
-                                            dgvClientes.Enabled = true;
-                                            Editar = false;
-                                            EditarDom = false;
-                                        }
-                                        else
-                                        {
-                                            this.MensajeError(Rpta);
-                                        }
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message + ex.StackTrace);
-                                }                                
-                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message + ex.StackTrace);
                         }
                     }
                 }
@@ -993,6 +1011,66 @@ namespace CapaPresentacion
             else
             {
                 lblErrorDNI.Visible = false;
+            }
+        }
+
+        private void cbProvincia_Leave(object sender, EventArgs e)
+        {
+            if (cbProvincia.SelectedIndex == -1)
+            {
+                lblErrorProvincia.Visible = true;
+            }
+            else
+            {
+                lblErrorProvincia.Visible = false;
+            }
+        }
+
+        private void cbLocalidad_Leave(object sender, EventArgs e)
+        {
+            if (cbLocalidad.SelectedIndex == -1)
+            {
+                lblErrorLocalidad.Visible = true;
+            }
+            else
+            {
+                lblErrorLocalidad.Visible = false;
+            }
+        }
+
+        private void cbBarrio_Leave(object sender, EventArgs e)
+        {
+            if (cbBarrio.SelectedIndex == -1)
+            {
+                lblErrorBarrio.Visible = true;
+            }
+            else
+            {
+                lblErrorBarrio.Visible = false;
+            }
+        }
+
+        private void tbCalle_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCalle.Text == "")
+            {
+                lblErrorCalle.Visible = true;
+            }
+            else
+            {
+                lblErrorCalle.Visible = false;
+            }
+        }
+
+        private void tbCalle_Leave(object sender, EventArgs e)
+        {
+            if (tbCalle.Text == "")
+            {
+                lblErrorCalle.Visible = true;
+            }
+            else
+            {
+                lblErrorCalle.Visible = false;
             }
         }
     }

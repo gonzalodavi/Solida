@@ -38,6 +38,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.panelSubMenuAjustes = new System.Windows.Forms.Panel();
+            this.btnCuentasBanco = new FontAwesome.Sharp.IconButton();
             this.btnConfSucursal = new FontAwesome.Sharp.IconButton();
             this.btnSesionesUsuarios = new FontAwesome.Sharp.IconButton();
             this.btnAdminUsuarios = new FontAwesome.Sharp.IconButton();
@@ -78,7 +79,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnCuentasBanco = new FontAwesome.Sharp.IconButton();
             this.panelArriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -112,11 +112,11 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(5, 5);
+            this.lblTitulo.Location = new System.Drawing.Point(6, 3);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(74, 18);
+            this.lblTitulo.Size = new System.Drawing.Size(67, 21);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "SOLIDA";
             // 
@@ -206,6 +206,29 @@
             this.panelSubMenuAjustes.Size = new System.Drawing.Size(213, 166);
             this.panelSubMenuAjustes.TabIndex = 5;
             // 
+            // btnCuentasBanco
+            // 
+            this.btnCuentasBanco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCuentasBanco.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCuentasBanco.FlatAppearance.BorderSize = 0;
+            this.btnCuentasBanco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
+            this.btnCuentasBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCuentasBanco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuentasBanco.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCuentasBanco.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCuentasBanco.IconColor = System.Drawing.Color.Black;
+            this.btnCuentasBanco.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCuentasBanco.Location = new System.Drawing.Point(0, 120);
+            this.btnCuentasBanco.Name = "btnCuentasBanco";
+            this.btnCuentasBanco.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnCuentasBanco.Size = new System.Drawing.Size(213, 40);
+            this.btnCuentasBanco.TabIndex = 3;
+            this.btnCuentasBanco.TabStop = false;
+            this.btnCuentasBanco.Text = "CUENTAS DE BANCO";
+            this.btnCuentasBanco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCuentasBanco.UseVisualStyleBackColor = true;
+            this.btnCuentasBanco.Click += new System.EventHandler(this.btnCuentasBanco_Click);
+            // 
             // btnConfSucursal
             // 
             this.btnConfSucursal.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -213,7 +236,7 @@
             this.btnConfSucursal.FlatAppearance.BorderSize = 0;
             this.btnConfSucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnConfSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfSucursal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfSucursal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfSucursal.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnConfSucursal.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnConfSucursal.IconColor = System.Drawing.Color.Black;
@@ -236,7 +259,7 @@
             this.btnSesionesUsuarios.FlatAppearance.BorderSize = 0;
             this.btnSesionesUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnSesionesUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSesionesUsuarios.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSesionesUsuarios.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSesionesUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSesionesUsuarios.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSesionesUsuarios.IconColor = System.Drawing.Color.Black;
@@ -259,7 +282,7 @@
             this.btnAdminUsuarios.FlatAppearance.BorderSize = 0;
             this.btnAdminUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnAdminUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminUsuarios.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminUsuarios.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdminUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAdminUsuarios.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAdminUsuarios.IconColor = System.Drawing.Color.Black;
@@ -282,7 +305,7 @@
             this.btnAjustes.FlatAppearance.BorderSize = 0;
             this.btnAjustes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjustes.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjustes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjustes.ForeColor = System.Drawing.Color.White;
             this.btnAjustes.IconChar = FontAwesome.Sharp.IconChar.Tools;
             this.btnAjustes.IconColor = System.Drawing.Color.White;
@@ -324,7 +347,7 @@
             this.btnInfCtasCtes.FlatAppearance.BorderSize = 0;
             this.btnInfCtasCtes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfCtasCtes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfCtasCtes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfCtasCtes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfCtasCtes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInfCtasCtes.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnInfCtasCtes.IconColor = System.Drawing.Color.Black;
@@ -348,7 +371,7 @@
             this.btnInfStock.FlatAppearance.BorderSize = 0;
             this.btnInfStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfStock.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfStock.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInfStock.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnInfStock.IconColor = System.Drawing.Color.Black;
@@ -371,7 +394,7 @@
             this.btnInfCompras.FlatAppearance.BorderSize = 0;
             this.btnInfCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfCompras.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfCompras.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInfCompras.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnInfCompras.IconColor = System.Drawing.Color.Black;
@@ -394,7 +417,7 @@
             this.btnInfVtas.FlatAppearance.BorderSize = 0;
             this.btnInfVtas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfVtas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfVtas.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfVtas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfVtas.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInfVtas.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnInfVtas.IconColor = System.Drawing.Color.Black;
@@ -417,7 +440,7 @@
             this.btnInfCheques.FlatAppearance.BorderSize = 0;
             this.btnInfCheques.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfCheques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfCheques.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfCheques.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfCheques.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInfCheques.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnInfCheques.IconColor = System.Drawing.Color.Black;
@@ -441,7 +464,7 @@
             this.btnInfBanco.FlatAppearance.BorderSize = 0;
             this.btnInfBanco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfBanco.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfBanco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfBanco.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInfBanco.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnInfBanco.IconColor = System.Drawing.Color.Black;
@@ -465,7 +488,7 @@
             this.btnInfCaja.FlatAppearance.BorderSize = 0;
             this.btnInfCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfCaja.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfCaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfCaja.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnInfCaja.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnInfCaja.IconColor = System.Drawing.Color.Black;
@@ -488,7 +511,7 @@
             this.btnInformes.FlatAppearance.BorderSize = 0;
             this.btnInformes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformes.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformes.ForeColor = System.Drawing.Color.White;
             this.btnInformes.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.btnInformes.IconColor = System.Drawing.Color.White;
@@ -528,7 +551,7 @@
             this.btnRemitos.FlatAppearance.BorderSize = 0;
             this.btnRemitos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnRemitos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemitos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemitos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemitos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnRemitos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnRemitos.IconColor = System.Drawing.Color.Black;
@@ -551,7 +574,7 @@
             this.btnOPago.FlatAppearance.BorderSize = 0;
             this.btnOPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnOPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOPago.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOPago.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOPago.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOPago.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnOPago.IconColor = System.Drawing.Color.Black;
@@ -574,7 +597,7 @@
             this.btnFactCompra.FlatAppearance.BorderSize = 0;
             this.btnFactCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnFactCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFactCompra.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFactCompra.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFactCompra.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnFactCompra.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnFactCompra.IconColor = System.Drawing.Color.Black;
@@ -597,7 +620,7 @@
             this.btnProductosP.FlatAppearance.BorderSize = 0;
             this.btnProductosP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnProductosP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductosP.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductosP.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnProductosP.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnProductosP.IconColor = System.Drawing.Color.Black;
@@ -620,7 +643,7 @@
             this.btnProveedores.FlatAppearance.BorderSize = 0;
             this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnProveedores.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnProveedores.IconColor = System.Drawing.Color.Black;
@@ -643,7 +666,7 @@
             this.btnCompras.FlatAppearance.BorderSize = 0;
             this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompras.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompras.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.IconChar = FontAwesome.Sharp.IconChar.CartArrowDown;
             this.btnCompras.IconColor = System.Drawing.Color.White;
@@ -683,7 +706,7 @@
             this.btnNotaCred.FlatAppearance.BorderSize = 0;
             this.btnNotaCred.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnNotaCred.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotaCred.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotaCred.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotaCred.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNotaCred.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnNotaCred.IconColor = System.Drawing.Color.Black;
@@ -706,7 +729,7 @@
             this.btnRecibos.FlatAppearance.BorderSize = 0;
             this.btnRecibos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnRecibos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecibos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecibos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecibos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnRecibos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnRecibos.IconColor = System.Drawing.Color.Black;
@@ -729,7 +752,7 @@
             this.btnFacturacion.FlatAppearance.BorderSize = 0;
             this.btnFacturacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacturacion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFacturacion.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnFacturacion.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnFacturacion.IconColor = System.Drawing.Color.Black;
@@ -752,7 +775,7 @@
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnProductos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnProductos.IconColor = System.Drawing.Color.Black;
@@ -775,7 +798,7 @@
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnClientes.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnClientes.IconColor = System.Drawing.Color.Black;
@@ -798,7 +821,7 @@
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
             this.btnVentas.IconColor = System.Drawing.Color.White;
@@ -831,12 +854,12 @@
             // lblFecha
             // 
             this.lblFecha.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblFecha.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblFecha.Location = new System.Drawing.Point(0, 39);
+            this.lblFecha.Location = new System.Drawing.Point(0, 45);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Padding = new System.Windows.Forms.Padding(8, 0, 8, 2);
-            this.lblFecha.Size = new System.Drawing.Size(230, 32);
+            this.lblFecha.Size = new System.Drawing.Size(230, 26);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "Miercoles, 31 de Septiembre de 2021";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -844,15 +867,16 @@
             // lblHora
             // 
             this.lblHora.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHora.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblHora.Location = new System.Drawing.Point(0, 0);
+            this.lblHora.Margin = new System.Windows.Forms.Padding(0);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.lblHora.Size = new System.Drawing.Size(230, 39);
+            this.lblHora.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblHora.Size = new System.Drawing.Size(230, 45);
             this.lblHora.TabIndex = 0;
             this.lblHora.Text = "10:00 Hs";
-            this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHora.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelLogo
             // 
@@ -874,7 +898,7 @@
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
@@ -896,7 +920,7 @@
             this.btnEditarPerfil.FlatAppearance.BorderSize = 0;
             this.btnEditarPerfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnEditarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarPerfil.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarPerfil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarPerfil.ForeColor = System.Drawing.Color.White;
             this.btnEditarPerfil.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnEditarPerfil.IconColor = System.Drawing.Color.White;
@@ -916,9 +940,9 @@
             // 
             this.lblNombre.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblNombre.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblNombre.Location = new System.Drawing.Point(82, 36);
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblNombre.Location = new System.Drawing.Point(86, 36);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(142, 35);
             this.lblNombre.TabIndex = 0;
@@ -940,9 +964,9 @@
             // 
             this.lblRol.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRol.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblRol.Location = new System.Drawing.Point(82, 9);
+            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblRol.Location = new System.Drawing.Point(85, 9);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(142, 27);
             this.lblRol.TabIndex = 0;
@@ -978,29 +1002,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnCuentasBanco
-            // 
-            this.btnCuentasBanco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCuentasBanco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCuentasBanco.FlatAppearance.BorderSize = 0;
-            this.btnCuentasBanco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
-            this.btnCuentasBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCuentasBanco.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCuentasBanco.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCuentasBanco.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnCuentasBanco.IconColor = System.Drawing.Color.Black;
-            this.btnCuentasBanco.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCuentasBanco.Location = new System.Drawing.Point(0, 120);
-            this.btnCuentasBanco.Name = "btnCuentasBanco";
-            this.btnCuentasBanco.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnCuentasBanco.Size = new System.Drawing.Size(213, 40);
-            this.btnCuentasBanco.TabIndex = 3;
-            this.btnCuentasBanco.TabStop = false;
-            this.btnCuentasBanco.Text = "CUENTAS DE BANCO";
-            this.btnCuentasBanco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCuentasBanco.UseVisualStyleBackColor = true;
-            this.btnCuentasBanco.Click += new System.EventHandler(this.btnCuentasBanco_Click);
             // 
             // FormularioPrincipal
             // 

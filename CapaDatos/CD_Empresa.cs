@@ -10,8 +10,10 @@ namespace CapaDatos
     public class CD_Empresa
     {
         SqlConnection conectar = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+        private CD_Conexion conexion = new CD_Conexion();
+        private SqlDataReader leer;
+        private SqlCommand comando = new SqlCommand();
 
-        
         private string _Razon;
         private string _Nombre;
         private string _Cuit;
@@ -23,7 +25,7 @@ namespace CapaDatos
         private string _Codpostal;
         private string _Direccion;
         private string _Sucursal;
-        
+        private int _IdSucursal;
 
         public string Razon
         {
@@ -91,12 +93,18 @@ namespace CapaDatos
             set { _Sucursal = value; }
         }
 
+        public int IdSucursal
+        {
+            get { return _IdSucursal; }
+            set { _IdSucursal = value; }
+        }
+
         public CD_Empresa()
         {
         }
 
 
-        public CD_Empresa(string razon, string nombre, string cuit, DateTime inicioact, string iibb, string condiva, string provincia, string localidad, string codpostal, string direccion, string sucursal)
+        public CD_Empresa(string razon, string nombre, string cuit, DateTime inicioact, string iibb, string condiva, string provincia, string localidad, string codpostal, string direccion, string sucursal, int idsucursal)
         {            
             this.Razon = razon;
             this.Nombre = nombre;
@@ -109,6 +117,7 @@ namespace CapaDatos
             this.Codpostal = codpostal;
             this.Direccion = direccion;
             this.Sucursal = sucursal;
+            this.IdSucursal = idsucursal;
         }
 
 
@@ -241,7 +250,13 @@ namespace CapaDatos
                 ParDireccion.SqlDbType = SqlDbType.VarChar;
                 ParDireccion.Size = 300;
                 ParDireccion.Value = Empresa.Direccion;
-                SqlCmd.Parameters.Add(ParDireccion);
+                SqlCmd.Parameters.Add(ParDireccion);             
+
+                SqlParameter ParIdSucursal = new SqlParameter();
+                ParIdSucursal.ParameterName = "@idsucursal";
+                ParIdSucursal.SqlDbType = SqlDbType.Int;
+                ParIdSucursal.Value = Empresa.IdSucursal;
+                SqlCmd.Parameters.Add(ParIdSucursal);
 
                 //Ejecutamos nuestro comando
 
@@ -296,6 +311,62 @@ namespace CapaDatos
             finally
             {
                 if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+        public void EliminarSucursal(int id)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EliminaSucursal";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id", id);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+        }
+
+        public void ModificarSucursal(string suc, int id)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "ModificaSucursal";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@suc", suc);
+            comando.Parameters.AddWithValue("@id", id);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+        }
+
+        public string ConsultaExisteSucursal(string nombre)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "BuscarSiExisteSucursal";
+                SqlCmd.Parameters.AddWithValue("@nombre", nombre);
+
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
             }
             return rpta;
         }

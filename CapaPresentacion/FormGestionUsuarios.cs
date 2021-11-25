@@ -25,11 +25,6 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void FormGestionUsuarios_Load(object sender, EventArgs e)
         {
             MostrarUsuarios();
@@ -226,6 +221,11 @@ namespace Presentacion
             tbUsuario.Enabled = false;
             cbRoles.Enabled = false;
             cbRoles.SelectedIndex = -1;
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

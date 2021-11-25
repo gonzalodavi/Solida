@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormModelo));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconPictureBox();
@@ -44,6 +46,7 @@
             this.tbModelo = new System.Windows.Forms.TextBox();
             this.lblModelo = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModelo)).BeginInit();
             this.SuspendLayout();
@@ -53,11 +56,11 @@
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitulo.AutoEllipsis = true;
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblTitulo.Location = new System.Drawing.Point(125, 20);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblTitulo.Location = new System.Drawing.Point(125, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(242, 18);
+            this.lblTitulo.Size = new System.Drawing.Size(222, 21);
             this.lblTitulo.TabIndex = 177;
             this.lblTitulo.Text = "Mantenimiento de Modelos";
             // 
@@ -84,7 +87,7 @@
             this.dgvModelo.AllowUserToDeleteRows = false;
             this.dgvModelo.AllowUserToResizeColumns = false;
             this.dgvModelo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
             this.dgvModelo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvModelo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -94,30 +97,46 @@
             this.dgvModelo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvModelo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvModelo.ColumnHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvModelo.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvModelo.EnableHeadersVisualStyles = false;
             this.dgvModelo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvModelo.Location = new System.Drawing.Point(39, 100);
+            this.dgvModelo.Location = new System.Drawing.Point(38, 110);
             this.dgvModelo.MaximumSize = new System.Drawing.Size(650, 350);
             this.dgvModelo.Name = "dgvModelo";
             this.dgvModelo.ReadOnly = true;
             this.dgvModelo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvModelo.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvModelo.RowHeadersVisible = false;
             this.dgvModelo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvModelo.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvModelo.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvModelo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModelo.Size = new System.Drawing.Size(284, 250);
             this.dgvModelo.TabIndex = 179;
@@ -128,11 +147,11 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoEllipsis = true;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label4.Location = new System.Drawing.Point(39, 79);
+            this.label4.Location = new System.Drawing.Point(37, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 18);
+            this.label4.Size = new System.Drawing.Size(82, 18);
             this.label4.TabIndex = 180;
             this.label4.Text = "CODIGO";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -142,11 +161,11 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoEllipsis = true;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label10.Location = new System.Drawing.Point(118, 79);
+            this.label10.Location = new System.Drawing.Point(117, 89);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(205, 18);
+            this.label10.Size = new System.Drawing.Size(206, 18);
             this.label10.TabIndex = 181;
             this.label10.Text = "NOMBRE";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -160,7 +179,7 @@
             this.btnEliminaModelo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminaModelo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnEliminaModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminaModelo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminaModelo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnEliminaModelo.ForeColor = System.Drawing.Color.White;
             this.btnEliminaModelo.Location = new System.Drawing.Point(352, 223);
             this.btnEliminaModelo.Name = "btnEliminaModelo";
@@ -180,7 +199,7 @@
             this.btnModModelo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnModModelo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnModModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModModelo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModModelo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnModModelo.ForeColor = System.Drawing.Color.White;
             this.btnModModelo.Location = new System.Drawing.Point(352, 161);
             this.btnModModelo.Name = "btnModModelo";
@@ -200,9 +219,9 @@
             this.btnAceptaModelo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAceptaModelo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnAceptaModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptaModelo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptaModelo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAceptaModelo.ForeColor = System.Drawing.Color.White;
-            this.btnAceptaModelo.Location = new System.Drawing.Point(352, 415);
+            this.btnAceptaModelo.Location = new System.Drawing.Point(352, 417);
             this.btnAceptaModelo.Name = "btnAceptaModelo";
             this.btnAceptaModelo.Size = new System.Drawing.Size(116, 31);
             this.btnAceptaModelo.TabIndex = 186;
@@ -220,7 +239,7 @@
             this.btnCancelaModelo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancelaModelo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnCancelaModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelaModelo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelaModelo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnCancelaModelo.ForeColor = System.Drawing.Color.White;
             this.btnCancelaModelo.Location = new System.Drawing.Point(352, 474);
             this.btnCancelaModelo.Name = "btnCancelaModelo";
@@ -236,11 +255,11 @@
             this.tbModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbModelo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbModelo.Enabled = false;
-            this.tbModelo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbModelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbModelo.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbModelo.Location = new System.Drawing.Point(39, 421);
+            this.tbModelo.Location = new System.Drawing.Point(38, 421);
             this.tbModelo.Name = "tbModelo";
-            this.tbModelo.Size = new System.Drawing.Size(284, 22);
+            this.tbModelo.Size = new System.Drawing.Size(284, 25);
             this.tbModelo.TabIndex = 185;
             // 
             // lblModelo
@@ -248,11 +267,11 @@
             this.lblModelo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblModelo.AutoEllipsis = true;
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblModelo.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblModelo.Location = new System.Drawing.Point(36, 379);
+            this.lblModelo.Location = new System.Drawing.Point(33, 387);
             this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(0, 16);
+            this.lblModelo.Size = new System.Drawing.Size(0, 21);
             this.lblModelo.TabIndex = 184;
             // 
             // btnNuevo
@@ -264,7 +283,7 @@
             this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Location = new System.Drawing.Point(352, 100);
             this.btnNuevo.Name = "btnNuevo";
@@ -274,6 +293,19 @@
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoEllipsis = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label1.Location = new System.Drawing.Point(37, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(286, 255);
+            this.label1.TabIndex = 189;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormModelo
             // 
@@ -293,6 +325,7 @@
             this.Controls.Add(this.dgvModelo);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormModelo";
@@ -321,5 +354,6 @@
         private System.Windows.Forms.TextBox tbModelo;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label label1;
     }
 }

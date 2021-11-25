@@ -26,4 +26,3 @@ H:\Proyecto Solida\Solida\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.dll
 H:\Proyecto Solida\Solida\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.pdb
 G:\Proyecto Solida\Solida\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.csproj.AssemblyReference.cache
 G:\Proyecto Solida\Solida\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.GeneratedMSBuildEditorConfig.editorconfig
-G:\Proyecto Solida\Solida\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.csproj.CopyComplete

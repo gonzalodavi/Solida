@@ -119,11 +119,11 @@
             this.lblFecha2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblFecha2.AutoEllipsis = true;
             this.lblFecha2.AutoSize = true;
-            this.lblFecha2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblFecha2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblFecha2.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.lblFecha2.Location = new System.Drawing.Point(50, 95);
             this.lblFecha2.Name = "lblFecha2";
-            this.lblFecha2.Size = new System.Drawing.Size(221, 20);
+            this.lblFecha2.Size = new System.Drawing.Size(242, 21);
             this.lblFecha2.TabIndex = 183;
             this.lblFecha2.Text = "Valores en Cartera Disponibles";
             // 
@@ -317,7 +317,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(892, 309);
+            this.gunaLabel2.Location = new System.Drawing.Point(891, 305);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(48, 17);
             this.gunaLabel2.TabIndex = 176;
@@ -343,7 +343,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(878, 203);
+            this.gunaLabel1.Location = new System.Drawing.Point(876, 199);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(76, 17);
             this.gunaLabel1.TabIndex = 162;
@@ -452,11 +452,11 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label12.Location = new System.Drawing.Point(464, 18);
+            this.label12.Location = new System.Drawing.Point(381, 5);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 25);
+            this.label12.Size = new System.Drawing.Size(206, 25);
             this.label12.TabIndex = 82;
-            this.label12.Text = "Cheques";
+            this.label12.Text = "CARTERA DE VALORES";
             // 
             // FormCheques
             // 

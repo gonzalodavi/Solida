@@ -91,11 +91,11 @@
             this.lblSeleDom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSeleDom.AutoEllipsis = true;
             this.lblSeleDom.AutoSize = true;
-            this.lblSeleDom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblSeleDom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblSeleDom.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblSeleDom.Location = new System.Drawing.Point(114, 10);
+            this.lblSeleDom.Location = new System.Drawing.Point(103, 9);
             this.lblSeleDom.Name = "lblSeleDom";
-            this.lblSeleDom.Size = new System.Drawing.Size(89, 17);
+            this.lblSeleDom.Size = new System.Drawing.Size(111, 21);
             this.lblSeleDom.TabIndex = 160;
             this.lblSeleDom.Text = "Nuevo Barrio";
             // 
@@ -131,7 +131,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(107, 216);
+            this.label1.Location = new System.Drawing.Point(107, 214);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 17);
             this.label1.TabIndex = 157;
@@ -143,7 +143,7 @@
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblProvincia.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblProvincia.Location = new System.Drawing.Point(110, 64);
+            this.lblProvincia.Location = new System.Drawing.Point(110, 62);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(99, 17);
             this.lblProvincia.TabIndex = 158;
@@ -155,7 +155,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(110, 129);
+            this.label2.Location = new System.Drawing.Point(110, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 158;
@@ -183,7 +183,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(109, 272);
+            this.label3.Location = new System.Drawing.Point(109, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 157;

@@ -175,13 +175,21 @@ namespace Presentacion
         private void hideSubMenu()
         {
             if (panelSubMenuVentas.Visible == true)
+            {
                 panelSubMenuVentas.Visible = false;
+            }
             if (panelSubMenuCompras.Visible == true)
+            {
                 panelSubMenuCompras.Visible = false;
+            }
             if (panelSubMenuInformes.Visible == true)
+            {
                 panelSubMenuInformes.Visible = false;
+            }
             if (panelSubMenuAjustes.Visible == true)
-                panelSubMenuAjustes.Visible = false;            
+            {
+                panelSubMenuAjustes.Visible = false;
+            }
         }
 
         private void showSubMenu(Panel subMenu)
@@ -223,6 +231,7 @@ namespace Presentacion
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
             }
+            
         }
 
         private void DisableButton()
@@ -402,7 +411,7 @@ namespace Presentacion
         private void btnConfSucursal_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            openChildForm(new FormSucursales());
+            openChildForm(new FormEmpresa());
         }
 
         private void btnCuentasBanco_Click(object sender, EventArgs e)

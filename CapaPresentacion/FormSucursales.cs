@@ -12,15 +12,12 @@ namespace CapaPresentacion
 {
     public partial class FormSucursales : Form
     {
+        CN_Empresa objeto = new CN_Empresa();
+        private bool Editar = false;
 
         public FormSucursales()
         {
             InitializeComponent();
-        }
-
-        private void dgvAlicuota_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void MensajeOk(string mensaje)
@@ -35,31 +32,8 @@ namespace CapaPresentacion
         }
 
         private void FormSucursales_Load(object sender, EventArgs e)
-        {
-            rbEmpresa.Checked = true;
-            //CargarGrillaSucursales();
-            CargarCampos();
-            CargaTextBox();
+        {    
             CargarSucursales();
-        }
-        
-
-        private void CargarCampos()
-        {
-            this.dgvEmpresa.DataSource = CN_Empresa.Mostrar();
-        }
-        private void CargaTextBox()
-        {
-            tbRazonSocial.Text = dgvEmpresa.CurrentRow.Cells[1].Value.ToString();
-            tbApellidoyNombre.Text = dgvEmpresa.CurrentRow.Cells[2].Value.ToString();
-            tbDniCuit.Text = dgvEmpresa.CurrentRow.Cells[3].Value.ToString();
-            dtpFecha.Text = dgvEmpresa.CurrentRow.Cells[4].Value.ToString();
-            tbIIBB.Text = dgvEmpresa.CurrentRow.Cells[5].Value.ToString();
-            cbCondIVA.Text = dgvEmpresa.CurrentRow.Cells[6].Value.ToString();
-            tbProvincia.Text = dgvEmpresa.CurrentRow.Cells[7].Value.ToString();
-            tbLocalidad.Text = dgvEmpresa.CurrentRow.Cells[8].Value.ToString();
-            tbCodPostal.Text = dgvEmpresa.CurrentRow.Cells[9].Value.ToString();
-            tbDireccion.Text = dgvEmpresa.CurrentRow.Cells[10].Value.ToString();
         }
 
         private void CargarSucursales()
@@ -67,65 +41,6 @@ namespace CapaPresentacion
             this.dgvSucursal.DataSource = CN_Empresa.MostrarSucursales();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (tbRazonSocial.Text == "" || tbApellidoyNombre.Text == "" || tbDniCuit.Text == "" || tbIIBB.Text == "" || tbLocalidad.Text == "" || tbDireccion.Text == "" || tbCodPostal.Text == "")
-            {
-                try
-                {
-                    DialogResult Opcion;
-                    Opcion = MessageBox.Show("Existen algunos campos vacios. Desea Guardar los cambios de todas formas?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    string rpta = "";
-                    if (Opcion == DialogResult.OK)
-                    {
-                        rpta = CN_Empresa.GuardarDatos(tbRazonSocial.Text,tbApellidoyNombre.Text,tbDniCuit.Text, dtpFecha.Value,tbIIBB.Text,cbCondIVA.Text,tbProvincia.Text,tbLocalidad.Text,tbCodPostal.Text,tbDireccion.Text);
-
-                        if (rpta.Equals("OK"))
-                        {
-                            this.MensajeOk("Se Guardaron Correctamente los datos de la Empresa");                            
-                            CargarCampos();
-                            CargaTextBox();
-                        }
-                        else
-                        {
-                            this.MensajeError(rpta);
-                        }
-                    }                   
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
-                }
-            }
-            else
-            {
-                try
-                {
-                    DialogResult Opcion;
-                    Opcion = MessageBox.Show("Desea Modificar los Datos de la Empresa?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    string rpta = "";
-                    if (Opcion == DialogResult.OK)
-                    {
-                        rpta = CN_Empresa.GuardarDatos(tbRazonSocial.Text, tbApellidoyNombre.Text, tbDniCuit.Text, dtpFecha.Value, tbIIBB.Text, cbCondIVA.Text, tbProvincia.Text, tbLocalidad.Text, tbCodPostal.Text, tbDireccion.Text);
-
-                        if (rpta.Equals("OK"))
-                        {
-                            this.MensajeOk("Se Guardaron Correctamente los datos de la Empresa");
-                            CargarCampos();
-                            CargaTextBox();
-                        }
-                        else
-                        {
-                            this.MensajeError(rpta);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
-                }
-            }           
-        }
 
         private void btnRegistrarSucursal_Click(object sender, EventArgs e)
         {
@@ -133,24 +48,55 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    DialogResult Opcion;
-                    Opcion = MessageBox.Show("Desea Agregar Nueva Sucursal?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    string rpta = "";
-                    if (Opcion == DialogResult.OK)
+                    string rpta = CN_Empresa.ConsultaSucursalExiste(this.tbNuevaSucursal.Text.Trim());
+                    if (rpta == "OK")
                     {
-                        rpta = CN_Empresa.GuardarSucursal(tbNuevaSucursal.Text);
-
-                        if (rpta.Equals("OK"))
+                        MensajeError("Ya existe esa Sucursal");
+                    }
+                    else
+                    {
+                        if (rpta == "NO")
                         {
-                            this.MensajeOk("Se Registro Nueva Sucursal");
-                            CargarSucursales();
-                            tbNuevaSucursal.Text = "";
+                            if (Editar == false)
+                            {
+                                DialogResult Opcion;
+                                Opcion = MessageBox.Show("Desea Agregar Nueva Sucursal?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                string rpta1 = "";
+                                if (Opcion == DialogResult.OK)
+                                {
+                                    rpta1 = CN_Empresa.GuardarSucursal(tbNuevaSucursal.Text);
+
+                                    if (rpta1.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se Registro Nueva Sucursal");
+                                        DeshabilitarEdicion();
+                                        CargarSucursales();                                        
+                                    }
+                                    else
+                                    {
+                                        this.MensajeError(rpta1);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (MessageBox.Show("¿Desea Modificar la Sucursal Seleccionada?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                {
+                                    string idSuc = dgvSucursal.CurrentRow.Cells["ID_SUCURSAL"].Value.ToString();
+                                    objeto.Modificar(tbNuevaSucursal.Text, idSuc);
+                                    MessageBox.Show("Se Modificaron los datos de la sucursal");
+                                    DeshabilitarEdicion();
+                                    CargarSucursales();
+                                    Editar = false;
+                                }
+                            }
                         }
                         else
                         {
-                            this.MensajeError(rpta);
-                        }
+                            MensajeError(rpta);
+                        }                        
                     }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -163,11 +109,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void tbNuevaSucursal_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -178,24 +119,83 @@ namespace CapaPresentacion
             }
         }
 
-        private void chekEmpresa_CheckedChanged(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-           
+            this.Close();
         }
 
-        private void rbEmpresa_CheckedChanged(object sender, EventArgs e)
+        private void btnNueva_Click(object sender, EventArgs e)
         {
-            CargarCampos();
-            CargaTextBox();
-            panelEmpresa.Enabled = true;
-            panelSucursal.Enabled = false;
+            btnMod.Enabled = false;
+            btnElim.Enabled = false;
+            btnNueva.Enabled = false;
+            dgvSucursal.Enabled = false;
+            lblSubtitulo.Text = "Nueva Sucursal";
+            tbNuevaSucursal.Enabled = true;
+            tbNuevaSucursal.Text = "";
+            tbNuevaSucursal.Focus();
+
         }
 
-        private void rbSucursal_CheckedChanged(object sender, EventArgs e)
+        private void btnCancela_Click(object sender, EventArgs e)
         {
-            CargarSucursales();
-            panelEmpresa.Enabled = false;
-            panelSucursal.Enabled = true;
+            DeshabilitarEdicion();
+            Editar = false;
+        }
+        private void DeshabilitarEdicion()
+        {
+            btnMod.Enabled = true;
+            btnElim.Enabled = true;
+            btnNueva.Enabled = true;
+            dgvSucursal.Enabled = true;
+            lblSubtitulo.Text = "";
+            tbNuevaSucursal.Enabled = false;
+            Editar = false;
+            tbNuevaSucursal.Text = "";
+        }
+
+        private void btnElim_Click(object sender, EventArgs e)
+        {
+            if (dgvSucursal.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("¿Desea Eliminar la Sucursal Seleccionada?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string id = dgvSucursal.CurrentRow.Cells["ID_SUCURSAL"].Value.ToString();
+                        objeto.Eliminar(id);
+                        MensajeOk("Se eliminó correctamente la Sucursal seleccionada");
+                        CargarSucursales();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
+        }
+
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            if (dgvSucursal.SelectedRows.Count > 0)
+            {
+                btnMod.Enabled = false;
+                btnElim.Enabled = false;
+                btnNueva.Enabled = false;
+                dgvSucursal.Enabled = false;
+                lblSubtitulo.Text = "Modificar Sucursal";
+                tbNuevaSucursal.Enabled = true;
+                tbNuevaSucursal.Text = dgvSucursal.CurrentRow.Cells["NOMBRE_SUCURSAL"].Value.ToString();
+                Editar = true;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
         }
     }
 }
