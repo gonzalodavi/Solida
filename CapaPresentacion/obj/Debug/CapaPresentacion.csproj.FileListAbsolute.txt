@@ -281,3 +281,4 @@ G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormReport
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormBanco.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormEmpresa.resources
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormReciboDePago.resources

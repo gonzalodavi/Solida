@@ -403,7 +403,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>                     Según Detalle:</Value>
+                    <Value>Según Detalle:</Value>
                     <Style>
                       <FontFamily>Verdana</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -417,55 +417,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>5.95633cm</Top>
+            <Top>5.82404cm</Top>
             <Left>0.51751cm</Left>
             <Height>0.67938cm</Height>
-            <Width>19.25915cm</Width>
+            <Width>3.5429cm</Width>
             <ZIndex>3</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox18">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>En Concepto de: </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Fields!DET_RECIBO.Value</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>10.10077cm</Top>
-            <Left>2.94638cm</Left>
-            <Height>0.81167cm</Height>
-            <Width>16.83029cm</Width>
-            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -557,11 +513,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox40</rd:DefaultName>
-            <Top>6.74511cm</Top>
-            <Left>6.81178cm</Left>
+            <Top>7.14724cm</Top>
+            <Left>1.38465cm</Left>
             <Height>2.51781cm</Height>
             <Width>2.67576cm</Width>
-            <ZIndex>5</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -653,11 +609,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
-            <Top>6.74511cm</Top>
-            <Left>9.59337cm</Left>
+            <Top>7.14724cm</Top>
+            <Left>4.16624cm</Left>
             <Height>2.51781cm</Height>
-            <Width>3.58479cm</Width>
-            <ZIndex>6</ZIndex>
+            <Width>2.94979cm</Width>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -695,7 +651,7 @@
             <Left>6.81178cm</Left>
             <Height>0.6cm</Height>
             <Width>3.54951cm</Width>
-            <ZIndex>7</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -730,7 +686,7 @@
             <Left>0.55657cm</Left>
             <Height>0.6cm</Height>
             <Width>6.21993cm</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -746,7 +702,7 @@
             <Left>14.10167cm</Left>
             <Height>0cm</Height>
             <Width>5.675cm</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>Dashed</Style>
@@ -778,6 +734,53 @@
             <Left>14.10167cm</Left>
             <Height>0.6cm</Height>
             <Width>5.675cm</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox19">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>En Concepto de: </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!DET_RECIBO.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>5.82404cm</Top>
+            <Left>8.14859cm</Left>
+            <Height>5.75938cm</Height>
+            <Width>11.62807cm</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
@@ -789,6 +792,71 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Line Name="Line2">
+            <Top>8.94175cm</Top>
+            <Left>1.80798cm</Left>
+            <Height>0cm</Height>
+            <Width>5.5938cm</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line3">
+            <Top>11.51258cm</Top>
+            <Left>7.7905cm</Left>
+            <Height>-5.62504cm</Height>
+            <Width>0cm</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line4">
+            <Top>9.84144cm</Top>
+            <Left>1.80798cm</Left>
+            <Height>0cm</Height>
+            <Width>5.5938cm</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line5">
+            <Top>9.83823cm</Top>
+            <Left>7.40178cm</Left>
+            <Height>-0.89648cm</Height>
+            <Width>0cm</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line6">
+            <Top>9.83823cm</Top>
+            <Left>1.80798cm</Left>
+            <Height>-0.89648cm</Height>
+            <Width>0cm</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Color>Silver</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>0.28787cm</Top>
@@ -797,7 +865,8 @@
         <Width>20.37229cm</Width>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
           </Border>
         </Style>
       </Rectangle>

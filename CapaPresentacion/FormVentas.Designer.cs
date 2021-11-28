@@ -40,14 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVentas));
             this.panelFormCompras = new System.Windows.Forms.Panel();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
@@ -70,52 +62,60 @@
             this.lblFecha2 = new System.Windows.Forms.Label();
             this.lblFecha1 = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.label38 = new System.Windows.Forms.Label();
             this.tabNuevaVenta = new System.Windows.Forms.TabPage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.tbTotalIVA = new System.Windows.Forms.TextBox();
-            this.gbDetalleCompra = new System.Windows.Forms.GroupBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rbCtaCte = new System.Windows.Forms.RadioButton();
+            this.rbContado = new System.Windows.Forms.RadioButton();
+            this.label39 = new System.Windows.Forms.Label();
             this.tbStockProd = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.dtpFecha = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btnQuitar = new FontAwesome.Sharp.IconButton();
-            this.btnAgregarProductos = new FontAwesome.Sharp.IconButton();
-            this.tbSubtotalIVA = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dgvDetVent = new System.Windows.Forms.DataGridView();
-            this.btnSelProd = new System.Windows.Forms.Button();
-            this.tbCantidad = new System.Windows.Forms.TextBox();
-            this.lblCantidad = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tbIDprod = new System.Windows.Forms.TextBox();
             this.tbIVAVenta = new System.Windows.Forms.TextBox();
-            this.tbProducto = new System.Windows.Forms.TextBox();
-            this.tbSubtotal = new System.Windows.Forms.TextBox();
-            this.tbImporteVenta = new System.Windows.Forms.TextBox();
-            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.btnAgregarProductos = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.tbProducto = new System.Windows.Forms.TextBox();
+            this.tbCantidad = new System.Windows.Forms.TextBox();
+            this.tbImporteVenta = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblTotalIva = new System.Windows.Forms.Label();
-            this.tbTotalFact = new System.Windows.Forms.TextBox();
-            this.gbEncabezadoFactura = new System.Windows.Forms.GroupBox();
-            this.dtpFecha = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnQuitar = new FontAwesome.Sharp.IconButton();
+            this.tbSubtotalIVA = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.chekConsumidorFinal = new System.Windows.Forms.CheckBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.cbSucursal = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnSelProd = new System.Windows.Forms.Button();
+            this.tbSubtotal = new System.Windows.Forms.TextBox();
+            this.dgvDetVent = new System.Windows.Forms.DataGridView();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tbNumComp = new System.Windows.Forms.TextBox();
             this.btnElijeCliente = new System.Windows.Forms.Button();
+            this.tbTotalIVA = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tbDni = new System.Windows.Forms.TextBox();
             this.tbCliente = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbNumComp = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblCuit = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalIva = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
+            this.tbTotalFact = new System.Windows.Forms.TextBox();
             this.lblImpTotal = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCuit = new System.Windows.Forms.Label();
             this.tabClientes = new System.Windows.Forms.TabPage();
             this.panelClientes = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
@@ -128,6 +128,7 @@
             this.btnBuscarCliente = new FontAwesome.Sharp.IconButton();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.tbBuscaCliente = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.tabProductos = new System.Windows.Forms.TabPage();
             this.panelProductos = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
@@ -144,18 +145,13 @@
             this.btnBuscaProd = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.tbBuscaProductos = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.panelFormCompras.SuspendLayout();
             this.tabVentas.SuspendLayout();
             this.tabListadoVentas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.tabNuevaVenta.SuspendLayout();
-            this.gbDetalleCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetVent)).BeginInit();
-            this.gbEncabezadoFactura.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.panelClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -453,14 +449,13 @@
             this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
             this.btnNuevo.IconColor = System.Drawing.Color.White;
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevo.IconSize = 25;
+            this.btnNuevo.IconSize = 22;
             this.btnNuevo.Location = new System.Drawing.Point(70, 510);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(116, 31);
             this.btnNuevo.TabIndex = 99;
             this.btnNuevo.TabStop = false;
             this.btnNuevo.Text = "NUEVA VENTA";
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -557,7 +552,7 @@
             this.dgvVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -566,14 +561,6 @@
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvVentas.ColumnHeadersVisible = false;
             this.dgvVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvVentas.Location = new System.Drawing.Point(70, 67);
@@ -581,41 +568,89 @@
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvVentas.RowHeadersVisible = false;
             this.dgvVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(637, 400);
             this.dgvVentas.TabIndex = 92;
             this.dgvVentas.TabStop = false;
             this.dgvVentas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvVentas_CellFormatting);
             // 
+            // label38
+            // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label38.AutoEllipsis = true;
+            this.label38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label38.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label38.Location = new System.Drawing.Point(69, 64);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(639, 404);
+            this.label38.TabIndex = 186;
+            this.label38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // tabNuevaVenta
             // 
             this.tabNuevaVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevaVenta.Controls.Add(this.label40);
+            this.tabNuevaVenta.Controls.Add(this.label44);
+            this.tabNuevaVenta.Controls.Add(this.label43);
+            this.tabNuevaVenta.Controls.Add(this.label42);
+            this.tabNuevaVenta.Controls.Add(this.label41);
+            this.tabNuevaVenta.Controls.Add(this.label8);
+            this.tabNuevaVenta.Controls.Add(this.label2);
+            this.tabNuevaVenta.Controls.Add(this.rbCtaCte);
+            this.tabNuevaVenta.Controls.Add(this.rbContado);
+            this.tabNuevaVenta.Controls.Add(this.label39);
+            this.tabNuevaVenta.Controls.Add(this.tbStockProd);
+            this.tabNuevaVenta.Controls.Add(this.label20);
+            this.tabNuevaVenta.Controls.Add(this.dtpFecha);
+            this.tabNuevaVenta.Controls.Add(this.label16);
             this.tabNuevaVenta.Controls.Add(this.label15);
+            this.tabNuevaVenta.Controls.Add(this.tbIDprod);
+            this.tabNuevaVenta.Controls.Add(this.tbIVAVenta);
+            this.tabNuevaVenta.Controls.Add(this.btnAgregarProductos);
+            this.tabNuevaVenta.Controls.Add(this.label11);
+            this.tabNuevaVenta.Controls.Add(this.lblCantidad);
+            this.tabNuevaVenta.Controls.Add(this.tbProducto);
+            this.tabNuevaVenta.Controls.Add(this.tbCantidad);
+            this.tabNuevaVenta.Controls.Add(this.tbImporteVenta);
+            this.tabNuevaVenta.Controls.Add(this.label12);
+            this.tabNuevaVenta.Controls.Add(this.label17);
+            this.tabNuevaVenta.Controls.Add(this.btnQuitar);
+            this.tabNuevaVenta.Controls.Add(this.tbSubtotalIVA);
+            this.tabNuevaVenta.Controls.Add(this.label10);
+            this.tabNuevaVenta.Controls.Add(this.chekConsumidorFinal);
+            this.tabNuevaVenta.Controls.Add(this.label18);
+            this.tabNuevaVenta.Controls.Add(this.cbSucursal);
+            this.tabNuevaVenta.Controls.Add(this.label19);
+            this.tabNuevaVenta.Controls.Add(this.btnSelProd);
+            this.tabNuevaVenta.Controls.Add(this.tbSubtotal);
+            this.tabNuevaVenta.Controls.Add(this.dgvDetVent);
+            this.tabNuevaVenta.Controls.Add(this.lblSubtotal);
+            this.tabNuevaVenta.Controls.Add(this.label36);
             this.tabNuevaVenta.Controls.Add(this.btnGuardar);
             this.tabNuevaVenta.Controls.Add(this.label14);
+            this.tabNuevaVenta.Controls.Add(this.tbNumComp);
+            this.tabNuevaVenta.Controls.Add(this.btnElijeCliente);
             this.tabNuevaVenta.Controls.Add(this.tbTotalIVA);
-            this.tabNuevaVenta.Controls.Add(this.gbDetalleCompra);
+            this.tabNuevaVenta.Controls.Add(this.label5);
+            this.tabNuevaVenta.Controls.Add(this.tbDni);
+            this.tabNuevaVenta.Controls.Add(this.tbCliente);
             this.tabNuevaVenta.Controls.Add(this.lblTotalIva);
+            this.tabNuevaVenta.Controls.Add(this.label13);
             this.tabNuevaVenta.Controls.Add(this.tbTotalFact);
-            this.tabNuevaVenta.Controls.Add(this.gbEncabezadoFactura);
             this.tabNuevaVenta.Controls.Add(this.lblImpTotal);
+            this.tabNuevaVenta.Controls.Add(this.lblFecha);
+            this.tabNuevaVenta.Controls.Add(this.label1);
+            this.tabNuevaVenta.Controls.Add(this.lblCuit);
             this.tabNuevaVenta.Location = new System.Drawing.Point(4, 26);
             this.tabNuevaVenta.Name = "tabNuevaVenta";
             this.tabNuevaVenta.Padding = new System.Windows.Forms.Padding(3);
@@ -623,106 +658,131 @@
             this.tabNuevaVenta.TabIndex = 1;
             this.tabNuevaVenta.Text = "Nueva";
             // 
-            // label15
+            // label40
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(451, 524);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 17);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "$";
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label40.AutoEllipsis = true;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label40.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label40.Location = new System.Drawing.Point(21, 186);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(136, 21);
+            this.label40.TabIndex = 200;
+            this.label40.Text = "Detalle de Venta";
             // 
-            // btnGuardar
+            // label44
             // 
-            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardar.IconColor = System.Drawing.Color.White;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.IconSize = 25;
-            this.btnGuardar.Location = new System.Drawing.Point(773, 515);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(116, 31);
-            this.btnGuardar.TabIndex = 89;
-            this.btnGuardar.TabStop = false;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label44.AutoEllipsis = true;
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label44.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label44.Location = new System.Drawing.Point(21, 19);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(137, 21);
+            this.label44.TabIndex = 199;
+            this.label44.Text = "Factura de Venta";
             // 
-            // label14
+            // label43
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(603, 524);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 17);
-            this.label14.TabIndex = 50;
-            this.label14.Text = "$";
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label43.ForeColor = System.Drawing.SystemColors.Control;
+            this.label43.Location = new System.Drawing.Point(756, 335);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(15, 17);
+            this.label43.TabIndex = 198;
+            this.label43.Text = "$";
             // 
-            // tbTotalIVA
+            // label42
             // 
-            this.tbTotalIVA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbTotalIVA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.tbTotalIVA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTotalIVA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbTotalIVA.ForeColor = System.Drawing.Color.Yellow;
-            this.tbTotalIVA.Location = new System.Drawing.Point(467, 521);
-            this.tbTotalIVA.Name = "tbTotalIVA";
-            this.tbTotalIVA.ReadOnly = true;
-            this.tbTotalIVA.Size = new System.Drawing.Size(108, 25);
-            this.tbTotalIVA.TabIndex = 0;
-            this.tbTotalIVA.TabStop = false;
-            this.tbTotalIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label42.ForeColor = System.Drawing.SystemColors.Control;
+            this.label42.Location = new System.Drawing.Point(756, 393);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(15, 17);
+            this.label42.TabIndex = 197;
+            this.label42.Text = "$";
             // 
-            // gbDetalleCompra
+            // label41
             // 
-            this.gbDetalleCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gbDetalleCompra.Controls.Add(this.tbStockProd);
-            this.gbDetalleCompra.Controls.Add(this.label20);
-            this.gbDetalleCompra.Controls.Add(this.label16);
-            this.gbDetalleCompra.Controls.Add(this.label17);
-            this.gbDetalleCompra.Controls.Add(this.label18);
-            this.gbDetalleCompra.Controls.Add(this.label19);
-            this.gbDetalleCompra.Controls.Add(this.btnQuitar);
-            this.gbDetalleCompra.Controls.Add(this.btnAgregarProductos);
-            this.gbDetalleCompra.Controls.Add(this.tbSubtotalIVA);
-            this.gbDetalleCompra.Controls.Add(this.label10);
-            this.gbDetalleCompra.Controls.Add(this.dgvDetVent);
-            this.gbDetalleCompra.Controls.Add(this.btnSelProd);
-            this.gbDetalleCompra.Controls.Add(this.tbCantidad);
-            this.gbDetalleCompra.Controls.Add(this.lblCantidad);
-            this.gbDetalleCompra.Controls.Add(this.tbIDprod);
-            this.gbDetalleCompra.Controls.Add(this.tbIVAVenta);
-            this.gbDetalleCompra.Controls.Add(this.tbProducto);
-            this.gbDetalleCompra.Controls.Add(this.tbSubtotal);
-            this.gbDetalleCompra.Controls.Add(this.tbImporteVenta);
-            this.gbDetalleCompra.Controls.Add(this.lblSubtotal);
-            this.gbDetalleCompra.Controls.Add(this.label11);
-            this.gbDetalleCompra.Controls.Add(this.label12);
-            this.gbDetalleCompra.Controls.Add(this.label36);
-            this.gbDetalleCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbDetalleCompra.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.gbDetalleCompra.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.gbDetalleCompra.Location = new System.Drawing.Point(22, 162);
-            this.gbDetalleCompra.Name = "gbDetalleCompra";
-            this.gbDetalleCompra.Size = new System.Drawing.Size(904, 319);
-            this.gbDetalleCompra.TabIndex = 48;
-            this.gbDetalleCompra.TabStop = false;
-            this.gbDetalleCompra.Text = "Detalle de Venta";
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label41.ForeColor = System.Drawing.SystemColors.Control;
+            this.label41.Location = new System.Drawing.Point(447, 239);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(15, 17);
+            this.label41.TabIndex = 196;
+            this.label41.Text = "$";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(821, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 17);
+            this.label8.TabIndex = 194;
+            this.label8.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(848, 151);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 11);
+            this.label2.TabIndex = 193;
+            this.label2.Text = "NÚMERO";
+            // 
+            // rbCtaCte
+            // 
+            this.rbCtaCte.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbCtaCte.AutoSize = true;
+            this.rbCtaCte.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.rbCtaCte.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.rbCtaCte.Location = new System.Drawing.Point(523, 88);
+            this.rbCtaCte.Name = "rbCtaCte";
+            this.rbCtaCte.Size = new System.Drawing.Size(86, 19);
+            this.rbCtaCte.TabIndex = 191;
+            this.rbCtaCte.Text = "A CTA. CTE.";
+            this.rbCtaCte.UseVisualStyleBackColor = true;
+            // 
+            // rbContado
+            // 
+            this.rbContado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbContado.AutoSize = true;
+            this.rbContado.Checked = true;
+            this.rbContado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.rbContado.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.rbContado.Location = new System.Drawing.Point(523, 63);
+            this.rbContado.Name = "rbContado";
+            this.rbContado.Size = new System.Drawing.Size(82, 19);
+            this.rbContado.TabIndex = 192;
+            this.rbContado.TabStop = true;
+            this.rbContado.Text = "CONTADO";
+            this.rbContado.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label39.ForeColor = System.Drawing.SystemColors.Control;
+            this.label39.Location = new System.Drawing.Point(442, 63);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(75, 17);
+            this.label39.TabIndex = 190;
+            this.label39.Text = "Operación:";
             // 
             // tbStockProd
             // 
@@ -730,7 +790,7 @@
             this.tbStockProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbStockProd.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStockProd.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbStockProd.Location = new System.Drawing.Point(392, 298);
+            this.tbStockProd.Location = new System.Drawing.Point(217, 506);
             this.tbStockProd.Name = "tbStockProd";
             this.tbStockProd.ReadOnly = true;
             this.tbStockProd.Size = new System.Drawing.Size(81, 15);
@@ -745,12 +805,37 @@
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label20.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label20.Location = new System.Drawing.Point(590, 88);
+            this.label20.Location = new System.Drawing.Point(589, 297);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(145, 18);
             this.label20.TabIndex = 114;
             this.label20.Text = "SUBTOTAL";
             this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFecha.BaseColor = System.Drawing.Color.White;
+            this.dtpFecha.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha.CustomFormat = null;
+            this.dtpFecha.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFecha.ForeColor = System.Drawing.Color.Black;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(773, 55);
+            this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtpFecha.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtpFecha.OnPressedColor = System.Drawing.Color.Black;
+            this.dtpFecha.Radius = 10;
+            this.dtpFecha.Size = new System.Drawing.Size(116, 30);
+            this.dtpFecha.TabIndex = 113;
+            this.dtpFecha.Text = "22/10/2021";
+            this.dtpFecha.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
             // 
             // label16
             // 
@@ -759,80 +844,52 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label16.Location = new System.Drawing.Point(306, 88);
+            this.label16.Location = new System.Drawing.Point(305, 297);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(141, 18);
             this.label16.TabIndex = 110;
             this.label16.Text = "PRECIO";
             this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label17
+            // label15
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label17.AutoEllipsis = true;
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label17.Location = new System.Drawing.Point(446, 88);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(151, 18);
-            this.label17.TabIndex = 111;
-            this.label17.Text = "IVA";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.SystemColors.Control;
+            this.label15.Location = new System.Drawing.Point(447, 536);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 17);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "$";
             // 
-            // label18
+            // tbIDprod
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label18.AutoEllipsis = true;
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label18.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label18.Location = new System.Drawing.Point(25, 88);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(142, 18);
-            this.label18.TabIndex = 112;
-            this.label18.Text = "PRODUCTO";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tbIDprod.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbIDprod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbIDprod.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIDprod.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbIDprod.Location = new System.Drawing.Point(120, 506);
+            this.tbIDprod.Name = "tbIDprod";
+            this.tbIDprod.ReadOnly = true;
+            this.tbIDprod.Size = new System.Drawing.Size(81, 15);
+            this.tbIDprod.TabIndex = 47;
+            this.tbIDprod.TabStop = false;
+            this.tbIDprod.Visible = false;
             // 
-            // label19
+            // tbIVAVenta
             // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label19.AutoEllipsis = true;
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label19.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label19.Location = new System.Drawing.Point(166, 88);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(141, 18);
-            this.label19.TabIndex = 113;
-            this.label19.Text = "CANTIDAD";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnQuitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnQuitar.ForeColor = System.Drawing.Color.White;
-            this.btnQuitar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnQuitar.IconColor = System.Drawing.Color.White;
-            this.btnQuitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQuitar.IconSize = 25;
-            this.btnQuitar.Location = new System.Drawing.Point(751, 244);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(116, 31);
-            this.btnQuitar.TabIndex = 89;
-            this.btnQuitar.TabStop = false;
-            this.btnQuitar.Text = "ELIMINAR";
-            this.btnQuitar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuitar.UseVisualStyleBackColor = false;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            this.tbIVAVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbIVAVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbIVAVenta.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIVAVenta.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbIVAVenta.Location = new System.Drawing.Point(24, 506);
+            this.tbIVAVenta.Name = "tbIVAVenta";
+            this.tbIVAVenta.ReadOnly = true;
+            this.tbIVAVenta.Size = new System.Drawing.Size(81, 15);
+            this.tbIVAVenta.TabIndex = 47;
+            this.tbIVAVenta.TabStop = false;
+            this.tbIVAVenta.Visible = false;
             // 
             // btnAgregarProductos
             // 
@@ -849,7 +906,7 @@
             this.btnAgregarProductos.IconColor = System.Drawing.Color.White;
             this.btnAgregarProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregarProductos.IconSize = 25;
-            this.btnAgregarProductos.Location = new System.Drawing.Point(751, 34);
+            this.btnAgregarProductos.Location = new System.Drawing.Point(773, 231);
             this.btnAgregarProductos.Name = "btnAgregarProductos";
             this.btnAgregarProductos.Size = new System.Drawing.Size(116, 31);
             this.btnAgregarProductos.TabIndex = 89;
@@ -860,14 +917,135 @@
             this.btnAgregarProductos.UseVisualStyleBackColor = false;
             this.btnAgregarProductos.Click += new System.EventHandler(this.btnAgregarProductos_Click);
             // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(491, 216);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 17);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Importe:";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblCantidad.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCantidad.Location = new System.Drawing.Point(641, 215);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(40, 17);
+            this.lblCantidad.TabIndex = 48;
+            this.lblCantidad.Text = "Cant:";
+            // 
+            // tbProducto
+            // 
+            this.tbProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbProducto.Enabled = false;
+            this.tbProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbProducto.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbProducto.Location = new System.Drawing.Point(99, 234);
+            this.tbProducto.Name = "tbProducto";
+            this.tbProducto.ReadOnly = true;
+            this.tbProducto.Size = new System.Drawing.Size(281, 25);
+            this.tbProducto.TabIndex = 47;
+            this.tbProducto.TextChanged += new System.EventHandler(this.tbProducto_TextChanged);
+            // 
+            // tbCantidad
+            // 
+            this.tbCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbCantidad.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbCantidad.Location = new System.Drawing.Point(623, 234);
+            this.tbCantidad.MaxLength = 4;
+            this.tbCantidad.Name = "tbCantidad";
+            this.tbCantidad.Size = new System.Drawing.Size(80, 25);
+            this.tbCantidad.TabIndex = 1;
+            this.tbCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCantidad.TextChanged += new System.EventHandler(this.tbCantidad_TextChanged);
+            this.tbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCantidad_KeyPress);
+            // 
+            // tbImporteVenta
+            // 
+            this.tbImporteVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbImporteVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tbImporteVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbImporteVenta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbImporteVenta.ForeColor = System.Drawing.Color.Gold;
+            this.tbImporteVenta.Location = new System.Drawing.Point(464, 235);
+            this.tbImporteVenta.Name = "tbImporteVenta";
+            this.tbImporteVenta.ReadOnly = true;
+            this.tbImporteVenta.Size = new System.Drawing.Size(116, 25);
+            this.tbImporteVenta.TabIndex = 0;
+            this.tbImporteVenta.TabStop = false;
+            this.tbImporteVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbImporteVenta.TextChanged += new System.EventHandler(this.tbImporteVenta_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(25, 239);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 17);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Producto:";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label17.AutoEllipsis = true;
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label17.Location = new System.Drawing.Point(445, 297);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(151, 18);
+            this.label17.TabIndex = 111;
+            this.label17.Text = "IVA";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnQuitar
+            // 
+            this.btnQuitar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnQuitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnQuitar.ForeColor = System.Drawing.Color.White;
+            this.btnQuitar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnQuitar.IconColor = System.Drawing.Color.White;
+            this.btnQuitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnQuitar.IconSize = 25;
+            this.btnQuitar.Location = new System.Drawing.Point(773, 457);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(116, 31);
+            this.btnQuitar.TabIndex = 89;
+            this.btnQuitar.TabStop = false;
+            this.btnQuitar.Text = "ELIMINAR";
+            this.btnQuitar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuitar.UseVisualStyleBackColor = false;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
             // tbSubtotalIVA
             // 
             this.tbSubtotalIVA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbSubtotalIVA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.tbSubtotalIVA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSubtotalIVA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbSubtotalIVA.ForeColor = System.Drawing.Color.Yellow;
-            this.tbSubtotalIVA.Location = new System.Drawing.Point(751, 118);
+            this.tbSubtotalIVA.ForeColor = System.Drawing.Color.Gold;
+            this.tbSubtotalIVA.Location = new System.Drawing.Point(773, 331);
             this.tbSubtotalIVA.Name = "tbSubtotalIVA";
             this.tbSubtotalIVA.ReadOnly = true;
             this.tbSubtotalIVA.Size = new System.Drawing.Size(116, 25);
@@ -881,73 +1059,68 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(787, 101);
+            this.label10.Location = new System.Drawing.Point(815, 312);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 17);
+            this.label10.Size = new System.Drawing.Size(33, 17);
             this.label10.TabIndex = 55;
-            this.label10.Text = "IVA: $";
+            this.label10.Text = "IVA:";
             // 
-            // dgvDetVent
+            // chekConsumidorFinal
             // 
-            this.dgvDetVent.AllowUserToAddRows = false;
-            this.dgvDetVent.AllowUserToDeleteRows = false;
-            this.dgvDetVent.AllowUserToResizeColumns = false;
-            this.dgvDetVent.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Control;
-            this.dgvDetVent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDetVent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvDetVent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDetVent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvDetVent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDetVent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvDetVent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetVent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvDetVent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvDetVent.ColumnHeadersVisible = false;
-            this.dgvDetVent.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetVent.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvDetVent.EnableHeadersVisualStyles = false;
-            this.dgvDetVent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvDetVent.Location = new System.Drawing.Point(26, 107);
-            this.dgvDetVent.MaximumSize = new System.Drawing.Size(900, 800);
-            this.dgvDetVent.Name = "dgvDetVent";
-            this.dgvDetVent.ReadOnly = true;
-            this.dgvDetVent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetVent.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDetVent.RowHeadersVisible = false;
-            this.dgvDetVent.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDetVent.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvDetVent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetVent.Size = new System.Drawing.Size(708, 186);
-            this.dgvDetVent.TabIndex = 0;
-            this.dgvDetVent.TabStop = false;
+            this.chekConsumidorFinal.AutoEllipsis = true;
+            this.chekConsumidorFinal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chekConsumidorFinal.ForeColor = System.Drawing.SystemColors.Control;
+            this.chekConsumidorFinal.Location = new System.Drawing.Point(99, 91);
+            this.chekConsumidorFinal.Name = "chekConsumidorFinal";
+            this.chekConsumidorFinal.Size = new System.Drawing.Size(143, 26);
+            this.chekConsumidorFinal.TabIndex = 0;
+            this.chekConsumidorFinal.TabStop = false;
+            this.chekConsumidorFinal.Text = "Consumidor Final";
+            this.chekConsumidorFinal.UseVisualStyleBackColor = true;
+            this.chekConsumidorFinal.CheckedChanged += new System.EventHandler(this.chekConsumidorFinal_CheckedChanged);
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label18.AutoEllipsis = true;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label18.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label18.Location = new System.Drawing.Point(24, 297);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(142, 18);
+            this.label18.TabIndex = 112;
+            this.label18.Text = "PRODUCTO";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // cbSucursal
+            // 
+            this.cbSucursal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbSucursal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cbSucursal.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.cbSucursal.FormattingEnabled = true;
+            this.cbSucursal.ItemHeight = 17;
+            this.cbSucursal.Location = new System.Drawing.Point(764, 123);
+            this.cbSucursal.Name = "cbSucursal";
+            this.cbSucursal.Size = new System.Drawing.Size(54, 25);
+            this.cbSucursal.TabIndex = 0;
+            this.cbSucursal.TabStop = false;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label19.AutoEllipsis = true;
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label19.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label19.Location = new System.Drawing.Point(165, 297);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(141, 18);
+            this.label19.TabIndex = 113;
+            this.label19.Text = "CANTIDAD";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnSelProd
             // 
@@ -960,7 +1133,7 @@
             this.btnSelProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelProd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelProd.ForeColor = System.Drawing.Color.White;
-            this.btnSelProd.Location = new System.Drawing.Point(354, 38);
+            this.btnSelProd.Location = new System.Drawing.Point(321, 265);
             this.btnSelProd.Name = "btnSelProd";
             this.btnSelProd.Size = new System.Drawing.Size(59, 23);
             this.btnSelProd.TabIndex = 50;
@@ -969,83 +1142,14 @@
             this.btnSelProd.UseVisualStyleBackColor = false;
             this.btnSelProd.Click += new System.EventHandler(this.btnSelProd_Click);
             // 
-            // tbCantidad
-            // 
-            this.tbCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbCantidad.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCantidad.Location = new System.Drawing.Point(654, 38);
-            this.tbCantidad.MaxLength = 4;
-            this.tbCantidad.Name = "tbCantidad";
-            this.tbCantidad.Size = new System.Drawing.Size(80, 25);
-            this.tbCantidad.TabIndex = 1;
-            this.tbCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbCantidad.TextChanged += new System.EventHandler(this.tbCantidad_TextChanged);
-            this.tbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCantidad_KeyPress);
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCantidad.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCantidad.Location = new System.Drawing.Point(608, 40);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(40, 17);
-            this.lblCantidad.TabIndex = 48;
-            this.lblCantidad.Text = "Cant:";
-            // 
-            // tbIDprod
-            // 
-            this.tbIDprod.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbIDprod.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbIDprod.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIDprod.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbIDprod.Location = new System.Drawing.Point(295, 298);
-            this.tbIDprod.Name = "tbIDprod";
-            this.tbIDprod.ReadOnly = true;
-            this.tbIDprod.Size = new System.Drawing.Size(81, 15);
-            this.tbIDprod.TabIndex = 47;
-            this.tbIDprod.TabStop = false;
-            this.tbIDprod.Visible = false;
-            // 
-            // tbIVAVenta
-            // 
-            this.tbIVAVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbIVAVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbIVAVenta.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIVAVenta.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbIVAVenta.Location = new System.Drawing.Point(199, 298);
-            this.tbIVAVenta.Name = "tbIVAVenta";
-            this.tbIVAVenta.ReadOnly = true;
-            this.tbIVAVenta.Size = new System.Drawing.Size(81, 15);
-            this.tbIVAVenta.TabIndex = 47;
-            this.tbIVAVenta.TabStop = false;
-            this.tbIVAVenta.Visible = false;
-            // 
-            // tbProducto
-            // 
-            this.tbProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbProducto.Enabled = false;
-            this.tbProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbProducto.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbProducto.Location = new System.Drawing.Point(98, 38);
-            this.tbProducto.Name = "tbProducto";
-            this.tbProducto.ReadOnly = true;
-            this.tbProducto.Size = new System.Drawing.Size(250, 25);
-            this.tbProducto.TabIndex = 47;
-            this.tbProducto.TextChanged += new System.EventHandler(this.tbProducto_TextChanged);
-            // 
             // tbSubtotal
             // 
             this.tbSubtotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbSubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.tbSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSubtotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbSubtotal.ForeColor = System.Drawing.Color.Yellow;
-            this.tbSubtotal.Location = new System.Drawing.Point(751, 182);
+            this.tbSubtotal.ForeColor = System.Drawing.Color.Gold;
+            this.tbSubtotal.Location = new System.Drawing.Point(773, 389);
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.ReadOnly = true;
             this.tbSubtotal.Size = new System.Drawing.Size(116, 25);
@@ -1053,20 +1157,51 @@
             this.tbSubtotal.TabStop = false;
             this.tbSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbImporteVenta
+            // dgvDetVent
             // 
-            this.tbImporteVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbImporteVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbImporteVenta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbImporteVenta.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbImporteVenta.Location = new System.Drawing.Point(501, 38);
-            this.tbImporteVenta.Name = "tbImporteVenta";
-            this.tbImporteVenta.ReadOnly = true;
-            this.tbImporteVenta.Size = new System.Drawing.Size(97, 25);
-            this.tbImporteVenta.TabIndex = 0;
-            this.tbImporteVenta.TabStop = false;
-            this.tbImporteVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbImporteVenta.TextChanged += new System.EventHandler(this.tbImporteVenta_TextChanged);
+            this.dgvDetVent.AllowUserToAddRows = false;
+            this.dgvDetVent.AllowUserToDeleteRows = false;
+            this.dgvDetVent.AllowUserToResizeColumns = false;
+            this.dgvDetVent.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Control;
+            this.dgvDetVent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDetVent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvDetVent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetVent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.dgvDetVent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDetVent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvDetVent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetVent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDetVent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDetVent.ColumnHeadersVisible = false;
+            this.dgvDetVent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvDetVent.EnableHeadersVisualStyles = false;
+            this.dgvDetVent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.dgvDetVent.Location = new System.Drawing.Point(25, 316);
+            this.dgvDetVent.MaximumSize = new System.Drawing.Size(900, 800);
+            this.dgvDetVent.Name = "dgvDetVent";
+            this.dgvDetVent.ReadOnly = true;
+            this.dgvDetVent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDetVent.RowHeadersVisible = false;
+            this.dgvDetVent.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDetVent.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDetVent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetVent.Size = new System.Drawing.Size(708, 186);
+            this.dgvDetVent.TabIndex = 0;
+            this.dgvDetVent.TabStop = false;
             // 
             // lblSubtotal
             // 
@@ -1074,143 +1209,78 @@
             this.lblSubtotal.AutoSize = true;
             this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblSubtotal.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSubtotal.Location = new System.Drawing.Point(769, 166);
+            this.lblSubtotal.Location = new System.Drawing.Point(798, 370);
             this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(77, 17);
+            this.lblSubtotal.Size = new System.Drawing.Size(66, 17);
             this.lblSubtotal.TabIndex = 43;
-            this.lblSubtotal.Text = "SubTotal: $";
+            this.lblSubtotal.Text = "SubTotal:";
             // 
-            // label11
+            // label36
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(423, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 17);
-            this.label11.TabIndex = 43;
-            this.label11.Text = "Importe: $";
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label36.AutoEllipsis = true;
+            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label36.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label36.Location = new System.Drawing.Point(24, 314);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(710, 189);
+            this.label36.TabIndex = 189;
+            this.label36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label12
+            // btnGuardar
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(24, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 17);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Producto:";
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 25;
+            this.btnGuardar.Location = new System.Drawing.Point(773, 528);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(116, 31);
+            this.btnGuardar.TabIndex = 89;
+            this.btnGuardar.TabStop = false;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // lblTotalIva
+            // label14
             // 
-            this.lblTotalIva.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTotalIva.AutoSize = true;
-            this.lblTotalIva.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblTotalIva.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTotalIva.Location = new System.Drawing.Point(481, 504);
-            this.lblTotalIva.Name = "lblTotalIva";
-            this.lblTotalIva.Size = new System.Drawing.Size(68, 17);
-            this.lblTotalIva.TabIndex = 46;
-            this.lblTotalIva.Text = "Total IVA:";
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.SystemColors.Control;
+            this.label14.Location = new System.Drawing.Point(589, 536);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 17);
+            this.label14.TabIndex = 50;
+            this.label14.Text = "$";
             // 
-            // tbTotalFact
+            // tbNumComp
             // 
-            this.tbTotalFact.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbTotalFact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.tbTotalFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTotalFact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbTotalFact.ForeColor = System.Drawing.Color.Yellow;
-            this.tbTotalFact.Location = new System.Drawing.Point(619, 521);
-            this.tbTotalFact.Name = "tbTotalFact";
-            this.tbTotalFact.ReadOnly = true;
-            this.tbTotalFact.Size = new System.Drawing.Size(108, 25);
-            this.tbTotalFact.TabIndex = 0;
-            this.tbTotalFact.TabStop = false;
-            this.tbTotalFact.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // gbEncabezadoFactura
-            // 
-            this.gbEncabezadoFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gbEncabezadoFactura.Controls.Add(this.dtpFecha);
-            this.gbEncabezadoFactura.Controls.Add(this.chekConsumidorFinal);
-            this.gbEncabezadoFactura.Controls.Add(this.cbSucursal);
-            this.gbEncabezadoFactura.Controls.Add(this.btnElijeCliente);
-            this.gbEncabezadoFactura.Controls.Add(this.tbDni);
-            this.gbEncabezadoFactura.Controls.Add(this.tbCliente);
-            this.gbEncabezadoFactura.Controls.Add(this.label8);
-            this.gbEncabezadoFactura.Controls.Add(this.tbNumComp);
-            this.gbEncabezadoFactura.Controls.Add(this.label5);
-            this.gbEncabezadoFactura.Controls.Add(this.label2);
-            this.gbEncabezadoFactura.Controls.Add(this.lblCuit);
-            this.gbEncabezadoFactura.Controls.Add(this.label1);
-            this.gbEncabezadoFactura.Controls.Add(this.label13);
-            this.gbEncabezadoFactura.Controls.Add(this.lblFecha);
-            this.gbEncabezadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbEncabezadoFactura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.gbEncabezadoFactura.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.gbEncabezadoFactura.Location = new System.Drawing.Point(22, 16);
-            this.gbEncabezadoFactura.Name = "gbEncabezadoFactura";
-            this.gbEncabezadoFactura.Size = new System.Drawing.Size(904, 129);
-            this.gbEncabezadoFactura.TabIndex = 47;
-            this.gbEncabezadoFactura.TabStop = false;
-            this.gbEncabezadoFactura.Text = "Factrura de Venta";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFecha.BaseColor = System.Drawing.Color.White;
-            this.dtpFecha.BorderColor = System.Drawing.Color.Silver;
-            this.dtpFecha.CustomFormat = null;
-            this.dtpFecha.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFecha.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFecha.ForeColor = System.Drawing.Color.Black;
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(751, 74);
-            this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtpFecha.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpFecha.OnPressedColor = System.Drawing.Color.Black;
-            this.dtpFecha.Radius = 10;
-            this.dtpFecha.Size = new System.Drawing.Size(116, 30);
-            this.dtpFecha.TabIndex = 113;
-            this.dtpFecha.Text = "22/10/2021";
-            this.dtpFecha.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            // 
-            // chekConsumidorFinal
-            // 
-            this.chekConsumidorFinal.AutoEllipsis = true;
-            this.chekConsumidorFinal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.chekConsumidorFinal.ForeColor = System.Drawing.SystemColors.Control;
-            this.chekConsumidorFinal.Location = new System.Drawing.Point(221, 73);
-            this.chekConsumidorFinal.Name = "chekConsumidorFinal";
-            this.chekConsumidorFinal.Size = new System.Drawing.Size(156, 26);
-            this.chekConsumidorFinal.TabIndex = 0;
-            this.chekConsumidorFinal.TabStop = false;
-            this.chekConsumidorFinal.Text = "Consumidor Final";
-            this.chekConsumidorFinal.UseVisualStyleBackColor = true;
-            this.chekConsumidorFinal.CheckedChanged += new System.EventHandler(this.chekConsumidorFinal_CheckedChanged);
-            // 
-            // cbSucursal
-            // 
-            this.cbSucursal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbSucursal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.cbSucursal.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.cbSucursal.FormattingEnabled = true;
-            this.cbSucursal.ItemHeight = 17;
-            this.cbSucursal.Location = new System.Drawing.Point(654, 34);
-            this.cbSucursal.Name = "cbSucursal";
-            this.cbSucursal.Size = new System.Drawing.Size(80, 25);
-            this.cbSucursal.TabIndex = 0;
-            this.cbSucursal.TabStop = false;
+            this.tbNumComp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbNumComp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNumComp.Enabled = false;
+            this.tbNumComp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbNumComp.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbNumComp.Location = new System.Drawing.Point(835, 123);
+            this.tbNumComp.MaxLength = 5;
+            this.tbNumComp.Name = "tbNumComp";
+            this.tbNumComp.Size = new System.Drawing.Size(64, 25);
+            this.tbNumComp.TabIndex = 0;
+            this.tbNumComp.TabStop = false;
+            this.tbNumComp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNumComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumComp_KeyPress);
             // 
             // btnElijeCliente
             // 
@@ -1223,7 +1293,7 @@
             this.btnElijeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnElijeCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnElijeCliente.ForeColor = System.Drawing.Color.White;
-            this.btnElijeCliente.Location = new System.Drawing.Point(354, 34);
+            this.btnElijeCliente.Location = new System.Drawing.Point(321, 91);
             this.btnElijeCliente.Name = "btnElijeCliente";
             this.btnElijeCliente.Size = new System.Drawing.Size(59, 23);
             this.btnElijeCliente.TabIndex = 0;
@@ -1232,18 +1302,47 @@
             this.btnElijeCliente.UseVisualStyleBackColor = false;
             this.btnElijeCliente.Click += new System.EventHandler(this.btnElijeCliente_Click);
             // 
+            // tbTotalIVA
+            // 
+            this.tbTotalIVA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTotalIVA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tbTotalIVA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTotalIVA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbTotalIVA.ForeColor = System.Drawing.Color.Gold;
+            this.tbTotalIVA.Location = new System.Drawing.Point(464, 532);
+            this.tbTotalIVA.Name = "tbTotalIVA";
+            this.tbTotalIVA.ReadOnly = true;
+            this.tbTotalIVA.Size = new System.Drawing.Size(116, 25);
+            this.tbTotalIVA.TabIndex = 0;
+            this.tbTotalIVA.TabStop = false;
+            this.tbTotalIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(770, 151);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 11);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "SUCURSAL";
+            // 
             // tbDni
             // 
             this.tbDni.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbDni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.tbDni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbDni.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbDni.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbDni.Location = new System.Drawing.Point(98, 74);
+            this.tbDni.ForeColor = System.Drawing.Color.Gold;
+            this.tbDni.Location = new System.Drawing.Point(99, 123);
             this.tbDni.Name = "tbDni";
             this.tbDni.ReadOnly = true;
-            this.tbDni.Size = new System.Drawing.Size(110, 25);
+            this.tbDni.Size = new System.Drawing.Size(132, 25);
             this.tbDni.TabIndex = 0;
             this.tbDni.TabStop = false;
+            this.tbDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbCliente
             // 
@@ -1251,88 +1350,24 @@
             this.tbCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCliente.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCliente.Location = new System.Drawing.Point(98, 34);
+            this.tbCliente.Location = new System.Drawing.Point(99, 60);
             this.tbCliente.Name = "tbCliente";
             this.tbCliente.ReadOnly = true;
-            this.tbCliente.Size = new System.Drawing.Size(250, 25);
+            this.tbCliente.Size = new System.Drawing.Size(281, 25);
             this.tbCliente.TabIndex = 0;
             this.tbCliente.TabStop = false;
             // 
-            // label8
+            // lblTotalIva
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(737, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 17);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "-";
-            // 
-            // tbNumComp
-            // 
-            this.tbNumComp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbNumComp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbNumComp.Enabled = false;
-            this.tbNumComp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbNumComp.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbNumComp.Location = new System.Drawing.Point(751, 34);
-            this.tbNumComp.MaxLength = 5;
-            this.tbNumComp.Name = "tbNumComp";
-            this.tbNumComp.Size = new System.Drawing.Size(116, 25);
-            this.tbNumComp.TabIndex = 0;
-            this.tbNumComp.TabStop = false;
-            this.tbNumComp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbNumComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumComp_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(661, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 17);
-            this.label5.TabIndex = 48;
-            this.label5.Text = "Sucursal";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(781, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Número";
-            // 
-            // lblCuit
-            // 
-            this.lblCuit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCuit.AutoSize = true;
-            this.lblCuit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCuit.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCuit.Location = new System.Drawing.Point(23, 76);
-            this.lblCuit.Name = "lblCuit";
-            this.lblCuit.Size = new System.Drawing.Size(71, 17);
-            this.lblCuit.TabIndex = 46;
-            this.lblCuit.Text = "DNI/CUIT:";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(37, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Cliente:";
+            this.lblTotalIva.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalIva.AutoSize = true;
+            this.lblTotalIva.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTotalIva.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTotalIva.Location = new System.Drawing.Point(487, 513);
+            this.lblTotalIva.Name = "lblTotalIva";
+            this.lblTotalIva.Size = new System.Drawing.Size(68, 17);
+            this.lblTotalIva.TabIndex = 46;
+            this.lblTotalIva.Text = "Total IVA:";
             // 
             // label13
             // 
@@ -1340,23 +1375,26 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(552, 38);
+            this.label13.Location = new System.Drawing.Point(781, 103);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 17);
             this.label13.TabIndex = 43;
             this.label13.Text = "Comprobante:";
             // 
-            // lblFecha
+            // tbTotalFact
             // 
-            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblFecha.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFecha.Location = new System.Drawing.Point(698, 82);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(47, 17);
-            this.lblFecha.TabIndex = 43;
-            this.lblFecha.Text = "Fecha:";
+            this.tbTotalFact.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTotalFact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tbTotalFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTotalFact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbTotalFact.ForeColor = System.Drawing.Color.Gold;
+            this.tbTotalFact.Location = new System.Drawing.Point(606, 532);
+            this.tbTotalFact.Name = "tbTotalFact";
+            this.tbTotalFact.ReadOnly = true;
+            this.tbTotalFact.Size = new System.Drawing.Size(116, 25);
+            this.tbTotalFact.TabIndex = 0;
+            this.tbTotalFact.TabStop = false;
+            this.tbTotalFact.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblImpTotal
             // 
@@ -1364,11 +1402,47 @@
             this.lblImpTotal.AutoSize = true;
             this.lblImpTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblImpTotal.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblImpTotal.Location = new System.Drawing.Point(621, 504);
+            this.lblImpTotal.Location = new System.Drawing.Point(616, 513);
             this.lblImpTotal.Name = "lblImpTotal";
             this.lblImpTotal.Size = new System.Drawing.Size(96, 17);
             this.lblImpTotal.TabIndex = 46;
             this.lblImpTotal.Text = "Importe Total:";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFecha.Location = new System.Drawing.Point(806, 35);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(47, 17);
+            this.lblFecha.TabIndex = 43;
+            this.lblFecha.Text = "Fecha:";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(38, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Cliente:";
+            // 
+            // lblCuit
+            // 
+            this.lblCuit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCuit.AutoSize = true;
+            this.lblCuit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblCuit.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCuit.Location = new System.Drawing.Point(22, 126);
+            this.lblCuit.Name = "lblCuit";
+            this.lblCuit.Size = new System.Drawing.Size(71, 17);
+            this.lblCuit.TabIndex = 46;
+            this.lblCuit.Text = "DNI/CUIT:";
             // 
             // tabClientes
             // 
@@ -1476,33 +1550,25 @@
             this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.AllowUserToResizeColumns = false;
             this.dgvClientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Control;
-            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Control;
+            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvClientes.ColumnHeadersVisible = false;
             this.dgvClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvClientes.EnableHeadersVisualStyles = false;
             this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvClientes.Location = new System.Drawing.Point(58, 125);
@@ -1510,23 +1576,15 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(817, 376);
             this.dgvClientes.TabIndex = 86;
@@ -1607,6 +1665,19 @@
             this.tbBuscaCliente.Name = "tbBuscaCliente";
             this.tbBuscaCliente.Size = new System.Drawing.Size(276, 25);
             this.tbBuscaCliente.TabIndex = 85;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label35.AutoEllipsis = true;
+            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label35.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label35.Location = new System.Drawing.Point(57, 122);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(819, 380);
+            this.label35.TabIndex = 187;
+            this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tabProductos
             // 
@@ -1774,33 +1845,25 @@
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AllowUserToResizeColumns = false;
             this.dgvProductos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Control;
-            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Control;
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProductos.ColumnHeadersVisible = false;
             this.dgvProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProductos.Location = new System.Drawing.Point(18, 133);
@@ -1808,23 +1871,15 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(900, 407);
             this.dgvProductos.TabIndex = 96;
@@ -1906,32 +1961,6 @@
             this.tbBuscaProductos.Size = new System.Drawing.Size(277, 25);
             this.tbBuscaProductos.TabIndex = 95;
             // 
-            // label36
-            // 
-            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label36.AutoEllipsis = true;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label36.Location = new System.Drawing.Point(25, 105);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(710, 189);
-            this.label36.TabIndex = 189;
-            this.label36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label35
-            // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label35.AutoEllipsis = true;
-            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label35.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label35.Location = new System.Drawing.Point(57, 122);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(819, 380);
-            this.label35.TabIndex = 187;
-            this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // label37
             // 
             this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1944,19 +1973,6 @@
             this.label37.Size = new System.Drawing.Size(902, 412);
             this.label37.TabIndex = 188;
             this.label37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label38
-            // 
-            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label38.AutoEllipsis = true;
-            this.label38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label38.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label38.Location = new System.Drawing.Point(69, 64);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(639, 404);
-            this.label38.TabIndex = 186;
-            this.label38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormVentas
             // 
@@ -1978,11 +1994,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.tabNuevaVenta.ResumeLayout(false);
             this.tabNuevaVenta.PerformLayout();
-            this.gbDetalleCompra.ResumeLayout(false);
-            this.gbDetalleCompra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetVent)).EndInit();
-            this.gbEncabezadoFactura.ResumeLayout(false);
-            this.gbEncabezadoFactura.PerformLayout();
             this.tabClientes.ResumeLayout(false);
             this.panelClientes.ResumeLayout(false);
             this.panelClientes.PerformLayout();
@@ -2014,23 +2026,6 @@
         private System.Windows.Forms.Label lblFecha2;
         private System.Windows.Forms.Label lblFecha1;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.TabPage tabNuevaVenta;
-        private FontAwesome.Sharp.IconButton btnGuardar;
-        private System.Windows.Forms.TextBox tbTotalIVA;
-        private System.Windows.Forms.Label lblTotalIva;
-        private System.Windows.Forms.TextBox tbTotalFact;
-        private System.Windows.Forms.Label lblImpTotal;
-        private System.Windows.Forms.GroupBox gbEncabezadoFactura;
-        private System.Windows.Forms.Button btnElijeCliente;
-        public System.Windows.Forms.TextBox tbDni;
-        public System.Windows.Forms.TextBox tbCliente;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbNumComp;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblCuit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.TabPage tabClientes;
         private System.Windows.Forms.Panel panelClientes;
         private System.Windows.Forms.DataGridView dgvClientes;
@@ -2045,44 +2040,15 @@
         private FontAwesome.Sharp.IconButton btnBuscaProd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbBuscaProductos;
-        private System.Windows.Forms.ComboBox cbSucursal;
-        private System.Windows.Forms.CheckBox chekConsumidorFinal;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.GroupBox gbDetalleCompra;
-        private FontAwesome.Sharp.IconButton btnQuitar;
-        private FontAwesome.Sharp.IconButton btnAgregarProductos;
-        public System.Windows.Forms.TextBox tbSubtotalIVA;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dgvDetVent;
-        private System.Windows.Forms.Button btnSelProd;
-        private System.Windows.Forms.TextBox tbCantidad;
-        private System.Windows.Forms.Label lblCantidad;
-        public System.Windows.Forms.TextBox tbIDprod;
-        public System.Windows.Forms.TextBox tbIVAVenta;
-        public System.Windows.Forms.TextBox tbProducto;
-        public System.Windows.Forms.TextBox tbSubtotal;
-        public System.Windows.Forms.TextBox tbImporteVenta;
-        private System.Windows.Forms.Label lblSubtotal;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        public System.Windows.Forms.TextBox tbStockProd;
         private Guna.UI.WinForms.GunaDateTimePicker dtpFecha1;
         private Guna.UI.WinForms.GunaDateTimePicker dtpFecha2;
         private Guna.UI.WinForms.GunaSwitch chekVerAnulados;
         private Guna.UI.WinForms.GunaLabel lblChekAnul;
-        private Guna.UI.WinForms.GunaDateTimePicker dtpFecha;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
@@ -2092,9 +2058,61 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TabPage tabNuevaVenta;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton rbCtaCte;
+        private System.Windows.Forms.RadioButton rbContado;
+        private System.Windows.Forms.Label label39;
+        public System.Windows.Forms.TextBox tbStockProd;
+        private System.Windows.Forms.Label label20;
+        private Guna.UI.WinForms.GunaDateTimePicker dtpFecha;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.TextBox tbIDprod;
+        public System.Windows.Forms.TextBox tbIVAVenta;
+        private FontAwesome.Sharp.IconButton btnAgregarProductos;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCantidad;
+        public System.Windows.Forms.TextBox tbProducto;
+        private System.Windows.Forms.TextBox tbCantidad;
+        public System.Windows.Forms.TextBox tbImporteVenta;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label17;
+        private FontAwesome.Sharp.IconButton btnQuitar;
+        public System.Windows.Forms.TextBox tbSubtotalIVA;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox chekConsumidorFinal;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cbSucursal;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnSelProd;
+        public System.Windows.Forms.TextBox tbSubtotal;
+        private System.Windows.Forms.DataGridView dgvDetVent;
+        private System.Windows.Forms.Label lblSubtotal;
+        private System.Windows.Forms.Label label36;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tbNumComp;
+        private System.Windows.Forms.Button btnElijeCliente;
+        private System.Windows.Forms.TextBox tbTotalIVA;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox tbDni;
+        public System.Windows.Forms.TextBox tbCliente;
+        private System.Windows.Forms.Label lblTotalIva;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbTotalFact;
+        private System.Windows.Forms.Label lblImpTotal;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCuit;
     }
 }

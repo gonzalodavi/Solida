@@ -280,6 +280,81 @@ namespace CapaDatos
             return rpta;
         }
 
+        public string Modificar(CD_CtaCte CtaCte)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Modificar_CtaCte";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParComprobante = new SqlParameter();
+                ParComprobante.ParameterName = "@cmpbte";
+                ParComprobante.SqlDbType = SqlDbType.VarChar;
+                ParComprobante.Size = 15;
+                ParComprobante.Value = CtaCte.Comprobante;
+                SqlCmd.Parameters.Add(ParComprobante);
+
+                SqlParameter ParConcepto = new SqlParameter();
+                ParConcepto.ParameterName = "@concepto";
+                ParConcepto.SqlDbType = SqlDbType.VarChar;
+                ParConcepto.Size = 350;
+                ParConcepto.Value = CtaCte.Concepto;
+                SqlCmd.Parameters.Add(ParConcepto);
+
+                SqlParameter ParValorCheque = new SqlParameter();
+                ParValorCheque.ParameterName = "@vcheque";
+                ParValorCheque.SqlDbType = SqlDbType.Money;
+                ParValorCheque.Value = CtaCte.ValorCheque;
+                SqlCmd.Parameters.Add(ParValorCheque);
+
+                SqlParameter ParValorEfectivo = new SqlParameter();
+                ParValorEfectivo.ParameterName = "@vefect";
+                ParValorEfectivo.SqlDbType = SqlDbType.Money;
+                ParValorEfectivo.Value = CtaCte.ValorEfectivo;
+                SqlCmd.Parameters.Add(ParValorEfectivo);
+
+                SqlParameter ParValorBanco = new SqlParameter();
+                ParValorBanco.ParameterName = "@vbanco";
+                ParValorBanco.SqlDbType = SqlDbType.Money;
+                ParValorBanco.Value = CtaCte.ValorBanco;
+                SqlCmd.Parameters.Add(ParValorBanco);
+
+                SqlParameter ParAsignado = new SqlParameter();
+                ParAsignado.ParameterName = "@asignado";
+                ParAsignado.SqlDbType = SqlDbType.Money;
+                ParAsignado.Value = CtaCte.Asignado;
+                SqlCmd.Parameters.Add(ParAsignado);
+
+                SqlParameter ParAsigna = new SqlParameter();
+                ParAsigna.ParameterName = "@asigna";
+                ParAsigna.SqlDbType = SqlDbType.VarChar;
+                ParAsigna.Size = 1;
+                ParAsigna.Value = CtaCte.Asigna;
+                SqlCmd.Parameters.Add(ParAsigna);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Modifico el Registro";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
         public string ModificarRegistroCtaCte(CD_CtaCte CtaCte)
         {
             string rpta = "";

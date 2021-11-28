@@ -174,7 +174,7 @@ namespace CapaPresentacion
                                 this.MensajeOk("Se Generó con éxito el Comprobante");
                                 if (valores > 0)
                                 {   
-                                    rpta1 = CN_Cheque.ModificarEstadoCheque("PENDIENTE","ACTIVO",0);
+                                    rpta1 = CN_Cheque.ActivarChequesPendientes("PENDIENTE","ACTIVO");
 
                                     if (rpta1.Equals("OK"))
                                     {
@@ -823,7 +823,7 @@ namespace CapaPresentacion
 
                     if (DetNomBan != "" && DetImporte != "" && DetNumCheq != "")
                     {
-                        tbDetalleRecibo.Text += "Valor Nº " + DetNumCheq + " de Banco " + DetNomBan + " al " + DetFecC + " con importe $"+DetImporte+ " // ";
+                        tbDetalleRecibo.Text += "Valor Nº " + DetNumCheq + " de Banco " + DetNomBan + " al " + DetFecC + " con importe $" + DetImporte + "\r\n";
                     }
                 }
                 tbValores.Text = tbCheqTotal.Text;

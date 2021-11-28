@@ -108,6 +108,17 @@ namespace CapaDatos
             return DtResultado;
         }
 
+        public DataTable CargarComboBoxCuentasBanco()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("CargarComboBoxCuentasBanco", conexion.AbrirConexion());
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return dt;
+        }
+
         public string Insertar(CD_CuentaBancaria CuentaBancaria)
         {
             string rpta = "";

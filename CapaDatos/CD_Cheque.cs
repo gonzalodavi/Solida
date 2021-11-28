@@ -404,6 +404,51 @@ namespace CapaDatos
             return rpta;
         }
 
+        public string ActivarChequesPendientes(CD_Cheque Cheque)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Activar_Cheques";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParEstadoActual = new SqlParameter();
+                ParEstadoActual.ParameterName = "@estadoActual";
+                ParEstadoActual.SqlDbType = SqlDbType.VarChar;
+                ParEstadoActual.Size = 15;
+                ParEstadoActual.Value = Cheque.Estado;
+                SqlCmd.Parameters.Add(ParEstadoActual);
+
+                SqlParameter ParEstadoNuevo = new SqlParameter();
+                ParEstadoNuevo.ParameterName = "@estadoNuevo";
+                ParEstadoNuevo.SqlDbType = SqlDbType.VarChar;
+                ParEstadoNuevo.Size = 15;
+                ParEstadoNuevo.Value = Cheque.EstadoNuevo;
+                SqlCmd.Parameters.Add(ParEstadoNuevo);                
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudieron Activar Los Cheques Pendientes";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
 
         public string ModificarCheque(CD_Cheque Cheque)
         {

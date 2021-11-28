@@ -492,26 +492,23 @@ namespace CapaPresentacion
 
 
                                 if (rpta.Equals("OK"))
-                                {
-                                    this.MensajeOk("Se Generó con éxito el Comprobante");
-                                    
+                                {                                    
+                                    this.MensajeOk("Se Generó con éxito La Factura");
+
                                     rpta = CN_CtaCte.Insertar(tbDni.Text,dtpFecha.Value, comprobte, "FACTURA DE VENTA",Convert.ToDecimal(tbTotalFact.Text),0,0,0,0, Convert.ToDecimal(tbTotalFact.Text),0,0,"N",estado);
                                     if (rpta.Equals("OK"))
                                     {
-                                        this.MensajeOk("Se registro en cuenta corriente");
+                                        this.MensajeOk("Se Inserto la FACTURA EN CTA CTE");
 
+                                        if (rbContado.Checked == true)
+                                        {
+                                            AbreRecibo();
+                                        }                                      
                                     }
                                     else
                                     {
                                         this.MensajeError(rpta);
-                                    }
-
-                                    DialogResult Opcion1;
-                                    Opcion1 = MessageBox.Show("Desea Registrar el Pago de la factura?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                    if (Opcion1 == DialogResult.OK)
-                                    {
-                                        HacerRecibo();
-                                    }
+                                    }                                   
 
                                     limpiarCampos();
                                     CargarGrilla();
@@ -547,6 +544,7 @@ namespace CapaPresentacion
         {           
             try
             {
+
                 Decimal Importe = Convert.ToDecimal(tbTotalFact.Text.ToString());
                 int numRecibo = objeto1.MostrarUltimoRecibo();
                 nroRecibo = (numRecibo + 1).ToString();
@@ -793,40 +791,38 @@ namespace CapaPresentacion
             CargarGrilla();
         }
 
-        private void btnPago_Click(object sender, EventArgs e)
+        private void AbreRecibo()
         {
+            Form formBG = new Form();
+            using (FormReciboDePago mm = new FormReciboDePago())
+            {
+                mm.tbTotalAPagar.Text = tbTotalFact.Text;
+                mm.tbDetalleRecibo.Text = "PAGO FACTURA: " + cbSucursal.Text + "-" + comprobte + "\r\n";
+                mm.tbDNI.Text = tbDni.Text;
+                mm.tbCheqBenef.Text = "Quevedo Yolanda";
+                mm.tbNumFact.Text = comprobte;
+                if (chekConsumidorFinal.Checked == false)
+                {
+                    mm.tbTitTransf.Text = tbCliente.Text;
+                    mm.tbCheqTitular.Text = tbCliente.Text;
+                }
+
+                formBG.StartPosition = FormStartPosition.Manual;
+                formBG.FormBorderStyle = FormBorderStyle.None;
+                formBG.Opacity = .70d;
+                formBG.BackColor = Color.Black;
+                formBG.WindowState = FormWindowState.Maximized;
+                formBG.TopMost = true;
+                formBG.Location = this.Location;
+                formBG.ShowInTaskbar = false;
+                formBG.Show();
+
+                mm.Owner = formBG;
+                mm.ShowDialog();
+
+                formBG.Dispose();
+            }
             
-        }
-
-        private void btnEnviarMail_Click(object sender, EventArgs e)
-        {
-            
-        }
-        /*
-Form formBG = new Form();
-   using (FormRecibos mm = new FormRecibos()){
-
-       mm.cbCliente.Text = tbCliente.Text;
-       mm.dtpFechaRecibo.Text = dtpFecha.Text;
-       mm.tbDetalleRecibo.Text = "PAGO FACTURA: " + cbSucursal.Text + "-" + tbNumComp.Text+"\n"+tbCliente.Text + "\n" +tbDni.Text;
-
-       formBG.StartPosition = FormStartPosition.Manual;
-       formBG.FormBorderStyle = FormBorderStyle.None;
-       formBG.Opacity = .70d;
-       formBG.BackColor = Color.Black;
-       formBG.WindowState = FormWindowState.Maximized;
-       formBG.TopMost = true;
-       formBG.Location = this.Location;
-       formBG.ShowInTaskbar = false;
-       formBG.Show();
-
-       mm.Owner = formBG;
-       mm.ShowDialog();
-
-
-
-       formBG.Dispose();
-   }
-*/
+        }        
     }
 }

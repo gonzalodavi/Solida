@@ -92,6 +92,15 @@ namespace CapaNegocio
             return rpta;
         }
 
+        public static string ActivarChequesPendientes(string estadoActual, string estadoNuevo)
+        {
+            CD_Cheque Obj = new CD_Cheque();
+            Obj.Estado = estadoActual;
+            Obj.EstadoNuevo = estadoNuevo;
+           
+            return Obj.ActivarChequesPendientes(Obj);
+        }
+
 
         public static string ModificarEstadoCheque(string estadoActual, string estadoNuevo, int idOPago)
         {

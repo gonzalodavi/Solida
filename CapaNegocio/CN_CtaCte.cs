@@ -30,6 +30,21 @@ namespace CapaNegocio
             return Obj.Insertar(Obj);
         }
 
+        public static string Modificar(string comprobante, string concepto, decimal vcheque, decimal vefect, decimal vbanco, decimal total, decimal asignado, string asigna)
+        {
+            CD_CtaCte Obje = new CD_CtaCte();
+            Obje.Comprobante = comprobante;
+            Obje.Concepto = concepto;
+            Obje.ValorCheque = vcheque;
+            Obje.ValorEfectivo = vefect;
+            Obje.ValorBanco = vbanco;
+            Obje.Total = total;
+            Obje.Asignado = asignado;
+            Obje.Asigna = asigna;
+
+            return Obje.Modificar(Obje);
+        }
+
         public static string AnularRegistroCtaCte(string comprobante, string concepto)
         {
             CD_CtaCte Obj = new CD_CtaCte();

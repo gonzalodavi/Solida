@@ -10,7 +10,13 @@ namespace CapaNegocio
     {
         private CD_CuentaBancaria objetoCD = new CD_CuentaBancaria();
 
-
+        public DataTable CargaCuentasBanco()
+        {
+            CD_CuentaBancaria Obj = new CD_CuentaBancaria();
+            DataTable dt = new DataTable();
+            dt = Obj.CargarComboBoxCuentasBanco();
+            return dt;
+        }
         public static DataTable Mostrar()
         {
             return new CD_CuentaBancaria().Mostrar();
