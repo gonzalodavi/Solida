@@ -104,9 +104,25 @@ namespace CapaPresentacion
 
             this.dgvTransferencias.DataSource = DTDetallesBco;
 
-            dgvTransferencias.Columns["ID_TRANSF"].Visible = false;
-            dgvTransferencias.Columns["ID_BANCO"].Visible = false;
-            dgvTransferencias.Columns["TITULAR"].Visible = false;
+            dgvTransferencias.Columns["ID_TRANSF"].Visible = false;              //0
+            dgvTransferencias.Columns["ID_BANCO"].Visible = false;               //3
+            dgvTransferencias.Columns["TITULAR"].Visible = false;               //5
+        }
+
+        private void AcomodaTabla()
+        {
+            this.dgvValores.Columns["NUM_CHEQUE"].Width = 50;
+            this.dgvValores.Columns["FECHA_CREDITO"].Width = 50;
+            this.dgvValores.Columns["BANCO"].Width = 90;
+            this.dgvValores.Columns["IMPORTE"].Width = 80;
+        }
+
+        private void AcomodaTablaTransferencia()
+        {
+            this.dgvTransferencias.Columns["NUM_TRANSF"].Width = 50;
+            this.dgvTransferencias.Columns["FECHA_TRANSF"].Width = 50;
+            this.dgvTransferencias.Columns["CTA_BCO"].Width = 90;
+            this.dgvTransferencias.Columns["IMPORTE"].Width = 80;
         }
 
         private void BuscaNumeroRecibo()
@@ -167,37 +183,47 @@ namespace CapaPresentacion
 
         private void HaceCalculo()
         {
-            double importeAPagar = 0;
-            double importeEfectivo = 0;
-            double importeValores = 0;
-            double importeBanco = 0;            
+            decimal importeAPagar = 0;
+            decimal importeEfectivo = 0;
+            decimal importeValores = 0;
+            decimal importeBanco = 0;            
 
             if (tbTotalAPagar.Text != "0,00")
             {
-                importeAPagar = Convert.ToDouble(tbTotalAPagar.Text);
+                importeAPagar = Convert.ToDecimal(tbTotalAPagar.Text.Trim());
             }
 
-            if (tbEfectivo.Text != "0,00" && tbEfectivo.Text != "")
-            {
-                importeEfectivo = Convert.ToDouble(tbEfectivo.Text);
+            if (tbEfectivo.Text != "0,00" && tbEfectivo.Text != "" && tbEfectivo.Text != "," && tbEfectivo.Text != "0")
+            {                
+                importeEfectivo = Convert.ToDecimal(tbEfectivo.Text.Trim());
             }
 
             if (tbValores.Text != "0,00")
             {
-                importeValores = Convert.ToDouble(tbValores.Text);
+                importeValores = Convert.ToDecimal(tbValores.Text.Trim());
             }
 
             if (tbBanco.Text != "0,00")
             {
-                importeBanco = Convert.ToDouble(tbBanco.Text);
+                importeBanco = Convert.ToDecimal(tbBanco.Text.Trim());
             }
 
-            double importeAbonado = importeEfectivo + importeValores + importeBanco;
-            double vuelto =  importeAbonado - importeAPagar;
+            decimal importeAbonado = importeEfectivo + importeValores + importeBanco;
+            decimal vuelto =  importeAbonado - importeAPagar;
+
+            if (vuelto > 0)
+            {                
+                importeEfectivo = importeEfectivo - vuelto;
+                lbltotalEfectivo.Text = importeEfectivo.ToString("0.00");
+                tbVuelto.Text = vuelto.ToString("0.00");
+            }
+            else
+            {
+                lbltotalEfectivo.Text = importeEfectivo.ToString("0.00");
+            }
 
             tbTotalPagado.Text = importeAbonado.ToString("0.00");
-            tbVuelto.Text = vuelto.ToString("0.00");
-
+                        
         }
 
         private void tbTotalAPagar_TextChanged(object sender, EventArgs e)
@@ -208,6 +234,7 @@ namespace CapaPresentacion
         private void tbEfectivo_TextChanged(object sender, EventArgs e)
         {
             HaceCalculo();
+            
         }
 
         private void tbValores_TextChanged(object sender, EventArgs e)
@@ -303,21 +330,7 @@ namespace CapaPresentacion
             tbTransfTotal.Text = suma.ToString("0.00");
         }
 
-        private void AcomodaTabla()
-        {
-            this.dgvValores.Columns["NUM_CHEQUE"].Width = 50;
-            this.dgvValores.Columns["FECHA_CREDITO"].Width = 50;
-            this.dgvValores.Columns["BANCO"].Width = 90;
-            this.dgvValores.Columns["IMPORTE"].Width = 80;
-        }
-
-        private void AcomodaTablaTransferencia()
-        {
-            //this.dgvValores.Columns["NUM_CHEQUE"].Width = 50;
-            //this.dgvValores.Columns["FECHA_CREDITO"].Width = 50;
-            //this.dgvValores.Columns["BANCO"].Width = 90;
-            //this.dgvValores.Columns["IMPORTE"].Width = 80;
-        }
+        
 
         private void btnAgregaValores_Click(object sender, EventArgs e)
         {
@@ -415,7 +428,7 @@ namespace CapaPresentacion
                     {
                         string numTransf = Convert.ToString(tbNumTransf.Text);
                         DateTime fec = Convert.ToDateTime(dtpTransferencia.Text);
-                        int IdBco = Convert.ToInt32(cbCuentaBanco.ValueMember);
+                        int IdBco = Convert.ToInt32(cbCuentaBanco.SelectedValue);
                         string Bco = Convert.ToString(cbCuentaBanco.Text);
                         string Titu = Convert.ToString(tbTitTransf.Text);
                         decimal Import = Convert.ToDecimal(tbTransfImporte.Text);
@@ -458,7 +471,7 @@ namespace CapaPresentacion
         }
 
         private void btnAceptaRecibo_Click(object sender, EventArgs e)
-        {
+        {            
             if (tbTotalPagado.Text != "0,00")
             {
                 Decimal pagado = Convert.ToDecimal(tbTotalPagado.Text.ToString());
@@ -482,7 +495,6 @@ namespace CapaPresentacion
         {
             try
             {
-                Decimal ImporteTotal = Convert.ToDecimal(tbTotalPagado.Text.ToString());
                 Decimal ImporteEfectivo = 0;
                 Decimal ImporteCheque = 0;
                 Decimal ImporteBanco = 0;
@@ -490,26 +502,28 @@ namespace CapaPresentacion
 
                 string detalleRecibo = tbDetalleRecibo.Text + detalleValores + detalleTransf;
 
-                if (tbEfectivo.Text != "0,00")
+                if (lbltotalEfectivo.Text != "0")
                 {
-                    ImporteEfectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+                    ImporteEfectivo = Convert.ToDecimal(lbltotalEfectivo.Text);
                 }
                 if (tbValores.Text != "0,00")
                 {
-                    ImporteCheque = Convert.ToDecimal(tbValores.Text.ToString());
+                    ImporteCheque = Convert.ToDecimal(tbValores.Text);
                 }
                 if (tbBanco.Text != "0,00")
                 {
-                    ImporteBanco = Convert.ToDecimal(tbBanco.Text.ToString());
+                    ImporteBanco = Convert.ToDecimal(tbBanco.Text);
                 }
 
                 if (tbVuelto.Text != "0,00")
                 {
-                    ImporteVuelto = Convert.ToDecimal(tbVuelto.Text.ToString());
+                    ImporteVuelto = Convert.ToDecimal(tbVuelto.Text);
                 }
 
+                Decimal ImporteTotal = Convert.ToDecimal(tbTotalPagado.Text)-ImporteVuelto;
+
                 string estado = "ACTIVO";
-                string rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, tbDNI.Text, Convert.ToInt32(UserLoginCache.UserId), ImporteEfectivo, ImporteCheque, ImporteBanco, (ImporteTotal-ImporteVuelto), detalleRecibo, estado);
+                string rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, tbDNI.Text, Convert.ToInt32(UserLoginCache.UserId), ImporteEfectivo, ImporteCheque, ImporteBanco,ImporteTotal, detalleRecibo, estado);
                 decimal debe = 0, haber = ImporteTotal;
 
                 if (rpta.Equals("OK"))
@@ -667,6 +681,68 @@ namespace CapaPresentacion
                 ConsultaPorTransferencia();
                 ConsultaPorCheque();
                 this.Close();
+            }
+        }
+
+        private void tbCheqNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void tbNumTransf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void tbEfectivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCheqImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbTransfImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
             }
         }
 

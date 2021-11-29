@@ -758,7 +758,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Modificar EL ESTADO DEL CHEQUE";
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo ANULAR EL CHEQUE";
 
             }
             catch (Exception ex)

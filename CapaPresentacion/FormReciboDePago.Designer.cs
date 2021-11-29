@@ -63,6 +63,8 @@ namespace CapaPresentacion
             this.tbDetalleRecibo = new System.Windows.Forms.TextBox();
             this.tabRecibos = new System.Windows.Forms.TabControl();
             this.tabNuevoRecibo = new System.Windows.Forms.TabPage();
+            this.lbltotalEfectivo = new System.Windows.Forms.TextBox();
+            this.tbNumFact = new System.Windows.Forms.TextBox();
             this.tbDNI = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.tbNumRecibo = new System.Windows.Forms.TextBox();
@@ -117,7 +119,6 @@ namespace CapaPresentacion
             this.label28 = new System.Windows.Forms.Label();
             this.tbNumTransf = new System.Windows.Forms.TextBox();
             this.dtpFechaRecibo = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.tbNumFact = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.tabRecibos.SuspendLayout();
             this.tabNuevoRecibo.SuspendLayout();
@@ -181,6 +182,7 @@ namespace CapaPresentacion
             this.tbEfectivo.Text = "0,00";
             this.tbEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbEfectivo.TextChanged += new System.EventHandler(this.tbEfectivo_TextChanged);
+            this.tbEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEfectivo_KeyPress);
             // 
             // label1
             // 
@@ -513,6 +515,7 @@ namespace CapaPresentacion
             // tabNuevoRecibo
             // 
             this.tabNuevoRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevoRecibo.Controls.Add(this.lbltotalEfectivo);
             this.tabNuevoRecibo.Controls.Add(this.tbNumFact);
             this.tabNuevoRecibo.Controls.Add(this.tbDNI);
             this.tabNuevoRecibo.Controls.Add(this.label21);
@@ -547,6 +550,38 @@ namespace CapaPresentacion
             this.tabNuevoRecibo.Size = new System.Drawing.Size(495, 465);
             this.tabNuevoRecibo.TabIndex = 6;
             this.tabNuevoRecibo.Text = "Recibo de Pago";
+            // 
+            // lbltotalEfectivo
+            // 
+            this.lbltotalEfectivo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbltotalEfectivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.lbltotalEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbltotalEfectivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbltotalEfectivo.ForeColor = System.Drawing.Color.Yellow;
+            this.lbltotalEfectivo.Location = new System.Drawing.Point(409, 83);
+            this.lbltotalEfectivo.Name = "lbltotalEfectivo";
+            this.lbltotalEfectivo.ReadOnly = true;
+            this.lbltotalEfectivo.Size = new System.Drawing.Size(70, 25);
+            this.lbltotalEfectivo.TabIndex = 308;
+            this.lbltotalEfectivo.TabStop = false;
+            this.lbltotalEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lbltotalEfectivo.Visible = false;
+            // 
+            // tbNumFact
+            // 
+            this.tbNumFact.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbNumFact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tbNumFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNumFact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbNumFact.ForeColor = System.Drawing.Color.Gold;
+            this.tbNumFact.Location = new System.Drawing.Point(16, 129);
+            this.tbNumFact.Name = "tbNumFact";
+            this.tbNumFact.ReadOnly = true;
+            this.tbNumFact.Size = new System.Drawing.Size(96, 25);
+            this.tbNumFact.TabIndex = 307;
+            this.tbNumFact.TabStop = false;
+            this.tbNumFact.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNumFact.Visible = false;
             // 
             // tbDNI
             // 
@@ -888,6 +923,7 @@ namespace CapaPresentacion
             this.tbCheqImporte.TabIndex = 215;
             this.tbCheqImporte.Text = "0,00";
             this.tbCheqImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCheqImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCheqImporte_KeyPress);
             // 
             // tbCheqBenef
             // 
@@ -1068,6 +1104,7 @@ namespace CapaPresentacion
             this.tbCheqNumero.Size = new System.Drawing.Size(116, 25);
             this.tbCheqNumero.TabIndex = 203;
             this.tbCheqNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCheqNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCheqNumero_KeyPress);
             // 
             // tabTransferencias
             // 
@@ -1401,6 +1438,7 @@ namespace CapaPresentacion
             this.tbTransfImporte.TabIndex = 225;
             this.tbTransfImporte.Text = "0,00";
             this.tbTransfImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbTransfImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTransfImporte_KeyPress);
             // 
             // tbTitTransf
             // 
@@ -1479,6 +1517,7 @@ namespace CapaPresentacion
             this.tbNumTransf.Size = new System.Drawing.Size(147, 25);
             this.tbNumTransf.TabIndex = 217;
             this.tbNumTransf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNumTransf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumTransf_KeyPress);
             // 
             // dtpFechaRecibo
             // 
@@ -1505,22 +1544,6 @@ namespace CapaPresentacion
             this.dtpFechaRecibo.Text = "22/10/2021";
             this.dtpFechaRecibo.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
             this.dtpFechaRecibo.Visible = false;
-            // 
-            // tbNumFact
-            // 
-            this.tbNumFact.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbNumFact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.tbNumFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbNumFact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbNumFact.ForeColor = System.Drawing.Color.Gold;
-            this.tbNumFact.Location = new System.Drawing.Point(16, 129);
-            this.tbNumFact.Name = "tbNumFact";
-            this.tbNumFact.ReadOnly = true;
-            this.tbNumFact.Size = new System.Drawing.Size(96, 25);
-            this.tbNumFact.TabIndex = 307;
-            this.tbNumFact.TabStop = false;
-            this.tbNumFact.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbNumFact.Visible = false;
             // 
             // FormReciboDePago
             // 
@@ -1636,5 +1659,6 @@ namespace CapaPresentacion
         public System.Windows.Forms.TextBox tbTitTransf;
         public System.Windows.Forms.TextBox tbDNI;
         public System.Windows.Forms.TextBox tbNumFact;
+        private System.Windows.Forms.TextBox lbltotalEfectivo;
     }
 }

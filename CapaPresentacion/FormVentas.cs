@@ -153,11 +153,16 @@ namespace CapaPresentacion
             {
                 tbCliente.Text = "Consumidor Final";
                 tbDni.Text = "0";
+                rbContado.Checked = true;
+                rbContado.Enabled = false;
+                rbCtaCte.Enabled = false;
             }
             else
             {
                 tbCliente.Text = "";
                 tbDni.Text = "";
+                rbContado.Enabled = true;
+                rbCtaCte.Enabled = true;
             }
         }
 

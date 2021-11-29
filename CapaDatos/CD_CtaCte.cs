@@ -410,7 +410,7 @@ namespace CapaDatos
             return dt;
         }
 
-        public DataTable MostrarDetCta(string dni,string fecha1, string fecha2)
+        public DataTable MostrarDetCta(string dni,string fecha1, string fecha2, string asigna)
         {
             DataTable DtResultado = new DataTable("detalle");
             SqlConnection SqlCon = new SqlConnection();
@@ -423,6 +423,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.AddWithValue("@dni", dni);
                 SqlCmd.Parameters.AddWithValue("@fecha1", fecha1);
                 SqlCmd.Parameters.AddWithValue("@fecha2", fecha2);
+                SqlCmd.Parameters.AddWithValue("@asigna", asigna);
 
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
@@ -437,7 +438,7 @@ namespace CapaDatos
             return DtResultado;
         }
 
-        public DataTable MostrarDetCtaCompleto(string dni)
+        public DataTable MostrarDetCtaCompleto(string dni,string asigna)
         {
             DataTable DtResultado = new DataTable("detalle");
             SqlConnection SqlCon = new SqlConnection();
@@ -448,6 +449,7 @@ namespace CapaDatos
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "DetalleCtaCte_Simple";
                 SqlCmd.Parameters.AddWithValue("@dni", dni);
+                SqlCmd.Parameters.AddWithValue("@asigna", asigna);
 
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 

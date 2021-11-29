@@ -74,15 +74,26 @@ namespace CapaPresentacion
 
         private void CargarDetalleCtaCte()
         {
-            if (chekFecha.Checked == true)
+            string asigna = "";
+
+            if (chekMovPend.Checked == true)
             {
-                this.dgvDetCtaCte.DataSource = CN_CtaCte.MostrarDetalleCtaCte(cbCliente.SelectedValue.ToString(), dtpFecha1.Value.ToString("dd/MM/yyyy"), dtpFecha2.Value.ToString("dd/MM/yyyy"));
+                asigna = "S";
+            }
+            else
+            {
+                asigna = "X";
+            }
+
+            if (chekFecha.Checked == true)
+            {               
+                this.dgvDetCtaCte.DataSource = CN_CtaCte.MostrarDetalleCtaCte(cbCliente.SelectedValue.ToString(), dtpFecha1.Value.ToString("dd/MM/yyyy"), dtpFecha2.Value.ToString("dd/MM/yyyy"),asigna);
                 OcultaYAcomodaTabla();
                 CargaSaldoCtaCte();
             }
             else
             {
-                this.dgvDetCtaCte.DataSource = CN_CtaCte.MostrarDetalleCtaCteCompleto(cbCliente.SelectedValue.ToString());
+                this.dgvDetCtaCte.DataSource = CN_CtaCte.MostrarDetalleCtaCteCompleto(cbCliente.SelectedValue.ToString(),asigna);
                 OcultaYAcomodaTabla();
                 CargaSaldoCtaCte();
             }

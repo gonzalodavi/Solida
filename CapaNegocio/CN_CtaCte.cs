@@ -61,14 +61,14 @@ namespace CapaNegocio
             return dt;
         }
 
-        public static DataTable MostrarDetalleCtaCte(string dni,string fecha1, string fecha2)
+        public static DataTable MostrarDetalleCtaCte(string dni,string fecha1, string fecha2,string asigna)
         {
-            return new CD_CtaCte().MostrarDetCta(dni,fecha1,fecha2);
+            return new CD_CtaCte().MostrarDetCta(dni,fecha1,fecha2,asigna);
         }
 
-        public static DataTable MostrarDetalleCtaCteCompleto(string dni)
+        public static DataTable MostrarDetalleCtaCteCompleto(string dni,string asigna)
         {
-            return new CD_CtaCte().MostrarDetCtaCompleto(dni);
+            return new CD_CtaCte().MostrarDetCtaCompleto(dni,asigna);
         }
 
         public Decimal MostrarSaldo(string idcliente)
