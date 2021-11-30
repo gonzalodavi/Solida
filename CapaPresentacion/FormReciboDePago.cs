@@ -17,8 +17,11 @@ namespace CapaPresentacion
         CN_CtaCte objeto = new CN_CtaCte();
         CN_Recibo objeto1 = new CN_Recibo();
         CN_CuentaBancaria objetoBanco = new CN_CuentaBancaria();
-        
 
+        private decimal importeFactura = 0;
+        private decimal importeEfectivo = 0;
+        private decimal importeValores = 0;
+        private decimal importeBanco = 0;
         private DataTable DTDetalles, DTDetallesBco;
         public static int contadorFila = 0, contadorFilaBco;
 
@@ -182,48 +185,78 @@ namespace CapaPresentacion
         
 
         private void HaceCalculo()
-        {
-            decimal importeAPagar = 0;
-            decimal importeEfectivo = 0;
-            decimal importeValores = 0;
-            decimal importeBanco = 0;            
-
+        {  
             if (tbTotalAPagar.Text != "0,00")
             {
-                importeAPagar = Convert.ToDecimal(tbTotalAPagar.Text.Trim());
-            }
+                importeFactura = Convert.ToDecimal(tbTotalAPagar.Text.Trim());
+            }            
 
             if (tbEfectivo.Text != "0,00" && tbEfectivo.Text != "" && tbEfectivo.Text != "," && tbEfectivo.Text != "0")
             {                
-                importeEfectivo = Convert.ToDecimal(tbEfectivo.Text.Trim());
+                importeEfectivo = Convert.ToDecimal(tbEfectivo.Text.Trim());                
+            }
+            else
+            {
+                importeEfectivo = 0;
             }
 
             if (tbValores.Text != "0,00")
             {
                 importeValores = Convert.ToDecimal(tbValores.Text.Trim());
             }
+            else
+            {
+                importeValores = 0;
+            }
 
             if (tbBanco.Text != "0,00")
             {
                 importeBanco = Convert.ToDecimal(tbBanco.Text.Trim());
             }
+            else
+            {
+                importeBanco = 0;
+            }
 
             decimal importeAbonado = importeEfectivo + importeValores + importeBanco;
-            decimal vuelto =  importeAbonado - importeAPagar;
 
-            if (vuelto > 0)
-            {                
-                importeEfectivo = importeEfectivo - vuelto;
-                lbltotalEfectivo.Text = importeEfectivo.ToString("0.00");
-                tbVuelto.Text = vuelto.ToString("0.00");
+            if(importeAbonado > 0)
+            {
+                tbTotalPagado.Text = importeAbonado.ToString("0.00");
             }
             else
             {
-                lbltotalEfectivo.Text = importeEfectivo.ToString("0.00");
+                tbTotalPagado.Text = "0,00";
             }
+            
 
-            tbTotalPagado.Text = importeAbonado.ToString("0.00");
-                        
+            if (importeAbonado > importeFactura)
+            {
+                lblErrorLimiteAbonado.Visible = true;
+            }
+            else
+            {
+                lblErrorLimiteAbonado.Visible = false;                            
+            }
+            
+            if(chekCambioJusto.Checked == false)
+            {
+                decimal dinero = 0, vuelto = 0;
+                if (tbDineroEntregado.Text != "0,00" && tbDineroEntregado.Text != "" && tbDineroEntregado.Text != "," && tbDineroEntregado.Text != "0")
+                {
+                    dinero = Convert.ToDecimal(tbDineroEntregado.Text.Trim());
+                }
+
+                if (dinero > 0)
+                {
+                    vuelto = dinero - importeEfectivo;
+                    tbVuelto.Text = vuelto.ToString("0.00");
+                }
+                else
+                {
+                    tbVuelto.Text = "0,00";
+                }
+            }
         }
 
         private void tbTotalAPagar_TextChanged(object sender, EventArgs e)
@@ -250,7 +283,7 @@ namespace CapaPresentacion
         private void btnGuardarValores_Click(object sender, EventArgs e)
         {           
             detalleValores = "";
-            if (dgvValores.SelectedRows.Count > 0)
+            if (dgvValores.Rows.Count > 0)
             {
                 foreach (DataGridViewRow ElRow in dgvValores.Rows)
                 {
@@ -476,13 +509,20 @@ namespace CapaPresentacion
             {
                 Decimal pagado = Convert.ToDecimal(tbTotalPagado.Text.ToString());
                 Decimal apagar = Convert.ToDecimal(tbTotalAPagar.Text.ToString());
-                if (pagado >= apagar)
+                if (pagado == apagar)
                 {
                     HacerRecibo();
                 }
                 else
                 {
-                    MensajeError("No se permiten pagos parciales en operaciones de CONTADO");
+                    if (pagado < apagar)
+                    {
+                        MensajeError("No se permiten pagos parciales en operaciones de CONTADO");
+                    }
+                    else
+                    {
+                        MensajeError("No se permiten pagos Superiores al Facturado en operaciones de CONTADO");
+                    }
                 }
             }
             else
@@ -495,41 +535,16 @@ namespace CapaPresentacion
         {
             try
             {
-                Decimal ImporteEfectivo = 0;
-                Decimal ImporteCheque = 0;
-                Decimal ImporteBanco = 0;
-                Decimal ImporteVuelto = 0;
-
                 string detalleRecibo = tbDetalleRecibo.Text + detalleValores + detalleTransf;
-
-                if (lbltotalEfectivo.Text != "0")
-                {
-                    ImporteEfectivo = Convert.ToDecimal(lbltotalEfectivo.Text);
-                }
-                if (tbValores.Text != "0,00")
-                {
-                    ImporteCheque = Convert.ToDecimal(tbValores.Text);
-                }
-                if (tbBanco.Text != "0,00")
-                {
-                    ImporteBanco = Convert.ToDecimal(tbBanco.Text);
-                }
-
-                if (tbVuelto.Text != "0,00")
-                {
-                    ImporteVuelto = Convert.ToDecimal(tbVuelto.Text);
-                }
-
-                Decimal ImporteTotal = Convert.ToDecimal(tbTotalPagado.Text)-ImporteVuelto;
-
+                decimal ImporteTotal = importeEfectivo + importeBanco + importeValores;
                 string estado = "ACTIVO";
-                string rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, tbDNI.Text, Convert.ToInt32(UserLoginCache.UserId), ImporteEfectivo, ImporteCheque, ImporteBanco,ImporteTotal, detalleRecibo, estado);
+                string rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, tbDNI.Text, Convert.ToInt32(UserLoginCache.UserId), importeEfectivo, importeValores, importeBanco,ImporteTotal, detalleRecibo, estado);
                 decimal debe = 0, haber = ImporteTotal;
 
                 if (rpta.Equals("OK"))
                 {
                     this.MensajeOk("Se Generó con éxito el RECIBO");
-                    if(ImporteCheque > 0)
+                    if(importeValores > 0)
                     {
                         string rptActCheq = CN_Cheque.ActivarChequesPendientes("PENDIENTE", "ACTIVO");
                         if (rptActCheq.Equals("OK"))
@@ -542,7 +557,7 @@ namespace CapaPresentacion
                         }
                     }
 
-                    if(ImporteBanco > 0)
+                    if(importeBanco > 0)
                     {
                         string rptActTransf = CN_Banco.ActivarTransfPendientes("PENDIENTE", "ACTIVO");
                         if (rptActTransf.Equals("OK"))
@@ -555,12 +570,12 @@ namespace CapaPresentacion
                         }
                     }
 
-                    rpta = CN_CtaCte.Insertar(tbDNI.Text, dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe, haber, ImporteCheque, ImporteEfectivo, ImporteBanco, (debe - haber), ImporteTotal, 0, "S", estado);
+                    rpta = CN_CtaCte.Insertar(tbDNI.Text, dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe, haber, importeValores, importeEfectivo, importeBanco, (debe - haber), ImporteTotal, 0, "S", estado);
                     if (rpta.Equals("OK"))
                     {
                         this.MensajeOk("Se Cargo recibo en CTA CTE");
 
-                        rpta = CN_CtaCte.Modificar(tbNumFact.Text, "FACTURA DE VENTA", ImporteCheque, ImporteEfectivo, ImporteBanco, ImporteTotal,ImporteTotal, "S");
+                        rpta = CN_CtaCte.Modificar(tbNumFact.Text, "FACTURA DE VENTA", importeValores, importeEfectivo, importeBanco, ImporteTotal,ImporteTotal, "S");
                         if (rpta.Equals("OK"))
                         {
                             this.MensajeOk("Se Modifico la asignacion en cta cte.");
@@ -744,6 +759,26 @@ namespace CapaPresentacion
             {
                 e.Handled = true;
             }
+        }
+
+        private void chekCambioJusto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chekCambioJusto.Checked == true)
+            {
+                tbDineroEntregado.Text = "0,00";
+                tbVuelto.Text = "0,00";
+                tbDineroEntregado.Enabled = false;
+            }
+            else
+            {
+                tbDineroEntregado.Text = "0,00";
+                tbDineroEntregado.Enabled = true;
+            }
+        }
+
+        private void tbDineroEntregado_TextChanged(object sender, EventArgs e)
+        {
+            HaceCalculo();
         }
 
         private void btnGuardarTransf_Click(object sender, EventArgs e)

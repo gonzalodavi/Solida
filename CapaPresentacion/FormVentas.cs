@@ -20,8 +20,8 @@ namespace CapaPresentacion
         CN_Recibo objeto1 = new CN_Recibo();
         CN_Ventas objeto = new CN_Ventas();
         private DataTable DTDetalles;
-        private double TotIva;
-        private double Totales;
+        private decimal TotIva;
+        private decimal Totales;
         public static int contadorFila = 0;
         private string comprobte;
         private string nroRecibo;
@@ -67,6 +67,13 @@ namespace CapaPresentacion
             MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void PoneACeroConstructores()
+        {
+            TotIva = 0;
+            Totales = 0;
+            contadorFila = 0;
+        }
+
         private void CargarGrilla()
         {
             if (chekVerAnulados.Checked == false)
@@ -104,7 +111,6 @@ namespace CapaPresentacion
             chekConsumidorFinal.Checked = true;
             this.dgvClientes.Columns.Clear();
             this.dgvProductos.Columns.Clear();
-
         }
 
         private void LimpiarDatosCarga()
@@ -316,10 +322,10 @@ namespace CapaPresentacion
                 row["IVA"] = Convert.ToDecimal(tbSubtotalIVA.Text);
                 row["SUBTOTAL"] = Convert.ToDecimal(tbSubtotal.Text);
 
-                TotIva += Convert.ToDouble(row["IVA"].ToString());
+                TotIva += Convert.ToDecimal(row["IVA"].ToString());
                 tbTotalIVA.Text = TotIva.ToString("0.00");
 
-                Totales += Convert.ToDouble(row["SUBTOTAL"].ToString());
+                Totales += Convert.ToDecimal(row["SUBTOTAL"].ToString());
                 tbTotalFact.Text = Totales.ToString("0.00");
 
                 DTDetalles.Rows.Add(row);
@@ -359,8 +365,8 @@ namespace CapaPresentacion
 
                             foreach (DataGridViewRow r in dgvDetVent.Rows)
                             {
-                                TotIva += Convert.ToDouble(r.Cells["IVA"].Value);
-                                Totales += Convert.ToDouble(r.Cells["SUBTOTAL"].Value);
+                                TotIva += Convert.ToDecimal(r.Cells["IVA"].Value);
+                                Totales += Convert.ToDecimal(r.Cells["SUBTOTAL"].Value);
                             }
 
                             tbTotalFact.Text = Totales.ToString("0.00");
@@ -386,8 +392,8 @@ namespace CapaPresentacion
 
                         foreach (DataGridViewRow r in dgvDetVent.Rows)
                         {
-                            TotIva += Convert.ToDouble(r.Cells["IVA"].Value);
-                            Totales += Convert.ToDouble(r.Cells["SUBTOTAL"].Value);
+                            TotIva += Convert.ToDecimal(r.Cells["IVA"].Value);
+                            Totales += Convert.ToDecimal(r.Cells["SUBTOTAL"].Value);
                         }
 
                         tbTotalFact.Text = Totales.ToString("0.00");
@@ -407,10 +413,10 @@ namespace CapaPresentacion
                     row["IVA"] = Convert.ToDecimal(tbSubtotalIVA.Text);
                     row["SUBTOTAL"] = Convert.ToDecimal(tbSubtotal.Text);
 
-                    TotIva += Convert.ToDouble(row["IVA"].ToString());
+                    TotIva += Convert.ToDecimal(row["IVA"].ToString());
                     tbTotalIVA.Text = TotIva.ToString("0.00");
 
-                    Totales += Convert.ToDouble(row["SUBTOTAL"].ToString());
+                    Totales += Convert.ToDecimal(row["SUBTOTAL"].ToString());
                     tbTotalFact.Text = Totales.ToString("0.00");
 
                     DTDetalles.Rows.Add(row);
@@ -429,10 +435,10 @@ namespace CapaPresentacion
                     int IndiceFila = dgvDetVent.CurrentCell.RowIndex;
                     DataRow row = DTDetalles.Rows[IndiceFila];
 
-                    TotIva -= Convert.ToDouble(row["IVA"].ToString());
+                    TotIva -= Convert.ToDecimal(row["IVA"].ToString());
                     tbTotalIVA.Text = TotIva.ToString("0.00");
 
-                    Totales -= Convert.ToDouble(row["SUBTOTAL"].ToString());
+                    Totales -= Convert.ToDecimal(row["SUBTOTAL"].ToString());
                     tbTotalFact.Text = Totales.ToString("0.00");
 
                     DTDetalles.Rows.Remove(row);
@@ -520,6 +526,7 @@ namespace CapaPresentacion
                                     DTDetalles.Rows.Clear();
                                     BuscarUltimaVenta();
                                     tabVentas.SelectedTab = tabListadoVentas;
+                                    PoneACeroConstructores();
                                 }
                                 else
                                 {
@@ -539,6 +546,8 @@ namespace CapaPresentacion
                 MensajeError("Agregue un Producto y su Cantidad al Detalle");
             }
         }
+
+
 
         private void BuscaNumeroRecibo()
         {
