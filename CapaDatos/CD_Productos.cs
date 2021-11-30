@@ -145,6 +145,105 @@ namespace CapaDatos
             conexion.CerrarConexion();
         }
 
+        public string ConsultaExisteProductoEnCompra(int id)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "BuscarProductoEnCpra";
+                SqlCmd.Parameters.AddWithValue("@id", id);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
+
+        public string ConsultaExisteProductoEnRemito(int id)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "BuscarProductoEnRemito";
+                SqlCmd.Parameters.AddWithValue("@id", id);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
+
+        public string ConsultaExisteProductoEnVta(int id)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "BuscarProductoEnVtas";
+                SqlCmd.Parameters.AddWithValue("@id", id);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
+
     }
     
 }

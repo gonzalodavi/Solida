@@ -73,5 +73,25 @@ namespace CapaNegocio
             objetoCD.EliminaProducto(Convert.ToInt32(id));
         }
 
+        public static string ConsultaProductoExisteEnCompra(int id)
+        {
+            CD_Productos Obj = new CD_Productos();
+            string rpta = Obj.ConsultaExisteProductoEnCompra(id);
+            return rpta;
+        }
+
+        public static string ConsultaProductoExisteEnRemito(int id)
+        {
+            CD_Productos Obj = new CD_Productos();
+            string rpta = Obj.ConsultaExisteProductoEnRemito(id);
+            return rpta;
+        }
+
+        public static string ConsultaProductoExisteEnVta(int id)
+        {
+            CD_Productos Obj = new CD_Productos();
+            string rpta = Obj.ConsultaExisteProductoEnVta(id);
+            return rpta;
+        }
     }
 }

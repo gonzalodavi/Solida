@@ -34,6 +34,18 @@ namespace CapaPresentacion
             CargarGrilla();
         }
 
+        //Mostrar Mensaje de Confirmacion
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         private void CargarGrilla()
         {
             CN_Productos objeto = new CN_Productos();
@@ -236,20 +248,64 @@ namespace CapaPresentacion
         {
             if (dgvProductos.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("¿Desea ELIMINAR el Producto seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                string idProd = dgvProductos.CurrentRow.Cells["ID"].Value.ToString();
+                try
                 {
-                    try
+                    string rpta = CN_Productos.ConsultaProductoExisteEnCompra(Convert.ToInt32(idProd));
+                    if (rpta == "OK")
                     {
-                        string idProd = dgvProductos.CurrentRow.Cells["ID"].Value.ToString();
-                        objeto.EliminarProducto(idProd);
-                        MessageBox.Show("Se eliminó correctamente el Producto seleccionado");
-                        CargarGrilla();
+                        this.MensajeError("No se permite eliminar un Producto utilizado en Compras");
                     }
-                    catch(Exception ex)
+                    else
                     {
-                        MessageBox.Show("No se pudo realizar la operacion: " + ex);
-                    }
-                   
+                        if (rpta == "NO")
+                        {
+                            rpta = CN_Productos.ConsultaProductoExisteEnRemito(Convert.ToInt32(idProd));
+                            if (rpta == "OK")
+                            {
+                                this.MensajeError("No se permite eliminar un Producto utilizado en Remitos");
+                            }
+                            else
+                            {
+                                if (rpta == "NO")
+                                {
+                                    rpta = CN_Productos.ConsultaProductoExisteEnVta(Convert.ToInt32(idProd));
+                                    if (rpta == "OK")
+                                    {
+                                        this.MensajeError("No se permite eliminar un Producto utilizado en Ventas");
+                                    }
+                                    else
+                                    {
+                                        if (rpta == "NO")
+                                        {
+                                            if (MessageBox.Show("¿Desea ELIMINAR el Producto seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                            {
+                                                objeto.EliminarProducto(idProd);
+                                                MessageBox.Show("Se eliminó correctamente el Producto seleccionado");
+                                                CargarGrilla();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MensajeError(rpta);
+                                        }
+                                    }                                    
+                                }
+                                else
+                                {
+                                    MensajeError(rpta);
+                                }
+                            }                            
+                        }
+                        else
+                        {
+                            MensajeError(rpta);
+                        }
+                    }                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo realizar la operacion: " + ex);
                 }
             }
             else

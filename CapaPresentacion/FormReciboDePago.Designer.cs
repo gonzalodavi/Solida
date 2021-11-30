@@ -515,6 +515,7 @@ namespace CapaPresentacion
             // tabNuevoRecibo
             // 
             this.tabNuevoRecibo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevoRecibo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabNuevoRecibo.Controls.Add(this.lbltotalEfectivo);
             this.tabNuevoRecibo.Controls.Add(this.tbNumFact);
             this.tabNuevoRecibo.Controls.Add(this.tbDNI);
