@@ -1720,10 +1720,10 @@
             this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label26.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label26.Location = new System.Drawing.Point(802, 113);
+            this.label26.Location = new System.Drawing.Point(817, 113);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(117, 18);
-            this.label26.TabIndex = 159;
+            this.label26.Size = new System.Drawing.Size(102, 18);
+            this.label26.TabIndex = 197;
             this.label26.Text = "MARCA";
             this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1734,10 +1734,10 @@
             this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label27.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label27.Location = new System.Drawing.Point(688, 113);
+            this.label27.Location = new System.Drawing.Point(702, 113);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(116, 18);
-            this.label27.TabIndex = 158;
+            this.label27.TabIndex = 196;
             this.label27.Text = "MODELO";
             this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1748,10 +1748,10 @@
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label28.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label28.Location = new System.Drawing.Point(615, 113);
+            this.label28.Location = new System.Drawing.Point(638, 113);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(74, 18);
-            this.label28.TabIndex = 157;
+            this.label28.Size = new System.Drawing.Size(65, 18);
+            this.label28.TabIndex = 195;
             this.label28.Text = "CANT.";
             this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1762,10 +1762,10 @@
             this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label29.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label29.Location = new System.Drawing.Point(422, 96);
+            this.label29.Location = new System.Drawing.Point(472, 96);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(194, 18);
-            this.label29.TabIndex = 156;
+            this.label29.Size = new System.Drawing.Size(167, 18);
+            this.label29.TabIndex = 194;
             this.label29.Text = "IMPORTE";
             this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1776,10 +1776,10 @@
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label30.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label30.Location = new System.Drawing.Point(525, 113);
+            this.label30.Location = new System.Drawing.Point(555, 113);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(91, 18);
-            this.label30.TabIndex = 155;
+            this.label30.Size = new System.Drawing.Size(84, 18);
+            this.label30.TabIndex = 193;
             this.label30.Text = "VENTA $";
             this.label30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1790,10 +1790,10 @@
             this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label31.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label31.Location = new System.Drawing.Point(291, 113);
+            this.label31.Location = new System.Drawing.Point(298, 113);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(132, 18);
-            this.label31.TabIndex = 151;
+            this.label31.Size = new System.Drawing.Size(175, 18);
+            this.label31.TabIndex = 189;
             this.label31.Text = "RUBRO";
             this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1804,10 +1804,10 @@
             this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label32.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label32.Location = new System.Drawing.Point(422, 113);
+            this.label32.Location = new System.Drawing.Point(472, 113);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(104, 18);
-            this.label32.TabIndex = 152;
+            this.label32.Size = new System.Drawing.Size(84, 18);
+            this.label32.TabIndex = 190;
             this.label32.Text = "COSTO $";
             this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1820,8 +1820,8 @@
             this.label33.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label33.Location = new System.Drawing.Point(17, 113);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(53, 18);
-            this.label33.TabIndex = 153;
+            this.label33.Size = new System.Drawing.Size(50, 18);
+            this.label33.TabIndex = 191;
             this.label33.Text = "ID";
             this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1834,9 +1834,9 @@
             this.label34.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label34.Location = new System.Drawing.Point(66, 113);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(226, 18);
-            this.label34.TabIndex = 154;
-            this.label34.Text = "NOMBRE";
+            this.label34.Size = new System.Drawing.Size(235, 18);
+            this.label34.TabIndex = 192;
+            this.label34.Text = "NOMBRE Y UNIDAD DE MEDIDA";
             this.label34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dgvProductos
@@ -2049,15 +2049,6 @@
         private Guna.UI.WinForms.GunaDateTimePicker dtpFecha2;
         private Guna.UI.WinForms.GunaSwitch chekVerAnulados;
         private Guna.UI.WinForms.GunaLabel lblChekAnul;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
@@ -2114,5 +2105,14 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCuit;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
     }
 }

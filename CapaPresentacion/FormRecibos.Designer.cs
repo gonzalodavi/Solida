@@ -130,9 +130,8 @@
             this.btnAgregaCheques = new FontAwesome.Sharp.IconButton();
             this.label29 = new System.Windows.Forms.Label();
             this.tabTransferencias = new System.Windows.Forms.TabPage();
-            this.dgvTransferencias = new System.Windows.Forms.DataGridView();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.tbImporteTransf = new System.Windows.Forms.TextBox();
             this.btnGuardarTransf = new FontAwesome.Sharp.IconButton();
             this.btnEliminaTransf = new FontAwesome.Sharp.IconButton();
@@ -142,7 +141,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
             this.cbCuentaBanco = new System.Windows.Forms.ComboBox();
             this.dtpTransferencia = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label38 = new System.Windows.Forms.Label();
@@ -153,8 +151,10 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.tbNumTransf = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.dgvTransferencias = new System.Windows.Forms.DataGridView();
+            this.label37 = new System.Windows.Forms.Label();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabRecibos.SuspendLayout();
             this.tabConsultaRecibos.SuspendLayout();
@@ -1244,6 +1244,7 @@
             this.tbImporteCheq.TabIndex = 167;
             this.tbImporteCheq.TabStop = false;
             this.tbImporteCheq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbImporteCheq.Visible = false;
             // 
             // label27
             // 
@@ -1762,89 +1763,33 @@
             this.tabTransferencias.TabIndex = 6;
             this.tabTransferencias.Text = "Transferencias";
             // 
-            // dgvTransferencias
+            // label45
             // 
-            this.dgvTransferencias.AllowUserToAddRows = false;
-            this.dgvTransferencias.AllowUserToDeleteRows = false;
-            this.dgvTransferencias.AllowUserToResizeColumns = false;
-            this.dgvTransferencias.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Yellow;
-            this.dgvTransferencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvTransferencias.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvTransferencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTransferencias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvTransferencias.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTransferencias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvTransferencias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvTransferencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvTransferencias.ColumnHeadersVisible = false;
-            this.dgvTransferencias.EnableHeadersVisualStyles = false;
-            this.dgvTransferencias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvTransferencias.Location = new System.Drawing.Point(60, 239);
-            this.dgvTransferencias.MaximumSize = new System.Drawing.Size(900, 700);
-            this.dgvTransferencias.Name = "dgvTransferencias";
-            this.dgvTransferencias.ReadOnly = true;
-            this.dgvTransferencias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvTransferencias.RowHeadersVisible = false;
-            this.dgvTransferencias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTransferencias.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvTransferencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransferencias.Size = new System.Drawing.Size(829, 232);
-            this.dgvTransferencias.TabIndex = 133;
-            this.dgvTransferencias.TabStop = false;
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label45.AutoEllipsis = true;
+            this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label45.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label45.Location = new System.Drawing.Point(795, 218);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(95, 18);
+            this.label45.TabIndex = 343;
+            this.label45.Text = "IMPORTE";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnRegresar
+            // label43
             // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnRegresar.IconColor = System.Drawing.Color.White;
-            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(812, 28);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
-            this.btnRegresar.TabIndex = 79;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitulo.AutoEllipsis = true;
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblTitulo.Location = new System.Drawing.Point(430, 100);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(177, 18);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Recibos de Ingreso";
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label43.AutoEllipsis = true;
+            this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label43.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label43.Location = new System.Drawing.Point(587, 218);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(212, 18);
+            this.label43.TabIndex = 342;
+            this.label43.Text = "TITULAR";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tbImporteTransf
             // 
@@ -1860,6 +1805,7 @@
             this.tbImporteTransf.TabIndex = 340;
             this.tbImporteTransf.TabStop = false;
             this.tbImporteTransf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbImporteTransf.Visible = false;
             // 
             // btnGuardarTransf
             // 
@@ -2007,19 +1953,6 @@
             this.label35.TabIndex = 330;
             this.label35.Text = "Nº";
             this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label37.AutoEllipsis = true;
-            this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label37.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label37.Location = new System.Drawing.Point(59, 234);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(831, 238);
-            this.label37.TabIndex = 334;
-            this.label37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // cbCuentaBanco
             // 
@@ -2169,33 +2102,102 @@
             this.tbNumTransf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbNumTransf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumTransf_KeyPress);
             // 
-            // label43
+            // dgvTransferencias
             // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label43.AutoEllipsis = true;
-            this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label43.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label43.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label43.Location = new System.Drawing.Point(587, 218);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(212, 18);
-            this.label43.TabIndex = 342;
-            this.label43.Text = "TITULAR";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.dgvTransferencias.AllowUserToAddRows = false;
+            this.dgvTransferencias.AllowUserToDeleteRows = false;
+            this.dgvTransferencias.AllowUserToResizeColumns = false;
+            this.dgvTransferencias.AllowUserToResizeRows = false;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Yellow;
+            this.dgvTransferencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvTransferencias.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvTransferencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTransferencias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.dgvTransferencias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTransferencias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvTransferencias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvTransferencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTransferencias.ColumnHeadersVisible = false;
+            this.dgvTransferencias.EnableHeadersVisualStyles = false;
+            this.dgvTransferencias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.dgvTransferencias.Location = new System.Drawing.Point(60, 239);
+            this.dgvTransferencias.MaximumSize = new System.Drawing.Size(900, 700);
+            this.dgvTransferencias.Name = "dgvTransferencias";
+            this.dgvTransferencias.ReadOnly = true;
+            this.dgvTransferencias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTransferencias.RowHeadersVisible = false;
+            this.dgvTransferencias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTransferencias.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvTransferencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTransferencias.Size = new System.Drawing.Size(829, 232);
+            this.dgvTransferencias.TabIndex = 133;
+            this.dgvTransferencias.TabStop = false;
             // 
-            // label45
+            // label37
             // 
-            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label45.AutoEllipsis = true;
-            this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label45.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label45.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label45.Location = new System.Drawing.Point(795, 218);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(95, 18);
-            this.label45.TabIndex = 343;
-            this.label45.Text = "IMPORTE";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label37.AutoEllipsis = true;
+            this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label37.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label37.Location = new System.Drawing.Point(59, 234);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(831, 238);
+            this.label37.TabIndex = 334;
+            this.label37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 25;
+            this.btnRegresar.Location = new System.Drawing.Point(812, 28);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
+            this.btnRegresar.TabIndex = 79;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitulo.AutoEllipsis = true;
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblTitulo.Location = new System.Drawing.Point(430, 100);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(177, 18);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Recibos de Ingreso";
             // 
             // FormRecibos
             // 

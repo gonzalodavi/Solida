@@ -23,6 +23,7 @@ namespace CapaDatos
         private string _Estado;
         private string _Dni;
         private int _UserID;
+        private decimal _TotalVenta;
 
         public int IdVenta
         {
@@ -66,12 +67,18 @@ namespace CapaDatos
             set { _UserID = value; }
         }
 
+        public decimal TotalVenta
+        {
+            get { return _TotalVenta; }
+            set { _TotalVenta = value; }
+        }
+
         public CD_Ventas()
         {
         }
 
         public CD_Ventas(int idventa, string sucursal, string numventa, DateTime fechaventa,
-            string estado, string dni, int idusuario)
+            string estado, string dni, int idusuario, decimal totalvta)
         {
             this.IdVenta = idventa;
             this.Sucursal = sucursal;
@@ -80,6 +87,7 @@ namespace CapaDatos
             this.Estado = estado;
             this.Dni = dni;
             this.UserID = idusuario;
+            this.TotalVenta = totalvta; 
         }
 
         public DataTable MostrarSucursales()
@@ -138,6 +146,8 @@ namespace CapaDatos
             }
             return DtResultado;
         }
+
+        
 
         public string Insertar(CD_Ventas Venta, List<CD_DetallesVentas> DetallesVentas)
         {
@@ -203,9 +213,15 @@ namespace CapaDatos
                 ParUser.Value = Venta.UserID;
                 SqlCmd.Parameters.Add(ParUser);
 
+                SqlParameter ParTotalVta = new SqlParameter();
+                ParTotalVta.ParameterName = "@total";
+                ParTotalVta.SqlDbType = SqlDbType.Money;
+                ParTotalVta.Value = Venta.TotalVenta;
+                SqlCmd.Parameters.Add(ParTotalVta);
+
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se Ingreso el Registro";
 
                 if (rpta.Equals("OK"))
                 {
@@ -224,10 +240,7 @@ namespace CapaDatos
                 }
                 if (rpta.Equals("OK"))
                 {
-                    SqlTra.Commit();
-                    DisminuirStock(this.IdVenta);
-                    this.IdVenta = Convert.ToInt32(SqlCmd.Parameters["@idventa"].Value);
-                    AumentaSaldoCliente(Venta.IdVenta);
+                    SqlTra.Commit();                    
                 }
                 else
                 {
@@ -406,8 +419,8 @@ namespace CapaDatos
             command.Parameters.AddWithValue("@idventa", venta.IdVenta);
             command.ExecuteNonQuery();
             conectar.Close();
-            AumentarStock(venta.IdVenta);
-            DisminuyeSaldoCliente(venta.IdVenta);
+            //AumentarStock(venta.IdVenta);
+            //DisminuyeSaldoCliente(venta.IdVenta);
         }
 
         public DataTable BuscarRegistros(string fechainicial, string fechafin)
@@ -461,5 +474,40 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return numero;
         }
+
+        public string ConsultarVentaAsignada(string nrocomprob)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "ConsultaSiVentaAsignada";
+                SqlCmd.Parameters.AddWithValue("@nrocomprob", nrocomprob);
+
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
+
     }
 }

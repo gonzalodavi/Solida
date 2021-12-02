@@ -141,6 +141,7 @@ namespace CapaPresentacion
             dtpFechaRecibo.Value = DateTime.Now;
             dtpCheqEmision.Value = DateTime.Now;
             dtpCheqCredito.Value = DateTime.Now;
+            dtpTransferencia.Value = DateTime.Now;
         }
 
         private void ConsultaPorCheque()
@@ -413,10 +414,12 @@ namespace CapaPresentacion
                     int IdBco = Convert.ToInt32(cbCuentaBanco.SelectedValue);
                     string Bco = Convert.ToString(cbCuentaBanco.Text);                    
                     string Titu = Convert.ToString(tbTitTransf.Text);
-                    decimal Import = Convert.ToDecimal(tbTransfImporte.Text);
+                    decimal debe = Convert.ToDecimal(tbTransfImporte.Text);
+                    decimal haber = 0;
+                    decimal Import = debe - haber;
                     string estad = "PENDIENTE";
 
-                    string respta1 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numTransf, fec, IdBco, Bco, Titu, Import, estad);
+                    string respta1 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
 
                     if (respta1.Equals("OK"))
                     {
@@ -464,10 +467,12 @@ namespace CapaPresentacion
                         int IdBco = Convert.ToInt32(cbCuentaBanco.SelectedValue);
                         string Bco = Convert.ToString(cbCuentaBanco.Text);
                         string Titu = Convert.ToString(tbTitTransf.Text);
-                        decimal Import = Convert.ToDecimal(tbTransfImporte.Text);
+                        decimal debe = Convert.ToDecimal(tbTransfImporte.Text);
+                        decimal haber = 0;
+                        decimal Import = debe - haber;
                         string estad = "PENDIENTE";
 
-                        string respta2 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numTransf, fec, IdBco, Bco, Titu, Import, estad);
+                        string respta2 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
 
                         if (respta2.Equals("OK"))
                         {

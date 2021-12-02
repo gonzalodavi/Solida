@@ -225,19 +225,8 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
-                if (rpta.Equals("OK"))
-                {
-                    this.Id = Convert.ToInt32(SqlCmd.Parameters["@id"].Value);
-                    if(this.Tipo == "CREDITO")
-                    {
-                        DisminuirSaldoCliente(Nota.Id);
-                    }
-                    else
-                    {
-                        AumentarSaldoCliente(Nota.Id);
-                    }
-                }
+                rpta = SqlCmd.ExecuteNonQuery() == 2 ? "OK" : "NO se Ingreso el Registro";
+
             }
             catch (Exception ex)
             {
@@ -249,26 +238,46 @@ namespace CapaDatos
             }
             return rpta;
         }
-        public void AnularNota(CD_NotaCRDB nota)
-        {
-            SqlCommand command = new SqlCommand("AnularNota", conectar)
-            {
-                CommandType = CommandType.StoredProcedure
-            };
-            conectar.Open();
-            command.Parameters.AddWithValue("@idnota", nota.Id);
-            command.ExecuteNonQuery();
-            conectar.Close();
 
-            if (nota.Tipo == "CREDITO")
+        public string AnularNota(CD_NotaCRDB nota)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
             {
-                AumentarSaldoCliente(nota.Id);
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "AnularNota";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParProveedor = new SqlParameter();
+                ParProveedor.ParameterName = "@idnota";
+                ParProveedor.SqlDbType = SqlDbType.VarChar;
+                ParProveedor.Size = 50;
+                ParProveedor.Value = nota.Id;
+                SqlCmd.Parameters.Add(ParProveedor);
+
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 2 ? "OK" : "NO se ANULO el Registro";
+
+
             }
-            else
+            catch (Exception ex)
             {
-                DisminuirSaldoCliente(nota.Id);
+                rpta = ex.Message;
             }
-        }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }          
 
         public string DisminuirSaldoCliente(int idnota)
         {

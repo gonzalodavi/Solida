@@ -81,14 +81,12 @@ namespace CapaPresentacion
                 this.dgvVentas.DataSource = CN_Ventas.Mostrar();
                 this.dgvVentas.Columns[0].Visible = false;
                 this.dgvVentas.Columns[1].Visible = false;
-
             }
             else
             {
                 this.dgvVentas.DataSource = CN_Ventas.MostrarAnulados();
                 this.dgvVentas.Columns[0].Visible = false;
                 this.dgvVentas.Columns[1].Visible = false;
-
             }
         }
 
@@ -138,7 +136,7 @@ namespace CapaPresentacion
         {
             DTDetalles = new DataTable();
             DTDetalles.Columns.Add("PRODUCTO", Type.GetType("System.String"));
-            DTDetalles.Columns.Add("CANT", Type.GetType("System.Int32"));
+            DTDetalles.Columns.Add("CANT", Type.GetType("System.Decimal"));
             DTDetalles.Columns.Add("IDPRODUCTO", Type.GetType("System.Int32"));
             DTDetalles.Columns.Add("PRECIO", Type.GetType("System.Decimal"));
             DTDetalles.Columns.Add("IVA", Type.GetType("System.Decimal"));
@@ -210,24 +208,28 @@ namespace CapaPresentacion
 
             //dgvProductos.Columns[0].Visible = false;
             //dgvProductos.Columns[1].Visible = false;
-            dgvProductos.Columns[2].Visible = false;
-            //dgvProductos.Columns[3].Visible = false;
-            dgvProductos.Columns[4].Visible = false;
-            //dgvProductos.Columns[5].Visible = false;
+            //dgvProductos.Columns[2].Visible = false;
+            dgvProductos.Columns[3].Visible = false;
+            //dgvProductos.Columns[4].Visible = false;
+            dgvProductos.Columns[5].Visible = false;
             //dgvProductos.Columns[6].Visible = false;
             //dgvProductos.Columns[7].Visible = false;
-            dgvProductos.Columns[8].Visible = false;
-            //dgvProductos.Columns[9].Visible = false;
+            //dgvProductos.Columns[8].Visible = false;
+            dgvProductos.Columns[9].Visible = false;
             //dgvProductos.Columns[10].Visible = false;
+            //dgvProductos.Columns[11].Visible = false;
+            dgvProductos.Columns[12].Visible = false;
 
             this.dgvProductos.Columns[0].Width = 40;
             this.dgvProductos.Columns[1].Width = 150;
-            this.dgvProductos.Columns[3].Width = 100;
-            this.dgvProductos.Columns[5].Width = 70;
+            this.dgvProductos.Columns[2].Width = 30;
+            this.dgvProductos.Columns[4].Width = 150;
+            this.dgvProductos.Columns[5].Width = 100;
             this.dgvProductos.Columns[6].Width = 70;
-            this.dgvProductos.Columns[7].Width = 40;
-            this.dgvProductos.Columns[9].Width = 100;
+            this.dgvProductos.Columns[7].Width = 70;
+            this.dgvProductos.Columns[8].Width = 40;
             this.dgvProductos.Columns[10].Width = 100;
+            this.dgvProductos.Columns[11].Width = 100;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -250,9 +252,9 @@ namespace CapaPresentacion
         {
             tbIDprod.Text = dgvProductos.CurrentRow.Cells[0].Value.ToString();
             tbProducto.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
-            tbIVAVenta.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
-            tbImporteVenta.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
-            tbStockProd.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
+            tbIVAVenta.Text = dgvProductos.CurrentRow.Cells[5].Value.ToString();
+            tbImporteVenta.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
+            tbStockProd.Text = dgvProductos.CurrentRow.Cells[8].Value.ToString();
             tabVentas.SelectedTab = tabNuevaVenta;
             this.dgvProductos.Columns.Clear();
             panelProductos.Enabled = false;
@@ -261,48 +263,72 @@ namespace CapaPresentacion
 
         private void tbCantidad_TextChanged(object sender, EventArgs e)
         {
-            if (tbImporteVenta.Text != "" && tbCantidad.Text != "")
+
+            if (tbCantidad.Text == "00")
             {
-                double importeSubtotal = (Convert.ToDouble(tbCantidad.Text)) * (Convert.ToDouble(tbImporteVenta.Text));
+                tbCantidad.Text = "0";
+                tbCantidad.Select(tbCantidad.Text.Length, 0);
+            }
+            if (tbCantidad.Text == ",")
+            {
+                tbCantidad.Text = "0,";
+                tbCantidad.Select(tbCantidad.Text.Length, 0);
+            }
+            if (tbCantidad.Text == "0,00")
+            {
+                tbCantidad.Text = "0,0";
+                tbCantidad.Select(tbCantidad.Text.Length, 0);
+            }
+
+            if (tbImporteVenta.Text != "" && tbCantidad.Text != "" && tbCantidad.Text != "0" && tbCantidad.Text != "0,00" && tbCantidad.Text != ",")
+            {
+                decimal importeSubtotal = (Convert.ToDecimal(tbCantidad.Text)) * (Convert.ToDecimal(tbImporteVenta.Text));
                 tbSubtotal.Text = importeSubtotal.ToString("0.00");
-                double importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDouble(tbIVAVenta.Text)) / 100) + 1));
+                decimal importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDecimal(tbIVAVenta.Text)) / 100) + 1));
                 tbSubtotalIVA.Text = importeIVA.ToString("0.00");
             }
         }
 
         private void tbImporteVenta_TextChanged(object sender, EventArgs e)
         {
-            if (tbCantidad.Text != "" && tbImporteVenta.Text != "")
+            if (tbImporteVenta.Text != "" && tbCantidad.Text != "" && tbCantidad.Text != "0" && tbCantidad.Text != "0,00" && tbCantidad.Text != ",")
             {
-                double importeSubtotal = (Convert.ToDouble(tbCantidad.Text)) * (Convert.ToDouble(tbImporteVenta.Text));
+                decimal importeSubtotal = (Convert.ToDecimal(tbCantidad.Text)) * (Convert.ToDecimal(tbImporteVenta.Text));
                 tbSubtotal.Text = importeSubtotal.ToString("0.00");
-                double importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDouble(tbIVAVenta.Text)) / 100) + 1));
+                decimal importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDecimal(tbIVAVenta.Text)) / 100) + 1));
                 tbSubtotalIVA.Text = importeIVA.ToString("0.00");
             }
         }
 
         private void btnAgregarProductos_Click(object sender, EventArgs e)
-        {
-            if (tbCantidad.Text != "" && tbProducto.Text != "")
-            {      
-                if (Convert.ToInt32(tbStockProd.Text)< Convert.ToInt32(tbCantidad.Text))
+        {            
+            if (tbCantidad.Text != "" && tbCantidad.Text != "0" && tbCantidad.Text != "0," && tbCantidad.Text != "," && tbCantidad.Text != "0,0" && tbCantidad.Text != "0,00")
+            {   
+                if(tbProducto.Text != "")
                 {
-                    string Rpta = "";
-                    DialogResult Opcion;
-                    Opcion = MessageBox.Show("El Stock es Insufuciente\nDesea agregar de todos modos? ", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (Opcion == DialogResult.OK)
+                    if (Convert.ToDecimal(tbStockProd.Text) < Convert.ToDecimal(tbCantidad.Text))
+                    {                        
+                        DialogResult Opcion;
+                        Opcion = MessageBox.Show("El Stock es Insufuciente\nDesea agregar de todos modos? ", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (Opcion == DialogResult.OK)
+                        {
+                            InsertarEnDetalle();
+                        }
+                    }
+                    else
                     {
                         InsertarEnDetalle();
                     }
                 }
                 else
                 {
-                    InsertarEnDetalle();
+                    this.MensajeError("Por Favor, Seleccione un producto de la lista");
+
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione un producto de la lista y la cantidad deseada");
+                this.MensajeError("La cantidad debe ser mayor a 0");
             }
         }
 
@@ -316,7 +342,7 @@ namespace CapaPresentacion
                 DataRow row = DTDetalles.NewRow();
 
                 row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                row["CANT"] = Convert.ToInt32(tbCantidad.Text);
+                row["CANT"] = Convert.ToDecimal(tbCantidad.Text);
                 row["IDPRODUCTO"] = Convert.ToInt32(tbIDprod.Text);
                 row["PRECIO"] = Convert.ToDecimal(tbImporteVenta.Text);
                 row["IVA"] = Convert.ToDecimal(tbSubtotalIVA.Text);
@@ -344,19 +370,19 @@ namespace CapaPresentacion
                 }
                 if (existe == true)
                 {
-                    if (Convert.ToInt32(tbStockProd.Text) < (Convert.ToInt32(tbCantidad.Text) + Convert.ToInt32(dgvDetVent.Rows[numeroFila].Cells[1].Value)))
+                    if (Convert.ToDecimal(tbStockProd.Text) < (Convert.ToDecimal(tbCantidad.Text) + Convert.ToDecimal(dgvDetVent.Rows[numeroFila].Cells[1].Value)))
                     {                        
                         DialogResult Opcion1;
                         Opcion1 = MessageBox.Show("El Stock es Insufuciente\nDesea agregar de todos modos? ", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (Opcion1 == DialogResult.OK)
                         {
-                            dgvDetVent.Rows[numeroFila].Cells[1].Value = Convert.ToInt32(tbCantidad.Text) + Convert.ToInt32(dgvDetVent.Rows[numeroFila].Cells[1].Value);
+                            dgvDetVent.Rows[numeroFila].Cells[1].Value = Convert.ToDecimal(tbCantidad.Text) + Convert.ToDecimal(dgvDetVent.Rows[numeroFila].Cells[1].Value);
 
-                            double importeSubtotal = (Convert.ToDouble(dgvDetVent.Rows[numeroFila].Cells[1].Value)) * (Convert.ToDouble(dgvDetVent.Rows[numeroFila].Cells[3].Value));
+                            decimal importeSubtotal = (Convert.ToDecimal(dgvDetVent.Rows[numeroFila].Cells[1].Value)) * (Convert.ToDecimal(dgvDetVent.Rows[numeroFila].Cells[3].Value));
                             tbSubtotal.Text = importeSubtotal.ToString("0.00");
                             dgvDetVent.Rows[numeroFila].Cells[5].Value = Convert.ToDecimal(tbSubtotal.Text);
 
-                            double importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDouble(tbIVAVenta.Text)) / 100) + 1));
+                            decimal importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDecimal(tbIVAVenta.Text)) / 100) + 1));
                             tbSubtotalIVA.Text = importeIVA.ToString("0.00");
                             dgvDetVent.Rows[numeroFila].Cells[4].Value = Convert.ToDecimal(tbSubtotalIVA.Text);
 
@@ -377,13 +403,13 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        dgvDetVent.Rows[numeroFila].Cells[1].Value = Convert.ToInt32(tbCantidad.Text) + Convert.ToInt32(dgvDetVent.Rows[numeroFila].Cells[1].Value);
+                        dgvDetVent.Rows[numeroFila].Cells[1].Value = Convert.ToDecimal(tbCantidad.Text) + Convert.ToDecimal(dgvDetVent.Rows[numeroFila].Cells[1].Value);
 
-                        double importeSubtotal = (Convert.ToDouble(dgvDetVent.Rows[numeroFila].Cells[1].Value)) * (Convert.ToDouble(dgvDetVent.Rows[numeroFila].Cells[3].Value));
+                        decimal importeSubtotal = (Convert.ToDecimal(dgvDetVent.Rows[numeroFila].Cells[1].Value)) * (Convert.ToDecimal(dgvDetVent.Rows[numeroFila].Cells[3].Value));
                         tbSubtotal.Text = importeSubtotal.ToString("0.00");
                         dgvDetVent.Rows[numeroFila].Cells[5].Value = Convert.ToDecimal(tbSubtotal.Text);
 
-                        double importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDouble(tbIVAVenta.Text)) / 100) + 1));
+                        decimal importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDecimal(tbIVAVenta.Text)) / 100) + 1));
                         tbSubtotalIVA.Text = importeIVA.ToString("0.00");
                         dgvDetVent.Rows[numeroFila].Cells[4].Value = Convert.ToDecimal(tbSubtotalIVA.Text);
 
@@ -407,7 +433,7 @@ namespace CapaPresentacion
                     DataRow row = DTDetalles.NewRow();
 
                     row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                    row["CANT"] = Convert.ToInt32(tbCantidad.Text);
+                    row["CANT"] = Convert.ToDecimal(tbCantidad.Text);
                     row["IDPRODUCTO"] = Convert.ToInt32(tbIDprod.Text);
                     row["PRECIO"] = Convert.ToDecimal(tbImporteVenta.Text);
                     row["IVA"] = Convert.ToDecimal(tbSubtotalIVA.Text);
@@ -499,7 +525,7 @@ namespace CapaPresentacion
                                 }
 
                                 string estado = "ACTIVO";
-                                rpta = CN_Ventas.Insertar(cbSucursal.Text,comprobte, dtpFecha.Value, estado, tbDni.Text, Convert.ToInt32(UserLoginCache.UserId), DTDetalles);
+                                rpta = CN_Ventas.Insertar(cbSucursal.Text,comprobte, dtpFecha.Value, estado, tbDni.Text, Convert.ToInt32(UserLoginCache.UserId), Convert.ToDecimal(tbTotalFact.Text), DTDetalles);
 
 
                                 if (rpta.Equals("OK"))
@@ -546,52 +572,6 @@ namespace CapaPresentacion
                 MensajeError("Agregue un Producto y su Cantidad al Detalle");
             }
         }
-
-
-
-        private void BuscaNumeroRecibo()
-        {
-            
-        }
-
-        private void HacerRecibo()
-        {           
-            try
-            {
-
-                Decimal Importe = Convert.ToDecimal(tbTotalFact.Text.ToString());
-                int numRecibo = objeto1.MostrarUltimoRecibo();
-                nroRecibo = (numRecibo + 1).ToString();
-                
-                string Estado = "ACTIVO";
-                string rpta = CN_Recibo.Insertar(nroRecibo, dtpFecha.Value, tbDni.Text, Convert.ToInt32(UserLoginCache.UserId), Importe, 0, 0, Importe, "PAGO A: "+cbSucursal.Text+"-"+comprobte, Estado);
-                decimal debe = 0, haber = Importe;
-
-                if (rpta.Equals("OK"))
-                {
-                    this.MensajeOk("Se Generó con éxito el RECIBO");
-                    rpta = CN_CtaCte.Insertar(tbDni.Text, dtpFecha.Value, nroRecibo, "RECIBO DE PAGO", debe, haber, 0, Importe, 0, (debe - haber), 0, 0, "N", Estado);
-                    if (rpta.Equals("OK"))
-                    {
-                        this.MensajeOk("Se registro en cuenta corriente");
-                    }
-                    else
-                    {
-                        this.MensajeError(rpta);
-                    }
-
-                }
-                else
-                {
-                    this.MensajeError(rpta);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
         
 
         private void btnBuscarReg_Click(object sender, EventArgs e)
@@ -624,34 +604,51 @@ namespace CapaPresentacion
             {
                 if (dgvVentas.CurrentRow.Cells[4].Value.ToString() != "ANULADO")
                 {
-                    DialogResult opcion;
-                    opcion = MessageBox.Show("Desea ANULAR el comprobante seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (opcion == DialogResult.OK)
+                    string numComprob = dgvVentas.CurrentRow.Cells[2].Value.ToString();
+
+                    CN_Ventas ob = new CN_Ventas();
+                    string rpta = ob.ConsultarSiVtaAsignada(numComprob);
+                    if (rpta == "OK")
                     {
-                        CN_Ventas objetoCN = new CN_Ventas();
-                        int idVenta = Convert.ToInt32(dgvVentas.CurrentRow.Cells[0].Value.ToString());
-                        objetoCN.AnularComprobantes(idVenta);
-
-                        MessageBox.Show("El Comprobante se ANULÓ CORRECTAMENTE");
-
-                        string rpta = CN_CtaCte.AnularRegistroCtaCte(dgvVentas.CurrentRow.Cells[2].Value.ToString(), "FACTURA DE VENTA");
-                        if (rpta.Equals("OK"))
+                        MensajeError("No se puede anular la VENTA porque tiene PAGOS imputados");
+                    }
+                    else
+                    {
+                        if (rpta == "NO")
                         {
-                            MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
+                            DialogResult opcion;
+                            opcion = MessageBox.Show("Desea ANULAR el comprobante seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (opcion == DialogResult.OK)
+                            {
+                                CN_Ventas objetoCN = new CN_Ventas();
+                                int idVenta = Convert.ToInt32(dgvVentas.CurrentRow.Cells[0].Value.ToString());
+                                objetoCN.AnularComprobantes(idVenta);
+
+                                MessageBox.Show("El Comprobante se ANULÓ CORRECTAMENTE");
+
+                                string rpta1 = CN_CtaCte.AnularRegistroCtaCte(dgvVentas.CurrentRow.Cells[2].Value.ToString(), "FACTURA DE VENTA");
+                                if (rpta1.Equals("OK"))
+                                {
+                                    MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
+                                }
+                                else
+                                {
+                                    this.MensajeError(rpta1);
+                                }
+
+                                CargarGrilla();
+                            }
                         }
                         else
                         {
-                            this.MensajeError(rpta);
+                            MensajeError(rpta);
                         }
-
-                        CargarGrilla();
-                    }
+                    }                    
                 }
                 else
                 {
                     MensajeError("EL COMPROBANTE SELECCIONADO SE ENCUENTRA ANULADO");
                 }
-
             }
             else
             {
@@ -747,7 +744,7 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewRow MyRow in dgvProductos.Rows)
             {
-                if (Convert.ToInt32(MyRow.Cells[7].Value) <= Convert.ToInt32(MyRow.Cells[8].Value))
+                if (Convert.ToDecimal(MyRow.Cells[8].Value) <= Convert.ToDecimal(MyRow.Cells[9].Value))
                 {                    
                     MyRow.DefaultCellStyle.BackColor = Color.Orange;
                     MyRow.DefaultCellStyle.ForeColor = Color.Red;
@@ -765,11 +762,15 @@ namespace CapaPresentacion
 
         private void tbCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
-                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
-                return;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
             }
         }
 
@@ -802,7 +803,15 @@ namespace CapaPresentacion
 
         private void chekVerAnulados_CheckedChanged(object sender, EventArgs e)
         {
-            CargarGrilla();
+            if(chekVerAnulados.Checked == true)
+            {
+                btnImprimir.Enabled = false;
+            }
+            else
+            {
+                btnImprimir.Enabled = true;
+            }
+            CargarGrilla();            
         }
 
         private void AbreRecibo()
@@ -835,8 +844,8 @@ namespace CapaPresentacion
                 mm.ShowDialog();
 
                 formBG.Dispose();
-            }
-            
-        }        
+            }            
+        }
+
     }
 }

@@ -38,13 +38,13 @@ namespace CapaNegocio
         }
 
         
-        public void AnularComprobante(int id, string tipo)
+        public void AnularComprobante(int id)
         {
             CD_NotaCRDB objeto = new CD_NotaCRDB();
-            objeto.Id = id;
-            objeto.Tipo = tipo;
+            objeto.Id = id;            
             objeto.AnularNota(objeto);
         }
+
         public int MostrarUltimaNota()
         {
             int numero = objetoCD.ConsultarIDNota();

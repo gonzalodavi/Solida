@@ -7,7 +7,7 @@ namespace CapaNegocio
 {
     public class CN_Banco
     {
-        public static string Insertar(string numComprobante, string tipoComprob, string numTrasnf, DateTime fecT, int idBco, string ctaBco, string titular, decimal importe, string estado)
+        public static string Insertar(string numComprobante, string tipoComprob, string numTrasnf, DateTime fecT, int idBco, string ctaBco, string titular, decimal debe, decimal haber, decimal importe, string estado)
         {
             CD_Banco Obj = new CD_Banco();
 
@@ -17,7 +17,9 @@ namespace CapaNegocio
             Obj.FechaTransferencia = fecT;
             Obj.IdBanco = idBco;
             Obj.CuentaBanco = ctaBco;
-            Obj.Titular = titular;           
+            Obj.Titular = titular;
+            Obj.Debe = debe;
+            Obj.Haber = haber;
             Obj.Importe = importe;
             Obj.Estado = estado;
 

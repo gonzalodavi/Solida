@@ -31,8 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -59,6 +57,10 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
             this.tabNuevoProducto = new System.Windows.Forms.TabPage();
+            this.btnAgregaUdeMed = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbUdeMed = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnAgregaRubro = new FontAwesome.Sharp.IconButton();
             this.btnAgregaModelo = new FontAwesome.Sharp.IconButton();
             this.btnAgregaMarca = new FontAwesome.Sharp.IconButton();
@@ -206,9 +208,9 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label15.Location = new System.Drawing.Point(810, 108);
+            this.label15.Location = new System.Drawing.Point(825, 108);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(117, 18);
+            this.label15.Size = new System.Drawing.Size(102, 18);
             this.label15.TabIndex = 141;
             this.label15.Text = "MARCA";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -220,7 +222,7 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label14.Location = new System.Drawing.Point(696, 108);
+            this.label14.Location = new System.Drawing.Point(710, 108);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(116, 18);
             this.label14.TabIndex = 140;
@@ -234,9 +236,9 @@
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label13.Location = new System.Drawing.Point(623, 108);
+            this.label13.Location = new System.Drawing.Point(646, 108);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 18);
+            this.label13.Size = new System.Drawing.Size(65, 18);
             this.label13.TabIndex = 139;
             this.label13.Text = "CANT.";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -248,9 +250,9 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label12.Location = new System.Drawing.Point(430, 91);
+            this.label12.Location = new System.Drawing.Point(480, 91);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(194, 18);
+            this.label12.Size = new System.Drawing.Size(167, 18);
             this.label12.TabIndex = 138;
             this.label12.Text = "IMPORTE";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -262,9 +264,9 @@
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label11.Location = new System.Drawing.Point(533, 108);
+            this.label11.Location = new System.Drawing.Point(563, 108);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 18);
+            this.label11.Size = new System.Drawing.Size(84, 18);
             this.label11.TabIndex = 137;
             this.label11.Text = "VENTA $";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -276,9 +278,9 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label9.Location = new System.Drawing.Point(299, 108);
+            this.label9.Location = new System.Drawing.Point(306, 108);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(132, 18);
+            this.label9.Size = new System.Drawing.Size(175, 18);
             this.label9.TabIndex = 133;
             this.label9.Text = "RUBRO";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -290,9 +292,9 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label3.Location = new System.Drawing.Point(430, 108);
+            this.label3.Location = new System.Drawing.Point(480, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 18);
+            this.label3.Size = new System.Drawing.Size(84, 18);
             this.label3.TabIndex = 134;
             this.label3.Text = "COSTO $";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -306,7 +308,7 @@
             this.label4.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label4.Location = new System.Drawing.Point(25, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 18);
+            this.label4.Size = new System.Drawing.Size(50, 18);
             this.label4.TabIndex = 135;
             this.label4.Text = "ID";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -320,9 +322,9 @@
             this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label10.Location = new System.Drawing.Point(74, 108);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(226, 18);
+            this.label10.Size = new System.Drawing.Size(235, 18);
             this.label10.TabIndex = 136;
-            this.label10.Text = "NOMBRE";
+            this.label10.Text = "NOMBRE Y UNIDAD DE MEDIDA";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnActualizaListaProd
@@ -499,7 +501,7 @@
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -508,14 +510,6 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProductos.ColumnHeadersVisible = false;
             this.dgvProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProductos.Location = new System.Drawing.Point(26, 128);
@@ -523,23 +517,15 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(900, 374);
             this.dgvProductos.TabIndex = 117;
@@ -563,6 +549,10 @@
             // tabNuevoProducto
             // 
             this.tabNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevoProducto.Controls.Add(this.btnAgregaUdeMed);
+            this.tabNuevoProducto.Controls.Add(this.label2);
+            this.tabNuevoProducto.Controls.Add(this.cbUdeMed);
+            this.tabNuevoProducto.Controls.Add(this.label8);
             this.tabNuevoProducto.Controls.Add(this.btnAgregaRubro);
             this.tabNuevoProducto.Controls.Add(this.btnAgregaModelo);
             this.tabNuevoProducto.Controls.Add(this.btnAgregaMarca);
@@ -608,6 +598,66 @@
             this.tabNuevoProducto.TabIndex = 1;
             this.tabNuevoProducto.Text = "Mantenimiento";
             // 
+            // btnAgregaUdeMed
+            // 
+            this.btnAgregaUdeMed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAgregaUdeMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAgregaUdeMed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregaUdeMed.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregaUdeMed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregaUdeMed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAgregaUdeMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregaUdeMed.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregaUdeMed.ForeColor = System.Drawing.Color.White;
+            this.btnAgregaUdeMed.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregaUdeMed.IconColor = System.Drawing.Color.White;
+            this.btnAgregaUdeMed.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregaUdeMed.IconSize = 25;
+            this.btnAgregaUdeMed.Location = new System.Drawing.Point(501, 343);
+            this.btnAgregaUdeMed.Name = "btnAgregaUdeMed";
+            this.btnAgregaUdeMed.Size = new System.Drawing.Size(29, 29);
+            this.btnAgregaUdeMed.TabIndex = 176;
+            this.btnAgregaUdeMed.TabStop = false;
+            this.btnAgregaUdeMed.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregaUdeMed.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.Location = new System.Drawing.Point(478, 346);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 20);
+            this.label2.TabIndex = 175;
+            this.label2.Text = "*";
+            // 
+            // cbUdeMed
+            // 
+            this.cbUdeMed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbUdeMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbUdeMed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cbUdeMed.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.cbUdeMed.FormattingEnabled = true;
+            this.cbUdeMed.ItemHeight = 17;
+            this.cbUdeMed.Location = new System.Drawing.Point(249, 346);
+            this.cbUdeMed.Name = "cbUdeMed";
+            this.cbUdeMed.Size = new System.Drawing.Size(223, 25);
+            this.cbUdeMed.TabIndex = 173;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(118, 349);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(125, 17);
+            this.label8.TabIndex = 174;
+            this.label8.Text = "Unidad de Medida:";
+            // 
             // btnAgregaRubro
             // 
             this.btnAgregaRubro.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -623,7 +673,7 @@
             this.btnAgregaRubro.IconColor = System.Drawing.Color.White;
             this.btnAgregaRubro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregaRubro.IconSize = 25;
-            this.btnAgregaRubro.Location = new System.Drawing.Point(501, 252);
+            this.btnAgregaRubro.Location = new System.Drawing.Point(501, 204);
             this.btnAgregaRubro.Name = "btnAgregaRubro";
             this.btnAgregaRubro.Size = new System.Drawing.Size(29, 29);
             this.btnAgregaRubro.TabIndex = 172;
@@ -647,7 +697,7 @@
             this.btnAgregaModelo.IconColor = System.Drawing.Color.White;
             this.btnAgregaModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregaModelo.IconSize = 25;
-            this.btnAgregaModelo.Location = new System.Drawing.Point(501, 344);
+            this.btnAgregaModelo.Location = new System.Drawing.Point(501, 296);
             this.btnAgregaModelo.Name = "btnAgregaModelo";
             this.btnAgregaModelo.Size = new System.Drawing.Size(29, 29);
             this.btnAgregaModelo.TabIndex = 171;
@@ -671,7 +721,7 @@
             this.btnAgregaMarca.IconColor = System.Drawing.Color.White;
             this.btnAgregaMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregaMarca.IconSize = 25;
-            this.btnAgregaMarca.Location = new System.Drawing.Point(501, 299);
+            this.btnAgregaMarca.Location = new System.Drawing.Point(501, 251);
             this.btnAgregaMarca.Name = "btnAgregaMarca";
             this.btnAgregaMarca.Size = new System.Drawing.Size(29, 29);
             this.btnAgregaMarca.TabIndex = 170;
@@ -686,7 +736,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.Yellow;
-            this.label23.Location = new System.Drawing.Point(478, 347);
+            this.label23.Location = new System.Drawing.Point(478, 299);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(16, 20);
             this.label23.TabIndex = 141;
@@ -698,7 +748,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label22.ForeColor = System.Drawing.Color.Yellow;
-            this.label22.Location = new System.Drawing.Point(478, 302);
+            this.label22.Location = new System.Drawing.Point(478, 254);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(16, 20);
             this.label22.TabIndex = 140;
@@ -710,7 +760,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.Color.Yellow;
-            this.label18.Location = new System.Drawing.Point(478, 255);
+            this.label18.Location = new System.Drawing.Point(478, 207);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(16, 20);
             this.label18.TabIndex = 139;
@@ -758,7 +808,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.Yellow;
-            this.label17.Location = new System.Drawing.Point(478, 160);
+            this.label17.Location = new System.Drawing.Point(478, 112);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(16, 20);
             this.label17.TabIndex = 138;
@@ -786,6 +836,7 @@
             this.tbStock.Name = "tbStock";
             this.tbStock.Size = new System.Drawing.Size(92, 25);
             this.tbStock.TabIndex = 9;
+            this.tbStock.TextChanged += new System.EventHandler(this.tbStock_TextChanged);
             this.tbStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbStock_KeyPress);
             // 
             // tbGanancia
@@ -797,6 +848,7 @@
             this.tbGanancia.Name = "tbGanancia";
             this.tbGanancia.Size = new System.Drawing.Size(92, 25);
             this.tbGanancia.TabIndex = 8;
+            this.tbGanancia.TextChanged += new System.EventHandler(this.tbGanancia_TextChanged);
             this.tbGanancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbGanancia_KeyPress);
             this.tbGanancia.Leave += new System.EventHandler(this.tbGanancia_Leave);
             // 
@@ -841,7 +893,7 @@
             this.cbModelo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbModelo.FormattingEnabled = true;
             this.cbModelo.ItemHeight = 17;
-            this.cbModelo.Location = new System.Drawing.Point(249, 347);
+            this.cbModelo.Location = new System.Drawing.Point(249, 299);
             this.cbModelo.Name = "cbModelo";
             this.cbModelo.Size = new System.Drawing.Size(223, 25);
             this.cbModelo.TabIndex = 5;
@@ -854,7 +906,7 @@
             this.cbMarca.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.ItemHeight = 17;
-            this.cbMarca.Location = new System.Drawing.Point(249, 301);
+            this.cbMarca.Location = new System.Drawing.Point(249, 253);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(223, 25);
             this.cbMarca.TabIndex = 4;
@@ -882,6 +934,7 @@
             this.tbStockMin.Name = "tbStockMin";
             this.tbStockMin.Size = new System.Drawing.Size(92, 25);
             this.tbStockMin.TabIndex = 10;
+            this.tbStockMin.TextChanged += new System.EventHandler(this.tbStockMin_TextChanged);
             this.tbStockMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbStockMin_KeyPress);
             // 
             // tbVenta
@@ -914,11 +967,12 @@
             this.tbID.Enabled = false;
             this.tbID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbID.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbID.Location = new System.Drawing.Point(249, 112);
+            this.tbID.Location = new System.Drawing.Point(249, 75);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(73, 25);
             this.tbID.TabIndex = 0;
             this.tbID.TabStop = false;
+            this.tbID.Visible = false;
             // 
             // label1
             // 
@@ -986,7 +1040,7 @@
             this.lblRubro.AutoSize = true;
             this.lblRubro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblRubro.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRubro.Location = new System.Drawing.Point(194, 257);
+            this.lblRubro.Location = new System.Drawing.Point(194, 209);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(49, 17);
             this.lblRubro.TabIndex = 128;
@@ -1009,7 +1063,7 @@
             this.tbCodBarra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbCodBarra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCodBarra.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCodBarra.Location = new System.Drawing.Point(249, 206);
+            this.tbCodBarra.Location = new System.Drawing.Point(249, 158);
             this.tbCodBarra.Name = "tbCodBarra";
             this.tbCodBarra.Size = new System.Drawing.Size(223, 25);
             this.tbCodBarra.TabIndex = 2;
@@ -1020,7 +1074,7 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblMarca.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMarca.Location = new System.Drawing.Point(194, 304);
+            this.lblMarca.Location = new System.Drawing.Point(194, 256);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(49, 17);
             this.lblMarca.TabIndex = 110;
@@ -1032,7 +1086,7 @@
             this.lblCodBar.AutoSize = true;
             this.lblCodBar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblCodBar.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCodBar.Location = new System.Drawing.Point(151, 209);
+            this.lblCodBar.Location = new System.Drawing.Point(151, 161);
             this.lblCodBar.Name = "lblCodBar";
             this.lblCodBar.Size = new System.Drawing.Size(92, 17);
             this.lblCodBar.TabIndex = 109;
@@ -1044,11 +1098,12 @@
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblMail.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblMail.Location = new System.Drawing.Point(217, 115);
+            this.lblMail.Location = new System.Drawing.Point(217, 78);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(26, 17);
             this.lblMail.TabIndex = 114;
             this.lblMail.Text = "ID:";
+            this.lblMail.Visible = false;
             // 
             // lblModelo
             // 
@@ -1056,7 +1111,7 @@
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblModelo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblModelo.Location = new System.Drawing.Point(184, 349);
+            this.lblModelo.Location = new System.Drawing.Point(184, 301);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(59, 17);
             this.lblModelo.TabIndex = 116;
@@ -1067,7 +1122,7 @@
             this.tbDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbDescripcion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDescripcion.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbDescripcion.Location = new System.Drawing.Point(249, 159);
+            this.tbDescripcion.Location = new System.Drawing.Point(249, 111);
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(223, 25);
             this.tbDescripcion.TabIndex = 1;
@@ -1079,7 +1134,7 @@
             this.lblDescripcion.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblDescripcion.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDescripcion.Location = new System.Drawing.Point(159, 162);
+            this.lblDescripcion.Location = new System.Drawing.Point(159, 114);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(84, 17);
             this.lblDescripcion.TabIndex = 112;
@@ -1113,7 +1168,7 @@
             this.cbRubro.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbRubro.FormattingEnabled = true;
             this.cbRubro.ItemHeight = 17;
-            this.cbRubro.Location = new System.Drawing.Point(249, 254);
+            this.cbRubro.Location = new System.Drawing.Point(249, 206);
             this.cbRubro.Name = "cbRubro";
             this.cbRubro.Size = new System.Drawing.Size(223, 25);
             this.cbRubro.TabIndex = 3;
@@ -1208,5 +1263,9 @@
         private FontAwesome.Sharp.IconButton btnAgregaModelo;
         private FontAwesome.Sharp.IconButton btnAgregaMarca;
         private System.Windows.Forms.Label label31;
+        private FontAwesome.Sharp.IconButton btnAgregaUdeMed;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbUdeMed;
+        private System.Windows.Forms.Label label8;
     }
 }

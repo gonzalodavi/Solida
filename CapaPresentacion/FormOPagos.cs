@@ -277,10 +277,11 @@ namespace CapaPresentacion
 
         private void cbProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbProveedor.Text != "")
+            if (cbProveedor.SelectedIndex != -1)
             {
                 CargaGrillaCtaCte(cbProveedor.SelectedValue.ToString());
                 CargaSaldoCtaCte();
+                tbTitTransf.Text = cbProveedor.Text;
             }            
         }
 
@@ -1011,10 +1012,12 @@ namespace CapaPresentacion
                     int IdBco = Convert.ToInt32(cbCuentaBanco.SelectedValue);
                     string Bco = Convert.ToString(cbCuentaBanco.Text);
                     string Titu = Convert.ToString(tbTitTransf.Text);
-                    decimal Import = Convert.ToDecimal(tbImporteTransf.Text);
+                    decimal debe = 0;
+                    decimal haber = Convert.ToDecimal(tbTransfImporte.Text);
+                    decimal Import = debe - haber;
                     string estad = "PENDIENTE";
 
-                    string respta1 = CN_Banco.Insertar(tbNumOPago.Text, "ORDEN DE PAGO", numTransf, fec, IdBco, Bco, Titu, -1*Import, estad);
+                    string respta1 = CN_Banco.Insertar(tbNumOPago.Text, "ORDEN DE PAGO", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
 
                     if (respta1.Equals("OK"))
                     {
@@ -1028,7 +1031,7 @@ namespace CapaPresentacion
                         row["ID_BANCO"] = IdBco;
                         row["CTA_BCO"] = Bco;
                         row["TITULAR"] = Titu;
-                        row["IMPORTE"] = Import;
+                        row["IMPORTE"] = haber;
 
                         DTDetallesBco.Rows.Add(row);
 
@@ -1062,10 +1065,12 @@ namespace CapaPresentacion
                         int IdBco = Convert.ToInt32(cbCuentaBanco.SelectedValue);
                         string Bco = Convert.ToString(cbCuentaBanco.Text);
                         string Titu = Convert.ToString(tbTitTransf.Text);
-                        decimal Import = Convert.ToDecimal(tbImporteTransf.Text);
+                        decimal debe = 0;
+                        decimal haber = Convert.ToDecimal(tbTransfImporte.Text);
+                        decimal Import = debe - haber;
                         string estad = "PENDIENTE";
 
-                        string respta2 = CN_Banco.Insertar(tbNumOPago.Text, "ORDEN DE PAGO", numTransf, fec, IdBco, Bco, Titu, -1*Import, estad);
+                        string respta2 = CN_Banco.Insertar(tbNumOPago.Text, "ORDEN DE PAGO", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
 
                         if (respta2.Equals("OK"))
                         {
@@ -1079,7 +1084,7 @@ namespace CapaPresentacion
                             row["ID_BANCO"] = IdBco;
                             row["CTA_BCO"] = Bco;
                             row["TITULAR"] = Titu;
-                            row["IMPORTE"] = Import;
+                            row["IMPORTE"] = haber;
 
                             DTDetallesBco.Rows.Add(row);
 

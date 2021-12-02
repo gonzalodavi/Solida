@@ -37,12 +37,21 @@ namespace CapaNegocio
             dt = objetoCD.CargarComboBoxMarca();
             return dt;
         }
+
         public DataTable CargaComboBoxModelo()
         {
             DataTable dt = new DataTable();
             dt = objetoCD.CargarComboBoxModelo();
             return dt;
         }
+
+        public DataTable CargarComboBoxUnidades()
+        {
+            DataTable dt = new DataTable();
+            dt = objetoCD.CargarComboBoxUnidMed();
+            return dt;
+        }
+
         public DataTable BuscarProductos(string codbar)
         {
             DataTable tabla = new DataTable();
@@ -58,14 +67,14 @@ namespace CapaNegocio
         }
 
 
-        public void AgregarProducto(string descrip, string codBar, int  rubro, int alic, string costo, string venta, string stock, string stockmin, int modelo, int marca)
+        public void AgregarProducto(string descrip, string codBar, int  rubro, int alic, string costo, string venta, string stock, string stockmin, int modelo, int marca,int unidMed)
         {
-            objetoCD.AgregaProducto(descrip, codBar, rubro, alic, Convert.ToDecimal(costo), Convert.ToDecimal(venta), Convert.ToInt32(stock), Convert.ToInt32(stockmin), modelo, marca);
+            objetoCD.AgregaProducto(descrip, codBar, rubro, alic, Convert.ToDecimal(costo), Convert.ToDecimal(venta), Convert.ToDecimal(stock), Convert.ToDecimal(stockmin), modelo, marca, unidMed);
         }
 
-        public void ModificarProducto(string id,string descrip, string codBar, int rubro, int alic, string costo, string venta, string stock, string stockmin, int modelo, int marca)
+        public void ModificarProducto(string id,string descrip, string codBar, int rubro, int alic, string costo, string venta, string stock, string stockmin, int modelo, int marca, int unidMed)
         {
-            objetoCD.ModificaProducto(Convert.ToInt32(id),descrip, codBar, rubro, alic, Convert.ToDecimal(costo), Convert.ToDecimal(venta), Convert.ToInt32(stock), Convert.ToInt32(stockmin), modelo, marca);
+            objetoCD.ModificaProducto(Convert.ToInt32(id),descrip, codBar, rubro, alic, Convert.ToDecimal(costo), Convert.ToDecimal(venta), Convert.ToDecimal(stock), Convert.ToDecimal(stockmin), modelo, marca, unidMed);
         }
 
         public void EliminarProducto(string id)

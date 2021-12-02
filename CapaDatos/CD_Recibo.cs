@@ -254,13 +254,13 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
-                if (rpta.Equals("OK"))
+                rpta = SqlCmd.ExecuteNonQuery() == 2 ? "OK" : "NO se Ingreso el Registro";
+                /*if (rpta.Equals("OK"))
                 {
                     this.Id = Convert.ToInt32(SqlCmd.Parameters["@id"].Value);
 
                     DisminuirSaldoCliente(Recibo.Id);
-                }
+                }*/
             }
             catch (Exception ex)
             {

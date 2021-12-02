@@ -24,7 +24,66 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Quevedo Yolanda - Responsable Inscripto</Value>
+                    <Value>=Fields!APELLIDO_NOMBRE.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> - </Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!CONDICION_IVA.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>CUIT </Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!CUIT_DNI.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> - Ing. B: </Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!IIBB.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontFamily>Berlin Sans FB</FontFamily>
                       <FontSize>8pt</FontSize>
@@ -39,7 +98,23 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>CUIT 27-20106935-8 - Ing. B: 195370-8 </Value>
+                    <Value>Inic. Act: </Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!INICIO_ACT.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>d</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontFamily>Berlin Sans FB</FontFamily>
                       <FontSize>8pt</FontSize>
@@ -54,7 +129,14 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Inic. Act: 10/05/2005 </Value>
+                    <Value>=Fields!DIRECCION.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontFamily>Berlin Sans FB</FontFamily>
                       <FontSize>8pt</FontSize>
@@ -69,26 +151,40 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Bv. Los Granaderos 1275 (Cofico)</Value>
+                    <Value>=Fields!LOCALIDAD.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> (</Value>
                     <Style>
                       <FontFamily>Berlin Sans FB</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
                   <TextRun>
-                    <Value>Córdoba Capital (5000) - Córdoba</Value>
+                    <Value>=Fields!COD_POS.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>) - </Value>
                     <Style>
                       <FontFamily>Berlin Sans FB</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!PROVINCIA.Value</Value>
+                    <Style>
+                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -535,7 +631,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Barrio:</Value>
+                    <Value>Barrio: </Value>
                     <Style>
                       <FontFamily>Verdana</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -566,7 +662,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Provincia:</Value>
+                    <Value>Provincia: </Value>
                     <Style>
                       <FontFamily>Verdana</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1137,6 +1233,14 @@
                               <Value>=Fields!DES_PRODUCTO.Value</Value>
                               <Style />
                             </TextRun>
+                            <TextRun>
+                              <Value> x </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!NOM_UNIDAD.Value</Value>
+                              <Style />
+                            </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
@@ -1165,7 +1269,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CANT_VTA.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>#,0.00</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1519,7 +1625,7 @@
         </Field>
         <Field Name="CANT_VTA">
           <DataField>CANT_VTA</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="IMPORTE_VTA">
           <DataField>IMPORTE_VTA</DataField>
@@ -1543,6 +1649,10 @@
         </Field>
         <Field Name="NOM_CLIENTE">
           <DataField>NOM_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NOM_UNIDAD">
+          <DataField>NOM_UNIDAD</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="APE_CLIENTE">
@@ -1599,6 +1709,46 @@
         </Field>
         <Field Name="Apellido">
           <DataField>Apellido</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="APELLIDO_NOMBRE">
+          <DataField>APELLIDO_NOMBRE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CONDICION_IVA">
+          <DataField>CONDICION_IVA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CUIT_DNI">
+          <DataField>CUIT_DNI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IIBB">
+          <DataField>IIBB</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="INICIO_ACT">
+          <DataField>INICIO_ACT</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RAZONSOCIAL">
+          <DataField>RAZONSOCIAL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DIRECCION">
+          <DataField>DIRECCION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COD_POS">
+          <DataField>COD_POS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LOCALIDAD">
+          <DataField>LOCALIDAD</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PROVINCIA">
+          <DataField>PROVINCIA</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

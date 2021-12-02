@@ -40,10 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tabRemitos = new System.Windows.Forms.TabControl();
             this.tabListadoRemitos = new System.Windows.Forms.TabPage();
@@ -65,6 +61,7 @@
             this.lblFecha2 = new System.Windows.Forms.Label();
             this.lblFecha1 = new System.Windows.Forms.Label();
             this.dgvRemitos = new System.Windows.Forms.DataGridView();
+            this.label20 = new System.Windows.Forms.Label();
             this.tabRemito = new System.Windows.Forms.TabPage();
             this.gbDetalleRem = new System.Windows.Forms.GroupBox();
             this.tbCantidad = new Guna.UI.WinForms.GunaNumeric();
@@ -107,10 +104,16 @@
             this.btnActualizaListaProv = new FontAwesome.Sharp.IconButton();
             this.btnBuscarProveedor = new FontAwesome.Sharp.IconButton();
             this.lblBuscar = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.tabProductos = new System.Windows.Forms.TabPage();
             this.panelProductos = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.tbBuscaProductos = new System.Windows.Forms.TextBox();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.btnActualizaListaProd = new FontAwesome.Sharp.IconButton();
+            this.btnBuscaProd = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -118,15 +121,8 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.tbBuscaProductos = new System.Windows.Forms.TextBox();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnActualizaListaProd = new FontAwesome.Sharp.IconButton();
-            this.btnBuscaProd = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             this.tabRemitos.SuspendLayout();
             this.tabListadoRemitos.SuspendLayout();
@@ -559,6 +555,19 @@
             this.dgvRemitos.Size = new System.Drawing.Size(650, 389);
             this.dgvRemitos.TabIndex = 92;
             this.dgvRemitos.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label20.AutoEllipsis = true;
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label20.Location = new System.Drawing.Point(57, 65);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(652, 395);
+            this.label20.TabIndex = 187;
+            this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tabRemito
             // 
@@ -1212,7 +1221,7 @@
             this.dgvProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
@@ -1220,14 +1229,6 @@
             this.dgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProveedor.ColumnHeadersVisible = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProveedor.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvProveedor.EnableHeadersVisualStyles = false;
             this.dgvProveedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProveedor.Location = new System.Drawing.Point(18, 113);
@@ -1235,23 +1236,15 @@
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.ReadOnly = true;
             this.dgvProveedor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProveedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProveedor.RowHeadersVisible = false;
             this.dgvProveedor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvProveedor.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvProveedor.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProveedor.Size = new System.Drawing.Size(900, 419);
             this.dgvProveedor.TabIndex = 86;
@@ -1320,6 +1313,19 @@
             this.lblBuscar.TabIndex = 84;
             this.lblBuscar.Text = "BUSCAR:";
             // 
+            // label34
+            // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label34.AutoEllipsis = true;
+            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label34.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label34.Location = new System.Drawing.Point(17, 109);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(902, 424);
+            this.label34.TabIndex = 187;
+            this.label34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // tabProductos
             // 
             this.tabProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
@@ -1333,8 +1339,6 @@
             // 
             // panelProductos
             // 
-            this.panelProductos.Controls.Add(this.label24);
-            this.panelProductos.Controls.Add(this.label25);
             this.panelProductos.Controls.Add(this.label26);
             this.panelProductos.Controls.Add(this.label27);
             this.panelProductos.Controls.Add(this.label28);
@@ -1342,6 +1346,8 @@
             this.panelProductos.Controls.Add(this.label30);
             this.panelProductos.Controls.Add(this.label31);
             this.panelProductos.Controls.Add(this.label32);
+            this.panelProductos.Controls.Add(this.label24);
+            this.panelProductos.Controls.Add(this.label25);
             this.panelProductos.Controls.Add(this.tbBuscaProductos);
             this.panelProductos.Controls.Add(this.dgvProductos);
             this.panelProductos.Controls.Add(this.btnActualizaListaProd);
@@ -1353,132 +1359,6 @@
             this.panelProductos.Name = "panelProductos";
             this.panelProductos.Size = new System.Drawing.Size(936, 566);
             this.panelProductos.TabIndex = 1;
-            // 
-            // label24
-            // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label24.AutoEllipsis = true;
-            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label24.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label24.Location = new System.Drawing.Point(803, 104);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(117, 18);
-            this.label24.TabIndex = 159;
-            this.label24.Text = "MARCA";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label25.AutoEllipsis = true;
-            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label25.Location = new System.Drawing.Point(689, 104);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(116, 18);
-            this.label25.TabIndex = 158;
-            this.label25.Text = "MODELO";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label26
-            // 
-            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label26.AutoEllipsis = true;
-            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label26.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label26.Location = new System.Drawing.Point(616, 104);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(74, 18);
-            this.label26.TabIndex = 157;
-            this.label26.Text = "CANT.";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label27
-            // 
-            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label27.AutoEllipsis = true;
-            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label27.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label27.Location = new System.Drawing.Point(423, 87);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(194, 18);
-            this.label27.TabIndex = 156;
-            this.label27.Text = "IMPORTE";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label28
-            // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label28.AutoEllipsis = true;
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label28.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label28.Location = new System.Drawing.Point(526, 104);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(91, 18);
-            this.label28.TabIndex = 155;
-            this.label28.Text = "VENTA $";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label29
-            // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label29.AutoEllipsis = true;
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label29.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label29.Location = new System.Drawing.Point(292, 104);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(132, 18);
-            this.label29.TabIndex = 151;
-            this.label29.Text = "RUBRO";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label30
-            // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label30.AutoEllipsis = true;
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label30.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label30.Location = new System.Drawing.Point(423, 104);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(104, 18);
-            this.label30.TabIndex = 152;
-            this.label30.Text = "COSTO $";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label31
-            // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label31.AutoEllipsis = true;
-            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label31.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label31.Location = new System.Drawing.Point(18, 104);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(53, 18);
-            this.label31.TabIndex = 153;
-            this.label31.Text = "ID";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label32
-            // 
-            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label32.AutoEllipsis = true;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label32.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label32.Location = new System.Drawing.Point(67, 104);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(226, 18);
-            this.label32.TabIndex = 154;
-            this.label32.Text = "NOMBRE";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tbBuscaProductos
             // 
@@ -1497,32 +1377,24 @@
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AllowUserToResizeColumns = false;
             this.dgvProductos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Control;
-            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Control;
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProductos.ColumnHeadersVisible = false;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvProductos.Location = new System.Drawing.Point(19, 123);
@@ -1530,23 +1402,15 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(900, 425);
             this.dgvProductos.TabIndex = 96;
@@ -1616,6 +1480,19 @@
             this.label4.TabIndex = 94;
             this.label4.Text = "BUSCAR:";
             // 
+            // label33
+            // 
+            this.label33.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label33.AutoEllipsis = true;
+            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label33.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label33.Location = new System.Drawing.Point(18, 120);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(902, 429);
+            this.label33.TabIndex = 188;
+            this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // btnRegresar
             // 
             this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1642,44 +1519,131 @@
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // label20
+            // label26
             // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label20.AutoEllipsis = true;
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label20.Location = new System.Drawing.Point(57, 65);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(652, 395);
-            this.label20.TabIndex = 187;
-            this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label26.AutoEllipsis = true;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label26.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label26.Location = new System.Drawing.Point(818, 103);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(102, 18);
+            this.label26.TabIndex = 206;
+            this.label26.Text = "MARCA";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label34
+            // label27
             // 
-            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label34.AutoEllipsis = true;
-            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label34.Location = new System.Drawing.Point(17, 109);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(902, 424);
-            this.label34.TabIndex = 187;
-            this.label34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label27.AutoEllipsis = true;
+            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label27.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label27.Location = new System.Drawing.Point(703, 103);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(116, 18);
+            this.label27.TabIndex = 205;
+            this.label27.Text = "MODELO";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label33
+            // label28
             // 
-            this.label33.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label33.AutoEllipsis = true;
-            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label33.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label33.Location = new System.Drawing.Point(18, 120);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(902, 429);
-            this.label33.TabIndex = 188;
-            this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label28.AutoEllipsis = true;
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label28.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label28.Location = new System.Drawing.Point(639, 103);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(65, 18);
+            this.label28.TabIndex = 204;
+            this.label28.Text = "CANT.";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label29.AutoEllipsis = true;
+            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label29.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label29.Location = new System.Drawing.Point(473, 86);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(167, 18);
+            this.label29.TabIndex = 203;
+            this.label29.Text = "IMPORTE";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label30.AutoEllipsis = true;
+            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label30.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label30.Location = new System.Drawing.Point(556, 103);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(84, 18);
+            this.label30.TabIndex = 202;
+            this.label30.Text = "VENTA $";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label31.AutoEllipsis = true;
+            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label31.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label31.Location = new System.Drawing.Point(299, 103);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(175, 18);
+            this.label31.TabIndex = 198;
+            this.label31.Text = "RUBRO";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label32.AutoEllipsis = true;
+            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label32.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label32.Location = new System.Drawing.Point(473, 103);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(84, 18);
+            this.label32.TabIndex = 199;
+            this.label32.Text = "COSTO $";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label24.AutoEllipsis = true;
+            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label24.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label24.Location = new System.Drawing.Point(18, 103);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(50, 18);
+            this.label24.TabIndex = 200;
+            this.label24.Text = "ID";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label25.AutoEllipsis = true;
+            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label25.Location = new System.Drawing.Point(67, 103);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(235, 18);
+            this.label25.TabIndex = 201;
+            this.label25.Text = "NOMBRE Y UNIDAD DE MEDIDA";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormRemitos
             // 
@@ -1783,8 +1747,12 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox tbBuscaProductos;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
+        private FontAwesome.Sharp.IconButton btnBuscaProducto;
+        private FontAwesome.Sharp.IconButton btnBuscarPc;
+        private Guna.UI.WinForms.GunaNumeric tbCantidad;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
@@ -1792,11 +1760,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private FontAwesome.Sharp.IconButton btnBuscaProducto;
-        private FontAwesome.Sharp.IconButton btnBuscarPc;
-        private Guna.UI.WinForms.GunaNumeric tbCantidad;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
     }
 }

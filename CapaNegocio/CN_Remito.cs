@@ -48,7 +48,7 @@ namespace CapaNegocio
             {
                 CD_DetalleRemito detalle = new CD_DetalleRemito();                
                 detalle.IdProducto = Convert.ToInt32(row["ID_PRODUCTO"].ToString());
-                detalle.Cantidad = Convert.ToInt32(row["CANTIDAD"].ToString());
+                detalle.Cantidad = Convert.ToDecimal(row["CANTIDAD"].ToString());
                 detalles.Add(detalle);
             }
             return Obj.Insertar(Obj, detalles);

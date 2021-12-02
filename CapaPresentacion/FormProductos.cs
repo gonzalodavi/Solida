@@ -19,7 +19,7 @@ namespace CapaPresentacion
         CN_Productos objeto = new CN_Productos();
         private bool Editar = false;
         private string resultado = "";
-        
+        private decimal stockA=0, stockM=0,res=0;
 
         public FormProductos()
         {
@@ -31,6 +31,7 @@ namespace CapaPresentacion
             CargaAlicComboBox();
             CargaMarcaComboBox();
             CargaModeloComboBox();
+            CargarComboBoxUnidadesdeMedida();
             CargarGrilla();
         }
 
@@ -53,28 +54,28 @@ namespace CapaPresentacion
 
             //dgvProductos.Columns[0].Visible = false;
             //dgvProductos.Columns[1].Visible = false;
-            dgvProductos.Columns[2].Visible = false;
-            //dgvProductos.Columns[3].Visible = false;
-            dgvProductos.Columns[4].Visible = false;
-            //dgvProductos.Columns[5].Visible = false;
+            //dgvProductos.Columns[2].Visible = false;
+            dgvProductos.Columns[3].Visible = false;
+            //dgvProductos.Columns[4].Visible = false;
+            dgvProductos.Columns[5].Visible = false;
             //dgvProductos.Columns[6].Visible = false;
             //dgvProductos.Columns[7].Visible = false;
-            dgvProductos.Columns[8].Visible = false;
-            //dgvProductos.Columns[9].Visible = false;
+            //dgvProductos.Columns[8].Visible = false;
+            dgvProductos.Columns[9].Visible = false;
             //dgvProductos.Columns[10].Visible = false;
+            //dgvProductos.Columns[11].Visible = false;
+            dgvProductos.Columns[12].Visible = false;
 
             this.dgvProductos.Columns[0].Width = 40;
             this.dgvProductos.Columns[1].Width = 150;
-            this.dgvProductos.Columns[3].Width = 100;
-            this.dgvProductos.Columns[5].Width = 70;
+            this.dgvProductos.Columns[2].Width = 30;
+            this.dgvProductos.Columns[4].Width = 150;
+            this.dgvProductos.Columns[5].Width = 100;
             this.dgvProductos.Columns[6].Width = 70;
-            this.dgvProductos.Columns[7].Width = 40;
-            this.dgvProductos.Columns[9].Width = 100;
+            this.dgvProductos.Columns[7].Width = 70;
+            this.dgvProductos.Columns[8].Width = 40;
             this.dgvProductos.Columns[10].Width = 100;
-
-            
-
-
+            this.dgvProductos.Columns[11].Width = 100;
         }
 
         private void CargaRubrosComboBox()
@@ -92,6 +93,7 @@ namespace CapaPresentacion
             cbAli.ValueMember = "ID";
             cbAli.Text = "21";
         }
+
         private void CargaMarcaComboBox()
         {
             cbMarca.DataSource = objeto.CargaComboBoxMarca();
@@ -99,12 +101,21 @@ namespace CapaPresentacion
             cbMarca.ValueMember = "ID";
             cbMarca.SelectedIndex = -1;           
         }
+
         private void CargaModeloComboBox()
         {
             cbModelo.DataSource = objeto.CargaComboBoxModelo();
             cbModelo.DisplayMember = "MODELO";
             cbModelo.ValueMember = "ID";
             cbModelo.SelectedIndex = -1;
+        }
+
+        private void CargarComboBoxUnidadesdeMedida()
+        {
+            cbUdeMed.DataSource = objeto.CargarComboBoxUnidades();
+            cbUdeMed.DisplayMember = "DES_UNIDAD";
+            cbUdeMed.ValueMember = "ID_UNIDAD";
+            cbUdeMed.SelectedIndex = -1;
         }
 
         private void limpiarCampos()
@@ -123,7 +134,9 @@ namespace CapaPresentacion
             cbMarca.SelectedIndex = -1;
             cbModelo.SelectedIndex = -1;
             cbRubro.SelectedIndex = -1;
-        }     
+            cbUdeMed.SelectedIndex = -1;
+
+        }
 
         private void haceCalculo()
         {
@@ -203,6 +216,7 @@ namespace CapaPresentacion
                 cbMarca.Text = dgvProductos.CurrentRow.Cells["MARCA"].Value.ToString();
                 cbModelo.Text = dgvProductos.CurrentRow.Cells["MODELO"].Value.ToString();
                 cbRubro.Text = dgvProductos.CurrentRow.Cells["RUBRO"].Value.ToString();
+                cbUdeMed.SelectedValue = Convert.ToInt32(dgvProductos.CurrentRow.Cells["ID_UNIDAD"].Value);
                 haceCalculoInverso();
                 tbGanancia.Text = resultado;
                 resultado = "";
@@ -218,6 +232,8 @@ namespace CapaPresentacion
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+            stockM = 0;
+            stockA = 0;
             tabProductos.SelectedTab = tabNuevoProducto;
         }
 
@@ -241,6 +257,8 @@ namespace CapaPresentacion
         {            
             limpiarCampos();
             Editar = false;
+            stockM = 0;
+            stockA = 0;
             tabProductos.SelectedTab = tabConsultaProducto;
         }
 
@@ -328,6 +346,21 @@ namespace CapaPresentacion
 
         private void tbCosto_TextChanged(object sender, EventArgs e)
         {
+            if (tbCosto.Text == "00")
+            {
+                tbCosto.Text = "0";
+                tbCosto.Select(tbCosto.Text.Length, 0);
+            }
+            if (tbCosto.Text == ",")
+            {
+                tbCosto.Text = "0,";
+                tbCosto.Select(tbCosto.Text.Length, 0);
+            }
+            if (tbCosto.Text == "0,00")
+            {
+                tbCosto.Text = "0,0";
+                tbCosto.Select(tbCosto.Text.Length, 0);
+            }
             haceCalculo();
             tbVenta.Text = resultado;
             resultado = "";
@@ -370,95 +403,132 @@ namespace CapaPresentacion
 
         private void btAceptar_Click(object sender, EventArgs e)
         {
-            if (tbDescripcion.Text != "" && tbCosto.Text != "" && cbRubro.Text != "" && cbAli.Text != "")
+            decimal costo = 0, ganancia = 0, importe = 0;
+
+            if (tbCosto.Text != "")
             {
-                if (Editar == false)
+                costo = Convert.ToDecimal(tbCosto.Text);
+                if (tbGanancia.Text != "")
                 {
-                    if (MessageBox.Show("¿Desea Registrar el Producto?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    {                        
-                        if (tbStock.Text == "")
-                        {
-                            tbStock.Text = "0";
-                        }
-                        if (tbStockMin.Text == "")
-                        {
-                            tbStockMin.Text = "0";
-                        }
-                        try
-                        {
-                            objeto.AgregarProducto(tbDescripcion.Text, tbCodBarra.Text, Convert.ToInt32(cbRubro.SelectedValue), Convert.ToInt32(cbAli.SelectedValue), tbCosto.Text, tbVenta.Text, tbStock.Text, tbStockMin.Text, Convert.ToInt32(cbModelo.SelectedValue), Convert.ToInt32(cbMarca.SelectedValue));
-                            MessageBox.Show("Nuevo Producto Agregado");
+                    ganancia = Convert.ToDecimal(tbGanancia.Text);
+                    importe = costo * ((ganancia / 100) + 1);
+                    res = importe;
+                    resultado = importe.ToString("0.00");
+                }
+            }
 
-                            Editar = false;
-                            CargarGrilla();
-                            limpiarCampos();
-                            CargarGrilla();
-                            CargaModeloComboBox();
-                            CargaMarcaComboBox();
-                            CargaAlicComboBox();
-                            CargaRubrosComboBox();
-                            tabProductos.SelectedTab = tabConsultaProducto;
-
-                        }
-                        catch (Exception ex)
+            if(res > 0)
+            {
+                resultado = "";
+                res = 0;
+                if (tbDescripcion.Text != "" && tbCosto.Text != "" && cbRubro.Text != "" && cbAli.Text != "")
+                {
+                    if (Editar == false)
+                    {
+                        if (MessageBox.Show("¿Desea Registrar el Producto?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
-                            MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
+                            if (tbStock.Text == "")
+                            {
+                                tbStock.Text = "0";
+                            }
+                            if (tbStockMin.Text == "")
+                            {
+                                tbStockMin.Text = "0";
+                            }
+                            try
+                            {
+                                objeto.AgregarProducto(tbDescripcion.Text, tbCodBarra.Text, Convert.ToInt32(cbRubro.SelectedValue), Convert.ToInt32(cbAli.SelectedValue), tbCosto.Text, tbVenta.Text, stockA.ToString("0.00"), stockM.ToString("0.00"), Convert.ToInt32(cbModelo.SelectedValue), Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
+                                MessageBox.Show("Nuevo Producto Agregado");
+                                stockM = 0;
+                                stockA = 0;
+                                Editar = false;
+                                CargarGrilla();
+                                limpiarCampos();
+                                CargarGrilla();
+                                CargaModeloComboBox();
+                                CargaMarcaComboBox();
+                                CargaAlicComboBox();
+                                CargaRubrosComboBox();
+                                tabProductos.SelectedTab = tabConsultaProducto;
+
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("¿Desea Modificar el Producto Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                objeto.ModificarProducto(tbID.Text, tbDescripcion.Text, tbCodBarra.Text, Convert.ToInt32(cbRubro.SelectedValue), Convert.ToInt32(cbAli.SelectedValue), tbCosto.Text, tbVenta.Text, tbStock.Text, tbStockMin.Text, Convert.ToInt32(cbModelo.SelectedValue), Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
+                                stockM = 0;
+                                stockA = 0;
+                                limpiarCampos();
+                                CargarGrilla();
+                                CargaModeloComboBox();
+                                CargaMarcaComboBox();
+                                CargaAlicComboBox();
+                                CargaRubrosComboBox();
+                                Editar = false;
+                                MessageBox.Show("Se Modificaron los datos del Producto");
+                                btnModificar.Visible = true;
+                                btnEliminar.Visible = true;
+                                lblSubTitutlo.Text = "Ingrese Nuevo Producto";
+                                tabProductos.SelectedTab = tabConsultaProducto;
+
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
+                            }
+
                         }
                     }
                 }
                 else
                 {
-                    if (MessageBox.Show("¿Desea Modificar el Producto Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            objeto.ModificarProducto(tbID.Text, tbDescripcion.Text, tbCodBarra.Text, Convert.ToInt32(cbRubro.SelectedValue), Convert.ToInt32(cbAli.SelectedValue), tbCosto.Text, tbVenta.Text, tbStock.Text, tbStockMin.Text, Convert.ToInt32(cbModelo.SelectedValue), Convert.ToInt32(cbMarca.SelectedValue));
-                            limpiarCampos();
-                            CargarGrilla();
-                            CargaModeloComboBox();
-                            CargaMarcaComboBox();
-                            CargaAlicComboBox();
-                            CargaRubrosComboBox();
-                            Editar = false;
-                            MessageBox.Show("Se Modificaron los datos del Producto");
-                            btnModificar.Visible = true;
-                            btnEliminar.Visible = true;
-                            lblSubTitutlo.Text = "Ingrese Nuevo Producto";
-                            tabProductos.SelectedTab = tabConsultaProducto;
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
-                        }
-
-                    }
+                    MessageBox.Show("Existen Campos vacíos");
                 }
+
             }
             else
             {
-                MessageBox.Show("Existen Campos vacíos");
-            }
+                MensajeError("Los Productos a Cargar deben ser superior a $0 de costo");
+                resultado = "";
+                res = 0;
+            }            
         }
 
 
         private void tbStock_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
-                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
-                return;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
             }
         }
 
         private void tbStockMin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
-                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
-                return;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
             }
         }
 
@@ -472,7 +542,7 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewRow MyRow in dgvProductos.Rows)
             {
-                if (Convert.ToInt32(MyRow.Cells[7].Value) <= Convert.ToInt32(MyRow.Cells[8].Value))
+                if (Convert.ToDecimal(MyRow.Cells[8].Value) <= Convert.ToDecimal(MyRow.Cells[9].Value))
                 {
                     MyRow.DefaultCellStyle.BackColor = Color.Orange;
                     MyRow.DefaultCellStyle.ForeColor = Color.Red;
@@ -561,7 +631,82 @@ namespace CapaPresentacion
             }
             CargaModeloComboBox();
             cbModelo.SelectedIndex = -1;
-        } 
-        
+        }
+
+        private void tbStockMin_TextChanged(object sender, EventArgs e)
+        {
+            if (tbStockMin.Text == "00")
+            {
+                tbStockMin.Text = "0";
+                tbStockMin.Select(tbStockMin.Text.Length, 0);
+            }
+            if (tbStockMin.Text == ",")
+            {
+                tbStockMin.Text = "0,";
+                tbStockMin.Select(tbStockMin.Text.Length, 0);
+            }
+            if (tbStockMin.Text == "0,00")
+            {
+                tbStockMin.Text = "0,0";
+                tbStockMin.Select(tbStockMin.Text.Length, 0);
+            }
+            if (tbStockMin.Text != "0" && tbStockMin.Text != "0,00" && tbStockMin.Text != "," && tbStockMin.Text != "")
+            {
+                stockM = Convert.ToDecimal(tbStockMin.Text.Trim());
+            }
+            else
+            {
+                stockM = 0;
+            }
+        }
+
+        private void tbGanancia_TextChanged(object sender, EventArgs e)
+        {
+            if (tbGanancia.Text == "00")
+            {
+                tbGanancia.Text = "0";
+                tbGanancia.Select(tbGanancia.Text.Length, 0);
+            }
+            if (tbGanancia.Text == ",")
+            {
+                tbGanancia.Text = "0,";
+                tbGanancia.Select(tbGanancia.Text.Length, 0);
+            }
+            if (tbGanancia.Text == "0,00")
+            {
+                tbGanancia.Text = "0,0";
+                tbGanancia.Select(tbGanancia.Text.Length, 0);
+            }
+            haceCalculo();
+            tbVenta.Text = resultado;
+            resultado = "";
+        }
+
+        private void tbStock_TextChanged(object sender, EventArgs e)
+        {
+            if (tbStock.Text == "00")
+            {
+                tbStock.Text = "0";
+                tbStock.Select(tbStock.Text.Length, 0);
+            }
+            if (tbStock.Text == ",")
+            {
+                tbStock.Text = "0,";
+                tbStock.Select(tbStock.Text.Length, 0);
+            }
+            if (tbStock.Text == "0,00")
+            {
+                tbStock.Text = "0,0";
+                tbStock.Select(tbStock.Text.Length, 0);
+            }
+            if (tbStock.Text !="0" && tbStock.Text != "0,00" && tbStock.Text != "," && tbStock.Text != "")
+            {
+                stockA = Convert.ToDecimal(tbStock.Text.Trim());
+            }
+            else
+            {
+                stockA = 0;
+            }
+        }
     }
 }

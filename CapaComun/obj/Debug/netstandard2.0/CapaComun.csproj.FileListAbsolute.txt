@@ -16,4 +16,3 @@ H:\Proyecto Solida\Solida\CapaComun\obj\Debug\netstandard2.0\CapaComun.csproj.Co
 H:\Proyecto Solida\Solida\CapaComun\obj\Debug\netstandard2.0\CapaComun.dll
 H:\Proyecto Solida\Solida\CapaComun\obj\Debug\netstandard2.0\CapaComun.pdb
 G:\Proyecto Solida\Solida\CapaComun\obj\Debug\netstandard2.0\CapaComun.GeneratedMSBuildEditorConfig.editorconfig
-G:\Proyecto Solida\Solida\CapaComun\obj\Debug\netstandard2.0\CapaComun.csproj.AssemblyReference.cache

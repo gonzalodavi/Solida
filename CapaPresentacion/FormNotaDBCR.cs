@@ -150,7 +150,7 @@ namespace CapaPresentacion
                         }
                         try
                         {
-                            string rpta = "";
+                            
 
                             DialogResult Opcion;
 
@@ -158,11 +158,12 @@ namespace CapaPresentacion
                             if (Opcion == DialogResult.OK)
                             {
                                 string Estado = "ACTIVO";
-                                rpta = CN_NotaCRDB.Insertar(Convert.ToInt32(UserLoginCache.UserId), dtpFechaNota.Value, tbNumNota.Text, cbCliente.SelectedValue.ToString(),Convert.ToDecimal(tbImporte.Text), tbDetalleNota.Text, Estado,tipoNota);
+                                string rpta = CN_NotaCRDB.Insertar(Convert.ToInt32(UserLoginCache.UserId), dtpFechaNota.Value, tbNumNota.Text, cbCliente.SelectedValue.ToString(),Convert.ToDecimal(tbImporte.Text), tbDetalleNota.Text, Estado,tipoNota);
 
                                 if (rpta.Equals("OK"))
                                 {
                                     this.MensajeOk("Se Generó con éxito el Comprobante");
+                                    
                                     rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaNota.Value, tbNumNota.Text, "NOTA DE "+tipoNota, debe, haber, 0, 0, 0, (debe - haber), 0, 0, "N", Estado);
                                     if (rpta.Equals("OK"))
                                     {
@@ -208,7 +209,7 @@ namespace CapaPresentacion
                         CN_NotaCRDB objetoCN = new CN_NotaCRDB();
                         int idNota = Convert.ToInt32(dgvNotasDBCR.CurrentRow.Cells[0].Value.ToString());
                         string tipoNota = dgvNotasDBCR.CurrentRow.Cells[8].Value.ToString();
-                        objetoCN.AnularComprobante(idNota, tipoNota);
+                        objetoCN.AnularComprobante(idNota);
 
                         MessageBox.Show("El Comprobante se ANULÓ CORRECTAMENTE");
                         string rpta = CN_CtaCte.AnularRegistroCtaCte(dgvNotasDBCR.CurrentRow.Cells[2].Value.ToString(), "NOTA DE " + tipoNota);

@@ -192,6 +192,12 @@
     <Compile Include="FormGestionUsuarios.designer.cs">
       <DependentUpon>FormGestionUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInfoBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoBanco.Designer.cs">
+      <DependentUpon>FormInfoBanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInfoCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionUsuarios.resx">
       <DependentUpon>FormGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoBanco.resx">
+      <DependentUpon>FormInfoBanco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInfoCompras.resx">
       <DependentUpon>FormInfoCompras.cs</DependentUpon>

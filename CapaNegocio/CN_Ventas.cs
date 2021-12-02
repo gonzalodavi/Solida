@@ -25,10 +25,10 @@ namespace CapaNegocio
         public static DataTable MostrarAnulados()
         {
             return new CD_Ventas().MostrarAnulados();
-        }
+        }        
 
         public static string Insertar(string sucursal, string numventa, DateTime fecha,
-            string estado, string dni, int iduser, DataTable dtDetalles)
+            string estado, string dni, int iduser, decimal totalvta, DataTable dtDetalles)
         {
             CD_Ventas Obj = new CD_Ventas();
             Obj.Sucursal = sucursal;
@@ -37,13 +37,14 @@ namespace CapaNegocio
             Obj.Estado = estado;
             Obj.Dni = dni;
             Obj.UserID = iduser;
+            Obj.TotalVenta = totalvta;
 
             List<CD_DetallesVentas> detalles = new List<CD_DetallesVentas>();
             foreach (DataRow row in dtDetalles.Rows)
             {
                 CD_DetallesVentas detalle = new CD_DetallesVentas();
 
-                detalle.Cantidad = Convert.ToInt32(row["CANT"].ToString());
+                detalle.Cantidad = Convert.ToDecimal(row["CANT"].ToString());
                 detalle.IdProducto = Convert.ToInt32(row["IDPRODUCTO"].ToString());
                 detalle.Precio = Convert.ToDecimal(row["PRECIO"].ToString());
                 detalle.Iva = Convert.ToDecimal(row["IVA"].ToString());
@@ -76,5 +77,11 @@ namespace CapaNegocio
             return numero;
         }
 
+        public string ConsultarSiVtaAsignada(string numComp)
+        {
+            CD_Ventas Obj = new CD_Ventas();
+            string rpta = Obj.ConsultarVentaAsignada(numComp);
+            return rpta;
+        }
     }
 }

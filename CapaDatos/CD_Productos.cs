@@ -62,6 +62,7 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return dt;
         }
+
         public DataTable CargarComboBoxAlic()
         {
             SqlDataAdapter da = new SqlDataAdapter("CargarComboBoxAlic", conexion.AbrirConexion());
@@ -72,6 +73,7 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return dt;
         }
+
         public DataTable CargarComboBoxMarca()
         {
             SqlDataAdapter da = new SqlDataAdapter("CargarComboBoxMarca", conexion.AbrirConexion());
@@ -82,6 +84,7 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return dt;
         }
+
         public DataTable CargarComboBoxModelo()
         {
             SqlDataAdapter da = new SqlDataAdapter("CargarComboBoxModelo", conexion.AbrirConexion());
@@ -93,7 +96,18 @@ namespace CapaDatos
             return dt;
         }
 
-        public void AgregaProducto (string descrip, string codBar, int rubro, int alic, decimal costo, decimal venta, int stock, int stockmin, int modelo, int marca)
+        public DataTable CargarComboBoxUnidMed()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("CargarComboBoxUnidadesMedida", conexion.AbrirConexion());
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return dt;
+        }
+
+        public void AgregaProducto (string descrip, string codBar, int rubro, int alic, decimal costo, decimal venta, decimal stock, decimal stockmin, int modelo, int marca, int unidadmed)
         {            
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarProducto";
@@ -108,12 +122,13 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@stockmin", stockmin);
             comando.Parameters.AddWithValue("@modelo", modelo);
             comando.Parameters.AddWithValue("@marca", marca);
+            comando.Parameters.AddWithValue("@unidadmed", unidadmed);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void ModificaProducto(int id, string descrip, string codBar, int rubro, int alic, decimal costo, decimal venta, int stock, int stockmin, int modelo, int marca)
+        public void ModificaProducto(int id, string descrip, string codBar, int rubro, int alic, decimal costo, decimal venta, decimal stock, decimal stockmin, int modelo, int marca, int unidMed)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "ModificarProducto";
@@ -129,6 +144,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@modelo", modelo);
             comando.Parameters.AddWithValue("@marca", marca);
             comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@unidadmed", unidMed);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();

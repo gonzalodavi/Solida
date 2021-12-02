@@ -24,6 +24,8 @@ namespace CapaDatos
         private int _IdBanco;
         private string _CuentaBanco;
         private string _Titular;
+        private decimal _Debe;
+        private decimal _Haber;
         private decimal _Importe;
         private string _Estado;
         private string _EstadoNuevo;
@@ -77,6 +79,18 @@ namespace CapaDatos
             set { _Titular = value; }
         }
 
+        public decimal Debe
+        {
+            get { return _Debe; }
+            set { _Debe = value; }
+        }
+
+        public decimal Haber
+        {
+            get { return _Haber; }
+            set { _Haber = value; }
+        }
+
         public decimal Importe
         {
             get { return _Importe; }
@@ -100,7 +114,7 @@ namespace CapaDatos
         }
 
         public CD_Banco(int idtransf, string numComprobante, string tipoComprob, string numTrasnf, DateTime fechaTransf, int idbanco,
-            string ctabco, string titular, decimal importe, string estado, string estadoNuevo)
+            string ctabco, string titular, decimal debe,decimal haber,decimal importe, string estado, string estadoNuevo)
         {
             this.IdTransferencia = idtransf;
             this.NumComprobante = numComprobante;
@@ -110,6 +124,8 @@ namespace CapaDatos
             this.IdBanco = idbanco;
             this.CuentaBanco = ctabco;
             this.Titular = titular;
+            this.Debe = debe;
+            this.Haber = haber;
             this.Importe = importe;
             this.Estado = estado;
             this.EstadoNuevo = estadoNuevo;
@@ -183,6 +199,18 @@ namespace CapaDatos
                 ParTitular.Size = 100;
                 ParTitular.Value = Transferencias.Titular;
                 SqlCmd.Parameters.Add(ParTitular);
+
+                SqlParameter ParDebe = new SqlParameter();
+                ParDebe.ParameterName = "@debe";
+                ParDebe.SqlDbType = SqlDbType.Money;
+                ParDebe.Value = Transferencias.Debe;
+                SqlCmd.Parameters.Add(ParDebe);
+
+                SqlParameter ParHaber = new SqlParameter();
+                ParHaber.ParameterName = "@haber";
+                ParHaber.SqlDbType = SqlDbType.Money;
+                ParHaber.Value = Transferencias.Haber;
+                SqlCmd.Parameters.Add(ParHaber);
 
                 SqlParameter ParImporte = new SqlParameter();
                 ParImporte.ParameterName = "@importe";

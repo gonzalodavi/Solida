@@ -83,24 +83,28 @@ namespace CapaPresentacion
 
             //dgvProductos.Columns[0].Visible = false;
             //dgvProductos.Columns[1].Visible = false;
-            dgvProductos.Columns[2].Visible = false;
-            //dgvProductos.Columns[3].Visible = false;
-            dgvProductos.Columns[4].Visible = false;
-            //dgvProductos.Columns[5].Visible = false;
+            //dgvProductos.Columns[2].Visible = false;
+            dgvProductos.Columns[3].Visible = false;
+            //dgvProductos.Columns[4].Visible = false;
+            dgvProductos.Columns[5].Visible = false;
             //dgvProductos.Columns[6].Visible = false;
             //dgvProductos.Columns[7].Visible = false;
-            dgvProductos.Columns[8].Visible = false;
-            //dgvProductos.Columns[9].Visible = false;
+            //dgvProductos.Columns[8].Visible = false;
+            dgvProductos.Columns[9].Visible = false;
             //dgvProductos.Columns[10].Visible = false;
+            //dgvProductos.Columns[11].Visible = false;
+            dgvProductos.Columns[12].Visible = false;
 
             this.dgvProductos.Columns[0].Width = 40;
             this.dgvProductos.Columns[1].Width = 150;
-            this.dgvProductos.Columns[3].Width = 100;
-            this.dgvProductos.Columns[5].Width = 70;
+            this.dgvProductos.Columns[2].Width = 30;
+            this.dgvProductos.Columns[4].Width = 150;
+            this.dgvProductos.Columns[5].Width = 100;
             this.dgvProductos.Columns[6].Width = 70;
-            this.dgvProductos.Columns[7].Width = 40;
-            this.dgvProductos.Columns[9].Width = 100;
+            this.dgvProductos.Columns[7].Width = 70;
+            this.dgvProductos.Columns[8].Width = 40;
             this.dgvProductos.Columns[10].Width = 100;
+            this.dgvProductos.Columns[11].Width = 100;
         }
 
         //Mostrar Mensaje de Confirmación
@@ -133,7 +137,7 @@ namespace CapaPresentacion
             this.DTDetallesRemito = new DataTable("Detalle");
             this.DTDetallesRemito.Columns.Add("ID_PRODUCTO", Type.GetType("System.Int32"));
             this.DTDetallesRemito.Columns.Add("PRODUCTO", Type.GetType("System.String"));
-            this.DTDetallesRemito.Columns.Add("CANTIDAD", Type.GetType("System.Int32"));
+            this.DTDetallesRemito.Columns.Add("CANTIDAD", Type.GetType("System.Decimal"));
             
 
 
@@ -166,7 +170,7 @@ namespace CapaPresentacion
 
                     row["ID_PRODUCTO"] = Convert.ToInt32(tbIDProducto.Text);
                     row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                    row["CANTIDAD"] = tbCantidad.Value;
+                    row["CANTIDAD"] = Convert.ToDecimal(tbCantidad.Value);
                     //dgvDetRem.Columns[3].Visible = false;
 
                     DTDetallesRemito.Rows.Add(row);
@@ -194,7 +198,7 @@ namespace CapaPresentacion
 
                         row["ID_PRODUCTO"] = Convert.ToInt32(tbIDProducto.Text);
                         row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                        row["CANTIDAD"] = tbCantidad.Value;
+                        row["CANTIDAD"] = Convert.ToDecimal(tbCantidad.Value);
 
                         DTDetallesRemito.Rows.Add(row);
                         LimpiarCamposProductos();
@@ -300,7 +304,6 @@ namespace CapaPresentacion
                                         tabRemitos.SelectedTab = tabListadoRemitos;
                                         BuscarUltimoComprob();
                                         CargarGrilla();
-
                                     }
                                     else
                                     {
@@ -507,7 +510,7 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewRow MyRow in dgvProductos.Rows)
             {
-                if (Convert.ToInt32(MyRow.Cells[7].Value) <= Convert.ToInt32(MyRow.Cells[8].Value))
+                if (Convert.ToInt32(MyRow.Cells[8].Value) <= Convert.ToInt32(MyRow.Cells[9].Value))
                 {
                     MyRow.DefaultCellStyle.BackColor = Color.Orange;
                     MyRow.DefaultCellStyle.ForeColor = Color.Red;

@@ -12,7 +12,7 @@ namespace CapaDatos
         private int _IdDetalleRemito;
         private int _IdRemito;
         private int _IdProducto;
-        private int _Cantidad;
+        private decimal _Cantidad;
 
         //Propiedades
         public int IdDetalleRemito
@@ -33,7 +33,7 @@ namespace CapaDatos
             set { _IdProducto = value; }
         }
 
-        public int Cantidad
+        public decimal Cantidad
         {
             get { return _Cantidad; }
             set { _Cantidad = value; }
@@ -45,7 +45,7 @@ namespace CapaDatos
         }
 
         public CD_DetalleRemito(int idDetalleRemito, int idRemito,
-            int idProducto, int cantidad)
+            int idProducto, decimal cantidad)
         {
             this.IdDetalleRemito = idDetalleRemito;
             this.IdRemito = idRemito;
@@ -88,13 +88,13 @@ namespace CapaDatos
 
                 SqlParameter ParCantidad = new SqlParameter();
                 ParCantidad.ParameterName = "@cantidad";
-                ParCantidad.SqlDbType = SqlDbType.Int;
+                ParCantidad.SqlDbType = SqlDbType.Decimal;
                 ParCantidad.Value = Detalle_Remito.Cantidad;
                 SqlCmd.Parameters.Add(ParCantidad);               
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se Ingreso el Registro";
 
 
             }

@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionUsuarios));
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.lblNuevoOModUser = new System.Windows.Forms.Label();
             this.lblSeleDom = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
@@ -69,7 +70,7 @@
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
+            this.tbIDEmpresa = new System.Windows.Forms.TextBox();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +80,7 @@
             this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelContenedor.Controls.Add(this.tbIDEmpresa);
             this.panelContenedor.Controls.Add(this.btnRegresar);
             this.panelContenedor.Controls.Add(this.lblNuevoOModUser);
             this.panelContenedor.Controls.Add(this.lblSeleDom);
@@ -118,6 +120,32 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1026, 749);
             this.panelContenedor.TabIndex = 0;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 25;
+            this.btnRegresar.Location = new System.Drawing.Point(842, 22);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
+            this.btnRegresar.TabIndex = 180;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // lblNuevoOModUser
             // 
@@ -173,7 +201,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -634,31 +662,19 @@
             this.lblTitulo.TabIndex = 12;
             this.lblTitulo.Text = "MANTENIMIENTO DE USUARIOS";
             // 
-            // btnRegresar
+            // tbIDEmpresa
             // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnRegresar.IconColor = System.Drawing.Color.White;
-            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(842, 22);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
-            this.btnRegresar.TabIndex = 180;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.tbIDEmpresa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbIDEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbIDEmpresa.Enabled = false;
+            this.tbIDEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbIDEmpresa.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbIDEmpresa.Location = new System.Drawing.Point(530, 461);
+            this.tbIDEmpresa.Name = "tbIDEmpresa";
+            this.tbIDEmpresa.Size = new System.Drawing.Size(35, 25);
+            this.tbIDEmpresa.TabIndex = 181;
+            this.tbIDEmpresa.Text = "1";
+            this.tbIDEmpresa.Visible = false;
             // 
             // FormGestionUsuarios
             // 
@@ -720,5 +736,6 @@
         private System.Windows.Forms.Label lblNuevoOModUser;
         private System.Windows.Forms.Label lblSeleDom;
         private FontAwesome.Sharp.IconButton btnRegresar;
+        private System.Windows.Forms.TextBox tbIDEmpresa;
     }
 }
