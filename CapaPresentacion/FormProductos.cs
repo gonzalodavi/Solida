@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CapaComun.Cache;
 
 namespace CapaPresentacion
 {
@@ -895,6 +895,63 @@ namespace CapaPresentacion
             {
                 lblErrorDescripcion.Visible = true;
             }
+        }
+
+        private void btnCancelaDesbloq_Click(object sender, EventArgs e)
+        {
+            panelDesbloq.Visible = false;
+            tbClaveDebloq.Text = "";
+            tbClaveDebloq.Visible = false;
+            btnAceptaClave.Visible = false;
+            btnCancelaDesbloq.Visible = false;
+            btnDesbloq.Visible = true;
+        }
+
+        private void btnDesbloq_Click(object sender, EventArgs e)
+        {
+            if (tbStock.Enabled == true) 
+            {
+                tbStock.Enabled = false;
+                btnDesbloq.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+            }
+            else
+            {
+                if (UserLoginCache.Rango == "Administrador")
+                {
+                    panelDesbloq.Visible = true;
+                    tbClaveDebloq.Text = "";
+                    tbClaveDebloq.Visible = true;
+                    btnAceptaClave.Visible = true;
+                    btnCancelaDesbloq.Visible = true;
+                    btnDesbloq.Visible = false;
+                    tbClaveDebloq.Focus();
+                }
+                else
+                {
+                    MensajeError("No tiene permisos para modificar el Stock");
+                }
+            }
+            
+        }
+
+        private void btnAceptaClave_Click(object sender, EventArgs e)
+        {
+            if (UserLoginCache.Clave == tbClaveDebloq.Text)
+            {
+                panelDesbloq.Visible = false;
+                tbClaveDebloq.Text = "";
+                tbClaveDebloq.Visible = false;
+                btnAceptaClave.Visible = false;
+                btnCancelaDesbloq.Visible = false;
+                btnDesbloq.Visible = true;
+                btnDesbloq.IconChar = FontAwesome.Sharp.IconChar.Lock;
+                tbStock.Enabled = true;
+                MensajeOk(UserLoginCache.Nombre+" "+ UserLoginCache.Apellido + " Ahora puede MODIFICAR el STOCK de PRODUCTOS");
+            }
+            else
+            {
+                MensajeError("CLAVE INCORRECTA");
+            }            
         }
 
         private void tbGanancia_TextChanged(object sender, EventArgs e)

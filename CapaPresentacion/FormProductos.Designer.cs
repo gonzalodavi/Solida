@@ -57,6 +57,14 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
             this.tabNuevoProducto = new System.Windows.Forms.TabPage();
+            this.lblErrorGanancia = new System.Windows.Forms.Label();
+            this.lblErrorPrecioCosto = new System.Windows.Forms.Label();
+            this.lblErrorAlic = new System.Windows.Forms.Label();
+            this.lblErrorUniMed = new System.Windows.Forms.Label();
+            this.lblErrorModelo = new System.Windows.Forms.Label();
+            this.lblErrorMarca = new System.Windows.Forms.Label();
+            this.lblErrorRubro = new System.Windows.Forms.Label();
+            this.lblErrorDescripcion = new System.Windows.Forms.Label();
             this.btnAgregaUdeMed = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.cbUdeMed = new System.Windows.Forms.ComboBox();
@@ -99,19 +107,17 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.btAceptar = new System.Windows.Forms.Button();
             this.cbRubro = new System.Windows.Forms.ComboBox();
-            this.lblErrorDescripcion = new System.Windows.Forms.Label();
-            this.lblErrorRubro = new System.Windows.Forms.Label();
-            this.lblErrorMarca = new System.Windows.Forms.Label();
-            this.lblErrorModelo = new System.Windows.Forms.Label();
-            this.lblErrorUniMed = new System.Windows.Forms.Label();
-            this.lblErrorAlic = new System.Windows.Forms.Label();
-            this.lblErrorPrecioCosto = new System.Windows.Forms.Label();
-            this.lblErrorGanancia = new System.Windows.Forms.Label();
+            this.btnDesbloq = new FontAwesome.Sharp.IconButton();
+            this.tbClaveDebloq = new System.Windows.Forms.TextBox();
+            this.btnAceptaClave = new FontAwesome.Sharp.IconButton();
+            this.btnCancelaDesbloq = new FontAwesome.Sharp.IconButton();
+            this.panelDesbloq = new System.Windows.Forms.Panel();
             this.panelContenedor.SuspendLayout();
             this.tabProductos.SuspendLayout();
             this.tabConsultaProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.tabNuevoProducto.SuspendLayout();
+            this.panelDesbloq.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -154,7 +160,7 @@
             this.btnRegresar.IconColor = System.Drawing.Color.White;
             this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(849, 28);
+            this.btnRegresar.Location = new System.Drawing.Point(831, 28);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(116, 31);
             this.btnRegresar.TabIndex = 84;
@@ -350,7 +356,7 @@
             this.btnActualizaListaProd.IconColor = System.Drawing.Color.White;
             this.btnActualizaListaProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizaListaProd.IconSize = 5;
-            this.btnActualizaListaProd.Location = new System.Drawing.Point(810, 30);
+            this.btnActualizaListaProd.Location = new System.Drawing.Point(792, 30);
             this.btnActualizaListaProd.Name = "btnActualizaListaProd";
             this.btnActualizaListaProd.Size = new System.Drawing.Size(116, 31);
             this.btnActualizaListaProd.TabIndex = 132;
@@ -375,7 +381,7 @@
             this.btnImprimir.IconColor = System.Drawing.Color.White;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 25;
-            this.btnImprimir.Location = new System.Drawing.Point(810, 523);
+            this.btnImprimir.Location = new System.Drawing.Point(792, 523);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(116, 31);
             this.btnImprimir.TabIndex = 84;
@@ -396,7 +402,7 @@
             this.btnNuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoProducto.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnNuevoProducto.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoProducto.Location = new System.Drawing.Point(26, 523);
+            this.btnNuevoProducto.Location = new System.Drawing.Point(44, 523);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(116, 31);
             this.btnNuevoProducto.TabIndex = 131;
@@ -420,7 +426,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.White;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(365, 30);
+            this.btnBuscar.Location = new System.Drawing.Point(383, 30);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(116, 31);
             this.btnBuscar.TabIndex = 119;
@@ -435,9 +441,9 @@
             this.tbBusca.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbBusca.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBusca.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbBusca.Location = new System.Drawing.Point(121, 33);
+            this.tbBusca.Location = new System.Drawing.Point(94, 33);
             this.tbBusca.Name = "tbBusca";
-            this.tbBusca.Size = new System.Drawing.Size(230, 25);
+            this.tbBusca.Size = new System.Drawing.Size(283, 25);
             this.tbBusca.TabIndex = 114;
             this.tbBusca.TabStop = false;
             // 
@@ -452,7 +458,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(365, 523);
+            this.btnEliminar.Location = new System.Drawing.Point(383, 523);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(116, 31);
             this.btnEliminar.TabIndex = 115;
@@ -472,7 +478,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(197, 523);
+            this.btnModificar.Location = new System.Drawing.Point(215, 523);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(116, 31);
             this.btnModificar.TabIndex = 116;
@@ -487,7 +493,7 @@
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblBuscar.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblBuscar.Location = new System.Drawing.Point(62, 36);
+            this.lblBuscar.Location = new System.Drawing.Point(41, 36);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(53, 17);
             this.lblBuscar.TabIndex = 118;
@@ -557,6 +563,7 @@
             // tabNuevoProducto
             // 
             this.tabNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevoProducto.Controls.Add(this.btnDesbloq);
             this.tabNuevoProducto.Controls.Add(this.lblErrorGanancia);
             this.tabNuevoProducto.Controls.Add(this.lblErrorPrecioCosto);
             this.tabNuevoProducto.Controls.Add(this.lblErrorAlic);
@@ -607,12 +614,117 @@
             this.tabNuevoProducto.Controls.Add(this.lblDescripcion);
             this.tabNuevoProducto.Controls.Add(this.btAceptar);
             this.tabNuevoProducto.Controls.Add(this.cbRubro);
+            this.tabNuevoProducto.Controls.Add(this.panelDesbloq);
             this.tabNuevoProducto.Location = new System.Drawing.Point(4, 26);
             this.tabNuevoProducto.Name = "tabNuevoProducto";
             this.tabNuevoProducto.Padding = new System.Windows.Forms.Padding(3);
             this.tabNuevoProducto.Size = new System.Drawing.Size(948, 577);
             this.tabNuevoProducto.TabIndex = 1;
             this.tabNuevoProducto.Text = "Mantenimiento";
+            // 
+            // lblErrorGanancia
+            // 
+            this.lblErrorGanancia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorGanancia.AutoSize = true;
+            this.lblErrorGanancia.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorGanancia.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorGanancia.Location = new System.Drawing.Point(677, 226);
+            this.lblErrorGanancia.Name = "lblErrorGanancia";
+            this.lblErrorGanancia.Size = new System.Drawing.Size(172, 13);
+            this.lblErrorGanancia.TabIndex = 185;
+            this.lblErrorGanancia.Text = "Indique Porcentaje de Ganancia";
+            this.lblErrorGanancia.Visible = false;
+            // 
+            // lblErrorPrecioCosto
+            // 
+            this.lblErrorPrecioCosto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorPrecioCosto.AutoSize = true;
+            this.lblErrorPrecioCosto.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorPrecioCosto.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorPrecioCosto.Location = new System.Drawing.Point(677, 175);
+            this.lblErrorPrecioCosto.Name = "lblErrorPrecioCosto";
+            this.lblErrorPrecioCosto.Size = new System.Drawing.Size(82, 13);
+            this.lblErrorPrecioCosto.TabIndex = 184;
+            this.lblErrorPrecioCosto.Text = "Indique Precio";
+            this.lblErrorPrecioCosto.Visible = false;
+            // 
+            // lblErrorAlic
+            // 
+            this.lblErrorAlic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorAlic.AutoSize = true;
+            this.lblErrorAlic.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorAlic.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorAlic.Location = new System.Drawing.Point(677, 123);
+            this.lblErrorAlic.Name = "lblErrorAlic";
+            this.lblErrorAlic.Size = new System.Drawing.Size(81, 13);
+            this.lblErrorAlic.TabIndex = 183;
+            this.lblErrorAlic.Text = "Seleccione IVA";
+            this.lblErrorAlic.Visible = false;
+            // 
+            // lblErrorUniMed
+            // 
+            this.lblErrorUniMed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorUniMed.AutoSize = true;
+            this.lblErrorUniMed.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorUniMed.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorUniMed.Location = new System.Drawing.Point(246, 391);
+            this.lblErrorUniMed.Name = "lblErrorUniMed";
+            this.lblErrorUniMed.Size = new System.Drawing.Size(161, 13);
+            this.lblErrorUniMed.TabIndex = 182;
+            this.lblErrorUniMed.Text = "Seleccione Unidad de Medida";
+            this.lblErrorUniMed.Visible = false;
+            // 
+            // lblErrorModelo
+            // 
+            this.lblErrorModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorModelo.AutoSize = true;
+            this.lblErrorModelo.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorModelo.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorModelo.Location = new System.Drawing.Point(246, 335);
+            this.lblErrorModelo.Name = "lblErrorModelo";
+            this.lblErrorModelo.Size = new System.Drawing.Size(105, 13);
+            this.lblErrorModelo.TabIndex = 181;
+            this.lblErrorModelo.Text = "Seleccione Modelo";
+            this.lblErrorModelo.Visible = false;
+            // 
+            // lblErrorMarca
+            // 
+            this.lblErrorMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorMarca.AutoSize = true;
+            this.lblErrorMarca.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorMarca.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorMarca.Location = new System.Drawing.Point(246, 281);
+            this.lblErrorMarca.Name = "lblErrorMarca";
+            this.lblErrorMarca.Size = new System.Drawing.Size(96, 13);
+            this.lblErrorMarca.TabIndex = 180;
+            this.lblErrorMarca.Text = "Seleccione Marca";
+            this.lblErrorMarca.Visible = false;
+            // 
+            // lblErrorRubro
+            // 
+            this.lblErrorRubro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorRubro.AutoSize = true;
+            this.lblErrorRubro.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorRubro.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorRubro.Location = new System.Drawing.Point(246, 226);
+            this.lblErrorRubro.Name = "lblErrorRubro";
+            this.lblErrorRubro.Size = new System.Drawing.Size(113, 13);
+            this.lblErrorRubro.TabIndex = 179;
+            this.lblErrorRubro.Text = "Seleccione un Rubro";
+            this.lblErrorRubro.Visible = false;
+            // 
+            // lblErrorDescripcion
+            // 
+            this.lblErrorDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorDescripcion.AutoSize = true;
+            this.lblErrorDescripcion.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorDescripcion.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorDescripcion.Location = new System.Drawing.Point(246, 123);
+            this.lblErrorDescripcion.Name = "lblErrorDescripcion";
+            this.lblErrorDescripcion.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorDescripcion.TabIndex = 177;
+            this.lblErrorDescripcion.Text = "Este Campo es Obligatorio";
+            this.lblErrorDescripcion.Visible = false;
             // 
             // btnAgregaUdeMed
             // 
@@ -663,7 +775,6 @@
             this.cbUdeMed.Size = new System.Drawing.Size(223, 25);
             this.cbUdeMed.TabIndex = 173;
             this.cbUdeMed.SelectedIndexChanged += new System.EventHandler(this.cbUdeMed_SelectedIndexChanged);
-            this.cbUdeMed.Leave += new System.EventHandler(this.cbUdeMed_Leave);
             // 
             // label8
             // 
@@ -848,6 +959,7 @@
             // tbStock
             // 
             this.tbStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbStock.Enabled = false;
             this.tbStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbStock.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbStock.Location = new System.Drawing.Point(680, 308);
@@ -1154,7 +1266,6 @@
             this.tbDescripcion.Size = new System.Drawing.Size(223, 25);
             this.tbDescripcion.TabIndex = 1;
             this.tbDescripcion.TextChanged += new System.EventHandler(this.tbDescripcion_TextChanged);
-            this.tbDescripcion.Leave += new System.EventHandler(this.tbDescripcion_Leave);
             // 
             // lblDescripcion
             // 
@@ -1204,109 +1315,105 @@
             this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
             this.cbRubro.Leave += new System.EventHandler(this.cbRubro_Leave);
             // 
-            // lblErrorDescripcion
+            // btnDesbloq
             // 
-            this.lblErrorDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorDescripcion.AutoSize = true;
-            this.lblErrorDescripcion.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorDescripcion.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorDescripcion.Location = new System.Drawing.Point(246, 123);
-            this.lblErrorDescripcion.Name = "lblErrorDescripcion";
-            this.lblErrorDescripcion.Size = new System.Drawing.Size(144, 13);
-            this.lblErrorDescripcion.TabIndex = 177;
-            this.lblErrorDescripcion.Text = "Este Campo es Obligatorio";
-            this.lblErrorDescripcion.Visible = false;
+            this.btnDesbloq.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDesbloq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesbloq.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDesbloq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDesbloq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesbloq.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnDesbloq.ForeColor = System.Drawing.Color.White;
+            this.btnDesbloq.IconChar = FontAwesome.Sharp.IconChar.UnlockAlt;
+            this.btnDesbloq.IconColor = System.Drawing.Color.White;
+            this.btnDesbloq.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDesbloq.IconSize = 25;
+            this.btnDesbloq.Location = new System.Drawing.Point(778, 307);
+            this.btnDesbloq.Name = "btnDesbloq";
+            this.btnDesbloq.Size = new System.Drawing.Size(29, 29);
+            this.btnDesbloq.TabIndex = 85;
+            this.btnDesbloq.TabStop = false;
+            this.btnDesbloq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDesbloq.UseVisualStyleBackColor = false;
+            this.btnDesbloq.Click += new System.EventHandler(this.btnDesbloq_Click);
             // 
-            // lblErrorRubro
+            // tbClaveDebloq
             // 
-            this.lblErrorRubro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorRubro.AutoSize = true;
-            this.lblErrorRubro.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorRubro.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorRubro.Location = new System.Drawing.Point(246, 226);
-            this.lblErrorRubro.Name = "lblErrorRubro";
-            this.lblErrorRubro.Size = new System.Drawing.Size(113, 13);
-            this.lblErrorRubro.TabIndex = 179;
-            this.lblErrorRubro.Text = "Seleccione un Rubro";
-            this.lblErrorRubro.Visible = false;
+            this.tbClaveDebloq.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbClaveDebloq.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbClaveDebloq.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbClaveDebloq.Location = new System.Drawing.Point(9, 8);
+            this.tbClaveDebloq.MaxLength = 15;
+            this.tbClaveDebloq.Name = "tbClaveDebloq";
+            this.tbClaveDebloq.Size = new System.Drawing.Size(92, 25);
+            this.tbClaveDebloq.TabIndex = 186;
+            this.tbClaveDebloq.TabStop = false;
+            this.tbClaveDebloq.UseSystemPasswordChar = true;
+            this.tbClaveDebloq.Visible = false;
             // 
-            // lblErrorMarca
+            // btnAceptaClave
             // 
-            this.lblErrorMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorMarca.AutoSize = true;
-            this.lblErrorMarca.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorMarca.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorMarca.Location = new System.Drawing.Point(246, 281);
-            this.lblErrorMarca.Name = "lblErrorMarca";
-            this.lblErrorMarca.Size = new System.Drawing.Size(96, 13);
-            this.lblErrorMarca.TabIndex = 180;
-            this.lblErrorMarca.Text = "Seleccione Marca";
-            this.lblErrorMarca.Visible = false;
+            this.btnAceptaClave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAceptaClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAceptaClave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptaClave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAceptaClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAceptaClave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAceptaClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptaClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAceptaClave.ForeColor = System.Drawing.Color.White;
+            this.btnAceptaClave.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnAceptaClave.IconColor = System.Drawing.Color.White;
+            this.btnAceptaClave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAceptaClave.IconSize = 25;
+            this.btnAceptaClave.Location = new System.Drawing.Point(63, 39);
+            this.btnAceptaClave.Name = "btnAceptaClave";
+            this.btnAceptaClave.Size = new System.Drawing.Size(29, 29);
+            this.btnAceptaClave.TabIndex = 187;
+            this.btnAceptaClave.TabStop = false;
+            this.btnAceptaClave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptaClave.UseVisualStyleBackColor = false;
+            this.btnAceptaClave.Visible = false;
+            this.btnAceptaClave.Click += new System.EventHandler(this.btnAceptaClave_Click);
             // 
-            // lblErrorModelo
+            // btnCancelaDesbloq
             // 
-            this.lblErrorModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorModelo.AutoSize = true;
-            this.lblErrorModelo.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorModelo.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorModelo.Location = new System.Drawing.Point(246, 335);
-            this.lblErrorModelo.Name = "lblErrorModelo";
-            this.lblErrorModelo.Size = new System.Drawing.Size(105, 13);
-            this.lblErrorModelo.TabIndex = 181;
-            this.lblErrorModelo.Text = "Seleccione Modelo";
-            this.lblErrorModelo.Visible = false;
+            this.btnCancelaDesbloq.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelaDesbloq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnCancelaDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelaDesbloq.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelaDesbloq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelaDesbloq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnCancelaDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelaDesbloq.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnCancelaDesbloq.ForeColor = System.Drawing.Color.White;
+            this.btnCancelaDesbloq.IconChar = FontAwesome.Sharp.IconChar.Ban;
+            this.btnCancelaDesbloq.IconColor = System.Drawing.Color.White;
+            this.btnCancelaDesbloq.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelaDesbloq.IconSize = 25;
+            this.btnCancelaDesbloq.Location = new System.Drawing.Point(18, 39);
+            this.btnCancelaDesbloq.Name = "btnCancelaDesbloq";
+            this.btnCancelaDesbloq.Size = new System.Drawing.Size(29, 29);
+            this.btnCancelaDesbloq.TabIndex = 187;
+            this.btnCancelaDesbloq.TabStop = false;
+            this.btnCancelaDesbloq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelaDesbloq.UseVisualStyleBackColor = false;
+            this.btnCancelaDesbloq.Visible = false;
+            this.btnCancelaDesbloq.Click += new System.EventHandler(this.btnCancelaDesbloq_Click);
             // 
-            // lblErrorUniMed
+            // panelDesbloq
             // 
-            this.lblErrorUniMed.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorUniMed.AutoSize = true;
-            this.lblErrorUniMed.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorUniMed.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorUniMed.Location = new System.Drawing.Point(246, 391);
-            this.lblErrorUniMed.Name = "lblErrorUniMed";
-            this.lblErrorUniMed.Size = new System.Drawing.Size(161, 13);
-            this.lblErrorUniMed.TabIndex = 182;
-            this.lblErrorUniMed.Text = "Seleccione Unidad de Medida";
-            this.lblErrorUniMed.Visible = false;
-            // 
-            // lblErrorAlic
-            // 
-            this.lblErrorAlic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorAlic.AutoSize = true;
-            this.lblErrorAlic.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorAlic.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorAlic.Location = new System.Drawing.Point(677, 123);
-            this.lblErrorAlic.Name = "lblErrorAlic";
-            this.lblErrorAlic.Size = new System.Drawing.Size(81, 13);
-            this.lblErrorAlic.TabIndex = 183;
-            this.lblErrorAlic.Text = "Seleccione IVA";
-            this.lblErrorAlic.Visible = false;
-            // 
-            // lblErrorPrecioCosto
-            // 
-            this.lblErrorPrecioCosto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorPrecioCosto.AutoSize = true;
-            this.lblErrorPrecioCosto.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorPrecioCosto.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorPrecioCosto.Location = new System.Drawing.Point(677, 175);
-            this.lblErrorPrecioCosto.Name = "lblErrorPrecioCosto";
-            this.lblErrorPrecioCosto.Size = new System.Drawing.Size(82, 13);
-            this.lblErrorPrecioCosto.TabIndex = 184;
-            this.lblErrorPrecioCosto.Text = "Indique Precio";
-            this.lblErrorPrecioCosto.Visible = false;
-            // 
-            // lblErrorGanancia
-            // 
-            this.lblErrorGanancia.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorGanancia.AutoSize = true;
-            this.lblErrorGanancia.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorGanancia.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorGanancia.Location = new System.Drawing.Point(677, 226);
-            this.lblErrorGanancia.Name = "lblErrorGanancia";
-            this.lblErrorGanancia.Size = new System.Drawing.Size(172, 13);
-            this.lblErrorGanancia.TabIndex = 185;
-            this.lblErrorGanancia.Text = "Indique Porcentaje de Ganancia";
-            this.lblErrorGanancia.Visible = false;
+            this.panelDesbloq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDesbloq.Controls.Add(this.btnAceptaClave);
+            this.panelDesbloq.Controls.Add(this.tbClaveDebloq);
+            this.panelDesbloq.Controls.Add(this.btnCancelaDesbloq);
+            this.panelDesbloq.Location = new System.Drawing.Point(778, 287);
+            this.panelDesbloq.Name = "panelDesbloq";
+            this.panelDesbloq.Size = new System.Drawing.Size(112, 76);
+            this.panelDesbloq.TabIndex = 188;
+            this.panelDesbloq.Visible = false;
             // 
             // FormProductos
             // 
@@ -1329,6 +1436,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.tabNuevoProducto.ResumeLayout(false);
             this.tabNuevoProducto.PerformLayout();
+            this.panelDesbloq.ResumeLayout(false);
+            this.panelDesbloq.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1410,5 +1519,10 @@
         private System.Windows.Forms.Label lblErrorMarca;
         private System.Windows.Forms.Label lblErrorRubro;
         private System.Windows.Forms.Label lblErrorDescripcion;
+        private FontAwesome.Sharp.IconButton btnDesbloq;
+        private FontAwesome.Sharp.IconButton btnCancelaDesbloq;
+        private FontAwesome.Sharp.IconButton btnAceptaClave;
+        private System.Windows.Forms.TextBox tbClaveDebloq;
+        private System.Windows.Forms.Panel panelDesbloq;
     }
 }
