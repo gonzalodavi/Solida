@@ -24,7 +24,7 @@ namespace CapaPresentacion
         private decimal importeBanco = 0;
         private DataTable DTDetalles, DTDetallesBco;
         public static int contadorFila = 0, contadorFilaBco;
-
+        public string NombreTitular = "";
         private string detalleTransf = "", detalleValores = "";
         
 
@@ -549,7 +549,13 @@ namespace CapaPresentacion
                 if (rpta.Equals("OK"))
                 {
                     this.MensajeOk("Se Generó con éxito el RECIBO");
-                    if(importeValores > 0)
+
+                    if (importeEfectivo > 0)
+                    {
+                        insertarMovimientoEfectivoACaja();                        
+                    }
+
+                    if (importeValores > 0)
                     {
                         string rptActCheq = CN_Cheque.ActivarChequesPendientes("PENDIENTE", "ACTIVO");
                         if (rptActCheq.Equals("OK"))
@@ -599,6 +605,27 @@ namespace CapaPresentacion
                 else
                 {
                     this.MensajeError(rpta);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void insertarMovimientoEfectivoACaja()
+        {
+            string res1 = "";
+            try
+            {
+                res1 = CN_Caja.Insertar(tbNumRecibo.Text, "RECIBO DE CAJA", dtpFechaRecibo.Value, NombreTitular, tbDNI.Text, "ACTIVO", importeEfectivo, 0, importeEfectivo);
+                if (res1.Equals("OK"))
+                {
+                    MensajeOk("Se Inserto el Movimiento de Caja");
+                }
+                else
+                {
+                    MensajeError(res1);
                 }
             }
             catch (Exception ex)

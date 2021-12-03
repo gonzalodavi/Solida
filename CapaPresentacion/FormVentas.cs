@@ -820,6 +820,7 @@ namespace CapaPresentacion
             using (FormReciboDePago mm = new FormReciboDePago())
             {
                 mm.tbTotalAPagar.Text = tbTotalFact.Text;
+                mm.NombreTitular = tbCliente.Text.Trim();
                 mm.tbDetalleRecibo.Text = "PAGO FACTURA: " + cbSucursal.Text + "-" + comprobte + "\r\n";
                 mm.tbDNI.Text = tbDni.Text;
                 mm.tbCheqBenef.Text = "Quevedo Yolanda";

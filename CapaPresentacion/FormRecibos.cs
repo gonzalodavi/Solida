@@ -201,6 +201,28 @@ namespace CapaPresentacion
                         if (rpta.Equals("OK"))
                         {
                             this.MensajeOk("Se Generó con éxito el Comprobante");
+
+                            if (efectivo > 0)
+                            {
+                                string res1 = "";
+                                try
+                                {
+                                    res1 = CN_Caja.Insertar(tbNumRecibo.Text, "RECIBO DE CAJA", dtpFechaRecibo.Value, cbCliente.Text, cbCliente.SelectedValue.ToString(), "ACTIVO", efectivo, 0, efectivo);
+                                    if (res1.Equals("OK"))
+                                    {
+                                        MensajeOk("Se Inserto el Movimiento de Caja");
+                                    }
+                                    else
+                                    {
+                                        MensajeError(res1);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message + ex.StackTrace);
+                                }
+                            }
+
                             if (valores > 0)
                             {
                                 string rptActCheq = CN_Cheque.ActivarChequesPendientes("PENDIENTE", "ACTIVO");
@@ -303,7 +325,6 @@ namespace CapaPresentacion
             }                   
         }
 
-       
 
         private void ResetRecibo()
         {

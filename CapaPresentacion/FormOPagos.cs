@@ -396,7 +396,7 @@ namespace CapaPresentacion
                             string rpta1 = "";
 
                             DialogResult Opcion;
-                            string DetalleComprobante = tbDetalleOPago + "\r\n" + detalleValores + detalleTransf;
+                            string DetalleComprobante = tbDetalleOPago.Text + "\r\n" + detalleValores + detalleTransf;
                             Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                             if (Opcion == DialogResult.OK)
                             {
@@ -411,15 +411,22 @@ namespace CapaPresentacion
                                     
                                     if (efectivo > 0)
                                     {
-                                        string rptActCaja = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO", idOPago);
-
-                                        if (rptActCaja.Equals("OK"))
+                                        string res1 = "";
+                                        try
                                         {
-                                            // MensajeOk("Cheques ESTADO: PAGADO");
+                                            res1 = CN_Caja.Insertar(tbNumOPago.Text, "ORDEN DE PAGO", dtpFechaRecibo.Value, cbProveedor.Text, cbProveedor.SelectedValue.ToString(), "ACTIVO", 0, efectivo, -1*efectivo);
+                                            if (res1.Equals("OK"))
+                                            {
+                                                MensajeOk("Se Inserto el Movimiento de Caja");
+                                            }
+                                            else
+                                            {
+                                                MensajeError(res1);
+                                            }
                                         }
-                                        else
+                                        catch (Exception ex)
                                         {
-                                            // MensajeError(rpta1);
+                                            MessageBox.Show(ex.Message + ex.StackTrace);
                                         }
                                     }
 

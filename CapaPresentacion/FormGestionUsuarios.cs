@@ -199,14 +199,111 @@ namespace Presentacion
                 }
                 else
                 {
-                    if (MessageBox.Show("¿Desea ELIMINAR permanentemente el usuario seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    try
                     {
-                        idUsuario = idU.ToString();
-                        objetoCN.EliminarUsuario(idUsuario);
-                        MessageBox.Show("Se eliminó correctamente el usuario seleccionado");
-                        MostrarUsuarios();
-                        idUsuario = null;
+                        string rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserCmpras", idU);
+                        if (rpta == "OK")
+                        {
+                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                        }
+                        else
+                        {
+                            if (rpta == "NO")
+                            {
+                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserNotas", idU);
+                                if (rpta == "OK")
+                                {
+                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                }
+                                else
+                                {
+                                    if (rpta == "NO")
+                                    {
+                                        rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserOPago", idU);
+                                        if (rpta == "OK")
+                                        {
+                                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                        }
+                                        else
+                                        {
+                                            if (rpta == "NO")
+                                            {
+                                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserRec", idU);
+                                                if (rpta == "OK")
+                                                {
+                                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                                }
+                                                else
+                                                {
+                                                    if (rpta == "NO")
+                                                    {
+                                                        rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserRem", idU);
+                                                        if (rpta == "OK")
+                                                        {
+                                                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                                        }
+                                                        else
+                                                        {
+                                                            if (rpta == "NO")
+                                                            {
+                                                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserVtas", idU);
+                                                                if (rpta == "OK")
+                                                                {
+                                                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                                                }
+                                                                else
+                                                                {
+                                                                    if (rpta == "NO")
+                                                                    {
+                                                                        if (MessageBox.Show("¿Desea ELIMINAR permanentemente el usuario seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                                                        {
+                                                                            idUsuario = idU.ToString();
+                                                                            objetoCN.EliminarUsuario(idUsuario);
+                                                                            MessageBox.Show("Se eliminó correctamente el usuario seleccionado");
+                                                                            MostrarUsuarios();
+                                                                            idUsuario = null;
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        MensajeError(rpta);
+                                                                    }
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                MensajeError(rpta);
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        MensajeError(rpta);
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MensajeError(rpta);
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MensajeError(rpta);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MensajeError(rpta);
+                            }
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo realizar la operacion: " + ex);
+                    }                    
                 }                             
             }
             else

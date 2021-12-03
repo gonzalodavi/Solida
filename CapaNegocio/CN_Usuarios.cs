@@ -17,6 +17,13 @@ namespace CapaNegocio
             return new CD_Usuarios().Mostrar();
         }
 
+        public static string ConsultaSiExisteUserEnComprob(string proc, int id)
+        {
+            CD_Usuarios Obj = new CD_Usuarios();
+            string rpta = Obj.ConsultaSiExisteUserEnComprob(proc,id);
+            return rpta;
+        }
+
         public DataTable MostrarSesiones()
         {
             DataTable tabla = new DataTable();
