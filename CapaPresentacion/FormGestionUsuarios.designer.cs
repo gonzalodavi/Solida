@@ -70,7 +70,12 @@
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.tbIDEmpresa = new System.Windows.Forms.TextBox();
+            this.lblErrorUsuario = new System.Windows.Forms.Label();
+            this.lblErrorClave = new System.Windows.Forms.Label();
+            this.lblErrorRol = new System.Windows.Forms.Label();
+            this.lblErrorNombre = new System.Windows.Forms.Label();
+            this.lblErrorApellido = new System.Windows.Forms.Label();
+            this.lblErrorMail = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +85,12 @@
             this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelContenedor.Controls.Add(this.tbIDEmpresa);
+            this.panelContenedor.Controls.Add(this.lblErrorMail);
+            this.panelContenedor.Controls.Add(this.lblErrorApellido);
+            this.panelContenedor.Controls.Add(this.lblErrorNombre);
+            this.panelContenedor.Controls.Add(this.lblErrorRol);
+            this.panelContenedor.Controls.Add(this.lblErrorClave);
+            this.panelContenedor.Controls.Add(this.lblErrorUsuario);
             this.panelContenedor.Controls.Add(this.btnRegresar);
             this.panelContenedor.Controls.Add(this.lblNuevoOModUser);
             this.panelContenedor.Controls.Add(this.lblSeleDom);
@@ -154,7 +164,7 @@
             this.lblNuevoOModUser.AutoSize = true;
             this.lblNuevoOModUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNuevoOModUser.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblNuevoOModUser.Location = new System.Drawing.Point(50, 465);
+            this.lblNuevoOModUser.Location = new System.Drawing.Point(50, 452);
             this.lblNuevoOModUser.Name = "lblNuevoOModUser";
             this.lblNuevoOModUser.Size = new System.Drawing.Size(124, 21);
             this.lblNuevoOModUser.TabIndex = 179;
@@ -234,7 +244,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(725, 302);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.TabStop = false;
-            this.dgvUsuarios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvUsuarios_CellFormatting);
             // 
             // label13
             // 
@@ -255,7 +264,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Yellow;
-            this.label9.Location = new System.Drawing.Point(756, 601);
+            this.label9.Location = new System.Drawing.Point(756, 612);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 20);
             this.label9.TabIndex = 175;
@@ -267,7 +276,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Yellow;
-            this.label7.Location = new System.Drawing.Point(756, 557);
+            this.label7.Location = new System.Drawing.Point(756, 554);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 20);
             this.label7.TabIndex = 174;
@@ -279,7 +288,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Yellow;
-            this.label6.Location = new System.Drawing.Point(756, 513);
+            this.label6.Location = new System.Drawing.Point(756, 497);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 20);
             this.label6.TabIndex = 173;
@@ -291,7 +300,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(381, 601);
+            this.label3.Location = new System.Drawing.Point(381, 612);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 20);
             this.label3.TabIndex = 172;
@@ -303,7 +312,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(381, 557);
+            this.label2.Location = new System.Drawing.Point(381, 554);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(16, 20);
             this.label2.TabIndex = 171;
@@ -315,7 +324,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label24.ForeColor = System.Drawing.Color.Yellow;
-            this.label24.Location = new System.Drawing.Point(381, 513);
+            this.label24.Location = new System.Drawing.Point(381, 497);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(16, 20);
             this.label24.TabIndex = 170;
@@ -408,6 +417,7 @@
             this.btnCancela.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnCancela.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancela.Enabled = false;
             this.btnCancela.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCancela.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancela.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -468,6 +478,7 @@
             this.btnAgregarUser.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAgregarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnAgregarUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarUser.Enabled = false;
             this.btnAgregarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAgregarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAgregarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -511,10 +522,12 @@
             this.cbRoles.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.cbRoles.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbRoles.FormattingEnabled = true;
-            this.cbRoles.Location = new System.Drawing.Point(155, 600);
+            this.cbRoles.Location = new System.Drawing.Point(155, 611);
             this.cbRoles.Name = "cbRoles";
             this.cbRoles.Size = new System.Drawing.Size(220, 25);
-            this.cbRoles.TabIndex = 5;
+            this.cbRoles.TabIndex = 3;
+            this.cbRoles.SelectedIndexChanged += new System.EventHandler(this.cbRoles_SelectedIndexChanged);
+            this.cbRoles.Leave += new System.EventHandler(this.cbRoles_Leave);
             // 
             // lblEmail
             // 
@@ -522,7 +535,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEmail.Location = new System.Drawing.Point(478, 603);
+            this.lblEmail.Location = new System.Drawing.Point(478, 614);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(46, 17);
             this.lblEmail.TabIndex = 29;
@@ -534,7 +547,7 @@
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblRol.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRol.Location = new System.Drawing.Point(117, 603);
+            this.lblRol.Location = new System.Drawing.Point(117, 614);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(32, 17);
             this.lblRol.TabIndex = 28;
@@ -546,7 +559,7 @@
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblApellido.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblApellido.Location = new System.Drawing.Point(460, 559);
+            this.lblApellido.Location = new System.Drawing.Point(460, 556);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(64, 17);
             this.lblApellido.TabIndex = 27;
@@ -559,10 +572,12 @@
             this.tbEmail.Enabled = false;
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbEmail.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbEmail.Location = new System.Drawing.Point(530, 601);
+            this.tbEmail.Location = new System.Drawing.Point(530, 612);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(220, 25);
             this.tbEmail.TabIndex = 6;
+            this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
+            this.tbEmail.Leave += new System.EventHandler(this.tbEmail_Leave);
             // 
             // tbApellido
             // 
@@ -571,10 +586,12 @@
             this.tbApellido.Enabled = false;
             this.tbApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbApellido.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbApellido.Location = new System.Drawing.Point(530, 557);
+            this.tbApellido.Location = new System.Drawing.Point(530, 554);
             this.tbApellido.Name = "tbApellido";
             this.tbApellido.Size = new System.Drawing.Size(220, 25);
-            this.tbApellido.TabIndex = 4;
+            this.tbApellido.TabIndex = 5;
+            this.tbApellido.TextChanged += new System.EventHandler(this.tbApellido_TextChanged);
+            this.tbApellido.Leave += new System.EventHandler(this.tbApellido_Leave);
             // 
             // tbNombre
             // 
@@ -583,10 +600,12 @@
             this.tbNombre.Enabled = false;
             this.tbNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNombre.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbNombre.Location = new System.Drawing.Point(530, 513);
+            this.tbNombre.Location = new System.Drawing.Point(530, 497);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(220, 25);
-            this.tbNombre.TabIndex = 3;
+            this.tbNombre.TabIndex = 4;
+            this.tbNombre.TextChanged += new System.EventHandler(this.tbNombre_TextChanged);
+            this.tbNombre.Leave += new System.EventHandler(this.tbNombre_Leave);
             // 
             // lblNombre
             // 
@@ -594,7 +613,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNombre.Location = new System.Drawing.Point(462, 515);
+            this.lblNombre.Location = new System.Drawing.Point(462, 499);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(62, 17);
             this.lblNombre.TabIndex = 22;
@@ -607,11 +626,13 @@
             this.tbClave.Enabled = false;
             this.tbClave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbClave.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbClave.Location = new System.Drawing.Point(155, 557);
+            this.tbClave.Location = new System.Drawing.Point(155, 554);
             this.tbClave.Name = "tbClave";
             this.tbClave.Size = new System.Drawing.Size(220, 25);
             this.tbClave.TabIndex = 2;
             this.tbClave.UseSystemPasswordChar = true;
+            this.tbClave.TextChanged += new System.EventHandler(this.tbClave_TextChanged);
+            this.tbClave.Leave += new System.EventHandler(this.tbClave_Leave);
             // 
             // lblClave
             // 
@@ -619,7 +640,7 @@
             this.lblClave.AutoSize = true;
             this.lblClave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblClave.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblClave.Location = new System.Drawing.Point(104, 559);
+            this.lblClave.Location = new System.Drawing.Point(104, 556);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(45, 17);
             this.lblClave.TabIndex = 20;
@@ -632,10 +653,12 @@
             this.tbUsuario.Enabled = false;
             this.tbUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbUsuario.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbUsuario.Location = new System.Drawing.Point(155, 513);
+            this.tbUsuario.Location = new System.Drawing.Point(155, 497);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(220, 25);
             this.tbUsuario.TabIndex = 1;
+            this.tbUsuario.TextChanged += new System.EventHandler(this.tbUsuario_TextChanged);
+            this.tbUsuario.Leave += new System.EventHandler(this.tbUsuario_Leave);
             // 
             // lblUsuario
             // 
@@ -643,7 +666,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUsuario.Location = new System.Drawing.Point(90, 515);
+            this.lblUsuario.Location = new System.Drawing.Point(90, 499);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(59, 17);
             this.lblUsuario.TabIndex = 18;
@@ -662,19 +685,83 @@
             this.lblTitulo.TabIndex = 12;
             this.lblTitulo.Text = "MANTENIMIENTO DE USUARIOS";
             // 
-            // tbIDEmpresa
+            // lblErrorUsuario
             // 
-            this.tbIDEmpresa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbIDEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbIDEmpresa.Enabled = false;
-            this.tbIDEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbIDEmpresa.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbIDEmpresa.Location = new System.Drawing.Point(530, 461);
-            this.tbIDEmpresa.Name = "tbIDEmpresa";
-            this.tbIDEmpresa.Size = new System.Drawing.Size(35, 25);
-            this.tbIDEmpresa.TabIndex = 181;
-            this.tbIDEmpresa.Text = "1";
-            this.tbIDEmpresa.Visible = false;
+            this.lblErrorUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorUsuario.AutoSize = true;
+            this.lblErrorUsuario.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorUsuario.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorUsuario.Location = new System.Drawing.Point(152, 525);
+            this.lblErrorUsuario.Name = "lblErrorUsuario";
+            this.lblErrorUsuario.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorUsuario.TabIndex = 181;
+            this.lblErrorUsuario.Text = "Este Campo es Obligatorio";
+            this.lblErrorUsuario.Visible = false;
+            // 
+            // lblErrorClave
+            // 
+            this.lblErrorClave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorClave.AutoSize = true;
+            this.lblErrorClave.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorClave.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorClave.Location = new System.Drawing.Point(152, 582);
+            this.lblErrorClave.Name = "lblErrorClave";
+            this.lblErrorClave.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorClave.TabIndex = 182;
+            this.lblErrorClave.Text = "Este Campo es Obligatorio";
+            this.lblErrorClave.Visible = false;
+            // 
+            // lblErrorRol
+            // 
+            this.lblErrorRol.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorRol.AutoSize = true;
+            this.lblErrorRol.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorRol.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorRol.Location = new System.Drawing.Point(152, 639);
+            this.lblErrorRol.Name = "lblErrorRol";
+            this.lblErrorRol.Size = new System.Drawing.Size(98, 13);
+            this.lblErrorRol.TabIndex = 183;
+            this.lblErrorRol.Text = "Seleccione un Rol";
+            this.lblErrorRol.Visible = false;
+            // 
+            // lblErrorNombre
+            // 
+            this.lblErrorNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorNombre.AutoSize = true;
+            this.lblErrorNombre.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorNombre.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorNombre.Location = new System.Drawing.Point(527, 525);
+            this.lblErrorNombre.Name = "lblErrorNombre";
+            this.lblErrorNombre.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorNombre.TabIndex = 184;
+            this.lblErrorNombre.Text = "Este Campo es Obligatorio";
+            this.lblErrorNombre.Visible = false;
+            // 
+            // lblErrorApellido
+            // 
+            this.lblErrorApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorApellido.AutoSize = true;
+            this.lblErrorApellido.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorApellido.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorApellido.Location = new System.Drawing.Point(527, 582);
+            this.lblErrorApellido.Name = "lblErrorApellido";
+            this.lblErrorApellido.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorApellido.TabIndex = 185;
+            this.lblErrorApellido.Text = "Este Campo es Obligatorio";
+            this.lblErrorApellido.Visible = false;
+            // 
+            // lblErrorMail
+            // 
+            this.lblErrorMail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorMail.AutoSize = true;
+            this.lblErrorMail.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorMail.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorMail.Location = new System.Drawing.Point(527, 640);
+            this.lblErrorMail.Name = "lblErrorMail";
+            this.lblErrorMail.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorMail.TabIndex = 186;
+            this.lblErrorMail.Text = "Este Campo es Obligatorio";
+            this.lblErrorMail.Visible = false;
             // 
             // FormGestionUsuarios
             // 
@@ -736,6 +823,11 @@
         private System.Windows.Forms.Label lblNuevoOModUser;
         private System.Windows.Forms.Label lblSeleDom;
         private FontAwesome.Sharp.IconButton btnRegresar;
-        private System.Windows.Forms.TextBox tbIDEmpresa;
+        private System.Windows.Forms.Label lblErrorMail;
+        private System.Windows.Forms.Label lblErrorApellido;
+        private System.Windows.Forms.Label lblErrorNombre;
+        private System.Windows.Forms.Label lblErrorRol;
+        private System.Windows.Forms.Label lblErrorClave;
+        private System.Windows.Forms.Label lblErrorUsuario;
     }
 }

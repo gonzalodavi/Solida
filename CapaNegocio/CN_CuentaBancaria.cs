@@ -22,6 +22,34 @@ namespace CapaNegocio
             return new CD_CuentaBancaria().Mostrar();
         }
 
+        public static DataTable MostrarDetalleBanco(int idCta)
+        {
+            CD_CuentaBancaria Obj = new CD_CuentaBancaria();
+            Obj.Id = idCta;            
+            return Obj.DetalleCtaBanco(Obj);
+        }
+
+        public static string TotalDebe(int idBanco)
+        {
+            CD_CuentaBancaria Obj = new CD_CuentaBancaria();
+            Obj.Id = idBanco;
+            return Obj.TotalDebe(Obj); ;
+        }
+
+        public static string TotalHaber(int idBanco)
+        {
+            CD_CuentaBancaria Obj = new CD_CuentaBancaria();
+            Obj.Id = idBanco;
+            return Obj.TotalHaber(Obj); ;
+        }
+
+        public static string TotalImporte(int idBanco)
+        {
+            CD_CuentaBancaria Obj = new CD_CuentaBancaria();
+            Obj.Id = idBanco;
+            return Obj.TotalImporte(Obj); ;
+        }
+
         public static string Insertar(string numcta, string nombre, string tipocta, string titular, string cbu, string alias)
         {
             CD_CuentaBancaria Obj = new CD_CuentaBancaria();

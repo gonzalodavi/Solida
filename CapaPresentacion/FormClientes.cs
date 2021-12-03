@@ -413,41 +413,86 @@ namespace CapaPresentacion
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
-                string Rpta = "";
-                string cuitCliente = dgvClientes.CurrentRow.Cells["DNI/CUIT"].Value.ToString();
-                DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea Eliminar el Cliente seleccionado", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
                 try
                 {
-                    if (Opcion == DialogResult.OK)
+                    string cuitCliente = dgvClientes.CurrentRow.Cells["DNI/CUIT"].Value.ToString();
+                    string rptC = CN_Cliente.ConsultaClienteExisteEnCbtes(cuitCliente, "BuscarClienteEnVta");
+                    if (rptC == "OK")
                     {
-
-                        Rpta = CN_Cliente.Eliminar(cuitCliente);
-
-                        if (Rpta.Equals("OK"))
+                        this.MensajeError("No se permite eliminar un Cliente utilizado en un comprobante");
+                    }
+                    else
+                    {
+                        if (rptC == "NO")
                         {
-                            this.MensajeOk("Se Eliminó Correctamente el Cliente con Nº DNI/CUIT: " + cuitCliente);
+                            rptC = CN_Cliente.ConsultaClienteExisteEnCbtes(cuitCliente, "BuscarClienteEnRecibo");
+                            if (rptC == "OK")
+                            {
+                                this.MensajeError("No se permite eliminar un Cliente utilizado en un comprobante");
+                            }
+                            else
+                            {
+                                if (rptC == "NO")
+                                {
+                                    rptC = CN_Cliente.ConsultaClienteExisteEnCbtes(cuitCliente, "BuscarClienteEnNota");
+                                    if (rptC == "OK")
+                                    {
+                                        this.MensajeError("No se permite eliminar un Cliente utilizado en un comprobante");
+                                    }
+                                    else
+                                    {
+                                        if (rptC == "NO")
+                                        {
+                                            string Rpta = "";
+
+                                            DialogResult Opcion;
+                                            Opcion = MessageBox.Show("Desea Eliminar el Cliente seleccionado", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+
+                                            if (Opcion == DialogResult.OK)
+                                            {
+
+                                                Rpta = CN_Cliente.Eliminar(cuitCliente);
+
+                                                if (Rpta.Equals("OK"))
+                                                {
+                                                    this.MensajeOk("Se Eliminó Correctamente el Cliente con Nº DNI/CUIT: " + cuitCliente);
+                                                }
+                                                else
+                                                {
+                                                    this.MensajeError(Rpta);
+                                                }
+                                                LimpiarTabDomicilio();
+                                                limpiarCampos();
+                                                CargarGrilla();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MensajeError(rptC);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MensajeError(rptC);
+                                }
+                            }
                         }
                         else
                         {
-                            this.MensajeError(Rpta);
+                            MensajeError(rptC);
                         }
-                        LimpiarTabDomicilio();
-                        limpiarCampos();
-                        CargarGrilla();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
+                    MensajeError(ex.Message + ex.StackTrace);
                 }
-
-
             }
             else
             {
-                MessageBox.Show("Seleccione una fila por favor");
+                MensajeError("Seleccione un Cliente por favor");
             }
         }
 
@@ -551,94 +596,105 @@ namespace CapaPresentacion
 
         private void btnAceptaDom_Click(object sender, EventArgs e)
         {
-            if (tbCalle.Text != "")
+            if(cbProvincia.SelectedIndex != -1)
             {
-                if (cbLocalidad.Text != "")
+                if (cbLocalidad.SelectedIndex != -1)
                 {
-                    if (cbBarrio.Text != "")
+                    if (cbBarrio.SelectedIndex != -1)
                     {
-                        try
+                        if (tbCalle.Text != "")
                         {
-                            string Rpta = "";
-
-                            DialogResult Opcion;
-                            if (EditarDom == false)
+                            try
                             {
-                                Opcion = MessageBox.Show("Desea Agregar Nuevo Domicilio?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                string Rpta = "";
 
-                                if (Opcion == DialogResult.OK)
+                                DialogResult Opcion;
+                                if (EditarDom == false)
                                 {
-                                    int nroidbar = Convert.ToInt32(cbBarrio.SelectedValue);
-                                    int nrocalle = Convert.ToInt32(this.tbNro.Text.Trim());
-                                    if (tbNro.Text == "")
+                                    Opcion = MessageBox.Show("Desea Agregar Nuevo Domicilio?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                                    if (Opcion == DialogResult.OK)
                                     {
-                                        nrocalle = 0;
+                                        int nroidbar = Convert.ToInt32(cbBarrio.SelectedValue);
+                                        int nrocalle = Convert.ToInt32(this.tbNro.Text.Trim());
+                                        if (tbNro.Text == "")
+                                        {
+                                            nrocalle = 0;
+                                        }
+                                        Rpta = CN_Domicilio.Insertar(this.tbCalle.Text.Trim(), nrocalle, this.tbPiso.Text.Trim(), this.tbDpto.Text.Trim(), nroidbar);
+                                        if (Rpta.Equals("OK"))
+                                        {
+                                            tbDireccion.Text = this.tbCalle.Text + " " + this.tbNro.Text;
+                                            int idDomi = CN_Domicilio.Consultar();
+                                            tbIdDom.Text = idDomi.ToString();
+                                            CargarDomicilio();
+                                            CargarGrillaDomicilios();
+                                            this.MensajeOk("Se Insertó de forma correcta el registro");
+                                            LimpiarTabDomicilio();
+                                            tabClientes.SelectedTab = tabNuevoCliente;
+                                        }
+                                        else
+                                        {
+                                            this.MensajeError(Rpta);
+                                        }
                                     }
-                                    Rpta = CN_Domicilio.Insertar(this.tbCalle.Text.Trim(), nrocalle, this.tbPiso.Text.Trim(), this.tbDpto.Text.Trim(), nroidbar);
-                                    if (Rpta.Equals("OK"))
+                                }
+                                else
+                                {
+                                    Opcion = MessageBox.Show("Desea Modificar El Domicilio?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                    if (Opcion == DialogResult.OK)
                                     {
-                                        tbDireccion.Text = this.tbCalle.Text + " " + this.tbNro.Text;
-                                        int idDomi = CN_Domicilio.Consultar();
-                                        tbIdDom.Text = idDomi.ToString();
-                                        CargarDomicilio();
-                                        CargarGrillaDomicilios();
-                                        this.MensajeOk("Se Insertó de forma correcta el registro");
-                                        LimpiarTabDomicilio();
-                                        tabClientes.SelectedTab = tabNuevoCliente;
-                                    }
-                                    else
-                                    {
-                                        this.MensajeError(Rpta);
+                                        int nroidbar = Convert.ToInt32(cbBarrio.SelectedValue);
+                                        int nrocalle = Convert.ToInt32(this.tbNro.Text.Trim());
+                                        if (tbNro.Text == "")
+                                        {
+                                            nrocalle = 0;
+                                        }
+                                        Rpta = CN_Domicilio.Modificar(Convert.ToInt32(this.tbIdDom.Text.Trim()), this.tbCalle.Text.Trim(), nrocalle, this.tbPiso.Text.Trim(), this.tbDpto.Text.Trim(), nroidbar);
+                                        if (Rpta.Equals("OK"))
+                                        {
+                                            tbDireccion.Text = this.tbCalle.Text + " " + this.tbNro.Text;
+                                            CargarDomicilio();
+                                            CargarGrillaDomicilios();
+                                            this.MensajeOk("Se Modificaron los datos del Domicilio");
+                                            LimpiarTabDomicilio();
+                                            tabClientes.SelectedTab = tabNuevoCliente;
+                                            EditarDom = false;
+                                        }
+                                        else
+                                        {
+                                            this.MensajeError(Rpta);
+                                        }
                                     }
                                 }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                Opcion = MessageBox.Show("Desea Modificar El Domicilio?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                if (Opcion == DialogResult.OK)
-                                {
-                                    int nroidbar = Convert.ToInt32(cbBarrio.SelectedValue);
-                                    int nrocalle = Convert.ToInt32(this.tbNro.Text.Trim());
-                                    if (tbNro.Text == "")
-                                    {
-                                        nrocalle = 0;
-                                    }
-                                    Rpta = CN_Domicilio.Modificar(Convert.ToInt32(this.tbIdDom.Text.Trim()), this.tbCalle.Text.Trim(), nrocalle, this.tbPiso.Text.Trim(), this.tbDpto.Text.Trim(), nroidbar);
-                                    if (Rpta.Equals("OK"))
-                                    {
-                                        tbDireccion.Text = this.tbCalle.Text + " " + this.tbNro.Text;
-                                        CargarDomicilio();
-                                        CargarGrillaDomicilios();
-                                        this.MensajeOk("Se Modificaron los datos del Domicilio");
-                                        LimpiarTabDomicilio();
-                                        tabClientes.SelectedTab = tabNuevoCliente;
-                                        EditarDom = false;
-                                    }
-                                    else
-                                    {
-                                        this.MensajeError(Rpta);
-                                    }
-                                }
+                                MessageBox.Show(ex.Message + ex.StackTrace);
                             }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show(ex.Message + ex.StackTrace);
+                            MensajeError("Complete un Nombre de Calle");
+                            lblErrorCalle.Visible = true;
                         }
                     }
                     else
                     {
                         MensajeError("Seleccione un Barrio");
+                        lblErrorBarrio.Visible = true;
                     }
                 }
                 else
                 {
                     MensajeError("Seleccione una Localidad");
+                    lblErrorLocalidad.Visible = true;
                 }
             }
             else
             {
-                MensajeError("Faltan ingresar Datos");
+                MensajeError("Seleccione una Provincia");
+                lblErrorProvincia.Visible = true;
             }
         }
 
@@ -653,28 +709,58 @@ namespace CapaPresentacion
         {
             if (dgvDomicilios.SelectedRows.Count > 0)
             {
-                string Rpta = "";
-                int iddomisele = Convert.ToInt32(dgvDomicilios.CurrentRow.Cells["ID"].Value.ToString());
-                DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea Eliminar el Domicilio seleccionado", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
                 try
                 {
-                    if (Opcion == DialogResult.OK)
-                    {
-                        Rpta = CN_Domicilio.Eliminar(iddomisele);
+                    string Rpta = "";
+                    int iddomisele = Convert.ToInt32(dgvDomicilios.CurrentRow.Cells["ID"].Value.ToString());
 
-                        if (Rpta.Equals("OK"))
+                    string rpta = CN_Domicilio.ConsultaDomicilioSiExiste(iddomisele, "BuscarDomicilioEnCliente");
+                    if (rpta == "OK")
+                    {
+                        this.MensajeError("No se permite eliminar un Domicilio utilizado por Cliente/Proveedor");
+                    }
+                    else
+                    {
+                        if (rpta == "NO")
                         {
-                            this.MensajeOk("Se Eliminó Correctamente el domicilio seleccionado");
+                            rpta = CN_Domicilio.ConsultaDomicilioSiExiste(iddomisele, "BuscarDomicilioEnProveedor");
+                            if (rpta == "OK")
+                            {
+                                this.MensajeError("No se permite eliminar un Domicilio utilizado por Cliente/Proveedor");
+                            }
+                            else
+                            {
+                                if (rpta == "NO")
+                                {
+                                    DialogResult Opcion;
+                                    Opcion = MessageBox.Show("Desea Eliminar el Domicilio seleccionado", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                    if (Opcion == DialogResult.OK)
+                                    {
+                                        Rpta = CN_Domicilio.Eliminar(iddomisele);
+
+                                        if (Rpta.Equals("OK"))
+                                        {
+                                            this.MensajeOk("Se Eliminó Correctamente el domicilio seleccionado");
+                                        }
+                                        else
+                                        {
+                                            this.MensajeError(Rpta);
+                                        }
+                                        LimpiarTabDomicilio();
+                                        CargarGrillaDomicilios();
+                                    }
+                                }
+                                else
+                                {
+                                    MensajeError(rpta);
+                                }
+                            }
                         }
                         else
                         {
-                            this.MensajeError(Rpta);
+                            MensajeError(rpta);
                         }
-                        LimpiarTabDomicilio();
-                        CargarGrillaDomicilios();
-                    }
+                    }                    
                 }
                 catch (Exception ex)
                 {

@@ -83,7 +83,8 @@ namespace CapaPresentacion
             cbRubro.DataSource = objeto.CargaComboBoxRubro();
             cbRubro.DisplayMember = "RUBRO";
             cbRubro.ValueMember = "ID";
-            cbRubro.SelectedIndex = -1;            
+            cbRubro.SelectedIndex = -1;
+            lblErrorRubro.Visible = false;
         }
 
         private void CargaAlicComboBox()
@@ -92,6 +93,7 @@ namespace CapaPresentacion
             cbAli.DisplayMember = "ALICUOTA";
             cbAli.ValueMember = "ID";
             cbAli.Text = "21";
+            lblErrorAlic.Visible = false;
         }
 
         private void CargaMarcaComboBox()
@@ -99,7 +101,8 @@ namespace CapaPresentacion
             cbMarca.DataSource = objeto.CargaComboBoxMarca();
             cbMarca.DisplayMember = "MARCA";
             cbMarca.ValueMember = "ID";
-            cbMarca.SelectedIndex = -1;           
+            cbMarca.SelectedIndex = -1;
+            lblErrorMarca.Visible = false;
         }
 
         private void CargaModeloComboBox()
@@ -108,6 +111,7 @@ namespace CapaPresentacion
             cbModelo.DisplayMember = "MODELO";
             cbModelo.ValueMember = "ID";
             cbModelo.SelectedIndex = -1;
+            lblErrorModelo.Visible = false;
         }
 
         private void CargarComboBoxUnidadesdeMedida()
@@ -116,6 +120,7 @@ namespace CapaPresentacion
             cbUdeMed.DisplayMember = "DES_UNIDAD";
             cbUdeMed.ValueMember = "ID_UNIDAD";
             cbUdeMed.SelectedIndex = -1;
+            lblErrorUniMed.Visible = false;
         }
 
         private void limpiarCampos()
@@ -135,7 +140,14 @@ namespace CapaPresentacion
             cbModelo.SelectedIndex = -1;
             cbRubro.SelectedIndex = -1;
             cbUdeMed.SelectedIndex = -1;
-
+            lblErrorAlic.Visible = false;
+            lblErrorDescripcion.Visible = false;
+            lblErrorGanancia.Visible = false;
+            lblErrorMarca.Visible = false;
+            lblErrorModelo.Visible = false;
+            lblErrorPrecioCosto.Visible = false;
+            lblErrorRubro.Visible = false;
+            lblErrorUniMed.Visible = false;
         }
 
         private void haceCalculo()
@@ -346,6 +358,15 @@ namespace CapaPresentacion
 
         private void tbCosto_TextChanged(object sender, EventArgs e)
         {
+            if (tbCosto.Text != "")
+            {
+                lblErrorPrecioCosto.Visible = false;
+            }
+            else
+            {
+                lblErrorPrecioCosto.Visible = true;
+            }
+
             if (tbCosto.Text == "00")
             {
                 tbCosto.Text = "0";
@@ -368,6 +389,15 @@ namespace CapaPresentacion
 
         private void tbGanancia_Leave(object sender, EventArgs e)
         {
+            if (tbGanancia.Text != "")
+            {
+                lblErrorGanancia.Visible = false;
+            }
+            else
+            {
+                lblErrorGanancia.Visible = true;
+            }
+
             haceCalculo();
             tbVenta.Text = resultado;
             resultado = "";
@@ -403,6 +433,66 @@ namespace CapaPresentacion
 
         private void btAceptar_Click(object sender, EventArgs e)
         {
+            if (tbDescripcion.Text != "" && cbRubro.Text != "" && cbMarca.Text != "" && cbModelo.Text != "" && cbUdeMed.Text != "" && cbAli.Text != "" && tbCosto.Text != "" && tbGanancia.Text != "")
+            {
+                string rpta = CN_Productos.ConsultaSiExisteProducto(tbDescripcion.Text.Trim(),Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
+                if (rpta == "OK")
+                {
+                    this.MensajeError("Ya Existe un Producto con ese Nombre, Unidad de Medida y Marca");
+                }
+                else
+                {
+                    if (rpta == "NO")
+                    {
+                        AgregaProducto();
+                    }
+                    else
+                    {
+                        MensajeError(rpta);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Existen Campos vacíos");
+
+                if (tbDescripcion.Text == "")
+                {
+                    lblErrorDescripcion.Visible = true;
+                }
+                if (cbRubro.SelectedIndex == -1)
+                {
+                    lblErrorRubro.Visible = true;
+                }
+                if (cbMarca.SelectedIndex == -1)
+                {
+                    lblErrorMarca.Visible = true;
+                }
+                if (cbModelo.SelectedIndex == -1)
+                {
+                    lblErrorModelo.Visible = true;
+                }
+                if (cbUdeMed.SelectedIndex == -1)
+                {
+                    lblErrorUniMed.Visible = true;
+                }
+                if (cbAli.SelectedIndex == -1)
+                {
+                    lblErrorAlic.Visible = true;
+                }
+                if (tbCosto.Text == "")
+                {
+                    lblErrorPrecioCosto.Visible = true;
+                }
+                if (tbGanancia.Text == "")
+                {
+                    lblErrorGanancia.Visible = true;
+                }
+            }            
+        }
+
+        private void AgregaProducto()
+        {
             decimal costo = 0, ganancia = 0, importe = 0;
 
             if (tbCosto.Text != "")
@@ -417,92 +507,83 @@ namespace CapaPresentacion
                 }
             }
 
-            if(res > 0)
+            if (res > 0)
             {
                 resultado = "";
                 res = 0;
-                if (tbDescripcion.Text != "" && tbCosto.Text != "" && cbRubro.Text != "" && cbAli.Text != "")
+                if (Editar == false)
                 {
-                    if (Editar == false)
+                    if (MessageBox.Show("¿Desea Registrar el Producto?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        if (MessageBox.Show("¿Desea Registrar el Producto?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        if (tbStock.Text == "")
                         {
-                            if (tbStock.Text == "")
-                            {
-                                tbStock.Text = "0";
-                            }
-                            if (tbStockMin.Text == "")
-                            {
-                                tbStockMin.Text = "0";
-                            }
-                            try
-                            {
-                                objeto.AgregarProducto(tbDescripcion.Text, tbCodBarra.Text, Convert.ToInt32(cbRubro.SelectedValue), Convert.ToInt32(cbAli.SelectedValue), tbCosto.Text, tbVenta.Text, stockA.ToString("0.00"), stockM.ToString("0.00"), Convert.ToInt32(cbModelo.SelectedValue), Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
-                                MessageBox.Show("Nuevo Producto Agregado");
-                                stockM = 0;
-                                stockA = 0;
-                                Editar = false;
-                                CargarGrilla();
-                                limpiarCampos();
-                                CargarGrilla();
-                                CargaModeloComboBox();
-                                CargaMarcaComboBox();
-                                CargaAlicComboBox();
-                                CargaRubrosComboBox();
-                                tabProductos.SelectedTab = tabConsultaProducto;
-
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
-                            }
+                            tbStock.Text = "0";
                         }
-                    }
-                    else
-                    {
-                        if (MessageBox.Show("¿Desea Modificar el Producto Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        if (tbStockMin.Text == "")
                         {
-                            try
-                            {
-                                objeto.ModificarProducto(tbID.Text, tbDescripcion.Text, tbCodBarra.Text, Convert.ToInt32(cbRubro.SelectedValue), Convert.ToInt32(cbAli.SelectedValue), tbCosto.Text, tbVenta.Text, tbStock.Text, tbStockMin.Text, Convert.ToInt32(cbModelo.SelectedValue), Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
-                                stockM = 0;
-                                stockA = 0;
-                                limpiarCampos();
-                                CargarGrilla();
-                                CargaModeloComboBox();
-                                CargaMarcaComboBox();
-                                CargaAlicComboBox();
-                                CargaRubrosComboBox();
-                                Editar = false;
-                                MessageBox.Show("Se Modificaron los datos del Producto");
-                                btnModificar.Visible = true;
-                                btnEliminar.Visible = true;
-                                lblSubTitutlo.Text = "Ingrese Nuevo Producto";
-                                tabProductos.SelectedTab = tabConsultaProducto;
+                            tbStockMin.Text = "0";
+                        }
+                        try
+                        {
+                            objeto.AgregarProducto(tbDescripcion.Text, tbCodBarra.Text, Convert.ToInt32(cbRubro.SelectedValue), Convert.ToInt32(cbAli.SelectedValue), tbCosto.Text, tbVenta.Text, stockA.ToString("0.00"), stockM.ToString("0.00"), Convert.ToInt32(cbModelo.SelectedValue), Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
+                            MessageBox.Show("Nuevo Producto Agregado");
+                            stockM = 0;
+                            stockA = 0;
+                            Editar = false;
+                            CargarGrilla();
+                            limpiarCampos();
+                            CargarGrilla();
+                            CargaModeloComboBox();
+                            CargaMarcaComboBox();
+                            CargaAlicComboBox();
+                            CargaRubrosComboBox();
+                            tabProductos.SelectedTab = tabConsultaProducto;
 
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
-                            }
-
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Existen Campos vacíos");
-                }
+                    if (MessageBox.Show("¿Desea Modificar el Producto Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            objeto.ModificarProducto(tbID.Text, tbDescripcion.Text, tbCodBarra.Text, Convert.ToInt32(cbRubro.SelectedValue), Convert.ToInt32(cbAli.SelectedValue), tbCosto.Text, tbVenta.Text, tbStock.Text, tbStockMin.Text, Convert.ToInt32(cbModelo.SelectedValue), Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
+                            stockM = 0;
+                            stockA = 0;
+                            limpiarCampos();
+                            CargarGrilla();
+                            CargaModeloComboBox();
+                            CargaMarcaComboBox();
+                            CargaAlicComboBox();
+                            CargaRubrosComboBox();
+                            Editar = false;
+                            MessageBox.Show("Se Modificaron los datos del Producto");
+                            btnModificar.Visible = true;
+                            btnEliminar.Visible = true;
+                            lblSubTitutlo.Text = "Ingrese Nuevo Producto";
+                            tabProductos.SelectedTab = tabConsultaProducto;
 
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se puedo realizar el ingreso de datos debido a: \n\n" + ex);
+                        }
+
+                    }
+                }
             }
             else
             {
                 MensajeError("Los Productos a Cargar deben ser superior a $0 de costo");
                 resultado = "";
                 res = 0;
-            }            
+            }
         }
-
 
         private void tbStock_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -660,8 +741,173 @@ namespace CapaPresentacion
             }
         }
 
+        private void cbRubro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRubro.SelectedIndex != -1)
+            {                
+                lblErrorRubro.Visible = false;
+            }
+            else
+            {
+                lblErrorRubro.Visible = true;
+            }
+        }
+
+        private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbMarca.SelectedIndex != -1)
+            {
+                lblErrorMarca.Visible = false;
+            }
+            else
+            {
+                lblErrorMarca.Visible = true;
+            }
+        }
+
+        private void cbModelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbModelo.SelectedIndex != -1)
+            {
+                lblErrorModelo.Visible = false;
+            }
+            else
+            {
+                lblErrorModelo.Visible = true;
+            }
+        }
+
+        private void cbUdeMed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbUdeMed.SelectedIndex != -1)
+            {
+                lblErrorUniMed.Visible = false;
+            }
+            else
+            {
+                lblErrorUniMed.Visible = true;
+            }
+        }
+
+        private void cbAli_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbAli.SelectedIndex != -1)
+            {
+                lblErrorAlic.Visible = false;
+            }
+            else
+            {
+                lblErrorAlic.Visible = true;
+            }
+        }
+
+        private void tbDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            if (tbDescripcion.Text != "")
+            {
+                lblErrorDescripcion.Visible = false;
+            }
+            else
+            {
+                lblErrorDescripcion.Visible = true;
+            }
+        }
+
+        private void cbRubro_Leave(object sender, EventArgs e)
+        {
+            if (cbRubro.SelectedIndex != -1)
+            {
+                lblErrorRubro.Visible = false;
+            }
+            else
+            {
+                lblErrorRubro.Visible = true;
+            }
+        }
+
+        private void cbMarca_Leave(object sender, EventArgs e)
+        {
+            if (cbMarca.SelectedIndex != -1)
+            {
+                lblErrorMarca.Visible = false;
+            }
+            else
+            {
+                lblErrorMarca.Visible = true;
+            }
+        }
+
+        private void cbModelo_Leave(object sender, EventArgs e)
+        {
+            if (cbModelo.SelectedIndex != -1)
+            {
+                lblErrorModelo.Visible = false;
+            }
+            else
+            {
+                lblErrorModelo.Visible = true;
+            }
+        }
+
+        private void cbUdeMed_Leave(object sender, EventArgs e)
+        {
+            if (cbUdeMed.SelectedIndex != -1)
+            {
+                lblErrorUniMed.Visible = false;
+            }
+            else
+            {
+                lblErrorUniMed.Visible = true;
+            }
+        }
+
+        private void cbAli_Leave(object sender, EventArgs e)
+        {
+            if (cbAli.SelectedIndex != -1)
+            {
+                lblErrorAlic.Visible = false;
+            }
+            else
+            {
+                lblErrorAlic.Visible = true;
+            }
+        }
+
+        private void tbCosto_Leave(object sender, EventArgs e)
+        {
+            if (tbCosto.Text != "")
+            {
+                lblErrorPrecioCosto.Visible = false;
+            }
+            else
+            {
+                lblErrorPrecioCosto.Visible = true;
+            }
+        }
+
+        private void tbDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (tbDescripcion.Text != "")
+            {
+                lblErrorDescripcion.Visible = false;
+            }
+            else
+            {
+                lblErrorDescripcion.Visible = true;
+            }
+        }
+
         private void tbGanancia_TextChanged(object sender, EventArgs e)
         {
+            if (tbGanancia.Text != "")
+            {
+                lblErrorGanancia.Visible = false;
+            }
+            else
+            {
+                lblErrorGanancia.Visible = true;
+            }
+
             if (tbGanancia.Text == "00")
             {
                 tbGanancia.Text = "0";

@@ -17,6 +17,13 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public static string ConsultaSiExisteProducto(string nombre, int marca, int unid)
+        {
+            CD_Productos Obj = new CD_Productos();
+            string rpta = Obj.ConsultaSiExisteProducto(nombre, marca, unid);
+            return rpta;
+        }
+
         public DataTable CargaComboBoxRubro()
         {
             DataTable dt = new DataTable();

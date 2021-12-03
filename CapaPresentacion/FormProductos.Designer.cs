@@ -99,6 +99,14 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.btAceptar = new System.Windows.Forms.Button();
             this.cbRubro = new System.Windows.Forms.ComboBox();
+            this.lblErrorDescripcion = new System.Windows.Forms.Label();
+            this.lblErrorRubro = new System.Windows.Forms.Label();
+            this.lblErrorMarca = new System.Windows.Forms.Label();
+            this.lblErrorModelo = new System.Windows.Forms.Label();
+            this.lblErrorUniMed = new System.Windows.Forms.Label();
+            this.lblErrorAlic = new System.Windows.Forms.Label();
+            this.lblErrorPrecioCosto = new System.Windows.Forms.Label();
+            this.lblErrorGanancia = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             this.tabProductos.SuspendLayout();
             this.tabConsultaProducto.SuspendLayout();
@@ -549,6 +557,14 @@
             // tabNuevoProducto
             // 
             this.tabNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevoProducto.Controls.Add(this.lblErrorGanancia);
+            this.tabNuevoProducto.Controls.Add(this.lblErrorPrecioCosto);
+            this.tabNuevoProducto.Controls.Add(this.lblErrorAlic);
+            this.tabNuevoProducto.Controls.Add(this.lblErrorUniMed);
+            this.tabNuevoProducto.Controls.Add(this.lblErrorModelo);
+            this.tabNuevoProducto.Controls.Add(this.lblErrorMarca);
+            this.tabNuevoProducto.Controls.Add(this.lblErrorRubro);
+            this.tabNuevoProducto.Controls.Add(this.lblErrorDescripcion);
             this.tabNuevoProducto.Controls.Add(this.btnAgregaUdeMed);
             this.tabNuevoProducto.Controls.Add(this.label2);
             this.tabNuevoProducto.Controls.Add(this.cbUdeMed);
@@ -613,13 +629,14 @@
             this.btnAgregaUdeMed.IconColor = System.Drawing.Color.White;
             this.btnAgregaUdeMed.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregaUdeMed.IconSize = 25;
-            this.btnAgregaUdeMed.Location = new System.Drawing.Point(501, 343);
+            this.btnAgregaUdeMed.Location = new System.Drawing.Point(501, 360);
             this.btnAgregaUdeMed.Name = "btnAgregaUdeMed";
             this.btnAgregaUdeMed.Size = new System.Drawing.Size(29, 29);
             this.btnAgregaUdeMed.TabIndex = 176;
             this.btnAgregaUdeMed.TabStop = false;
             this.btnAgregaUdeMed.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregaUdeMed.UseVisualStyleBackColor = false;
+            this.btnAgregaUdeMed.Visible = false;
             // 
             // label2
             // 
@@ -627,7 +644,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(478, 346);
+            this.label2.Location = new System.Drawing.Point(478, 363);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(16, 20);
             this.label2.TabIndex = 175;
@@ -641,10 +658,12 @@
             this.cbUdeMed.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbUdeMed.FormattingEnabled = true;
             this.cbUdeMed.ItemHeight = 17;
-            this.cbUdeMed.Location = new System.Drawing.Point(249, 346);
+            this.cbUdeMed.Location = new System.Drawing.Point(249, 363);
             this.cbUdeMed.Name = "cbUdeMed";
             this.cbUdeMed.Size = new System.Drawing.Size(223, 25);
             this.cbUdeMed.TabIndex = 173;
+            this.cbUdeMed.SelectedIndexChanged += new System.EventHandler(this.cbUdeMed_SelectedIndexChanged);
+            this.cbUdeMed.Leave += new System.EventHandler(this.cbUdeMed_Leave);
             // 
             // label8
             // 
@@ -652,7 +671,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(118, 349);
+            this.label8.Location = new System.Drawing.Point(118, 366);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 17);
             this.label8.TabIndex = 174;
@@ -673,7 +692,7 @@
             this.btnAgregaRubro.IconColor = System.Drawing.Color.White;
             this.btnAgregaRubro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregaRubro.IconSize = 25;
-            this.btnAgregaRubro.Location = new System.Drawing.Point(501, 204);
+            this.btnAgregaRubro.Location = new System.Drawing.Point(501, 196);
             this.btnAgregaRubro.Name = "btnAgregaRubro";
             this.btnAgregaRubro.Size = new System.Drawing.Size(29, 29);
             this.btnAgregaRubro.TabIndex = 172;
@@ -697,7 +716,7 @@
             this.btnAgregaModelo.IconColor = System.Drawing.Color.White;
             this.btnAgregaModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregaModelo.IconSize = 25;
-            this.btnAgregaModelo.Location = new System.Drawing.Point(501, 296);
+            this.btnAgregaModelo.Location = new System.Drawing.Point(501, 304);
             this.btnAgregaModelo.Name = "btnAgregaModelo";
             this.btnAgregaModelo.Size = new System.Drawing.Size(29, 29);
             this.btnAgregaModelo.TabIndex = 171;
@@ -736,7 +755,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.Yellow;
-            this.label23.Location = new System.Drawing.Point(478, 299);
+            this.label23.Location = new System.Drawing.Point(478, 307);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(16, 20);
             this.label23.TabIndex = 141;
@@ -760,7 +779,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.Color.Yellow;
-            this.label18.Location = new System.Drawing.Point(478, 207);
+            this.label18.Location = new System.Drawing.Point(478, 199);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(16, 20);
             this.label18.TabIndex = 139;
@@ -772,7 +791,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label21.ForeColor = System.Drawing.Color.Yellow;
-            this.label21.Location = new System.Drawing.Point(778, 206);
+            this.label21.Location = new System.Drawing.Point(778, 198);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(16, 20);
             this.label21.TabIndex = 138;
@@ -784,7 +803,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label19.ForeColor = System.Drawing.Color.Yellow;
-            this.label19.Location = new System.Drawing.Point(778, 112);
+            this.label19.Location = new System.Drawing.Point(778, 96);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(16, 20);
             this.label19.TabIndex = 138;
@@ -796,7 +815,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label20.ForeColor = System.Drawing.Color.Yellow;
-            this.label20.Location = new System.Drawing.Point(778, 159);
+            this.label20.Location = new System.Drawing.Point(778, 148);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(16, 20);
             this.label20.TabIndex = 138;
@@ -808,7 +827,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.Yellow;
-            this.label17.Location = new System.Drawing.Point(478, 112);
+            this.label17.Location = new System.Drawing.Point(478, 96);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(16, 20);
             this.label17.TabIndex = 138;
@@ -820,7 +839,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.Yellow;
-            this.label16.Location = new System.Drawing.Point(391, 422);
+            this.label16.Location = new System.Drawing.Point(403, 516);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(178, 20);
             this.label16.TabIndex = 137;
@@ -831,7 +850,7 @@
             this.tbStock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbStock.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbStock.Location = new System.Drawing.Point(680, 300);
+            this.tbStock.Location = new System.Drawing.Point(680, 308);
             this.tbStock.MaxLength = 5;
             this.tbStock.Name = "tbStock";
             this.tbStock.Size = new System.Drawing.Size(92, 25);
@@ -844,7 +863,7 @@
             this.tbGanancia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbGanancia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbGanancia.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbGanancia.Location = new System.Drawing.Point(680, 205);
+            this.tbGanancia.Location = new System.Drawing.Point(680, 197);
             this.tbGanancia.Name = "tbGanancia";
             this.tbGanancia.Size = new System.Drawing.Size(92, 25);
             this.tbGanancia.TabIndex = 8;
@@ -893,10 +912,12 @@
             this.cbModelo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbModelo.FormattingEnabled = true;
             this.cbModelo.ItemHeight = 17;
-            this.cbModelo.Location = new System.Drawing.Point(249, 299);
+            this.cbModelo.Location = new System.Drawing.Point(249, 307);
             this.cbModelo.Name = "cbModelo";
             this.cbModelo.Size = new System.Drawing.Size(223, 25);
             this.cbModelo.TabIndex = 5;
+            this.cbModelo.SelectedIndexChanged += new System.EventHandler(this.cbModelo_SelectedIndexChanged);
+            this.cbModelo.Leave += new System.EventHandler(this.cbModelo_Leave);
             // 
             // cbMarca
             // 
@@ -910,6 +931,8 @@
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(223, 25);
             this.cbMarca.TabIndex = 4;
+            this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
+            this.cbMarca.Leave += new System.EventHandler(this.cbMarca_Leave);
             // 
             // cbAli
             // 
@@ -919,17 +942,19 @@
             this.cbAli.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbAli.FormattingEnabled = true;
             this.cbAli.ItemHeight = 17;
-            this.cbAli.Location = new System.Drawing.Point(680, 111);
+            this.cbAli.Location = new System.Drawing.Point(680, 95);
             this.cbAli.Name = "cbAli";
             this.cbAli.Size = new System.Drawing.Size(92, 25);
             this.cbAli.TabIndex = 6;
+            this.cbAli.SelectedIndexChanged += new System.EventHandler(this.cbAli_SelectedIndexChanged);
+            this.cbAli.Leave += new System.EventHandler(this.cbAli_Leave);
             // 
             // tbStockMin
             // 
             this.tbStockMin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbStockMin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbStockMin.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbStockMin.Location = new System.Drawing.Point(680, 346);
+            this.tbStockMin.Location = new System.Drawing.Point(680, 363);
             this.tbStockMin.MaxLength = 5;
             this.tbStockMin.Name = "tbStockMin";
             this.tbStockMin.Size = new System.Drawing.Size(92, 25);
@@ -954,12 +979,13 @@
             this.tbCosto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbCosto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCosto.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCosto.Location = new System.Drawing.Point(680, 158);
+            this.tbCosto.Location = new System.Drawing.Point(680, 147);
             this.tbCosto.Name = "tbCosto";
             this.tbCosto.Size = new System.Drawing.Size(92, 25);
             this.tbCosto.TabIndex = 7;
             this.tbCosto.TextChanged += new System.EventHandler(this.tbCosto_TextChanged);
             this.tbCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCosto_KeyPress);
+            this.tbCosto.Leave += new System.EventHandler(this.tbCosto_Leave);
             // 
             // tbID
             // 
@@ -967,7 +993,7 @@
             this.tbID.Enabled = false;
             this.tbID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbID.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbID.Location = new System.Drawing.Point(249, 75);
+            this.tbID.Location = new System.Drawing.Point(249, 56);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(73, 25);
             this.tbID.TabIndex = 0;
@@ -980,7 +1006,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(601, 349);
+            this.label1.Location = new System.Drawing.Point(601, 366);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 131;
@@ -992,7 +1018,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(591, 208);
+            this.label5.Location = new System.Drawing.Point(591, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 17);
             this.label5.TabIndex = 133;
@@ -1004,7 +1030,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(625, 303);
+            this.label6.Location = new System.Drawing.Point(625, 311);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 132;
@@ -1028,7 +1054,7 @@
             this.lblPrecioCosto.AutoSize = true;
             this.lblPrecioCosto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblPrecioCosto.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPrecioCosto.Location = new System.Drawing.Point(574, 161);
+            this.lblPrecioCosto.Location = new System.Drawing.Point(574, 150);
             this.lblPrecioCosto.Name = "lblPrecioCosto";
             this.lblPrecioCosto.Size = new System.Drawing.Size(100, 17);
             this.lblPrecioCosto.TabIndex = 130;
@@ -1040,7 +1066,7 @@
             this.lblRubro.AutoSize = true;
             this.lblRubro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblRubro.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRubro.Location = new System.Drawing.Point(194, 209);
+            this.lblRubro.Location = new System.Drawing.Point(194, 201);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(49, 17);
             this.lblRubro.TabIndex = 128;
@@ -1052,7 +1078,7 @@
             this.lblAlicuota.AutoSize = true;
             this.lblAlicuota.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblAlicuota.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblAlicuota.Location = new System.Drawing.Point(596, 114);
+            this.lblAlicuota.Location = new System.Drawing.Point(596, 98);
             this.lblAlicuota.Name = "lblAlicuota";
             this.lblAlicuota.Size = new System.Drawing.Size(78, 17);
             this.lblAlicuota.TabIndex = 129;
@@ -1063,7 +1089,8 @@
             this.tbCodBarra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbCodBarra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCodBarra.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCodBarra.Location = new System.Drawing.Point(249, 158);
+            this.tbCodBarra.Location = new System.Drawing.Point(249, 147);
+            this.tbCodBarra.MaxLength = 106;
             this.tbCodBarra.Name = "tbCodBarra";
             this.tbCodBarra.Size = new System.Drawing.Size(223, 25);
             this.tbCodBarra.TabIndex = 2;
@@ -1086,7 +1113,7 @@
             this.lblCodBar.AutoSize = true;
             this.lblCodBar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblCodBar.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCodBar.Location = new System.Drawing.Point(151, 161);
+            this.lblCodBar.Location = new System.Drawing.Point(151, 150);
             this.lblCodBar.Name = "lblCodBar";
             this.lblCodBar.Size = new System.Drawing.Size(92, 17);
             this.lblCodBar.TabIndex = 109;
@@ -1098,7 +1125,7 @@
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblMail.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblMail.Location = new System.Drawing.Point(217, 78);
+            this.lblMail.Location = new System.Drawing.Point(217, 59);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(26, 17);
             this.lblMail.TabIndex = 114;
@@ -1111,7 +1138,7 @@
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblModelo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblModelo.Location = new System.Drawing.Point(184, 301);
+            this.lblModelo.Location = new System.Drawing.Point(184, 309);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(59, 17);
             this.lblModelo.TabIndex = 116;
@@ -1122,10 +1149,12 @@
             this.tbDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbDescripcion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDescripcion.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbDescripcion.Location = new System.Drawing.Point(249, 111);
+            this.tbDescripcion.Location = new System.Drawing.Point(249, 95);
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(223, 25);
             this.tbDescripcion.TabIndex = 1;
+            this.tbDescripcion.TextChanged += new System.EventHandler(this.tbDescripcion_TextChanged);
+            this.tbDescripcion.Leave += new System.EventHandler(this.tbDescripcion_Leave);
             // 
             // lblDescripcion
             // 
@@ -1134,7 +1163,7 @@
             this.lblDescripcion.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblDescripcion.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDescripcion.Location = new System.Drawing.Point(159, 114);
+            this.lblDescripcion.Location = new System.Drawing.Point(159, 98);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(84, 17);
             this.lblDescripcion.TabIndex = 112;
@@ -1168,10 +1197,116 @@
             this.cbRubro.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbRubro.FormattingEnabled = true;
             this.cbRubro.ItemHeight = 17;
-            this.cbRubro.Location = new System.Drawing.Point(249, 206);
+            this.cbRubro.Location = new System.Drawing.Point(249, 198);
             this.cbRubro.Name = "cbRubro";
             this.cbRubro.Size = new System.Drawing.Size(223, 25);
             this.cbRubro.TabIndex = 3;
+            this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
+            this.cbRubro.Leave += new System.EventHandler(this.cbRubro_Leave);
+            // 
+            // lblErrorDescripcion
+            // 
+            this.lblErrorDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorDescripcion.AutoSize = true;
+            this.lblErrorDescripcion.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorDescripcion.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorDescripcion.Location = new System.Drawing.Point(246, 123);
+            this.lblErrorDescripcion.Name = "lblErrorDescripcion";
+            this.lblErrorDescripcion.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorDescripcion.TabIndex = 177;
+            this.lblErrorDescripcion.Text = "Este Campo es Obligatorio";
+            this.lblErrorDescripcion.Visible = false;
+            // 
+            // lblErrorRubro
+            // 
+            this.lblErrorRubro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorRubro.AutoSize = true;
+            this.lblErrorRubro.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorRubro.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorRubro.Location = new System.Drawing.Point(246, 226);
+            this.lblErrorRubro.Name = "lblErrorRubro";
+            this.lblErrorRubro.Size = new System.Drawing.Size(113, 13);
+            this.lblErrorRubro.TabIndex = 179;
+            this.lblErrorRubro.Text = "Seleccione un Rubro";
+            this.lblErrorRubro.Visible = false;
+            // 
+            // lblErrorMarca
+            // 
+            this.lblErrorMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorMarca.AutoSize = true;
+            this.lblErrorMarca.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorMarca.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorMarca.Location = new System.Drawing.Point(246, 281);
+            this.lblErrorMarca.Name = "lblErrorMarca";
+            this.lblErrorMarca.Size = new System.Drawing.Size(96, 13);
+            this.lblErrorMarca.TabIndex = 180;
+            this.lblErrorMarca.Text = "Seleccione Marca";
+            this.lblErrorMarca.Visible = false;
+            // 
+            // lblErrorModelo
+            // 
+            this.lblErrorModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorModelo.AutoSize = true;
+            this.lblErrorModelo.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorModelo.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorModelo.Location = new System.Drawing.Point(246, 335);
+            this.lblErrorModelo.Name = "lblErrorModelo";
+            this.lblErrorModelo.Size = new System.Drawing.Size(105, 13);
+            this.lblErrorModelo.TabIndex = 181;
+            this.lblErrorModelo.Text = "Seleccione Modelo";
+            this.lblErrorModelo.Visible = false;
+            // 
+            // lblErrorUniMed
+            // 
+            this.lblErrorUniMed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorUniMed.AutoSize = true;
+            this.lblErrorUniMed.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorUniMed.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorUniMed.Location = new System.Drawing.Point(246, 391);
+            this.lblErrorUniMed.Name = "lblErrorUniMed";
+            this.lblErrorUniMed.Size = new System.Drawing.Size(161, 13);
+            this.lblErrorUniMed.TabIndex = 182;
+            this.lblErrorUniMed.Text = "Seleccione Unidad de Medida";
+            this.lblErrorUniMed.Visible = false;
+            // 
+            // lblErrorAlic
+            // 
+            this.lblErrorAlic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorAlic.AutoSize = true;
+            this.lblErrorAlic.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorAlic.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorAlic.Location = new System.Drawing.Point(677, 123);
+            this.lblErrorAlic.Name = "lblErrorAlic";
+            this.lblErrorAlic.Size = new System.Drawing.Size(81, 13);
+            this.lblErrorAlic.TabIndex = 183;
+            this.lblErrorAlic.Text = "Seleccione IVA";
+            this.lblErrorAlic.Visible = false;
+            // 
+            // lblErrorPrecioCosto
+            // 
+            this.lblErrorPrecioCosto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorPrecioCosto.AutoSize = true;
+            this.lblErrorPrecioCosto.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorPrecioCosto.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorPrecioCosto.Location = new System.Drawing.Point(677, 175);
+            this.lblErrorPrecioCosto.Name = "lblErrorPrecioCosto";
+            this.lblErrorPrecioCosto.Size = new System.Drawing.Size(82, 13);
+            this.lblErrorPrecioCosto.TabIndex = 184;
+            this.lblErrorPrecioCosto.Text = "Indique Precio";
+            this.lblErrorPrecioCosto.Visible = false;
+            // 
+            // lblErrorGanancia
+            // 
+            this.lblErrorGanancia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorGanancia.AutoSize = true;
+            this.lblErrorGanancia.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorGanancia.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorGanancia.Location = new System.Drawing.Point(677, 226);
+            this.lblErrorGanancia.Name = "lblErrorGanancia";
+            this.lblErrorGanancia.Size = new System.Drawing.Size(172, 13);
+            this.lblErrorGanancia.TabIndex = 185;
+            this.lblErrorGanancia.Text = "Indique Porcentaje de Ganancia";
+            this.lblErrorGanancia.Visible = false;
             // 
             // FormProductos
             // 
@@ -1267,5 +1402,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbUdeMed;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblErrorGanancia;
+        private System.Windows.Forms.Label lblErrorPrecioCosto;
+        private System.Windows.Forms.Label lblErrorAlic;
+        private System.Windows.Forms.Label lblErrorUniMed;
+        private System.Windows.Forms.Label lblErrorModelo;
+        private System.Windows.Forms.Label lblErrorMarca;
+        private System.Windows.Forms.Label lblErrorRubro;
+        private System.Windows.Forms.Label lblErrorDescripcion;
     }
 }

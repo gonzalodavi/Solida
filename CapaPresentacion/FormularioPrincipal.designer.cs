@@ -460,7 +460,6 @@
             // 
             this.btnInfBanco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfBanco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInfBanco.Enabled = false;
             this.btnInfBanco.FlatAppearance.BorderSize = 0;
             this.btnInfBanco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -484,7 +483,6 @@
             // 
             this.btnInfCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfCaja.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInfCaja.Enabled = false;
             this.btnInfCaja.FlatAppearance.BorderSize = 0;
             this.btnInfCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

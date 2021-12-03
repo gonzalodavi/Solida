@@ -575,7 +575,7 @@ namespace CapaPresentacion
                         }
                     }
 
-                    rpta = CN_CtaCte.Insertar(tbDNI.Text, dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe, haber, importeValores, importeEfectivo, importeBanco, (debe - haber), ImporteTotal, 0, "S", estado);
+                    rpta = CN_CtaCte.Insertar(tbDNI.Text, dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE CAJA", debe, haber, importeValores, importeEfectivo, importeBanco, (debe - haber), ImporteTotal, 0, "S", estado);
                     if (rpta.Equals("OK"))
                     {
                         this.MensajeOk("Se Cargo recibo en CTA CTE");

@@ -21,7 +21,9 @@ namespace CapaDatos
         private string _Titular;
         private string _CBU;
         private string _Alias;
-        
+        private decimal _Debe;
+        private decimal _Haber;
+        private decimal _Importe;
 
 
         //Propiedades
@@ -68,13 +70,31 @@ namespace CapaDatos
             set { _Alias = value; }
         }
 
+        public decimal Debe
+        {
+            get { return _Debe; }
+            set { _Debe = value; }
+        }
+
+        public decimal Haber
+        {
+            get { return _Haber; }
+            set { _Haber = value; }
+        }
+
+        public decimal Importe
+        {
+            get { return _Importe; }
+            set { _Importe = value; }
+        }
+
 
         //Constructores
         public CD_CuentaBancaria()
         {
         }
 
-        public CD_CuentaBancaria(int id, string nrocta, string nombre, string tipocta, string titular, string cbu, string alias)
+        public CD_CuentaBancaria(int id, string nrocta, string nombre, string tipocta, string titular, string cbu, string alias,decimal debe, decimal haber, decimal importe)
         {
             this.Id = id;
             this.NumeroCta = nrocta;
@@ -82,7 +102,10 @@ namespace CapaDatos
             this.TipoCta = tipocta;
             this.Titular = titular;
             this.CBU = cbu;
-            this.Alias = alias;       
+            this.Alias = alias;
+            this.Debe = debe;
+            this.Haber = haber;
+            this.Importe = importe;
         }
 
         public DataTable Mostrar()
@@ -106,6 +129,137 @@ namespace CapaDatos
                 DtResultado = null;
             }
             return DtResultado;
+        }
+
+        public DataTable DetalleCtaBanco(CD_CuentaBancaria detalle)
+        {
+            DataTable DtResultado = new DataTable("detalleBco");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "InformeDetalleBanco";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdCtaBancaria = new SqlParameter();
+                ParIdCtaBancaria.ParameterName = "@idbanco";
+                ParIdCtaBancaria.SqlDbType = SqlDbType.Int;
+                ParIdCtaBancaria.Value = detalle.Id;
+                SqlCmd.Parameters.Add(ParIdCtaBancaria);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
+        public string TotalDebe(CD_CuentaBancaria totdebe)
+        {
+            string total = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "SumaDebeBanco";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdCtaBancaria = new SqlParameter();
+                ParIdCtaBancaria.ParameterName = "@idbanco";
+                ParIdCtaBancaria.SqlDbType = SqlDbType.Int;
+                ParIdCtaBancaria.Value = totdebe.Id;
+                SqlCmd.Parameters.Add(ParIdCtaBancaria);
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    total = registro["TOTAL"].ToString();
+                }
+            }
+            catch
+            {
+                total = "";
+            }
+            return total;
+        }
+
+        public string TotalHaber(CD_CuentaBancaria tothaber)
+        {
+            string total = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "SumaHaberBanco";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdCtaBancaria = new SqlParameter();
+                ParIdCtaBancaria.ParameterName = "@idbanco";
+                ParIdCtaBancaria.SqlDbType = SqlDbType.Int;
+                ParIdCtaBancaria.Value = tothaber.Id;
+                SqlCmd.Parameters.Add(ParIdCtaBancaria);
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    total = registro["TOTAL"].ToString();
+                }
+            }
+            catch
+            {
+                total = "";
+            }
+            return total;
+        }
+
+        public string TotalImporte(CD_CuentaBancaria totimporte)
+        {
+            string total = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "SumaImporteBanco";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdCtaBancaria = new SqlParameter();
+                ParIdCtaBancaria.ParameterName = "@idbanco";
+                ParIdCtaBancaria.SqlDbType = SqlDbType.Int;
+                ParIdCtaBancaria.Value = totimporte.Id;
+                SqlCmd.Parameters.Add(ParIdCtaBancaria);
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    total = registro["TOTAL"].ToString();
+                }
+            }
+            catch
+            {
+                total = "";
+            }
+            return total;
         }
 
         public DataTable CargarComboBoxCuentasBanco()

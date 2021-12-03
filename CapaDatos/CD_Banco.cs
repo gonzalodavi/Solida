@@ -425,7 +425,7 @@ namespace CapaDatos
             return rpta;
         }
 
-        public string Anular_Transferencias(CD_Banco transfe)
+        public string Anular_TransfRecibidas(CD_Banco transfe)
         {
             string rpta = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -438,6 +438,44 @@ namespace CapaDatos
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "AnularTransferenciasRecibidas";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParComprobante = new SqlParameter();
+                ParComprobante.ParameterName = "@nrocomprob";
+                ParComprobante.SqlDbType = SqlDbType.VarChar;
+                ParComprobante.Size = 20;
+                ParComprobante.Value = transfe.NumComprobante;
+                SqlCmd.Parameters.Add(ParComprobante);
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo ANULAR LAS TANSFERENCIAS";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
+        public string Anular_TransRealizadas(CD_Banco transfe)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "AnularTransferenciasRealizadas";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParComprobante = new SqlParameter();

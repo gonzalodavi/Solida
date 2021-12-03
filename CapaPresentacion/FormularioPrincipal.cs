@@ -364,6 +364,7 @@ namespace Presentacion
         private void btnInfBanco_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            openChildForm(new FormInfoBanco());
         }
 
         private void btnInfCheques_Click(object sender, EventArgs e)

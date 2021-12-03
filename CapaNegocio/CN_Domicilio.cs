@@ -8,6 +8,13 @@ namespace CapaNegocio
 {
     public class CN_Domicilio
     {
+        public static string ConsultaDomicilioSiExiste(int id, string proc)
+        {
+            CD_Domicilio Obj = new CD_Domicilio();
+            string rpta = Obj.ConsultaDomicilioSiExiste(id, proc);
+            return rpta;
+        }
+
         public static string Insertar(string calle, int nro, string piso, string dpto, int idbarrio)
         {
             CD_Domicilio Obj = new CD_Domicilio();

@@ -41,7 +41,7 @@ namespace CapaPresentacion
 
         private void CantidadYSuma()
         {
-            if (dgvCheques.SelectedRows.Count > 0)
+            if (dgvCheques.Rows.Count > 0)
             {
                 try
                 {

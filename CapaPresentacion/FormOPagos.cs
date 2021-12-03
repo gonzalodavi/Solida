@@ -409,13 +409,25 @@ namespace CapaPresentacion
                                     this.MensajeOk("Se Generó con éxito el Comprobante");
                                     int idOPago= objeto1.BuscarUltimoIDOPago();
                                     
+                                    if (efectivo > 0)
+                                    {
+                                        string rptActCaja = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO", idOPago);
+
+                                        if (rptActCaja.Equals("OK"))
+                                        {
+                                            // MensajeOk("Cheques ESTADO: PAGADO");
+                                        }
+                                        else
+                                        {
+                                            // MensajeError(rpta1);
+                                        }
+                                    }
 
                                     if (valores > 0)
                                     {
+                                        string rptActCheq = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO",idOPago);
 
-                                        rpta1 = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO",idOPago);
-
-                                        if (rpta1.Equals("OK"))
+                                        if (rptActCheq.Equals("OK"))
                                         {
                                            // MensajeOk("Cheques ESTADO: PAGADO");
                                         }
@@ -477,6 +489,8 @@ namespace CapaPresentacion
             {
                 if (dgvOPago.CurrentRow.Cells[7].Value.ToString() != "ANULADO")
                 {
+                    string numComprob = dgvOPago.CurrentRow.Cells[2].Value.ToString();
+
                     DialogResult opcion;
                     opcion = MessageBox.Show("Desea ANULAR el comprobante seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (opcion == DialogResult.OK)
@@ -485,7 +499,7 @@ namespace CapaPresentacion
                         int idOPago = Convert.ToInt32(dgvOPago.CurrentRow.Cells["ID_OPAGO"].Value.ToString());
                         objetoCN.AnularOPago(idOPago);
 
-                        MessageBox.Show("SE ANULÓ CORRECTAMENTE EL RECIBO SELECCIONADO");
+                        MessageBox.Show("SE ANULÓ CORRECTAMENTE LA ORDEN DE PAGO SELECCIONADA");
 
                         string rptaID = CN_Cheque.EstadoCheque("PAGADO", "ACTIVO", idOPago);                        
 
@@ -497,6 +511,15 @@ namespace CapaPresentacion
                         else
                         {
                             this.MensajeError(rpta);
+                        }
+
+                        if (Convert.ToDecimal(dgvOPago.CurrentRow.Cells[9].Value.ToString()) > 0)
+                        {
+                            string rpt = CN_Banco.Anular_TransfRealizadas(numComprob);
+                            if (rpt.Equals("OK"))
+                            {
+                                this.MensajeOk("Se ANULARON las TRANSFERENCIAS del RECIBO");
+                            }
                         }
                         CargarGrillaOPagos();
                     }

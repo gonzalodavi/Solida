@@ -15,6 +15,14 @@ namespace CapaNegocio
         {
             return new CD_Cliente().Mostrar();
         }
+
+        public static string ConsultaClienteExisteEnCbtes(string dni,string proc)
+        {
+            CD_Cliente Obj = new CD_Cliente();
+            string rpta = Obj.ConsultaClienteExisteEnComprob(dni,proc);
+            return rpta;
+        }
+
         public static string Insertar(string dni, string nombre, string apellido, string telefono, string mail, string condiva, string razonsocial, int iddomicilio)
         {
             CD_Cliente Obj = new CD_Cliente();

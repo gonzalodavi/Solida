@@ -25,6 +25,41 @@ namespace CapaDatos
             return tabla;
         }
 
+        public string ConsultaSiExisteProducto(string nombre, int marca,int unid)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "BuscarSiExisteProducto";
+                SqlCmd.Parameters.AddWithValue("@nombre", nombre);
+                SqlCmd.Parameters.AddWithValue("@marca", marca);
+                SqlCmd.Parameters.AddWithValue("@unid", unid);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
+
         public DataTable BuscarProd(string codbar)
         {
             DataTable tabla = new DataTable();

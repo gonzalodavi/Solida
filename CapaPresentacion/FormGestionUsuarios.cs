@@ -38,6 +38,19 @@ namespace Presentacion
             cbRoles.Text = "";
         }
 
+        //Mostrar Mensaje de Confirmacion
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
 
         private void MostrarUsuarios()
         {
@@ -88,12 +101,8 @@ namespace Presentacion
                                 objetoCN.EditarUsuarios(tbUsuario.Text, tbClave.Text, tbNombre.Text, tbApellido.Text, cbRoles.Text, tbEmail.Text, idUsuario);
                                 MessageBox.Show("Se modificaron correctamente los datos del usuario");
                                 
-                                Editar = false;
-                                limpiarCampos();
                                 MostrarUsuarios();
-                                DeshabilitarEdicion();
-                                lblNuevoOModUser.Text = "Nuevo Usuario";
-                                lblNuevoOModUser.Visible = false;
+                                DeshabilitarEdicion();                                
                             }
                             catch (Exception ex)
                             {
@@ -110,9 +119,32 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("Existe algun campo vacío.\nPara modificar o editar un usuario debe completar todos sus datos");
-            }
-            
+                MessageBox.Show("Existen campos vacíos.\n\nPara Agregar o Editar Usuarios debe completar todos sus datos");
+                if(tbUsuario.Text == "")
+                {
+                    lblErrorUsuario.Visible = true;
+                }
+                if (tbClave.Text == "")
+                {
+                    lblErrorClave.Visible = true;
+                }
+                if (cbRoles.SelectedIndex == -1)
+                {
+                    lblErrorRol.Visible = true;
+                }
+                if (tbNombre.Text == "")
+                {
+                    lblErrorNombre.Visible = true;
+                }
+                if (tbApellido.Text == "")
+                {
+                    lblErrorApellido.Visible = true;
+                }
+                if (tbEmail.Text == "")
+                {
+                    lblErrorMail.Visible = true;
+                }
+            }            
         }
 
         private void limpiarCampos()
@@ -123,15 +155,23 @@ namespace Presentacion
             cbRoles.Text = "";
             tbUsuario.Text = "";
             tbEmail.Text = "";
+            cbRoles.SelectedIndex = -1;
+            lblErrorApellido.Visible = false;
+            lblErrorClave.Visible = false;
+            lblErrorMail.Visible = false;
+            lblErrorNombre.Visible = false;
+            lblErrorRol.Visible = false;
+            lblErrorUsuario.Visible = false;
             Editar = false;
+            idUsuario = null;
         }
 
         private void btnModificarUser_Click(object sender, EventArgs e)
         {
             if (dgvUsuarios.SelectedRows.Count > 0)
-            {
-                Editar = true;
+            {                
                 HabilitarEdicion();
+                Editar = true;
                 lblNuevoOModUser.Text = "Modificar Usuario";
                 lblNuevoOModUser.Visible = true;
                 tbUsuario.Text = dgvUsuarios.CurrentRow.Cells["USUARIO"].Value.ToString();
@@ -148,25 +188,26 @@ namespace Presentacion
             }
         }
 
-        private void dgvUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {  
-            if (this.dgvUsuarios.Columns[e.ColumnIndex].Name == "CLAVE")
-            {
-                e.Value = new string('*', 4);
-            }
-        }
-
         private void btnEliminarUser_Click(object sender, EventArgs e)
         {
             if (dgvUsuarios.SelectedRows.Count > 0) 
             {
-                if (MessageBox.Show("¿Desea ELIMINAR permanentemente el usuario seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                int idU = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID"].Value);
+                if (idU == 1)
                 {
-                    idUsuario = dgvUsuarios.CurrentRow.Cells["ID"].Value.ToString();
-                    objetoCN.EliminarUsuario(idUsuario);
-                    MessageBox.Show("Se eliminó correctamente el usuario seleccionado");
-                    MostrarUsuarios();
-                }                
+                    MensajeError("No se permite eliminar este usuario");
+                }
+                else
+                {
+                    if (MessageBox.Show("¿Desea ELIMINAR permanentemente el usuario seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        idUsuario = idU.ToString();
+                        objetoCN.EliminarUsuario(idUsuario);
+                        MessageBox.Show("Se eliminó correctamente el usuario seleccionado");
+                        MostrarUsuarios();
+                        idUsuario = null;
+                    }
+                }                             
             }
             else
             {
@@ -176,9 +217,6 @@ namespace Presentacion
 
         private void btnCancela_Click(object sender, EventArgs e)
         {
-            btnModificarUser.Enabled = true;
-            btnEliminarUser.Enabled = true;
-            limpiarCampos();
             DeshabilitarEdicion();
             lblNuevoOModUser.Text = "Nuevo Usuario";
             lblNuevoOModUser.Visible = false;
@@ -205,7 +243,9 @@ namespace Presentacion
             tbNombre.Enabled = true;
             tbUsuario.Enabled = true;
             cbRoles.Enabled = true;
-            cbRoles.SelectedIndex = -1;
+            limpiarCampos();
+            btnCancela.Enabled = true;
+            btnAgregarUser.Enabled = true;
         }
 
         private void DeshabilitarEdicion()
@@ -220,12 +260,160 @@ namespace Presentacion
             tbNombre.Enabled = false;
             tbUsuario.Enabled = false;
             cbRoles.Enabled = false;
-            cbRoles.SelectedIndex = -1;
+            limpiarCampos();
+            btnCancela.Enabled = false;
+            btnAgregarUser.Enabled = false;
+            lblNuevoOModUser.Text = "Nuevo Usuario";
+            lblNuevoOModUser.Visible = false;
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRoles.SelectedIndex != -1)
+            {
+                lblErrorRol.Visible = false;
+            }
+            else
+            {
+                lblErrorRol.Visible = true;
+            }
+        }
+
+        private void cbRoles_Leave(object sender, EventArgs e)
+        {
+            if (cbRoles.SelectedIndex != -1)
+            {
+                lblErrorRol.Visible = false;
+            }
+            else
+            {
+                lblErrorRol.Visible = true;
+            }
+        }
+
+        private void tbUsuario_TextChanged(object sender, EventArgs e)
+        {
+            if (tbUsuario.Text != "")
+            {
+                lblErrorUsuario.Visible = false;
+            }
+            else
+            {
+                lblErrorUsuario.Visible = true;
+            }
+        }
+
+        private void tbUsuario_Leave(object sender, EventArgs e)
+        {
+            if (tbUsuario.Text != "")
+            {
+                lblErrorUsuario.Visible = false;
+            }
+            else
+            {
+                lblErrorUsuario.Visible = true;
+            }
+        }
+
+        private void tbClave_TextChanged(object sender, EventArgs e)
+        {
+            if (tbClave.Text != "")
+            {
+                lblErrorClave.Visible = false;
+            }
+            else
+            {
+                lblErrorClave.Visible = true;
+            }
+        }
+
+        private void tbClave_Leave(object sender, EventArgs e)
+        {
+            if (tbClave.Text != "")
+            {
+                lblErrorClave.Visible = false;
+            }
+            else
+            {
+                lblErrorClave.Visible = true;
+            }
+        }
+
+        private void tbNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (tbNombre.Text != "")
+            {
+                lblErrorNombre.Visible = false;
+            }
+            else
+            {
+                lblErrorNombre.Visible = true;
+            }
+        }
+
+        private void tbNombre_Leave(object sender, EventArgs e)
+        {
+            if (tbNombre.Text != "")
+            {
+                lblErrorNombre.Visible = false;
+            }
+            else
+            {
+                lblErrorNombre.Visible = true;
+            }
+        }
+
+        private void tbApellido_TextChanged(object sender, EventArgs e)
+        {
+            if (tbApellido.Text != "")
+            {
+                lblErrorApellido.Visible = false;
+            }
+            else
+            {
+                lblErrorApellido.Visible = true;
+            }
+        }
+
+        private void tbApellido_Leave(object sender, EventArgs e)
+        {
+            if (tbApellido.Text != "")
+            {
+                lblErrorApellido.Visible = false;
+            }
+            else
+            {
+                lblErrorApellido.Visible = true;
+            }
+        }
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (tbEmail.Text != "")
+            {
+                lblErrorMail.Visible = false;
+            }
+            else
+            {
+                lblErrorMail.Visible = true;
+            }
+        }
+
+        private void tbEmail_Leave(object sender, EventArgs e)
+        {
+            if (tbEmail.Text != "")
+            {
+                lblErrorMail.Visible = false;
+            }
+            else
+            {
+                lblErrorMail.Visible = true;
+            }
         }
     }
 }

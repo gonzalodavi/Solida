@@ -89,6 +89,39 @@ namespace CapaDatos
             this.Descripcion = descripcion;
         }
 
+        public string ConsultaProveedorExisteEnCbtes(string cuit, string proc)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = proc;
+                SqlCmd.Parameters.AddWithValue("@cuit", cuit);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
+
         public DataTable MostrarProveedores()
         {
             comando.Connection = conexion.AbrirConexion();

@@ -235,7 +235,7 @@ namespace CapaPresentacion
                                 importeasignado = Suma;
                             }
 
-                            rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE PAGO", debe, haber, valores, efectivo, banco, (debe - haber), importeasignado, 0, asigna, Estado);
+                            rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE CAJA", debe, haber, valores, efectivo, banco, (debe - haber), importeasignado, 0, asigna, Estado);
                             if (rpta.Equals("OK"))
                             {
                                 this.MensajeOk("Se Cargo recibo en CTA CTE");
@@ -519,7 +519,7 @@ namespace CapaPresentacion
                                 }
                                 if (Convert.ToDecimal(dgvRecibos.CurrentRow.Cells[9].Value.ToString()) > 0)
                                 {
-                                    string rpt = CN_Banco.Anular_Transferencias(numComprob);
+                                    string rpt = CN_Banco.Anular_TransfRecibidas(numComprob);
                                     if (rpt.Equals("OK"))
                                     {
                                         this.MensajeOk("Se ANULARON las TRANSFERENCIAS del RECIBO");

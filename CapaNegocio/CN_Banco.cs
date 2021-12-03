@@ -55,11 +55,18 @@ namespace CapaNegocio
             return Obj.ActivarTransferenciasPendientes(Obj);
         }
 
-        public static string Anular_Transferencias(string nrocomprob)
+        public static string Anular_TransfRecibidas(string nrocomprob)
         {
             CD_Banco Obj = new CD_Banco();
             Obj.NumComprobante = nrocomprob;
-            return Obj.Anular_Transferencias(Obj);
+            return Obj.Anular_TransfRecibidas(Obj);
+        }
+
+        public static string Anular_TransfRealizadas(string nrocomprob)
+        {
+            CD_Banco Obj = new CD_Banco();
+            Obj.NumComprobante = nrocomprob;
+            return Obj.Anular_TransRealizadas(Obj);
         }
     }    
 

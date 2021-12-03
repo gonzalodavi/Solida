@@ -11,6 +11,12 @@ namespace CapaNegocio
 
         private CD_Proveedor objetoCD = new CD_Proveedor();
 
+        public static string ConsultaProveedorExisteEnCbtes(string cuit, string proc)
+        {
+            CD_Proveedor Obj = new CD_Proveedor();
+            string rpta = Obj.ConsultaProveedorExisteEnCbtes(cuit, proc);
+            return rpta;
+        }
 
         public static string Insertar(string cuit, string razonsocial, string nombre, string apellido,string mail, string telefono, int iddomicilio, string descrip)
         {
