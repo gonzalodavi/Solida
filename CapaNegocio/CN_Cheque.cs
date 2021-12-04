@@ -85,10 +85,10 @@ namespace CapaNegocio
             return rpta;
         }
 
-        public static string ConsultaSiExisteChequeOP(string estado)
+        public static string ConsultaEstadoCheque(string estado)
         {
             CD_Cheque Obj = new CD_Cheque();
-            string rpta = Obj.ConsultaExisteChequesOP(estado);
+            string rpta = Obj.ConsultaEstadoCheque(estado);
             return rpta;
         }
 

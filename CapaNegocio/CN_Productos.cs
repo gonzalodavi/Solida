@@ -17,6 +17,25 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public DataTable MostrarProductoRubros(int idrubro)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.MostrarProductosRubros(idrubro);
+            return tabla;
+        }
+
+        public static int CantidadProductos()
+        {
+            CD_Productos Obj = new CD_Productos();            
+            return Obj.CantidadProducto(); ;
+        }
+
+        public static int CantidadRubros()
+        {
+            CD_Productos Obj = new CD_Productos();
+            return Obj.CantidadRubros();
+        }
+
         public static string ConsultaSiExisteProducto(string nombre, int marca, int unid)
         {
             CD_Productos Obj = new CD_Productos();
@@ -70,6 +89,20 @@ namespace CapaNegocio
         {
             DataTable tabla = new DataTable();
             tabla = objetoCD.BuscarProdnom(nombre);
+            return tabla;
+        }
+
+        public DataTable BuscarProductosxRubro(string codbar,int rubro)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.BuscarProdxRubro(codbar,rubro);
+            return tabla;
+        }
+
+        public DataTable BuscarProductosNomxRubro(string nombre,int rubro)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.BuscarProdnomxRubro(nombre,rubro);
             return tabla;
         }
 

@@ -198,11 +198,23 @@
     <Compile Include="FormInfoBanco.Designer.cs">
       <DependentUpon>FormInfoBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInfoCajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoCajas.Designer.cs">
+      <DependentUpon>FormInfoCajas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInfoCompras.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormInfoCompras.Designer.cs">
       <DependentUpon>FormInfoCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInfoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoProductos.Designer.cs">
+      <DependentUpon>FormInfoProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInfoVentas.cs">
       <SubType>Form</SubType>
@@ -438,8 +450,14 @@
     <EmbeddedResource Include="FormInfoBanco.resx">
       <DependentUpon>FormInfoBanco.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoCajas.resx">
+      <DependentUpon>FormInfoCajas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInfoCompras.resx">
       <DependentUpon>FormInfoCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoProductos.resx">
+      <DependentUpon>FormInfoProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInfoVentas.resx">
       <DependentUpon>FormInfoVentas.cs</DependentUpon>

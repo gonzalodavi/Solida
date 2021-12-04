@@ -40,6 +40,7 @@ namespace CapaPresentacion
             BuscaNumeroOPago();
             ConsultaPorCheque();
             ConsultaPorTransferencia();
+            ConsultaPorChequeSelecc();
             CargarComboBoxCuentas();
         }
 
@@ -149,11 +150,51 @@ namespace CapaPresentacion
             //dgvTransferencias.Columns["TITULAR"].Visible = false;               //5
         }
 
+        private void ConsultaPorTransferencia()
+        {
+            string rpta = CN_Banco.ConsultaSiExisteTransf("PENDIENTE");
+            if (rpta.Equals("OK"))
+            {
+
+            }
+            else
+            {
+                if (rpta.Equals("NO"))
+                {
+                    //MensajeOk("No Hay Cheques COMO PENDIENTES");
+                }
+                else
+                {
+                    // MensajeError(rpta);
+                }
+            }
+        }
+
         private void ConsultaPorCheque()
+        {
+            string rpta = CN_Cheque.ConsultaSiExisteCheque("PENDIENTE");
+            if (rpta.Equals("OK"))
+            {
+
+            }
+            else
+            {
+                if (rpta.Equals("NO"))
+                {
+                    //MensajeOk("No Hay Cheques COMO PENDIENTES");
+                }
+                else
+                {
+                    // MensajeError(rpta);
+                }
+            }
+        }
+
+        private void ConsultaPorChequeSelecc()
         {
             try
             {
-                string rpta = CN_Cheque.ConsultaSiExisteChequeOP("SELECCIONADO");
+                string rpta = CN_Cheque.ConsultaEstadoCheque("SELECCIONADO");
                 if (rpta.Equals("OK"))
                 {
                     string rpta1 = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "ACTIVO",0);
@@ -182,26 +223,7 @@ namespace CapaPresentacion
             {
                 MensajeError("No se pudo ejecutar la operacion:\n\n" + ex);
             }
-        }
-        private void ConsultaPorTransferencia()
-        {
-            string rpta = CN_Banco.ConsultaSiExisteTransf("PENDIENTE");
-            if (rpta.Equals("OK"))
-            {
-
-            }
-            else
-            {
-                if (rpta.Equals("NO"))
-                {
-                    //MensajeOk("No Hay Cheques COMO PENDIENTES");
-                }
-                else
-                {
-                    // MensajeError(rpta);
-                }
-            }
-        }
+        }        
 
         private void CantidadYSuma()
         {
@@ -520,14 +542,19 @@ namespace CapaPresentacion
                             this.MensajeError(rpta);
                         }
 
-                        if (Convert.ToDecimal(dgvOPago.CurrentRow.Cells[9].Value.ToString()) > 0)
+                        string rpt = CN_Banco.Anular_TransfRealizadas(numComprob);
+                        if (rpt.Equals("OK"))
                         {
-                            string rpt = CN_Banco.Anular_TransfRealizadas(numComprob);
-                            if (rpt.Equals("OK"))
-                            {
-                                this.MensajeOk("Se ANULARON las TRANSFERENCIAS del RECIBO");
-                            }
+                            this.MensajeOk("Se ANULARON las TRANSFERENCIAS de la Orden de Pago");
                         }
+
+                        string rptCaja = CN_Caja.Anular_CajaMovRealizado(numComprob);
+                        if (rptCaja.Equals("OK"))
+                        {
+                            this.MensajeOk("Se Anulo el movimiento de CAJA");
+                        }
+
+                        
                         CargarGrillaOPagos();
                     }
                 }
@@ -700,6 +727,7 @@ namespace CapaPresentacion
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
+            ConsultaPorTransferencia();
             ConsultaPorCheque();
             this.Close();
         }

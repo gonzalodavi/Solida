@@ -131,6 +131,7 @@ namespace CapaPresentacion
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
+            ConsultaPorTransferencia();
             ConsultaPorCheque();
             this.Close();
         }
@@ -545,6 +546,12 @@ namespace CapaPresentacion
                                     {
                                         this.MensajeOk("Se ANULARON las TRANSFERENCIAS del RECIBO");
                                     }
+                                }
+
+                                string rptCaja = CN_Caja.Anular_CajaMovRealizado(numComprob);
+                                if (rptCaja.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se Anulo el movimiento de CAJA");
                                 }
 
                                 CargarGrillaRecibos();
@@ -1052,7 +1059,7 @@ namespace CapaPresentacion
                     decimal Import = debe - haber;
                     string estad = "PENDIENTE";
 
-                    string respta1 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
+                    string respta1 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE CAJA", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
 
                     if (respta1.Equals("OK"))
                     {
@@ -1105,7 +1112,7 @@ namespace CapaPresentacion
                         decimal Import = debe - haber;
                         string estad = "PENDIENTE";
 
-                        string respta2 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
+                        string respta2 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE CAJA", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
 
                         if (respta2.Equals("OK"))
                         {

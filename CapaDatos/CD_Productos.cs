@@ -25,6 +25,81 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable MostrarProductosRubros(int idrubro)
+        {
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "MostrarProductosRubros";
+            comando.Parameters.AddWithValue("@idrubro", idrubro);
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public int CantidadProducto()
+        {
+            int nro = 0;
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Mostrar_CantidadProductos";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    nro = Convert.ToInt32(registro["CANTIDAD"]);
+                }
+            }
+            catch
+            {
+                nro = 0;
+            }
+            return nro;
+        }
+
+        public int CantidadRubros()
+        {
+            int nro = 0;
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Mostrar_CantidadRubros";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    nro = Convert.ToInt32(registro["CANTIDAD"]);
+                }
+            }
+            catch
+            {
+                nro = 0;
+            }
+            return nro;
+        }
+
+
         public string ConsultaSiExisteProducto(string nombre, int marca,int unid)
         {
             string rpta = "";
@@ -73,6 +148,7 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return tabla;         
         }
+
         public DataTable BuscarProdnom(string nombre)
         {
             DataTable tabla = new DataTable();
@@ -80,6 +156,38 @@ namespace CapaDatos
             comando.CommandText = "BuscarProductosNom";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombre", nombre);
+            SqlDataReader registros = comando.ExecuteReader();
+            tabla.Load(registros);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable BuscarProdxRubro(string codbar,int rubro)
+        {
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarProductosxRubro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@codbar", codbar);
+            comando.Parameters.AddWithValue("@idrubro", rubro);
+
+            SqlDataReader registros = comando.ExecuteReader();
+            tabla.Load(registros);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable BuscarProdnomxRubro(string nombre,int rubro)
+        {
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarProductosNomxRubro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@idrubro", rubro);
+
             SqlDataReader registros = comando.ExecuteReader();
             tabla.Load(registros);
             comando.Parameters.Clear();

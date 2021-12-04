@@ -283,3 +283,5 @@ G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormBanco.
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormEmpresa.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormReciboDePago.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormInfoBanco.resources
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormInfoCajas.resources
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormInfoProductos.resources

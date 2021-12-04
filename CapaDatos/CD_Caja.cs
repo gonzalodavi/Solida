@@ -421,7 +421,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo ANULAR LOS MOVIMIENTOS DE CAJA";
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo ANULAR EL MOVIMIENTO DE CAJA";
 
             }
             catch (Exception ex)
@@ -459,7 +459,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo ANULAR LOS MOVIMIENTOS DE CAJA";
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo ANULAR EL MOVIMIENTOS DE CAJA";
 
             }
             catch (Exception ex)

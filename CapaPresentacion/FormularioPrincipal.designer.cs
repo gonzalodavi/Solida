@@ -367,7 +367,6 @@
             // 
             this.btnInfStock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfStock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInfStock.Enabled = false;
             this.btnInfStock.FlatAppearance.BorderSize = 0;
             this.btnInfStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(249)))));
             this.btnInfStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -435,7 +435,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudieron Activar Los Cheques Pendientes";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se pudieron Activar Los Cheques Pendientes";
 
             }
             catch (Exception ex)
@@ -537,7 +537,7 @@ namespace CapaDatos
             return rpta;
         }
 
-        public string ConsultaExisteChequesOP(string estado)
+        public string ConsultaEstadoCheque(string estado)
         {
             string rpta = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -549,7 +549,7 @@ namespace CapaDatos
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "BuscarSiExisteCheque";
+                SqlCmd.CommandText = "ConsultaPorEstadoCheque";
 
                 SqlCmd.Parameters.AddWithValue("@estado", estado);
 

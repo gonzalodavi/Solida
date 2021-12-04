@@ -411,7 +411,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudieron Activar Las Transferencias Pendientes";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se pudieron Activar Las Transferencias Pendientes";
 
             }
             catch (Exception ex)

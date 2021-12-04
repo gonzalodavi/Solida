@@ -419,7 +419,7 @@ namespace CapaPresentacion
                     decimal Import = debe - haber;
                     string estad = "PENDIENTE";
 
-                    string respta1 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
+                    string respta1 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE CAJA", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
 
                     if (respta1.Equals("OK"))
                     {
@@ -472,7 +472,7 @@ namespace CapaPresentacion
                         decimal Import = debe - haber;
                         string estad = "PENDIENTE";
 
-                        string respta2 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE PAGO", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
+                        string respta2 = CN_Banco.Insertar(tbNumRecibo.Text, "RECIBO DE CAJA", numTransf, fec, IdBco, Bco, Titu, debe, haber, Import, estad);
 
                         if (respta2.Equals("OK"))
                         {

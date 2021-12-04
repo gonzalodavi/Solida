@@ -347,18 +347,12 @@ namespace Presentacion
         {
             hideSubMenu();
             openChildForm(new FormRemitos());
-
-        }
-
-        private void btnRubros_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-
         }
 
         private void btnInfCaja_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            openChildForm(new FormInfoCajas());
         }
 
         private void btnInfBanco_Click(object sender, EventArgs e)
@@ -387,7 +381,8 @@ namespace Presentacion
 
         private void btnInfStock_Click(object sender, EventArgs e)
         {
-            hideSubMenu();            
+            hideSubMenu();
+            openChildForm(new FormInfoProductos());
         }
 
         private void btnInfCtasCtes_Click(object sender, EventArgs e)
