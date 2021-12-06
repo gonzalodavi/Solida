@@ -31,13 +31,23 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReporteRecibo));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
             this.ReporteReciboBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ReporteReciboTableAdapter = new CapaPresentacion.dsPrincipalTableAdapters.ReporteReciboTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteReciboBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReporteReciboBindingSource
+            // 
+            this.ReporteReciboBindingSource.DataMember = "ReporteRecibo";
+            this.ReporteReciboBindingSource.DataSource = this.dsPrincipal;
+            // 
+            // dsPrincipal
+            // 
+            this.dsPrincipal.DataSetName = "dsPrincipal";
+            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -49,18 +59,8 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(820, 595);
+            this.reportViewer1.Size = new System.Drawing.Size(793, 565);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dsPrincipal
-            // 
-            this.dsPrincipal.DataSetName = "dsPrincipal";
-            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ReporteReciboBindingSource
-            // 
-            this.ReporteReciboBindingSource.DataMember = "ReporteRecibo";
-            this.ReporteReciboBindingSource.DataSource = this.dsPrincipal;
             // 
             // ReporteReciboTableAdapter
             // 
@@ -70,15 +70,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 595);
+            this.ClientSize = new System.Drawing.Size(793, 565);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormReporteRecibo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recibo de Pago";
             this.Load += new System.EventHandler(this.FormReporteRecibo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteReciboBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }

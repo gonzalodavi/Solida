@@ -344,6 +344,12 @@
     <Compile Include="Reportes\FormDetalleCtaCteProveedorSimple.Designer.cs">
       <DependentUpon>FormDetalleCtaCteProveedorSimple.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FormDetalleDeCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormDetalleDeCaja.Designer.cs">
+      <DependentUpon>FormDetalleDeCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FormReporteCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -532,6 +538,9 @@
     <EmbeddedResource Include="Reportes\FormDetalleCtaCteProveedorSimple.resx">
       <DependentUpon>FormDetalleCtaCteProveedorSimple.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormDetalleDeCaja.resx">
+      <DependentUpon>FormDetalleDeCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteCompra.resx">
       <DependentUpon>FormReporteCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -577,6 +586,7 @@
     <EmbeddedResource Include="Reportes\rptComprobanteVenta.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptDetalleCaja.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosCompradosxCant.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosCompradosxImporte.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosVendidosxCant.rdlc" />

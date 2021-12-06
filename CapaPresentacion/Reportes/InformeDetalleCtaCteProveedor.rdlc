@@ -11,16 +11,21 @@
               <TextRun>
                 <Value>Saldo de la Cuenta:</Value>
                 <Style>
+                  <FontFamily>Segoe UI</FontFamily>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
               <TextRun>
                 <Value xml:space="preserve"> </Value>
-                <Style />
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Fields!SALDOP.Value</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -73,7 +78,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.73229cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -118,7 +123,7 @@
                             <TextRun>
                               <Value>FECHA</Value>
                               <Style>
-                                <FontFamily>verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -154,7 +159,7 @@
                             <TextRun>
                               <Value>Nº</Value>
                               <Style>
-                                <FontFamily>verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -190,7 +195,7 @@
                             <TextRun>
                               <Value>CONCEPTO</Value>
                               <Style>
-                                <FontFamily>verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -226,7 +231,7 @@
                             <TextRun>
                               <Value>DEBE</Value>
                               <Style>
-                                <FontFamily>verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -262,7 +267,7 @@
                             <TextRun>
                               <Value>HABER</Value>
                               <Style>
-                                <FontFamily>verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -298,7 +303,7 @@
                             <TextRun>
                               <Value>IMPORTE</Value>
                               <Style>
-                                <FontFamily>verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -334,7 +339,7 @@
                             <TextRun>
                               <Value>SALDO</Value>
                               <Style>
-                                <FontFamily>verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -407,6 +412,7 @@
                             <TextRun>
                               <Value>=Fields!FECHA_CCP.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>d</Format>
                               </Style>
                             </TextRun>
@@ -439,7 +445,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CMPBTE.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -470,7 +478,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CONCEPTO.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -500,6 +510,7 @@
                             <TextRun>
                               <Value>=Fields!DEBE.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$' #,0.00</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -534,6 +545,7 @@
                             <TextRun>
                               <Value>=Fields!HABER.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$' #,0.00</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -568,6 +580,7 @@
                             <TextRun>
                               <Value>=Fields!IMPORTE.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$' #,0.00</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -602,6 +615,7 @@
                             <TextRun>
                               <Value>=Fields!SALDO.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$' #,0.00</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -658,7 +672,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>1.02021cm</Top>
         <Left>0.47627cm</Left>
-        <Height>1.2cm</Height>
+        <Height>1.33229cm</Height>
         <Width>23.82225cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -701,6 +715,7 @@
                 <TextRun>
                   <Value>=Today()</Value>
                   <Style>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontWeight>Bold</FontWeight>
                     <Format>D</Format>
                   </Style>
@@ -736,7 +751,7 @@
                 <TextRun>
                   <Value>Detalle Cuenta Corriente</Value>
                   <Style>
-                    <FontFamily>Arial Black</FontFamily>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <Color>White</Color>
@@ -774,12 +789,15 @@
                 <TextRun>
                   <Value>Mail: </Value>
                   <Style>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Fields!MAIL_PROVEEDOR.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -810,12 +828,15 @@
                 <TextRun>
                   <Value>Tel:   </Value>
                   <Style>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Fields!TEL_PROVEEDOR.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -846,24 +867,33 @@
                 <TextRun>
                   <Value>Proveedor:</Value>
                   <Style>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
                 <TextRun>
                   <Value xml:space="preserve"> </Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Fields!APE_PROVEEDOR.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value xml:space="preserve">  </Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Fields!NOM_PROVEEDOR.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -894,34 +924,46 @@
                 <TextRun>
                   <Value>CUIT:</Value>
                   <Style>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
                 <TextRun>
                   <Value xml:space="preserve"> </Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Fields!CUIL_CUIT.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value> - </Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value>Razón Social:</Value>
                   <Style>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
                 <TextRun>
                   <Value xml:space="preserve">  </Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Fields!NOMFAN_PROV.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -963,7 +1005,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>

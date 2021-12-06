@@ -31,13 +31,23 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReporteOPago));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
             this.ReporteOPagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ReporteOPagoTableAdapter = new CapaPresentacion.dsPrincipalTableAdapters.ReporteOPagoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteOPagoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReporteOPagoBindingSource
+            // 
+            this.ReporteOPagoBindingSource.DataMember = "ReporteOPago";
+            this.ReporteOPagoBindingSource.DataSource = this.dsPrincipal;
+            // 
+            // dsPrincipal
+            // 
+            this.dsPrincipal.DataSetName = "dsPrincipal";
+            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -49,18 +59,8 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(933, 604);
+            this.reportViewer1.Size = new System.Drawing.Size(782, 622);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dsPrincipal
-            // 
-            this.dsPrincipal.DataSetName = "dsPrincipal";
-            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ReporteOPagoBindingSource
-            // 
-            this.ReporteOPagoBindingSource.DataMember = "ReporteOPago";
-            this.ReporteOPagoBindingSource.DataSource = this.dsPrincipal;
             // 
             // ReporteOPagoTableAdapter
             // 
@@ -70,15 +70,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 604);
+            this.ClientSize = new System.Drawing.Size(782, 622);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormReporteOPago";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden de Pago";
             this.Load += new System.EventHandler(this.FormReporteOPago_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteOPagoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }

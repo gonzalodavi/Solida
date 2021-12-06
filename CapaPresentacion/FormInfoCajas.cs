@@ -95,5 +95,11 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            FormDetalleDeCaja form = new FormDetalleDeCaja();
+            form.ShowDialog();
+        }
     }
 }

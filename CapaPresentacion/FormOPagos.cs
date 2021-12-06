@@ -304,7 +304,10 @@ namespace CapaPresentacion
                 CargaGrillaCtaCte(cbProveedor.SelectedValue.ToString());
                 CargaSaldoCtaCte();
                 tbTitTransf.Text = cbProveedor.Text;
-            }            
+            }else
+            {
+                tbTitTransf.Text = "";
+            }
         }
 
 

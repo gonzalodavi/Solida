@@ -32,11 +32,11 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReporteNotas));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
             this.ReporteNotasDBCRBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
             this.ReporteNotasDBCRTableAdapter = new CapaPresentacion.dsPrincipalTableAdapters.ReporteNotasDBCRTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteNotasDBCRBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -49,18 +49,18 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(858, 586);
+            this.reportViewer1.Size = new System.Drawing.Size(836, 579);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dsPrincipal
-            // 
-            this.dsPrincipal.DataSetName = "dsPrincipal";
-            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ReporteNotasDBCRBindingSource
             // 
             this.ReporteNotasDBCRBindingSource.DataMember = "ReporteNotasDBCR";
             this.ReporteNotasDBCRBindingSource.DataSource = this.dsPrincipal;
+            // 
+            // dsPrincipal
+            // 
+            this.dsPrincipal.DataSetName = "dsPrincipal";
+            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ReporteNotasDBCRTableAdapter
             // 
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 586);
+            this.ClientSize = new System.Drawing.Size(836, 579);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -78,8 +78,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nota Débito/Crédito";
             this.Load += new System.EventHandler(this.FormReporteNotas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteNotasDBCRBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }

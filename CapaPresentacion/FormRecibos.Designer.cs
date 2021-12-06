@@ -1451,6 +1451,7 @@
             this.tbCheqTitular.Size = new System.Drawing.Size(204, 25);
             this.tbCheqTitular.TabIndex = 12;
             this.tbCheqTitular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCheqTitular.TextChanged += new System.EventHandler(this.tbCheqTitular_TextChanged);
             // 
             // label17
             // 
@@ -2035,6 +2036,7 @@
             this.tbTitTransf.Size = new System.Drawing.Size(341, 25);
             this.tbTitTransf.TabIndex = 322;
             this.tbTitTransf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbTitTransf.TextChanged += new System.EventHandler(this.tbTitTransf_TextChanged);
             // 
             // label39
             // 

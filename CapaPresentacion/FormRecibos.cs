@@ -584,11 +584,40 @@ namespace CapaPresentacion
         {
             if (cbCliente.SelectedIndex != -1)
             {
-                CargaGrillaCtaCte(cbCliente.SelectedValue.ToString());
-                CargaSaldoCtaCte();
-                AcomodaTablaCtaCte();
-                tbTitTransf.Text = cbCliente.Text;
-                tbCheqTitular.Text = cbCliente.Text;
+                if (cbCliente.Text != "Consumidor Final")
+                {
+                    CargaGrillaCtaCte(cbCliente.SelectedValue.ToString());
+                    CargaSaldoCtaCte();
+                    AcomodaTablaCtaCte();
+                    tbTitTransf.Text = cbCliente.Text;
+                    tbCheqTitular.Text = cbCliente.Text;
+                    tbCheqBenef.Text = "Al Portador";
+                }
+                else
+                {
+                    DialogResult Opcion1;
+                    Opcion1 = MessageBox.Show("Los Recibos a Consumidor Final no tienen una Identificación de un cliente, desea de todos modos realizar la operación?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (Opcion1 == DialogResult.OK)
+                    {
+                        CargaGrillaCtaCte(cbCliente.SelectedValue.ToString());
+                        CargaSaldoCtaCte();
+                        AcomodaTablaCtaCte();
+                        tbTitTransf.Text = cbCliente.Text;
+                        tbCheqTitular.Text = cbCliente.Text;
+                        tbCheqBenef.Text = "Al Portador";
+                    }
+                    else
+                    {
+                        cbCliente.SelectedIndex = -1;
+                    }
+                }
+                
+            }
+            else
+            {
+                tbTitTransf.Text = "";
+                tbCheqTitular.Text = "";
+                tbCheqBenef.Text = "";
             }
         }
 
@@ -630,8 +659,7 @@ namespace CapaPresentacion
             else
             {
                 this.lblSaldo.Text = "0,00";
-            }
-            
+            }            
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -1319,6 +1347,22 @@ namespace CapaPresentacion
             else
             {
                 MessageBox.Show("Por favor, complete los campos requeridos");
+            }
+        }
+
+        private void tbCheqTitular_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCheqTitular.Text == "Consumidor Final")
+            {
+                tbCheqTitular.Text = "";
+            }
+        }
+
+        private void tbTitTransf_TextChanged(object sender, EventArgs e)
+        {
+            if (tbTitTransf.Text == "Consumidor Final")
+            {
+                tbTitTransf.Text = "";
             }
         }
 

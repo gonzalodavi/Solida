@@ -4,6 +4,20 @@
     <ReportItems>
       <Rectangle Name="Rectangle1">
         <ReportItems>
+          <Image Name="Image4">
+            <Source>Embedded</Source>
+            <Value>MYOREP21</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.28575cm</Top>
+            <Left>0.0558cm</Left>
+            <Height>2.02671cm</Height>
+            <Width>7.16548cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
           <Textbox Name="Textbox16">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -13,14 +27,14 @@
                   <TextRun>
                     <Value>=Fields!APELLIDO_NOMBRE.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> - </Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -28,7 +42,7 @@
                   <TextRun>
                     <Value>=Fields!CONDICION_IVA.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
@@ -42,7 +56,7 @@
                   <TextRun>
                     <Value>CUIT </Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -50,14 +64,14 @@
                   <TextRun>
                     <Value>=Fields!CUIT_DNI.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> - Ing. B: </Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -65,16 +79,8 @@
                   <TextRun>
                     <Value>=Fields!IIBB.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
-                      <FontSize>8pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -87,7 +93,7 @@
                   <TextRun>
                     <Value>Inic. Act: </Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -95,7 +101,7 @@
                   <TextRun>
                     <Value>=Fields!INICIO_ACT.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <Format>d</Format>
                     </Style>
@@ -103,7 +109,7 @@
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -118,14 +124,14 @@
                   <TextRun>
                     <Value>=Fields!DIRECCION.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -140,14 +146,14 @@
                   <TextRun>
                     <Value>=Fields!LOCALIDAD.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> (</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -155,14 +161,14 @@
                   <TextRun>
                     <Value>=Fields!COD_POS.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>) - </Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -170,7 +176,7 @@
                   <TextRun>
                     <Value>=Fields!PROVINCIA.Value</Value>
                     <Style>
-                      <FontFamily>Berlin Sans FB</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
@@ -181,10 +187,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>0.06614cm</Top>
-            <Left>6.64721cm</Left>
-            <Height>1.89442cm</Height>
+            <Top>0.04354cm</Top>
+            <Left>7.25656cm</Left>
+            <Height>2.31831cm</Height>
             <Width>5.26161cm</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -195,27 +202,12 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Image Name="Image4">
-            <Source>Embedded</Source>
-            <Value>MYOREP21</Value>
-            <Sizing>FitProportional</Sizing>
-            <Top>0.15875cm</Top>
-            <Left>0.0558cm</Left>
-            <Height>1.70921cm</Height>
-            <Width>6.48815cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Image>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>0.35719cm</Top>
         <Left>0.28891cm</Left>
-        <Height>2.02671cm</Height>
-        <Width>12.19457cm</Width>
+        <Height>2.36185cm</Height>
+        <Width>12.63164cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -233,7 +225,7 @@
                   <TextRun>
                     <Value>FACTURA DE COMPRA</Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                       <Color>DarkBlue</Color>
                     </Style>
@@ -247,7 +239,7 @@
             <rd:DefaultName>Textbox8</rd:DefaultName>
             <Top>0.15875cm</Top>
             <Height>0.52944cm</Height>
-            <Width>5.09107cm</Width>
+            <Width>4.45607cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -267,13 +259,15 @@
                   <TextRun>
                     <Value>Nro: </Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!NUM_COMPRA.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -282,9 +276,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>NUM_COMPRA</rd:DefaultName>
-            <Top>0.68819cm</Top>
+            <Top>0.78344cm</Top>
             <Height>0.56473cm</Height>
-            <Width>5.09107cm</Width>
+            <Width>4.45607cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -305,17 +299,20 @@
                   <TextRun>
                     <Value>Fecha:</Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!FECHA_COMPRA.Value</Value>
                     <Style>
+                      <FontFamily>Segoe UI</FontFamily>
                       <Format>d</Format>
                     </Style>
                   </TextRun>
@@ -326,9 +323,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>FECHA_COMPRA</rd:DefaultName>
-            <Top>1.25292cm</Top>
+            <Top>1.44342cm</Top>
             <Height>0.61504cm</Height>
-            <Width>5.09107cm</Width>
+            <Width>4.45607cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -343,9 +340,9 @@
         </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>0.35719cm</Top>
-        <Left>12.35611cm</Left>
-        <Height>2.02671cm</Height>
-        <Width>5.09107cm</Width>
+        <Left>12.99111cm</Left>
+        <Height>2.29129cm</Height>
+        <Width>4.49734cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -364,13 +361,15 @@
                   <TextRun>
                     <Value>Razón Social:  </Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!NOMFAN_PROV.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -380,7 +379,7 @@
             </Paragraphs>
             <rd:DefaultName>NOMFAN_PROV</rd:DefaultName>
             <Top>0.10029cm</Top>
-            <Left>0.15874cm</Left>
+            <Left>0.23811cm</Left>
             <Height>0.6cm</Height>
             <Width>9.43147cm</Width>
             <Style>
@@ -402,13 +401,15 @@
                   <TextRun>
                     <Value>CUIT:  </Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!CUIL_CUIT.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -418,7 +419,7 @@
             </Paragraphs>
             <rd:DefaultName>CUIL_CUIT</rd:DefaultName>
             <Top>0.10029cm</Top>
-            <Left>9.7666cm</Left>
+            <Left>9.84597cm</Left>
             <Height>0.6cm</Height>
             <Width>7.18529cm</Width>
             <ZIndex>1</ZIndex>
@@ -441,13 +442,15 @@
                   <TextRun>
                     <Value>Apellido y Nombre:  </Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=(Fields!NOM_PROVEEDOR.Value)+" "+(Fields!APE_PROVEEDOR.Value)</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -455,7 +458,7 @@
             </Paragraphs>
             <rd:DefaultName>NOM_PROVEEDOR</rd:DefaultName>
             <Top>0.8414cm</Top>
-            <Left>0.15874cm</Left>
+            <Left>0.23811cm</Left>
             <Height>0.6cm</Height>
             <Width>9.43147cm</Width>
             <ZIndex>2</ZIndex>
@@ -478,13 +481,15 @@
                   <TextRun>
                     <Value>   Tel:  </Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!TEL_PROVEEDOR.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -492,7 +497,7 @@
             </Paragraphs>
             <rd:DefaultName>TEL_PROVEEDOR</rd:DefaultName>
             <Top>0.8414cm</Top>
-            <Left>9.7666cm</Left>
+            <Left>9.84597cm</Left>
             <Height>0.6cm</Height>
             <Width>7.18529cm</Width>
             <ZIndex>3</ZIndex>
@@ -515,96 +520,60 @@
                   <TextRun>
                     <Value>Dirección:  </Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!CALLE.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!NRO.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!PISO.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!DPTO.Value</Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve">    </Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value xml:space="preserve">          </Value>
                     <Style>
-                      <FontSize>8pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
                     </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Localidad:  </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Fields!DES_LOCALIDAD.Value</Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve">    </Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value>CP: </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Fields!CODIGO_POSTAL.Value</Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>CALLE1</rd:DefaultName>
-            <Top>1.51196cm</Top>
-            <Left>0.15875cm</Left>
-            <Height>1.51311cm</Height>
+            <Top>1.57546cm</Top>
+            <Left>0.23812cm</Left>
+            <Height>0.61353cm</Height>
             <Width>11.5264cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -626,53 +595,24 @@
                   <TextRun>
                     <Value>Barrio: </Value>
                     <Style>
-                      <FontFamily>Verdana</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Fields!DES_BARRIO.Value</Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
                     <Style>
-                      <FontSize>8pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
                     </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Provincia: </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Fields!DES_PROVINCIA.Value</Value>
-                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>CALLE1</rd:DefaultName>
-            <Top>1.54371cm</Top>
-            <Left>11.7804cm</Left>
-            <Height>1.47783cm</Height>
+            <Top>1.57546cm</Top>
+            <Left>11.85977cm</Left>
+            <Height>0.61353cm</Height>
             <Width>5.16093cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
@@ -685,12 +625,129 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Localidad:  </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!DES_LOCALIDAD.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>2.30188cm</Top>
+            <Left>0.23812cm</Left>
+            <Height>0.6cm</Height>
+            <Width>7.23493cm</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>CP: </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!CODIGO_POSTAL.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>2.30188cm</Top>
+            <Left>7.64944cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.11508cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Provincia: </Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!DES_PROVINCIA.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>2.30188cm</Top>
+            <Left>11.85977cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.61667cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>2.71904cm</Top>
-        <Left>0.36828cm</Left>
+        <Top>2.84604cm</Top>
+        <Left>0.28891cm</Left>
         <Height>3.21327cm</Height>
-        <Width>17.12017cm</Width>
+        <Width>17.19954cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -705,7 +762,14 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Atendido por:  </Value>
+                <Value>Responsable del Comprobante</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>:  </Value>
                 <Style>
                   <FontFamily>Verdana</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -774,6 +838,7 @@
                             <TextRun>
                               <Value>PRODUCTO</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -810,6 +875,7 @@
                             <TextRun>
                               <Value>CANT</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -846,6 +912,7 @@
                             <TextRun>
                               <Value>PRECIO UNIT.</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -882,6 +949,7 @@
                             <TextRun>
                               <Value>% IVA</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -918,6 +986,7 @@
                             <TextRun>
                               <Value>IMPORTE IVA</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -954,6 +1023,7 @@
                             <TextRun>
                               <Value>SUBTOTAL</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -994,15 +1064,21 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!DES_PRODUCTO.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                             <TextRun>
                               <Value> x </Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                             <TextRun>
                               <Value>=Fields!NOM_UNIDAD.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1033,6 +1109,7 @@
                             <TextRun>
                               <Value>=Fields!CANT_COMP.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>#,0.00</Format>
                               </Style>
                             </TextRun>
@@ -1067,6 +1144,7 @@
                             <TextRun>
                               <Value>=Fields!IMPORTE_COSTO.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$' #,0.00;('$' #,0.00)</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -1101,11 +1179,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!DES_ALIC.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                             <TextRun>
                               <Value>%</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1138,6 +1220,7 @@
                             <TextRun>
                               <Value>=Fields!IMPORTE_IVA.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$' #,0.00;('$' #,0.00)</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -1173,6 +1256,7 @@
                             <TextRun>
                               <Value>=Fields!SUBTOTAL.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$' #,0.00;('$' #,0.00)</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -1216,7 +1300,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>0.09071cm</Size>
+                <Size>0.07938cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox69">
                     <CanGrow>true</CanGrow>
@@ -1262,7 +1346,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>0.09071cm</Size>
+                <Size>0.07938cm</Size>
                 <CellContents>
                   <Textbox Name="ID_COMPRA1">
                     <CanGrow>true</CanGrow>
@@ -1301,9 +1385,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>6.2992cm</Top>
-        <Left>0.28891cm</Left>
+        <Left>0.25716cm</Left>
         <Height>1.2cm</Height>
-        <Width>17.19377cm</Width>
+        <Width>17.18244cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -1320,7 +1404,7 @@
               <TextRun>
                 <Value xml:space="preserve"> </Value>
                 <Style>
-                  <FontFamily>Verdana</FontFamily>
+                  <FontFamily>Segoe UI</FontFamily>
                   <FontWeight>Bold</FontWeight>
                   <Format>'$' #,0.00;('$' #,0.00)</Format>
                 </Style>
@@ -1328,6 +1412,7 @@
               <TextRun>
                 <Value>=sum(Fields!SUBTOTAL.Value)</Value>
                 <Style>
+                  <FontFamily>Segoe UI</FontFamily>
                   <Format>'$' #,0.00;('$' #,0.00)</Format>
                   <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                 </Style>
@@ -1364,6 +1449,7 @@
               <TextRun>
                 <Value>=sum(Fields!IMPORTE_IVA.Value)</Value>
                 <Style>
+                  <FontFamily>Segoe UI</FontFamily>
                   <Format>'$' #,0.00;('$' #,0.00)</Format>
                   <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                 </Style>
@@ -1400,7 +1486,7 @@
               <TextRun>
                 <Value>Importe Total a PAGAR:</Value>
                 <Style>
-                  <FontFamily>Verdana</FontFamily>
+                  <FontFamily>Segoe UI</FontFamily>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1435,7 +1521,7 @@
               <TextRun>
                 <Value>  Total IVA:</Value>
                 <Style>
-                  <FontFamily>Verdana</FontFamily>
+                  <FontFamily>Segoe UI</FontFamily>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1470,7 +1556,7 @@
               <TextRun>
                 <Value>  Importe NETO Gravado:</Value>
                 <Style>
-                  <FontFamily>Verdana</FontFamily>
+                  <FontFamily>Segoe UI</FontFamily>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1505,6 +1591,7 @@
               <TextRun>
                 <Value>=(sum(Fields!SUBTOTAL.Value)) - (Sum(Fields!IMPORTE_IVA.Value))</Value>
                 <Style>
+                  <FontFamily>Segoe UI</FontFamily>
                   <Format>'$' #,0.00;('$' #,0.00)</Format>
                   <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                 </Style>
