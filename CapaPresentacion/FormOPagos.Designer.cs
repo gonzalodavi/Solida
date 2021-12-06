@@ -129,8 +129,6 @@
             this.btnQuitaCheque = new FontAwesome.Sharp.IconButton();
             this.btnAgregaCheques = new FontAwesome.Sharp.IconButton();
             this.tabTransferencias = new System.Windows.Forms.TabPage();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.tbImporteTransf = new System.Windows.Forms.TextBox();
@@ -154,6 +152,8 @@
             this.tbNumTransf = new System.Windows.Forms.TextBox();
             this.dgvTransferencias = new System.Windows.Forms.DataGridView();
             this.label46 = new System.Windows.Forms.Label();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabOrdenPagos.SuspendLayout();
             this.tabConsultaOPagos.SuspendLayout();
@@ -1702,45 +1702,6 @@
             this.tabTransferencias.TabIndex = 7;
             this.tabTransferencias.Text = "Transferencias";
             // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnRegresar.IconColor = System.Drawing.Color.White;
-            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(813, 28);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
-            this.btnRegresar.TabIndex = 79;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitulo.AutoEllipsis = true;
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblTitulo.Location = new System.Drawing.Point(430, 100);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(177, 18);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Recibos de Ingreso";
-            // 
             // label45
             // 
             this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1783,6 +1744,7 @@
             this.tbImporteTransf.TabIndex = 364;
             this.tbImporteTransf.TabStop = false;
             this.tbImporteTransf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbImporteTransf.Visible = false;
             // 
             // btnGuardarTransf
             // 
@@ -2136,6 +2098,45 @@
             this.label46.Size = new System.Drawing.Size(831, 238);
             this.label46.TabIndex = 358;
             this.label46.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 25;
+            this.btnRegresar.Location = new System.Drawing.Point(813, 28);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
+            this.btnRegresar.TabIndex = 79;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitulo.AutoEllipsis = true;
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblTitulo.Location = new System.Drawing.Point(430, 100);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(177, 18);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Recibos de Ingreso";
             // 
             // FormOPagos
             // 

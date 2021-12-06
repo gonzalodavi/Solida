@@ -520,10 +520,10 @@ namespace CapaPresentacion
 
                                 this.MensajeOk("SE ANULÓ CORRECTAMENTE EL RECIBO SELECCIONADO");
 
-                                string rpta1 = CN_CtaCte.AnularRegistroCtaCte(numComprob, "RECIBO DE PAGO");
+                                string rpta1 = CN_CtaCte.AnularRegistroCtaCte(numComprob, "RECIBO DE CAJA");
                                 if (rpta1.Equals("OK"))
                                 {
-                                    //MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
+                                    MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
                                 }
                                 else
                                 {
@@ -548,7 +548,7 @@ namespace CapaPresentacion
                                     }
                                 }
 
-                                string rptCaja = CN_Caja.Anular_CajaMovRealizado(numComprob);
+                                string rptCaja = CN_Caja.Anular_CajaMovRecibidos(numComprob);
                                 if (rptCaja.Equals("OK"))
                                 {
                                     this.MensajeOk("Se Anulo el movimiento de CAJA");
@@ -679,6 +679,14 @@ namespace CapaPresentacion
 
         private void chekVerAnulados_CheckedChanged(object sender, EventArgs e)
         {
+            if (chekVerAnulados.Checked == true)
+            {
+                btnImprimir.Enabled = false;
+            }
+            else
+            {
+                btnImprimir.Enabled = true;
+            }
             CargarGrillaRecibos();
             AcomodaTablaRecibos();
         }

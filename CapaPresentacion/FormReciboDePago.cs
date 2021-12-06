@@ -722,7 +722,7 @@ namespace CapaPresentacion
         private void btnCancelaRecibo_Click(object sender, EventArgs e)
         {
             DialogResult opcion;
-            opcion = MessageBox.Show("Desea Cancelar el Pago de la FACTURA?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            opcion = MessageBox.Show("Desea Cancelar el Pago de la FACTURA?\nSi Cancela, el pago no se realizará y la factura pasará a ser en Cuenta Corriente", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (opcion == DialogResult.OK)
             {
                 ConsultaPorTransferencia();

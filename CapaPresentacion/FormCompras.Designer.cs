@@ -69,7 +69,6 @@
             this.lblDescripcionPie = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.gbDetalleCompra = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -82,27 +81,20 @@
             this.btnSelProd = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbCantidad = new System.Windows.Forms.TextBox();
-            this.lblCantidad = new System.Windows.Forms.Label();
             this.tbIDprod = new System.Windows.Forms.TextBox();
             this.tbIVACompra = new System.Windows.Forms.TextBox();
             this.tbProducto = new System.Windows.Forms.TextBox();
             this.tbSubtotal = new System.Windows.Forms.TextBox();
             this.tbImporteCompra = new System.Windows.Forms.TextBox();
-            this.lblSubtotal = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.tbTotalIVA = new System.Windows.Forms.TextBox();
-            this.gbFacturaCompra = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new Guna.UI.WinForms.GunaDateTimePicker();
             this.tbNumComp = new System.Windows.Forms.TextBox();
             this.tbProveedor = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tbCuit = new System.Windows.Forms.TextBox();
-            this.lblCuit = new System.Windows.Forms.Label();
             this.btnBuscaProveedor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
             this.lblTotalIva = new System.Windows.Forms.Label();
             this.lblImpTotal = new System.Windows.Forms.Label();
             this.tbTotalFact = new System.Windows.Forms.TextBox();
@@ -122,12 +114,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.tabProductos = new System.Windows.Forms.TabPage();
             this.panelProductos = new System.Windows.Forms.Panel();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnActualizaListaProd = new FontAwesome.Sharp.IconButton();
-            this.btnBuscaProd = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbBuscaProductos = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -137,14 +123,29 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.btnActualizaListaProd = new FontAwesome.Sharp.IconButton();
+            this.btnBuscaProd = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbBuscaProductos = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
             this.panelFormCompras.SuspendLayout();
             this.tabCompras.SuspendLayout();
             this.tabListadoCompras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.tabNuevaCompra.SuspendLayout();
-            this.gbDetalleCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetComp)).BeginInit();
-            this.gbFacturaCompra.SuspendLayout();
             this.tabProveedores.SuspendLayout();
             this.panelProveedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
@@ -590,16 +591,50 @@
             // tabNuevaCompra
             // 
             this.tabNuevaCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevaCompra.Controls.Add(this.label46);
+            this.tabNuevaCompra.Controls.Add(this.label45);
+            this.tabNuevaCompra.Controls.Add(this.label43);
+            this.tabNuevaCompra.Controls.Add(this.label42);
+            this.tabNuevaCompra.Controls.Add(this.label41);
+            this.tabNuevaCompra.Controls.Add(this.label40);
+            this.tabNuevaCompra.Controls.Add(this.label39);
+            this.tabNuevaCompra.Controls.Add(this.label38);
+            this.tabNuevaCompra.Controls.Add(this.label37);
+            this.tabNuevaCompra.Controls.Add(this.label2);
+            this.tabNuevaCompra.Controls.Add(this.label20);
+            this.tabNuevaCompra.Controls.Add(this.label44);
+            this.tabNuevaCompra.Controls.Add(this.label16);
+            this.tabNuevaCompra.Controls.Add(this.dtpFecha);
+            this.tabNuevaCompra.Controls.Add(this.label17);
             this.tabNuevaCompra.Controls.Add(this.tbDescripcion);
+            this.tabNuevaCompra.Controls.Add(this.label18);
+            this.tabNuevaCompra.Controls.Add(this.tbNumComp);
+            this.tabNuevaCompra.Controls.Add(this.label19);
+            this.tabNuevaCompra.Controls.Add(this.dgvDetComp);
             this.tabNuevaCompra.Controls.Add(this.label13);
+            this.tabNuevaCompra.Controls.Add(this.label36);
+            this.tabNuevaCompra.Controls.Add(this.btnEliminar);
+            this.tabNuevaCompra.Controls.Add(this.tbIDprod);
+            this.tabNuevaCompra.Controls.Add(this.tbIVACompra);
+            this.tabNuevaCompra.Controls.Add(this.tbSubtotalIVA);
+            this.tabNuevaCompra.Controls.Add(this.label10);
+            this.tabNuevaCompra.Controls.Add(this.tbProveedor);
             this.tabNuevaCompra.Controls.Add(this.lblDescripcionPie);
+            this.tabNuevaCompra.Controls.Add(this.tbCuit);
+            this.tabNuevaCompra.Controls.Add(this.btnSelProd);
+            this.tabNuevaCompra.Controls.Add(this.tbSubtotal);
             this.tabNuevaCompra.Controls.Add(this.btnGuardar);
+            this.tabNuevaCompra.Controls.Add(this.btnAgregar);
+            this.tabNuevaCompra.Controls.Add(this.tbCantidad);
             this.tabNuevaCompra.Controls.Add(this.label14);
-            this.tabNuevaCompra.Controls.Add(this.gbDetalleCompra);
+            this.tabNuevaCompra.Controls.Add(this.btnBuscaProveedor);
+            this.tabNuevaCompra.Controls.Add(this.label1);
+            this.tabNuevaCompra.Controls.Add(this.tbProducto);
             this.tabNuevaCompra.Controls.Add(this.tbTotalIVA);
-            this.tabNuevaCompra.Controls.Add(this.gbFacturaCompra);
+            this.tabNuevaCompra.Controls.Add(this.tbImporteCompra);
             this.tabNuevaCompra.Controls.Add(this.lblTotalIva);
             this.tabNuevaCompra.Controls.Add(this.lblImpTotal);
+            this.tabNuevaCompra.Controls.Add(this.label12);
             this.tabNuevaCompra.Controls.Add(this.tbTotalFact);
             this.tabNuevaCompra.Location = new System.Drawing.Point(4, 26);
             this.tabNuevaCompra.Name = "tabNuevaCompra";
@@ -614,7 +649,7 @@
             this.tbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDescripcion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDescripcion.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbDescripcion.Location = new System.Drawing.Point(197, 510);
+            this.tbDescripcion.Location = new System.Drawing.Point(178, 519);
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(191, 18);
             this.tbDescripcion.TabIndex = 0;
@@ -627,7 +662,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(609, 511);
+            this.label13.Location = new System.Drawing.Point(602, 523);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(16, 14);
             this.label13.TabIndex = 52;
@@ -639,7 +674,7 @@
             this.lblDescripcionPie.AutoSize = true;
             this.lblDescripcionPie.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblDescripcionPie.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDescripcionPie.Location = new System.Drawing.Point(101, 510);
+            this.lblDescripcionPie.Location = new System.Drawing.Point(82, 519);
             this.lblDescripcionPie.Name = "lblDescripcionPie";
             this.lblDescripcionPie.Size = new System.Drawing.Size(84, 17);
             this.lblDescripcionPie.TabIndex = 48;
@@ -657,7 +692,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(773, 502);
+            this.btnGuardar.Location = new System.Drawing.Point(773, 513);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(116, 31);
             this.btnGuardar.TabIndex = 54;
@@ -672,46 +707,11 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(468, 510);
+            this.label14.Location = new System.Drawing.Point(429, 526);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(16, 14);
             this.label14.TabIndex = 51;
             this.label14.Text = "$";
-            // 
-            // gbDetalleCompra
-            // 
-            this.gbDetalleCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gbDetalleCompra.Controls.Add(this.label20);
-            this.gbDetalleCompra.Controls.Add(this.label16);
-            this.gbDetalleCompra.Controls.Add(this.label17);
-            this.gbDetalleCompra.Controls.Add(this.label18);
-            this.gbDetalleCompra.Controls.Add(this.label19);
-            this.gbDetalleCompra.Controls.Add(this.tbSubtotalIVA);
-            this.gbDetalleCompra.Controls.Add(this.label10);
-            this.gbDetalleCompra.Controls.Add(this.btnEliminar);
-            this.gbDetalleCompra.Controls.Add(this.dgvDetComp);
-            this.gbDetalleCompra.Controls.Add(this.btnSelProd);
-            this.gbDetalleCompra.Controls.Add(this.btnAgregar);
-            this.gbDetalleCompra.Controls.Add(this.tbCantidad);
-            this.gbDetalleCompra.Controls.Add(this.lblCantidad);
-            this.gbDetalleCompra.Controls.Add(this.tbIDprod);
-            this.gbDetalleCompra.Controls.Add(this.tbIVACompra);
-            this.gbDetalleCompra.Controls.Add(this.tbProducto);
-            this.gbDetalleCompra.Controls.Add(this.tbSubtotal);
-            this.gbDetalleCompra.Controls.Add(this.tbImporteCompra);
-            this.gbDetalleCompra.Controls.Add(this.lblSubtotal);
-            this.gbDetalleCompra.Controls.Add(this.label11);
-            this.gbDetalleCompra.Controls.Add(this.label12);
-            this.gbDetalleCompra.Controls.Add(this.label36);
-            this.gbDetalleCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbDetalleCompra.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.gbDetalleCompra.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.gbDetalleCompra.Location = new System.Drawing.Point(23, 164);
-            this.gbDetalleCompra.Name = "gbDetalleCompra";
-            this.gbDetalleCompra.Size = new System.Drawing.Size(901, 302);
-            this.gbDetalleCompra.TabIndex = 48;
-            this.gbDetalleCompra.TabStop = false;
-            this.gbDetalleCompra.Text = "Detalle de Compra";
             // 
             // label20
             // 
@@ -720,7 +720,7 @@
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label20.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label20.Location = new System.Drawing.Point(582, 90);
+            this.label20.Location = new System.Drawing.Point(597, 279);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(149, 18);
             this.label20.TabIndex = 119;
@@ -734,7 +734,7 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label16.Location = new System.Drawing.Point(304, 90);
+            this.label16.Location = new System.Drawing.Point(319, 279);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(141, 18);
             this.label16.TabIndex = 115;
@@ -748,7 +748,7 @@
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label17.Location = new System.Drawing.Point(445, 90);
+            this.label17.Location = new System.Drawing.Point(460, 279);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(141, 18);
             this.label17.TabIndex = 116;
@@ -762,7 +762,7 @@
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label18.Location = new System.Drawing.Point(21, 90);
+            this.label18.Location = new System.Drawing.Point(36, 279);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(142, 18);
             this.label18.TabIndex = 117;
@@ -776,7 +776,7 @@
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label19.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label19.Location = new System.Drawing.Point(163, 90);
+            this.label19.Location = new System.Drawing.Point(178, 279);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(141, 18);
             this.label19.TabIndex = 118;
@@ -790,7 +790,7 @@
             this.tbSubtotalIVA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSubtotalIVA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbSubtotalIVA.ForeColor = System.Drawing.Color.Gold;
-            this.tbSubtotalIVA.Location = new System.Drawing.Point(750, 122);
+            this.tbSubtotalIVA.Location = new System.Drawing.Point(773, 298);
             this.tbSubtotalIVA.Name = "tbSubtotalIVA";
             this.tbSubtotalIVA.ReadOnly = true;
             this.tbSubtotalIVA.Size = new System.Drawing.Size(116, 25);
@@ -803,11 +803,11 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(785, 102);
+            this.label10.Location = new System.Drawing.Point(756, 302);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 17);
+            this.label10.Size = new System.Drawing.Size(15, 17);
             this.label10.TabIndex = 55;
-            this.label10.Text = "IVA: $";
+            this.label10.Text = "$";
             // 
             // btnEliminar
             // 
@@ -820,7 +820,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(750, 227);
+            this.btnEliminar.Location = new System.Drawing.Point(773, 421);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(116, 31);
             this.btnEliminar.TabIndex = 53;
@@ -845,7 +845,7 @@
             this.dgvDetComp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -855,7 +855,7 @@
             this.dgvDetComp.ColumnHeadersVisible = false;
             this.dgvDetComp.EnableHeadersVisualStyles = false;
             this.dgvDetComp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvDetComp.Location = new System.Drawing.Point(22, 108);
+            this.dgvDetComp.Location = new System.Drawing.Point(37, 297);
             this.dgvDetComp.MaximumSize = new System.Drawing.Size(800, 400);
             this.dgvDetComp.Name = "dgvDetComp";
             this.dgvDetComp.ReadOnly = true;
@@ -885,7 +885,7 @@
             this.btnSelProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelProd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSelProd.ForeColor = System.Drawing.Color.White;
-            this.btnSelProd.Location = new System.Drawing.Point(310, 44);
+            this.btnSelProd.Location = new System.Drawing.Point(333, 227);
             this.btnSelProd.Name = "btnSelProd";
             this.btnSelProd.Size = new System.Drawing.Size(59, 23);
             this.btnSelProd.TabIndex = 50;
@@ -905,7 +905,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(750, 40);
+            this.btnAgregar.Location = new System.Drawing.Point(773, 192);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(116, 31);
             this.btnAgregar.TabIndex = 50;
@@ -920,7 +920,7 @@
             this.tbCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCantidad.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCantidad.Location = new System.Drawing.Point(621, 44);
+            this.tbCantidad.Location = new System.Drawing.Point(643, 196);
             this.tbCantidad.Name = "tbCantidad";
             this.tbCantidad.Size = new System.Drawing.Size(79, 25);
             this.tbCantidad.TabIndex = 2;
@@ -928,25 +928,13 @@
             this.tbCantidad.TextChanged += new System.EventHandler(this.tbCantidad_TextChanged);
             this.tbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCantidad_KeyPress);
             // 
-            // lblCantidad
-            // 
-            this.lblCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCantidad.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCantidad.Location = new System.Drawing.Point(640, 24);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(40, 17);
-            this.lblCantidad.TabIndex = 48;
-            this.lblCantidad.Text = "Cant:";
-            // 
             // tbIDprod
             // 
             this.tbIDprod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbIDprod.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbIDprod.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDprod.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbIDprod.Location = new System.Drawing.Point(770, 264);
+            this.tbIDprod.Location = new System.Drawing.Point(124, 475);
             this.tbIDprod.Name = "tbIDprod";
             this.tbIDprod.ReadOnly = true;
             this.tbIDprod.Size = new System.Drawing.Size(81, 15);
@@ -959,7 +947,7 @@
             this.tbIVACompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbIVACompra.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIVACompra.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbIVACompra.Location = new System.Drawing.Point(770, 281);
+            this.tbIVACompra.Location = new System.Drawing.Point(37, 475);
             this.tbIVACompra.Name = "tbIVACompra";
             this.tbIVACompra.ReadOnly = true;
             this.tbIVACompra.Size = new System.Drawing.Size(81, 15);
@@ -973,10 +961,10 @@
             this.tbProducto.Enabled = false;
             this.tbProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbProducto.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbProducto.Location = new System.Drawing.Point(113, 43);
+            this.tbProducto.Location = new System.Drawing.Point(136, 196);
             this.tbProducto.Name = "tbProducto";
             this.tbProducto.ReadOnly = true;
-            this.tbProducto.Size = new System.Drawing.Size(191, 25);
+            this.tbProducto.Size = new System.Drawing.Size(256, 25);
             this.tbProducto.TabIndex = 0;
             this.tbProducto.TabStop = false;
             this.tbProducto.TextChanged += new System.EventHandler(this.tbProducto_TextChanged);
@@ -988,7 +976,7 @@
             this.tbSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSubtotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbSubtotal.ForeColor = System.Drawing.Color.Gold;
-            this.tbSubtotal.Location = new System.Drawing.Point(750, 180);
+            this.tbSubtotal.Location = new System.Drawing.Point(773, 357);
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.ReadOnly = true;
             this.tbSubtotal.Size = new System.Drawing.Size(116, 25);
@@ -998,40 +986,17 @@
             // tbImporteCompra
             // 
             this.tbImporteCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbImporteCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.tbImporteCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbImporteCompra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbImporteCompra.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbImporteCompra.Location = new System.Drawing.Point(454, 43);
+            this.tbImporteCompra.ForeColor = System.Drawing.Color.Gold;
+            this.tbImporteCompra.Location = new System.Drawing.Point(455, 195);
             this.tbImporteCompra.Name = "tbImporteCompra";
             this.tbImporteCompra.ReadOnly = true;
-            this.tbImporteCompra.Size = new System.Drawing.Size(115, 25);
+            this.tbImporteCompra.Size = new System.Drawing.Size(128, 25);
             this.tbImporteCompra.TabIndex = 47;
             this.tbImporteCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbImporteCompra.TextChanged += new System.EventHandler(this.tbImporteCompra_TextChanged);
-            // 
-            // lblSubtotal
-            // 
-            this.lblSubtotal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblSubtotal.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSubtotal.Location = new System.Drawing.Point(767, 160);
-            this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(77, 17);
-            this.lblSubtotal.TabIndex = 43;
-            this.lblSubtotal.Text = "SubTotal: $";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(476, 23);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 17);
-            this.label11.TabIndex = 43;
-            this.label11.Text = "Importe: $";
             // 
             // label12
             // 
@@ -1039,7 +1004,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(39, 46);
+            this.label12.Location = new System.Drawing.Point(62, 199);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(68, 17);
             this.label12.TabIndex = 45;
@@ -1052,7 +1017,7 @@
             this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label36.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label36.Location = new System.Drawing.Point(21, 107);
+            this.label36.Location = new System.Drawing.Point(36, 296);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(710, 175);
             this.label36.TabIndex = 188;
@@ -1065,35 +1030,13 @@
             this.tbTotalIVA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTotalIVA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTotalIVA.ForeColor = System.Drawing.Color.Gold;
-            this.tbTotalIVA.Location = new System.Drawing.Point(484, 508);
+            this.tbTotalIVA.Location = new System.Drawing.Point(455, 517);
             this.tbTotalIVA.Name = "tbTotalIVA";
             this.tbTotalIVA.ReadOnly = true;
-            this.tbTotalIVA.Size = new System.Drawing.Size(108, 25);
+            this.tbTotalIVA.Size = new System.Drawing.Size(128, 25);
             this.tbTotalIVA.TabIndex = 0;
             this.tbTotalIVA.TabStop = false;
             this.tbTotalIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // gbFacturaCompra
-            // 
-            this.gbFacturaCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gbFacturaCompra.Controls.Add(this.dtpFecha);
-            this.gbFacturaCompra.Controls.Add(this.tbNumComp);
-            this.gbFacturaCompra.Controls.Add(this.tbProveedor);
-            this.gbFacturaCompra.Controls.Add(this.label2);
-            this.gbFacturaCompra.Controls.Add(this.tbCuit);
-            this.gbFacturaCompra.Controls.Add(this.lblCuit);
-            this.gbFacturaCompra.Controls.Add(this.btnBuscaProveedor);
-            this.gbFacturaCompra.Controls.Add(this.label1);
-            this.gbFacturaCompra.Controls.Add(this.lblFecha);
-            this.gbFacturaCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbFacturaCompra.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.gbFacturaCompra.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.gbFacturaCompra.Location = new System.Drawing.Point(23, 25);
-            this.gbFacturaCompra.Name = "gbFacturaCompra";
-            this.gbFacturaCompra.Size = new System.Drawing.Size(901, 115);
-            this.gbFacturaCompra.TabIndex = 47;
-            this.gbFacturaCompra.TabStop = false;
-            this.gbFacturaCompra.Text = "Factura de Compra";
             // 
             // dtpFecha
             // 
@@ -1106,7 +1049,7 @@
             this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(750, 53);
+            this.dtpFecha.Location = new System.Drawing.Point(773, 67);
             this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha.Name = "dtpFecha";
@@ -1126,7 +1069,7 @@
             this.tbNumComp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbNumComp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNumComp.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbNumComp.Location = new System.Drawing.Point(621, 53);
+            this.tbNumComp.Location = new System.Drawing.Point(643, 72);
             this.tbNumComp.Name = "tbNumComp";
             this.tbNumComp.ReadOnly = true;
             this.tbNumComp.Size = new System.Drawing.Size(79, 25);
@@ -1140,49 +1083,26 @@
             this.tbProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbProveedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbProveedor.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbProveedor.Location = new System.Drawing.Point(113, 53);
+            this.tbProveedor.Location = new System.Drawing.Point(136, 72);
             this.tbProveedor.Name = "tbProveedor";
             this.tbProveedor.ReadOnly = true;
-            this.tbProveedor.Size = new System.Drawing.Size(191, 25);
+            this.tbProveedor.Size = new System.Drawing.Size(256, 25);
             this.tbProveedor.TabIndex = 0;
             this.tbProveedor.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(621, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 17);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Nº Compra:";
             // 
             // tbCuit
             // 
             this.tbCuit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbCuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.tbCuit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCuit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbCuit.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCuit.Location = new System.Drawing.Point(454, 53);
+            this.tbCuit.ForeColor = System.Drawing.Color.Gold;
+            this.tbCuit.Location = new System.Drawing.Point(455, 72);
             this.tbCuit.Name = "tbCuit";
             this.tbCuit.ReadOnly = true;
-            this.tbCuit.Size = new System.Drawing.Size(115, 25);
+            this.tbCuit.Size = new System.Drawing.Size(128, 25);
             this.tbCuit.TabIndex = 47;
             this.tbCuit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblCuit
-            // 
-            this.lblCuit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCuit.AutoSize = true;
-            this.lblCuit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCuit.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCuit.Location = new System.Drawing.Point(490, 33);
-            this.lblCuit.Name = "lblCuit";
-            this.lblCuit.Size = new System.Drawing.Size(41, 17);
-            this.lblCuit.TabIndex = 46;
-            this.lblCuit.Text = "CUIT:";
             // 
             // btnBuscaProveedor
             // 
@@ -1195,7 +1115,7 @@
             this.btnBuscaProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscaProveedor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnBuscaProveedor.ForeColor = System.Drawing.Color.White;
-            this.btnBuscaProveedor.Location = new System.Drawing.Point(310, 55);
+            this.btnBuscaProveedor.Location = new System.Drawing.Point(333, 103);
             this.btnBuscaProveedor.Name = "btnBuscaProveedor";
             this.btnBuscaProveedor.Size = new System.Drawing.Size(59, 23);
             this.btnBuscaProveedor.TabIndex = 50;
@@ -1210,23 +1130,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(31, 55);
+            this.label1.Location = new System.Drawing.Point(54, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 45;
             this.label1.Text = "Proveedor:";
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblFecha.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFecha.Location = new System.Drawing.Point(785, 33);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(47, 17);
-            this.lblFecha.TabIndex = 43;
-            this.lblFecha.Text = "Fecha:";
             // 
             // lblTotalIva
             // 
@@ -1234,7 +1142,7 @@
             this.lblTotalIva.AutoSize = true;
             this.lblTotalIva.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblTotalIva.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTotalIva.Location = new System.Drawing.Point(504, 491);
+            this.lblTotalIva.Location = new System.Drawing.Point(488, 500);
             this.lblTotalIva.Name = "lblTotalIva";
             this.lblTotalIva.Size = new System.Drawing.Size(64, 17);
             this.lblTotalIva.TabIndex = 46;
@@ -1246,7 +1154,7 @@
             this.lblImpTotal.AutoSize = true;
             this.lblImpTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblImpTotal.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblImpTotal.Location = new System.Drawing.Point(631, 491);
+            this.lblImpTotal.Location = new System.Drawing.Point(636, 498);
             this.lblImpTotal.Name = "lblImpTotal";
             this.lblImpTotal.Size = new System.Drawing.Size(92, 17);
             this.lblImpTotal.TabIndex = 46;
@@ -1259,10 +1167,10 @@
             this.tbTotalFact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTotalFact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTotalFact.ForeColor = System.Drawing.Color.Gold;
-            this.tbTotalFact.Location = new System.Drawing.Point(625, 508);
+            this.tbTotalFact.Location = new System.Drawing.Point(618, 517);
             this.tbTotalFact.Name = "tbTotalFact";
             this.tbTotalFact.ReadOnly = true;
-            this.tbTotalFact.Size = new System.Drawing.Size(108, 25);
+            this.tbTotalFact.Size = new System.Drawing.Size(128, 25);
             this.tbTotalFact.TabIndex = 0;
             this.tbTotalFact.TabStop = false;
             this.tbTotalFact.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1548,6 +1456,132 @@
             this.panelProductos.Size = new System.Drawing.Size(936, 566);
             this.panelProductos.TabIndex = 1;
             // 
+            // label26
+            // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label26.AutoEllipsis = true;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label26.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label26.Location = new System.Drawing.Point(818, 104);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(102, 18);
+            this.label26.TabIndex = 206;
+            this.label26.Text = "MARCA";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label27.AutoEllipsis = true;
+            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label27.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label27.Location = new System.Drawing.Point(703, 104);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(116, 18);
+            this.label27.TabIndex = 205;
+            this.label27.Text = "MODELO";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label28.AutoEllipsis = true;
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label28.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label28.Location = new System.Drawing.Point(639, 104);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(65, 18);
+            this.label28.TabIndex = 204;
+            this.label28.Text = "CANT.";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label29.AutoEllipsis = true;
+            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label29.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label29.Location = new System.Drawing.Point(473, 87);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(167, 18);
+            this.label29.TabIndex = 203;
+            this.label29.Text = "IMPORTE";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label30.AutoEllipsis = true;
+            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label30.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label30.Location = new System.Drawing.Point(556, 104);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(84, 18);
+            this.label30.TabIndex = 202;
+            this.label30.Text = "VENTA $";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label31.AutoEllipsis = true;
+            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label31.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label31.Location = new System.Drawing.Point(299, 104);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(175, 18);
+            this.label31.TabIndex = 198;
+            this.label31.Text = "RUBRO";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label32.AutoEllipsis = true;
+            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label32.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label32.Location = new System.Drawing.Point(473, 104);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(84, 18);
+            this.label32.TabIndex = 199;
+            this.label32.Text = "COSTO $";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label24.AutoEllipsis = true;
+            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label24.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label24.Location = new System.Drawing.Point(18, 104);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(50, 18);
+            this.label24.TabIndex = 200;
+            this.label24.Text = "ID";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label25.AutoEllipsis = true;
+            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label25.Location = new System.Drawing.Point(67, 104);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(235, 18);
+            this.label25.TabIndex = 201;
+            this.label25.Text = "NOMBRE Y UNIDAD DE MEDIDA";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // dgvProductos
             // 
             this.dgvProductos.AllowUserToAddRows = false;
@@ -1681,131 +1715,139 @@
             this.label35.TabIndex = 187;
             this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label26
+            // label44
             // 
-            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label26.AutoEllipsis = true;
-            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label26.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label26.Location = new System.Drawing.Point(818, 104);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(102, 18);
-            this.label26.TabIndex = 206;
-            this.label26.Text = "MARCA";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label44.AutoEllipsis = true;
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label44.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label44.Location = new System.Drawing.Point(19, 21);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(153, 21);
+            this.label44.TabIndex = 200;
+            this.label44.Text = "Factura de Compra";
             // 
-            // label27
+            // label2
             // 
-            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label27.AutoEllipsis = true;
-            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label27.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label27.Location = new System.Drawing.Point(703, 104);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(116, 18);
-            this.label27.TabIndex = 205;
-            this.label27.Text = "MODELO";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(663, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 11);
+            this.label2.TabIndex = 201;
+            this.label2.Text = "NÚMERO";
             // 
-            // label28
+            // label37
             // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label28.AutoEllipsis = true;
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label28.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label28.Location = new System.Drawing.Point(639, 104);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(65, 18);
-            this.label28.TabIndex = 204;
-            this.label28.Text = "CANT.";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label37.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label37.Location = new System.Drawing.Point(813, 100);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(30, 11);
+            this.label37.TabIndex = 202;
+            this.label37.Text = "FECHA";
             // 
-            // label29
+            // label38
             // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label29.AutoEllipsis = true;
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label29.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label29.Location = new System.Drawing.Point(473, 87);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(167, 18);
-            this.label29.TabIndex = 203;
-            this.label29.Text = "IMPORTE";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label38.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label38.Location = new System.Drawing.Point(659, 224);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(48, 11);
+            this.label38.TabIndex = 203;
+            this.label38.Text = "CANTIDAD";
             // 
-            // label30
+            // label39
             // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label30.AutoEllipsis = true;
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label30.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label30.Location = new System.Drawing.Point(556, 104);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(84, 18);
-            this.label30.TabIndex = 202;
-            this.label30.Text = "VENTA $";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label39.AutoEllipsis = true;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label39.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label39.Location = new System.Drawing.Point(19, 150);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(152, 21);
+            this.label39.TabIndex = 204;
+            this.label39.Text = "Detalle de Compra";
             // 
-            // label31
+            // label40
             // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label31.AutoEllipsis = true;
-            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label31.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label31.Location = new System.Drawing.Point(299, 104);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(175, 18);
-            this.label31.TabIndex = 198;
-            this.label31.Text = "RUBRO";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label40.ForeColor = System.Drawing.SystemColors.Control;
+            this.label40.Location = new System.Drawing.Point(438, 199);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(15, 17);
+            this.label40.TabIndex = 205;
+            this.label40.Text = "$";
             // 
-            // label32
+            // label41
             // 
-            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label32.AutoEllipsis = true;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label32.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label32.Location = new System.Drawing.Point(473, 104);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(84, 18);
-            this.label32.TabIndex = 199;
-            this.label32.Text = "COSTO $";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label41.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label41.Location = new System.Drawing.Point(508, 100);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(24, 11);
+            this.label41.TabIndex = 206;
+            this.label41.Text = "CUIT";
             // 
-            // label24
+            // label42
             // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label24.AutoEllipsis = true;
-            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label24.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label24.Location = new System.Drawing.Point(18, 104);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(50, 18);
-            this.label24.TabIndex = 200;
-            this.label24.Text = "ID";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label42.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label42.Location = new System.Drawing.Point(822, 325);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(19, 11);
+            this.label42.TabIndex = 207;
+            this.label42.Text = "IVA";
             // 
-            // label25
+            // label43
             // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label25.AutoEllipsis = true;
-            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label25.Location = new System.Drawing.Point(67, 104);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(235, 18);
-            this.label25.TabIndex = 201;
-            this.label25.Text = "NOMBRE Y UNIDAD DE MEDIDA";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label43.ForeColor = System.Drawing.SystemColors.Control;
+            this.label43.Location = new System.Drawing.Point(756, 361);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(15, 17);
+            this.label43.TabIndex = 208;
+            this.label43.Text = "$";
+            // 
+            // label45
+            // 
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label45.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label45.Location = new System.Drawing.Point(809, 384);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(45, 11);
+            this.label45.TabIndex = 209;
+            this.label45.Text = "SUBTOTAL";
+            // 
+            // label46
+            // 
+            this.label46.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
+            this.label46.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label46.Location = new System.Drawing.Point(496, 223);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(41, 11);
+            this.label46.TabIndex = 210;
+            this.label46.Text = "IMPORTE";
             // 
             // FormCompras
             // 
@@ -1827,11 +1869,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.tabNuevaCompra.ResumeLayout(false);
             this.tabNuevaCompra.PerformLayout();
-            this.gbDetalleCompra.ResumeLayout(false);
-            this.gbDetalleCompra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetComp)).EndInit();
-            this.gbFacturaCompra.ResumeLayout(false);
-            this.gbFacturaCompra.PerformLayout();
             this.tabProveedores.ResumeLayout(false);
             this.panelProveedores.ResumeLayout(false);
             this.panelProveedores.PerformLayout();
@@ -1873,16 +1911,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbBuscaProductos;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.GroupBox gbFacturaCompra;
         private System.Windows.Forms.TextBox tbNumComp;
         public System.Windows.Forms.TextBox tbProveedor;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox tbCuit;
-        private System.Windows.Forms.Label lblCuit;
         private System.Windows.Forms.Button btnBuscaProveedor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.GroupBox gbDetalleCompra;
         public System.Windows.Forms.TextBox tbSubtotalIVA;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnGuardar;
@@ -1891,14 +1924,11 @@
         private System.Windows.Forms.Button btnSelProd;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox tbCantidad;
-        private System.Windows.Forms.Label lblCantidad;
         public System.Windows.Forms.TextBox tbIDprod;
         public System.Windows.Forms.TextBox tbIVACompra;
         public System.Windows.Forms.TextBox tbProducto;
         public System.Windows.Forms.TextBox tbSubtotal;
         public System.Windows.Forms.TextBox tbImporteCompra;
-        private System.Windows.Forms.Label lblSubtotal;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -1942,5 +1972,16 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label2;
     }
 }

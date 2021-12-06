@@ -673,6 +673,14 @@ namespace CapaPresentacion
 
         private void chekVerAnulados_CheckedChanged_1(object sender, EventArgs e)
         {
+            if (chekVerAnulados.Checked == true)
+            {
+                btnImprimir.Enabled = false;
+            }
+            else
+            {
+                btnImprimir.Enabled = true;
+            }
             CargarGrilla();
         }
 

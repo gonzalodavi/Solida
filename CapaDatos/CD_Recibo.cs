@@ -282,7 +282,7 @@ namespace CapaDatos
             command.Parameters.AddWithValue("@idrecibo", recibo.Id);
             command.ExecuteNonQuery();
             conectar.Close();
-            AumentarSaldoCliente(recibo.Id);
+            //AumentarSaldoCliente(recibo.Id);
           
         }
 
