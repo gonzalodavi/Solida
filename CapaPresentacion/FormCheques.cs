@@ -14,6 +14,7 @@ namespace CapaPresentacion
 {
     public partial class FormCheques : Form
     {
+        private string estado = "";
         public FormCheques()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace CapaPresentacion
 
         private void FormCheques_Load(object sender, EventArgs e)
         {
+            cbEstadoCheques.Text = "ACTIVO";
             CargarGrillaChequesXFecha();
             CantidadYSuma();
         }
@@ -45,8 +47,8 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    string total = CN_Cheque.TotalCheques("ACTIVO");
-                    int cantidad = CN_Cheque.CantidadCheques("ACTIVO");
+                    string total = CN_Cheque.TotalCheques(estado);
+                    int cantidad = CN_Cheque.CantidadCheques(estado);
                     tbCantidadCheques.Text = cantidad.ToString();
                     tbTotalCheques.Text = Convert.ToDecimal(total).ToString("0.00");
                 }
@@ -54,6 +56,11 @@ namespace CapaPresentacion
                 {
                     MensajeError("No se pudo ejecutar la operacion:\n\n" + ex);
                 }
+            }
+            else
+            {
+                tbCantidadCheques.Text = "0";
+                tbTotalCheques.Text = "0,00";
             }            
         }
 
@@ -61,7 +68,7 @@ namespace CapaPresentacion
 
         private void CargarGrillaChequesXFecha()
         {
-            this.dgvCheques.DataSource = CN_Cheque.MostrarXFecha("ACTIVO");
+            this.dgvCheques.DataSource = CN_Cheque.Mostrar(estado);
             this.dgvCheques.Columns[0].Visible = false;
             this.dgvCheques.Columns[1].Visible = false;
             this.dgvCheques.Columns[2].Visible = false;
@@ -74,8 +81,6 @@ namespace CapaPresentacion
             this.dgvCheques.Columns[6].Width = 90;
             this.dgvCheques.Columns[7].Width = 100;
             this.dgvCheques.Columns[9].Width = 100;
-
-
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -132,6 +137,39 @@ namespace CapaPresentacion
                     MyRow.DefaultCellStyle.BackColor = Color.FromArgb(12, 52, 119);
                     MyRow.DefaultCellStyle.ForeColor = Color.White;
                 }
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (dgvCheques.Rows.Count > 0)
+            {
+                FormListadoCheques form = new FormListadoCheques();
+                form.Estado = estado;
+                form.ShowDialog();
+            }
+            else
+            {
+                MensajeError("No existen Cheques Disponibles");
+            }
+        }
+
+        private void cbEstadoCheques_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            chekCLASIFICA.Checked = false;
+            if(cbEstadoCheques.Text == "ACTIVO")
+            {
+                estado = "ACTIVO";
+                CargarGrillaChequesXFecha();
+                CantidadYSuma();
+                lblSubtitulo.Text = "Valores en Cartera Disponibles";
+            }
+            else
+            {
+                estado = "PAGADO";
+                CargarGrillaChequesXFecha();
+                CantidadYSuma();
+                lblSubtitulo.Text = "Valores en Cartera Entregados a Proveedores";
             }
         }
     }

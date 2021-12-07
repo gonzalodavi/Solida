@@ -34,6 +34,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.tabProductos = new System.Windows.Forms.TabControl();
             this.tabConsultaProducto = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
@@ -45,7 +46,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnActualizaListaProd = new FontAwesome.Sharp.IconButton();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.tbBusca = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -53,6 +56,7 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
             this.tabNuevoProducto = new System.Windows.Forms.TabPage();
+            this.btnDesbloq = new FontAwesome.Sharp.IconButton();
             this.lblErrorGanancia = new System.Windows.Forms.Label();
             this.lblErrorPrecioCosto = new System.Windows.Forms.Label();
             this.lblErrorAlic = new System.Windows.Forms.Label();
@@ -100,17 +104,13 @@
             this.btAceptar = new System.Windows.Forms.Button();
             this.cbRubro = new System.Windows.Forms.ComboBox();
             this.panelDesbloq = new System.Windows.Forms.Panel();
+            this.btnAceptaClave = new FontAwesome.Sharp.IconButton();
             this.tbClaveDebloq = new System.Windows.Forms.TextBox();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
-            this.btnActualizaListaProd = new FontAwesome.Sharp.IconButton();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnDesbloq = new FontAwesome.Sharp.IconButton();
+            this.btnCancelaDesbloq = new FontAwesome.Sharp.IconButton();
             this.btnAgregaUdeMed = new FontAwesome.Sharp.IconButton();
             this.btnAgregaRubro = new FontAwesome.Sharp.IconButton();
             this.btnAgregaModelo = new FontAwesome.Sharp.IconButton();
             this.btnAgregaMarca = new FontAwesome.Sharp.IconButton();
-            this.btnAceptaClave = new FontAwesome.Sharp.IconButton();
-            this.btnCancelaDesbloq = new FontAwesome.Sharp.IconButton();
             this.panelContenedor.SuspendLayout();
             this.tabProductos.SuspendLayout();
             this.tabConsultaProducto.SuspendLayout();
@@ -143,6 +143,31 @@
             this.lblTitulo.Size = new System.Drawing.Size(120, 25);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "PRODUCTOS";
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 25;
+            this.btnRegresar.Location = new System.Drawing.Point(831, 28);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
+            this.btnRegresar.TabIndex = 84;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // tabProductos
             // 
@@ -314,6 +339,31 @@
             this.label10.Text = "NOMBRE Y UNIDAD DE MEDIDA";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnActualizaListaProd
+            // 
+            this.btnActualizaListaProd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActualizaListaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizaListaProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizaListaProd.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizaListaProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizaListaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizaListaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizaListaProd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizaListaProd.ForeColor = System.Drawing.Color.White;
+            this.btnActualizaListaProd.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnActualizaListaProd.IconColor = System.Drawing.Color.White;
+            this.btnActualizaListaProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizaListaProd.IconSize = 5;
+            this.btnActualizaListaProd.Location = new System.Drawing.Point(792, 30);
+            this.btnActualizaListaProd.Name = "btnActualizaListaProd";
+            this.btnActualizaListaProd.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizaListaProd.TabIndex = 132;
+            this.btnActualizaListaProd.TabStop = false;
+            this.btnActualizaListaProd.Text = "ACTUALIZAR";
+            this.btnActualizaListaProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizaListaProd.UseVisualStyleBackColor = false;
+            this.btnActualizaListaProd.Click += new System.EventHandler(this.btnActualizaListaProd_Click);
+            // 
             // btnNuevoProducto
             // 
             this.btnNuevoProducto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -333,6 +383,31 @@
             this.btnNuevoProducto.Text = "NUEVO";
             this.btnNuevoProducto.UseVisualStyleBackColor = false;
             this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 25;
+            this.btnBuscar.Location = new System.Drawing.Point(383, 30);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(116, 31);
+            this.btnBuscar.TabIndex = 119;
+            this.btnBuscar.TabStop = false;
+            this.btnBuscar.Text = " BUSCAR";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // tbBusca
             // 
@@ -519,6 +594,30 @@
             this.tabNuevoProducto.Size = new System.Drawing.Size(948, 577);
             this.tabNuevoProducto.TabIndex = 1;
             this.tabNuevoProducto.Text = "Mantenimiento";
+            // 
+            // btnDesbloq
+            // 
+            this.btnDesbloq.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDesbloq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesbloq.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDesbloq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDesbloq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesbloq.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnDesbloq.ForeColor = System.Drawing.Color.White;
+            this.btnDesbloq.IconChar = FontAwesome.Sharp.IconChar.UnlockAlt;
+            this.btnDesbloq.IconColor = System.Drawing.Color.White;
+            this.btnDesbloq.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDesbloq.IconSize = 25;
+            this.btnDesbloq.Location = new System.Drawing.Point(778, 307);
+            this.btnDesbloq.Name = "btnDesbloq";
+            this.btnDesbloq.Size = new System.Drawing.Size(29, 29);
+            this.btnDesbloq.TabIndex = 85;
+            this.btnDesbloq.TabStop = false;
+            this.btnDesbloq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDesbloq.UseVisualStyleBackColor = false;
+            this.btnDesbloq.Click += new System.EventHandler(this.btnDesbloq_Click);
             // 
             // lblErrorGanancia
             // 
@@ -752,7 +851,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.Yellow;
-            this.label16.Location = new System.Drawing.Point(403, 516);
+            this.label16.Location = new System.Drawing.Point(397, 516);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(178, 20);
             this.label16.TabIndex = 137;
@@ -809,7 +908,7 @@
             this.btnCancela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancela.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnCancela.ForeColor = System.Drawing.Color.White;
-            this.btnCancela.Location = new System.Drawing.Point(511, 464);
+            this.btnCancela.Location = new System.Drawing.Point(505, 464);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(116, 31);
             this.btnCancela.TabIndex = 108;
@@ -1093,7 +1192,7 @@
             this.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAceptar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btAceptar.ForeColor = System.Drawing.Color.White;
-            this.btAceptar.Location = new System.Drawing.Point(356, 464);
+            this.btAceptar.Location = new System.Drawing.Point(350, 464);
             this.btAceptar.Name = "btAceptar";
             this.btAceptar.Size = new System.Drawing.Size(116, 31);
             this.btAceptar.TabIndex = 121;
@@ -1129,6 +1228,31 @@
             this.panelDesbloq.TabIndex = 188;
             this.panelDesbloq.Visible = false;
             // 
+            // btnAceptaClave
+            // 
+            this.btnAceptaClave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAceptaClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAceptaClave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptaClave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAceptaClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAceptaClave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAceptaClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptaClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAceptaClave.ForeColor = System.Drawing.Color.White;
+            this.btnAceptaClave.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnAceptaClave.IconColor = System.Drawing.Color.White;
+            this.btnAceptaClave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAceptaClave.IconSize = 25;
+            this.btnAceptaClave.Location = new System.Drawing.Point(63, 39);
+            this.btnAceptaClave.Name = "btnAceptaClave";
+            this.btnAceptaClave.Size = new System.Drawing.Size(29, 29);
+            this.btnAceptaClave.TabIndex = 187;
+            this.btnAceptaClave.TabStop = false;
+            this.btnAceptaClave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptaClave.UseVisualStyleBackColor = false;
+            this.btnAceptaClave.Visible = false;
+            this.btnAceptaClave.Click += new System.EventHandler(this.btnAceptaClave_Click);
+            // 
             // tbClaveDebloq
             // 
             this.tbClaveDebloq.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1143,104 +1267,30 @@
             this.tbClaveDebloq.UseSystemPasswordChar = true;
             this.tbClaveDebloq.Visible = false;
             // 
-            // btnRegresar
+            // btnCancelaDesbloq
             // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnRegresar.IconColor = System.Drawing.Color.White;
-            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(831, 28);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
-            this.btnRegresar.TabIndex = 84;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // btnActualizaListaProd
-            // 
-            this.btnActualizaListaProd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizaListaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnActualizaListaProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizaListaProd.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnActualizaListaProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizaListaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnActualizaListaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizaListaProd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnActualizaListaProd.ForeColor = System.Drawing.Color.White;
-            this.btnActualizaListaProd.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnActualizaListaProd.IconColor = System.Drawing.Color.White;
-            this.btnActualizaListaProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaListaProd.IconSize = 5;
-            this.btnActualizaListaProd.Location = new System.Drawing.Point(792, 30);
-            this.btnActualizaListaProd.Name = "btnActualizaListaProd";
-            this.btnActualizaListaProd.Size = new System.Drawing.Size(116, 31);
-            this.btnActualizaListaProd.TabIndex = 132;
-            this.btnActualizaListaProd.TabStop = false;
-            this.btnActualizaListaProd.Text = "ACTUALIZAR";
-            this.btnActualizaListaProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizaListaProd.UseVisualStyleBackColor = false;
-            this.btnActualizaListaProd.Click += new System.EventHandler(this.btnActualizaListaProd_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscar.IconColor = System.Drawing.Color.White;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(383, 30);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(116, 31);
-            this.btnBuscar.TabIndex = 119;
-            this.btnBuscar.TabStop = false;
-            this.btnBuscar.Text = " BUSCAR";
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnDesbloq
-            // 
-            this.btnDesbloq.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDesbloq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDesbloq.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDesbloq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDesbloq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloq.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnDesbloq.ForeColor = System.Drawing.Color.White;
-            this.btnDesbloq.IconChar = FontAwesome.Sharp.IconChar.UnlockAlt;
-            this.btnDesbloq.IconColor = System.Drawing.Color.White;
-            this.btnDesbloq.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDesbloq.IconSize = 25;
-            this.btnDesbloq.Location = new System.Drawing.Point(778, 307);
-            this.btnDesbloq.Name = "btnDesbloq";
-            this.btnDesbloq.Size = new System.Drawing.Size(29, 29);
-            this.btnDesbloq.TabIndex = 85;
-            this.btnDesbloq.TabStop = false;
-            this.btnDesbloq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDesbloq.UseVisualStyleBackColor = false;
-            this.btnDesbloq.Click += new System.EventHandler(this.btnDesbloq_Click);
+            this.btnCancelaDesbloq.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelaDesbloq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnCancelaDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelaDesbloq.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelaDesbloq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelaDesbloq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnCancelaDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelaDesbloq.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnCancelaDesbloq.ForeColor = System.Drawing.Color.White;
+            this.btnCancelaDesbloq.IconChar = FontAwesome.Sharp.IconChar.Ban;
+            this.btnCancelaDesbloq.IconColor = System.Drawing.Color.White;
+            this.btnCancelaDesbloq.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelaDesbloq.IconSize = 25;
+            this.btnCancelaDesbloq.Location = new System.Drawing.Point(18, 39);
+            this.btnCancelaDesbloq.Name = "btnCancelaDesbloq";
+            this.btnCancelaDesbloq.Size = new System.Drawing.Size(29, 29);
+            this.btnCancelaDesbloq.TabIndex = 187;
+            this.btnCancelaDesbloq.TabStop = false;
+            this.btnCancelaDesbloq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelaDesbloq.UseVisualStyleBackColor = false;
+            this.btnCancelaDesbloq.Visible = false;
+            this.btnCancelaDesbloq.Click += new System.EventHandler(this.btnCancelaDesbloq_Click);
             // 
             // btnAgregaUdeMed
             // 
@@ -1337,56 +1387,6 @@
             this.btnAgregaMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregaMarca.UseVisualStyleBackColor = false;
             this.btnAgregaMarca.Click += new System.EventHandler(this.btnAgregaMarca_Click);
-            // 
-            // btnAceptaClave
-            // 
-            this.btnAceptaClave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptaClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnAceptaClave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptaClave.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAceptaClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAceptaClave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnAceptaClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptaClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAceptaClave.ForeColor = System.Drawing.Color.White;
-            this.btnAceptaClave.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnAceptaClave.IconColor = System.Drawing.Color.White;
-            this.btnAceptaClave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAceptaClave.IconSize = 25;
-            this.btnAceptaClave.Location = new System.Drawing.Point(63, 39);
-            this.btnAceptaClave.Name = "btnAceptaClave";
-            this.btnAceptaClave.Size = new System.Drawing.Size(29, 29);
-            this.btnAceptaClave.TabIndex = 187;
-            this.btnAceptaClave.TabStop = false;
-            this.btnAceptaClave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptaClave.UseVisualStyleBackColor = false;
-            this.btnAceptaClave.Visible = false;
-            this.btnAceptaClave.Click += new System.EventHandler(this.btnAceptaClave_Click);
-            // 
-            // btnCancelaDesbloq
-            // 
-            this.btnCancelaDesbloq.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelaDesbloq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnCancelaDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelaDesbloq.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelaDesbloq.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCancelaDesbloq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnCancelaDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelaDesbloq.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnCancelaDesbloq.ForeColor = System.Drawing.Color.White;
-            this.btnCancelaDesbloq.IconChar = FontAwesome.Sharp.IconChar.Ban;
-            this.btnCancelaDesbloq.IconColor = System.Drawing.Color.White;
-            this.btnCancelaDesbloq.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelaDesbloq.IconSize = 25;
-            this.btnCancelaDesbloq.Location = new System.Drawing.Point(18, 39);
-            this.btnCancelaDesbloq.Name = "btnCancelaDesbloq";
-            this.btnCancelaDesbloq.Size = new System.Drawing.Size(29, 29);
-            this.btnCancelaDesbloq.TabIndex = 187;
-            this.btnCancelaDesbloq.TabStop = false;
-            this.btnCancelaDesbloq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelaDesbloq.UseVisualStyleBackColor = false;
-            this.btnCancelaDesbloq.Visible = false;
-            this.btnCancelaDesbloq.Click += new System.EventHandler(this.btnCancelaDesbloq_Click);
             // 
             // FormProductos
             // 

@@ -141,6 +141,10 @@
             this.cbProvincia = new System.Windows.Forms.ComboBox();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblErrorProvincia = new System.Windows.Forms.Label();
+            this.lblErrorCalle = new System.Windows.Forms.Label();
+            this.lblErrorBarrio = new System.Windows.Forms.Label();
+            this.lblErrorLocalidad = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             this.tabProveedor.SuspendLayout();
             this.tabPConsulta.SuspendLayout();
@@ -588,6 +592,7 @@
             this.tbCuit.Size = new System.Drawing.Size(99, 25);
             this.tbCuit.TabIndex = 4;
             this.tbCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCuit_KeyPress);
+            this.tbCuit.Leave += new System.EventHandler(this.tbCuit_Leave);
             // 
             // label7
             // 
@@ -845,7 +850,6 @@
             this.tbDireccion.TabIndex = 0;
             this.tbDireccion.TabStop = false;
             this.tbDireccion.TextChanged += new System.EventHandler(this.tbDireccion_TextChanged);
-            this.tbDireccion.Leave += new System.EventHandler(this.tbDireccion_Leave);
             // 
             // btnCancela
             // 
@@ -938,7 +942,8 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(228, 25);
             this.tbNombre.TabIndex = 7;
-            this.tbNombre.Leave += new System.EventHandler(this.tbNombre_Leave);
+            this.tbNombre.TextChanged += new System.EventHandler(this.tbNombre_TextChanged);
+            this.tbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNombre_KeyPress);
             // 
             // btAceptar
             // 
@@ -1005,7 +1010,8 @@
             this.tbEmpresa.Name = "tbEmpresa";
             this.tbEmpresa.Size = new System.Drawing.Size(228, 25);
             this.tbEmpresa.TabIndex = 6;
-            this.tbEmpresa.Leave += new System.EventHandler(this.tbEmpresa_Leave);
+            this.tbEmpresa.TextChanged += new System.EventHandler(this.tbEmpresa_TextChanged);
+            this.tbEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEmpresa_KeyPress);
             // 
             // tbMail
             // 
@@ -1040,7 +1046,8 @@
             this.tbApellido.Name = "tbApellido";
             this.tbApellido.Size = new System.Drawing.Size(228, 25);
             this.tbApellido.TabIndex = 8;
-            this.tbApellido.Leave += new System.EventHandler(this.tbApellido_Leave);
+            this.tbApellido.TextChanged += new System.EventHandler(this.tbApellido_TextChanged);
+            this.tbApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbApellido_KeyPress);
             // 
             // lblMail
             // 
@@ -1343,6 +1350,9 @@
             // tabManDomicilios
             // 
             this.tabManDomicilios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabManDomicilios.Controls.Add(this.lblErrorProvincia);
+            this.tabManDomicilios.Controls.Add(this.lblErrorBarrio);
+            this.tabManDomicilios.Controls.Add(this.lblErrorLocalidad);
             this.tabManDomicilios.Controls.Add(this.btnAgregaBarr);
             this.tabManDomicilios.Controls.Add(this.btnAgregaLoc);
             this.tabManDomicilios.Controls.Add(this.label34);
@@ -1522,6 +1532,7 @@
             // panelDomicilio
             // 
             this.panelDomicilio.Controls.Add(this.label25);
+            this.panelDomicilio.Controls.Add(this.lblErrorCalle);
             this.panelDomicilio.Controls.Add(this.label22);
             this.panelDomicilio.Controls.Add(this.label23);
             this.panelDomicilio.Controls.Add(this.label24);
@@ -1647,7 +1658,7 @@
             this.tbProvinciaSeleccionada.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbProvinciaSeleccionada.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbProvinciaSeleccionada.ForeColor = System.Drawing.SystemColors.Control;
-            this.tbProvinciaSeleccionada.Location = new System.Drawing.Point(216, 166);
+            this.tbProvinciaSeleccionada.Location = new System.Drawing.Point(216, 121);
             this.tbProvinciaSeleccionada.Name = "tbProvinciaSeleccionada";
             this.tbProvinciaSeleccionada.ReadOnly = true;
             this.tbProvinciaSeleccionada.Size = new System.Drawing.Size(228, 15);
@@ -1808,6 +1819,58 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "PROVEEDORES";
             // 
+            // lblErrorProvincia
+            // 
+            this.lblErrorProvincia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorProvincia.AutoSize = true;
+            this.lblErrorProvincia.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorProvincia.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorProvincia.Location = new System.Drawing.Point(213, 166);
+            this.lblErrorProvincia.Name = "lblErrorProvincia";
+            this.lblErrorProvincia.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorProvincia.TabIndex = 178;
+            this.lblErrorProvincia.Text = "Este Campo es Obligatorio";
+            this.lblErrorProvincia.Visible = false;
+            // 
+            // lblErrorCalle
+            // 
+            this.lblErrorCalle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorCalle.AutoSize = true;
+            this.lblErrorCalle.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorCalle.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorCalle.Location = new System.Drawing.Point(48, 56);
+            this.lblErrorCalle.Name = "lblErrorCalle";
+            this.lblErrorCalle.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorCalle.TabIndex = 181;
+            this.lblErrorCalle.Text = "Este Campo es Obligatorio";
+            this.lblErrorCalle.Visible = false;
+            // 
+            // lblErrorBarrio
+            // 
+            this.lblErrorBarrio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorBarrio.AutoSize = true;
+            this.lblErrorBarrio.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorBarrio.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorBarrio.Location = new System.Drawing.Point(213, 331);
+            this.lblErrorBarrio.Name = "lblErrorBarrio";
+            this.lblErrorBarrio.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorBarrio.TabIndex = 180;
+            this.lblErrorBarrio.Text = "Este Campo es Obligatorio";
+            this.lblErrorBarrio.Visible = false;
+            // 
+            // lblErrorLocalidad
+            // 
+            this.lblErrorLocalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorLocalidad.AutoSize = true;
+            this.lblErrorLocalidad.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorLocalidad.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorLocalidad.Location = new System.Drawing.Point(213, 246);
+            this.lblErrorLocalidad.Name = "lblErrorLocalidad";
+            this.lblErrorLocalidad.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorLocalidad.TabIndex = 179;
+            this.lblErrorLocalidad.Text = "Este Campo es Obligatorio";
+            this.lblErrorLocalidad.Visible = false;
+            // 
             // FormProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1947,5 +2010,9 @@
         private FontAwesome.Sharp.IconButton btnAgregaLoc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label lblErrorProvincia;
+        private System.Windows.Forms.Label lblErrorBarrio;
+        private System.Windows.Forms.Label lblErrorLocalidad;
+        private System.Windows.Forms.Label lblErrorCalle;
     }
 }

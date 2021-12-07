@@ -23,6 +23,7 @@ namespace CapaNegocio
             string rpta = Obj.ConsultarEstadoCheque(estado, numComp);
             return rpta;
         }
+
         public static DataTable MostrarXFecha(string estado)
         {
             CD_Cheque Obj = new CD_Cheque();

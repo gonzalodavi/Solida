@@ -566,7 +566,7 @@
         <Top>1.95474cm</Top>
         <Left>0.64194cm</Left>
         <Height>1.2cm</Height>
-        <Width>23.36862cm</Width>
+        <Width>23.36863cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -785,6 +785,7 @@
                 <TextRun>
                   <Value>=Today()</Value>
                   <Style>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontWeight>Bold</FontWeight>
                     <Format>D</Format>
                   </Style>
@@ -819,7 +820,7 @@
                 <TextRun>
                   <Value>Libro de Caja</Value>
                   <Style>
-                    <FontFamily>Arial Black</FontFamily>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <Color>White</Color>
@@ -883,7 +884,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>

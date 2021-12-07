@@ -892,10 +892,11 @@
             this.tbEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbEmpresa.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbEmpresa.Location = new System.Drawing.Point(647, 188);
-            this.tbEmpresa.MaxLength = 150;
+            this.tbEmpresa.MaxLength = 100;
             this.tbEmpresa.Name = "tbEmpresa";
             this.tbEmpresa.Size = new System.Drawing.Size(227, 25);
             this.tbEmpresa.TabIndex = 9;
+            this.tbEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEmpresa_KeyPress);
             // 
             // tbMail
             // 
@@ -981,6 +982,7 @@
             this.tbApellido.Size = new System.Drawing.Size(227, 25);
             this.tbApellido.TabIndex = 3;
             this.tbApellido.TextChanged += new System.EventHandler(this.tbApellido_TextChanged);
+            this.tbApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbApellido_KeyPress);
             this.tbApellido.Leave += new System.EventHandler(this.tbApellido_Leave);
             // 
             // lblApellido
@@ -1006,6 +1008,7 @@
             this.tbNombre.Size = new System.Drawing.Size(227, 25);
             this.tbNombre.TabIndex = 4;
             this.tbNombre.TextChanged += new System.EventHandler(this.tbNombre_TextChanged);
+            this.tbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNombre_KeyPress_1);
             this.tbNombre.Leave += new System.EventHandler(this.tbNombre_Leave);
             // 
             // lblNombre

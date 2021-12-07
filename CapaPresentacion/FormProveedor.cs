@@ -32,6 +32,7 @@ namespace CapaPresentacion
             CargarGrilla();
             CargarGrillaDomicilios();
             CargarComboBoxProvincia();
+            limpiarCampos();
         }
 
 
@@ -97,7 +98,12 @@ namespace CapaPresentacion
                 cbBarrio.DataSource = null;
                 panelDomicilio.Enabled = false;
                 CargarComboBoxLocalidad();
+                lblErrorProvincia.Visible = false;
             }
+            else
+            {
+                lblErrorProvincia.Visible = true;
+            }           
         }
 
         private void CargarComboBoxLocalidad()
@@ -119,8 +125,12 @@ namespace CapaPresentacion
             {
                 cbBarrio.DataSource = null;
                 panelDomicilio.Enabled = false;
-
                 CargarComboBoxBarrio();
+                lblErrorLocalidad.Visible = false;
+            }
+            else
+            {
+                lblErrorLocalidad.Visible = true;
             }
         }
 
@@ -141,10 +151,12 @@ namespace CapaPresentacion
             if (cbBarrio.SelectedIndex == -1)
             {
                 panelDomicilio.Enabled = false;
+                lblErrorBarrio.Visible = true;
             }
             else
             {
                 panelDomicilio.Enabled = true;
+                lblErrorBarrio.Visible = false;
             }
         }
 
@@ -155,8 +167,8 @@ namespace CapaPresentacion
             cbPreF.Enabled = true;
             cbSuF.Enabled = true;
             tbCuit.Enabled = true;
-            cbPreF.SelectedIndex = -1;
-            cbSuF.SelectedIndex = -1;
+            cbPreF.SelectedIndex = 0;
+            cbSuF.SelectedIndex = 0;
             tbCuit.Text = "";
             tbEmpresa.Text = "";
             tbNombre.Text = "";
@@ -171,13 +183,17 @@ namespace CapaPresentacion
             tbNro.Text = "";
             tbPiso.Text = "";
             tbDpto.Text = "";
+            tbCuit.Focus();
             lblErrorApe.Visible = false;
             lblErrorCUIT.Visible = false;
             lblErrorDire.Visible = false;
             lblErrorEmpresa.Visible = false;
             lblErrorNom.Visible = false;
-            Editar = false;
-
+            lblErrorProvincia.Visible = false;
+            lblErrorLocalidad.Visible = false;
+            lblErrorBarrio.Visible = false;
+            lblErrorCalle.Visible = false;
+            Editar = false;            
         }
 
         private void LimpiarTabDomicilio()
@@ -193,23 +209,78 @@ namespace CapaPresentacion
             tbProvinciaSeleccionada.Text = "";
             cbLocalidad.DataSource = null;
             cbBarrio.DataSource = null;
+            lblErrorProvincia.Visible = false;
+            lblErrorLocalidad.Visible = false;
+            lblErrorBarrio.Visible = false;
+            lblErrorCalle.Visible = false;
         }
 
 
         private void btnNuevoProveedor_Click(object sender, EventArgs e)
         {
             tabProveedor.SelectedTab = tabPMant;
+            tbCuit.Focus();
         }
 
 
         private void btAceptar_Click(object sender, EventArgs e)
         {
-            agregaNuevoProveedor();
+            var cadena1 = tbCuit.Text;
+
+            if (cadena1.Length < 8)
+            {
+                MessageBox.Show("El CUIT debe contener 11 caracteres en total", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorCUIT.Visible = true;
+            }
+            else
+            {
+                lblErrorCUIT.Visible = false;
+
+                if (tbEmpresa.Text == "")
+                {
+                    MensajeError("Por Favor, Ingrese nombre de Empresa");
+                    lblErrorEmpresa.Visible = true;
+                }
+                else
+                {
+                    lblErrorEmpresa.Visible = false;
+                    if (tbNombre.Text == "")
+                    {
+                        MensajeError("Por Favor, Ingrese un Nombre para agregar Nuevo Proveedor.");
+                        lblErrorNom.Visible = true;
+                    }
+                    else
+                    {
+                        lblErrorNom.Visible = false;
+
+                        if (tbApellido.Text == "")
+                        {
+                            MensajeError("Por Favor, Ingrese un Apellido para agregar Nuevo Proveedor.");
+                            lblErrorApe.Visible = true;
+                        }
+                        else
+                        {
+                            lblErrorApe.Visible = false;
+
+                            if (tbDireccion.Text == "")
+                            {
+                                MensajeError("Por Favor, Seleccione o Agregue una Nueva Dirección");
+                                lblErrorDire.Visible = true;
+                            }
+                            else
+                            {
+                                lblErrorDire.Visible = false;
+                                agregaNuevoProveedor();
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void agregaNuevoProveedor()
         {
-            if (tbCuit.Text != "" && tbEmpresa.Text != "" && tbNombre.Text != "" && tbApellido.Text != "" && tbMail.Text != "" && tbTel.Text != "" && tbIdDom.Text != "")
+            try
             {
                 if (Editar == false)
                 {
@@ -281,9 +352,9 @@ namespace CapaPresentacion
                     }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Existe algun campo vacío.\nPara Agregar o Editar un Proveedor debe completar todos sus datos");
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
 
@@ -339,11 +410,11 @@ namespace CapaPresentacion
             {
                 if (Opcion == DialogResult.OK)
                 {
-                    limpiarCampos();
+                    
                     tabProveedor.SelectedTab = tabPConsulta;
                     dgvProveedor.Enabled = true;
                     lblSubTitutlo.Text = "Nuevo Proveedor";
-
+                    limpiarCampos();
                 }
             }
             catch (Exception ex)
@@ -841,7 +912,43 @@ namespace CapaPresentacion
             }
         }
 
-        private void tbApellido_Leave(object sender, EventArgs e)
+        private void btnSeleccionaDireccion_Leave(object sender, EventArgs e)
+        {
+            if (tbDireccion.Text == "")
+            {
+                lblErrorDire.Visible = true;
+            }
+            else
+            {
+                lblErrorDire.Visible = false;
+            }
+        }
+
+        private void tbNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (tbNombre.Text == "")
+            {
+                lblErrorNom.Visible = true;
+            }
+            else
+            {
+                lblErrorNom.Visible = false;
+            }
+        }
+
+        private void tbEmpresa_TextChanged(object sender, EventArgs e)
+        {
+            if (tbEmpresa.Text == "")
+            {
+                lblErrorEmpresa.Visible = true;
+            }
+            else
+            {
+                lblErrorEmpresa.Visible = false;
+            }
+        }
+
+        private void tbApellido_TextChanged(object sender, EventArgs e)
         {
             if (tbApellido.Text == "")
             {
@@ -853,15 +960,17 @@ namespace CapaPresentacion
             }
         }
 
-        private void tbDireccion_Leave(object sender, EventArgs e)
+        private void tbCuit_Leave(object sender, EventArgs e)
         {
-            if (tbDireccion.Text == "")
+            var cadena = tbCuit.Text;
+
+            if (cadena.Length < 8 || cbPreF.SelectedIndex == -1 || cbSuF.SelectedIndex == -1)
             {
-                lblErrorDire.Visible = true;
+                lblErrorCUIT.Visible = true;
             }
             else
             {
-                lblErrorDire.Visible = false;
+                lblErrorCUIT.Visible = false;
             }
         }
 
@@ -877,15 +986,63 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnSeleccionaDireccion_Leave(object sender, EventArgs e)
+        private void tbEmpresa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (tbDireccion.Text == "")
+            if (Char.IsLetter(e.KeyChar))
             {
-                lblErrorDire.Visible = true;
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
             }
             else
             {
-                lblErrorDire.Visible = false;
+                e.Handled = true;
+            }
+        }
+
+        private void tbNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

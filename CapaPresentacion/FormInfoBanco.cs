@@ -48,6 +48,8 @@ namespace CapaPresentacion
             {
                 this.dgvBanco.DataSource = CN_CuentaBancaria.MostrarDetalleBanco(Convert.ToInt32(cbCtaBancaria.SelectedValue));
                 this.dgvBanco.Columns[0].Visible = false;
+                this.dgvBanco.Columns[8].Visible = false;
+
 
                 this.dgvBanco.Columns[1].Width = 60;
                 this.dgvBanco.Columns[2].Width = 100;
@@ -116,6 +118,20 @@ namespace CapaPresentacion
             this.tbDebe.Text = ""; 
             this.tbHaber.Text = "";
             this.tbSaldo.Text = "";
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (cbCtaBancaria.SelectedIndex != -1)
+            {
+                FormDetalleBanco form = new FormDetalleBanco();
+                form.Id = Convert.ToInt32(cbCtaBancaria.SelectedValue);
+                form.ShowDialog();
+            }
+            else
+            {
+                MensajeError("No se seleccionó Cuenta Bancaria");
+            }
         }
     }
 }

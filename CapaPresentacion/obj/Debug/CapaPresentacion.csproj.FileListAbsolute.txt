@@ -286,3 +286,6 @@ G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormInfoBa
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormInfoCajas.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormInfoProductos.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormDetalleDeCaja.resources
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormDetalleBanco.resources
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormListadoCheques.resources
+G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete

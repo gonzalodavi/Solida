@@ -32,13 +32,23 @@ namespace CapaPresentacion
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalleDeCaja));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
             this.InformeDetalleCajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.InformeDetalleCajaTableAdapter = new CapaPresentacion.dsPrincipalTableAdapters.InformeDetalleCajaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InformeDetalleCajaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             this.SuspendLayout();
+            // 
+            // InformeDetalleCajaBindingSource
+            // 
+            this.InformeDetalleCajaBindingSource.DataMember = "InformeDetalleCaja";
+            this.InformeDetalleCajaBindingSource.DataSource = this.dsPrincipal;
+            // 
+            // dsPrincipal
+            // 
+            this.dsPrincipal.DataSetName = "dsPrincipal";
+            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -50,18 +60,8 @@ namespace CapaPresentacion
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1037, 917);
+            this.reportViewer1.Size = new System.Drawing.Size(944, 917);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dsPrincipal
-            // 
-            this.dsPrincipal.DataSetName = "dsPrincipal";
-            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // InformeDetalleCajaBindingSource
-            // 
-            this.InformeDetalleCajaBindingSource.DataMember = "InformeDetalleCaja";
-            this.InformeDetalleCajaBindingSource.DataSource = this.dsPrincipal;
             // 
             // InformeDetalleCajaTableAdapter
             // 
@@ -71,7 +71,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 917);
+            this.ClientSize = new System.Drawing.Size(944, 917);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -79,8 +79,8 @@ namespace CapaPresentacion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informe de Caja";
             this.Load += new System.EventHandler(this.FormDetalleDeCaja_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InformeDetalleCajaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -50,6 +50,7 @@ namespace CapaPresentacion
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.btnBuscarReg = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.lblFecha1 = new System.Windows.Forms.Label();
             this.lblFecha2 = new System.Windows.Forms.Label();
@@ -60,12 +61,11 @@ namespace CapaPresentacion
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.cbCtaBancaria = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnBuscarReg = new FontAwesome.Sharp.IconButton();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanco)).BeginInit();
             this.SuspendLayout();
@@ -317,6 +317,31 @@ namespace CapaPresentacion
             this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
             this.dtpFecha1.Visible = false;
             // 
+            // btnBuscarReg
+            // 
+            this.btnBuscarReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscarReg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarReg.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscarReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscarReg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscarReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarReg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscarReg.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarReg.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscarReg.IconColor = System.Drawing.Color.White;
+            this.btnBuscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarReg.IconSize = 25;
+            this.btnBuscarReg.Location = new System.Drawing.Point(858, 135);
+            this.btnBuscarReg.Name = "btnBuscarReg";
+            this.btnBuscarReg.Size = new System.Drawing.Size(116, 31);
+            this.btnBuscarReg.TabIndex = 194;
+            this.btnBuscarReg.TabStop = false;
+            this.btnBuscarReg.Text = "BUSCAR";
+            this.btnBuscarReg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarReg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscarReg.UseVisualStyleBackColor = false;
+            this.btnBuscarReg.Click += new System.EventHandler(this.btnBuscarReg_Click);
+            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -503,6 +528,58 @@ namespace CapaPresentacion
             this.label3.Text = "CONCEPTO";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnImprimir.IconColor = System.Drawing.Color.White;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.IconSize = 25;
+            this.btnImprimir.Location = new System.Drawing.Point(858, 623);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(116, 31);
+            this.btnImprimir.TabIndex = 180;
+            this.btnImprimir.TabStop = false;
+            this.btnImprimir.Text = "IMPRIMIR";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 25;
+            this.btnRegresar.Location = new System.Drawing.Point(858, 75);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
+            this.btnRegresar.TabIndex = 179;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
@@ -540,82 +617,6 @@ namespace CapaPresentacion
             this.label12.Size = new System.Drawing.Size(190, 25);
             this.label12.TabIndex = 83;
             this.label12.Text = "CUENTAS DE BANCO";
-            // 
-            // btnBuscarReg
-            // 
-            this.btnBuscarReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscarReg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarReg.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscarReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscarReg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscarReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarReg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnBuscarReg.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarReg.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscarReg.IconColor = System.Drawing.Color.White;
-            this.btnBuscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarReg.IconSize = 25;
-            this.btnBuscarReg.Location = new System.Drawing.Point(858, 135);
-            this.btnBuscarReg.Name = "btnBuscarReg";
-            this.btnBuscarReg.Size = new System.Drawing.Size(116, 31);
-            this.btnBuscarReg.TabIndex = 194;
-            this.btnBuscarReg.TabStop = false;
-            this.btnBuscarReg.Text = "BUSCAR";
-            this.btnBuscarReg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarReg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarReg.UseVisualStyleBackColor = false;
-            this.btnBuscarReg.Click += new System.EventHandler(this.btnBuscarReg_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnImprimir.IconColor = System.Drawing.Color.White;
-            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.IconSize = 25;
-            this.btnImprimir.Location = new System.Drawing.Point(858, 623);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(116, 31);
-            this.btnImprimir.TabIndex = 180;
-            this.btnImprimir.TabStop = false;
-            this.btnImprimir.Text = "IMPRIMIR";
-            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnRegresar.IconColor = System.Drawing.Color.White;
-            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(858, 75);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
-            this.btnRegresar.TabIndex = 179;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // FormInfoBanco
             // 

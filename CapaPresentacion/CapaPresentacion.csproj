@@ -332,6 +332,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\FormDetalleBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormDetalleBanco.Designer.cs">
+      <DependentUpon>FormDetalleBanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FormDetalleCtaCteClienteSimple.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,12 @@
     </Compile>
     <Compile Include="Reportes\FormDetalleDeCaja.Designer.cs">
       <DependentUpon>FormDetalleDeCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormListadoCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormListadoCheques.Designer.cs">
+      <DependentUpon>FormListadoCheques.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FormReporteCompra.cs">
       <SubType>Form</SubType>
@@ -532,6 +544,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\FormDetalleBanco.resx">
+      <DependentUpon>FormDetalleBanco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormDetalleCtaCteClienteSimple.resx">
       <DependentUpon>FormDetalleCtaCteClienteSimple.cs</DependentUpon>
     </EmbeddedResource>
@@ -540,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormDetalleDeCaja.resx">
       <DependentUpon>FormDetalleDeCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormListadoCheques.resx">
+      <DependentUpon>FormListadoCheques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteCompra.resx">
       <DependentUpon>FormReporteCompra.cs</DependentUpon>
@@ -586,7 +604,9 @@
     <EmbeddedResource Include="Reportes\rptComprobanteVenta.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptDetaleDeBanco.rdlc" />
     <EmbeddedResource Include="Reportes\rptDetalleCaja.rdlc" />
+    <EmbeddedResource Include="Reportes\rptDetalleCheques.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosCompradosxCant.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosCompradosxImporte.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosVendidosxCant.rdlc" />

@@ -45,7 +45,7 @@
                             <TextRun>
                               <Value>COD</Value>
                               <Style>
-                                <FontFamily>Verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -82,7 +82,7 @@
                             <TextRun>
                               <Value>DESCRIPCION</Value>
                               <Style>
-                                <FontFamily>Verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -119,7 +119,7 @@
                             <TextRun>
                               <Value>PRECIO COSTO</Value>
                               <Style>
-                                <FontFamily>Verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -156,7 +156,7 @@
                             <TextRun>
                               <Value>PRECIO VENTA</Value>
                               <Style>
-                                <FontFamily>Verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -193,7 +193,7 @@
                             <TextRun>
                               <Value>RUBRO</Value>
                               <Style>
-                                <FontFamily>Verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -230,7 +230,7 @@
                             <TextRun>
                               <Value>MODELO</Value>
                               <Style>
-                                <FontFamily>Verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -267,7 +267,7 @@
                             <TextRun>
                               <Value>MARCA</Value>
                               <Style>
-                                <FontFamily>Verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -304,7 +304,7 @@
                             <TextRun>
                               <Value>STOCK</Value>
                               <Style>
-                                <FontFamily>Verdana</FontFamily>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -345,7 +345,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ID.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -377,15 +379,21 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!DESCRIPCION.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                             <TextRun>
                               <Value> x </Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                             <TextRun>
                               <Value>=Fields!NOM_UNIDAD.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -416,6 +424,7 @@
                             <TextRun>
                               <Value>=Fields!PRECIO_COSTO.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$'#,0.00</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -449,6 +458,7 @@
                             <TextRun>
                               <Value>=Fields!PRECIO_VTA.Value</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
                                 <Format>'$'#,0.00</Format>
                                 <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                               </Style>
@@ -481,7 +491,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!RUBRO.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -513,7 +525,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!MODELO.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -545,7 +559,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!MARCA.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -577,7 +593,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!STOCK.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -637,7 +655,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>30.28208cm</Height>
+    <Height>27cm</Height>
     <Style />
   </Body>
   <Width>23.00078cm</Width>
@@ -670,6 +688,7 @@
                 <TextRun>
                   <Value>=Today()</Value>
                   <Style>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontWeight>Bold</FontWeight>
                     <Format>D</Format>
                   </Style>
@@ -705,7 +724,7 @@
                 <TextRun>
                   <Value>Listado de Productos</Value>
                   <Style>
-                    <FontFamily>Arial Black</FontFamily>
+                    <FontFamily>Segoe UI</FontFamily>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <Color>White</Color>
@@ -754,7 +773,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -764,7 +785,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>0.90912cm</Top>
-          <Left>7.3787cm</Left>
+          <Left>8.54287cm</Left>
           <Height>0.6cm</Height>
           <Width>5.64854cm</Width>
           <Style>

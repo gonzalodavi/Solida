@@ -37,7 +37,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
             this.chekCLASIFICA = new Guna.UI.WinForms.GunaSwitch();
-            this.lblFecha2 = new System.Windows.Forms.Label();
+            this.lblSubtitulo = new System.Windows.Forms.Label();
             this.dgvCheques = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.lblVencido = new System.Windows.Forms.Label();
@@ -45,27 +45,31 @@
             this.lblCobrar = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.tbTotalCheques = new System.Windows.Forms.TextBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.tbCantidadCheques = new System.Windows.Forms.TextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.cbEstadoCheques = new System.Windows.Forms.ComboBox();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContenedor
             // 
+            this.panelContenedor.Controls.Add(this.cbEstadoCheques);
+            this.panelContenedor.Controls.Add(this.gunaLabel3);
             this.panelContenedor.Controls.Add(this.lblChekAnul);
             this.panelContenedor.Controls.Add(this.chekCLASIFICA);
-            this.panelContenedor.Controls.Add(this.lblFecha2);
+            this.panelContenedor.Controls.Add(this.lblSubtitulo);
             this.panelContenedor.Controls.Add(this.dgvCheques);
             this.panelContenedor.Controls.Add(this.label10);
             this.panelContenedor.Controls.Add(this.lblVencido);
@@ -114,18 +118,18 @@
             this.chekCLASIFICA.TabIndex = 184;
             this.chekCLASIFICA.CheckedChanged += new System.EventHandler(this.chekCLASIFICA_CheckedChanged);
             // 
-            // lblFecha2
+            // lblSubtitulo
             // 
-            this.lblFecha2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFecha2.AutoEllipsis = true;
-            this.lblFecha2.AutoSize = true;
-            this.lblFecha2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFecha2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha2.Location = new System.Drawing.Point(50, 95);
-            this.lblFecha2.Name = "lblFecha2";
-            this.lblFecha2.Size = new System.Drawing.Size(242, 21);
-            this.lblFecha2.TabIndex = 183;
-            this.lblFecha2.Text = "Valores en Cartera Disponibles";
+            this.lblSubtitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSubtitulo.AutoEllipsis = true;
+            this.lblSubtitulo.AutoSize = true;
+            this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSubtitulo.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblSubtitulo.Location = new System.Drawing.Point(50, 95);
+            this.lblSubtitulo.Name = "lblSubtitulo";
+            this.lblSubtitulo.Size = new System.Drawing.Size(242, 21);
+            this.lblSubtitulo.TabIndex = 183;
+            this.lblSubtitulo.Text = "Valores en Cartera Disponibles";
             // 
             // dgvCheques
             // 
@@ -266,36 +270,11 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.label28.ForeColor = System.Drawing.Color.Gold;
-            this.label28.Location = new System.Drawing.Point(838, 330);
+            this.label28.Location = new System.Drawing.Point(838, 434);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(15, 17);
             this.label28.TabIndex = 179;
             this.label28.Text = "$";
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnImprimir.IconColor = System.Drawing.Color.White;
-            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.IconSize = 25;
-            this.btnImprimir.Location = new System.Drawing.Point(855, 535);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(116, 31);
-            this.btnImprimir.TabIndex = 178;
-            this.btnImprimir.TabStop = false;
-            this.btnImprimir.Text = "IMPRIMIR";
-            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImprimir.UseVisualStyleBackColor = false;
             // 
             // tbTotalCheques
             // 
@@ -304,7 +283,7 @@
             this.tbTotalCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTotalCheques.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTotalCheques.ForeColor = System.Drawing.Color.Yellow;
-            this.tbTotalCheques.Location = new System.Drawing.Point(855, 327);
+            this.tbTotalCheques.Location = new System.Drawing.Point(855, 431);
             this.tbTotalCheques.Name = "tbTotalCheques";
             this.tbTotalCheques.ReadOnly = true;
             this.tbTotalCheques.Size = new System.Drawing.Size(116, 25);
@@ -317,7 +296,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(891, 305);
+            this.gunaLabel2.Location = new System.Drawing.Point(891, 409);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(48, 17);
             this.gunaLabel2.TabIndex = 176;
@@ -330,7 +309,7 @@
             this.tbCantidadCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCantidadCheques.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCantidadCheques.ForeColor = System.Drawing.Color.Yellow;
-            this.tbCantidadCheques.Location = new System.Drawing.Point(855, 221);
+            this.tbCantidadCheques.Location = new System.Drawing.Point(855, 325);
             this.tbCantidadCheques.Name = "tbCantidadCheques";
             this.tbCantidadCheques.ReadOnly = true;
             this.tbCantidadCheques.Size = new System.Drawing.Size(116, 25);
@@ -343,37 +322,11 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(876, 199);
+            this.gunaLabel1.Location = new System.Drawing.Point(876, 303);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(76, 17);
             this.gunaLabel1.TabIndex = 162;
             this.gunaLabel1.Text = "CANTIDAD";
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnRegresar.IconColor = System.Drawing.Color.White;
-            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(855, 80);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
-            this.btnRegresar.TabIndex = 161;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // label1
             // 
@@ -458,6 +411,87 @@
             this.label12.TabIndex = 82;
             this.label12.Text = "CARTERA DE VALORES";
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnImprimir.IconColor = System.Drawing.Color.White;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.IconSize = 25;
+            this.btnImprimir.Location = new System.Drawing.Point(855, 552);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(116, 31);
+            this.btnImprimir.TabIndex = 178;
+            this.btnImprimir.TabStop = false;
+            this.btnImprimir.Text = "IMPRIMIR";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 25;
+            this.btnRegresar.Location = new System.Drawing.Point(855, 80);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
+            this.btnRegresar.TabIndex = 161;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel3.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel3.Location = new System.Drawing.Point(887, 178);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(52, 15);
+            this.gunaLabel3.TabIndex = 187;
+            this.gunaLabel3.Text = "ESTADO";
+            // 
+            // cbEstadoCheques
+            // 
+            this.cbEstadoCheques.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbEstadoCheques.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstadoCheques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbEstadoCheques.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cbEstadoCheques.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.cbEstadoCheques.FormattingEnabled = true;
+            this.cbEstadoCheques.ItemHeight = 17;
+            this.cbEstadoCheques.Items.AddRange(new object[] {
+            "ACTIVO",
+            "PAGADO"});
+            this.cbEstadoCheques.Location = new System.Drawing.Point(855, 196);
+            this.cbEstadoCheques.Name = "cbEstadoCheques";
+            this.cbEstadoCheques.Size = new System.Drawing.Size(116, 25);
+            this.cbEstadoCheques.TabIndex = 189;
+            this.cbEstadoCheques.SelectedIndexChanged += new System.EventHandler(this.cbEstadoCheques_SelectedIndexChanged);
+            // 
             // FormCheques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,8 +533,10 @@
         private System.Windows.Forms.Label lblVencer;
         private System.Windows.Forms.Label lblCobrar;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblFecha2;
+        private System.Windows.Forms.Label lblSubtitulo;
         private Guna.UI.WinForms.GunaLabel lblChekAnul;
         private Guna.UI.WinForms.GunaSwitch chekCLASIFICA;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private System.Windows.Forms.ComboBox cbEstadoCheques;
     }
 }
