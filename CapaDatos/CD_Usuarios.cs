@@ -39,6 +39,8 @@ namespace CapaDatos
             return DtResultado;
         }
 
+        
+
         public string ConsultaSiExisteUserEnComprob(string proc, int id)
         {
             string rpta = "";
@@ -118,10 +120,25 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable BuscarSesiones(string fecha1, string fecha2)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarSesiones";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@fecha1", fecha1);
+            comando.Parameters.AddWithValue("@fecha2", fecha2);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
         public DataTable CargarComboBox()
         {
             SqlDataAdapter da = new SqlDataAdapter("CargarComboBox", conexion.AbrirConexion());
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
             DataTable dt = new DataTable();
             da.Fill(dt);
             comando.Parameters.Clear();

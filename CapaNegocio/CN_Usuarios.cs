@@ -38,6 +38,13 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public DataTable BuscarSesiones(string fecha1,string fecha2)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.BuscarSesiones(fecha1,fecha2);
+            return tabla;
+        }
+
         public DataTable CargarComboBox()
         {
             DataTable dt = new DataTable();
