@@ -24,6 +24,13 @@ namespace CapaNegocio
             return rpta;
         }
 
+        public static string ConsultaExisteNombreUser(string nombre, int id)
+        {
+            CD_Usuarios Obj = new CD_Usuarios();
+            string rpta = Obj.ConsultaExisteNombreUser(nombre,id);
+            return rpta;
+        }
+
         public DataTable MostrarSesiones()
         {
             DataTable tabla = new DataTable();

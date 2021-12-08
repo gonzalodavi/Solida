@@ -134,7 +134,8 @@ namespace CapaPresentacion
             tbNuevaSucursal.Enabled = true;
             tbNuevaSucursal.Text = "";
             tbNuevaSucursal.Focus();
-
+            btnCancela.Enabled = true;
+            btnRegistrarSucursal.Enabled = true;
         }
 
         private void btnCancela_Click(object sender, EventArgs e)
@@ -152,6 +153,8 @@ namespace CapaPresentacion
             tbNuevaSucursal.Enabled = false;
             Editar = false;
             tbNuevaSucursal.Text = "";
+            btnCancela.Enabled = false;
+            btnRegistrarSucursal.Enabled = false;
         }
 
         private void btnElim_Click(object sender, EventArgs e)
@@ -191,6 +194,8 @@ namespace CapaPresentacion
                 tbNuevaSucursal.Enabled = true;
                 tbNuevaSucursal.Text = dgvSucursal.CurrentRow.Cells["NOMBRE_SUCURSAL"].Value.ToString();
                 Editar = true;
+                btnCancela.Enabled = true;
+                btnRegistrarSucursal.Enabled = true;
             }
             else
             {

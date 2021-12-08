@@ -191,6 +191,7 @@
             this.btnRegistrarSucursal.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnRegistrarSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnRegistrarSucursal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarSucursal.Enabled = false;
             this.btnRegistrarSucursal.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnRegistrarSucursal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRegistrarSucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -211,6 +212,7 @@
             this.btnCancela.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnCancela.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancela.Enabled = false;
             this.btnCancela.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCancela.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancela.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;

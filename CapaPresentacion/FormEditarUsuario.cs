@@ -14,18 +14,38 @@ using CapaNegocio;
 namespace Presentacion
 {
     public partial class FormEditarUsuario : Form
-    {        
+    {
+        CN_Usuarios objetoCN = new CN_Usuarios();
 
         public FormEditarUsuario()
         {
             InitializeComponent();
-        }        
+        }
 
-        
+        //Mostrar Mensaje de Confirmacion
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
+        private void CargaElComboBox()
+        {
+            tBRol.DataSource = objetoCN.CargarComboBox();
+            tBRol.DisplayMember = "nombre_Rol";
+            tBRol.Text = "";
+        }
 
         private void FormEditarUsuario_Load(object sender, EventArgs e)
         {
             cargarDatosUsuario();
+            CargaElComboBox();
         }
 
         private void cargarDatosUsuario()
@@ -35,17 +55,52 @@ namespace Presentacion
             tBApellido.Text = UserLoginCache.Apellido;
             tBEmail.Text = UserLoginCache.Email;
             tBRol.Text = UserLoginCache.Rango;
-
         }
+
+
         private void reset()
         {
             cargarDatosUsuario();            
         }
 
-       
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        {            
+        {
+            if (tBUsuario.Text != "" && tBNombre.Text != "" && tBApellido.Text != "" && tBEmail.Text != "" && tBRol.Text != "" && tBClaveActual.Text != "")
+            {
+                try
+                {
+                    string rpta = CN_Usuarios.ConsultaExisteNombreUser(this.tBUsuario.Text.Trim(), UserLoginCache.UserId);
+                    if (rpta == "OK")
+                    {
+                        MensajeError("Ya existe un USUARIO con ese nombre");
+                    }
+                    else
+                    {
+                        if (rpta == "NO")
+                        {
+                            ModificarPerfilUsuario();
+                        }
+                        else
+                        {
+                            MensajeError(rpta);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }
+            else
+            {
+                MensajeError("Existen campos vacíos, Por favor complete todos los campos");
+            }
+        }
+
+
+        private void ModificarPerfilUsuario()
+        {
             if (tBClaveActual.Text != "")
             {
 
@@ -63,13 +118,12 @@ namespace Presentacion
                         MessageBox.Show("La contraseña actual es incorrecta");
                     }
                 }
-    
+
             }
             else
             {
                 MessageBox.Show("Ingrese su clave para poder modificar su perfil");
             }
-
         }
 
         private void btnCambiarClave_Click(object sender, EventArgs e)
@@ -144,15 +198,18 @@ namespace Presentacion
                 MessageBox.Show("La nueva clave debe contener al menos 5 caracteres");
             }
         }
+       
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
     }
 }

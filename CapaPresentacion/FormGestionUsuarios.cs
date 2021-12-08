@@ -71,45 +71,38 @@ namespace Presentacion
             {
                 if (tbClave.Text.Length >= 5)
                 {
-                    if (Editar == false)
+                    try
                     {
-                        if (MessageBox.Show("¿Desea registrar los datos del nuevo usuario?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        string rpta = CN_Usuarios.ConsultaExisteNombreUser(this.tbUsuario.Text.Trim(), Convert.ToInt32(idUsuario));
+                        if (rpta == "OK")
                         {
-                            try
-                            {
-                                objetoCN.InsertarUsuarios(tbUsuario.Text, tbClave.Text, tbNombre.Text, tbApellido.Text, cbRoles.Text, tbEmail.Text);
-                                MessageBox.Show("Se insertó correctamente el nuevo usuario");
-                                limpiarCampos();
-                                MostrarUsuarios();
-                                DeshabilitarEdicion();
-                                lblNuevoOModUser.Text = "Nuevo Usuario";
-                                lblNuevoOModUser.Visible = false;
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("No se puedo insertar los datos debido a: \n\n" + ex);
-                            }
+                            MensajeError("Ya existe un USUARIO con ese nombre");
                         }
-                    }
+                        else
+                        {
+                            if (rpta == "NO")
+                            {
+                                if (Editar == false)
+                                {
+                                    AgregaUsuario();
+                                }
 
-                    if (Editar == true)
-                    {
-                        if (MessageBox.Show("¿Desea modificar el usuario seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                        {
-                            try
-                            {
-                                objetoCN.EditarUsuarios(tbUsuario.Text, tbClave.Text, tbNombre.Text, tbApellido.Text, cbRoles.Text, tbEmail.Text, idUsuario);
-                                MessageBox.Show("Se modificaron correctamente los datos del usuario");
-                                
-                                MostrarUsuarios();
-                                DeshabilitarEdicion();                                
+                                if (Editar == true)
+                                {
+                                    EditaUsuario();
+                                }
                             }
-                            catch (Exception ex)
+                            else
                             {
-                                MessageBox.Show("No se puedo modificar los datos debido a: \n\n" + ex);
+                                MensajeError(rpta);
                             }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+                    
                 }
                 else
                 {
@@ -145,6 +138,46 @@ namespace Presentacion
                     lblErrorMail.Visible = true;
                 }
             }            
+        }
+
+        private void EditaUsuario()
+        {
+            if (MessageBox.Show("¿Desea modificar el usuario seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                try
+                {
+                    objetoCN.EditarUsuarios(tbUsuario.Text, tbClave.Text, tbNombre.Text, tbApellido.Text, cbRoles.Text, tbEmail.Text, idUsuario);
+                    MessageBox.Show("Se modificaron correctamente los datos del usuario");
+
+                    MostrarUsuarios();
+                    DeshabilitarEdicion();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se puedo modificar los datos debido a: \n\n" + ex);
+                }
+            }
+        }
+
+        private void AgregaUsuario()
+        {
+            if (MessageBox.Show("¿Desea registrar los datos del nuevo usuario?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                try
+                {
+                    objetoCN.InsertarUsuarios(tbUsuario.Text, tbClave.Text, tbNombre.Text, tbApellido.Text, cbRoles.Text, tbEmail.Text);
+                    MessageBox.Show("Se insertó correctamente el nuevo usuario");
+                    limpiarCampos();
+                    MostrarUsuarios();
+                    DeshabilitarEdicion();
+                    lblNuevoOModUser.Text = "Nuevo Usuario";
+                    lblNuevoOModUser.Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se puedo insertar los datos debido a: \n\n" + ex);
+                }
+            }
         }
 
         private void limpiarCampos()

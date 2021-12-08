@@ -42,7 +42,7 @@ namespace CapaNegocio
             {
                 datosU.editarPerfil(userID, user, nombre, apellido, email);
                 LoginUser(user, pass);
-                return "Se ha modificado el perfil correctamente.\n\nPor favor cierre la sesión y vuelva a ingresar para ver los cambios";
+                return "Se modificó el Perfil de Usuario";
             }
             catch (Exception ex)
             {

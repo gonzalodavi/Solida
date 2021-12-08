@@ -450,6 +450,7 @@ namespace Presentacion
 
                 formBG.Dispose();
             }
+            LoadUserData();
         }
 
 
