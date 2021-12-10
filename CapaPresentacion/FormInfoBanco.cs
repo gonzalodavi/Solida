@@ -133,5 +133,39 @@ namespace CapaPresentacion
                 MensajeError("No se seleccionó Cuenta Bancaria");
             }
         }
+
+        private void chekCLASIFICA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chekCLASIFICA.Checked == true)
+            {
+                dgvBanco.ClearSelection();
+                lblOPagos.Visible = true;
+                lblRecibos.Visible = true;
+
+                foreach (DataGridViewRow MyRow in dgvBanco.Rows)
+                {
+                    if (Convert.ToDecimal(MyRow.Cells[5].Value) > 0)
+                    {
+                        MyRow.DefaultCellStyle.BackColor = Color.LightSalmon;
+                        MyRow.DefaultCellStyle.ForeColor = Color.FromArgb(64, 64, 64);
+                    }
+                    if (Convert.ToDecimal(MyRow.Cells[6].Value) > 0)
+                    {
+                        MyRow.DefaultCellStyle.BackColor = Color.MediumSeaGreen;
+                        MyRow.DefaultCellStyle.ForeColor = Color.White;
+                    }
+                }
+            }
+            else
+            {
+                lblOPagos.Visible = false;
+                lblRecibos.Visible = false;
+                foreach (DataGridViewRow MyRow in dgvBanco.Rows)
+                {
+                    MyRow.DefaultCellStyle.BackColor = Color.FromArgb(12, 52, 119);
+                    MyRow.DefaultCellStyle.ForeColor = Color.White;
+                }
+            }
+        }
     }
 }

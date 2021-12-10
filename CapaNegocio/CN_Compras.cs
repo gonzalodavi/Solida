@@ -35,7 +35,7 @@ namespace CapaNegocio
             {
                 CD_DetallesCompras detalle = new CD_DetallesCompras();
 
-                detalle.Cantidad = Convert.ToInt32(row["CANT"].ToString());
+                detalle.Cantidad = Convert.ToDecimal(row["CANT"].ToString());
                 detalle.IdProducto = Convert.ToInt32(row["IDPRODUCTO"].ToString());
                 detalle.Costo = Convert.ToDecimal(row["PRECIO"].ToString());
                 detalle.Iva = Convert.ToDecimal(row["IVA"].ToString());

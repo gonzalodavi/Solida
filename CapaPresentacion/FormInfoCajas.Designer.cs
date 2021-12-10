@@ -63,12 +63,20 @@ namespace CapaPresentacion
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
+            this.chekCLASIFICA = new Guna.UI.WinForms.GunaSwitch();
+            this.lblOPagos = new System.Windows.Forms.Label();
+            this.lblRecibos = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaja)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblOPagos);
+            this.panel1.Controls.Add(this.lblRecibos);
+            this.panel1.Controls.Add(this.lblChekAnul);
+            this.panel1.Controls.Add(this.chekCLASIFICA);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.tbDebe);
@@ -108,7 +116,7 @@ namespace CapaPresentacion
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label13.Location = new System.Drawing.Point(217, 667);
+            this.label13.Location = new System.Drawing.Point(878, 198);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 21);
             this.label13.TabIndex = 237;
@@ -121,7 +129,7 @@ namespace CapaPresentacion
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.Gold;
-            this.label11.Location = new System.Drawing.Point(334, 670);
+            this.label11.Location = new System.Drawing.Point(841, 289);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(15, 17);
             this.label11.TabIndex = 236;
@@ -134,7 +142,7 @@ namespace CapaPresentacion
             this.tbDebe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbDebe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDebe.ForeColor = System.Drawing.Color.Yellow;
-            this.tbDebe.Location = new System.Drawing.Point(351, 667);
+            this.tbDebe.Location = new System.Drawing.Point(858, 286);
             this.tbDebe.Name = "tbDebe";
             this.tbDebe.ReadOnly = true;
             this.tbDebe.Size = new System.Drawing.Size(116, 25);
@@ -147,7 +155,7 @@ namespace CapaPresentacion
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.gunaLabel4.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel4.Location = new System.Drawing.Point(388, 645);
+            this.gunaLabel4.Location = new System.Drawing.Point(895, 264);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(40, 17);
             this.gunaLabel4.TabIndex = 234;
@@ -160,7 +168,7 @@ namespace CapaPresentacion
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Gold;
-            this.label8.Location = new System.Drawing.Point(495, 670);
+            this.label8.Location = new System.Drawing.Point(841, 378);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(15, 17);
             this.label8.TabIndex = 233;
@@ -173,7 +181,7 @@ namespace CapaPresentacion
             this.tbHaber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbHaber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbHaber.ForeColor = System.Drawing.Color.Yellow;
-            this.tbHaber.Location = new System.Drawing.Point(512, 667);
+            this.tbHaber.Location = new System.Drawing.Point(858, 375);
             this.tbHaber.Name = "tbHaber";
             this.tbHaber.ReadOnly = true;
             this.tbHaber.Size = new System.Drawing.Size(116, 25);
@@ -186,7 +194,7 @@ namespace CapaPresentacion
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.gunaLabel3.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel3.Location = new System.Drawing.Point(544, 645);
+            this.gunaLabel3.Location = new System.Drawing.Point(890, 353);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(50, 17);
             this.gunaLabel3.TabIndex = 231;
@@ -199,7 +207,7 @@ namespace CapaPresentacion
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.Gold;
-            this.label28.Location = new System.Drawing.Point(655, 670);
+            this.label28.Location = new System.Drawing.Point(838, 481);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(19, 21);
             this.label28.TabIndex = 230;
@@ -212,7 +220,7 @@ namespace CapaPresentacion
             this.tbSaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSaldo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSaldo.ForeColor = System.Drawing.Color.Yellow;
-            this.tbSaldo.Location = new System.Drawing.Point(675, 666);
+            this.tbSaldo.Location = new System.Drawing.Point(858, 477);
             this.tbSaldo.Name = "tbSaldo";
             this.tbSaldo.ReadOnly = true;
             this.tbSaldo.Size = new System.Drawing.Size(116, 29);
@@ -225,7 +233,7 @@ namespace CapaPresentacion
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(701, 642);
+            this.gunaLabel2.Location = new System.Drawing.Point(884, 453);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(62, 21);
             this.gunaLabel2.TabIndex = 228;
@@ -238,7 +246,7 @@ namespace CapaPresentacion
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(682, 122);
+            this.label2.Location = new System.Drawing.Point(682, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 18);
             this.label2.TabIndex = 219;
@@ -252,7 +260,7 @@ namespace CapaPresentacion
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label5.Location = new System.Drawing.Point(583, 122);
+            this.label5.Location = new System.Drawing.Point(583, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 18);
             this.label5.TabIndex = 227;
@@ -270,7 +278,7 @@ namespace CapaPresentacion
             this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(858, 338);
+            this.dtpFecha2.Location = new System.Drawing.Point(675, 100);
             this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha2.Name = "dtpFecha2";
@@ -296,7 +304,7 @@ namespace CapaPresentacion
             this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(858, 252);
+            this.dtpFecha1.Location = new System.Drawing.Point(519, 100);
             this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha1.Name = "dtpFecha1";
@@ -325,7 +333,7 @@ namespace CapaPresentacion
             this.btnBuscarReg.IconColor = System.Drawing.Color.White;
             this.btnBuscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarReg.IconSize = 25;
-            this.btnBuscarReg.Location = new System.Drawing.Point(858, 393);
+            this.btnBuscarReg.Location = new System.Drawing.Point(858, 100);
             this.btnBuscarReg.Name = "btnBuscarReg";
             this.btnBuscarReg.Size = new System.Drawing.Size(116, 31);
             this.btnBuscarReg.TabIndex = 224;
@@ -343,7 +351,7 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label4.Location = new System.Drawing.Point(894, 318);
+            this.label4.Location = new System.Drawing.Point(711, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 223;
@@ -357,7 +365,7 @@ namespace CapaPresentacion
             this.lblFecha1.AutoSize = true;
             this.lblFecha1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblFecha1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha1.Location = new System.Drawing.Point(890, 232);
+            this.lblFecha1.Location = new System.Drawing.Point(551, 80);
             this.lblFecha1.Name = "lblFecha1";
             this.lblFecha1.Size = new System.Drawing.Size(50, 17);
             this.lblFecha1.TabIndex = 222;
@@ -371,7 +379,7 @@ namespace CapaPresentacion
             this.lblFecha2.AutoSize = true;
             this.lblFecha2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblFecha2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha2.Location = new System.Drawing.Point(36, 67);
+            this.lblFecha2.Location = new System.Drawing.Point(35, 104);
             this.lblFecha2.Name = "lblFecha2";
             this.lblFecha2.Size = new System.Drawing.Size(259, 21);
             this.lblFecha2.TabIndex = 221;
@@ -411,7 +419,7 @@ namespace CapaPresentacion
             this.dgvCaja.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCaja.EnableHeadersVisualStyles = false;
             this.dgvCaja.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvCaja.Location = new System.Drawing.Point(40, 143);
+            this.dgvCaja.Location = new System.Drawing.Point(40, 179);
             this.dgvCaja.MaximumSize = new System.Drawing.Size(900, 800);
             this.dgvCaja.MultiSelect = false;
             this.dgvCaja.Name = "dgvCaja";
@@ -446,7 +454,7 @@ namespace CapaPresentacion
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label10.Location = new System.Drawing.Point(39, 139);
+            this.label10.Location = new System.Drawing.Point(39, 175);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(753, 474);
             this.label10.TabIndex = 220;
@@ -459,7 +467,7 @@ namespace CapaPresentacion
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label1.Location = new System.Drawing.Point(484, 122);
+            this.label1.Location = new System.Drawing.Point(484, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 218;
@@ -473,7 +481,7 @@ namespace CapaPresentacion
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label7.Location = new System.Drawing.Point(310, 122);
+            this.label7.Location = new System.Drawing.Point(310, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(175, 18);
             this.label7.TabIndex = 215;
@@ -487,7 +495,7 @@ namespace CapaPresentacion
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label6.Location = new System.Drawing.Point(39, 122);
+            this.label6.Location = new System.Drawing.Point(39, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 18);
             this.label6.TabIndex = 216;
@@ -501,7 +509,7 @@ namespace CapaPresentacion
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label3.Location = new System.Drawing.Point(127, 122);
+            this.label3.Location = new System.Drawing.Point(127, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(184, 18);
             this.label3.TabIndex = 217;
@@ -523,7 +531,7 @@ namespace CapaPresentacion
             this.btnImprimir.IconColor = System.Drawing.Color.White;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 25;
-            this.btnImprimir.Location = new System.Drawing.Point(858, 545);
+            this.btnImprimir.Location = new System.Drawing.Point(858, 603);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(116, 31);
             this.btnImprimir.TabIndex = 212;
@@ -549,7 +557,7 @@ namespace CapaPresentacion
             this.btnRegresar.IconColor = System.Drawing.Color.White;
             this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(858, 64);
+            this.btnRegresar.Location = new System.Drawing.Point(858, 27);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(116, 31);
             this.btnRegresar.TabIndex = 211;
@@ -572,6 +580,58 @@ namespace CapaPresentacion
             this.label12.Size = new System.Drawing.Size(143, 25);
             this.label12.TabIndex = 208;
             this.label12.Text = "LIBRO DE CAJA";
+            // 
+            // lblChekAnul
+            // 
+            this.lblChekAnul.AutoSize = true;
+            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
+            this.lblChekAnul.Location = new System.Drawing.Point(598, 671);
+            this.lblChekAnul.Name = "lblChekAnul";
+            this.lblChekAnul.Size = new System.Drawing.Size(160, 15);
+            this.lblChekAnul.TabIndex = 239;
+            this.lblChekAnul.Text = "CLASIFICAR MOVIMIENTOS";
+            // 
+            // chekCLASIFICA
+            // 
+            this.chekCLASIFICA.BaseColor = System.Drawing.SystemColors.Control;
+            this.chekCLASIFICA.CheckedOffColor = System.Drawing.Color.DarkGray;
+            this.chekCLASIFICA.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekCLASIFICA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chekCLASIFICA.FillColor = System.Drawing.Color.White;
+            this.chekCLASIFICA.Location = new System.Drawing.Point(764, 668);
+            this.chekCLASIFICA.Name = "chekCLASIFICA";
+            this.chekCLASIFICA.Size = new System.Drawing.Size(28, 20);
+            this.chekCLASIFICA.TabIndex = 238;
+            this.chekCLASIFICA.CheckedChanged += new System.EventHandler(this.chekCLASIFICA_CheckedChanged);
+            // 
+            // lblOPagos
+            // 
+            this.lblOPagos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblOPagos.AutoSize = true;
+            this.lblOPagos.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblOPagos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.lblOPagos.ForeColor = System.Drawing.Color.White;
+            this.lblOPagos.Location = new System.Drawing.Point(410, 109);
+            this.lblOPagos.Name = "lblOPagos";
+            this.lblOPagos.Size = new System.Drawing.Size(54, 17);
+            this.lblOPagos.TabIndex = 240;
+            this.lblOPagos.Text = "SALIDA";
+            this.lblOPagos.Visible = false;
+            // 
+            // lblRecibos
+            // 
+            this.lblRecibos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRecibos.AutoSize = true;
+            this.lblRecibos.BackColor = System.Drawing.Color.LightSalmon;
+            this.lblRecibos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.lblRecibos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRecibos.Location = new System.Drawing.Point(316, 109);
+            this.lblRecibos.Name = "lblRecibos";
+            this.lblRecibos.Size = new System.Drawing.Size(69, 17);
+            this.lblRecibos.TabIndex = 241;
+            this.lblRecibos.Text = "ENTRADA";
+            this.lblRecibos.Visible = false;
             // 
             // FormInfoCajas
             // 
@@ -623,5 +683,9 @@ namespace CapaPresentacion
         private FontAwesome.Sharp.IconButton btnImprimir;
         private FontAwesome.Sharp.IconButton btnRegresar;
         private System.Windows.Forms.Label label12;
+        private Guna.UI.WinForms.GunaLabel lblChekAnul;
+        private Guna.UI.WinForms.GunaSwitch chekCLASIFICA;
+        private System.Windows.Forms.Label lblOPagos;
+        private System.Windows.Forms.Label lblRecibos;
     }
 }

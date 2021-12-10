@@ -11,7 +11,7 @@ namespace CapaDatos
         private int _IdDetalleCompra;
         private int _IdCompra;
         private int _IdProducto;
-        private int _Cantidad;
+        private decimal _Cantidad;
         private decimal _Costo;
         private decimal _Iva;
         private decimal _Subtotal;
@@ -35,7 +35,7 @@ namespace CapaDatos
             set { _IdProducto = value; }
         }
 
-        public int Cantidad
+        public decimal Cantidad
         {
             get { return _Cantidad; }
             set { _Cantidad = value; }
@@ -66,7 +66,7 @@ namespace CapaDatos
         }
 
         public CD_DetallesCompras(int idDetalleCompra, int idCompra,
-            int idProducto, int cantidad, decimal costo, decimal iva, decimal subtotal)
+            int idProducto, decimal cantidad, decimal costo, decimal iva, decimal subtotal)
         {
             this.IdDetalleCompra = idDetalleCompra;
             this.IdCompra = idCompra;
@@ -112,7 +112,7 @@ namespace CapaDatos
 
                 SqlParameter ParCantidad = new SqlParameter();
                 ParCantidad.ParameterName = "@cantidad";
-                ParCantidad.SqlDbType = SqlDbType.Int;
+                ParCantidad.SqlDbType = SqlDbType.Decimal;
                 ParCantidad.Value = Detalles_Compras.Cantidad;
                 SqlCmd.Parameters.Add(ParCantidad);
 
