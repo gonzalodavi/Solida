@@ -36,8 +36,12 @@ namespace CapaPresentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoBanco));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblOPagos = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.lblRecibos = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
+            this.chekCLASIFICA = new Guna.UI.WinForms.GunaSwitch();
             this.tbDebe = new System.Windows.Forms.TextBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,10 +70,6 @@ namespace CapaPresentacion
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.cbCtaBancaria = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblOPagos = new System.Windows.Forms.Label();
-            this.lblRecibos = new System.Windows.Forms.Label();
-            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
-            this.chekCLASIFICA = new Guna.UI.WinForms.GunaSwitch();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanco)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +115,20 @@ namespace CapaPresentacion
             this.panel1.Size = new System.Drawing.Size(1026, 749);
             this.panel1.TabIndex = 0;
             // 
+            // lblOPagos
+            // 
+            this.lblOPagos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblOPagos.AutoSize = true;
+            this.lblOPagos.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblOPagos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.lblOPagos.ForeColor = System.Drawing.Color.White;
+            this.lblOPagos.Location = new System.Drawing.Point(441, 87);
+            this.lblOPagos.Name = "lblOPagos";
+            this.lblOPagos.Size = new System.Drawing.Size(54, 17);
+            this.lblOPagos.TabIndex = 244;
+            this.lblOPagos.Text = "SALIDA";
+            this.lblOPagos.Visible = false;
+            // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -128,6 +142,20 @@ namespace CapaPresentacion
             this.label13.TabIndex = 207;
             this.label13.Text = "TOTALES:";
             // 
+            // lblRecibos
+            // 
+            this.lblRecibos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRecibos.AutoSize = true;
+            this.lblRecibos.BackColor = System.Drawing.Color.LightSalmon;
+            this.lblRecibos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.lblRecibos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRecibos.Location = new System.Drawing.Point(342, 87);
+            this.lblRecibos.Name = "lblRecibos";
+            this.lblRecibos.Size = new System.Drawing.Size(69, 17);
+            this.lblRecibos.TabIndex = 245;
+            this.lblRecibos.Text = "ENTRADA";
+            this.lblRecibos.Visible = false;
+            // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -140,6 +168,30 @@ namespace CapaPresentacion
             this.label11.Size = new System.Drawing.Size(15, 17);
             this.label11.TabIndex = 206;
             this.label11.Text = "$";
+            // 
+            // lblChekAnul
+            // 
+            this.lblChekAnul.AutoSize = true;
+            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
+            this.lblChekAnul.Location = new System.Drawing.Point(598, 693);
+            this.lblChekAnul.Name = "lblChekAnul";
+            this.lblChekAnul.Size = new System.Drawing.Size(160, 15);
+            this.lblChekAnul.TabIndex = 243;
+            this.lblChekAnul.Text = "CLASIFICAR MOVIMIENTOS";
+            // 
+            // chekCLASIFICA
+            // 
+            this.chekCLASIFICA.BaseColor = System.Drawing.SystemColors.Control;
+            this.chekCLASIFICA.CheckedOffColor = System.Drawing.Color.DarkGray;
+            this.chekCLASIFICA.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekCLASIFICA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chekCLASIFICA.FillColor = System.Drawing.Color.White;
+            this.chekCLASIFICA.Location = new System.Drawing.Point(764, 690);
+            this.chekCLASIFICA.Name = "chekCLASIFICA";
+            this.chekCLASIFICA.Size = new System.Drawing.Size(28, 20);
+            this.chekCLASIFICA.TabIndex = 242;
+            this.chekCLASIFICA.CheckedChanged += new System.EventHandler(this.chekCLASIFICA_CheckedChanged);
             // 
             // tbDebe
             // 
@@ -278,6 +330,7 @@ namespace CapaPresentacion
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -304,6 +357,7 @@ namespace CapaPresentacion
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -602,6 +656,7 @@ namespace CapaPresentacion
             // cbCtaBancaria
             // 
             this.cbCtaBancaria.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCtaBancaria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCtaBancaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCtaBancaria.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.cbCtaBancaria.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -625,58 +680,6 @@ namespace CapaPresentacion
             this.label12.Size = new System.Drawing.Size(190, 25);
             this.label12.TabIndex = 83;
             this.label12.Text = "CUENTAS DE BANCO";
-            // 
-            // lblOPagos
-            // 
-            this.lblOPagos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblOPagos.AutoSize = true;
-            this.lblOPagos.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblOPagos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.lblOPagos.ForeColor = System.Drawing.Color.White;
-            this.lblOPagos.Location = new System.Drawing.Point(441, 87);
-            this.lblOPagos.Name = "lblOPagos";
-            this.lblOPagos.Size = new System.Drawing.Size(54, 17);
-            this.lblOPagos.TabIndex = 244;
-            this.lblOPagos.Text = "SALIDA";
-            this.lblOPagos.Visible = false;
-            // 
-            // lblRecibos
-            // 
-            this.lblRecibos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblRecibos.AutoSize = true;
-            this.lblRecibos.BackColor = System.Drawing.Color.LightSalmon;
-            this.lblRecibos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.lblRecibos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblRecibos.Location = new System.Drawing.Point(342, 87);
-            this.lblRecibos.Name = "lblRecibos";
-            this.lblRecibos.Size = new System.Drawing.Size(69, 17);
-            this.lblRecibos.TabIndex = 245;
-            this.lblRecibos.Text = "ENTRADA";
-            this.lblRecibos.Visible = false;
-            // 
-            // lblChekAnul
-            // 
-            this.lblChekAnul.AutoSize = true;
-            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(598, 693);
-            this.lblChekAnul.Name = "lblChekAnul";
-            this.lblChekAnul.Size = new System.Drawing.Size(160, 15);
-            this.lblChekAnul.TabIndex = 243;
-            this.lblChekAnul.Text = "CLASIFICAR MOVIMIENTOS";
-            // 
-            // chekCLASIFICA
-            // 
-            this.chekCLASIFICA.BaseColor = System.Drawing.SystemColors.Control;
-            this.chekCLASIFICA.CheckedOffColor = System.Drawing.Color.DarkGray;
-            this.chekCLASIFICA.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.chekCLASIFICA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chekCLASIFICA.FillColor = System.Drawing.Color.White;
-            this.chekCLASIFICA.Location = new System.Drawing.Point(764, 690);
-            this.chekCLASIFICA.Name = "chekCLASIFICA";
-            this.chekCLASIFICA.Size = new System.Drawing.Size(28, 20);
-            this.chekCLASIFICA.TabIndex = 242;
-            this.chekCLASIFICA.CheckedChanged += new System.EventHandler(this.chekCLASIFICA_CheckedChanged);
             // 
             // FormInfoBanco
             // 

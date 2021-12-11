@@ -765,6 +765,7 @@
             // cbDNICUIT
             // 
             this.cbDNICUIT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbDNICUIT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbDNICUIT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDNICUIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbDNICUIT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);

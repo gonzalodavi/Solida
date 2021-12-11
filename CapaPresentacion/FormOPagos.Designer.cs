@@ -1911,6 +1911,7 @@
             // cbCuentaBanco
             // 
             this.cbCuentaBanco.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCuentaBanco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCuentaBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCuentaBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCuentaBanco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);

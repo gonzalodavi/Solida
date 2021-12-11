@@ -202,9 +202,22 @@ namespace Presentacion
 
         private void btnCancela_Click(object sender, EventArgs e)
         {
-            DeshabilitarEdicion();
-            lblNuevoOModUser.Text = "Nuevo Usuario";
-            lblNuevoOModUser.Visible = false;
+            DialogResult Opcion;
+            Opcion = MessageBox.Show("Desea Cancelar la Operación?", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            try
+            {
+                if (Opcion == DialogResult.OK)
+                {
+                    DeshabilitarEdicion();
+                    lblNuevoOModUser.Text = "Nuevo Usuario";
+                    lblNuevoOModUser.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            
         }        
 
 

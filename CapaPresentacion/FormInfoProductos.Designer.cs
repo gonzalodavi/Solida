@@ -34,6 +34,8 @@ namespace CapaPresentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoProductos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
+            this.chekCLASIFICA = new Guna.UI.WinForms.GunaSwitch();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.label20 = new System.Windows.Forms.Label();
             this.chekRubro = new Guna.UI.WinForms.GunaMediumCheckBox();
@@ -61,18 +63,12 @@ namespace CapaPresentacion
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblOPagos = new System.Windows.Forms.Label();
-            this.lblRecibos = new System.Windows.Forms.Label();
-            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
-            this.chekCLASIFICA = new Guna.UI.WinForms.GunaSwitch();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblOPagos);
-            this.panel1.Controls.Add(this.lblRecibos);
             this.panel1.Controls.Add(this.lblChekAnul);
             this.panel1.Controls.Add(this.chekCLASIFICA);
             this.panel1.Controls.Add(this.btnActualizar);
@@ -106,6 +102,30 @@ namespace CapaPresentacion
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1026, 749);
             this.panel1.TabIndex = 0;
+            // 
+            // lblChekAnul
+            // 
+            this.lblChekAnul.AutoSize = true;
+            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
+            this.lblChekAnul.Location = new System.Drawing.Point(568, 158);
+            this.lblChekAnul.Name = "lblChekAnul";
+            this.lblChekAnul.Size = new System.Drawing.Size(168, 15);
+            this.lblChekAnul.TabIndex = 243;
+            this.lblChekAnul.Text = "VER PRODUCTOS FALTANTES";
+            // 
+            // chekCLASIFICA
+            // 
+            this.chekCLASIFICA.BaseColor = System.Drawing.SystemColors.Control;
+            this.chekCLASIFICA.CheckedOffColor = System.Drawing.Color.DarkGray;
+            this.chekCLASIFICA.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekCLASIFICA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chekCLASIFICA.FillColor = System.Drawing.Color.White;
+            this.chekCLASIFICA.Location = new System.Drawing.Point(742, 155);
+            this.chekCLASIFICA.Name = "chekCLASIFICA";
+            this.chekCLASIFICA.Size = new System.Drawing.Size(28, 20);
+            this.chekCLASIFICA.TabIndex = 242;
+            this.chekCLASIFICA.CheckedChanged += new System.EventHandler(this.chekCLASIFICA_CheckedChanged);
             // 
             // btnActualizar
             // 
@@ -151,6 +171,7 @@ namespace CapaPresentacion
             this.chekRubro.BaseColor = System.Drawing.Color.White;
             this.chekRubro.CheckedOffColor = System.Drawing.Color.Gray;
             this.chekRubro.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekRubro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekRubro.FillColor = System.Drawing.Color.White;
             this.chekRubro.Location = new System.Drawing.Point(393, 118);
             this.chekRubro.Name = "chekRubro";
@@ -173,6 +194,7 @@ namespace CapaPresentacion
             // cbRubro
             // 
             this.cbRubro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbRubro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbRubro.Enabled = false;
             this.cbRubro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbRubro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -192,7 +214,7 @@ namespace CapaPresentacion
             this.tbCantProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCantProd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCantProd.ForeColor = System.Drawing.Color.Yellow;
-            this.tbCantProd.Location = new System.Drawing.Point(259, 645);
+            this.tbCantProd.Location = new System.Drawing.Point(597, 664);
             this.tbCantProd.Name = "tbCantProd";
             this.tbCantProd.ReadOnly = true;
             this.tbCantProd.Size = new System.Drawing.Size(92, 29);
@@ -205,7 +227,7 @@ namespace CapaPresentacion
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(66, 647);
+            this.gunaLabel1.Location = new System.Drawing.Point(404, 666);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(187, 21);
             this.gunaLabel1.TabIndex = 230;
@@ -218,7 +240,7 @@ namespace CapaPresentacion
             this.tbCantRubros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCantRubros.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCantRubros.ForeColor = System.Drawing.Color.Yellow;
-            this.tbCantRubros.Location = new System.Drawing.Point(259, 686);
+            this.tbCantRubros.Location = new System.Drawing.Point(235, 664);
             this.tbCantRubros.Name = "tbCantRubros";
             this.tbCantRubros.ReadOnly = true;
             this.tbCantRubros.Size = new System.Drawing.Size(92, 29);
@@ -231,7 +253,7 @@ namespace CapaPresentacion
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(90, 688);
+            this.gunaLabel2.Location = new System.Drawing.Point(66, 666);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(163, 21);
             this.gunaLabel2.TabIndex = 228;
@@ -265,7 +287,7 @@ namespace CapaPresentacion
             this.btnImprimir.IconColor = System.Drawing.Color.White;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 25;
-            this.btnImprimir.Location = new System.Drawing.Point(831, 678);
+            this.btnImprimir.Location = new System.Drawing.Point(831, 663);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(116, 31);
             this.btnImprimir.TabIndex = 221;
@@ -546,58 +568,6 @@ namespace CapaPresentacion
             this.label12.TabIndex = 209;
             this.label12.Text = "STOCK DE PRODUCTOS";
             // 
-            // lblOPagos
-            // 
-            this.lblOPagos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblOPagos.AutoSize = true;
-            this.lblOPagos.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblOPagos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.lblOPagos.ForeColor = System.Drawing.Color.White;
-            this.lblOPagos.Location = new System.Drawing.Point(635, 625);
-            this.lblOPagos.Name = "lblOPagos";
-            this.lblOPagos.Size = new System.Drawing.Size(54, 17);
-            this.lblOPagos.TabIndex = 244;
-            this.lblOPagos.Text = "SALIDA";
-            this.lblOPagos.Visible = false;
-            // 
-            // lblRecibos
-            // 
-            this.lblRecibos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblRecibos.AutoSize = true;
-            this.lblRecibos.BackColor = System.Drawing.Color.Orange;
-            this.lblRecibos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.lblRecibos.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblRecibos.Location = new System.Drawing.Point(508, 625);
-            this.lblRecibos.Name = "lblRecibos";
-            this.lblRecibos.Size = new System.Drawing.Size(69, 17);
-            this.lblRecibos.TabIndex = 245;
-            this.lblRecibos.Text = "ENTRADA";
-            this.lblRecibos.Visible = false;
-            // 
-            // lblChekAnul
-            // 
-            this.lblChekAnul.AutoSize = true;
-            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(766, 625);
-            this.lblChekAnul.Name = "lblChekAnul";
-            this.lblChekAnul.Size = new System.Drawing.Size(168, 15);
-            this.lblChekAnul.TabIndex = 243;
-            this.lblChekAnul.Text = "VER PRODUCTOS FALTANTES";
-            // 
-            // chekCLASIFICA
-            // 
-            this.chekCLASIFICA.BaseColor = System.Drawing.SystemColors.Control;
-            this.chekCLASIFICA.CheckedOffColor = System.Drawing.Color.DarkGray;
-            this.chekCLASIFICA.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.chekCLASIFICA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chekCLASIFICA.FillColor = System.Drawing.Color.White;
-            this.chekCLASIFICA.Location = new System.Drawing.Point(940, 622);
-            this.chekCLASIFICA.Name = "chekCLASIFICA";
-            this.chekCLASIFICA.Size = new System.Drawing.Size(28, 20);
-            this.chekCLASIFICA.TabIndex = 242;
-            this.chekCLASIFICA.CheckedChanged += new System.EventHandler(this.chekCLASIFICA_CheckedChanged);
-            // 
             // FormInfoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,8 +618,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label20;
         private Guna.UI.WinForms.GunaMediumCheckBox chekRubro;
         private FontAwesome.Sharp.IconButton btnActualizar;
-        private System.Windows.Forms.Label lblOPagos;
-        private System.Windows.Forms.Label lblRecibos;
         private Guna.UI.WinForms.GunaLabel lblChekAnul;
         private Guna.UI.WinForms.GunaSwitch chekCLASIFICA;
     }

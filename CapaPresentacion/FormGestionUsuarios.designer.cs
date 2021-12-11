@@ -35,6 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionUsuarios));
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnEliminarUser = new FontAwesome.Sharp.IconButton();
+            this.btnModificarUser = new FontAwesome.Sharp.IconButton();
+            this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.lblErrorMail = new System.Windows.Forms.Label();
             this.lblErrorApellido = new System.Windows.Forms.Label();
             this.lblErrorNombre = new System.Windows.Forms.Label();
@@ -73,9 +76,6 @@
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnEliminarUser = new FontAwesome.Sharp.IconButton();
-            this.btnModificarUser = new FontAwesome.Sharp.IconButton();
-            this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -130,6 +130,81 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1026, 749);
             this.panelContenedor.TabIndex = 0;
+            // 
+            // btnEliminarUser
+            // 
+            this.btnEliminarUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnEliminarUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEliminarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEliminarUser.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarUser.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
+            this.btnEliminarUser.IconColor = System.Drawing.Color.White;
+            this.btnEliminarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminarUser.IconSize = 25;
+            this.btnEliminarUser.Location = new System.Drawing.Point(842, 290);
+            this.btnEliminarUser.Name = "btnEliminarUser";
+            this.btnEliminarUser.Size = new System.Drawing.Size(116, 31);
+            this.btnEliminarUser.TabIndex = 190;
+            this.btnEliminarUser.TabStop = false;
+            this.btnEliminarUser.Text = "ELIMINAR";
+            this.btnEliminarUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarUser.UseVisualStyleBackColor = false;
+            this.btnEliminarUser.Click += new System.EventHandler(this.btnEliminarUser_Click);
+            // 
+            // btnModificarUser
+            // 
+            this.btnModificarUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnModificarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnModificarUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModificarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModificarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnModificarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnModificarUser.ForeColor = System.Drawing.Color.White;
+            this.btnModificarUser.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnModificarUser.IconColor = System.Drawing.Color.White;
+            this.btnModificarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificarUser.IconSize = 25;
+            this.btnModificarUser.Location = new System.Drawing.Point(842, 224);
+            this.btnModificarUser.Name = "btnModificarUser";
+            this.btnModificarUser.Size = new System.Drawing.Size(116, 31);
+            this.btnModificarUser.TabIndex = 189;
+            this.btnModificarUser.TabStop = false;
+            this.btnModificarUser.Text = "MODIFICAR";
+            this.btnModificarUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificarUser.UseVisualStyleBackColor = false;
+            this.btnModificarUser.Click += new System.EventHandler(this.btnModificarUser_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnNuevo.IconColor = System.Drawing.Color.White;
+            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevo.IconSize = 25;
+            this.btnNuevo.Location = new System.Drawing.Point(842, 158);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(116, 31);
+            this.btnNuevo.TabIndex = 188;
+            this.btnNuevo.TabStop = false;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblErrorMail
             // 
@@ -286,6 +361,7 @@
             this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUsuarios.ColumnHeadersVisible = false;
+            this.dgvUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -702,81 +778,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(292, 25);
             this.lblTitulo.TabIndex = 12;
             this.lblTitulo.Text = "MANTENIMIENTO DE USUARIOS";
-            // 
-            // btnEliminarUser
-            // 
-            this.btnEliminarUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEliminarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEliminarUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEliminarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarUser.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarUser.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
-            this.btnEliminarUser.IconColor = System.Drawing.Color.White;
-            this.btnEliminarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarUser.IconSize = 25;
-            this.btnEliminarUser.Location = new System.Drawing.Point(842, 290);
-            this.btnEliminarUser.Name = "btnEliminarUser";
-            this.btnEliminarUser.Size = new System.Drawing.Size(116, 31);
-            this.btnEliminarUser.TabIndex = 190;
-            this.btnEliminarUser.TabStop = false;
-            this.btnEliminarUser.Text = "ELIMINAR";
-            this.btnEliminarUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarUser.UseVisualStyleBackColor = false;
-            this.btnEliminarUser.Click += new System.EventHandler(this.btnEliminarUser_Click);
-            // 
-            // btnModificarUser
-            // 
-            this.btnModificarUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnModificarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnModificarUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnModificarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnModificarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnModificarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModificarUser.ForeColor = System.Drawing.Color.White;
-            this.btnModificarUser.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btnModificarUser.IconColor = System.Drawing.Color.White;
-            this.btnModificarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificarUser.IconSize = 25;
-            this.btnModificarUser.Location = new System.Drawing.Point(842, 224);
-            this.btnModificarUser.Name = "btnModificarUser";
-            this.btnModificarUser.Size = new System.Drawing.Size(116, 31);
-            this.btnModificarUser.TabIndex = 189;
-            this.btnModificarUser.TabStop = false;
-            this.btnModificarUser.Text = "MODIFICAR";
-            this.btnModificarUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificarUser.UseVisualStyleBackColor = false;
-            this.btnModificarUser.Click += new System.EventHandler(this.btnModificarUser_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnNuevo.IconColor = System.Drawing.Color.White;
-            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevo.IconSize = 25;
-            this.btnNuevo.Location = new System.Drawing.Point(842, 158);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(116, 31);
-            this.btnNuevo.TabIndex = 188;
-            this.btnNuevo.TabStop = false;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // FormGestionUsuarios
             // 

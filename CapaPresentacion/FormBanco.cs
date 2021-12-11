@@ -115,85 +115,6 @@ namespace CapaPresentacion
         }
 
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-            habilitaCampos();
-            tbNumeroCuenta.Focus();
-            rbCA.Checked = true;
-            lblSubtitulo.Text = "Nueva Cuenta Bancaria";
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            if (dgvCuentasBanco.SelectedRows.Count > 0)
-            {
-                Editar = true;
-                limpiarCampos();
-                habilitaCampos();
-                lblSubtitulo.Text = "Modificar Cuenta Bancaria";
-                tbID.Text = dgvCuentasBanco.CurrentRow.Cells["ID_BANCO"].Value.ToString();
-                tbNumeroCuenta.Text = dgvCuentasBanco.CurrentRow.Cells["NRO_CTA"].Value.ToString();
-                tbEntidadBancaria.Text = dgvCuentasBanco.CurrentRow.Cells["NOMBRE_BANCO"].Value.ToString();
-                if (dgvCuentasBanco.CurrentRow.Cells["TIPO_CTA"].Value.ToString() == "CA")
-                {
-                    rbCA.Checked = true;
-                }
-                else
-                {
-                    if (dgvCuentasBanco.CurrentRow.Cells["TIPO_CTA"].Value.ToString() == "CC")
-                    {
-                        rbCC.Checked = true;
-                    }
-                }                
-                tbTitular.Text = dgvCuentasBanco.CurrentRow.Cells["TITULAR_CTA"].Value.ToString();
-                tbCBU.Text = dgvCuentasBanco.CurrentRow.Cells["CBU_CTA"].Value.ToString();
-                tbAlias.Text = dgvCuentasBanco.CurrentRow.Cells["ALIAS_CTA"].Value.ToString();
-            }
-            else
-            {
-                MensajeError("Seleccione una cuenta para modificar");
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvCuentasBanco.SelectedRows.Count > 0)
-            {                
-                DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea Eliminar la cuenta de Banco seleccionada", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                try
-                {
-                    string Rpta = "";
-                    int idCuenta = Convert.ToInt32(dgvCuentasBanco.CurrentRow.Cells["ID_BANCO"].Value.ToString());
-                    if (Opcion == DialogResult.OK)
-                    {
-
-                        Rpta = CN_CuentaBancaria.Eliminar(idCuenta);
-
-                        if (Rpta.Equals("OK"))
-                        {
-                            this.MensajeOk("Se Eliminó Correctamente la Cuenta Bancaria seleccionada");
-                        }
-                        else
-                        {
-                            this.MensajeError(Rpta);
-                        }
-                        limpiarCampos();
-                        CargarGrilla();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MensajeError(ex.Message + ex.StackTrace);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-        }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (tbNumeroCuenta.Text == "" || tbEntidadBancaria.Text == "" || tbTitular.Text == "" || tbCBU.Text == "" || tbAlias.Text == "")
@@ -297,6 +218,85 @@ namespace CapaPresentacion
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            habilitaCampos();
+            tbNumeroCuenta.Focus();
+            rbCA.Checked = true;
+            lblSubtitulo.Text = "Nueva Cuenta Bancaria";
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvCuentasBanco.SelectedRows.Count > 0)
+            {
+                Editar = true;
+                limpiarCampos();
+                habilitaCampos();
+                lblSubtitulo.Text = "Modificar Cuenta Bancaria";
+                tbID.Text = dgvCuentasBanco.CurrentRow.Cells["ID_BANCO"].Value.ToString();
+                tbNumeroCuenta.Text = dgvCuentasBanco.CurrentRow.Cells["NRO_CTA"].Value.ToString();
+                tbEntidadBancaria.Text = dgvCuentasBanco.CurrentRow.Cells["NOMBRE_BANCO"].Value.ToString();
+                if (dgvCuentasBanco.CurrentRow.Cells["TIPO_CTA"].Value.ToString() == "CA")
+                {
+                    rbCA.Checked = true;
+                }
+                else
+                {
+                    if (dgvCuentasBanco.CurrentRow.Cells["TIPO_CTA"].Value.ToString() == "CC")
+                    {
+                        rbCC.Checked = true;
+                    }
+                }
+                tbTitular.Text = dgvCuentasBanco.CurrentRow.Cells["TITULAR_CTA"].Value.ToString();
+                tbCBU.Text = dgvCuentasBanco.CurrentRow.Cells["CBU_CTA"].Value.ToString();
+                tbAlias.Text = dgvCuentasBanco.CurrentRow.Cells["ALIAS_CTA"].Value.ToString();
+            }
+            else
+            {
+                MensajeError("Seleccione una cuenta para modificar");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvCuentasBanco.SelectedRows.Count > 0)
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Desea Eliminar la cuenta de Banco seleccionada", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                try
+                {
+                    string Rpta = "";
+                    int idCuenta = Convert.ToInt32(dgvCuentasBanco.CurrentRow.Cells["ID_BANCO"].Value.ToString());
+                    if (Opcion == DialogResult.OK)
+                    {
+
+                        Rpta = CN_CuentaBancaria.Eliminar(idCuenta);
+
+                        if (Rpta.Equals("OK"))
+                        {
+                            this.MensajeOk("Se Eliminó Correctamente la Cuenta Bancaria seleccionada");
+                        }
+                        else
+                        {
+                            this.MensajeError(Rpta);
+                        }
+                        limpiarCampos();
+                        CargarGrilla();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MensajeError(ex.Message + ex.StackTrace);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
+        }
     }
 }

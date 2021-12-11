@@ -327,6 +327,7 @@ namespace CapaPresentacion
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -353,6 +354,7 @@ namespace CapaPresentacion
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));

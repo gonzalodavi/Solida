@@ -126,8 +126,22 @@ namespace CapaPresentacion
 
         private void btnCancela_Click(object sender, EventArgs e)
         {
-            DeshabilitarEdicion();
-            Editar = false;
+
+            DialogResult Opcion;
+            Opcion = MessageBox.Show("Desea Cancelar la Operación?", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            try
+            {
+                if (Opcion == DialogResult.OK)
+                {
+                    DeshabilitarEdicion();
+                    Editar = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            
         }
         private void DeshabilitarEdicion()
         {

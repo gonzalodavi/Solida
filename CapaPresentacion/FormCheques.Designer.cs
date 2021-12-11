@@ -97,6 +97,7 @@
             // cbEstadoCheques
             // 
             this.cbEstadoCheques.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbEstadoCheques.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbEstadoCheques.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstadoCheques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEstadoCheques.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -184,6 +185,7 @@
             this.dgvCheques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCheques.ColumnHeadersVisible = false;
+            this.dgvCheques.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

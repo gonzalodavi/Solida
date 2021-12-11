@@ -209,6 +209,7 @@
             this.chekMovPend.Checked = true;
             this.chekMovPend.CheckedOffColor = System.Drawing.Color.Gray;
             this.chekMovPend.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekMovPend.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekMovPend.FillColor = System.Drawing.Color.White;
             this.chekMovPend.Location = new System.Drawing.Point(468, 44);
             this.chekMovPend.Name = "chekMovPend";
@@ -220,7 +221,7 @@
             this.lblChekAnul.AutoSize = true;
             this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(778, 243);
+            this.lblChekAnul.Location = new System.Drawing.Point(779, 295);
             this.lblChekAnul.Name = "lblChekAnul";
             this.lblChekAnul.Size = new System.Drawing.Size(79, 17);
             this.lblChekAnul.TabIndex = 154;
@@ -233,7 +234,7 @@
             this.chekFecha.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.chekFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekFecha.FillColor = System.Drawing.Color.White;
-            this.chekFecha.Location = new System.Drawing.Point(856, 242);
+            this.chekFecha.Location = new System.Drawing.Point(857, 294);
             this.chekFecha.Name = "chekFecha";
             this.chekFecha.Size = new System.Drawing.Size(28, 20);
             this.chekFecha.TabIndex = 153;
@@ -244,6 +245,7 @@
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.Enabled = false;
@@ -251,7 +253,7 @@
             this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(773, 124);
+            this.dtpFecha1.Location = new System.Drawing.Point(773, 146);
             this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha1.Name = "dtpFecha1";
@@ -270,6 +272,7 @@
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.Enabled = false;
@@ -277,7 +280,7 @@
             this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(773, 188);
+            this.dtpFecha2.Location = new System.Drawing.Point(773, 227);
             this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha2.Name = "dtpFecha2";
@@ -334,6 +337,7 @@
             // cbCliente
             // 
             this.cbCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -470,7 +474,7 @@
             this.lblFecha2.AutoSize = true;
             this.lblFecha2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblFecha2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFecha2.Location = new System.Drawing.Point(808, 169);
+            this.lblFecha2.Location = new System.Drawing.Point(808, 208);
             this.lblFecha2.Name = "lblFecha2";
             this.lblFecha2.Size = new System.Drawing.Size(47, 17);
             this.lblFecha2.TabIndex = 94;
@@ -496,7 +500,7 @@
             this.lblFecha1.AutoSize = true;
             this.lblFecha1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblFecha1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFecha1.Location = new System.Drawing.Point(806, 105);
+            this.lblFecha1.Location = new System.Drawing.Point(806, 127);
             this.lblFecha1.Name = "lblFecha1";
             this.lblFecha1.Size = new System.Drawing.Size(50, 17);
             this.lblFecha1.TabIndex = 93;
@@ -620,6 +624,7 @@
             this.dtpFecha1Prov.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1Prov.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1Prov.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1Prov.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1Prov.CustomFormat = null;
             this.dtpFecha1Prov.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1Prov.Enabled = false;
@@ -646,6 +651,7 @@
             this.dtpFecha2Prov.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2Prov.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2Prov.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2Prov.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2Prov.CustomFormat = null;
             this.dtpFecha2Prov.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2Prov.Enabled = false;
@@ -710,6 +716,7 @@
             // cbProveedores
             // 
             this.cbProveedores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbProveedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProveedores.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);

@@ -35,6 +35,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabCompras = new System.Windows.Forms.TabControl();
             this.tabListadoCompras = new System.Windows.Forms.TabPage();
+            this.btnActualizar = new FontAwesome.Sharp.IconButton();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
             this.chekPorFecha = new Guna.UI.WinForms.GunaSwitch();
             this.rbImporte = new Guna.UI.WinForms.GunaRadioButton();
@@ -55,8 +57,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.tabCompras.SuspendLayout();
             this.tabListadoCompras.SuspendLayout();
@@ -119,6 +119,43 @@
             this.tabListadoCompras.TabIndex = 0;
             this.tabListadoCompras.Text = "Consultas";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.btnActualizar.IconColor = System.Drawing.Color.White;
+            this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizar.IconSize = 25;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(773, 27);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizar.TabIndex = 186;
+            this.btnActualizar.TabStop = false;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel1.Location = new System.Drawing.Point(67, 523);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(297, 17);
+            this.gunaLabel1.TabIndex = 185;
+            this.gunaLabel1.Text = "* Doble Click para ver Detalle de Comprobante";
+            // 
             // lblChekAnul
             // 
             this.lblChekAnul.AutoSize = true;
@@ -148,6 +185,7 @@
             this.rbImporte.BaseColor = System.Drawing.SystemColors.Control;
             this.rbImporte.CheckedOffColor = System.Drawing.Color.Gray;
             this.rbImporte.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.rbImporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbImporte.FillColor = System.Drawing.Color.White;
             this.rbImporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.rbImporte.ForeColor = System.Drawing.SystemColors.Control;
@@ -163,6 +201,7 @@
             this.rbCantidad.Checked = true;
             this.rbCantidad.CheckedOffColor = System.Drawing.Color.Gray;
             this.rbCantidad.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.rbCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbCantidad.FillColor = System.Drawing.Color.White;
             this.rbCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.rbCantidad.ForeColor = System.Drawing.SystemColors.Control;
@@ -216,6 +255,7 @@
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.Enabled = false;
@@ -254,6 +294,7 @@
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.Enabled = false;
@@ -481,43 +522,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(206, 25);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "INFORMES DE VENTAS";
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(67, 523);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(297, 17);
-            this.gunaLabel1.TabIndex = 185;
-            this.gunaLabel1.Text = "* Doble Click para ver Detalle de Comprobante";
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.btnActualizar.IconColor = System.Drawing.Color.White;
-            this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizar.IconSize = 25;
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(773, 27);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(116, 31);
-            this.btnActualizar.TabIndex = 186;
-            this.btnActualizar.TabStop = false;
-            this.btnActualizar.Text = "ACTUALIZAR";
-            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // FormInfoVentas
             // 

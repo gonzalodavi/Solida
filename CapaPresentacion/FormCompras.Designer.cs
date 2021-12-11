@@ -281,6 +281,7 @@
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -306,6 +307,7 @@
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -891,6 +893,7 @@
             this.dtpFecha.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha.BaseColor = System.Drawing.Color.White;
             this.dtpFecha.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha.CustomFormat = null;
             this.dtpFecha.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1520,7 +1523,7 @@
             this.btnActualizaListaProv.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.btnActualizaListaProv.IconColor = System.Drawing.Color.White;
             this.btnActualizaListaProv.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaListaProv.IconSize = 18;
+            this.btnActualizaListaProv.IconSize = 25;
             this.btnActualizaListaProv.Location = new System.Drawing.Point(767, 20);
             this.btnActualizaListaProv.Name = "btnActualizaListaProv";
             this.btnActualizaListaProv.Size = new System.Drawing.Size(116, 31);
@@ -1828,7 +1831,7 @@
             this.btnActualizaListaProd.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.btnActualizaListaProd.IconColor = System.Drawing.Color.White;
             this.btnActualizaListaProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaListaProd.IconSize = 18;
+            this.btnActualizaListaProd.IconSize = 25;
             this.btnActualizaListaProd.Location = new System.Drawing.Point(767, 17);
             this.btnActualizaListaProd.Name = "btnActualizaListaProd";
             this.btnActualizaListaProd.Size = new System.Drawing.Size(116, 31);
