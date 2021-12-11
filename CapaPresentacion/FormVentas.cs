@@ -122,7 +122,6 @@ namespace CapaPresentacion
             tbIDprod.Text = "";
             this.dgvClientes.Columns.Clear();
             this.dgvProductos.Columns.Clear();
-
         }
 
         private void CargarSucursal()
@@ -176,8 +175,10 @@ namespace CapaPresentacion
             {
                 chekConsumidorFinal.Checked = false;
             }
-            tabVentas.SelectedTab = tabClientes;
             panelClientes.Enabled = true;
+            lblPanelClientes.Visible = false;
+            tabVentas.SelectedTab = tabClientes;
+
             CargarClientes();
         }
 
@@ -198,6 +199,7 @@ namespace CapaPresentacion
         {
             tabVentas.SelectedTab = tabProductos;
             panelProductos.Enabled = true;
+            lblPanelProductos.Visible = false;
             CargarProductos();
         }
 
@@ -246,6 +248,7 @@ namespace CapaPresentacion
             tabVentas.SelectedTab = tabNuevaVenta;
             this.dgvClientes.Columns.Clear();
             panelClientes.Enabled = false;
+            lblPanelClientes.Visible = true;
         }
 
         private void dgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -258,6 +261,7 @@ namespace CapaPresentacion
             tabVentas.SelectedTab = tabNuevaVenta;
             this.dgvProductos.Columns.Clear();
             panelProductos.Enabled = false;
+            lblPanelProductos.Visible = true;
             tbCantidad.Focus();
         }
 
@@ -323,7 +327,6 @@ namespace CapaPresentacion
                 else
                 {
                     this.MensajeError("Por Favor, Seleccione un producto de la lista");
-
                 }
             }
             else
@@ -747,7 +750,7 @@ namespace CapaPresentacion
                 if (Convert.ToDecimal(MyRow.Cells[8].Value) <= Convert.ToDecimal(MyRow.Cells[9].Value))
                 {                    
                     MyRow.DefaultCellStyle.BackColor = Color.Orange;
-                    MyRow.DefaultCellStyle.ForeColor = Color.Red;
+                    MyRow.DefaultCellStyle.ForeColor = Color.DarkRed;
                 }
             }           
         }
@@ -848,5 +851,9 @@ namespace CapaPresentacion
             }            
         }
 
+        private void panelClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

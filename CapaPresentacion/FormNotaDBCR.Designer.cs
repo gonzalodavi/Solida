@@ -31,8 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabNotasDBCR = new System.Windows.Forms.TabControl();
             this.tabListaNotas = new System.Windows.Forms.TabPage();
             this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
@@ -52,7 +50,9 @@
             this.lblFecha2 = new System.Windows.Forms.Label();
             this.lblFecha1 = new System.Windows.Forms.Label();
             this.dgvNotasDBCR = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabNuevaNotasDBCR = new System.Windows.Forms.TabPage();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.lblTotalNota = new System.Windows.Forms.Label();
             this.tbImporte = new System.Windows.Forms.TextBox();
             this.lbl5 = new System.Windows.Forms.Label();
@@ -68,11 +68,9 @@
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.panelContenedor = new Guna.UI.WinForms.GunaPanel();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabNotasDBCR.SuspendLayout();
             this.tabListaNotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotasDBCR)).BeginInit();
@@ -154,6 +152,7 @@
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -179,6 +178,7 @@
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -311,6 +311,7 @@
             this.btnBuscarReg.IconSize = 25;
             this.btnBuscarReg.Location = new System.Drawing.Point(391, 42);
             this.btnBuscarReg.Name = "btnBuscarReg";
+            this.btnBuscarReg.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnBuscarReg.Size = new System.Drawing.Size(116, 31);
             this.btnBuscarReg.TabIndex = 98;
             this.btnBuscarReg.TabStop = false;
@@ -336,6 +337,7 @@
             this.btnNuevo.IconSize = 25;
             this.btnNuevo.Location = new System.Drawing.Point(773, 154);
             this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnNuevo.Size = new System.Drawing.Size(116, 31);
             this.btnNuevo.TabIndex = 99;
             this.btnNuevo.TabStop = false;
@@ -385,6 +387,7 @@
             this.btnImprimir.IconSize = 25;
             this.btnImprimir.Location = new System.Drawing.Point(773, 475);
             this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnImprimir.Size = new System.Drawing.Size(116, 31);
             this.btnImprimir.TabIndex = 101;
             this.btnImprimir.TabStop = false;
@@ -436,7 +439,7 @@
             this.dgvNotasDBCR.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -444,14 +447,7 @@
             this.dgvNotasDBCR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNotasDBCR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvNotasDBCR.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNotasDBCR.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvNotasDBCR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvNotasDBCR.EnableHeadersVisualStyles = false;
             this.dgvNotasDBCR.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvNotasDBCR.Location = new System.Drawing.Point(56, 133);
@@ -459,31 +455,37 @@
             this.dgvNotasDBCR.Name = "dgvNotasDBCR";
             this.dgvNotasDBCR.ReadOnly = true;
             this.dgvNotasDBCR.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotasDBCR.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvNotasDBCR.RowHeadersVisible = false;
             this.dgvNotasDBCR.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvNotasDBCR.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvNotasDBCR.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNotasDBCR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotasDBCR.Size = new System.Drawing.Size(646, 391);
             this.dgvNotasDBCR.TabIndex = 92;
             this.dgvNotasDBCR.TabStop = false;
             // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoEllipsis = true;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label10.Location = new System.Drawing.Point(55, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(648, 395);
+            this.label10.TabIndex = 185;
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // tabNuevaNotasDBCR
             // 
             this.tabNuevaNotasDBCR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevaNotasDBCR.Controls.Add(this.btnGuardar);
             this.tabNuevaNotasDBCR.Controls.Add(this.lblTotalNota);
             this.tabNuevaNotasDBCR.Controls.Add(this.tbImporte);
             this.tabNuevaNotasDBCR.Controls.Add(this.lbl5);
@@ -492,13 +494,38 @@
             this.tabNuevaNotasDBCR.Controls.Add(this.cbCliente);
             this.tabNuevaNotasDBCR.Controls.Add(this.gpDetinatario);
             this.tabNuevaNotasDBCR.Controls.Add(this.lbl1);
-            this.tabNuevaNotasDBCR.Controls.Add(this.btnGuardar);
             this.tabNuevaNotasDBCR.Location = new System.Drawing.Point(4, 26);
             this.tabNuevaNotasDBCR.Name = "tabNuevaNotasDBCR";
             this.tabNuevaNotasDBCR.Padding = new System.Windows.Forms.Padding(3);
             this.tabNuevaNotasDBCR.Size = new System.Drawing.Size(948, 577);
             this.tabNuevaNotasDBCR.TabIndex = 1;
             this.tabNuevaNotasDBCR.Text = "Nuevo";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 25;
+            this.btnGuardar.Location = new System.Drawing.Point(651, 370);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(116, 31);
+            this.btnGuardar.TabIndex = 138;
+            this.btnGuardar.TabStop = false;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblTotalNota
             // 
@@ -572,6 +599,7 @@
             // cbCliente
             // 
             this.cbCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -607,6 +635,7 @@
             this.dtpFechaNota.BackColor = System.Drawing.Color.Transparent;
             this.dtpFechaNota.BaseColor = System.Drawing.Color.White;
             this.dtpFechaNota.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFechaNota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFechaNota.CustomFormat = null;
             this.dtpFechaNota.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFechaNota.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -646,6 +675,7 @@
             // 
             this.rbCredito.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbCredito.AutoSize = true;
+            this.rbCredito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbCredito.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.rbCredito.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.rbCredito.Location = new System.Drawing.Point(156, 72);
@@ -672,6 +702,7 @@
             // 
             this.rbDebito.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbDebito.AutoSize = true;
+            this.rbDebito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbDebito.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.rbDebito.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.rbDebito.Location = new System.Drawing.Point(156, 45);
@@ -720,33 +751,6 @@
             this.lbl1.Size = new System.Drawing.Size(55, 17);
             this.lbl1.TabIndex = 131;
             this.lbl1.Text = "Cliente:";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Download;
-            this.btnGuardar.IconColor = System.Drawing.Color.White;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.IconSize = 25;
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(651, 389);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(116, 31);
-            this.btnGuardar.TabIndex = 84;
-            this.btnGuardar.TabStop = false;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblTitulo
             // 
@@ -797,19 +801,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1026, 749);
             this.panelContenedor.TabIndex = 89;
             // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoEllipsis = true;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label10.Location = new System.Drawing.Point(55, 130);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(648, 395);
-            this.label10.TabIndex = 185;
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // FormNotaDBCR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -853,7 +844,6 @@
         private System.Windows.Forms.Label lblFecha1;
         private System.Windows.Forms.DataGridView dgvNotasDBCR;
         private System.Windows.Forms.TabPage tabNuevaNotasDBCR;
-        private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.GroupBox gpDetinatario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rbCredito;
@@ -877,5 +867,6 @@
         private Guna.UI.WinForms.GunaSwitch chekVerAnulados;
         private System.Windows.Forms.Label lblTotalNota;
         private System.Windows.Forms.Label label10;
+        private FontAwesome.Sharp.IconButton btnGuardar;
     }
 }

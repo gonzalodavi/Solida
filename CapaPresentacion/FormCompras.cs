@@ -99,6 +99,7 @@ namespace CapaPresentacion
         private void btnBuscaProveedor_Click(object sender, EventArgs e)
         {
             panelProveedores.Enabled = true;
+            lblPanelProveedores.Visible = false;
             tabCompras.SelectedTab = tabProveedores;
             CargarGrillaProveedores();
         }        
@@ -106,6 +107,7 @@ namespace CapaPresentacion
         private void btnSelProd_Click(object sender, EventArgs e)
         {
             panelProductos.Enabled = true;
+            lblPanelProductos.Visible = false;
             tabCompras.SelectedTab = tabProductos;
             CargarGrillaProductos();
         }
@@ -163,7 +165,7 @@ namespace CapaPresentacion
             panelProveedores.Enabled = false; 
             tabCompras.SelectedTab = tabNuevaCompra;
             tbBuscaProveedor.Text = "";
-
+            lblPanelProveedores.Visible = true;
         }
 
         private void dgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -175,6 +177,7 @@ namespace CapaPresentacion
             this.dgvProductos.Columns.Clear();
             panelProductos.Enabled = false;
             tabCompras.SelectedTab = tabNuevaCompra;
+            lblPanelProductos.Visible = true;
             tbBuscaProductos.Text = "";
             tbCantidad.Focus();
         }
@@ -217,25 +220,6 @@ namespace CapaPresentacion
             tbIDprod.Text = "";
             this.dgvProductos.Columns.Clear();
             this.dgvProveedor.Columns.Clear();
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            if (tbCantidad.Text != "" && tbCantidad.Text != "0" && tbCantidad.Text != "0," && tbCantidad.Text != "," && tbCantidad.Text != "0,0" && tbCantidad.Text != "0,00")
-            {
-                if(tbProducto.Text != "")
-                {
-                    InsertarEnDetalle();
-                }
-                else
-                {
-                    this.MensajeError("Por favor, seleccione un producto de la lista");
-                }
-            }
-            else
-            {
-                this.MensajeError("La cantidad debe ser mayor a 0");
-            }            
         }
 
         private void InsertarEnDetalle()
@@ -324,36 +308,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvDetComp.SelectedRows.Count > 0)
-            {
-                try
-                {
-                    int IndiceFila = dgvDetComp.CurrentCell.RowIndex;
-                    DataRow row = DTDetalles.Rows[IndiceFila];
-
-                    TotIva -= Convert.ToDecimal(row["IVA"].ToString());
-                    tbTotalIVA.Text = TotIva.ToString("0.00");
-
-                    Totales -= Convert.ToDecimal(row["SUBTOTAL"].ToString());
-                    tbTotalFact.Text = Totales.ToString("0.00");
-
-                    DTDetalles.Rows.Remove(row);
-
-                    MessageBox.Show("Se elimino el producto del detalle");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se pudo cargar los datos por:\n\n" + ex);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No existen productos cargados");
-            }
-        }
-
         private void tbCantidad_TextChanged(object sender, EventArgs e)
         {
             if (tbCantidad.Text == "00")
@@ -389,93 +343,6 @@ namespace CapaPresentacion
                 tbSubtotal.Text = importeSubtotal.ToString("0.00");
                 decimal importeIVA = importeSubtotal - (importeSubtotal / (((Convert.ToDecimal(tbIVACompra.Text)) / 100) + 1));
                 tbSubtotalIVA.Text = importeIVA.ToString("0.00");
-            }
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (dgvDetComp.SelectedRows.Count > 0)
-            {
-                try
-                {
-                    string rpta = "";
-                    if (this.tbCuit.Text == string.Empty)
-                    {
-                        MensajeError("Seleccione Un Proveedor");
-                    }
-                    else
-                    {
-                        if (this.tbNumComp.Text == string.Empty)
-                        {
-                            MensajeError("Ingrese Numero de Compra");
-                        }
-                        else
-                        {
-                            DialogResult Opcion;
-                            Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (Opcion == DialogResult.OK)
-                            {
-                                comprobte = tbNumComp.Text;
-                                if (tbNumComp.Text.Length.ToString().Equals("1"))
-                                {
-                                    comprobte = "0000" + comprobte;
-                                }
-                                if (tbNumComp.Text.Length.ToString().Equals("2"))
-                                {
-                                    comprobte = "000" + comprobte;
-                                }
-                                if (tbNumComp.Text.Length.ToString().Equals("3"))
-                                {
-                                    comprobte = "00" + comprobte;
-                                }
-                                if (tbNumComp.Text.Length.ToString().Equals("4"))
-                                {
-                                    comprobte = "0" + comprobte;
-                                }
-
-                                string estado = "ACTIVO";
-
-                                rpta = CN_Compras.Insertar(comprobte, dtpFecha.Value, estado, tbCuit.Text, Convert.ToInt32(UserLoginCache.UserId), DTDetalles);
-
-
-                                if (rpta.Equals("OK"))
-                                {
-                                    this.MensajeOk("Se Generó con éxito el Comprobante");
-
-                                    rpta = CN_CtaCte.InsertarP(tbCuit.Text, dtpFecha.Value, comprobte, "FACTURA DE COMPRA", 0,Convert.ToDecimal(tbTotalFact.Text), 0, 0, 0, Convert.ToDecimal(tbTotalFact.Text)*-1, 0, 0, "N", estado);
-                                    if (rpta.Equals("OK"))
-                                    {
-                                        this.MensajeOk("Se registro en cuenta corriente");
-
-                                    }
-                                    else
-                                    {
-                                        this.MensajeError(rpta);
-                                    }
-
-                                    limpiarCampos();
-                                    CargarGrilla();
-                                    DTDetalles.Rows.Clear();
-                                    tabCompras.SelectedTab = tabListadoCompras;
-                                    BuscarUltimaCompra();
-                                    PoneACeroConstructores();
-                                }
-                                else
-                                {
-                                    this.MensajeError(rpta);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
-                }
-            }
-            else
-            {
-                MensajeError("Agregue un Producto y su Cantidad al Detalle");
             }
         }
 
@@ -666,7 +533,7 @@ namespace CapaPresentacion
                 if (Convert.ToDecimal(MyRow.Cells[8].Value) <= Convert.ToDecimal(MyRow.Cells[9].Value))
                 {
                     MyRow.DefaultCellStyle.BackColor = Color.Orange;
-                    MyRow.DefaultCellStyle.ForeColor = Color.Red;
+                    MyRow.DefaultCellStyle.ForeColor = Color.DarkRed;
                 }
             }
         }
@@ -689,6 +556,142 @@ namespace CapaPresentacion
             if (tbProducto.Text != "")
             {
                 tbCantidad.Text = "1";
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (tbCantidad.Text != "" && tbCantidad.Text != "0" && tbCantidad.Text != "0," && tbCantidad.Text != "," && tbCantidad.Text != "0,0" && tbCantidad.Text != "0,00")
+            {
+                if (tbProducto.Text != "")
+                {
+                    InsertarEnDetalle();
+                }
+                else
+                {
+                    this.MensajeError("Por favor, seleccione un producto de la lista");
+                }
+            }
+            else
+            {
+                this.MensajeError("La cantidad debe ser mayor a 0");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvDetComp.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    int IndiceFila = dgvDetComp.CurrentCell.RowIndex;
+                    DataRow row = DTDetalles.Rows[IndiceFila];
+
+                    TotIva -= Convert.ToDecimal(row["IVA"].ToString());
+                    tbTotalIVA.Text = TotIva.ToString("0.00");
+
+                    Totales -= Convert.ToDecimal(row["SUBTOTAL"].ToString());
+                    tbTotalFact.Text = Totales.ToString("0.00");
+
+                    DTDetalles.Rows.Remove(row);
+
+                    MessageBox.Show("Se elimino el producto del detalle");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo cargar los datos por:\n\n" + ex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No existen productos cargados");
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (dgvDetComp.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    string rpta = "";
+                    if (this.tbCuit.Text == string.Empty)
+                    {
+                        MensajeError("Seleccione Un Proveedor");
+                    }
+                    else
+                    {
+                        if (this.tbNumComp.Text == string.Empty)
+                        {
+                            MensajeError("Ingrese Numero de Compra");
+                        }
+                        else
+                        {
+                            DialogResult Opcion;
+                            Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (Opcion == DialogResult.OK)
+                            {
+                                comprobte = tbNumComp.Text;
+                                if (tbNumComp.Text.Length.ToString().Equals("1"))
+                                {
+                                    comprobte = "0000" + comprobte;
+                                }
+                                if (tbNumComp.Text.Length.ToString().Equals("2"))
+                                {
+                                    comprobte = "000" + comprobte;
+                                }
+                                if (tbNumComp.Text.Length.ToString().Equals("3"))
+                                {
+                                    comprobte = "00" + comprobte;
+                                }
+                                if (tbNumComp.Text.Length.ToString().Equals("4"))
+                                {
+                                    comprobte = "0" + comprobte;
+                                }
+
+                                string estado = "ACTIVO";
+
+                                rpta = CN_Compras.Insertar(comprobte, dtpFecha.Value, estado, tbCuit.Text, Convert.ToInt32(UserLoginCache.UserId), DTDetalles);
+
+
+                                if (rpta.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se Generó con éxito el Comprobante");
+
+                                    rpta = CN_CtaCte.InsertarP(tbCuit.Text, dtpFecha.Value, comprobte, "FACTURA DE COMPRA", 0, Convert.ToDecimal(tbTotalFact.Text), 0, 0, 0, Convert.ToDecimal(tbTotalFact.Text) * -1, 0, 0, "N", estado);
+                                    if (rpta.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se registro en cuenta corriente");
+
+                                    }
+                                    else
+                                    {
+                                        this.MensajeError(rpta);
+                                    }
+
+                                    limpiarCampos();
+                                    CargarGrilla();
+                                    DTDetalles.Rows.Clear();
+                                    tabCompras.SelectedTab = tabListadoCompras;
+                                    BuscarUltimaCompra();
+                                    PoneACeroConstructores();
+                                }
+                                else
+                                {
+                                    this.MensajeError(rpta);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }
+            else
+            {
+                MensajeError("Agregue un Producto y su Cantidad al Detalle");
             }
         }
     }

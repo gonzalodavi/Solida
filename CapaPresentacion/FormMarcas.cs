@@ -129,6 +129,41 @@ namespace CapaPresentacion
             tbMarca.Text = "";
         }
 
+
+
+
+
+        private void btnNueva_Click(object sender, EventArgs e)
+        {
+            btnModMarca.Enabled = false;
+            btnEliminaMarca.Enabled = false;
+            btnNueva.Enabled = false;
+            dgvMarca.Enabled = false;
+            lblMarca.Text = "Nueva Marca";
+            tbMarca.Enabled = true;
+            tbMarca.Text = "";
+            tbMarca.Focus();
+        }
+
+        private void btnModMarca_Click(object sender, EventArgs e)
+        {
+            if (dgvMarca.SelectedRows.Count > 0)
+            {
+                btnModMarca.Enabled = false;
+                btnEliminaMarca.Enabled = false;
+                btnNueva.Enabled = false;
+                dgvMarca.Enabled = false;
+                lblMarca.Text = "Modificar Marca";
+                tbMarca.Enabled = true;
+                tbMarca.Text = dgvMarca.CurrentRow.Cells["MARCA"].Value.ToString();
+                Editar = true;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
+        }
+
         private void btnEliminaMarca_Click(object sender, EventArgs e)
         {
             if (dgvMarca.SelectedRows.Count > 0)
@@ -153,36 +188,5 @@ namespace CapaPresentacion
                 MessageBox.Show("Seleccione una fila por favor");
             }
         }
-
-        private void btnModMarca_Click(object sender, EventArgs e)
-        {
-            if (dgvMarca.SelectedRows.Count > 0)
-            {
-                btnModMarca.Enabled = false;
-                btnEliminaMarca.Enabled = false;
-                btnNueva.Enabled = false;
-                dgvMarca.Enabled = false;
-                lblMarca.Text = "Modificar Marca";
-                tbMarca.Enabled = true;
-                tbMarca.Text = dgvMarca.CurrentRow.Cells["MARCA"].Value.ToString();
-                Editar = true;
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-        }
-
-        private void btnNueva_Click(object sender, EventArgs e)
-        {
-            btnModMarca.Enabled = false;
-            btnEliminaMarca.Enabled = false;
-            btnNueva.Enabled = false;
-            dgvMarca.Enabled = false;
-            lblMarca.Text = "Nueva Marca";
-            tbMarca.Enabled = true;
-            tbMarca.Text = "";
-            tbMarca.Focus();
-        }        
     }
 }

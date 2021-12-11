@@ -178,7 +178,6 @@ namespace CapaPresentacion
             tbDireccion.Text = "";
             tbDescripcion.Text = "";
             tbIdDom.Text = "";
-            btnSeleccionaDireccion.Text = "SELECCIONAR DIRECCION";
             tbCalle.Text = "";
             tbNro.Text = "";
             tbPiso.Text = "";
@@ -213,13 +212,6 @@ namespace CapaPresentacion
             lblErrorLocalidad.Visible = false;
             lblErrorBarrio.Visible = false;
             lblErrorCalle.Visible = false;
-        }
-
-
-        private void btnNuevoProveedor_Click(object sender, EventArgs e)
-        {
-            tabProveedor.SelectedTab = tabPMant;
-            tbCuit.Focus();
         }
 
 
@@ -358,49 +350,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnModificarProv_Click(object sender, EventArgs e)
-        {
-            if (dgvProveedor.SelectedRows.Count > 0)
-            {
-                string cuit = dgvProveedor.CurrentRow.Cells["CUIT"].Value.ToString();
-                tabProveedor.SelectedTab = tabPMant;
-                lblSubTitutlo.Text = "Modificar Proveedor";
-                limpiarCampos();
 
-                string cadena = cuit;
-                string doscaracteres = cadena.Substring(0, 2);
-                cbPreF.Text = doscaracteres;
-                string ultimocaracter = cadena.Substring(cadena.Length - 1, 1);
-                cbSuF.Text = ultimocaracter;
-                string cadena2 = cadena.Remove(0, 2);
-                cuit = cadena2.Remove(8, 1);
-
-                tbCuit.Enabled = false;
-                cbSuF.Enabled = false;
-                cbPreF.Enabled = false;
-
-                tbCuit.Text = cuit;
-
-                tbEmpresa.Text = dgvProveedor.CurrentRow.Cells["EMPRESA"].Value.ToString();
-                tbNombre.Text = dgvProveedor.CurrentRow.Cells["NOMBRE"].Value.ToString();
-                tbApellido.Text = dgvProveedor.CurrentRow.Cells["APELLIDO"].Value.ToString();
-                tbMail.Text = dgvProveedor.CurrentRow.Cells["MAIL"].Value.ToString();
-                tbTel.Text = dgvProveedor.CurrentRow.Cells["TEL"].Value.ToString();
-                tbIdDom.Text = dgvProveedor.CurrentRow.Cells["IDDOM"].Value.ToString();
-                tbDescripcion.Text = dgvProveedor.CurrentRow.Cells["DESCRIPCION"].Value.ToString();                  
-
-                CN_Domicilio Odir = new CN_Domicilio();
-                tbDireccion.Text = Odir.BuscarDomicilio(Convert.ToInt32(tbIdDom.Text));
-
-                CargarDomicilio();
-                dgvProveedor.Enabled = false;
-                Editar = true;
-            }
-            else
-            {
-                MessageBox.Show("seleccione una fila por favor");
-            }            
-        }
 
         private void btnCancela_Click(object sender, EventArgs e)
         {
@@ -429,104 +379,10 @@ namespace CapaPresentacion
         }
 
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {            
-            if (dgvProveedor.SelectedRows.Count > 0)
-            {
-                try
-                {
-                    string cuitProveedor = dgvProveedor.CurrentRow.Cells["CUIT"].Value.ToString();
-                    string rptC = CN_Proveedor.ConsultaProveedorExisteEnCbtes(cuitProveedor, "BuscarProveedorEnCmpra");
-                    if (rptC == "OK")
-                    {
-                        this.MensajeError("No se permite eliminar un Proveedor utilizado en un comprobante");
-                    }
-                    else
-                    {
-                        if (rptC == "NO")
-                        {
-                            rptC = CN_Proveedor.ConsultaProveedorExisteEnCbtes(cuitProveedor, "BuscarProovedorEnOPago");
-                            if (rptC == "OK")
-                            {
-                                this.MensajeError("No se permite eliminar un Proveedor utilizado en un comprobante");
-                            }
-                            else
-                            {
-                                if (rptC == "NO")
-                                {
-                                    rptC = CN_Proveedor.ConsultaProveedorExisteEnCbtes(cuitProveedor, "BuscarProveedorEnRemito");
-                                    if (rptC == "OK")
-                                    {
-                                        this.MensajeError("No se permite eliminar un Proveedor utilizado en un comprobante");
-                                    }
-                                    else
-                                    {
-                                        if (rptC == "NO")
-                                        {
-                                            string Rpta = "";
-
-                                            DialogResult Opcion;
-                                            Opcion = MessageBox.Show("Desea Eliminar el Proveedor seleccionado", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-
-                                            if (Opcion == DialogResult.OK)
-                                            {
-
-                                                Rpta = CN_Proveedor.Eliminar(cuitProveedor);
-
-                                                if (Rpta.Equals("OK"))
-                                                {
-                                                    this.MensajeOk("Se Eliminó Correctamente el proveedor con Nº CUIT: " + cuitProveedor);
-                                                }
-                                                else
-                                                {
-                                                    this.MensajeError(Rpta);
-                                                }
-                                                LimpiarTabDomicilio();
-                                                limpiarCampos();
-                                                CargarGrilla();
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MensajeError(rptC);
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    MensajeError(rptC);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            MensajeError(rptC);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MensajeError(ex.Message + ex.StackTrace);
-                }               
-            }
-            else
-            {
-                MessageBox.Show("seleccione un Proveedor por favor");
-            }
-        }
-
-        private void btnActualizaLista_Click(object sender, EventArgs e)
-        {
-            CargarGrilla();
-            tbBusca.Text = "";
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             buscarProveedor();
         }
-
 
         private void buscarProveedor()
         {
@@ -549,19 +405,6 @@ namespace CapaPresentacion
                     }                        
                 }
             }
-        }
-
-
-        private void btnSeleccionaDireccion_Click(object sender, EventArgs e)
-        {
-            tabProveedor.SelectedTab = tabListaDom;
-        }
-
-
-        private void btnNuevaDireccion_Click(object sender, EventArgs e)
-        {
-            LimpiarTabDomicilio();
-            tabProveedor.SelectedTab = tabManDomicilios;
         }
 
         private void btnAceptaDom_Click(object sender, EventArgs e)
@@ -661,117 +504,24 @@ namespace CapaPresentacion
 
         private void btnCancelaDom_Click(object sender, EventArgs e)
         {
-            dgvDomicilios.Enabled = true;
-            tabProveedor.SelectedTab = tabListaDom;
-            LimpiarTabDomicilio();
-        }
-
-        private void btnModificaDom_Click(object sender, EventArgs e)
-        {
-            if (dgvDomicilios.SelectedRows.Count > 0)
+            DialogResult Opcion;
+            Opcion = MessageBox.Show("Desea Cancelar la Operación?", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            try
             {
-                string loc = dgvDomicilios.CurrentRow.Cells["LOCALIDAD"].Value.ToString();
-                string bar = dgvDomicilios.CurrentRow.Cells["BARRIO"].Value.ToString();
-                string calle = dgvDomicilios.CurrentRow.Cells["CALLE"].Value.ToString();
-                string nro = dgvDomicilios.CurrentRow.Cells["NRO"].Value.ToString();
-                string piso = dgvDomicilios.CurrentRow.Cells["PISO"].Value.ToString();
-                string dpto = dgvDomicilios.CurrentRow.Cells["DPTO"].Value.ToString();
-
-
-                tabProveedor.SelectedTab = tabManDomicilios;
-                EditarDom = true;
-                lblSeleDom.Text = "Modificar Domicilio";
-                tbIdDom.Text = dgvDomicilios.CurrentRow.Cells["ID"].Value.ToString();
-
-                cbProvincia.Text = dgvDomicilios.CurrentRow.Cells["PROVINCIA"].Value.ToString();
-                cbLocalidad.Text = loc;
-                cbBarrio.Text = bar;
-                panelDomicilio.Enabled = true;
-                tbCalle.Text = calle;
-                tbNro.Text = nro;
-                tbPiso.Text = piso;
-                tbDpto.Text = dgvDomicilios.CurrentRow.Cells["DPTO"].Value.ToString();
-
-            }
-            else
-            {
-                MensajeError("Seleccione una Direccion de la lista para modificar");
-            }
-        }
-
-        private void btnEliminaDom_Click(object sender, EventArgs e)
-        {
-            if (dgvDomicilios.SelectedRows.Count > 0)
-            {
-                try
+                if (Opcion == DialogResult.OK)
                 {
-                    string Rpta = "";
-                    int iddomisele = Convert.ToInt32(dgvDomicilios.CurrentRow.Cells["ID"].Value.ToString());
-
-                    string rpta = CN_Domicilio.ConsultaDomicilioSiExiste(iddomisele, "BuscarDomicilioEnCliente");
-                    if (rpta == "OK")
-                    {
-                        this.MensajeError("No se permite eliminar un Domicilio utilizado por Cliente/Proveedor");
-                    }
-                    else
-                    {
-                        if (rpta == "NO")
-                        {
-                            rpta = CN_Domicilio.ConsultaDomicilioSiExiste(iddomisele, "BuscarDomicilioEnProveedor");
-                            if (rpta == "OK")
-                            {
-                                this.MensajeError("No se permite eliminar un Domicilio utilizado por Cliente/Proveedor");
-                            }
-                            else
-                            {
-                                if (rpta == "NO")
-                                {
-                                    DialogResult Opcion;
-                                    Opcion = MessageBox.Show("Desea Eliminar el Domicilio seleccionado", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                    if (Opcion == DialogResult.OK)
-                                    {
-                                        Rpta = CN_Domicilio.Eliminar(iddomisele);
-
-                                        if (Rpta.Equals("OK"))
-                                        {
-                                            this.MensajeOk("Se Eliminó Correctamente el domicilio seleccionado");
-                                        }
-                                        else
-                                        {
-                                            this.MensajeError(Rpta);
-                                        }
-                                        LimpiarTabDomicilio();
-                                        CargarGrillaDomicilios();
-                                    }
-                                }
-                                else
-                                {
-                                    MensajeError(rpta);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            MensajeError(rpta);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
+                    dgvDomicilios.Enabled = true;
+                    tabProveedor.SelectedTab = tabListaDom;
+                    LimpiarTabDomicilio();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MensajeError("Seleccione una Direccion de la lista para eliminar");
-            }
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }            
         }
 
-        private void btnActualizaListaDom_Click(object sender, EventArgs e)
-        {
-            CargarGrillaDomicilios();
-            tbBuscarDomicilio.Text = "";
-        }
+
 
         private void btnBuscaDom_Click(object sender, EventArgs e)
         {
@@ -1044,6 +794,267 @@ namespace CapaPresentacion
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnActualizarLista_Click(object sender, EventArgs e)
+        {
+            CargarGrilla();
+            tbBusca.Text = "";
+        }
+
+        private void btnNuevaDire_Click(object sender, EventArgs e)
+        {
+            LimpiarTabDomicilio();
+            tabProveedor.SelectedTab = tabManDomicilios;
+        }
+
+        private void btnModificarDom_Click(object sender, EventArgs e)
+        {
+            if (dgvDomicilios.SelectedRows.Count > 0)
+            {
+                string loc = dgvDomicilios.CurrentRow.Cells["LOCALIDAD"].Value.ToString();
+                string bar = dgvDomicilios.CurrentRow.Cells["BARRIO"].Value.ToString();
+                string calle = dgvDomicilios.CurrentRow.Cells["CALLE"].Value.ToString();
+                string nro = dgvDomicilios.CurrentRow.Cells["NRO"].Value.ToString();
+                string piso = dgvDomicilios.CurrentRow.Cells["PISO"].Value.ToString();
+                string dpto = dgvDomicilios.CurrentRow.Cells["DPTO"].Value.ToString();
+
+
+                tabProveedor.SelectedTab = tabManDomicilios;
+                EditarDom = true;
+                lblSeleDom.Text = "Modificar Domicilio";
+                tbIdDom.Text = dgvDomicilios.CurrentRow.Cells["ID"].Value.ToString();
+
+                cbProvincia.Text = dgvDomicilios.CurrentRow.Cells["PROVINCIA"].Value.ToString();
+                cbLocalidad.Text = loc;
+                cbBarrio.Text = bar;
+                panelDomicilio.Enabled = true;
+                tbCalle.Text = calle;
+                tbNro.Text = nro;
+                tbPiso.Text = piso;
+                tbDpto.Text = dgvDomicilios.CurrentRow.Cells["DPTO"].Value.ToString();
+
+            }
+            else
+            {
+                MensajeError("Seleccione una Direccion de la lista para modificar");
+            }
+        }
+
+        private void btnElimiarDom_Click(object sender, EventArgs e)
+        {
+            if (dgvDomicilios.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    string Rpta = "";
+                    int iddomisele = Convert.ToInt32(dgvDomicilios.CurrentRow.Cells["ID"].Value.ToString());
+
+                    string rpta = CN_Domicilio.ConsultaDomicilioSiExiste(iddomisele, "BuscarDomicilioEnCliente");
+                    if (rpta == "OK")
+                    {
+                        this.MensajeError("No se permite eliminar un Domicilio utilizado por Cliente/Proveedor");
+                    }
+                    else
+                    {
+                        if (rpta == "NO")
+                        {
+                            rpta = CN_Domicilio.ConsultaDomicilioSiExiste(iddomisele, "BuscarDomicilioEnProveedor");
+                            if (rpta == "OK")
+                            {
+                                this.MensajeError("No se permite eliminar un Domicilio utilizado por Cliente/Proveedor");
+                            }
+                            else
+                            {
+                                if (rpta == "NO")
+                                {
+                                    DialogResult Opcion;
+                                    Opcion = MessageBox.Show("Desea Eliminar el Domicilio seleccionado", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                    if (Opcion == DialogResult.OK)
+                                    {
+                                        Rpta = CN_Domicilio.Eliminar(iddomisele);
+
+                                        if (Rpta.Equals("OK"))
+                                        {
+                                            this.MensajeOk("Se Eliminó Correctamente el domicilio seleccionado");
+                                        }
+                                        else
+                                        {
+                                            this.MensajeError(Rpta);
+                                        }
+                                        LimpiarTabDomicilio();
+                                        CargarGrillaDomicilios();
+                                    }
+                                }
+                                else
+                                {
+                                    MensajeError(rpta);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rpta);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }
+            else
+            {
+                MensajeError("Seleccione una Direccion de la lista para eliminar");
+            }
+        }
+
+        private void btnActualizarListaDom_Click(object sender, EventArgs e)
+        {
+            CargarGrillaDomicilios();
+            tbBuscarDomicilio.Text = "";
+        }
+
+        private void btnNuevoProveedor_Click(object sender, EventArgs e)
+        {
+            tabProveedor.SelectedTab = tabPMant;
+            tbCuit.Focus();
+        }
+
+        private void btnModificarProv_Click(object sender, EventArgs e)
+        {
+            if (dgvProveedor.SelectedRows.Count > 0)
+            {
+                string cuit = dgvProveedor.CurrentRow.Cells["CUIT"].Value.ToString();
+                tabProveedor.SelectedTab = tabPMant;
+                lblSubTitutlo.Text = "Modificar Proveedor";
+                limpiarCampos();
+
+                string cadena = cuit;
+                string doscaracteres = cadena.Substring(0, 2);
+                cbPreF.Text = doscaracteres;
+                string ultimocaracter = cadena.Substring(cadena.Length - 1, 1);
+                cbSuF.Text = ultimocaracter;
+                string cadena2 = cadena.Remove(0, 2);
+                cuit = cadena2.Remove(8, 1);
+
+                tbCuit.Enabled = false;
+                cbSuF.Enabled = false;
+                cbPreF.Enabled = false;
+
+                tbCuit.Text = cuit;
+
+                tbEmpresa.Text = dgvProveedor.CurrentRow.Cells["EMPRESA"].Value.ToString();
+                tbNombre.Text = dgvProveedor.CurrentRow.Cells["NOMBRE"].Value.ToString();
+                tbApellido.Text = dgvProveedor.CurrentRow.Cells["APELLIDO"].Value.ToString();
+                tbMail.Text = dgvProveedor.CurrentRow.Cells["MAIL"].Value.ToString();
+                tbTel.Text = dgvProveedor.CurrentRow.Cells["TEL"].Value.ToString();
+                tbIdDom.Text = dgvProveedor.CurrentRow.Cells["IDDOM"].Value.ToString();
+                tbDescripcion.Text = dgvProveedor.CurrentRow.Cells["DESCRIPCION"].Value.ToString();
+
+                CN_Domicilio Odir = new CN_Domicilio();
+                tbDireccion.Text = Odir.BuscarDomicilio(Convert.ToInt32(tbIdDom.Text));
+
+                CargarDomicilio();
+                dgvProveedor.Enabled = false;
+                Editar = true;
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void btnEliminarProv_Click(object sender, EventArgs e)
+        {
+            if (dgvProveedor.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    string cuitProveedor = dgvProveedor.CurrentRow.Cells["CUIT"].Value.ToString();
+                    string rptC = CN_Proveedor.ConsultaProveedorExisteEnCbtes(cuitProveedor, "BuscarProveedorEnCmpra");
+                    if (rptC == "OK")
+                    {
+                        this.MensajeError("No se permite eliminar un Proveedor utilizado en un comprobante");
+                    }
+                    else
+                    {
+                        if (rptC == "NO")
+                        {
+                            rptC = CN_Proveedor.ConsultaProveedorExisteEnCbtes(cuitProveedor, "BuscarProovedorEnOPago");
+                            if (rptC == "OK")
+                            {
+                                this.MensajeError("No se permite eliminar un Proveedor utilizado en un comprobante");
+                            }
+                            else
+                            {
+                                if (rptC == "NO")
+                                {
+                                    rptC = CN_Proveedor.ConsultaProveedorExisteEnCbtes(cuitProveedor, "BuscarProveedorEnRemito");
+                                    if (rptC == "OK")
+                                    {
+                                        this.MensajeError("No se permite eliminar un Proveedor utilizado en un comprobante");
+                                    }
+                                    else
+                                    {
+                                        if (rptC == "NO")
+                                        {
+                                            string Rpta = "";
+
+                                            DialogResult Opcion;
+                                            Opcion = MessageBox.Show("Desea Eliminar el Proveedor seleccionado", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+
+                                            if (Opcion == DialogResult.OK)
+                                            {
+
+                                                Rpta = CN_Proveedor.Eliminar(cuitProveedor);
+
+                                                if (Rpta.Equals("OK"))
+                                                {
+                                                    this.MensajeOk("Se Eliminó Correctamente el proveedor con Nº CUIT: " + cuitProveedor);
+                                                }
+                                                else
+                                                {
+                                                    this.MensajeError(Rpta);
+                                                }
+                                                LimpiarTabDomicilio();
+                                                limpiarCampos();
+                                                CargarGrilla();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MensajeError(rptC);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MensajeError(rptC);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rptC);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MensajeError(ex.Message + ex.StackTrace);
+                }
+            }
+            else
+            {
+                MessageBox.Show("seleccione un Proveedor por favor");
+            }
+        }
+
+        private void btnSeleccionaDir_Click(object sender, EventArgs e)
+        {
+            tabProveedor.SelectedTab = tabListaDom;
         }
     }
 }

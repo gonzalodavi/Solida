@@ -41,12 +41,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnAceptaMarca = new System.Windows.Forms.Button();
             this.btnCancelaMarca = new System.Windows.Forms.Button();
-            this.btnEliminaMarca = new System.Windows.Forms.Button();
-            this.btnModMarca = new System.Windows.Forms.Button();
-            this.btnNueva = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnModMarca = new FontAwesome.Sharp.IconButton();
+            this.btnNueva = new FontAwesome.Sharp.IconButton();
+            this.btnEliminaMarca = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.SuspendLayout();
@@ -204,66 +204,6 @@
             this.btnCancelaMarca.UseVisualStyleBackColor = false;
             this.btnCancelaMarca.Click += new System.EventHandler(this.btnCancelaMarca_Click);
             // 
-            // btnEliminaMarca
-            // 
-            this.btnEliminaMarca.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminaMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEliminaMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminaMarca.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminaMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminaMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEliminaMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminaMarca.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminaMarca.ForeColor = System.Drawing.Color.White;
-            this.btnEliminaMarca.Location = new System.Drawing.Point(348, 227);
-            this.btnEliminaMarca.Name = "btnEliminaMarca";
-            this.btnEliminaMarca.Size = new System.Drawing.Size(116, 31);
-            this.btnEliminaMarca.TabIndex = 170;
-            this.btnEliminaMarca.TabStop = false;
-            this.btnEliminaMarca.Text = "ELIMINAR";
-            this.btnEliminaMarca.UseVisualStyleBackColor = false;
-            this.btnEliminaMarca.Click += new System.EventHandler(this.btnEliminaMarca_Click);
-            // 
-            // btnModMarca
-            // 
-            this.btnModMarca.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnModMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModMarca.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnModMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnModMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnModMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModMarca.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModMarca.ForeColor = System.Drawing.Color.White;
-            this.btnModMarca.Location = new System.Drawing.Point(348, 167);
-            this.btnModMarca.Name = "btnModMarca";
-            this.btnModMarca.Size = new System.Drawing.Size(116, 31);
-            this.btnModMarca.TabIndex = 171;
-            this.btnModMarca.TabStop = false;
-            this.btnModMarca.Text = "MODIFICAR";
-            this.btnModMarca.UseVisualStyleBackColor = false;
-            this.btnModMarca.Click += new System.EventHandler(this.btnModMarca_Click);
-            // 
-            // btnNueva
-            // 
-            this.btnNueva.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNueva.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNueva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNueva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNueva.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNueva.ForeColor = System.Drawing.Color.White;
-            this.btnNueva.Location = new System.Drawing.Point(348, 106);
-            this.btnNueva.Name = "btnNueva";
-            this.btnNueva.Size = new System.Drawing.Size(116, 31);
-            this.btnNueva.TabIndex = 174;
-            this.btnNueva.TabStop = false;
-            this.btnNueva.Text = "NUEVA";
-            this.btnNueva.UseVisualStyleBackColor = false;
-            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
-            // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -307,19 +247,94 @@
             this.label1.TabIndex = 185;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnModMarca
+            // 
+            this.btnModMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnModMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnModMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModMarca.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnModMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModMarca.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnModMarca.ForeColor = System.Drawing.Color.White;
+            this.btnModMarca.IconChar = FontAwesome.Sharp.IconChar.PenAlt;
+            this.btnModMarca.IconColor = System.Drawing.Color.White;
+            this.btnModMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModMarca.IconSize = 25;
+            this.btnModMarca.Location = new System.Drawing.Point(348, 165);
+            this.btnModMarca.Name = "btnModMarca";
+            this.btnModMarca.Size = new System.Drawing.Size(116, 31);
+            this.btnModMarca.TabIndex = 194;
+            this.btnModMarca.TabStop = false;
+            this.btnModMarca.Text = "MODIFICAR";
+            this.btnModMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModMarca.UseVisualStyleBackColor = false;
+            this.btnModMarca.Click += new System.EventHandler(this.btnModMarca_Click);
+            // 
+            // btnNueva
+            // 
+            this.btnNueva.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNueva.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNueva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNueva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNueva.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNueva.ForeColor = System.Drawing.Color.White;
+            this.btnNueva.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnNueva.IconColor = System.Drawing.Color.White;
+            this.btnNueva.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNueva.IconSize = 25;
+            this.btnNueva.Location = new System.Drawing.Point(348, 102);
+            this.btnNueva.Name = "btnNueva";
+            this.btnNueva.Size = new System.Drawing.Size(116, 31);
+            this.btnNueva.TabIndex = 193;
+            this.btnNueva.TabStop = false;
+            this.btnNueva.Text = "NUEVA";
+            this.btnNueva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNueva.UseVisualStyleBackColor = false;
+            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
+            // 
+            // btnEliminaMarca
+            // 
+            this.btnEliminaMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminaMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnEliminaMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminaMarca.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminaMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminaMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEliminaMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminaMarca.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEliminaMarca.ForeColor = System.Drawing.Color.White;
+            this.btnEliminaMarca.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminaMarca.IconColor = System.Drawing.Color.White;
+            this.btnEliminaMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminaMarca.IconSize = 25;
+            this.btnEliminaMarca.Location = new System.Drawing.Point(348, 229);
+            this.btnEliminaMarca.Name = "btnEliminaMarca";
+            this.btnEliminaMarca.Size = new System.Drawing.Size(116, 31);
+            this.btnEliminaMarca.TabIndex = 195;
+            this.btnEliminaMarca.TabStop = false;
+            this.btnEliminaMarca.Text = "ELIMINAR";
+            this.btnEliminaMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminaMarca.UseVisualStyleBackColor = false;
+            this.btnEliminaMarca.Click += new System.EventHandler(this.btnEliminaMarca_Click);
+            // 
             // FormMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.ClientSize = new System.Drawing.Size(490, 539);
+            this.Controls.Add(this.btnModMarca);
+            this.Controls.Add(this.btnNueva);
+            this.Controls.Add(this.btnEliminaMarca);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.btnAceptaMarca);
             this.Controls.Add(this.btnCancelaMarca);
-            this.Controls.Add(this.btnEliminaMarca);
-            this.Controls.Add(this.btnModMarca);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbMarca);
@@ -349,11 +364,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnAceptaMarca;
         private System.Windows.Forms.Button btnCancelaMarca;
-        private System.Windows.Forms.Button btnEliminaMarca;
-        private System.Windows.Forms.Button btnModMarca;
-        private System.Windows.Forms.Button btnNueva;
         private System.Windows.Forms.Label lblTitulo;
         private FontAwesome.Sharp.IconPictureBox btnSalir;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnModMarca;
+        private FontAwesome.Sharp.IconButton btnNueva;
+        private FontAwesome.Sharp.IconButton btnEliminaMarca;
     }
 }

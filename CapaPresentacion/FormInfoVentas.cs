@@ -105,16 +105,31 @@ namespace CapaPresentacion
                 dtpFecha1.Enabled = true;
                 dtpFecha2.Enabled = true;
                 SiFecha = true;
+                btnBuscar.Enabled = true;
             }
             else
             {
                 dtpFecha1.Enabled = false;
                 dtpFecha2.Enabled = false;
                 SiFecha = false;
+                btnBuscar.Enabled = false;
             }
         }
 
-        private void btnVerFactura_Click(object sender, EventArgs e)
+
+
+        private void dgvVentas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow MyRow in dgvVentas.Rows)
+            {
+                if (MyRow.Cells[5].Value.ToString() == "0")
+                {
+                    MyRow.Cells[5].Value = "Consumidor Final";
+                }
+            }
+        }
+
+        private void dgvVentas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvVentas.SelectedRows.Count > 0)
             {
@@ -128,15 +143,21 @@ namespace CapaPresentacion
             }
         }
 
-        private void dgvVentas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow MyRow in dgvVentas.Rows)
-            {
-                if (MyRow.Cells[5].Value.ToString() == "0")
-                {
-                    MyRow.Cells[5].Value = "Consumidor Final";
-                }
-            }
+            BuscarRegistros();
+        }
+
+        private void BuscarRegistros()
+        {
+            dgvVentas.DataSource = CN_Ventas.BuscarRegistros(dtpFecha1.Value.ToString("dd/MM/yyyy"), dtpFecha2.Value.ToString("dd/MM/yyyy"));
+            this.dgvVentas.Columns[0].Visible = false;
+            this.dgvVentas.Columns[1].Visible = false;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            CargarGrilla();
         }
     }
 }

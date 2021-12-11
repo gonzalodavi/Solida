@@ -35,6 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionUsuarios));
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.lblErrorMail = new System.Windows.Forms.Label();
+            this.lblErrorApellido = new System.Windows.Forms.Label();
+            this.lblErrorNombre = new System.Windows.Forms.Label();
+            this.lblErrorRol = new System.Windows.Forms.Label();
+            this.lblErrorClave = new System.Windows.Forms.Label();
+            this.lblErrorUsuario = new System.Windows.Forms.Label();
             this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.lblNuevoOModUser = new System.Windows.Forms.Label();
             this.lblSeleDom = new System.Windows.Forms.Label();
@@ -53,10 +59,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCancela = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnModificarUser = new System.Windows.Forms.Button();
             this.btnAgregarUser = new System.Windows.Forms.Button();
-            this.btnEliminarUser = new System.Windows.Forms.Button();
             this.cbRoles = new System.Windows.Forms.ComboBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
@@ -70,12 +73,9 @@
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblErrorUsuario = new System.Windows.Forms.Label();
-            this.lblErrorClave = new System.Windows.Forms.Label();
-            this.lblErrorRol = new System.Windows.Forms.Label();
-            this.lblErrorNombre = new System.Windows.Forms.Label();
-            this.lblErrorApellido = new System.Windows.Forms.Label();
-            this.lblErrorMail = new System.Windows.Forms.Label();
+            this.btnEliminarUser = new FontAwesome.Sharp.IconButton();
+            this.btnModificarUser = new FontAwesome.Sharp.IconButton();
+            this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,9 @@
             this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelContenedor.Controls.Add(this.btnEliminarUser);
+            this.panelContenedor.Controls.Add(this.btnModificarUser);
+            this.panelContenedor.Controls.Add(this.btnNuevo);
             this.panelContenedor.Controls.Add(this.lblErrorMail);
             this.panelContenedor.Controls.Add(this.lblErrorApellido);
             this.panelContenedor.Controls.Add(this.lblErrorNombre);
@@ -109,10 +112,7 @@
             this.panelContenedor.Controls.Add(this.label8);
             this.panelContenedor.Controls.Add(this.label10);
             this.panelContenedor.Controls.Add(this.btnCancela);
-            this.panelContenedor.Controls.Add(this.btnNuevo);
-            this.panelContenedor.Controls.Add(this.btnModificarUser);
             this.panelContenedor.Controls.Add(this.btnAgregarUser);
-            this.panelContenedor.Controls.Add(this.btnEliminarUser);
             this.panelContenedor.Controls.Add(this.cbRoles);
             this.panelContenedor.Controls.Add(this.lblEmail);
             this.panelContenedor.Controls.Add(this.lblRol);
@@ -130,6 +130,84 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1026, 749);
             this.panelContenedor.TabIndex = 0;
+            // 
+            // lblErrorMail
+            // 
+            this.lblErrorMail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorMail.AutoSize = true;
+            this.lblErrorMail.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorMail.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorMail.Location = new System.Drawing.Point(527, 640);
+            this.lblErrorMail.Name = "lblErrorMail";
+            this.lblErrorMail.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorMail.TabIndex = 186;
+            this.lblErrorMail.Text = "Este Campo es Obligatorio";
+            this.lblErrorMail.Visible = false;
+            // 
+            // lblErrorApellido
+            // 
+            this.lblErrorApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorApellido.AutoSize = true;
+            this.lblErrorApellido.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorApellido.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorApellido.Location = new System.Drawing.Point(527, 582);
+            this.lblErrorApellido.Name = "lblErrorApellido";
+            this.lblErrorApellido.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorApellido.TabIndex = 185;
+            this.lblErrorApellido.Text = "Este Campo es Obligatorio";
+            this.lblErrorApellido.Visible = false;
+            // 
+            // lblErrorNombre
+            // 
+            this.lblErrorNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorNombre.AutoSize = true;
+            this.lblErrorNombre.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorNombre.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorNombre.Location = new System.Drawing.Point(527, 525);
+            this.lblErrorNombre.Name = "lblErrorNombre";
+            this.lblErrorNombre.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorNombre.TabIndex = 184;
+            this.lblErrorNombre.Text = "Este Campo es Obligatorio";
+            this.lblErrorNombre.Visible = false;
+            // 
+            // lblErrorRol
+            // 
+            this.lblErrorRol.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorRol.AutoSize = true;
+            this.lblErrorRol.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorRol.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorRol.Location = new System.Drawing.Point(152, 639);
+            this.lblErrorRol.Name = "lblErrorRol";
+            this.lblErrorRol.Size = new System.Drawing.Size(98, 13);
+            this.lblErrorRol.TabIndex = 183;
+            this.lblErrorRol.Text = "Seleccione un Rol";
+            this.lblErrorRol.Visible = false;
+            // 
+            // lblErrorClave
+            // 
+            this.lblErrorClave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorClave.AutoSize = true;
+            this.lblErrorClave.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorClave.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorClave.Location = new System.Drawing.Point(152, 582);
+            this.lblErrorClave.Name = "lblErrorClave";
+            this.lblErrorClave.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorClave.TabIndex = 182;
+            this.lblErrorClave.Text = "Este Campo es Obligatorio";
+            this.lblErrorClave.Visible = false;
+            // 
+            // lblErrorUsuario
+            // 
+            this.lblErrorUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorUsuario.AutoSize = true;
+            this.lblErrorUsuario.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorUsuario.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorUsuario.Location = new System.Drawing.Point(152, 525);
+            this.lblErrorUsuario.Name = "lblErrorUsuario";
+            this.lblErrorUsuario.Size = new System.Drawing.Size(144, 13);
+            this.lblErrorUsuario.TabIndex = 181;
+            this.lblErrorUsuario.Text = "Este Campo es Obligatorio";
+            this.lblErrorUsuario.Visible = false;
             // 
             // btnRegresar
             // 
@@ -433,46 +511,6 @@
             this.btnCancela.UseVisualStyleBackColor = false;
             this.btnCancela.Click += new System.EventHandler(this.btnCancela_Click);
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(842, 159);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(116, 31);
-            this.btnNuevo.TabIndex = 0;
-            this.btnNuevo.TabStop = false;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnModificarUser
-            // 
-            this.btnModificarUser.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnModificarUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnModificarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnModificarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnModificarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModificarUser.ForeColor = System.Drawing.Color.White;
-            this.btnModificarUser.Location = new System.Drawing.Point(842, 224);
-            this.btnModificarUser.Name = "btnModificarUser";
-            this.btnModificarUser.Size = new System.Drawing.Size(116, 31);
-            this.btnModificarUser.TabIndex = 0;
-            this.btnModificarUser.TabStop = false;
-            this.btnModificarUser.Text = "MODIFICAR";
-            this.btnModificarUser.UseVisualStyleBackColor = false;
-            this.btnModificarUser.Click += new System.EventHandler(this.btnModificarUser_Click);
-            // 
             // btnAgregarUser
             // 
             this.btnAgregarUser.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -493,26 +531,6 @@
             this.btnAgregarUser.Text = "ACEPTAR";
             this.btnAgregarUser.UseVisualStyleBackColor = false;
             this.btnAgregarUser.Click += new System.EventHandler(this.btnAgregarUser_Click);
-            // 
-            // btnEliminarUser
-            // 
-            this.btnEliminarUser.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEliminarUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEliminarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarUser.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarUser.Location = new System.Drawing.Point(842, 290);
-            this.btnEliminarUser.Name = "btnEliminarUser";
-            this.btnEliminarUser.Size = new System.Drawing.Size(116, 31);
-            this.btnEliminarUser.TabIndex = 0;
-            this.btnEliminarUser.TabStop = false;
-            this.btnEliminarUser.Text = "ELIMINAR";
-            this.btnEliminarUser.UseVisualStyleBackColor = false;
-            this.btnEliminarUser.Click += new System.EventHandler(this.btnEliminarUser_Click);
             // 
             // cbRoles
             // 
@@ -685,83 +703,80 @@
             this.lblTitulo.TabIndex = 12;
             this.lblTitulo.Text = "MANTENIMIENTO DE USUARIOS";
             // 
-            // lblErrorUsuario
+            // btnEliminarUser
             // 
-            this.lblErrorUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorUsuario.AutoSize = true;
-            this.lblErrorUsuario.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorUsuario.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorUsuario.Location = new System.Drawing.Point(152, 525);
-            this.lblErrorUsuario.Name = "lblErrorUsuario";
-            this.lblErrorUsuario.Size = new System.Drawing.Size(144, 13);
-            this.lblErrorUsuario.TabIndex = 181;
-            this.lblErrorUsuario.Text = "Este Campo es Obligatorio";
-            this.lblErrorUsuario.Visible = false;
+            this.btnEliminarUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnEliminarUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEliminarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEliminarUser.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarUser.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
+            this.btnEliminarUser.IconColor = System.Drawing.Color.White;
+            this.btnEliminarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminarUser.IconSize = 25;
+            this.btnEliminarUser.Location = new System.Drawing.Point(842, 290);
+            this.btnEliminarUser.Name = "btnEliminarUser";
+            this.btnEliminarUser.Size = new System.Drawing.Size(116, 31);
+            this.btnEliminarUser.TabIndex = 190;
+            this.btnEliminarUser.TabStop = false;
+            this.btnEliminarUser.Text = "ELIMINAR";
+            this.btnEliminarUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarUser.UseVisualStyleBackColor = false;
+            this.btnEliminarUser.Click += new System.EventHandler(this.btnEliminarUser_Click);
             // 
-            // lblErrorClave
+            // btnModificarUser
             // 
-            this.lblErrorClave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorClave.AutoSize = true;
-            this.lblErrorClave.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorClave.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorClave.Location = new System.Drawing.Point(152, 582);
-            this.lblErrorClave.Name = "lblErrorClave";
-            this.lblErrorClave.Size = new System.Drawing.Size(144, 13);
-            this.lblErrorClave.TabIndex = 182;
-            this.lblErrorClave.Text = "Este Campo es Obligatorio";
-            this.lblErrorClave.Visible = false;
+            this.btnModificarUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnModificarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnModificarUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModificarUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModificarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnModificarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnModificarUser.ForeColor = System.Drawing.Color.White;
+            this.btnModificarUser.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnModificarUser.IconColor = System.Drawing.Color.White;
+            this.btnModificarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificarUser.IconSize = 25;
+            this.btnModificarUser.Location = new System.Drawing.Point(842, 224);
+            this.btnModificarUser.Name = "btnModificarUser";
+            this.btnModificarUser.Size = new System.Drawing.Size(116, 31);
+            this.btnModificarUser.TabIndex = 189;
+            this.btnModificarUser.TabStop = false;
+            this.btnModificarUser.Text = "MODIFICAR";
+            this.btnModificarUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificarUser.UseVisualStyleBackColor = false;
+            this.btnModificarUser.Click += new System.EventHandler(this.btnModificarUser_Click);
             // 
-            // lblErrorRol
+            // btnNuevo
             // 
-            this.lblErrorRol.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorRol.AutoSize = true;
-            this.lblErrorRol.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorRol.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorRol.Location = new System.Drawing.Point(152, 639);
-            this.lblErrorRol.Name = "lblErrorRol";
-            this.lblErrorRol.Size = new System.Drawing.Size(98, 13);
-            this.lblErrorRol.TabIndex = 183;
-            this.lblErrorRol.Text = "Seleccione un Rol";
-            this.lblErrorRol.Visible = false;
-            // 
-            // lblErrorNombre
-            // 
-            this.lblErrorNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorNombre.AutoSize = true;
-            this.lblErrorNombre.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorNombre.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorNombre.Location = new System.Drawing.Point(527, 525);
-            this.lblErrorNombre.Name = "lblErrorNombre";
-            this.lblErrorNombre.Size = new System.Drawing.Size(144, 13);
-            this.lblErrorNombre.TabIndex = 184;
-            this.lblErrorNombre.Text = "Este Campo es Obligatorio";
-            this.lblErrorNombre.Visible = false;
-            // 
-            // lblErrorApellido
-            // 
-            this.lblErrorApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorApellido.AutoSize = true;
-            this.lblErrorApellido.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorApellido.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorApellido.Location = new System.Drawing.Point(527, 582);
-            this.lblErrorApellido.Name = "lblErrorApellido";
-            this.lblErrorApellido.Size = new System.Drawing.Size(144, 13);
-            this.lblErrorApellido.TabIndex = 185;
-            this.lblErrorApellido.Text = "Este Campo es Obligatorio";
-            this.lblErrorApellido.Visible = false;
-            // 
-            // lblErrorMail
-            // 
-            this.lblErrorMail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorMail.AutoSize = true;
-            this.lblErrorMail.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorMail.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorMail.Location = new System.Drawing.Point(527, 640);
-            this.lblErrorMail.Name = "lblErrorMail";
-            this.lblErrorMail.Size = new System.Drawing.Size(144, 13);
-            this.lblErrorMail.TabIndex = 186;
-            this.lblErrorMail.Text = "Este Campo es Obligatorio";
-            this.lblErrorMail.Visible = false;
+            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnNuevo.IconColor = System.Drawing.Color.White;
+            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevo.IconSize = 25;
+            this.btnNuevo.Location = new System.Drawing.Point(842, 158);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(116, 31);
+            this.btnNuevo.TabIndex = 188;
+            this.btnNuevo.TabStop = false;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // FormGestionUsuarios
             // 
@@ -789,10 +804,8 @@
 
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnAgregarUser;
-        private System.Windows.Forms.Button btnEliminarUser;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.Button btnModificarUser;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label lblApellido;
@@ -811,7 +824,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
@@ -829,5 +841,8 @@
         private System.Windows.Forms.Label lblErrorRol;
         private System.Windows.Forms.Label lblErrorClave;
         private System.Windows.Forms.Label lblErrorUsuario;
+        private FontAwesome.Sharp.IconButton btnEliminarUser;
+        private FontAwesome.Sharp.IconButton btnModificarUser;
+        private FontAwesome.Sharp.IconButton btnNuevo;
     }
 }

@@ -300,12 +300,6 @@
     <Compile Include="FormSucursales.Designer.cs">
       <DependentUpon>FormSucursales.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTablas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTablas.Designer.cs">
-      <DependentUpon>FormTablas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSesionesUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,9 +512,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSucursales.resx">
       <DependentUpon>FormSucursales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTablas.resx">
-      <DependentUpon>FormTablas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSesionesUsuario.resx">
       <DependentUpon>FormSesionesUsuario.cs</DependentUpon>

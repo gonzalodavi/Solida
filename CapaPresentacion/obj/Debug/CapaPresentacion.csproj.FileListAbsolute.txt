@@ -22,7 +22,6 @@ G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\System.Data.SqlClient.dll
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormProveedor.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormProductos.resources
-G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormTablas.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\CapaEntidades.dll
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\CapaEntidades.pdb
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormInfoCompras.resources

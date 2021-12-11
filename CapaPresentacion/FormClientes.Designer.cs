@@ -41,21 +41,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabClientes = new System.Windows.Forms.TabControl();
             this.tabConsulta = new System.Windows.Forms.TabPage();
+            this.btnActualizar = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnModificarCliente = new FontAwesome.Sharp.IconButton();
+            this.btnNuevoCliente = new FontAwesome.Sharp.IconButton();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnNuevoCliente = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizaLista = new FontAwesome.Sharp.IconButton();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.tbBusca = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.tabNuevoCliente = new System.Windows.Forms.TabPage();
+            this.btnSeleccionaDir = new System.Windows.Forms.Button();
             this.lblErrorDire = new System.Windows.Forms.Label();
             this.lblErrorIVA = new System.Windows.Forms.Label();
             this.lblErrorNom = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.btnCancela = new System.Windows.Forms.Button();
             this.btAceptar = new System.Windows.Forms.Button();
             this.tbIdDom = new System.Windows.Forms.TextBox();
-            this.btnSeleccionaDireccion = new System.Windows.Forms.Button();
             this.tbDireccion = new System.Windows.Forms.TextBox();
             this.cbCondIVA = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -94,18 +94,18 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblSubTitutlo = new System.Windows.Forms.Label();
             this.tabListaDom = new System.Windows.Forms.TabPage();
+            this.btnActualizarDir = new FontAwesome.Sharp.IconButton();
+            this.btnElimiarDom = new FontAwesome.Sharp.IconButton();
+            this.btnModificarDom = new FontAwesome.Sharp.IconButton();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnEliminaDom = new System.Windows.Forms.Button();
-            this.btnModificaDom = new System.Windows.Forms.Button();
-            this.btnNuevaDireccion = new System.Windows.Forms.Button();
             this.tbBuscarDomicilio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDomicilios = new System.Windows.Forms.DataGridView();
-            this.btnActualizaListaDom = new FontAwesome.Sharp.IconButton();
+            this.btnNuevaDire = new FontAwesome.Sharp.IconButton();
             this.btnBuscaDom = new FontAwesome.Sharp.IconButton();
             this.label28 = new System.Windows.Forms.Label();
             this.tabNuevoDom = new System.Windows.Forms.TabPage();
@@ -180,15 +180,15 @@
             // tabConsulta
             // 
             this.tabConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabConsulta.Controls.Add(this.btnActualizar);
+            this.tabConsulta.Controls.Add(this.btnEliminar);
+            this.tabConsulta.Controls.Add(this.btnModificarCliente);
+            this.tabConsulta.Controls.Add(this.btnNuevoCliente);
             this.tabConsulta.Controls.Add(this.label15);
             this.tabConsulta.Controls.Add(this.label14);
             this.tabConsulta.Controls.Add(this.label17);
             this.tabConsulta.Controls.Add(this.label19);
             this.tabConsulta.Controls.Add(this.label20);
-            this.tabConsulta.Controls.Add(this.btnNuevoCliente);
-            this.tabConsulta.Controls.Add(this.btnEliminar);
-            this.tabConsulta.Controls.Add(this.btnActualizaLista);
-            this.tabConsulta.Controls.Add(this.btnModificar);
             this.tabConsulta.Controls.Add(this.dgvClientes);
             this.tabConsulta.Controls.Add(this.btnBuscar);
             this.tabConsulta.Controls.Add(this.tbBusca);
@@ -202,6 +202,107 @@
             this.tabConsulta.Size = new System.Drawing.Size(948, 577);
             this.tabConsulta.TabIndex = 0;
             this.tabConsulta.Text = "Consulta";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.btnActualizar.IconColor = System.Drawing.Color.White;
+            this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizar.IconSize = 25;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(791, 40);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizar.TabIndex = 188;
+            this.btnActualizar.TabStop = false;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 25;
+            this.btnEliminar.Location = new System.Drawing.Point(365, 516);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(116, 31);
+            this.btnEliminar.TabIndex = 187;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificarCliente
+            // 
+            this.btnModificarCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnModificarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnModificarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModificarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModificarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnModificarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnModificarCliente.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnModificarCliente.IconColor = System.Drawing.Color.White;
+            this.btnModificarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificarCliente.IconSize = 25;
+            this.btnModificarCliente.Location = new System.Drawing.Point(196, 516);
+            this.btnModificarCliente.Name = "btnModificarCliente";
+            this.btnModificarCliente.Size = new System.Drawing.Size(116, 31);
+            this.btnModificarCliente.TabIndex = 186;
+            this.btnModificarCliente.TabStop = false;
+            this.btnModificarCliente.Text = "MODIFICAR";
+            this.btnModificarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificarCliente.UseVisualStyleBackColor = false;
+            this.btnModificarCliente.Click += new System.EventHandler(this.btnModificarCliente_Click);
+            // 
+            // btnNuevoCliente
+            // 
+            this.btnNuevoCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevoCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevoCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoCliente.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnNuevoCliente.IconColor = System.Drawing.Color.White;
+            this.btnNuevoCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevoCliente.IconSize = 25;
+            this.btnNuevoCliente.Location = new System.Drawing.Point(25, 516);
+            this.btnNuevoCliente.Name = "btnNuevoCliente";
+            this.btnNuevoCliente.Size = new System.Drawing.Size(116, 31);
+            this.btnNuevoCliente.TabIndex = 185;
+            this.btnNuevoCliente.TabStop = false;
+            this.btnNuevoCliente.Text = "NUEVO";
+            this.btnNuevoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoCliente.UseVisualStyleBackColor = false;
+            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
             // 
             // label15
             // 
@@ -272,91 +373,6 @@
             this.label20.TabIndex = 145;
             this.label20.Text = "NOMBRE";
             this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnNuevoCliente
-            // 
-            this.btnNuevoCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevoCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevoCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(25, 516);
-            this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(116, 31);
-            this.btnNuevoCliente.TabIndex = 119;
-            this.btnNuevoCliente.TabStop = false;
-            this.btnNuevoCliente.Text = "NUEVO";
-            this.btnNuevoCliente.UseVisualStyleBackColor = false;
-            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(364, 516);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(116, 31);
-            this.btnEliminar.TabIndex = 116;
-            this.btnEliminar.TabStop = false;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnActualizaLista
-            // 
-            this.btnActualizaLista.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizaLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnActualizaLista.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizaLista.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnActualizaLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizaLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnActualizaLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizaLista.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnActualizaLista.ForeColor = System.Drawing.Color.White;
-            this.btnActualizaLista.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnActualizaLista.IconColor = System.Drawing.Color.White;
-            this.btnActualizaLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaLista.IconSize = 5;
-            this.btnActualizaLista.Location = new System.Drawing.Point(791, 40);
-            this.btnActualizaLista.Name = "btnActualizaLista";
-            this.btnActualizaLista.Size = new System.Drawing.Size(116, 31);
-            this.btnActualizaLista.TabIndex = 88;
-            this.btnActualizaLista.TabStop = false;
-            this.btnActualizaLista.Text = " ACTUALIZAR";
-            this.btnActualizaLista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizaLista.UseVisualStyleBackColor = false;
-            this.btnActualizaLista.Click += new System.EventHandler(this.btnActualizaLista_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(196, 516);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(116, 31);
-            this.btnModificar.TabIndex = 87;
-            this.btnModificar.TabStop = false;
-            this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // dgvClientes
             // 
@@ -468,6 +484,7 @@
             // tabNuevoCliente
             // 
             this.tabNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabNuevoCliente.Controls.Add(this.btnSeleccionaDir);
             this.tabNuevoCliente.Controls.Add(this.lblErrorDire);
             this.tabNuevoCliente.Controls.Add(this.lblErrorIVA);
             this.tabNuevoCliente.Controls.Add(this.lblErrorNom);
@@ -487,7 +504,6 @@
             this.tabNuevoCliente.Controls.Add(this.btnCancela);
             this.tabNuevoCliente.Controls.Add(this.btAceptar);
             this.tabNuevoCliente.Controls.Add(this.tbIdDom);
-            this.tabNuevoCliente.Controls.Add(this.btnSeleccionaDireccion);
             this.tabNuevoCliente.Controls.Add(this.tbDireccion);
             this.tabNuevoCliente.Controls.Add(this.cbCondIVA);
             this.tabNuevoCliente.Controls.Add(this.label5);
@@ -512,13 +528,33 @@
             this.tabNuevoCliente.TabIndex = 1;
             this.tabNuevoCliente.Text = "Mantenimiento";
             // 
+            // btnSeleccionaDir
+            // 
+            this.btnSeleccionaDir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSeleccionaDir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnSeleccionaDir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionaDir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSeleccionaDir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSeleccionaDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnSeleccionaDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionaDir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSeleccionaDir.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionaDir.Location = new System.Drawing.Point(413, 377);
+            this.btnSeleccionaDir.Name = "btnSeleccionaDir";
+            this.btnSeleccionaDir.Size = new System.Drawing.Size(59, 23);
+            this.btnSeleccionaDir.TabIndex = 130;
+            this.btnSeleccionaDir.TabStop = false;
+            this.btnSeleccionaDir.Text = "Elegir";
+            this.btnSeleccionaDir.UseVisualStyleBackColor = false;
+            this.btnSeleccionaDir.Click += new System.EventHandler(this.btnSeleccionaDir_Click);
+            // 
             // lblErrorDire
             // 
             this.lblErrorDire.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblErrorDire.AutoSize = true;
             this.lblErrorDire.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
             this.lblErrorDire.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorDire.Location = new System.Drawing.Point(243, 316);
+            this.lblErrorDire.Location = new System.Drawing.Point(243, 373);
             this.lblErrorDire.Name = "lblErrorDire";
             this.lblErrorDire.Size = new System.Drawing.Size(112, 13);
             this.lblErrorDire.TabIndex = 129;
@@ -531,7 +567,7 @@
             this.lblErrorIVA.AutoSize = true;
             this.lblErrorIVA.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
             this.lblErrorIVA.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorIVA.Location = new System.Drawing.Point(243, 265);
+            this.lblErrorIVA.Location = new System.Drawing.Point(243, 311);
             this.lblErrorIVA.Name = "lblErrorIVA";
             this.lblErrorIVA.Size = new System.Drawing.Size(153, 13);
             this.lblErrorIVA.TabIndex = 129;
@@ -544,7 +580,7 @@
             this.lblErrorNom.AutoSize = true;
             this.lblErrorNom.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
             this.lblErrorNom.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorNom.Location = new System.Drawing.Point(243, 215);
+            this.lblErrorNom.Location = new System.Drawing.Point(243, 250);
             this.lblErrorNom.Name = "lblErrorNom";
             this.lblErrorNom.Size = new System.Drawing.Size(144, 13);
             this.lblErrorNom.TabIndex = 129;
@@ -557,7 +593,7 @@
             this.lblErrorApe.AutoSize = true;
             this.lblErrorApe.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
             this.lblErrorApe.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorApe.Location = new System.Drawing.Point(243, 166);
+            this.lblErrorApe.Location = new System.Drawing.Point(243, 190);
             this.lblErrorApe.Name = "lblErrorApe";
             this.lblErrorApe.Size = new System.Drawing.Size(144, 13);
             this.lblErrorApe.TabIndex = 129;
@@ -570,7 +606,7 @@
             this.lblErrorDNI.AutoSize = true;
             this.lblErrorDNI.Font = new System.Drawing.Font("Segoe UI", 7.75F, System.Drawing.FontStyle.Bold);
             this.lblErrorDNI.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorDNI.Location = new System.Drawing.Point(243, 118);
+            this.lblErrorDNI.Location = new System.Drawing.Point(243, 131);
             this.lblErrorDNI.Name = "lblErrorDNI";
             this.lblErrorDNI.Size = new System.Drawing.Size(206, 13);
             this.lblErrorDNI.TabIndex = 128;
@@ -583,7 +619,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.SystemColors.Control;
-            this.label27.Location = new System.Drawing.Point(417, 96);
+            this.label27.Location = new System.Drawing.Point(417, 109);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(15, 16);
             this.label27.TabIndex = 127;
@@ -595,7 +631,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.SystemColors.Control;
-            this.label26.Location = new System.Drawing.Point(295, 96);
+            this.label26.Location = new System.Drawing.Point(295, 109);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(15, 16);
             this.label26.TabIndex = 126;
@@ -604,6 +640,7 @@
             // cbSuF
             // 
             this.cbSuF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbSuF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSuF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSuF.Enabled = false;
             this.cbSuF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -622,7 +659,7 @@
             "7",
             "8",
             "9"});
-            this.cbSuF.Location = new System.Drawing.Point(435, 91);
+            this.cbSuF.Location = new System.Drawing.Point(435, 104);
             this.cbSuF.Name = "cbSuF";
             this.cbSuF.Size = new System.Drawing.Size(37, 25);
             this.cbSuF.TabIndex = 125;
@@ -630,6 +667,7 @@
             // cbPreF
             // 
             this.cbPreF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbPreF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbPreF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPreF.Enabled = false;
             this.cbPreF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -647,7 +685,7 @@
             "30",
             "33",
             "34"});
-            this.cbPreF.Location = new System.Drawing.Point(245, 91);
+            this.cbPreF.Location = new System.Drawing.Point(245, 104);
             this.cbPreF.Name = "cbPreF";
             this.cbPreF.Size = new System.Drawing.Size(45, 25);
             this.cbPreF.TabIndex = 124;
@@ -658,7 +696,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.Yellow;
-            this.label11.Location = new System.Drawing.Point(400, 399);
+            this.label11.Location = new System.Drawing.Point(406, 449);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(178, 20);
             this.label11.TabIndex = 123;
@@ -670,7 +708,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Yellow;
-            this.label10.Location = new System.Drawing.Point(478, 292);
+            this.label10.Location = new System.Drawing.Point(478, 349);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(16, 20);
             this.label10.TabIndex = 123;
@@ -682,7 +720,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Yellow;
-            this.label9.Location = new System.Drawing.Point(478, 241);
+            this.label9.Location = new System.Drawing.Point(478, 287);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 20);
             this.label9.TabIndex = 123;
@@ -694,7 +732,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Yellow;
-            this.label8.Location = new System.Drawing.Point(478, 191);
+            this.label8.Location = new System.Drawing.Point(478, 226);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(16, 20);
             this.label8.TabIndex = 123;
@@ -706,7 +744,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Yellow;
-            this.label7.Location = new System.Drawing.Point(478, 143);
+            this.label7.Location = new System.Drawing.Point(478, 167);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 20);
             this.label7.TabIndex = 123;
@@ -718,7 +756,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Yellow;
-            this.label6.Location = new System.Drawing.Point(478, 93);
+            this.label6.Location = new System.Drawing.Point(478, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 20);
             this.label6.TabIndex = 123;
@@ -736,7 +774,7 @@
             this.cbDNICUIT.Items.AddRange(new object[] {
             "DNI",
             "CUIT"});
-            this.cbDNICUIT.Location = new System.Drawing.Point(151, 91);
+            this.cbDNICUIT.Location = new System.Drawing.Point(151, 104);
             this.cbDNICUIT.Name = "cbDNICUIT";
             this.cbDNICUIT.Size = new System.Drawing.Size(83, 25);
             this.cbDNICUIT.TabIndex = 1;
@@ -753,7 +791,7 @@
             this.btnCancela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancela.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnCancela.ForeColor = System.Drawing.Color.White;
-            this.btnCancela.Location = new System.Drawing.Point(516, 464);
+            this.btnCancela.Location = new System.Drawing.Point(516, 503);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(116, 31);
             this.btnCancela.TabIndex = 121;
@@ -773,7 +811,7 @@
             this.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAceptar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btAceptar.ForeColor = System.Drawing.Color.White;
-            this.btAceptar.Location = new System.Drawing.Point(356, 464);
+            this.btAceptar.Location = new System.Drawing.Point(356, 503);
             this.btAceptar.Name = "btAceptar";
             this.btAceptar.Size = new System.Drawing.Size(116, 31);
             this.btAceptar.TabIndex = 120;
@@ -788,39 +826,19 @@
             this.tbIdDom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbIdDom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbIdDom.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbIdDom.Location = new System.Drawing.Point(104, 292);
+            this.tbIdDom.Location = new System.Drawing.Point(104, 349);
             this.tbIdDom.Name = "tbIdDom";
             this.tbIdDom.Size = new System.Drawing.Size(49, 18);
             this.tbIdDom.TabIndex = 0;
             this.tbIdDom.TabStop = false;
             this.tbIdDom.Visible = false;
             // 
-            // btnSeleccionaDireccion
-            // 
-            this.btnSeleccionaDireccion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSeleccionaDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnSeleccionaDireccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionaDireccion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSeleccionaDireccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSeleccionaDireccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnSeleccionaDireccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionaDireccion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnSeleccionaDireccion.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionaDireccion.Location = new System.Drawing.Point(516, 286);
-            this.btnSeleccionaDireccion.Name = "btnSeleccionaDireccion";
-            this.btnSeleccionaDireccion.Size = new System.Drawing.Size(116, 31);
-            this.btnSeleccionaDireccion.TabIndex = 6;
-            this.btnSeleccionaDireccion.Text = "SELECCIONAR";
-            this.btnSeleccionaDireccion.UseVisualStyleBackColor = false;
-            this.btnSeleccionaDireccion.Click += new System.EventHandler(this.btnSeleccionaDireccion_Click);
-            this.btnSeleccionaDireccion.Leave += new System.EventHandler(this.btnSeleccionaDireccion_Leave);
-            // 
             // tbDireccion
             // 
             this.tbDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbDireccion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDireccion.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbDireccion.Location = new System.Drawing.Point(245, 289);
+            this.tbDireccion.Location = new System.Drawing.Point(245, 346);
             this.tbDireccion.Name = "tbDireccion";
             this.tbDireccion.ReadOnly = true;
             this.tbDireccion.Size = new System.Drawing.Size(227, 25);
@@ -832,6 +850,7 @@
             // cbCondIVA
             // 
             this.cbCondIVA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCondIVA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCondIVA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCondIVA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCondIVA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -843,7 +862,7 @@
             "Exento",
             "Monotributista",
             "Responsable Inscripto"});
-            this.cbCondIVA.Location = new System.Drawing.Point(245, 238);
+            this.cbCondIVA.Location = new System.Drawing.Point(245, 284);
             this.cbCondIVA.Name = "cbCondIVA";
             this.cbCondIVA.Size = new System.Drawing.Size(227, 25);
             this.cbCondIVA.TabIndex = 5;
@@ -856,7 +875,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(169, 292);
+            this.label5.Location = new System.Drawing.Point(169, 349);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 17);
             this.label5.TabIndex = 108;
@@ -868,7 +887,7 @@
             this.lblRazonSocial.AutoSize = true;
             this.lblRazonSocial.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRazonSocial.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRazonSocial.Location = new System.Drawing.Point(552, 191);
+            this.lblRazonSocial.Location = new System.Drawing.Point(552, 226);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(89, 17);
             this.lblRazonSocial.TabIndex = 108;
@@ -880,7 +899,7 @@
             this.lblEmpresa.AutoSize = true;
             this.lblEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpresa.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEmpresa.Location = new System.Drawing.Point(82, 241);
+            this.lblEmpresa.Location = new System.Drawing.Point(82, 287);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(157, 17);
             this.lblEmpresa.TabIndex = 108;
@@ -891,7 +910,7 @@
             this.tbEmpresa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbEmpresa.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbEmpresa.Location = new System.Drawing.Point(647, 188);
+            this.tbEmpresa.Location = new System.Drawing.Point(647, 223);
             this.tbEmpresa.MaxLength = 100;
             this.tbEmpresa.Name = "tbEmpresa";
             this.tbEmpresa.Size = new System.Drawing.Size(227, 25);
@@ -903,7 +922,7 @@
             this.tbMail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbMail.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbMail.Location = new System.Drawing.Point(647, 139);
+            this.tbMail.Location = new System.Drawing.Point(647, 163);
             this.tbMail.MaxLength = 150;
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(227, 25);
@@ -915,7 +934,7 @@
             this.lblTel.AutoSize = true;
             this.lblTel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTel.Location = new System.Drawing.Point(575, 94);
+            this.lblTel.Location = new System.Drawing.Point(575, 107);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(66, 17);
             this.lblTel.TabIndex = 105;
@@ -927,7 +946,7 @@
             this.lblCuit.AutoSize = true;
             this.lblCuit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuit.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCuit.Location = new System.Drawing.Point(69, 95);
+            this.lblCuit.Location = new System.Drawing.Point(69, 108);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(76, 17);
             this.lblCuit.TabIndex = 106;
@@ -938,7 +957,7 @@
             this.tbTel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbTel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbTel.Location = new System.Drawing.Point(647, 91);
+            this.tbTel.Location = new System.Drawing.Point(647, 104);
             this.tbTel.MaxLength = 50;
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(227, 25);
@@ -949,7 +968,7 @@
             this.tbDNI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbDNI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDNI.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbDNI.Location = new System.Drawing.Point(313, 91);
+            this.tbDNI.Location = new System.Drawing.Point(313, 104);
             this.tbDNI.MaxLength = 8;
             this.tbDNI.Name = "tbDNI";
             this.tbDNI.Size = new System.Drawing.Size(101, 25);
@@ -965,7 +984,7 @@
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMail.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMail.Location = new System.Drawing.Point(590, 142);
+            this.lblMail.Location = new System.Drawing.Point(590, 166);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(51, 17);
             this.lblMail.TabIndex = 107;
@@ -976,7 +995,7 @@
             this.tbApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbApellido.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbApellido.Location = new System.Drawing.Point(245, 139);
+            this.tbApellido.Location = new System.Drawing.Point(245, 163);
             this.tbApellido.MaxLength = 100;
             this.tbApellido.Name = "tbApellido";
             this.tbApellido.Size = new System.Drawing.Size(227, 25);
@@ -991,7 +1010,7 @@
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblApellido.Location = new System.Drawing.Point(175, 143);
+            this.lblApellido.Location = new System.Drawing.Point(175, 167);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(64, 17);
             this.lblApellido.TabIndex = 109;
@@ -1002,7 +1021,7 @@
             this.tbNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNombre.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbNombre.Location = new System.Drawing.Point(245, 188);
+            this.tbNombre.Location = new System.Drawing.Point(245, 223);
             this.tbNombre.MaxLength = 100;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(227, 25);
@@ -1017,7 +1036,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNombre.Location = new System.Drawing.Point(177, 191);
+            this.lblNombre.Location = new System.Drawing.Point(177, 226);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(62, 17);
             this.lblNombre.TabIndex = 104;
@@ -1039,18 +1058,18 @@
             // tabListaDom
             // 
             this.tabListaDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabListaDom.Controls.Add(this.btnActualizarDir);
+            this.tabListaDom.Controls.Add(this.btnElimiarDom);
+            this.tabListaDom.Controls.Add(this.btnModificarDom);
             this.tabListaDom.Controls.Add(this.label12);
             this.tabListaDom.Controls.Add(this.label13);
             this.tabListaDom.Controls.Add(this.label16);
             this.tabListaDom.Controls.Add(this.label18);
             this.tabListaDom.Controls.Add(this.label21);
-            this.tabListaDom.Controls.Add(this.btnEliminaDom);
-            this.tabListaDom.Controls.Add(this.btnModificaDom);
-            this.tabListaDom.Controls.Add(this.btnNuevaDireccion);
             this.tabListaDom.Controls.Add(this.tbBuscarDomicilio);
             this.tabListaDom.Controls.Add(this.label1);
             this.tabListaDom.Controls.Add(this.dgvDomicilios);
-            this.tabListaDom.Controls.Add(this.btnActualizaListaDom);
+            this.tabListaDom.Controls.Add(this.btnNuevaDire);
             this.tabListaDom.Controls.Add(this.btnBuscaDom);
             this.tabListaDom.Controls.Add(this.label28);
             this.tabListaDom.Location = new System.Drawing.Point(4, 26);
@@ -1059,6 +1078,82 @@
             this.tabListaDom.Size = new System.Drawing.Size(948, 577);
             this.tabListaDom.TabIndex = 2;
             this.tabListaDom.Text = "Lista Direcciones";
+            // 
+            // btnActualizarDir
+            // 
+            this.btnActualizarDir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizarDir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarDir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizarDir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizarDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizarDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarDir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizarDir.ForeColor = System.Drawing.Color.White;
+            this.btnActualizarDir.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.btnActualizarDir.IconColor = System.Drawing.Color.White;
+            this.btnActualizarDir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizarDir.IconSize = 25;
+            this.btnActualizarDir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarDir.Location = new System.Drawing.Point(791, 42);
+            this.btnActualizarDir.Name = "btnActualizarDir";
+            this.btnActualizarDir.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizarDir.TabIndex = 186;
+            this.btnActualizarDir.TabStop = false;
+            this.btnActualizarDir.Text = "ACTUALIZAR";
+            this.btnActualizarDir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarDir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizarDir.UseVisualStyleBackColor = false;
+            this.btnActualizarDir.Click += new System.EventHandler(this.btnActualizarDir_Click);
+            // 
+            // btnElimiarDom
+            // 
+            this.btnElimiarDom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnElimiarDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnElimiarDom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnElimiarDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnElimiarDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnElimiarDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnElimiarDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElimiarDom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnElimiarDom.ForeColor = System.Drawing.Color.White;
+            this.btnElimiarDom.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnElimiarDom.IconColor = System.Drawing.Color.White;
+            this.btnElimiarDom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnElimiarDom.IconSize = 25;
+            this.btnElimiarDom.Location = new System.Drawing.Point(365, 515);
+            this.btnElimiarDom.Name = "btnElimiarDom";
+            this.btnElimiarDom.Size = new System.Drawing.Size(116, 31);
+            this.btnElimiarDom.TabIndex = 185;
+            this.btnElimiarDom.TabStop = false;
+            this.btnElimiarDom.Text = "ELIMINAR";
+            this.btnElimiarDom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnElimiarDom.UseVisualStyleBackColor = false;
+            this.btnElimiarDom.Click += new System.EventHandler(this.btnElimiarDom_Click);
+            // 
+            // btnModificarDom
+            // 
+            this.btnModificarDom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnModificarDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnModificarDom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModificarDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModificarDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnModificarDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarDom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnModificarDom.ForeColor = System.Drawing.Color.White;
+            this.btnModificarDom.IconChar = FontAwesome.Sharp.IconChar.PenAlt;
+            this.btnModificarDom.IconColor = System.Drawing.Color.White;
+            this.btnModificarDom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificarDom.IconSize = 25;
+            this.btnModificarDom.Location = new System.Drawing.Point(194, 515);
+            this.btnModificarDom.Name = "btnModificarDom";
+            this.btnModificarDom.Size = new System.Drawing.Size(116, 31);
+            this.btnModificarDom.TabIndex = 184;
+            this.btnModificarDom.TabStop = false;
+            this.btnModificarDom.Text = "MODIFICAR";
+            this.btnModificarDom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificarDom.UseVisualStyleBackColor = false;
+            this.btnModificarDom.Click += new System.EventHandler(this.btnModificarDom_Click);
             // 
             // label12
             // 
@@ -1130,66 +1225,6 @@
             this.label21.Text = "NÚMERO";
             this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnEliminaDom
-            // 
-            this.btnEliminaDom.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminaDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEliminaDom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminaDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminaDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminaDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEliminaDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminaDom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminaDom.ForeColor = System.Drawing.Color.White;
-            this.btnEliminaDom.Location = new System.Drawing.Point(365, 527);
-            this.btnEliminaDom.Name = "btnEliminaDom";
-            this.btnEliminaDom.Size = new System.Drawing.Size(116, 31);
-            this.btnEliminaDom.TabIndex = 122;
-            this.btnEliminaDom.TabStop = false;
-            this.btnEliminaDom.Text = "ELIMINAR";
-            this.btnEliminaDom.UseVisualStyleBackColor = false;
-            this.btnEliminaDom.Click += new System.EventHandler(this.btnEliminaDom_Click);
-            // 
-            // btnModificaDom
-            // 
-            this.btnModificaDom.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificaDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnModificaDom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificaDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnModificaDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnModificaDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnModificaDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificaDom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModificaDom.ForeColor = System.Drawing.Color.White;
-            this.btnModificaDom.Location = new System.Drawing.Point(197, 527);
-            this.btnModificaDom.Name = "btnModificaDom";
-            this.btnModificaDom.Size = new System.Drawing.Size(116, 31);
-            this.btnModificaDom.TabIndex = 120;
-            this.btnModificaDom.TabStop = false;
-            this.btnModificaDom.Text = "MODIFICAR";
-            this.btnModificaDom.UseVisualStyleBackColor = false;
-            this.btnModificaDom.Click += new System.EventHandler(this.btnModificaDom_Click);
-            // 
-            // btnNuevaDireccion
-            // 
-            this.btnNuevaDireccion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNuevaDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNuevaDireccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevaDireccion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevaDireccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevaDireccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNuevaDireccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaDireccion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNuevaDireccion.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaDireccion.Location = new System.Drawing.Point(25, 527);
-            this.btnNuevaDireccion.Name = "btnNuevaDireccion";
-            this.btnNuevaDireccion.Size = new System.Drawing.Size(116, 31);
-            this.btnNuevaDireccion.TabIndex = 118;
-            this.btnNuevaDireccion.TabStop = false;
-            this.btnNuevaDireccion.Text = "NUEVA";
-            this.btnNuevaDireccion.UseVisualStyleBackColor = false;
-            this.btnNuevaDireccion.Click += new System.EventHandler(this.btnNuevaDireccion_Click);
-            // 
             // tbBuscarDomicilio
             // 
             this.tbBuscarDomicilio.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1239,7 +1274,7 @@
             this.dgvDomicilios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvDomicilios.EnableHeadersVisualStyles = false;
             this.dgvDomicilios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvDomicilios.Location = new System.Drawing.Point(26, 120);
+            this.dgvDomicilios.Location = new System.Drawing.Point(26, 119);
             this.dgvDomicilios.MaximumSize = new System.Drawing.Size(900, 400);
             this.dgvDomicilios.Name = "dgvDomicilios";
             this.dgvDomicilios.ReadOnly = true;
@@ -1254,35 +1289,35 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.dgvDomicilios.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDomicilios.Size = new System.Drawing.Size(900, 386);
+            this.dgvDomicilios.Size = new System.Drawing.Size(900, 366);
             this.dgvDomicilios.TabIndex = 87;
             this.dgvDomicilios.TabStop = false;
             this.dgvDomicilios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDomicilios_CellContentDoubleClick);
             // 
-            // btnActualizaListaDom
+            // btnNuevaDire
             // 
-            this.btnActualizaListaDom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizaListaDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnActualizaListaDom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizaListaDom.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnActualizaListaDom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizaListaDom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnActualizaListaDom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizaListaDom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnActualizaListaDom.ForeColor = System.Drawing.Color.White;
-            this.btnActualizaListaDom.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnActualizaListaDom.IconColor = System.Drawing.Color.White;
-            this.btnActualizaListaDom.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaListaDom.IconSize = 5;
-            this.btnActualizaListaDom.Location = new System.Drawing.Point(791, 42);
-            this.btnActualizaListaDom.Name = "btnActualizaListaDom";
-            this.btnActualizaListaDom.Size = new System.Drawing.Size(116, 31);
-            this.btnActualizaListaDom.TabIndex = 121;
-            this.btnActualizaListaDom.TabStop = false;
-            this.btnActualizaListaDom.Text = " ACTUALIZAR";
-            this.btnActualizaListaDom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizaListaDom.UseVisualStyleBackColor = false;
-            this.btnActualizaListaDom.Click += new System.EventHandler(this.btnActualizaListaDom_Click);
+            this.btnNuevaDire.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNuevaDire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNuevaDire.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaDire.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevaDire.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaDire.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNuevaDire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaDire.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNuevaDire.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaDire.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnNuevaDire.IconColor = System.Drawing.Color.White;
+            this.btnNuevaDire.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevaDire.IconSize = 25;
+            this.btnNuevaDire.Location = new System.Drawing.Point(25, 515);
+            this.btnNuevaDire.Name = "btnNuevaDire";
+            this.btnNuevaDire.Size = new System.Drawing.Size(116, 31);
+            this.btnNuevaDire.TabIndex = 119;
+            this.btnNuevaDire.TabStop = false;
+            this.btnNuevaDire.Text = "NUEVA";
+            this.btnNuevaDire.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaDire.UseVisualStyleBackColor = false;
+            this.btnNuevaDire.Click += new System.EventHandler(this.btnNuevaDire_Click);
             // 
             // btnBuscaDom
             // 
@@ -1318,7 +1353,7 @@
             this.label28.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label28.Location = new System.Drawing.Point(25, 117);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(903, 392);
+            this.label28.Size = new System.Drawing.Size(903, 369);
             this.label28.TabIndex = 183;
             this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1434,7 +1469,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(417, 449);
+            this.label4.Location = new System.Drawing.Point(406, 449);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(178, 20);
             this.label4.TabIndex = 165;
@@ -1443,6 +1478,7 @@
             // cbBarrio
             // 
             this.cbBarrio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbBarrio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBarrio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbBarrio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1459,6 +1495,7 @@
             // cbLocalidad
             // 
             this.cbLocalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbLocalidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbLocalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1737,6 +1774,7 @@
             // cbProvincia
             // 
             this.cbProvincia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbProvincia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1906,12 +1944,7 @@
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.TabControl tabClientes;
-        private System.Windows.Forms.TabPage tabConsulta;
         private System.Windows.Forms.TabPage tabNuevoCliente;
-        private FontAwesome.Sharp.IconButton btnBuscar;
-        private System.Windows.Forms.TextBox tbBusca;
-        private System.Windows.Forms.Label lblBuscar;
-        private System.Windows.Forms.DataGridView dgvClientes;
         private FontAwesome.Sharp.IconButton btnRegresar;
         private System.Windows.Forms.Label lblSubTitutlo;
         private System.Windows.Forms.Label lblEmpresa;
@@ -1927,19 +1960,12 @@
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TabPage tabListaDom;
-        private FontAwesome.Sharp.IconButton btnActualizaLista;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ComboBox cbCondIVA;
         private System.Windows.Forms.Label lblRazonSocial;
         private System.Windows.Forms.TextBox tbIdDom;
-        private System.Windows.Forms.Button btnSeleccionaDireccion;
         private System.Windows.Forms.TextBox tbDireccion;
         private System.Windows.Forms.Button btnCancela;
         private System.Windows.Forms.Button btAceptar;
-        private System.Windows.Forms.Button btnEliminaDom;
-        private FontAwesome.Sharp.IconButton btnActualizaListaDom;
-        private System.Windows.Forms.Button btnModificaDom;
         private FontAwesome.Sharp.IconButton btnBuscaDom;
         private System.Windows.Forms.TextBox tbBuscarDomicilio;
         private System.Windows.Forms.Label label1;
@@ -1960,9 +1986,7 @@
         private System.Windows.Forms.Label lblNro;
         private System.Windows.Forms.Label lblPiso;
         private System.Windows.Forms.Label lblDpto;
-        private System.Windows.Forms.Button btnNuevaDireccion;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnNuevoCliente;
         private System.Windows.Forms.ComboBox cbDNICUIT;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -1970,11 +1994,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label16;
@@ -2001,11 +2020,30 @@
         private System.Windows.Forms.Label lblErrorApe;
         private FontAwesome.Sharp.IconButton btnAgregaBarr;
         private FontAwesome.Sharp.IconButton btnAgregaLoc;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label lblErrorBarrio;
         private System.Windows.Forms.Label lblErrorLocalidad;
         private System.Windows.Forms.Label lblErrorProvincia;
         private System.Windows.Forms.Label lblErrorCalle;
+        private System.Windows.Forms.TabPage tabConsulta;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.TextBox tbBusca;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Label label29;
+        private FontAwesome.Sharp.IconButton btnNuevoCliente;
+        private FontAwesome.Sharp.IconButton btnModificarCliente;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnNuevaDire;
+        private FontAwesome.Sharp.IconButton btnModificarDom;
+        private FontAwesome.Sharp.IconButton btnElimiarDom;
+        private FontAwesome.Sharp.IconButton btnActualizarDir;
+        private FontAwesome.Sharp.IconButton btnActualizar;
+        private System.Windows.Forms.Button btnSeleccionaDir;
     }
 }

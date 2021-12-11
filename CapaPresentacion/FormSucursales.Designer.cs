@@ -39,14 +39,14 @@
             this.lblSucursal = new System.Windows.Forms.Label();
             this.tbNuevaSucursal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnNueva = new System.Windows.Forms.Button();
             this.btnRegistrarSucursal = new System.Windows.Forms.Button();
             this.btnCancela = new System.Windows.Forms.Button();
-            this.btnElim = new System.Windows.Forms.Button();
-            this.btnMod = new System.Windows.Forms.Button();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnMod = new FontAwesome.Sharp.IconButton();
+            this.btnNueva = new FontAwesome.Sharp.IconButton();
+            this.btnElim = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.SuspendLayout();
@@ -166,26 +166,6 @@
             this.label13.Text = "NOMBRE";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnNueva
-            // 
-            this.btnNueva.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNueva.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNueva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNueva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNueva.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNueva.ForeColor = System.Drawing.Color.White;
-            this.btnNueva.Location = new System.Drawing.Point(213, 83);
-            this.btnNueva.Name = "btnNueva";
-            this.btnNueva.Size = new System.Drawing.Size(116, 31);
-            this.btnNueva.TabIndex = 218;
-            this.btnNueva.TabStop = false;
-            this.btnNueva.Text = "NUEVA";
-            this.btnNueva.UseVisualStyleBackColor = false;
-            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
-            // 
             // btnRegistrarSucursal
             // 
             this.btnRegistrarSucursal.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -227,46 +207,6 @@
             this.btnCancela.Text = "CANCELAR";
             this.btnCancela.UseVisualStyleBackColor = false;
             this.btnCancela.Click += new System.EventHandler(this.btnCancela_Click);
-            // 
-            // btnElim
-            // 
-            this.btnElim.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnElim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnElim.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnElim.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnElim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnElim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnElim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnElim.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnElim.ForeColor = System.Drawing.Color.White;
-            this.btnElim.Location = new System.Drawing.Point(213, 208);
-            this.btnElim.Name = "btnElim";
-            this.btnElim.Size = new System.Drawing.Size(116, 31);
-            this.btnElim.TabIndex = 214;
-            this.btnElim.TabStop = false;
-            this.btnElim.Text = "ELIMINAR";
-            this.btnElim.UseVisualStyleBackColor = false;
-            this.btnElim.Click += new System.EventHandler(this.btnElim_Click);
-            // 
-            // btnMod
-            // 
-            this.btnMod.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnMod.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMod.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMod.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnMod.ForeColor = System.Drawing.Color.White;
-            this.btnMod.Location = new System.Drawing.Point(213, 146);
-            this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(116, 31);
-            this.btnMod.TabIndex = 215;
-            this.btnMod.TabStop = false;
-            this.btnMod.Text = "MODIFICAR";
-            this.btnMod.UseVisualStyleBackColor = false;
-            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             // 
             // lblSubtitulo
             // 
@@ -310,19 +250,94 @@
             this.label1.TabIndex = 221;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnMod
+            // 
+            this.btnMod.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnMod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMod.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMod.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnMod.ForeColor = System.Drawing.Color.White;
+            this.btnMod.IconChar = FontAwesome.Sharp.IconChar.PenAlt;
+            this.btnMod.IconColor = System.Drawing.Color.White;
+            this.btnMod.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMod.IconSize = 25;
+            this.btnMod.Location = new System.Drawing.Point(213, 145);
+            this.btnMod.Name = "btnMod";
+            this.btnMod.Size = new System.Drawing.Size(116, 31);
+            this.btnMod.TabIndex = 223;
+            this.btnMod.TabStop = false;
+            this.btnMod.Text = "MODIFICAR";
+            this.btnMod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMod.UseVisualStyleBackColor = false;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
+            // 
+            // btnNueva
+            // 
+            this.btnNueva.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNueva.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNueva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNueva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNueva.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNueva.ForeColor = System.Drawing.Color.White;
+            this.btnNueva.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnNueva.IconColor = System.Drawing.Color.White;
+            this.btnNueva.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNueva.IconSize = 25;
+            this.btnNueva.Location = new System.Drawing.Point(213, 83);
+            this.btnNueva.Name = "btnNueva";
+            this.btnNueva.Size = new System.Drawing.Size(116, 31);
+            this.btnNueva.TabIndex = 222;
+            this.btnNueva.TabStop = false;
+            this.btnNueva.Text = "NUEVA";
+            this.btnNueva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNueva.UseVisualStyleBackColor = false;
+            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
+            // 
+            // btnElim
+            // 
+            this.btnElim.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnElim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnElim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnElim.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnElim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnElim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnElim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElim.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnElim.ForeColor = System.Drawing.Color.White;
+            this.btnElim.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnElim.IconColor = System.Drawing.Color.White;
+            this.btnElim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnElim.IconSize = 25;
+            this.btnElim.Location = new System.Drawing.Point(213, 208);
+            this.btnElim.Name = "btnElim";
+            this.btnElim.Size = new System.Drawing.Size(116, 31);
+            this.btnElim.TabIndex = 224;
+            this.btnElim.TabStop = false;
+            this.btnElim.Text = "ELIMINAR";
+            this.btnElim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnElim.UseVisualStyleBackColor = false;
+            this.btnElim.Click += new System.EventHandler(this.btnElim_Click);
+            // 
             // FormSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.ClientSize = new System.Drawing.Size(367, 483);
+            this.Controls.Add(this.btnMod);
+            this.Controls.Add(this.btnNueva);
+            this.Controls.Add(this.btnElim);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblSubtitulo);
-            this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.btnRegistrarSucursal);
             this.Controls.Add(this.btnCancela);
-            this.Controls.Add(this.btnElim);
-            this.Controls.Add(this.btnMod);
             this.Controls.Add(this.dgvSucursal);
             this.Controls.Add(this.lblSucursal);
             this.Controls.Add(this.lblTitulo);
@@ -349,13 +364,13 @@
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.TextBox tbNuevaSucursal;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnNueva;
         private System.Windows.Forms.Button btnRegistrarSucursal;
         private System.Windows.Forms.Button btnCancela;
-        private System.Windows.Forms.Button btnElim;
-        private System.Windows.Forms.Button btnMod;
         private System.Windows.Forms.Label lblSubtitulo;
         private FontAwesome.Sharp.IconPictureBox btnSalir;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnMod;
+        private FontAwesome.Sharp.IconButton btnNueva;
+        private FontAwesome.Sharp.IconButton btnElim;
     }
 }

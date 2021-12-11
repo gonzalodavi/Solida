@@ -19,14 +19,13 @@ namespace CapaNegocio
         private string rol;
         private string email;
 
-        public ModeloUsuario(int userID, string user, string pass, string nombre, string apellido, string rol, string email)
+        public ModeloUsuario(int userID, string user, string pass, string nombre, string apellido, string email)
         {
             this.userID = userID;
             this.user = user;
             this.pass = pass;
             this.nombre = nombre;
-            this.apellido = apellido;
-            this.rol = rol;
+            this.apellido = apellido;            
             this.email = email;
         }
 
@@ -83,7 +82,8 @@ namespace CapaNegocio
             if (pass != UserLoginCache.Clave)
             {
                 datosU.editarClave(userID, pass);
-                return "Se ha modificado la clave.\n\nPor favor cierre la sesión y vuelva a ingresar con su nueva clave";
+                LoginUser(user, pass);
+                return "Se modificó la clave correctamente";
             }
             else
             {

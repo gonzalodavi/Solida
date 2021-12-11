@@ -67,63 +67,6 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            btnNuevo.Enabled = false;
-            btnEliminaModelo.Enabled = false;
-            btnModModelo.Enabled = false;
-            dgvModelo.Enabled = false;
-            lblModelo.Text = "Nuevo Modelo";
-            tbModelo.Enabled = true;
-            tbModelo.Text = "";
-            tbModelo.Focus();
-        }
-
-        private void btnModModelo_Click(object sender, EventArgs e)
-        {
-            if (dgvModelo.SelectedRows.Count > 0)
-            {
-                btnModModelo.Enabled = false;
-                btnEliminaModelo.Enabled = false;
-                btnNuevo.Enabled = false;
-                dgvModelo.Enabled = false;
-                lblModelo.Text = "Modificar Rubro";
-                tbModelo.Enabled = true;
-                tbModelo.Text = dgvModelo.CurrentRow.Cells["MODELO"].Value.ToString();
-                Editar = true;
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-        }
-
-        private void btnEliminaModelo_Click(object sender, EventArgs e)
-        {
-            if (dgvModelo.SelectedRows.Count > 0)
-            {
-                if (MessageBox.Show("¿Desea Eliminar el Modelo Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        string idModelo = dgvModelo.CurrentRow.Cells["ID"].Value.ToString();
-                        objeto.EliminarModelo(idModelo);
-                        MessageBox.Show("Se eliminó correctamente el Modelo seleccionado");
-                        CargarGrillaModelos();
-                        AcomodaTabla();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-        }
-
         private void btnAceptaModelo_Click(object sender, EventArgs e)
         {
             if (tbModelo.Text != "")
@@ -183,6 +126,63 @@ namespace CapaPresentacion
         private void btnCancelaModelo_Click(object sender, EventArgs e)
         {
             DeshabilitarEdicion();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            btnNuevo.Enabled = false;
+            btnEliminaModelo.Enabled = false;
+            btnModModelo.Enabled = false;
+            dgvModelo.Enabled = false;
+            lblModelo.Text = "Nuevo Modelo";
+            tbModelo.Enabled = true;
+            tbModelo.Text = "";
+            tbModelo.Focus();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvModelo.SelectedRows.Count > 0)
+            {
+                btnModModelo.Enabled = false;
+                btnEliminaModelo.Enabled = false;
+                btnNuevo.Enabled = false;
+                dgvModelo.Enabled = false;
+                lblModelo.Text = "Modificar Rubro";
+                tbModelo.Enabled = true;
+                tbModelo.Text = dgvModelo.CurrentRow.Cells["MODELO"].Value.ToString();
+                Editar = true;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
+        }
+
+        private void btnElimiarDom_Click(object sender, EventArgs e)
+        {
+            if (dgvModelo.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("¿Desea Eliminar el Modelo Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string idModelo = dgvModelo.CurrentRow.Cells["ID"].Value.ToString();
+                        objeto.EliminarModelo(idModelo);
+                        MessageBox.Show("Se eliminó correctamente el Modelo seleccionado");
+                        CargarGrillaModelos();
+                        AcomodaTabla();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
         }
     }
 }

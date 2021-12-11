@@ -33,19 +33,11 @@ namespace Presentacion
         {
             MessageBox.Show(mensaje, "SOLIDA", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-
-        private void CargaElComboBox()
-        {
-            tBRol.DataSource = objetoCN.CargarComboBox();
-            tBRol.DisplayMember = "nombre_Rol";
-            tBRol.Text = "";
-        }
+        
 
         private void FormEditarUsuario_Load(object sender, EventArgs e)
         {
             cargarDatosUsuario();
-            CargaElComboBox();
         }
 
         private void cargarDatosUsuario()
@@ -53,8 +45,7 @@ namespace Presentacion
             tBUsuario.Text = UserLoginCache.Usuario;
             tBNombre.Text = UserLoginCache.Nombre;
             tBApellido.Text = UserLoginCache.Apellido;
-            tBEmail.Text = UserLoginCache.Email;
-            tBRol.Text = UserLoginCache.Rango;
+            tBEmail.Text = UserLoginCache.Email;            
         }
 
 
@@ -66,7 +57,7 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (tBUsuario.Text != "" && tBNombre.Text != "" && tBApellido.Text != "" && tBEmail.Text != "" && tBRol.Text != "" && tBClaveActual.Text != "")
+            if (tBUsuario.Text != "" && tBNombre.Text != "" && tBApellido.Text != "" && tBEmail.Text != "" && tBClaveActual.Text != "")
             {
                 try
                 {
@@ -108,10 +99,11 @@ namespace Presentacion
                 {
                     if (tBClaveActual.Text == UserLoginCache.Clave)
                     {
-                        var modeloUsuario = new ModeloUsuario(userID: UserLoginCache.UserId, user: tBUsuario.Text, pass: tBClaveActual.Text, nombre: tBNombre.Text, apellido: tBApellido.Text, rol: tBRol.Text, email: tBEmail.Text);
+                        var modeloUsuario = new ModeloUsuario(userID: UserLoginCache.UserId, user: tBUsuario.Text, pass: tBClaveActual.Text, nombre: tBNombre.Text, apellido: tBApellido.Text, email: tBEmail.Text);
                         var result = modeloUsuario.editarPerfilUsuario();
                         MessageBox.Show(result);
                         reset();
+                        this.Close();
                     }
                     else
                     {
@@ -141,7 +133,6 @@ namespace Presentacion
             tBEmail.Enabled = false;
             tBNombre.Enabled = false;
             tBUsuario.Enabled = false;
-
         }
 
         private void btnCancelaClave_Click(object sender, EventArgs e)
@@ -169,7 +160,7 @@ namespace Presentacion
                 {
                     if (tBClaveActual.Text == UserLoginCache.Clave)
                     {
-                        var modeloUsuario = new ModeloUsuario(userID: UserLoginCache.UserId, user: tBUsuario.Text, pass: tBClaveNueva.Text, nombre: tBNombre.Text, apellido: tBApellido.Text, rol: tBRol.Text, email: tBEmail.Text);
+                        var modeloUsuario = new ModeloUsuario(userID: UserLoginCache.UserId, user: tBUsuario.Text, pass: tBClaveNueva.Text, nombre: tBNombre.Text, apellido: tBApellido.Text, email: tBEmail.Text);
                         var result = modeloUsuario.cambiarClave();
                         MessageBox.Show(result);                        
                         btnCambiarClave.Visible = true;
@@ -182,6 +173,7 @@ namespace Presentacion
                         btnGuardaClave.Visible = false;
                         btnCancelaClave.Visible = false;
                         reset();
+                        this.Close();
                     }
                     else
                     {

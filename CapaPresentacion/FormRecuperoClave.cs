@@ -29,23 +29,23 @@ namespace Presentacion
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
         private void mensajeRes(string msj)
         {
             lblResultado.Text = "     " + msj;
             lblResultado.Visible = true;
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
             var usuario = new ModeloUsuario();
             var resultado = usuario.recuperarClave(tBUsuarioMail.Text);
             mensajeRes(resultado);
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

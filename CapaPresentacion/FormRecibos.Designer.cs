@@ -45,6 +45,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabRecibos = new System.Windows.Forms.TabControl();
             this.tabConsultaRecibos = new System.Windows.Forms.TabPage();
+            this.btnNuevo = new FontAwesome.Sharp.IconButton();
+            this.btnAnular = new FontAwesome.Sharp.IconButton();
             this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
             this.chekVerAnulados = new Guna.UI.WinForms.GunaSwitch();
             this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -57,8 +59,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
-            this.btnNuevoCliente = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizaLista = new FontAwesome.Sharp.IconButton();
             this.dgvRecibos = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
@@ -211,6 +211,8 @@
             // tabConsultaRecibos
             // 
             this.tabConsultaRecibos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabConsultaRecibos.Controls.Add(this.btnNuevo);
+            this.tabConsultaRecibos.Controls.Add(this.btnAnular);
             this.tabConsultaRecibos.Controls.Add(this.lblChekAnul);
             this.tabConsultaRecibos.Controls.Add(this.chekVerAnulados);
             this.tabConsultaRecibos.Controls.Add(this.dtpFecha1);
@@ -223,8 +225,6 @@
             this.tabConsultaRecibos.Controls.Add(this.label6);
             this.tabConsultaRecibos.Controls.Add(this.label3);
             this.tabConsultaRecibos.Controls.Add(this.btnImprimir);
-            this.tabConsultaRecibos.Controls.Add(this.btnNuevoCliente);
-            this.tabConsultaRecibos.Controls.Add(this.btnEliminar);
             this.tabConsultaRecibos.Controls.Add(this.btnActualizaLista);
             this.tabConsultaRecibos.Controls.Add(this.dgvRecibos);
             this.tabConsultaRecibos.Controls.Add(this.btnBuscar);
@@ -237,6 +237,55 @@
             this.tabConsultaRecibos.Size = new System.Drawing.Size(948, 577);
             this.tabConsultaRecibos.TabIndex = 0;
             this.tabConsultaRecibos.Text = "Consultas";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
+            this.btnNuevo.IconColor = System.Drawing.Color.White;
+            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevo.IconSize = 22;
+            this.btnNuevo.Location = new System.Drawing.Point(773, 121);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(116, 31);
+            this.btnNuevo.TabIndex = 187;
+            this.btnNuevo.TabStop = false;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAnular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAnular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAnular.ForeColor = System.Drawing.Color.White;
+            this.btnAnular.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnAnular.IconColor = System.Drawing.Color.White;
+            this.btnAnular.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAnular.IconSize = 25;
+            this.btnAnular.Location = new System.Drawing.Point(773, 206);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(116, 31);
+            this.btnAnular.TabIndex = 188;
+            this.btnAnular.TabStop = false;
+            this.btnAnular.Text = "ANULAR";
+            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // lblChekAnul
             // 
@@ -267,6 +316,7 @@
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -292,6 +342,7 @@
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -434,46 +485,6 @@
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // btnNuevoCliente
-            // 
-            this.btnNuevoCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevoCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevoCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(773, 126);
-            this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(116, 31);
-            this.btnNuevoCliente.TabIndex = 119;
-            this.btnNuevoCliente.TabStop = false;
-            this.btnNuevoCliente.Text = "NUEVO";
-            this.btnNuevoCliente.UseVisualStyleBackColor = false;
-            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(773, 209);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(116, 31);
-            this.btnEliminar.TabIndex = 116;
-            this.btnEliminar.TabStop = false;
-            this.btnEliminar.Text = "ANULAR";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // btnActualizaLista
             // 
             this.btnActualizaLista.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -488,7 +499,7 @@
             this.btnActualizaLista.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.btnActualizaLista.IconColor = System.Drawing.Color.White;
             this.btnActualizaLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaLista.IconSize = 18;
+            this.btnActualizaLista.IconSize = 25;
             this.btnActualizaLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActualizaLista.Location = new System.Drawing.Point(773, 38);
             this.btnActualizaLista.Name = "btnActualizaLista";
@@ -524,6 +535,7 @@
             this.dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecibos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRecibos.ColumnHeadersVisible = false;
+            this.dgvRecibos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvRecibos.EnableHeadersVisualStyles = false;
             this.dgvRecibos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvRecibos.Location = new System.Drawing.Point(84, 126);
@@ -741,6 +753,7 @@
             this.dtpFechaRecibo.BackColor = System.Drawing.Color.Transparent;
             this.dtpFechaRecibo.BaseColor = System.Drawing.Color.White;
             this.dtpFechaRecibo.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFechaRecibo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFechaRecibo.CustomFormat = null;
             this.dtpFechaRecibo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFechaRecibo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -987,6 +1000,7 @@
             // cbCliente
             // 
             this.cbCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1536,6 +1550,7 @@
             this.dtpCheqCredito.BackColor = System.Drawing.Color.Transparent;
             this.dtpCheqCredito.BaseColor = System.Drawing.Color.White;
             this.dtpCheqCredito.BorderColor = System.Drawing.Color.Silver;
+            this.dtpCheqCredito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpCheqCredito.CustomFormat = null;
             this.dtpCheqCredito.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpCheqCredito.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1561,6 +1576,7 @@
             this.dtpCheqEmision.BackColor = System.Drawing.Color.Transparent;
             this.dtpCheqEmision.BaseColor = System.Drawing.Color.White;
             this.dtpCheqEmision.BorderColor = System.Drawing.Color.Silver;
+            this.dtpCheqEmision.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpCheqEmision.CustomFormat = null;
             this.dtpCheqEmision.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpCheqEmision.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1619,6 +1635,7 @@
             this.dgvValores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvValores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvValores.ColumnHeadersVisible = false;
+            this.dgvValores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvValores.EnableHeadersVisualStyles = false;
             this.dgvValores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvValores.Location = new System.Drawing.Point(41, 230);
@@ -1799,7 +1816,7 @@
             this.tbImporteTransf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbImporteTransf.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbImporteTransf.ForeColor = System.Drawing.Color.Yellow;
-            this.tbImporteTransf.Location = new System.Drawing.Point(613, 99);
+            this.tbImporteTransf.Location = new System.Drawing.Point(613, 100);
             this.tbImporteTransf.Name = "tbImporteTransf";
             this.tbImporteTransf.ReadOnly = true;
             this.tbImporteTransf.Size = new System.Drawing.Size(146, 22);
@@ -1958,6 +1975,7 @@
             // cbCuentaBanco
             // 
             this.cbCuentaBanco.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCuentaBanco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCuentaBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCuentaBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCuentaBanco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1974,6 +1992,7 @@
             this.dtpTransferencia.BackColor = System.Drawing.Color.Transparent;
             this.dtpTransferencia.BaseColor = System.Drawing.Color.White;
             this.dtpTransferencia.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTransferencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpTransferencia.CustomFormat = null;
             this.dtpTransferencia.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpTransferencia.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -2030,7 +2049,7 @@
             this.tbTitTransf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTitTransf.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTitTransf.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbTitTransf.Location = new System.Drawing.Point(176, 95);
+            this.tbTitTransf.Location = new System.Drawing.Point(176, 96);
             this.tbTitTransf.MaxLength = 100;
             this.tbTitTransf.Name = "tbTitTransf";
             this.tbTitTransf.Size = new System.Drawing.Size(341, 25);
@@ -2045,7 +2064,7 @@
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label39.ForeColor = System.Drawing.SystemColors.Control;
-            this.label39.Location = new System.Drawing.Point(116, 99);
+            this.label39.Location = new System.Drawing.Point(116, 100);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(54, 17);
             this.label39.TabIndex = 324;
@@ -2128,6 +2147,7 @@
             this.dgvTransferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvTransferencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTransferencias.ColumnHeadersVisible = false;
+            this.dgvTransferencias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTransferencias.EnableHeadersVisualStyles = false;
             this.dgvTransferencias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvTransferencias.Location = new System.Drawing.Point(60, 239);
@@ -2242,8 +2262,6 @@
         private System.Windows.Forms.TabControl tabRecibos;
         private System.Windows.Forms.TabPage tabConsultaRecibos;
         private FontAwesome.Sharp.IconButton btnImprimir;
-        private System.Windows.Forms.Button btnNuevoCliente;
-        private System.Windows.Forms.Button btnEliminar;
         private FontAwesome.Sharp.IconButton btnActualizaLista;
         private System.Windows.Forms.DataGridView dgvRecibos;
         private FontAwesome.Sharp.IconButton btnBuscar;
@@ -2350,5 +2368,7 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox tbNumTransf;
         private System.Windows.Forms.Label label37;
+        private FontAwesome.Sharp.IconButton btnNuevo;
+        private FontAwesome.Sharp.IconButton btnAnular;
     }
 }

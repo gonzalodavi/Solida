@@ -36,17 +36,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRubros));
             this.dgvRubros = new System.Windows.Forms.DataGridView();
             this.btnSalir = new FontAwesome.Sharp.IconPictureBox();
-            this.btnEliminaRubro = new System.Windows.Forms.Button();
-            this.btnModRubro = new System.Windows.Forms.Button();
             this.lblRubro = new System.Windows.Forms.Label();
             this.btnAceptaRubro = new System.Windows.Forms.Button();
             this.btnCancelaRubro = new System.Windows.Forms.Button();
             this.tbRubro = new System.Windows.Forms.TextBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnModRubro = new FontAwesome.Sharp.IconButton();
+            this.btnNuevo = new FontAwesome.Sharp.IconButton();
+            this.btnEliminaRubro = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRubros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.SuspendLayout();
@@ -129,46 +129,6 @@
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnEliminaRubro
-            // 
-            this.btnEliminaRubro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminaRubro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEliminaRubro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminaRubro.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminaRubro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminaRubro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEliminaRubro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminaRubro.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminaRubro.ForeColor = System.Drawing.Color.White;
-            this.btnEliminaRubro.Location = new System.Drawing.Point(344, 223);
-            this.btnEliminaRubro.Name = "btnEliminaRubro";
-            this.btnEliminaRubro.Size = new System.Drawing.Size(116, 31);
-            this.btnEliminaRubro.TabIndex = 157;
-            this.btnEliminaRubro.TabStop = false;
-            this.btnEliminaRubro.Text = "ELIMINAR";
-            this.btnEliminaRubro.UseVisualStyleBackColor = false;
-            this.btnEliminaRubro.Click += new System.EventHandler(this.btnEliminaRubro_Click);
-            // 
-            // btnModRubro
-            // 
-            this.btnModRubro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModRubro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnModRubro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModRubro.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnModRubro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnModRubro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnModRubro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModRubro.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModRubro.ForeColor = System.Drawing.Color.White;
-            this.btnModRubro.Location = new System.Drawing.Point(344, 161);
-            this.btnModRubro.Name = "btnModRubro";
-            this.btnModRubro.Size = new System.Drawing.Size(116, 31);
-            this.btnModRubro.TabIndex = 158;
-            this.btnModRubro.TabStop = false;
-            this.btnModRubro.Text = "MODIFICAR";
-            this.btnModRubro.UseVisualStyleBackColor = false;
-            this.btnModRubro.Click += new System.EventHandler(this.btnModRubro_Click);
-            // 
             // lblRubro
             // 
             this.lblRubro.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -233,26 +193,6 @@
             this.tbRubro.Size = new System.Drawing.Size(284, 25);
             this.tbRubro.TabIndex = 160;
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(344, 97);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(116, 31);
-            this.btnNuevo.TabIndex = 164;
-            this.btnNuevo.TabStop = false;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -307,22 +247,97 @@
             this.label1.TabIndex = 186;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnModRubro
+            // 
+            this.btnModRubro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnModRubro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnModRubro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModRubro.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModRubro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModRubro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnModRubro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModRubro.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnModRubro.ForeColor = System.Drawing.Color.White;
+            this.btnModRubro.IconChar = FontAwesome.Sharp.IconChar.PenAlt;
+            this.btnModRubro.IconColor = System.Drawing.Color.White;
+            this.btnModRubro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModRubro.IconSize = 25;
+            this.btnModRubro.Location = new System.Drawing.Point(344, 159);
+            this.btnModRubro.Name = "btnModRubro";
+            this.btnModRubro.Size = new System.Drawing.Size(116, 31);
+            this.btnModRubro.TabIndex = 194;
+            this.btnModRubro.TabStop = false;
+            this.btnModRubro.Text = "MODIFICAR";
+            this.btnModRubro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModRubro.UseVisualStyleBackColor = false;
+            this.btnModRubro.Click += new System.EventHandler(this.btnModRubro_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnNuevo.IconColor = System.Drawing.Color.White;
+            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevo.IconSize = 25;
+            this.btnNuevo.Location = new System.Drawing.Point(344, 97);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(116, 31);
+            this.btnNuevo.TabIndex = 193;
+            this.btnNuevo.TabStop = false;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnEliminaRubro
+            // 
+            this.btnEliminaRubro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminaRubro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnEliminaRubro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminaRubro.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminaRubro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminaRubro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEliminaRubro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminaRubro.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEliminaRubro.ForeColor = System.Drawing.Color.White;
+            this.btnEliminaRubro.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminaRubro.IconColor = System.Drawing.Color.White;
+            this.btnEliminaRubro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminaRubro.IconSize = 25;
+            this.btnEliminaRubro.Location = new System.Drawing.Point(344, 223);
+            this.btnEliminaRubro.Name = "btnEliminaRubro";
+            this.btnEliminaRubro.Size = new System.Drawing.Size(116, 31);
+            this.btnEliminaRubro.TabIndex = 195;
+            this.btnEliminaRubro.TabStop = false;
+            this.btnEliminaRubro.Text = "ELIMINAR";
+            this.btnEliminaRubro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminaRubro.UseVisualStyleBackColor = false;
+            this.btnEliminaRubro.Click += new System.EventHandler(this.btnEliminaRubro_Click);
+            // 
             // FormRubros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.ClientSize = new System.Drawing.Size(490, 539);
+            this.Controls.Add(this.btnModRubro);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnEliminaRubro);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnAceptaRubro);
             this.Controls.Add(this.btnCancelaRubro);
             this.Controls.Add(this.tbRubro);
             this.Controls.Add(this.lblRubro);
-            this.Controls.Add(this.btnEliminaRubro);
-            this.Controls.Add(this.btnModRubro);
             this.Controls.Add(this.dgvRubros);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label1);
@@ -344,16 +359,16 @@
 
         private FontAwesome.Sharp.IconPictureBox btnSalir;
         private System.Windows.Forms.DataGridView dgvRubros;
-        private System.Windows.Forms.Button btnEliminaRubro;
-        private System.Windows.Forms.Button btnModRubro;
         private System.Windows.Forms.Label lblRubro;
         private System.Windows.Forms.Button btnAceptaRubro;
         private System.Windows.Forms.Button btnCancelaRubro;
         private System.Windows.Forms.TextBox tbRubro;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnModRubro;
+        private FontAwesome.Sharp.IconButton btnNuevo;
+        private FontAwesome.Sharp.IconButton btnEliminaRubro;
     }
 }

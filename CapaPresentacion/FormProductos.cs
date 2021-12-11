@@ -148,6 +148,7 @@ namespace CapaPresentacion
             lblErrorPrecioCosto.Visible = false;
             lblErrorRubro.Visible = false;
             lblErrorUniMed.Visible = false;
+            panelDesbloq.Visible = false;
         }
 
         private void haceCalculo()
@@ -203,51 +204,8 @@ namespace CapaPresentacion
                     }        */                               
                 }
             }
-        }     
+        }    
 
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            if (dgvProductos.SelectedRows.Count > 0)
-            {
-                limpiarCampos();
-                lblSubTitutlo.Text = "Modificación del Producto";                
-                CargaAlicComboBox();
-                CargaMarcaComboBox();
-                CargaModeloComboBox();
-                CargaRubrosComboBox();
-
-                tbID.Text = dgvProductos.CurrentRow.Cells["ID"].Value.ToString();
-                tbDescripcion.Text = dgvProductos.CurrentRow.Cells["DESCRIPCION"].Value.ToString();
-                tbCodBarra.Text = dgvProductos.CurrentRow.Cells["COD_BARRA"].Value.ToString();
-                tbCosto.Text = dgvProductos.CurrentRow.Cells["PRECIO_COSTO"].Value.ToString();
-                tbVenta.Text = dgvProductos.CurrentRow.Cells["PRECIO_VTA"].Value.ToString();
-                tbStock.Text = dgvProductos.CurrentRow.Cells["STOCK"].Value.ToString();
-                tbStockMin.Text = dgvProductos.CurrentRow.Cells["STOCK_MIN"].Value.ToString();
-                cbAli.Text = dgvProductos.CurrentRow.Cells["ALIC"].Value.ToString();
-                cbMarca.Text = dgvProductos.CurrentRow.Cells["MARCA"].Value.ToString();
-                cbModelo.Text = dgvProductos.CurrentRow.Cells["MODELO"].Value.ToString();
-                cbRubro.Text = dgvProductos.CurrentRow.Cells["RUBRO"].Value.ToString();
-                cbUdeMed.SelectedValue = Convert.ToInt32(dgvProductos.CurrentRow.Cells["ID_UNIDAD"].Value);
-                haceCalculoInverso();
-                tbGanancia.Text = resultado;
-                resultado = "";
-                Editar = true;
-                tabProductos.SelectedTab = tabNuevoProducto;
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-        }
-
-        private void btnNuevoProducto_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-            stockM = 0;
-            stockA = 0;
-            tabProductos.SelectedTab = tabNuevoProducto;
-        }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -259,102 +217,30 @@ namespace CapaPresentacion
             buscarProductos();
         }
 
-        private void btnActualizaListaProd_Click(object sender, EventArgs e)
-        {
-            tbBusca.Text = "";
-            CargarGrilla();
-        }
+
 
         private void btnCancela_Click(object sender, EventArgs e)
-        {            
-            limpiarCampos();
-            Editar = false;
-            stockM = 0;
-            stockA = 0;
-            tabProductos.SelectedTab = tabConsultaProducto;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvProductos.SelectedRows.Count > 0)
+            DialogResult Opcion;
+            Opcion = MessageBox.Show("Desea Cancelar la Operación?", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            try
             {
-                string idProd = dgvProductos.CurrentRow.Cells["ID"].Value.ToString();
-                try
+                if (Opcion == DialogResult.OK)
                 {
-                    string rpta = CN_Productos.ConsultaProductoExisteEnCompra(Convert.ToInt32(idProd));
-                    if (rpta == "OK")
-                    {
-                        this.MensajeError("No se permite eliminar un Producto utilizado en Compras");
-                    }
-                    else
-                    {
-                        if (rpta == "NO")
-                        {
-                            rpta = CN_Productos.ConsultaProductoExisteEnRemito(Convert.ToInt32(idProd));
-                            if (rpta == "OK")
-                            {
-                                this.MensajeError("No se permite eliminar un Producto utilizado en Remitos");
-                            }
-                            else
-                            {
-                                if (rpta == "NO")
-                                {
-                                    rpta = CN_Productos.ConsultaProductoExisteEnVta(Convert.ToInt32(idProd));
-                                    if (rpta == "OK")
-                                    {
-                                        this.MensajeError("No se permite eliminar un Producto utilizado en Ventas");
-                                    }
-                                    else
-                                    {
-                                        if (rpta == "NO")
-                                        {
-                                            if (MessageBox.Show("¿Desea ELIMINAR el Producto seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                                            {
-                                                objeto.EliminarProducto(idProd);
-                                                MessageBox.Show("Se eliminó correctamente el Producto seleccionado");
-                                                CargarGrilla();
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MensajeError(rpta);
-                                        }
-                                    }                                    
-                                }
-                                else
-                                {
-                                    MensajeError(rpta);
-                                }
-                            }                            
-                        }
-                        else
-                        {
-                            MensajeError(rpta);
-                        }
-                    }                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se pudo realizar la operacion: " + ex);
+                    limpiarCampos();
+                    Editar = false;
+                    stockM = 0;
+                    stockA = 0;
+                    tabProductos.SelectedTab = tabConsultaProducto;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-            limpiarCampos();
-            Editar = false;
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }            
         }
 
-        private void dgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*FormCompra datosproducto = Owner as FormCompra;
-            datosproducto.tbProducto.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
-            datosproducto.tbImporteCompra.Text = dgvProductos.CurrentRow.Cells[5].Value.ToString();
-            datosproducto.tbIVACompra.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
-            datosproducto.tbIDprod.Text = dgvProductos.CurrentRow.Cells[0].Value.ToString();
-            Close();*/
-        }
+
 
         private void tbCosto_TextChanged(object sender, EventArgs e)
         {
@@ -626,7 +512,7 @@ namespace CapaPresentacion
                 if (Convert.ToDecimal(MyRow.Cells[8].Value) <= Convert.ToDecimal(MyRow.Cells[9].Value))
                 {
                     MyRow.DefaultCellStyle.BackColor = Color.Orange;
-                    MyRow.DefaultCellStyle.ForeColor = Color.Red;
+                    MyRow.DefaultCellStyle.ForeColor = Color.DarkRed;
                 }
             }
 
@@ -952,6 +838,127 @@ namespace CapaPresentacion
             {
                 MensajeError("CLAVE INCORRECTA");
             }            
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count > 0)
+            {
+                string idProd = dgvProductos.CurrentRow.Cells["ID"].Value.ToString();
+                try
+                {
+                    string rpta = CN_Productos.ConsultaProductoExisteEnCompra(Convert.ToInt32(idProd));
+                    if (rpta == "OK")
+                    {
+                        this.MensajeError("No se permite eliminar un Producto utilizado en Compras");
+                    }
+                    else
+                    {
+                        if (rpta == "NO")
+                        {
+                            rpta = CN_Productos.ConsultaProductoExisteEnRemito(Convert.ToInt32(idProd));
+                            if (rpta == "OK")
+                            {
+                                this.MensajeError("No se permite eliminar un Producto utilizado en Remitos");
+                            }
+                            else
+                            {
+                                if (rpta == "NO")
+                                {
+                                    rpta = CN_Productos.ConsultaProductoExisteEnVta(Convert.ToInt32(idProd));
+                                    if (rpta == "OK")
+                                    {
+                                        this.MensajeError("No se permite eliminar un Producto utilizado en Ventas");
+                                    }
+                                    else
+                                    {
+                                        if (rpta == "NO")
+                                        {
+                                            if (MessageBox.Show("¿Desea ELIMINAR el Producto seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                            {
+                                                objeto.EliminarProducto(idProd);
+                                                MessageBox.Show("Se eliminó correctamente el Producto seleccionado");
+                                                CargarGrilla();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MensajeError(rpta);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MensajeError(rpta);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rpta);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo realizar la operacion: " + ex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
+            limpiarCampos();
+            Editar = false;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count > 0)
+            {
+                limpiarCampos();
+                lblSubTitutlo.Text = "Modificación del Producto";
+                CargaAlicComboBox();
+                CargaMarcaComboBox();
+                CargaModeloComboBox();
+                CargaRubrosComboBox();
+
+                tbID.Text = dgvProductos.CurrentRow.Cells["ID"].Value.ToString();
+                tbDescripcion.Text = dgvProductos.CurrentRow.Cells["DESCRIPCION"].Value.ToString();
+                tbCodBarra.Text = dgvProductos.CurrentRow.Cells["COD_BARRA"].Value.ToString();
+                tbCosto.Text = dgvProductos.CurrentRow.Cells["PRECIO_COSTO"].Value.ToString();
+                tbVenta.Text = dgvProductos.CurrentRow.Cells["PRECIO_VTA"].Value.ToString();
+                tbStock.Text = dgvProductos.CurrentRow.Cells["STOCK"].Value.ToString();
+                tbStockMin.Text = dgvProductos.CurrentRow.Cells["STOCK_MIN"].Value.ToString();
+                cbAli.Text = dgvProductos.CurrentRow.Cells["ALIC"].Value.ToString();
+                cbMarca.Text = dgvProductos.CurrentRow.Cells["MARCA"].Value.ToString();
+                cbModelo.Text = dgvProductos.CurrentRow.Cells["MODELO"].Value.ToString();
+                cbRubro.Text = dgvProductos.CurrentRow.Cells["RUBRO"].Value.ToString();
+                cbUdeMed.SelectedValue = Convert.ToInt32(dgvProductos.CurrentRow.Cells["ID_UNIDAD"].Value);
+                haceCalculoInverso();
+                tbGanancia.Text = resultado;
+                resultado = "";
+                Editar = true;
+                tabProductos.SelectedTab = tabNuevoProducto;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            stockM = 0;
+            stockA = 0;
+            tabProductos.SelectedTab = tabNuevoProducto;
+        }
+
+        private void btnActualizarListaProd_Click(object sender, EventArgs e)
+        {
+            tbBusca.Text = "";
+            CargarGrilla();
         }
 
         private void tbGanancia_TextChanged(object sender, EventArgs e)

@@ -159,171 +159,178 @@ namespace CapaPresentacion
 
         private void btnAceptaRecibo_Click(object sender, EventArgs e)
         {
-            if (lblTotalRecibo.Text != "")
+            if (cbCliente.SelectedIndex != -1)
             {
-                decimal totrec = Convert.ToDecimal(lblTotalRecibo.Text);
-                decimal totAsignar = 0;
-
-                try
+                if (lblTotalRecibo.Text != "")
                 {
-                    DialogResult Opcion;
+                    decimal totrec = Convert.ToDecimal(lblTotalRecibo.Text);
+                    decimal totAsignar = 0;
 
-                    Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (Opcion == DialogResult.OK)
+                    try
                     {
+                        DialogResult Opcion;
 
-                        Decimal efectivo = 0, valores = 0, banco = 0;
-
-                        if (tbValores.Text != "0,00")
+                        Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (Opcion == DialogResult.OK)
                         {
-                            valores = Convert.ToDecimal(tbValores.Text.ToString());
-                        }
 
-                        if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
-                        {
-                            efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
-                        }
+                            Decimal efectivo = 0, valores = 0, banco = 0;
 
-                        if (tbBanco.Text != "0,00")
-                        {
-                            banco = Convert.ToDecimal(tbBanco.Text.ToString());
-                        }
-
-                        Decimal Suma = efectivo + valores + banco;
-
-                        lblTotalRecibo.Text = Suma.ToString("0.00");
-
-                        string rpta = "";
-                        string DetalleRecibo = tbDetalleRecibo.Text + "\r\n" + detalleValores + detalleTransf;
-                        string Estado = "ACTIVO";
-                        rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, cbCliente.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores, banco, Suma, DetalleRecibo, Estado);
-                        decimal debe = 0, haber = Suma;
-
-                        if (rpta.Equals("OK"))
-                        {
-                            this.MensajeOk("Se Generó con éxito el Comprobante");
-
-                            if (efectivo > 0)
+                            if (tbValores.Text != "0,00")
                             {
-                                string res1 = "";
-                                try
-                                {
-                                    res1 = CN_Caja.Insertar(tbNumRecibo.Text, "RECIBO DE CAJA", dtpFechaRecibo.Value, cbCliente.Text, cbCliente.SelectedValue.ToString(), "ACTIVO", efectivo, 0, efectivo);
-                                    if (res1.Equals("OK"))
-                                    {
-                                        MensajeOk("Se Inserto el Movimiento de Caja");
-                                    }
-                                    else
-                                    {
-                                        MensajeError(res1);
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message + ex.StackTrace);
-                                }
+                                valores = Convert.ToDecimal(tbValores.Text.ToString());
                             }
 
-                            if (valores > 0)
+                            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
                             {
-                                string rptActCheq = CN_Cheque.ActivarChequesPendientes("PENDIENTE", "ACTIVO");
-
-                                if (rptActCheq.Equals("OK"))
-                                {
-                                    this.MensajeOk("Se ACTIVARON LOS CHEQUES");
-                                }
-                                else
-                                {
-                                    this.MensajeError(rptActCheq);
-                                }
-                            }
-                            if (banco > 0)
-                            {
-                                string rptActTransf = CN_Banco.ActivarTransfPendientes("PENDIENTE", "ACTIVO");
-                                if (rptActTransf.Equals("OK"))
-                                {
-                                    this.MensajeOk("Se ACTIVARON LAS TRANSFERENCIAS");
-                                }
-                                else
-                                {
-                                    this.MensajeError(rptActTransf);
-                                }
-                            }
-                            string asigna = "N";
-                            decimal importeasignado = 0;
-
-                            if (tbIDComprobante.Text != "")
-                            {
-                                asigna = "S";
-                                importeasignado = Suma;
+                                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
                             }
 
-                            rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE CAJA", debe, haber, valores, efectivo, banco, (debe - haber), importeasignado, 0, asigna, Estado);
+                            if (tbBanco.Text != "0,00")
+                            {
+                                banco = Convert.ToDecimal(tbBanco.Text.ToString());
+                            }
+
+                            Decimal Suma = efectivo + valores + banco;
+
+                            lblTotalRecibo.Text = Suma.ToString("0.00");
+
+                            string rpta = "";
+                            string DetalleRecibo = tbDetalleRecibo.Text + "\r\n" + detalleValores + detalleTransf;
+                            string Estado = "ACTIVO";
+                            rpta = CN_Recibo.Insertar(tbNumRecibo.Text, dtpFechaRecibo.Value, cbCliente.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores, banco, Suma, DetalleRecibo, Estado);
+                            decimal debe = 0, haber = Suma;
+
                             if (rpta.Equals("OK"))
                             {
-                                this.MensajeOk("Se Cargo recibo en CTA CTE");
-                                /*if (asigna == "S")
+                                this.MensajeOk("Se Generó con éxito el Comprobante");
+
+                                if (efectivo > 0)
                                 {
-                                    rpta = CN_CtaCte.Modificar(tbCompte.Text, "FACTURA DE VENTA", valores, efectivo, banco, Suma, Suma, asigna);
-                                    if (rpta.Equals("OK"))
+                                    string res1 = "";
+                                    try
                                     {
-                                        this.MensajeOk("Se Modifico la asignacion en cta cte.");
-                                        this.Close();
+                                        res1 = CN_Caja.Insertar(tbNumRecibo.Text, "RECIBO DE CAJA", dtpFechaRecibo.Value, cbCliente.Text, cbCliente.SelectedValue.ToString(), "ACTIVO", efectivo, 0, efectivo);
+                                        if (res1.Equals("OK"))
+                                        {
+                                            MensajeOk("Se Inserto el Movimiento de Caja");
+                                        }
+                                        else
+                                        {
+                                            MensajeError(res1);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message + ex.StackTrace);
+                                    }
+                                }
+
+                                if (valores > 0)
+                                {
+                                    string rptActCheq = CN_Cheque.ActivarChequesPendientes("PENDIENTE", "ACTIVO");
+
+                                    if (rptActCheq.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se ACTIVARON LOS CHEQUES");
                                     }
                                     else
                                     {
-                                        MensajeError(rpta);
+                                        this.MensajeError(rptActCheq);
                                     }
-                                }*/
+                                }
+                                if (banco > 0)
+                                {
+                                    string rptActTransf = CN_Banco.ActivarTransfPendientes("PENDIENTE", "ACTIVO");
+                                    if (rptActTransf.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se ACTIVARON LAS TRANSFERENCIAS");
+                                    }
+                                    else
+                                    {
+                                        this.MensajeError(rptActTransf);
+                                    }
+                                }
+                                string asigna = "N";
+                                decimal importeasignado = 0;
+
+                                if (tbIDComprobante.Text != "")
+                                {
+                                    asigna = "S";
+                                    importeasignado = Suma;
+                                }
+
+                                rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumRecibo.Text, "RECIBO DE CAJA", debe, haber, valores, efectivo, banco, (debe - haber), importeasignado, 0, asigna, Estado);
+                                if (rpta.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se Cargo recibo en CTA CTE");
+                                    /*if (asigna == "S")
+                                    {
+                                        rpta = CN_CtaCte.Modificar(tbCompte.Text, "FACTURA DE VENTA", valores, efectivo, banco, Suma, Suma, asigna);
+                                        if (rpta.Equals("OK"))
+                                        {
+                                            this.MensajeOk("Se Modifico la asignacion en cta cte.");
+                                            this.Close();
+                                        }
+                                        else
+                                        {
+                                            MensajeError(rpta);
+                                        }
+                                    }*/
+                                }
+                                else
+                                {
+                                    this.MensajeError(rpta);
+                                }
+                                ResetRecibo();
+                                CargarGrillaRecibos();
+                                AcomodaTablaRecibos();
+                                tabRecibos.SelectedTab = tabConsultaRecibos;
                             }
                             else
                             {
                                 this.MensajeError(rpta);
                             }
-                            ResetRecibo();
-                            CargarGrillaRecibos();
-                            AcomodaTablaRecibos();
-                            tabRecibos.SelectedTab = tabConsultaRecibos;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+
+                    /*if (tbIDComprobante.Text != "")
+                    {
+                        totAsignar = Convert.ToDecimal(tbPorAsignar.Text);
+                        if (totrec == totAsignar)
+                        {
+                            HacerRecibo();
                         }
                         else
                         {
-                            this.MensajeError(rpta);
+                            MensajeError("Para asignar un Recibo a una Factura deben tener mismo importe.");
                         }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + ex.StackTrace);
-                }
-
-                /*if (tbIDComprobante.Text != "")
-                {
-                    totAsignar = Convert.ToDecimal(tbPorAsignar.Text);
-                    if (totrec == totAsignar)
-                    {
-                        HacerRecibo();
                     }
                     else
                     {
-                        MensajeError("Para asignar un Recibo a una Factura deben tener mismo importe.");
-                    }
+                        if (totrec <= 0 || tbNumRecibo.Text == "")
+                        {
+                            MensajeError("Ingrese Importe y numero de Recibo");
+                        }
+                        else
+                        {
+                            HacerRecibo();
+                        }
+                    }   */
                 }
                 else
                 {
-                    if (totrec <= 0 || tbNumRecibo.Text == "")
-                    {
-                        MensajeError("Ingrese Importe y numero de Recibo");
-                    }
-                    else
-                    {
-                        HacerRecibo();
-                    }
-                }   */
+                    MensajeError("Por Favor Ingrese un Importe");
+                }
             }
             else
             {
-                MensajeError("Por Favor Ingrese un Importe");
-            }                   
+                MensajeError("Por Favor Seleccione un Cliente");
+            }
         }
 
 
@@ -492,93 +499,8 @@ namespace CapaPresentacion
             this.dgvTransferencias.Columns["IMPORTE"].Width = 80;
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvRecibos.SelectedRows.Count > 0)
-            {
-                if (dgvRecibos.CurrentRow.Cells[7].Value.ToString() != "ANULADO")
-                {
-                    string numComprob = dgvRecibos.CurrentRow.Cells[2].Value.ToString();
 
-                    CN_Cheque ob = new CN_Cheque();
-                    string rpta = ob.ConsultarEstadoCheque("PAGADO", numComprob);
-                    if (rpta == "OK")
-                    {
-                        MensajeError("No se puede anular el Recibo ya que posee cheques que fueron entregados a Proveedores. Primero debe ANULAR la Orden de Pago");
-                    }
-                    else
-                    {
-                        if(rpta == "NO")
-                        {
-                            DialogResult opcion;
-                            opcion = MessageBox.Show("Desea ANULAR el comprobante seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (opcion == DialogResult.OK)
-                            {
-                                CN_Recibo objetoCN = new CN_Recibo();
-                                int idRecibo = Convert.ToInt32(dgvRecibos.CurrentRow.Cells[0].Value.ToString());
-                                objetoCN.AnularRecibo(idRecibo);
 
-                                this.MensajeOk("SE ANULÓ CORRECTAMENTE EL RECIBO SELECCIONADO");
-
-                                string rpta1 = CN_CtaCte.AnularRegistroCtaCte(numComprob, "RECIBO DE CAJA");
-                                if (rpta1.Equals("OK"))
-                                {
-                                    MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
-                                }
-                                else
-                                {
-                                    this.MensajeError(rpta);
-                                }
-
-                                if (Convert.ToDecimal(dgvRecibos.CurrentRow.Cells[8].Value.ToString()) > 0)
-                                {
-                                    string rpc = CN_Cheque.Anular_Cheques(numComprob);
-                                    if (rpc.Equals("OK"))
-                                    {
-                                        this.MensajeOk("Se ANULARON los cheques del RECIBO");
-
-                                    }
-                                }
-                                if (Convert.ToDecimal(dgvRecibos.CurrentRow.Cells[9].Value.ToString()) > 0)
-                                {
-                                    string rpt = CN_Banco.Anular_TransfRecibidas(numComprob);
-                                    if (rpt.Equals("OK"))
-                                    {
-                                        this.MensajeOk("Se ANULARON las TRANSFERENCIAS del RECIBO");
-                                    }
-                                }
-
-                                string rptCaja = CN_Caja.Anular_CajaMovRecibidos(numComprob);
-                                if (rptCaja.Equals("OK"))
-                                {
-                                    this.MensajeOk("Se Anulo el movimiento de CAJA");
-                                }
-
-                                CargarGrillaRecibos();
-                                AcomodaTablaRecibos();
-                            }
-                        }
-                        else
-                        {
-                            MensajeError(rpta);
-                        }
-                    }                    
-                }
-                else
-                {
-                    MensajeError("EL COMPROBANTE SELECCIONADO SE ENCUENTRA ANULADO");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por Favor seleccione un comprobante");
-            }
-        }
-
-        private void btnNuevoCliente_Click(object sender, EventArgs e)
-        {
-            tabRecibos.SelectedTab = tabNuevoRecibo;
-        }
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1363,6 +1285,94 @@ namespace CapaPresentacion
             if (tbTitTransf.Text == "Consumidor Final")
             {
                 tbTitTransf.Text = "";
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            tabRecibos.SelectedTab = tabNuevoRecibo;
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            if (dgvRecibos.SelectedRows.Count > 0)
+            {
+                if (dgvRecibos.CurrentRow.Cells[7].Value.ToString() != "ANULADO")
+                {
+                    string numComprob = dgvRecibos.CurrentRow.Cells[2].Value.ToString();
+
+                    CN_Cheque ob = new CN_Cheque();
+                    string rpta = ob.ConsultarEstadoCheque("PAGADO", numComprob);
+                    if (rpta == "OK")
+                    {
+                        MensajeError("No se puede anular el Recibo ya que posee cheques que fueron entregados a Proveedores. Primero debe ANULAR la Orden de Pago");
+                    }
+                    else
+                    {
+                        if (rpta == "NO")
+                        {
+                            DialogResult opcion;
+                            opcion = MessageBox.Show("Desea ANULAR el comprobante seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (opcion == DialogResult.OK)
+                            {
+                                CN_Recibo objetoCN = new CN_Recibo();
+                                int idRecibo = Convert.ToInt32(dgvRecibos.CurrentRow.Cells[0].Value.ToString());
+                                objetoCN.AnularRecibo(idRecibo);
+
+                                this.MensajeOk("SE ANULÓ CORRECTAMENTE EL RECIBO SELECCIONADO");
+
+                                string rpta1 = CN_CtaCte.AnularRegistroCtaCte(numComprob, "RECIBO DE CAJA");
+                                if (rpta1.Equals("OK"))
+                                {
+                                    MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
+                                }
+                                else
+                                {
+                                    this.MensajeError(rpta);
+                                }
+
+                                if (Convert.ToDecimal(dgvRecibos.CurrentRow.Cells[8].Value.ToString()) > 0)
+                                {
+                                    string rpc = CN_Cheque.Anular_Cheques(numComprob);
+                                    if (rpc.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se ANULARON los cheques del RECIBO");
+
+                                    }
+                                }
+                                if (Convert.ToDecimal(dgvRecibos.CurrentRow.Cells[9].Value.ToString()) > 0)
+                                {
+                                    string rpt = CN_Banco.Anular_TransfRecibidas(numComprob);
+                                    if (rpt.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se ANULARON las TRANSFERENCIAS del RECIBO");
+                                    }
+                                }
+
+                                string rptCaja = CN_Caja.Anular_CajaMovRecibidos(numComprob);
+                                if (rptCaja.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se Anulo el movimiento de CAJA");
+                                }
+
+                                CargarGrillaRecibos();
+                                AcomodaTablaRecibos();
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rpta);
+                        }
+                    }
+                }
+                else
+                {
+                    MensajeError("EL COMPROBANTE SELECCIONADO SE ENCUENTRA ANULADO");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por Favor seleccione un comprobante");
             }
         }
 

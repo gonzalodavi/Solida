@@ -105,96 +105,13 @@ namespace CapaPresentacion
             cbCliente.DataSource = objeto.CargaClientes();
             cbCliente.DisplayMember = "NOMBRE";
             cbCliente.ValueMember = "DNI";
-            cbCliente.Text = "Consumidor Final";
+            cbCliente.SelectedIndex = -1;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             tabNotasDBCR.SelectedTab = tabNuevaNotasDBCR;
-        }
-
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            decimal import = Convert.ToDecimal(lblTotalNota.Text);
-
-            if (import <= 0)
-            {
-                MensajeError("Por Favor Ingrese el Importe del Comprobante");
-            }
-            else
-            {
-                if (tbNumNota.Text == "")
-                {
-                    MensajeError("Por Favor Ingrese un Número de Comprobante");
-                }
-                else
-                {
-                    if (rbDebito.Checked == false && rbCredito.Checked == false)
-                    {
-                        MensajeError("Por Favor Seleccione Tipo de Nota");
-                    }
-                    else
-                    {
-                        string tipoNota = "";
-                        decimal debe=0, haber=0;
-                        if(rbCredito.Checked == true)
-                        {
-                            tipoNota = "CREDITO";
-                            haber = Convert.ToDecimal(tbImporte.Text);
-                        }
-                        else
-                        {
-                            tipoNota = "DEBITO";
-                            debe = Convert.ToDecimal(tbImporte.Text);
-                        }
-                        try
-                        {
-                            
-
-                            DialogResult Opcion;
-
-                            Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (Opcion == DialogResult.OK)
-                            {
-                                string Estado = "ACTIVO";
-                                string rpta = CN_NotaCRDB.Insertar(Convert.ToInt32(UserLoginCache.UserId), dtpFechaNota.Value, tbNumNota.Text, cbCliente.SelectedValue.ToString(),Convert.ToDecimal(tbImporte.Text), tbDetalleNota.Text, Estado,tipoNota);
-
-                                if (rpta.Equals("OK"))
-                                {
-                                    this.MensajeOk("Se Generó con éxito el Comprobante");
-                                    
-                                    rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaNota.Value, tbNumNota.Text, "NOTA DE "+tipoNota, debe, haber, 0, 0, 0, (debe - haber), 0, 0, "N", Estado);
-                                    if (rpta.Equals("OK"))
-                                    {
-                                        this.MensajeOk("Se registro en cuenta corriente");
-                                    }
-                                    else
-                                    {
-                                        this.MensajeError(rpta);
-                                    }
-
-                                }
-                                else
-                                {
-                                    this.MensajeError(rpta);
-                                }
-                            }
-                            LimpiarCampos();
-                            CargarGrillaNotas();
-                            tabNotasDBCR.SelectedTab = tabListaNotas;
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message + ex.StackTrace);
-                        }
-                    }
-                }
-            }
-        }
-
-       
+        }      
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
@@ -326,6 +243,91 @@ namespace CapaPresentacion
             }           
             
             lblTotalNota.Text = suma.ToString("0.00");
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (cbCliente.SelectedIndex != -1)
+            {
+                decimal import = Convert.ToDecimal(lblTotalNota.Text);
+
+                if (import <= 0)
+                {
+                    MensajeError("Por Favor Ingrese el Importe del Comprobante");
+                }
+                else
+                {
+                    if (tbNumNota.Text == "")
+                    {
+                        MensajeError("Por Favor Ingrese un Número de Comprobante");
+                    }
+                    else
+                    {
+                        if (rbDebito.Checked == false && rbCredito.Checked == false)
+                        {
+                            MensajeError("Por Favor Seleccione Tipo de Nota");
+                        }
+                        else
+                        {
+                            string tipoNota = "";
+                            decimal debe = 0, haber = 0;
+                            if (rbCredito.Checked == true)
+                            {
+                                tipoNota = "CREDITO";
+                                haber = Convert.ToDecimal(tbImporte.Text);
+                            }
+                            else
+                            {
+                                tipoNota = "DEBITO";
+                                debe = Convert.ToDecimal(tbImporte.Text);
+                            }
+                            try
+                            {
+                                DialogResult Opcion;
+
+                                Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                if (Opcion == DialogResult.OK)
+                                {
+                                    string Estado = "ACTIVO";
+                                    string rpta = CN_NotaCRDB.Insertar(Convert.ToInt32(UserLoginCache.UserId), dtpFechaNota.Value, tbNumNota.Text, cbCliente.SelectedValue.ToString(), Convert.ToDecimal(tbImporte.Text), tbDetalleNota.Text, Estado, tipoNota);
+
+                                    if (rpta.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se Generó con éxito el Comprobante");
+
+                                        rpta = CN_CtaCte.Insertar(cbCliente.SelectedValue.ToString(), dtpFechaNota.Value, tbNumNota.Text, "NOTA DE " + tipoNota, debe, haber, 0, 0, 0, (debe - haber), 0, 0, "N", Estado);
+                                        if (rpta.Equals("OK"))
+                                        {
+                                            this.MensajeOk("Se registro en cuenta corriente");
+                                        }
+                                        else
+                                        {
+                                            this.MensajeError(rpta);
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        this.MensajeError(rpta);
+                                    }
+
+                                    LimpiarCampos();
+                                    CargarGrillaNotas();
+                                    tabNotasDBCR.SelectedTab = tabListaNotas;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message + ex.StackTrace);
+                            }
+                        }
+                    }
+                }                
+            }
+            else
+            {
+                this.MensajeError("Por Favor Seleccione un Cliente");
+            }
         }
     }
 }

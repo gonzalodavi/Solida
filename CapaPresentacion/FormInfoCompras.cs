@@ -97,6 +97,35 @@ namespace CapaPresentacion
 
         private void btnBuscarReg_Click(object sender, EventArgs e)
         {
+            BuscarRegistros();
+        }
+
+        private void BuscarRegistros()
+        {
+            dgvCompras.DataSource = CN_Compras.BuscarRegistros(dtpFecha1.Value.ToString("dd/MM/yyyy"), dtpFecha2.Value.ToString("dd/MM/yyyy"));
+            this.dgvCompras.Columns[0].Visible = false;
+        }
+
+        private void chekPorFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chekPorFecha.Checked == true)
+            {
+                dtpFecha1.Enabled = true;
+                dtpFecha2.Enabled = true;
+                SiFecha = true;
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                dtpFecha1.Enabled = false;
+                dtpFecha2.Enabled = false;
+                SiFecha = false;
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void dgvCompras_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (dgvCompras.SelectedRows.Count > 0)
             {
                 FormReporteCompra form = new FormReporteCompra();
@@ -109,20 +138,9 @@ namespace CapaPresentacion
             }
         }
 
-        private void chekPorFecha_CheckedChanged(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (chekPorFecha.Checked == true)
-            {
-                dtpFecha1.Enabled = true;
-                dtpFecha2.Enabled = true;
-                SiFecha = true;
-            }
-            else
-            {
-                dtpFecha1.Enabled = false;
-                dtpFecha2.Enabled = false;
-                SiFecha = false;
-            }
+            CargarGrilla();
         }
     }
 }

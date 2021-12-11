@@ -124,20 +124,6 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void btnNueva_Click(object sender, EventArgs e)
-        {
-            btnMod.Enabled = false;
-            btnElim.Enabled = false;
-            btnNueva.Enabled = false;
-            dgvSucursal.Enabled = false;
-            lblSubtitulo.Text = "Nueva Sucursal";
-            tbNuevaSucursal.Enabled = true;
-            tbNuevaSucursal.Text = "";
-            tbNuevaSucursal.Focus();
-            btnCancela.Enabled = true;
-            btnRegistrarSucursal.Enabled = true;
-        }
-
         private void btnCancela_Click(object sender, EventArgs e)
         {
             DeshabilitarEdicion();
@@ -155,6 +141,42 @@ namespace CapaPresentacion
             tbNuevaSucursal.Text = "";
             btnCancela.Enabled = false;
             btnRegistrarSucursal.Enabled = false;
+        }
+
+
+        private void btnNueva_Click(object sender, EventArgs e)
+        {
+            btnMod.Enabled = false;
+            btnElim.Enabled = false;
+            btnNueva.Enabled = false;
+            dgvSucursal.Enabled = false;
+            lblSubtitulo.Text = "Nueva Sucursal";
+            tbNuevaSucursal.Enabled = true;
+            tbNuevaSucursal.Text = "";
+            tbNuevaSucursal.Focus();
+            btnCancela.Enabled = true;
+            btnRegistrarSucursal.Enabled = true;
+        }
+
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            if (dgvSucursal.SelectedRows.Count > 0)
+            {
+                btnMod.Enabled = false;
+                btnElim.Enabled = false;
+                btnNueva.Enabled = false;
+                dgvSucursal.Enabled = false;
+                lblSubtitulo.Text = "Modificar Sucursal";
+                tbNuevaSucursal.Enabled = true;
+                tbNuevaSucursal.Text = dgvSucursal.CurrentRow.Cells["NOMBRE_SUCURSAL"].Value.ToString();
+                Editar = true;
+                btnCancela.Enabled = true;
+                btnRegistrarSucursal.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
         }
 
         private void btnElim_Click(object sender, EventArgs e)
@@ -175,27 +197,6 @@ namespace CapaPresentacion
                         MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-        }
-
-        private void btnMod_Click(object sender, EventArgs e)
-        {
-            if (dgvSucursal.SelectedRows.Count > 0)
-            {
-                btnMod.Enabled = false;
-                btnElim.Enabled = false;
-                btnNueva.Enabled = false;
-                dgvSucursal.Enabled = false;
-                lblSubtitulo.Text = "Modificar Sucursal";
-                tbNuevaSucursal.Enabled = true;
-                tbNuevaSucursal.Text = dgvSucursal.CurrentRow.Cells["NOMBRE_SUCURSAL"].Value.ToString();
-                Editar = true;
-                btnCancela.Enabled = true;
-                btnRegistrarSucursal.Enabled = true;
             }
             else
             {

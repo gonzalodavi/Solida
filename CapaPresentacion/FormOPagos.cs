@@ -30,6 +30,9 @@ namespace CapaPresentacion
 
         private void FormOPagos_Load(object sender, EventArgs e)
         {
+            ConsultaPorChequeSelecc();
+            ConsultaPorTransferencia();
+            ConsultaPorCheque();
             fechaHoy();
             CargarComboBoxProveedores();
             CargarGrillaOPagos();
@@ -38,9 +41,6 @@ namespace CapaPresentacion
             CargaSaldoCtaCte();
             CrearTablaBco();
             BuscaNumeroOPago();
-            ConsultaPorCheque();
-            ConsultaPorTransferencia();
-            ConsultaPorChequeSelecc();
             CargarComboBoxCuentas();
         }
 
@@ -376,203 +376,153 @@ namespace CapaPresentacion
         }
 
 
-        private void btnNuevaOPago_Click(object sender, EventArgs e)
-        {
-            tabOrdenPagos.SelectedTab = tabNuevaOPago;
-        }
+
 
         private void btnAceptaOPago_Click(object sender, EventArgs e)
         {
-            if(lblTotalOPago.Text != "")
+            agregaOPago();
+        }
+
+        private void agregaOPago()
+        {
+            if (cbProveedor.SelectedIndex != -1)
             {
-                decimal totopag = Convert.ToDecimal(lblTotalOPago.Text);
-                if (totopag <= 0)
+                if (lblTotalOPago.Text != "")
                 {
-                    MensajeError("Por Favor Ingrese un Importe");
-                }
-                else
-                {
-                    if(tbNumOPago.Text == "" || tbNumOPago.Text == "0")
+                    decimal totopag = Convert.ToDecimal(lblTotalOPago.Text);
+                    if (totopag <= 0)
                     {
-                        MensajeError("Por Favor Ingrese un Numero de Comprobante");
+                        MensajeError("Por Favor Ingrese un Importe");
                     }
                     else
                     {
-                        try
+                        if (tbNumOPago.Text == "" || tbNumOPago.Text == "0")
                         {
-                            Decimal efectivo = 0, valores = 0, banco = 0;
-                            if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
+                            MensajeError("Por Favor Ingrese un Numero de Comprobante");
+                        }
+                        else
+                        {
+                            try
                             {
-                                efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
-                            }
-                            if (tbValores.Text != "," && tbValores.Text != "")
-                            {
-                                valores = Convert.ToDecimal(tbValores.Text.ToString());
-                            }
-                            if (tbBanco.Text != "," && tbBanco.Text != "")
-                            {
-                                banco = Convert.ToDecimal(tbBanco.Text.ToString());
-                            }
-                            Decimal Suma = efectivo + valores + banco;
-
-                            lblTotalOPago.Text = Suma.ToString("0.00");
-
-                            string rpta = "";
-                            string rpta1 = "";
-
-                            DialogResult Opcion;
-                            string DetalleComprobante = tbDetalleOPago.Text + "\r\n" + detalleValores + detalleTransf;
-                            Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (Opcion == DialogResult.OK)
-                            {
-                                string Estado = "ACTIVO";
-                                rpta = CN_Recibo.InsertarOP(tbNumOPago.Text, dtpFechaRecibo.Value, cbProveedor.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores, banco, Suma, DetalleComprobante, Estado);
-                                decimal debe = Suma, haber = 0;
-
-                                if (rpta.Equals("OK"))
+                                Decimal efectivo = 0, valores = 0, banco = 0;
+                                if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
                                 {
-                                    this.MensajeOk("Se Generó con éxito el Comprobante");
-                                    int idOPago= objeto1.BuscarUltimoIDOPago();
-                                    
-                                    if (efectivo > 0)
+                                    efectivo = Convert.ToDecimal(tbEfectivo.Text.ToString());
+                                }
+                                if (tbValores.Text != "," && tbValores.Text != "")
+                                {
+                                    valores = Convert.ToDecimal(tbValores.Text.ToString());
+                                }
+                                if (tbBanco.Text != "," && tbBanco.Text != "")
+                                {
+                                    banco = Convert.ToDecimal(tbBanco.Text.ToString());
+                                }
+                                Decimal Suma = efectivo + valores + banco;
+
+                                lblTotalOPago.Text = Suma.ToString("0.00");
+
+                                string rpta = "";
+                                string rpta1 = "";
+
+                                DialogResult Opcion;
+                                string DetalleComprobante = tbDetalleOPago.Text + "\r\n" + detalleValores + detalleTransf;
+                                Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                if (Opcion == DialogResult.OK)
+                                {
+                                    string Estado = "ACTIVO";
+                                    rpta = CN_Recibo.InsertarOP(tbNumOPago.Text, dtpFechaRecibo.Value, cbProveedor.SelectedValue.ToString(), Convert.ToInt32(UserLoginCache.UserId), efectivo, valores, banco, Suma, DetalleComprobante, Estado);
+                                    decimal debe = Suma, haber = 0;
+
+                                    if (rpta.Equals("OK"))
                                     {
-                                        string res1 = "";
-                                        try
+                                        this.MensajeOk("Se Generó con éxito el Comprobante");
+                                        int idOPago = objeto1.BuscarUltimoIDOPago();
+
+                                        if (efectivo > 0)
                                         {
-                                            res1 = CN_Caja.Insertar(tbNumOPago.Text, "ORDEN DE PAGO", dtpFechaRecibo.Value, cbProveedor.Text, cbProveedor.SelectedValue.ToString(), "ACTIVO", 0, efectivo, -1*efectivo);
-                                            if (res1.Equals("OK"))
+                                            string res1 = "";
+                                            try
                                             {
-                                                MensajeOk("Se Inserto el Movimiento de Caja");
+                                                res1 = CN_Caja.Insertar(tbNumOPago.Text, "ORDEN DE PAGO", dtpFechaRecibo.Value, cbProveedor.Text, cbProveedor.SelectedValue.ToString(), "ACTIVO", 0, efectivo, -1 * efectivo);
+                                                if (res1.Equals("OK"))
+                                                {
+                                                    MensajeOk("Se Inserto el Movimiento de Caja");
+                                                }
+                                                else
+                                                {
+                                                    MensajeError(res1);
+                                                }
+                                            }
+                                            catch (Exception ex)
+                                            {
+                                                MessageBox.Show(ex.Message + ex.StackTrace);
+                                            }
+                                        }
+
+                                        if (valores > 0)
+                                        {
+                                            string rptActCheq = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO", idOPago);
+
+                                            if (rptActCheq.Equals("OK"))
+                                            {
+                                                // MensajeOk("Cheques ESTADO: PAGADO");
                                             }
                                             else
                                             {
-                                                MensajeError(res1);
+                                                // MensajeError(rpta1);
                                             }
                                         }
-                                        catch (Exception ex)
+
+
+                                        if (banco > 0)
                                         {
-                                            MessageBox.Show(ex.Message + ex.StackTrace);
+                                            string rptActTransf = CN_Banco.ActivarTransfPendientes("PENDIENTE", "ACTIVO");
+                                            if (rptActTransf.Equals("OK"))
+                                            {
+                                                this.MensajeOk("Se ACTIVARON LAS TRANSFERENCIAS");
+                                            }
+                                            else
+                                            {
+                                                this.MensajeError(rptActTransf);
+                                            }
                                         }
-                                    }
 
-                                    if (valores > 0)
-                                    {
-                                        string rptActCheq = CN_Cheque.ModificarEstadoCheque("SELECCIONADO", "PAGADO",idOPago);
-
-                                        if (rptActCheq.Equals("OK"))
+                                        rpta = CN_CtaCte.InsertarP(cbProveedor.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumOPago.Text, "ORDEN DE PAGO", debe, haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
+                                        if (rpta.Equals("OK"))
                                         {
-                                           // MensajeOk("Cheques ESTADO: PAGADO");
+                                            //this.MensajeOk("Se registro en cuenta corriente");
                                         }
                                         else
                                         {
-                                           // MensajeError(rpta1);
+                                            this.MensajeError(rpta);
                                         }
-                                    }
-
-                                    
-                                    if (banco > 0)
-                                    {
-                                        string rptActTransf = CN_Banco.ActivarTransfPendientes("PENDIENTE", "ACTIVO");
-                                        if (rptActTransf.Equals("OK"))
-                                        {
-                                            this.MensajeOk("Se ACTIVARON LAS TRANSFERENCIAS");
-                                        }
-                                        else
-                                        {
-                                            this.MensajeError(rptActTransf);
-                                        }
-                                    }
-
-                                    rpta = CN_CtaCte.InsertarP(cbProveedor.SelectedValue.ToString(), dtpFechaRecibo.Value, tbNumOPago.Text, "ORDEN DE PAGO", debe, haber, valores, efectivo, banco, (debe - haber), 0, 0, "N", Estado);
-                                    if (rpta.Equals("OK"))
-                                    {
-                                        //this.MensajeOk("Se registro en cuenta corriente");
+                                        ResetOPago();
+                                        CargarGrillaOPagos();
+                                        tabOrdenPagos.SelectedTab = tabConsultaOPagos;
                                     }
                                     else
                                     {
                                         this.MensajeError(rpta);
                                     }
-                                    ResetOPago();
-                                    CargarGrillaOPagos();
-                                    tabOrdenPagos.SelectedTab = tabConsultaOPagos;
-                                }
-                                else
-                                {
-                                    this.MensajeError(rpta);
                                 }
                             }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message + ex.StackTrace);
+                            }
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message + ex.StackTrace);
-                        }
-                    }                    
-                }
-            }
-            else
-            {
-                MensajeError("Por Favor, Ingrese un Importe");
-            }            
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvOPago.SelectedRows.Count > 0)
-            {
-                if (dgvOPago.CurrentRow.Cells[7].Value.ToString() != "ANULADO")
-                {
-                    string numComprob = dgvOPago.CurrentRow.Cells[2].Value.ToString();
-
-                    DialogResult opcion;
-                    opcion = MessageBox.Show("Desea ANULAR el comprobante seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (opcion == DialogResult.OK)
-                    {
-                        CN_Recibo objetoCN = new CN_Recibo();
-                        int idOPago = Convert.ToInt32(dgvOPago.CurrentRow.Cells["ID_OPAGO"].Value.ToString());
-                        objetoCN.AnularOPago(idOPago);
-
-                        MessageBox.Show("SE ANULÓ CORRECTAMENTE LA ORDEN DE PAGO SELECCIONADA");
-
-                        string rptaID = CN_Cheque.EstadoCheque("PAGADO", "ACTIVO", idOPago);                        
-
-                        string rpta = CN_CtaCte.AnularRegistroCtaCteP(dgvOPago.CurrentRow.Cells[2].Value.ToString(), "ORDEN DE PAGO");
-                        if (rpta.Equals("OK"))
-                        {
-                            MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
-                        }
-                        else
-                        {
-                            this.MensajeError(rpta);
-                        }
-
-                        string rpt = CN_Banco.Anular_TransfRealizadas(numComprob);
-                        if (rpt.Equals("OK"))
-                        {
-                            this.MensajeOk("Se ANULARON las TRANSFERENCIAS de la Orden de Pago");
-                        }
-
-                        string rptCaja = CN_Caja.Anular_CajaMovRealizado(numComprob);
-                        if (rptCaja.Equals("OK"))
-                        {
-                            this.MensajeOk("Se Anulo el movimiento de CAJA");
-                        }
-
-                        
-                        CargarGrillaOPagos();
                     }
                 }
                 else
                 {
-                    MensajeError("EL COMPROBANTE SELECCIONADO SE ENCUENTRA ANULADO");
+                    MensajeError("Por Favor, Ingrese un Importe");
                 }
-
             }
             else
             {
-                MessageBox.Show("Por Favor seleccione un comprobante");
+                MensajeError("Por Favor, Seleccione un Proveedor");
             }
         }
-
 
         private void btnActualizaLista_Click(object sender, EventArgs e)
         {
@@ -739,7 +689,7 @@ namespace CapaPresentacion
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             ConsultaPorTransferencia();
-            ConsultaPorCheque();
+            ConsultaPorChequeSelecc();
             this.Close();
         }
 
@@ -1019,6 +969,22 @@ namespace CapaPresentacion
 
         private void tbEfectivo_TextChanged(object sender, EventArgs e)
         {
+            if (tbEfectivo.Text == "00")
+            {
+                tbEfectivo.Text = "0";
+                tbEfectivo.Select(tbEfectivo.Text.Length, 0);
+            }
+            if (tbEfectivo.Text == ",")
+            {
+                tbEfectivo.Text = "0,";
+                tbEfectivo.Select(tbEfectivo.Text.Length, 0);
+            }
+            if (tbEfectivo.Text == "0,00")
+            {
+                tbEfectivo.Text = "0,0";
+                tbEfectivo.Select(tbEfectivo.Text.Length, 0);
+            }
+
             Decimal efectivo = 0, valores = 0, banco = 0;
             if (tbEfectivo.Text != "," && tbEfectivo.Text != "")
             {
@@ -1034,6 +1000,69 @@ namespace CapaPresentacion
             }
             Decimal Suma = efectivo + valores + banco;
             lblTotalOPago.Text = Suma.ToString("0.00");
+        }
+
+        private void btnNuevaOPago_Click(object sender, EventArgs e)
+        {
+            tabOrdenPagos.SelectedTab = tabNuevaOPago;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvOPago.SelectedRows.Count > 0)
+            {
+                if (dgvOPago.CurrentRow.Cells[7].Value.ToString() != "ANULADO")
+                {
+                    string numComprob = dgvOPago.CurrentRow.Cells[2].Value.ToString();
+
+                    DialogResult opcion;
+                    opcion = MessageBox.Show("Desea ANULAR el comprobante seleccionado?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (opcion == DialogResult.OK)
+                    {
+                        CN_Recibo objetoCN = new CN_Recibo();
+                        int idOPago = Convert.ToInt32(dgvOPago.CurrentRow.Cells["ID_OPAGO"].Value.ToString());
+                        objetoCN.AnularOPago(idOPago);
+
+                        MessageBox.Show("SE ANULÓ CORRECTAMENTE LA ORDEN DE PAGO SELECCIONADA");
+
+                        string rptaID = CN_Cheque.EstadoCheque("PAGADO", "ACTIVO", idOPago);
+
+                        string rpta = CN_CtaCte.AnularRegistroCtaCteP(dgvOPago.CurrentRow.Cells[2].Value.ToString(), "ORDEN DE PAGO");
+                        if (rpta.Equals("OK"))
+                        {
+                            MessageBox.Show("Se QUITO EL REGISTO DE LA CTA CTE");
+                        }
+                        else
+                        {
+                            this.MensajeError(rpta);
+                        }
+
+                        string rpt = CN_Banco.Anular_TransfRealizadas(numComprob);
+                        if (rpt.Equals("OK"))
+                        {
+                            this.MensajeOk("Se ANULARON las TRANSFERENCIAS de la Orden de Pago");
+                        }
+
+                        string rptCaja = CN_Caja.Anular_CajaMovRealizado(numComprob);
+                        if (rptCaja.Equals("OK"))
+                        {
+                            this.MensajeOk("Se Anulo el movimiento de CAJA");
+                        }
+
+
+                        CargarGrillaOPagos();
+                    }
+                }
+                else
+                {
+                    MensajeError("EL COMPROBANTE SELECCIONADO SE ENCUENTRA ANULADO");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Por Favor seleccione un comprobante");
+            }
         }
 
         private void tbTransfImporte_Leave(object sender, EventArgs e)

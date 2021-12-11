@@ -135,5 +135,20 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void lblOPagos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChekAnul_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRecibos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

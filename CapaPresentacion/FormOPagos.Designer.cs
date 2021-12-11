@@ -48,6 +48,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabOrdenPagos = new System.Windows.Forms.TabControl();
             this.tabConsultaOPagos = new System.Windows.Forms.TabPage();
+            this.btnNuevaOPago = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
             this.chekVerAnulados = new Guna.UI.WinForms.GunaSwitch();
             this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -60,8 +62,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
-            this.btnNuevaOPago = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizaLista = new FontAwesome.Sharp.IconButton();
             this.dgvOPago = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
@@ -211,6 +211,8 @@
             // tabConsultaOPagos
             // 
             this.tabConsultaOPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabConsultaOPagos.Controls.Add(this.btnNuevaOPago);
+            this.tabConsultaOPagos.Controls.Add(this.btnEliminar);
             this.tabConsultaOPagos.Controls.Add(this.lblChekAnul);
             this.tabConsultaOPagos.Controls.Add(this.chekVerAnulados);
             this.tabConsultaOPagos.Controls.Add(this.dtpFecha1);
@@ -223,8 +225,6 @@
             this.tabConsultaOPagos.Controls.Add(this.label6);
             this.tabConsultaOPagos.Controls.Add(this.label3);
             this.tabConsultaOPagos.Controls.Add(this.btnImprimir);
-            this.tabConsultaOPagos.Controls.Add(this.btnNuevaOPago);
-            this.tabConsultaOPagos.Controls.Add(this.btnEliminar);
             this.tabConsultaOPagos.Controls.Add(this.btnActualizaLista);
             this.tabConsultaOPagos.Controls.Add(this.dgvOPago);
             this.tabConsultaOPagos.Controls.Add(this.btnBuscar);
@@ -237,6 +237,54 @@
             this.tabConsultaOPagos.Size = new System.Drawing.Size(948, 577);
             this.tabConsultaOPagos.TabIndex = 0;
             this.tabConsultaOPagos.Text = "Consulta";
+            // 
+            // btnNuevaOPago
+            // 
+            this.btnNuevaOPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnNuevaOPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaOPago.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevaOPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaOPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnNuevaOPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaOPago.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNuevaOPago.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaOPago.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
+            this.btnNuevaOPago.IconColor = System.Drawing.Color.White;
+            this.btnNuevaOPago.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevaOPago.IconSize = 25;
+            this.btnNuevaOPago.Location = new System.Drawing.Point(774, 124);
+            this.btnNuevaOPago.Name = "btnNuevaOPago";
+            this.btnNuevaOPago.Size = new System.Drawing.Size(116, 31);
+            this.btnNuevaOPago.TabIndex = 186;
+            this.btnNuevaOPago.TabStop = false;
+            this.btnNuevaOPago.Text = "NUEVA";
+            this.btnNuevaOPago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaOPago.UseVisualStyleBackColor = false;
+            this.btnNuevaOPago.Click += new System.EventHandler(this.btnNuevaOPago_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 25;
+            this.btnEliminar.Location = new System.Drawing.Point(774, 211);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(116, 31);
+            this.btnEliminar.TabIndex = 187;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Text = "ANULAR";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblChekAnul
             // 
@@ -267,6 +315,7 @@
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -292,6 +341,7 @@
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -434,46 +484,6 @@
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // btnNuevaOPago
-            // 
-            this.btnNuevaOPago.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNuevaOPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnNuevaOPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevaOPago.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevaOPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevaOPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnNuevaOPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaOPago.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnNuevaOPago.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaOPago.Location = new System.Drawing.Point(774, 126);
-            this.btnNuevaOPago.Name = "btnNuevaOPago";
-            this.btnNuevaOPago.Size = new System.Drawing.Size(116, 31);
-            this.btnNuevaOPago.TabIndex = 119;
-            this.btnNuevaOPago.TabStop = false;
-            this.btnNuevaOPago.Text = "NUEVA";
-            this.btnNuevaOPago.UseVisualStyleBackColor = false;
-            this.btnNuevaOPago.Click += new System.EventHandler(this.btnNuevaOPago_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(774, 209);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(116, 31);
-            this.btnEliminar.TabIndex = 116;
-            this.btnEliminar.TabStop = false;
-            this.btnEliminar.Text = "ANULAR";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // btnActualizaLista
             // 
             this.btnActualizaLista.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -488,8 +498,7 @@
             this.btnActualizaLista.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.btnActualizaLista.IconColor = System.Drawing.Color.White;
             this.btnActualizaLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaLista.IconSize = 18;
-            this.btnActualizaLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizaLista.IconSize = 25;
             this.btnActualizaLista.Location = new System.Drawing.Point(774, 38);
             this.btnActualizaLista.Name = "btnActualizaLista";
             this.btnActualizaLista.Size = new System.Drawing.Size(116, 31);
@@ -524,6 +533,7 @@
             this.dgvOPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvOPago.ColumnHeadersVisible = false;
+            this.dgvOPago.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvOPago.EnableHeadersVisualStyles = false;
             this.dgvOPago.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvOPago.Location = new System.Drawing.Point(71, 124);
@@ -736,6 +746,7 @@
             this.dtpFechaRecibo.BackColor = System.Drawing.Color.Transparent;
             this.dtpFechaRecibo.BaseColor = System.Drawing.Color.White;
             this.dtpFechaRecibo.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFechaRecibo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFechaRecibo.CustomFormat = null;
             this.dtpFechaRecibo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFechaRecibo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -905,6 +916,7 @@
             this.tbBanco.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBanco.Location = new System.Drawing.Point(461, 150);
             this.tbBanco.Name = "tbBanco";
+            this.tbBanco.ReadOnly = true;
             this.tbBanco.Size = new System.Drawing.Size(108, 25);
             this.tbBanco.TabIndex = 131;
             this.tbBanco.TabStop = false;
@@ -980,6 +992,7 @@
             // cbProveedor
             // 
             this.cbProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProveedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1250,6 +1263,7 @@
             this.dgvValoresSeleccionados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvValoresSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvValoresSeleccionados.ColumnHeadersVisible = false;
+            this.dgvValoresSeleccionados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvValoresSeleccionados.EnableHeadersVisualStyles = false;
             this.dgvValoresSeleccionados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvValoresSeleccionados.Location = new System.Drawing.Point(32, 334);
@@ -1308,6 +1322,7 @@
             this.dgvCheques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCheques.ColumnHeadersVisible = false;
+            this.dgvCheques.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvCheques.EnableHeadersVisualStyles = false;
             this.dgvCheques.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvCheques.Location = new System.Drawing.Point(32, 59);
@@ -1912,6 +1927,7 @@
             this.dtpTransferencia.BackColor = System.Drawing.Color.Transparent;
             this.dtpTransferencia.BaseColor = System.Drawing.Color.White;
             this.dtpTransferencia.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTransferencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpTransferencia.CustomFormat = null;
             this.dtpTransferencia.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpTransferencia.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -2065,6 +2081,7 @@
             this.dgvTransferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvTransferencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTransferencias.ColumnHeadersVisible = false;
+            this.dgvTransferencias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTransferencias.EnableHeadersVisualStyles = false;
             this.dgvTransferencias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvTransferencias.Location = new System.Drawing.Point(61, 238);
@@ -2188,8 +2205,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton btnImprimir;
-        private System.Windows.Forms.Button btnNuevaOPago;
-        private System.Windows.Forms.Button btnEliminar;
         private FontAwesome.Sharp.IconButton btnActualizaLista;
         private System.Windows.Forms.DataGridView dgvOPago;
         private FontAwesome.Sharp.IconButton btnBuscar;
@@ -2282,5 +2297,7 @@
         private System.Windows.Forms.TextBox tbNumTransf;
         private System.Windows.Forms.DataGridView dgvTransferencias;
         private System.Windows.Forms.Label label46;
+        private FontAwesome.Sharp.IconButton btnNuevaOPago;
+        private FontAwesome.Sharp.IconButton btnEliminar;
     }
 }

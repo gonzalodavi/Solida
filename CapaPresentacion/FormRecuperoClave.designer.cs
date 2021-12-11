@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRecuperoClave));
             this.label1 = new System.Windows.Forms.Label();
             this.tBUsuarioMail = new System.Windows.Forms.TextBox();
-            this.btnEnviar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new FontAwesome.Sharp.IconPictureBox();
             this.lblResultado = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEnviar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,25 +61,6 @@
             this.tBUsuarioMail.Name = "tBUsuarioMail";
             this.tBUsuarioMail.Size = new System.Drawing.Size(240, 25);
             this.tBUsuarioMail.TabIndex = 1;
-            // 
-            // btnEnviar
-            // 
-            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnviar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEnviar.FlatAppearance.BorderSize = 0;
-            this.btnEnviar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEnviar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEnviar.Location = new System.Drawing.Point(140, 103);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(122, 26);
-            this.btnEnviar.TabIndex = 2;
-            this.btnEnviar.Text = "ENVIAR";
-            this.btnEnviar.UseVisualStyleBackColor = false;
-            this.btnEnviar.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -131,16 +112,41 @@
             this.panel2.Size = new System.Drawing.Size(323, 127);
             this.panel2.TabIndex = 5;
             // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnviar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEnviar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEnviar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEnviar.ForeColor = System.Drawing.Color.White;
+            this.btnEnviar.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            this.btnEnviar.IconColor = System.Drawing.Color.White;
+            this.btnEnviar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEnviar.IconSize = 25;
+            this.btnEnviar.Location = new System.Drawing.Point(140, 93);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnEnviar.Size = new System.Drawing.Size(116, 31);
+            this.btnEnviar.TabIndex = 120;
+            this.btnEnviar.TabStop = false;
+            this.btnEnviar.Text = "ENVIAR";
+            this.btnEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEnviar.UseVisualStyleBackColor = false;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
             // FormRecuperoClave
             // 
-            this.AcceptButton = this.btnEnviar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(394, 304);
+            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.tBUsuarioMail);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -163,10 +169,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tBUsuarioMail;
-        private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconPictureBox btnSalir;
+        private FontAwesome.Sharp.IconButton btnEnviar;
     }
 }

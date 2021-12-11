@@ -248,5 +248,38 @@ namespace CapaPresentacion
             FormReporteProductos form = new FormReporteProductos();
             form.ShowDialog();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            tbBusca.Text = "";
+            CargarGrilla();
+        }
+
+        private void chekCLASIFICA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chekCLASIFICA.Checked == true)
+            {
+                dgvProductos.ClearSelection();
+                
+
+                foreach (DataGridViewRow MyRow in dgvProductos.Rows)
+                {
+                    if (Convert.ToDecimal(MyRow.Cells[8].Value) <= Convert.ToDecimal(MyRow.Cells[9].Value))
+                    {
+                        MyRow.DefaultCellStyle.BackColor = Color.Orange;
+                        MyRow.DefaultCellStyle.ForeColor = Color.DarkRed;
+                    }
+                }
+            }
+            else
+            {
+               
+                foreach (DataGridViewRow MyRow in dgvProductos.Rows)
+                {
+                    MyRow.DefaultCellStyle.BackColor = Color.FromArgb(12, 52, 119);
+                    MyRow.DefaultCellStyle.ForeColor = Color.White;
+                }
+            }
+        }
     }
 }

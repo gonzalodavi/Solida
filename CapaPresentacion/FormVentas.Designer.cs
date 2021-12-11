@@ -129,7 +129,9 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.tbBuscaCliente = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
+            this.lblPanelClientes = new System.Windows.Forms.Label();
             this.tabProductos = new System.Windows.Forms.TabPage();
+            this.lblPanelProductos = new System.Windows.Forms.Label();
             this.panelProductos = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -217,6 +219,7 @@
             this.tabVentas.Controls.Add(this.tabNuevaVenta);
             this.tabVentas.Controls.Add(this.tabClientes);
             this.tabVentas.Controls.Add(this.tabProductos);
+            this.tabVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabVentas.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabVentas.HotTrack = true;
             this.tabVentas.Location = new System.Drawing.Point(35, 65);
@@ -246,6 +249,7 @@
             this.tabListadoVentas.Controls.Add(this.lblFecha1);
             this.tabListadoVentas.Controls.Add(this.dgvVentas);
             this.tabListadoVentas.Controls.Add(this.label38);
+            this.tabListadoVentas.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabListadoVentas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabListadoVentas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabListadoVentas.Location = new System.Drawing.Point(4, 26);
@@ -284,6 +288,7 @@
             this.dtpFecha2.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha2.BaseColor = System.Drawing.Color.White;
             this.dtpFecha2.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -309,6 +314,7 @@
             this.dtpFecha1.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha1.BaseColor = System.Drawing.Color.White;
             this.dtpFecha1.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -651,6 +657,7 @@
             this.tabNuevaVenta.Controls.Add(this.lblFecha);
             this.tabNuevaVenta.Controls.Add(this.label1);
             this.tabNuevaVenta.Controls.Add(this.lblCuit);
+            this.tabNuevaVenta.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabNuevaVenta.Location = new System.Drawing.Point(4, 26);
             this.tabNuevaVenta.Name = "tabNuevaVenta";
             this.tabNuevaVenta.Padding = new System.Windows.Forms.Padding(3);
@@ -748,6 +755,7 @@
             // 
             this.rbCtaCte.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbCtaCte.AutoSize = true;
+            this.rbCtaCte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbCtaCte.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.rbCtaCte.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.rbCtaCte.Location = new System.Drawing.Point(523, 88);
@@ -762,6 +770,7 @@
             this.rbContado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbContado.AutoSize = true;
             this.rbContado.Checked = true;
+            this.rbContado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbContado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.rbContado.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.rbContado.Location = new System.Drawing.Point(523, 63);
@@ -817,6 +826,7 @@
             this.dtpFecha.BackColor = System.Drawing.Color.Transparent;
             this.dtpFecha.BaseColor = System.Drawing.Color.White;
             this.dtpFecha.BorderColor = System.Drawing.Color.Silver;
+            this.dtpFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha.CustomFormat = null;
             this.dtpFecha.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFecha.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1068,6 +1078,7 @@
             // chekConsumidorFinal
             // 
             this.chekConsumidorFinal.AutoEllipsis = true;
+            this.chekConsumidorFinal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekConsumidorFinal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.chekConsumidorFinal.ForeColor = System.Drawing.SystemColors.Control;
             this.chekConsumidorFinal.Location = new System.Drawing.Point(99, 91);
@@ -1096,6 +1107,7 @@
             // cbSucursal
             // 
             this.cbSucursal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbSucursal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSucursal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1448,6 +1460,7 @@
             // 
             this.tabClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.tabClientes.Controls.Add(this.panelClientes);
+            this.tabClientes.Controls.Add(this.lblPanelClientes);
             this.tabClientes.Location = new System.Drawing.Point(4, 26);
             this.tabClientes.Name = "tabClientes";
             this.tabClientes.Padding = new System.Windows.Forms.Padding(3);
@@ -1469,9 +1482,9 @@
             this.panelClientes.Controls.Add(this.tbBuscaCliente);
             this.panelClientes.Controls.Add(this.label35);
             this.panelClientes.Enabled = false;
-            this.panelClientes.Location = new System.Drawing.Point(6, 6);
+            this.panelClientes.Location = new System.Drawing.Point(6, 34);
             this.panelClientes.Name = "panelClientes";
-            this.panelClientes.Size = new System.Drawing.Size(936, 566);
+            this.panelClientes.Size = new System.Drawing.Size(936, 532);
             this.panelClientes.TabIndex = 1;
             // 
             // label21
@@ -1481,7 +1494,7 @@
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label21.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label21.Location = new System.Drawing.Point(710, 105);
+            this.label21.Location = new System.Drawing.Point(710, 98);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(166, 18);
             this.label21.TabIndex = 124;
@@ -1495,7 +1508,7 @@
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label22.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label22.Location = new System.Drawing.Point(384, 105);
+            this.label22.Location = new System.Drawing.Point(384, 98);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(163, 18);
             this.label22.TabIndex = 120;
@@ -1509,7 +1522,7 @@
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label23.Location = new System.Drawing.Point(547, 105);
+            this.label23.Location = new System.Drawing.Point(547, 98);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(163, 18);
             this.label23.TabIndex = 121;
@@ -1523,7 +1536,7 @@
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label24.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label24.Location = new System.Drawing.Point(57, 105);
+            this.label24.Location = new System.Drawing.Point(57, 98);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(164, 18);
             this.label24.TabIndex = 122;
@@ -1537,7 +1550,7 @@
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label25.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label25.Location = new System.Drawing.Point(221, 105);
+            this.label25.Location = new System.Drawing.Point(221, 98);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(163, 18);
             this.label25.TabIndex = 123;
@@ -1571,7 +1584,7 @@
             this.dgvClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvClientes.EnableHeadersVisualStyles = false;
             this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvClientes.Location = new System.Drawing.Point(58, 125);
+            this.dgvClientes.Location = new System.Drawing.Point(58, 116);
             this.dgvClientes.MaximumSize = new System.Drawing.Size(900, 800);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
@@ -1606,7 +1619,7 @@
             this.btnActualizaListaProv.IconColor = System.Drawing.Color.White;
             this.btnActualizaListaProv.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizaListaProv.IconSize = 20;
-            this.btnActualizaListaProv.Location = new System.Drawing.Point(767, 48);
+            this.btnActualizaListaProv.Location = new System.Drawing.Point(767, 31);
             this.btnActualizaListaProv.Name = "btnActualizaListaProv";
             this.btnActualizaListaProv.Size = new System.Drawing.Size(116, 31);
             this.btnActualizaListaProv.TabIndex = 88;
@@ -1632,7 +1645,7 @@
             this.btnBuscarCliente.IconColor = System.Drawing.Color.White;
             this.btnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarCliente.IconSize = 25;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(431, 48);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(431, 31);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(116, 31);
             this.btnBuscarCliente.TabIndex = 87;
@@ -1648,7 +1661,7 @@
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblBuscar.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblBuscar.Location = new System.Drawing.Point(65, 54);
+            this.lblBuscar.Location = new System.Drawing.Point(65, 37);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(61, 17);
             this.lblBuscar.TabIndex = 84;
@@ -1660,7 +1673,7 @@
             this.tbBuscaCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBuscaCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBuscaCliente.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbBuscaCliente.Location = new System.Drawing.Point(132, 52);
+            this.tbBuscaCliente.Location = new System.Drawing.Point(132, 35);
             this.tbBuscaCliente.MaxLength = 50;
             this.tbBuscaCliente.Name = "tbBuscaCliente";
             this.tbBuscaCliente.Size = new System.Drawing.Size(276, 25);
@@ -1673,15 +1686,29 @@
             this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label35.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label35.Location = new System.Drawing.Point(57, 122);
+            this.label35.Location = new System.Drawing.Point(57, 115);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(819, 380);
             this.label35.TabIndex = 187;
             this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lblPanelClientes
+            // 
+            this.lblPanelClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPanelClientes.AutoSize = true;
+            this.lblPanelClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPanelClientes.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPanelClientes.Location = new System.Drawing.Point(126, 14);
+            this.lblPanelClientes.Name = "lblPanelClientes";
+            this.lblPanelClientes.Size = new System.Drawing.Size(702, 17);
+            this.lblPanelClientes.TabIndex = 84;
+            this.lblPanelClientes.Text = "Este panel se habilita desde la solapa NUEVA VENTA y luego presionando el botón E" +
+    "LEGIR de la sección CLIENTE";
+            // 
             // tabProductos
             // 
             this.tabProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tabProductos.Controls.Add(this.lblPanelProductos);
             this.tabProductos.Controls.Add(this.panelProductos);
             this.tabProductos.Location = new System.Drawing.Point(4, 26);
             this.tabProductos.Name = "tabProductos";
@@ -1689,6 +1716,19 @@
             this.tabProductos.Size = new System.Drawing.Size(948, 577);
             this.tabProductos.TabIndex = 4;
             this.tabProductos.Text = "Productos";
+            // 
+            // lblPanelProductos
+            // 
+            this.lblPanelProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPanelProductos.AutoSize = true;
+            this.lblPanelProductos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPanelProductos.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPanelProductos.Location = new System.Drawing.Point(110, 10);
+            this.lblPanelProductos.Name = "lblPanelProductos";
+            this.lblPanelProductos.Size = new System.Drawing.Size(730, 17);
+            this.lblPanelProductos.TabIndex = 89;
+            this.lblPanelProductos.Text = "Este panel se habilita desde la solapa NUEVA VENTA y luego presionando el botón E" +
+    "LEGIR de la sección PPRODUCTO";
             // 
             // panelProductos
             // 
@@ -1708,9 +1748,9 @@
             this.panelProductos.Controls.Add(this.tbBuscaProductos);
             this.panelProductos.Controls.Add(this.label37);
             this.panelProductos.Enabled = false;
-            this.panelProductos.Location = new System.Drawing.Point(6, 6);
+            this.panelProductos.Location = new System.Drawing.Point(6, 30);
             this.panelProductos.Name = "panelProductos";
-            this.panelProductos.Size = new System.Drawing.Size(936, 566);
+            this.panelProductos.Size = new System.Drawing.Size(936, 541);
             this.panelProductos.TabIndex = 1;
             // 
             // label26
@@ -1720,7 +1760,7 @@
             this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label26.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label26.Location = new System.Drawing.Point(817, 113);
+            this.label26.Location = new System.Drawing.Point(817, 96);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(102, 18);
             this.label26.TabIndex = 197;
@@ -1734,7 +1774,7 @@
             this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label27.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label27.Location = new System.Drawing.Point(702, 113);
+            this.label27.Location = new System.Drawing.Point(702, 96);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(116, 18);
             this.label27.TabIndex = 196;
@@ -1748,7 +1788,7 @@
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label28.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label28.Location = new System.Drawing.Point(638, 113);
+            this.label28.Location = new System.Drawing.Point(638, 96);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(65, 18);
             this.label28.TabIndex = 195;
@@ -1762,7 +1802,7 @@
             this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label29.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label29.Location = new System.Drawing.Point(472, 96);
+            this.label29.Location = new System.Drawing.Point(472, 79);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(167, 18);
             this.label29.TabIndex = 194;
@@ -1776,7 +1816,7 @@
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label30.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label30.Location = new System.Drawing.Point(555, 113);
+            this.label30.Location = new System.Drawing.Point(555, 96);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(84, 18);
             this.label30.TabIndex = 193;
@@ -1790,7 +1830,7 @@
             this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label31.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label31.Location = new System.Drawing.Point(298, 113);
+            this.label31.Location = new System.Drawing.Point(298, 96);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(175, 18);
             this.label31.TabIndex = 189;
@@ -1804,7 +1844,7 @@
             this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label32.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label32.Location = new System.Drawing.Point(472, 113);
+            this.label32.Location = new System.Drawing.Point(472, 96);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(84, 18);
             this.label32.TabIndex = 190;
@@ -1818,7 +1858,7 @@
             this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label33.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label33.Location = new System.Drawing.Point(17, 113);
+            this.label33.Location = new System.Drawing.Point(17, 96);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(50, 18);
             this.label33.TabIndex = 191;
@@ -1832,7 +1872,7 @@
             this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label34.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label34.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label34.Location = new System.Drawing.Point(66, 113);
+            this.label34.Location = new System.Drawing.Point(66, 96);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(235, 18);
             this.label34.TabIndex = 192;
@@ -1866,7 +1906,7 @@
             this.dgvProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvProductos.Location = new System.Drawing.Point(18, 133);
+            this.dgvProductos.Location = new System.Drawing.Point(18, 115);
             this.dgvProductos.MaximumSize = new System.Drawing.Size(900, 800);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
@@ -1881,7 +1921,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(900, 407);
+            this.dgvProductos.Size = new System.Drawing.Size(900, 385);
             this.dgvProductos.TabIndex = 96;
             this.dgvProductos.TabStop = false;
             this.dgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentDoubleClick);
@@ -1902,7 +1942,7 @@
             this.btnActualizaListaProd.IconColor = System.Drawing.Color.White;
             this.btnActualizaListaProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizaListaProd.IconSize = 20;
-            this.btnActualizaListaProd.Location = new System.Drawing.Point(767, 39);
+            this.btnActualizaListaProd.Location = new System.Drawing.Point(767, 25);
             this.btnActualizaListaProd.Name = "btnActualizaListaProd";
             this.btnActualizaListaProd.Size = new System.Drawing.Size(116, 31);
             this.btnActualizaListaProd.TabIndex = 98;
@@ -1927,7 +1967,7 @@
             this.btnBuscaProd.IconColor = System.Drawing.Color.White;
             this.btnBuscaProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscaProd.IconSize = 25;
-            this.btnBuscaProd.Location = new System.Drawing.Point(429, 39);
+            this.btnBuscaProd.Location = new System.Drawing.Point(429, 25);
             this.btnBuscaProd.Name = "btnBuscaProd";
             this.btnBuscaProd.Size = new System.Drawing.Size(116, 31);
             this.btnBuscaProd.TabIndex = 97;
@@ -1943,7 +1983,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(69, 44);
+            this.label4.Location = new System.Drawing.Point(69, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 17);
             this.label4.TabIndex = 94;
@@ -1955,7 +1995,7 @@
             this.tbBuscaProductos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBuscaProductos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBuscaProductos.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbBuscaProductos.Location = new System.Drawing.Point(136, 42);
+            this.tbBuscaProductos.Location = new System.Drawing.Point(136, 28);
             this.tbBuscaProductos.MaxLength = 100;
             this.tbBuscaProductos.Name = "tbBuscaProductos";
             this.tbBuscaProductos.Size = new System.Drawing.Size(277, 25);
@@ -1968,9 +2008,9 @@
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label37.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label37.Location = new System.Drawing.Point(17, 130);
+            this.label37.Location = new System.Drawing.Point(17, 113);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(902, 412);
+            this.label37.Size = new System.Drawing.Size(902, 388);
             this.label37.TabIndex = 188;
             this.label37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1996,10 +2036,12 @@
             this.tabNuevaVenta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetVent)).EndInit();
             this.tabClientes.ResumeLayout(false);
+            this.tabClientes.PerformLayout();
             this.panelClientes.ResumeLayout(false);
             this.panelClientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.tabProductos.ResumeLayout(false);
+            this.tabProductos.PerformLayout();
             this.panelProductos.ResumeLayout(false);
             this.panelProductos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
@@ -2114,5 +2156,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblPanelClientes;
+        private System.Windows.Forms.Label lblPanelProductos;
     }
 }

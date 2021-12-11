@@ -67,63 +67,7 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            btnModRubro.Enabled = false;
-            btnEliminaRubro.Enabled = false;
-            btnNuevo.Enabled = false;
-            dgvRubros.Enabled = false;
-            lblRubro.Text = "Nuevo Rubro";
-            tbRubro.Enabled = true;
-            tbRubro.Text = "";
-            tbRubro.Focus();
-        }
 
-
-        private void btnModRubro_Click(object sender, EventArgs e)
-        {
-            if (dgvRubros.SelectedRows.Count > 0)
-            {
-                btnModRubro.Enabled = false;
-                btnEliminaRubro.Enabled = false;
-                btnNuevo.Enabled = false;
-                dgvRubros.Enabled = false;
-                lblRubro.Text = "Modificar Rubro";
-                tbRubro.Enabled = true;
-                tbRubro.Text = dgvRubros.CurrentRow.Cells["RUBRO"].Value.ToString();
-                Editar = true;
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-        }
-
-        private void btnEliminaRubro_Click(object sender, EventArgs e)
-        {
-            if (dgvRubros.SelectedRows.Count > 0)
-            {
-                if (MessageBox.Show("¿Desea Eliminar el Rubro seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        string idRubro = dgvRubros.CurrentRow.Cells["ID"].Value.ToString();
-                        objeto.EliminarRubro(idRubro);
-                        MessageBox.Show("Se eliminó correctamente el Rubro seleccionado");
-                        CargarGrillaRubros();
-                        AcomodaTabla();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila por favor");
-            }
-        }
 
         private void btnAceptaRubro_Click(object sender, EventArgs e)
         {
@@ -185,6 +129,63 @@ namespace CapaPresentacion
         private void btnCancelaRubro_Click(object sender, EventArgs e)
         {
             DeshabilitarEdicion();            
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            btnModRubro.Enabled = false;
+            btnEliminaRubro.Enabled = false;
+            btnNuevo.Enabled = false;
+            dgvRubros.Enabled = false;
+            lblRubro.Text = "Nuevo Rubro";
+            tbRubro.Enabled = true;
+            tbRubro.Text = "";
+            tbRubro.Focus();
+        }
+
+        private void btnModRubro_Click(object sender, EventArgs e)
+        {
+            if (dgvRubros.SelectedRows.Count > 0)
+            {
+                btnModRubro.Enabled = false;
+                btnEliminaRubro.Enabled = false;
+                btnNuevo.Enabled = false;
+                dgvRubros.Enabled = false;
+                lblRubro.Text = "Modificar Rubro";
+                tbRubro.Enabled = true;
+                tbRubro.Text = dgvRubros.CurrentRow.Cells["RUBRO"].Value.ToString();
+                Editar = true;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
+        }
+
+        private void btnEliminaRubro_Click(object sender, EventArgs e)
+        {
+            if (dgvRubros.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("¿Desea Eliminar el Rubro seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string idRubro = dgvRubros.CurrentRow.Cells["ID"].Value.ToString();
+                        objeto.EliminarRubro(idRubro);
+                        MessageBox.Show("Se eliminó correctamente el Rubro seleccionado");
+                        CargarGrillaRubros();
+                        AcomodaTabla();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila por favor");
+            }
         }
     }
 }

@@ -40,6 +40,8 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tabVentas = new System.Windows.Forms.TabControl();
             this.tabClientes = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.chekMovPend = new Guna.UI.WinForms.GunaMediumCheckBox();
             this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
             this.chekFecha = new Guna.UI.WinForms.GunaSwitch();
             this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -81,8 +83,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.dgvDetCtaCteProveedores = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.chekMovPend = new Guna.UI.WinForms.GunaMediumCheckBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.panelFormCompras.SuspendLayout();
             this.tabVentas.SuspendLayout();
             this.tabClientes.SuspendLayout();
@@ -190,12 +190,37 @@
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
             // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label20.AutoEllipsis = true;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.SystemColors.Control;
+            this.label20.Location = new System.Drawing.Point(494, 45);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(192, 17);
+            this.label20.TabIndex = 187;
+            this.label20.Text = "Solo Movimientos Pendientes";
+            // 
+            // chekMovPend
+            // 
+            this.chekMovPend.BaseColor = System.Drawing.Color.White;
+            this.chekMovPend.Checked = true;
+            this.chekMovPend.CheckedOffColor = System.Drawing.Color.Gray;
+            this.chekMovPend.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekMovPend.FillColor = System.Drawing.Color.White;
+            this.chekMovPend.Location = new System.Drawing.Point(468, 44);
+            this.chekMovPend.Name = "chekMovPend";
+            this.chekMovPend.Size = new System.Drawing.Size(20, 20);
+            this.chekMovPend.TabIndex = 185;
+            // 
             // lblChekAnul
             // 
             this.lblChekAnul.AutoSize = true;
             this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(778, 304);
+            this.lblChekAnul.Location = new System.Drawing.Point(778, 243);
             this.lblChekAnul.Name = "lblChekAnul";
             this.lblChekAnul.Size = new System.Drawing.Size(79, 17);
             this.lblChekAnul.TabIndex = 154;
@@ -208,7 +233,7 @@
             this.chekFecha.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.chekFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekFecha.FillColor = System.Drawing.Color.White;
-            this.chekFecha.Location = new System.Drawing.Point(856, 303);
+            this.chekFecha.Location = new System.Drawing.Point(856, 242);
             this.chekFecha.Name = "chekFecha";
             this.chekFecha.Size = new System.Drawing.Size(28, 20);
             this.chekFecha.TabIndex = 153;
@@ -226,7 +251,7 @@
             this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(773, 185);
+            this.dtpFecha1.Location = new System.Drawing.Point(773, 124);
             this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha1.Name = "dtpFecha1";
@@ -252,7 +277,7 @@
             this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(773, 249);
+            this.dtpFecha2.Location = new System.Drawing.Point(773, 188);
             this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha2.Name = "dtpFecha2";
@@ -444,8 +469,8 @@
             this.lblFecha2.AutoEllipsis = true;
             this.lblFecha2.AutoSize = true;
             this.lblFecha2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblFecha2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha2.Location = new System.Drawing.Point(808, 230);
+            this.lblFecha2.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFecha2.Location = new System.Drawing.Point(808, 169);
             this.lblFecha2.Name = "lblFecha2";
             this.lblFecha2.Size = new System.Drawing.Size(47, 17);
             this.lblFecha2.TabIndex = 94;
@@ -470,8 +495,8 @@
             this.lblFecha1.AutoEllipsis = true;
             this.lblFecha1.AutoSize = true;
             this.lblFecha1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblFecha1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha1.Location = new System.Drawing.Point(806, 166);
+            this.lblFecha1.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFecha1.Location = new System.Drawing.Point(806, 105);
             this.lblFecha1.Name = "lblFecha1";
             this.lblFecha1.Size = new System.Drawing.Size(50, 17);
             this.lblFecha1.TabIndex = 93;
@@ -501,6 +526,7 @@
             this.dgvDetCtaCte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetCtaCte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetCtaCte.ColumnHeadersVisible = false;
+            this.dgvDetCtaCte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvDetCtaCte.EnableHeadersVisualStyles = false;
             this.dgvDetCtaCte.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvDetCtaCte.Location = new System.Drawing.Point(44, 124);
@@ -570,7 +596,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(778, 304);
+            this.gunaLabel1.Location = new System.Drawing.Point(778, 243);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(79, 17);
             this.gunaLabel1.TabIndex = 173;
@@ -583,7 +609,7 @@
             this.chekFechaProv.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.chekFechaProv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekFechaProv.FillColor = System.Drawing.Color.White;
-            this.chekFechaProv.Location = new System.Drawing.Point(856, 303);
+            this.chekFechaProv.Location = new System.Drawing.Point(856, 242);
             this.chekFechaProv.Name = "chekFechaProv";
             this.chekFechaProv.Size = new System.Drawing.Size(28, 20);
             this.chekFechaProv.TabIndex = 172;
@@ -601,7 +627,7 @@
             this.dtpFecha1Prov.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha1Prov.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha1Prov.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1Prov.Location = new System.Drawing.Point(773, 185);
+            this.dtpFecha1Prov.Location = new System.Drawing.Point(773, 124);
             this.dtpFecha1Prov.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha1Prov.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha1Prov.Name = "dtpFecha1Prov";
@@ -627,7 +653,7 @@
             this.dtpFecha2Prov.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha2Prov.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha2Prov.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2Prov.Location = new System.Drawing.Point(773, 249);
+            this.dtpFecha2Prov.Location = new System.Drawing.Point(773, 188);
             this.dtpFecha2Prov.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha2Prov.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha2Prov.Name = "dtpFecha2Prov";
@@ -690,7 +716,7 @@
             this.cbProveedores.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbProveedores.FormattingEnabled = true;
             this.cbProveedores.ItemHeight = 17;
-            this.cbProveedores.Location = new System.Drawing.Point(337, 41);
+            this.cbProveedores.Location = new System.Drawing.Point(191, 41);
             this.cbProveedores.Name = "cbProveedores";
             this.cbProveedores.Size = new System.Drawing.Size(263, 25);
             this.cbProveedores.TabIndex = 166;
@@ -819,8 +845,8 @@
             this.label16.AutoEllipsis = true;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label16.Location = new System.Drawing.Point(808, 230);
+            this.label16.ForeColor = System.Drawing.SystemColors.Control;
+            this.label16.Location = new System.Drawing.Point(808, 169);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 17);
             this.label16.TabIndex = 158;
@@ -832,8 +858,8 @@
             this.label17.AutoEllipsis = true;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label17.Location = new System.Drawing.Point(187, 44);
+            this.label17.ForeColor = System.Drawing.SystemColors.Control;
+            this.label17.Location = new System.Drawing.Point(41, 44);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(144, 17);
             this.label17.TabIndex = 156;
@@ -845,8 +871,8 @@
             this.label18.AutoEllipsis = true;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label18.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label18.Location = new System.Drawing.Point(806, 166);
+            this.label18.ForeColor = System.Drawing.SystemColors.Control;
+            this.label18.Location = new System.Drawing.Point(806, 105);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(50, 17);
             this.label18.TabIndex = 157;
@@ -876,6 +902,7 @@
             this.dgvDetCtaCteProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetCtaCteProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetCtaCteProveedores.ColumnHeadersVisible = false;
+            this.dgvDetCtaCteProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvDetCtaCteProveedores.EnableHeadersVisualStyles = false;
             this.dgvDetCtaCteProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.dgvDetCtaCteProveedores.Location = new System.Drawing.Point(44, 123);
@@ -909,31 +936,6 @@
             this.label11.Size = new System.Drawing.Size(676, 360);
             this.label11.TabIndex = 183;
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // chekMovPend
-            // 
-            this.chekMovPend.BaseColor = System.Drawing.Color.White;
-            this.chekMovPend.Checked = true;
-            this.chekMovPend.CheckedOffColor = System.Drawing.Color.Gray;
-            this.chekMovPend.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.chekMovPend.FillColor = System.Drawing.Color.White;
-            this.chekMovPend.Location = new System.Drawing.Point(468, 44);
-            this.chekMovPend.Name = "chekMovPend";
-            this.chekMovPend.Size = new System.Drawing.Size(20, 20);
-            this.chekMovPend.TabIndex = 185;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label20.AutoEllipsis = true;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.SystemColors.Control;
-            this.label20.Location = new System.Drawing.Point(494, 45);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(192, 17);
-            this.label20.TabIndex = 187;
-            this.label20.Text = "Solo Movimientos Pendientes";
             // 
             // FormDetalleCCC
             // 

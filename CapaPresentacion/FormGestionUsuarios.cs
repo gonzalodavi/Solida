@@ -199,167 +199,14 @@ namespace Presentacion
             idUsuario = null;
         }
 
-        private void btnModificarUser_Click(object sender, EventArgs e)
-        {
-            if (dgvUsuarios.SelectedRows.Count > 0)
-            {                
-                HabilitarEdicion();
-                Editar = true;
-                lblNuevoOModUser.Text = "Modificar Usuario";
-                lblNuevoOModUser.Visible = true;
-                tbUsuario.Text = dgvUsuarios.CurrentRow.Cells["USUARIO"].Value.ToString();
-                tbClave.Text = dgvUsuarios.CurrentRow.Cells["CLAVE"].Value.ToString();
-                tbNombre.Text = dgvUsuarios.CurrentRow.Cells["NOMBRE"].Value.ToString();
-                tbApellido.Text = dgvUsuarios.CurrentRow.Cells["APELLIDO"].Value.ToString();
-                cbRoles.Text = dgvUsuarios.CurrentRow.Cells["ROL"].Value.ToString();
-                tbEmail.Text = dgvUsuarios.CurrentRow.Cells["EMAIL"].Value.ToString();
-                idUsuario = dgvUsuarios.CurrentRow.Cells["ID"].Value.ToString();
-            }
-            else 
-            {
-                MessageBox.Show("seleccione una fila por favor");
-            }
-        }
-
-        private void btnEliminarUser_Click(object sender, EventArgs e)
-        {
-            if (dgvUsuarios.SelectedRows.Count > 0) 
-            {
-                int idU = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID"].Value);
-                if (idU == 1)
-                {
-                    MensajeError("No se permite eliminar este usuario");
-                }
-                else
-                {
-                    try
-                    {
-                        string rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserCmpras", idU);
-                        if (rpta == "OK")
-                        {
-                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
-                        }
-                        else
-                        {
-                            if (rpta == "NO")
-                            {
-                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserNotas", idU);
-                                if (rpta == "OK")
-                                {
-                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
-                                }
-                                else
-                                {
-                                    if (rpta == "NO")
-                                    {
-                                        rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserOPago", idU);
-                                        if (rpta == "OK")
-                                        {
-                                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
-                                        }
-                                        else
-                                        {
-                                            if (rpta == "NO")
-                                            {
-                                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserRec", idU);
-                                                if (rpta == "OK")
-                                                {
-                                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
-                                                }
-                                                else
-                                                {
-                                                    if (rpta == "NO")
-                                                    {
-                                                        rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserRem", idU);
-                                                        if (rpta == "OK")
-                                                        {
-                                                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
-                                                        }
-                                                        else
-                                                        {
-                                                            if (rpta == "NO")
-                                                            {
-                                                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserVtas", idU);
-                                                                if (rpta == "OK")
-                                                                {
-                                                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
-                                                                }
-                                                                else
-                                                                {
-                                                                    if (rpta == "NO")
-                                                                    {
-                                                                        if (MessageBox.Show("¿Desea ELIMINAR permanentemente el usuario seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                                                                        {
-                                                                            idUsuario = idU.ToString();
-                                                                            objetoCN.EliminarUsuario(idUsuario);
-                                                                            MessageBox.Show("Se eliminó correctamente el usuario seleccionado");
-                                                                            MostrarUsuarios();
-                                                                            idUsuario = null;
-                                                                        }
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        MensajeError(rpta);
-                                                                    }
-                                                                }
-                                                            }
-                                                            else
-                                                            {
-                                                                MensajeError(rpta);
-                                                            }
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        MensajeError(rpta);
-                                                    }
-                                                }
-                                            }
-                                            else
-                                            {
-                                                MensajeError(rpta);
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        MensajeError(rpta);
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                MensajeError(rpta);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("No se pudo realizar la operacion: " + ex);
-                    }                    
-                }                             
-            }
-            else
-            {
-                MessageBox.Show("seleccione una fila por favor");
-            }
-        }
 
         private void btnCancela_Click(object sender, EventArgs e)
         {
             DeshabilitarEdicion();
             lblNuevoOModUser.Text = "Nuevo Usuario";
             lblNuevoOModUser.Visible = false;
-        }
-        
+        }        
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            HabilitarEdicion();
-            tbUsuario.Focus();
-            lblNuevoOModUser.Text = "Nuevo Usuario";
-            lblNuevoOModUser.Visible = true;
-        }
 
         private void HabilitarEdicion()
         {
@@ -543,6 +390,160 @@ namespace Presentacion
             else
             {
                 lblErrorMail.Visible = true;
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            HabilitarEdicion();
+            tbUsuario.Focus();
+            lblNuevoOModUser.Text = "Nuevo Usuario";
+            lblNuevoOModUser.Visible = true;
+        }
+
+        private void btnModificarUser_Click(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.SelectedRows.Count > 0)
+            {
+                HabilitarEdicion();
+                Editar = true;
+                lblNuevoOModUser.Text = "Modificar Usuario";
+                lblNuevoOModUser.Visible = true;
+                tbUsuario.Text = dgvUsuarios.CurrentRow.Cells["USUARIO"].Value.ToString();
+                tbClave.Text = dgvUsuarios.CurrentRow.Cells["CLAVE"].Value.ToString();
+                tbNombre.Text = dgvUsuarios.CurrentRow.Cells["NOMBRE"].Value.ToString();
+                tbApellido.Text = dgvUsuarios.CurrentRow.Cells["APELLIDO"].Value.ToString();
+                cbRoles.Text = dgvUsuarios.CurrentRow.Cells["ROL"].Value.ToString();
+                tbEmail.Text = dgvUsuarios.CurrentRow.Cells["EMAIL"].Value.ToString();
+                idUsuario = dgvUsuarios.CurrentRow.Cells["ID"].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
+            }
+        }
+
+        private void btnEliminarUser_Click(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.SelectedRows.Count > 0)
+            {
+                int idU = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID"].Value);
+                if (idU == 1)
+                {
+                    MensajeError("No se permite eliminar este usuario");
+                }
+                else
+                {
+                    try
+                    {
+                        string rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserCmpras", idU);
+                        if (rpta == "OK")
+                        {
+                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                        }
+                        else
+                        {
+                            if (rpta == "NO")
+                            {
+                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserNotas", idU);
+                                if (rpta == "OK")
+                                {
+                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                }
+                                else
+                                {
+                                    if (rpta == "NO")
+                                    {
+                                        rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserOPago", idU);
+                                        if (rpta == "OK")
+                                        {
+                                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                        }
+                                        else
+                                        {
+                                            if (rpta == "NO")
+                                            {
+                                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserRec", idU);
+                                                if (rpta == "OK")
+                                                {
+                                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                                }
+                                                else
+                                                {
+                                                    if (rpta == "NO")
+                                                    {
+                                                        rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserRem", idU);
+                                                        if (rpta == "OK")
+                                                        {
+                                                            this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                                        }
+                                                        else
+                                                        {
+                                                            if (rpta == "NO")
+                                                            {
+                                                                rpta = CN_Usuarios.ConsultaSiExisteUserEnComprob("BuscarSiExisteUserVtas", idU);
+                                                                if (rpta == "OK")
+                                                                {
+                                                                    this.MensajeError("No se puede eliminar un Usuario que efectuo comprobantes");
+                                                                }
+                                                                else
+                                                                {
+                                                                    if (rpta == "NO")
+                                                                    {
+                                                                        if (MessageBox.Show("¿Desea ELIMINAR permanentemente el usuario seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                                                        {
+                                                                            idUsuario = idU.ToString();
+                                                                            objetoCN.EliminarUsuario(idUsuario);
+                                                                            MessageBox.Show("Se eliminó correctamente el usuario seleccionado");
+                                                                            MostrarUsuarios();
+                                                                            idUsuario = null;
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        MensajeError(rpta);
+                                                                    }
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                MensajeError(rpta);
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        MensajeError(rpta);
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MensajeError(rpta);
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MensajeError(rpta);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MensajeError(rpta);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo realizar la operacion: " + ex);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("seleccione una fila por favor");
             }
         }
     }

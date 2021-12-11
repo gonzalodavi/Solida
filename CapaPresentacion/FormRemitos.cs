@@ -159,7 +159,26 @@ namespace CapaPresentacion
 
         private void btnAgrega_Click(object sender, EventArgs e)
         {
-            if (tbCantidad.Value != 0 && tbProducto.Text != "")
+            if (tbCantidad.Text != "" && tbCantidad.Text != "0" && tbCantidad.Text != "0," && tbCantidad.Text != "," && tbCantidad.Text != "0,0" && tbCantidad.Text != "0,00")
+            {
+                if (tbProducto.Text != "")
+                {
+                    AgregaProducto();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un producto de la lista");
+                }
+            }
+            else
+            {
+                MessageBox.Show("La cantidad a ingresar debe ser superior a cero");
+            }
+        }
+
+        private void AgregaProducto()
+        {
+            try
             {
                 bool existe = false;
                 int numeroFila = 0;
@@ -170,7 +189,7 @@ namespace CapaPresentacion
 
                     row["ID_PRODUCTO"] = Convert.ToInt32(tbIDProducto.Text);
                     row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                    row["CANTIDAD"] = Convert.ToDecimal(tbCantidad.Value);
+                    row["CANTIDAD"] = Convert.ToDecimal(tbCantidad.Text);
                     //dgvDetRem.Columns[3].Visible = false;
 
                     DTDetallesRemito.Rows.Add(row);
@@ -189,7 +208,7 @@ namespace CapaPresentacion
                     }
                     if (existe == true)
                     {
-                        dgvDetRem.Rows[numeroFila].Cells[2].Value = tbCantidad.Value + Convert.ToInt32(dgvDetRem.Rows[numeroFila].Cells[2].Value);
+                        dgvDetRem.Rows[numeroFila].Cells[2].Value = Convert.ToDecimal(tbCantidad.Text) + Convert.ToDecimal(dgvDetRem.Rows[numeroFila].Cells[2].Value);
                         LimpiarCamposProductos();
                     }
                     else
@@ -198,7 +217,7 @@ namespace CapaPresentacion
 
                         row["ID_PRODUCTO"] = Convert.ToInt32(tbIDProducto.Text);
                         row["PRODUCTO"] = Convert.ToString(tbProducto.Text);
-                        row["CANTIDAD"] = Convert.ToDecimal(tbCantidad.Value);
+                        row["CANTIDAD"] = Convert.ToDecimal(tbCantidad.Text);
 
                         DTDetallesRemito.Rows.Add(row);
                         LimpiarCamposProductos();
@@ -206,15 +225,15 @@ namespace CapaPresentacion
                     }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione un producto de la lista y la cantidad deseada");
+                MessageBox.Show("No se pudo cargar los datos por:\n\n" + ex);
             }
         }
 
         private void LimpiarCamposProductos()
         {
-            tbCantidad.Value = 1;
+            tbCantidad.Text = "1";
             tbIDProducto.Text = "";
             tbProducto.Text = "";
         }
@@ -253,78 +272,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (dgvDetRem.SelectedRows.Count > 0)
-            {
-                if (rbEntrada.Checked == false && rbSalida.Checked == false)
-                {
-                    MensajeError("Seleccione Tipo de Remito (ENTRADA / SALIDA)");
-                }
-                else
-                {
-                    try
-                    {
-                        string rpta = "";
-                        if (this.tbIdDestinatario.Text == string.Empty)
-                        {
-                            MensajeError("Seleccione Un Proveedor");
-                        }
-                        else
-                        {
-                            if (this.tbNumRemito.Text == string.Empty)
-                            {
-                                MensajeError("Ingrese Numero de Remito");
-                            }
-                            else
-                            {
-                                DialogResult Opcion;
-                                Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                if (Opcion == DialogResult.OK)
-                                {
-                                    string tiporemito;
-                                    if (rbEntrada.Checked == true)
-                                    {
-                                        tiporemito = "ENTRADA";
-                                    }
-                                    else
-                                    {
-                                        tiporemito = "SALIDA";
-                                    }
 
-                                    string estado = "ACTIVO";
-                                    rpta = CN_Remito.Insertar(tiporemito, tbNumRemito.Text, tbIdDestinatario.Text, Convert.ToInt32(UserLoginCache.UserId), dtpFecha.Value,estado, DTDetallesRemito);
-
-
-                                    if (rpta.Equals("OK"))
-                                    {
-                                        this.MensajeOk("Se Generó con éxito el Comprobante");
-
-                                        ResetRemito();
-                                        tabRemitos.SelectedTab = tabListadoRemitos;
-                                        BuscarUltimoComprob();
-                                        CargarGrilla();
-                                    }
-                                    else
-                                    {
-                                        this.MensajeError(rpta);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message + ex.StackTrace);
-                    }
-                }
-            }
-            else
-            {
-                MensajeError("Agregue un Producto y su Cantidad al Detalle");
-            }
-
-        }
 
         private void dgvProveedor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -333,6 +281,7 @@ namespace CapaPresentacion
             tabRemitos.SelectedTab = tabRemito;
             this.dgvProveedor.Columns.Clear();
             panelProveedores.Enabled = false;
+            lblPanelProveedores.Visible = true;
         }     
 
        
@@ -343,8 +292,9 @@ namespace CapaPresentacion
             tbProducto.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
             tabRemitos.SelectedTab = tabRemito;
             this.dgvProductos.Columns.Clear();
-            panelProveedores.Enabled = false;
-            tbCantidad.Value = 1;
+            panelProductos.Enabled = false;
+            tbCantidad.Text = "1";
+            lblPanelProductos.Visible = true;
             tbCantidad.Focus();
         }
 
@@ -521,7 +471,7 @@ namespace CapaPresentacion
                 if (Convert.ToInt32(MyRow.Cells[8].Value) <= Convert.ToInt32(MyRow.Cells[9].Value))
                 {
                     MyRow.DefaultCellStyle.BackColor = Color.Orange;
-                    MyRow.DefaultCellStyle.ForeColor = Color.Red;
+                    MyRow.DefaultCellStyle.ForeColor = Color.DarkRed;
                 }
             }
         }
@@ -530,7 +480,7 @@ namespace CapaPresentacion
         {
             if (tbProducto.Text != "")
             {
-                tbCantidad.Value = 1;
+                tbCantidad.Text = "1";
             }
         }
 
@@ -539,23 +489,122 @@ namespace CapaPresentacion
         private void btnBuscaProducto_Click_1(object sender, EventArgs e)
         {
             panelProductos.Enabled = true;
+            lblPanelProductos.Visible = false;
             tabRemitos.SelectedTab = tabProductos;
             CargarGrillaProductos();
         }
 
         private void btnBuscarPc_Click(object sender, EventArgs e)
         {
+            lblPanelProveedores.Visible = false;
             panelProveedores.Enabled = true;
             tabRemitos.SelectedTab = tabProveedores;
             CargarGrillaProveedores();
         }
-        /*
-         if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (dgvDetRem.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
+                if (rbEntrada.Checked == false && rbSalida.Checked == false)
+                {
+                    MensajeError("Seleccione Tipo de Remito (ENTRADA / SALIDA)");
+                }
+                else
+                {
+                    try
+                    {
+                        string rpta = "";
+                        if (this.tbIdDestinatario.Text == string.Empty)
+                        {
+                            MensajeError("Seleccione Un Proveedor");
+                        }
+                        else
+                        {
+                            if (this.tbNumRemito.Text == string.Empty)
+                            {
+                                MensajeError("Ingrese Numero de Remito");
+                            }
+                            else
+                            {
+                                DialogResult Opcion;
+                                Opcion = MessageBox.Show("Desea Generar Nuevo Comprobante?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                if (Opcion == DialogResult.OK)
+                                {
+                                    string tiporemito;
+                                    if (rbEntrada.Checked == true)
+                                    {
+                                        tiporemito = "ENTRADA";
+                                    }
+                                    else
+                                    {
+                                        tiporemito = "SALIDA";
+                                    }
+
+                                    string estado = "ACTIVO";
+                                    rpta = CN_Remito.Insertar(tiporemito, tbNumRemito.Text, tbIdDestinatario.Text, Convert.ToInt32(UserLoginCache.UserId), dtpFecha.Value, estado, DTDetallesRemito);
+
+
+                                    if (rpta.Equals("OK"))
+                                    {
+                                        this.MensajeOk("Se Generó con éxito el Comprobante");
+
+                                        ResetRemito();
+                                        tabRemitos.SelectedTab = tabListadoRemitos;
+                                        BuscarUltimoComprob();
+                                        CargarGrilla();
+                                    }
+                                    else
+                                    {
+                                        this.MensajeError(rpta);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+                }
             }
-         */
+            else
+            {
+                MensajeError("Agregue un Producto y su Cantidad al Detalle");
+            }
+        }
+
+        private void tbCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCantidad_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCantidad.Text == "00")
+            {
+                tbCantidad.Text = "0";
+                tbCantidad.Select(tbCantidad.Text.Length, 0);
+            }
+            if (tbCantidad.Text == ",")
+            {
+                tbCantidad.Text = "0,";
+                tbCantidad.Select(tbCantidad.Text.Length, 0);
+            }
+            if (tbCantidad.Text == "0,00")
+            {
+                tbCantidad.Text = "0,0";
+                tbCantidad.Select(tbCantidad.Text.Length, 0);
+            }
+        }
     }
 }

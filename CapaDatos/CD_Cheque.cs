@@ -637,7 +637,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Modificar LOS ESTADOS DE LOS CHEQUES";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se pudo Modificar LOS ESTADOS DE LOS CHEQUES";
 
             }
             catch (Exception ex)
@@ -718,7 +718,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.AddWithValue("@estadoNuevo", estado);
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se pudo Eliminar";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se pudo Eliminar";
 
             }
             catch (Exception ex)

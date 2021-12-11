@@ -41,7 +41,6 @@
             this.tBClaveNueva = new System.Windows.Forms.TextBox();
             this.tBClaveConfirma = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.tBClaveActual = new System.Windows.Forms.TextBox();
             this.lblClaveNueva = new System.Windows.Forms.Label();
             this.btnCambiarClave = new System.Windows.Forms.Button();
@@ -49,10 +48,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancelaClave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tBRol = new System.Windows.Forms.ComboBox();
-            this.btnSalir = new FontAwesome.Sharp.IconPictureBox();
-            this.btnRegresar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
+            this.btnSalir = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +75,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(27, 82);
+            this.label2.Location = new System.Drawing.Point(27, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 0;
@@ -89,7 +87,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(27, 128);
+            this.label3.Location = new System.Drawing.Point(27, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 0;
@@ -101,7 +99,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(27, 175);
+            this.label4.Location = new System.Drawing.Point(27, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 0;
@@ -113,7 +111,7 @@
             this.lblConfirmaClave.AutoSize = true;
             this.lblConfirmaClave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblConfirmaClave.ForeColor = System.Drawing.Color.White;
-            this.lblConfirmaClave.Location = new System.Drawing.Point(87, 372);
+            this.lblConfirmaClave.Location = new System.Drawing.Point(87, 359);
             this.lblConfirmaClave.Name = "lblConfirmaClave";
             this.lblConfirmaClave.Size = new System.Drawing.Size(147, 17);
             this.lblConfirmaClave.TabIndex = 0;
@@ -125,10 +123,10 @@
             this.tBUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tBUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tBUsuario.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBUsuario.Location = new System.Drawing.Point(30, 55);
+            this.tBUsuario.Location = new System.Drawing.Point(30, 56);
             this.tBUsuario.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBUsuario.Name = "tBUsuario";
-            this.tBUsuario.Size = new System.Drawing.Size(265, 25);
+            this.tBUsuario.Size = new System.Drawing.Size(265, 20);
             this.tBUsuario.TabIndex = 1;
             this.tBUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -137,10 +135,10 @@
             this.tBNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tBNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tBNombre.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBNombre.Location = new System.Drawing.Point(30, 101);
+            this.tBNombre.Location = new System.Drawing.Point(30, 112);
             this.tBNombre.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBNombre.Name = "tBNombre";
-            this.tBNombre.Size = new System.Drawing.Size(265, 25);
+            this.tBNombre.Size = new System.Drawing.Size(265, 20);
             this.tBNombre.TabIndex = 2;
             this.tBNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -149,10 +147,10 @@
             this.tBApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tBApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tBApellido.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBApellido.Location = new System.Drawing.Point(30, 147);
+            this.tBApellido.Location = new System.Drawing.Point(30, 168);
             this.tBApellido.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBApellido.Name = "tBApellido";
-            this.tBApellido.Size = new System.Drawing.Size(265, 25);
+            this.tBApellido.Size = new System.Drawing.Size(265, 20);
             this.tBApellido.TabIndex = 3;
             this.tBApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -161,10 +159,10 @@
             this.tBEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tBEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tBEmail.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBEmail.Location = new System.Drawing.Point(30, 194);
+            this.tBEmail.Location = new System.Drawing.Point(30, 225);
             this.tBEmail.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBEmail.Name = "tBEmail";
-            this.tBEmail.Size = new System.Drawing.Size(265, 25);
+            this.tBEmail.Size = new System.Drawing.Size(265, 20);
             this.tBEmail.TabIndex = 4;
             this.tBEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -173,10 +171,10 @@
             this.tBClaveNueva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tBClaveNueva.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tBClaveNueva.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBClaveNueva.Location = new System.Drawing.Point(30, 349);
+            this.tBClaveNueva.Location = new System.Drawing.Point(30, 331);
             this.tBClaveNueva.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBClaveNueva.Name = "tBClaveNueva";
-            this.tBClaveNueva.Size = new System.Drawing.Size(265, 25);
+            this.tBClaveNueva.Size = new System.Drawing.Size(265, 20);
             this.tBClaveNueva.TabIndex = 6;
             this.tBClaveNueva.UseSystemPasswordChar = true;
             this.tBClaveNueva.Visible = false;
@@ -186,10 +184,10 @@
             this.tBClaveConfirma.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tBClaveConfirma.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tBClaveConfirma.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBClaveConfirma.Location = new System.Drawing.Point(30, 391);
+            this.tBClaveConfirma.Location = new System.Drawing.Point(30, 378);
             this.tBClaveConfirma.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBClaveConfirma.Name = "tBClaveConfirma";
-            this.tBClaveConfirma.Size = new System.Drawing.Size(265, 25);
+            this.tBClaveConfirma.Size = new System.Drawing.Size(265, 20);
             this.tBClaveConfirma.TabIndex = 7;
             this.tBClaveConfirma.UseSystemPasswordChar = true;
             this.tBClaveConfirma.Visible = false;
@@ -208,27 +206,15 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "EDITAR PERFIL";
             // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(27, 223);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Rol:";
-            // 
             // tBClaveActual
             // 
             this.tBClaveActual.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tBClaveActual.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tBClaveActual.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBClaveActual.Location = new System.Drawing.Point(30, 306);
+            this.tBClaveActual.Location = new System.Drawing.Point(30, 284);
             this.tBClaveActual.MaximumSize = new System.Drawing.Size(271, 20);
             this.tBClaveActual.Name = "tBClaveActual";
-            this.tBClaveActual.Size = new System.Drawing.Size(265, 25);
+            this.tBClaveActual.Size = new System.Drawing.Size(265, 20);
             this.tBClaveActual.TabIndex = 5;
             this.tBClaveActual.UseSystemPasswordChar = true;
             // 
@@ -238,7 +224,7 @@
             this.lblClaveNueva.AutoSize = true;
             this.lblClaveNueva.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblClaveNueva.ForeColor = System.Drawing.Color.White;
-            this.lblClaveNueva.Location = new System.Drawing.Point(99, 330);
+            this.lblClaveNueva.Location = new System.Drawing.Point(99, 311);
             this.lblClaveNueva.Name = "lblClaveNueva";
             this.lblClaveNueva.Size = new System.Drawing.Size(124, 17);
             this.lblClaveNueva.TabIndex = 0;
@@ -256,7 +242,7 @@
             this.btnCambiarClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnCambiarClave.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarClave.Location = new System.Drawing.Point(107, 366);
+            this.btnCambiarClave.Location = new System.Drawing.Point(103, 353);
             this.btnCambiarClave.Name = "btnCambiarClave";
             this.btnCambiarClave.Size = new System.Drawing.Size(116, 31);
             this.btnCambiarClave.TabIndex = 0;
@@ -276,7 +262,7 @@
             this.btnGuardaClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardaClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnGuardaClave.ForeColor = System.Drawing.Color.White;
-            this.btnGuardaClave.Location = new System.Drawing.Point(179, 433);
+            this.btnGuardaClave.Location = new System.Drawing.Point(179, 418);
             this.btnGuardaClave.Name = "btnGuardaClave";
             this.btnGuardaClave.Size = new System.Drawing.Size(116, 31);
             this.btnGuardaClave.TabIndex = 0;
@@ -292,7 +278,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(99, 287);
+            this.label9.Location = new System.Drawing.Point(99, 265);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(124, 17);
             this.label9.TabIndex = 0;
@@ -309,7 +295,7 @@
             this.btnCancelaClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelaClave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnCancelaClave.ForeColor = System.Drawing.Color.White;
-            this.btnCancelaClave.Location = new System.Drawing.Point(30, 433);
+            this.btnCancelaClave.Location = new System.Drawing.Point(30, 418);
             this.btnCancelaClave.Name = "btnCancelaClave";
             this.btnCancelaClave.Size = new System.Drawing.Size(116, 31);
             this.btnCancelaClave.TabIndex = 0;
@@ -326,12 +312,10 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.btnRegresar);
-            this.panel1.Controls.Add(this.tBRol);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.btnCambiarClave);
             this.panel1.Controls.Add(this.lblClaveNueva);
             this.panel1.Controls.Add(this.tBClaveActual);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.tBClaveConfirma);
             this.panel1.Controls.Add(this.tBClaveNueva);
@@ -351,20 +335,58 @@
             this.panel1.Size = new System.Drawing.Size(326, 537);
             this.panel1.TabIndex = 0;
             // 
-            // tBRol
+            // btnGuardar
             // 
-            this.tBRol.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tBRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tBRol.Enabled = false;
-            this.tBRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tBRol.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tBRol.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tBRol.FormattingEnabled = true;
-            this.tBRol.Location = new System.Drawing.Point(30, 243);
-            this.tBRol.Name = "tBRol";
-            this.tBRol.Size = new System.Drawing.Size(265, 25);
-            this.tBRol.TabIndex = 0;
-            this.tBRol.TabStop = false;
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 25;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(179, 473);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(116, 31);
+            this.btnGuardar.TabIndex = 194;
+            this.btnGuardar.TabStop = false;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 25;
+            this.btnRegresar.Location = new System.Drawing.Point(30, 473);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
+            this.btnRegresar.TabIndex = 181;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnSalir
             // 
@@ -382,59 +404,6 @@
             this.btnSalir.TabIndex = 155;
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnRegresar.IconColor = System.Drawing.Color.White;
-            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegresar.IconSize = 25;
-            this.btnRegresar.Location = new System.Drawing.Point(30, 486);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(116, 31);
-            this.btnRegresar.TabIndex = 181;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardar.IconColor = System.Drawing.Color.White;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.IconSize = 25;
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(179, 486);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(116, 31);
-            this.btnGuardar.TabIndex = 194;
-            this.btnGuardar.TabStop = false;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FormEditarUsuario
             // 
@@ -473,7 +442,6 @@
         private System.Windows.Forms.TextBox tBClaveNueva;
         private System.Windows.Forms.TextBox tBClaveConfirma;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tBClaveActual;
         private System.Windows.Forms.Label lblClaveNueva;
         private System.Windows.Forms.Button btnCambiarClave;
@@ -482,7 +450,6 @@
         private System.Windows.Forms.Button btnCancelaClave;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconPictureBox btnSalir;
-        private System.Windows.Forms.ComboBox tBRol;
         private FontAwesome.Sharp.IconButton btnRegresar;
         private FontAwesome.Sharp.IconButton btnGuardar;
     }
