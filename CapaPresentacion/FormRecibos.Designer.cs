@@ -727,6 +727,7 @@
             this.lblTotalRecibo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblTotalRecibo.ForeColor = System.Drawing.Color.Yellow;
             this.lblTotalRecibo.Location = new System.Drawing.Point(455, 198);
+            this.lblTotalRecibo.MaxLength = 15;
             this.lblTotalRecibo.Name = "lblTotalRecibo";
             this.lblTotalRecibo.ReadOnly = true;
             this.lblTotalRecibo.Size = new System.Drawing.Size(113, 25);
@@ -923,6 +924,7 @@
             this.tbBanco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBanco.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBanco.Location = new System.Drawing.Point(455, 150);
+            this.tbBanco.MaxLength = 15;
             this.tbBanco.Name = "tbBanco";
             this.tbBanco.ReadOnly = true;
             this.tbBanco.Size = new System.Drawing.Size(113, 25);
@@ -941,6 +943,7 @@
             this.tbDetalleRecibo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDetalleRecibo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbDetalleRecibo.Location = new System.Drawing.Point(622, 69);
+            this.tbDetalleRecibo.MaxLength = 500;
             this.tbDetalleRecibo.Multiline = true;
             this.tbDetalleRecibo.Name = "tbDetalleRecibo";
             this.tbDetalleRecibo.Size = new System.Drawing.Size(267, 106);
@@ -954,6 +957,7 @@
             this.tbValores.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbValores.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbValores.Location = new System.Drawing.Point(455, 109);
+            this.tbValores.MaxLength = 15;
             this.tbValores.Name = "tbValores";
             this.tbValores.ReadOnly = true;
             this.tbValores.Size = new System.Drawing.Size(113, 25);
@@ -972,6 +976,7 @@
             this.tbEfectivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbEfectivo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbEfectivo.Location = new System.Drawing.Point(455, 69);
+            this.tbEfectivo.MaxLength = 15;
             this.tbEfectivo.Name = "tbEfectivo";
             this.tbEfectivo.Size = new System.Drawing.Size(113, 25);
             this.tbEfectivo.TabIndex = 131;
@@ -990,6 +995,7 @@
             this.tbNumRecibo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNumRecibo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNumRecibo.Location = new System.Drawing.Point(66, 69);
+            this.tbNumRecibo.MaxLength = 20;
             this.tbNumRecibo.Name = "tbNumRecibo";
             this.tbNumRecibo.Size = new System.Drawing.Size(94, 25);
             this.tbNumRecibo.TabIndex = 131;
@@ -1252,6 +1258,7 @@
             this.tbImporteCheq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbImporteCheq.ForeColor = System.Drawing.Color.Yellow;
             this.tbImporteCheq.Location = new System.Drawing.Point(773, 64);
+            this.tbImporteCheq.MaxLength = 15;
             this.tbImporteCheq.Name = "tbImporteCheq";
             this.tbImporteCheq.ReadOnly = true;
             this.tbImporteCheq.Size = new System.Drawing.Size(116, 22);
@@ -1378,6 +1385,7 @@
             this.tbCheqTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCheqTotal.ForeColor = System.Drawing.Color.Yellow;
             this.tbCheqTotal.Location = new System.Drawing.Point(618, 518);
+            this.tbCheqTotal.MaxLength = 15;
             this.tbCheqTotal.Name = "tbCheqTotal";
             this.tbCheqTotal.ReadOnly = true;
             this.tbCheqTotal.Size = new System.Drawing.Size(116, 25);
@@ -1417,7 +1425,7 @@
             this.tbCheqImporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCheqImporte.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbCheqImporte.Location = new System.Drawing.Point(773, 92);
-            this.tbCheqImporte.MaxLength = 20;
+            this.tbCheqImporte.MaxLength = 15;
             this.tbCheqImporte.Name = "tbCheqImporte";
             this.tbCheqImporte.Size = new System.Drawing.Size(116, 25);
             this.tbCheqImporte.TabIndex = 14;
@@ -1817,6 +1825,7 @@
             this.tbImporteTransf.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbImporteTransf.ForeColor = System.Drawing.Color.Yellow;
             this.tbImporteTransf.Location = new System.Drawing.Point(613, 100);
+            this.tbImporteTransf.MaxLength = 15;
             this.tbImporteTransf.Name = "tbImporteTransf";
             this.tbImporteTransf.ReadOnly = true;
             this.tbImporteTransf.Size = new System.Drawing.Size(146, 22);
@@ -1911,6 +1920,7 @@
             this.tbTransfTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTransfTotal.ForeColor = System.Drawing.Color.Yellow;
             this.tbTransfTotal.Location = new System.Drawing.Point(613, 509);
+            this.tbTransfTotal.MaxLength = 15;
             this.tbTransfTotal.Name = "tbTransfTotal";
             this.tbTransfTotal.ReadOnly = true;
             this.tbTransfTotal.Size = new System.Drawing.Size(147, 25);
@@ -2033,7 +2043,7 @@
             this.tbTransfImporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTransfImporte.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbTransfImporte.Location = new System.Drawing.Point(613, 147);
-            this.tbTransfImporte.MaxLength = 20;
+            this.tbTransfImporte.MaxLength = 15;
             this.tbTransfImporte.Name = "tbTransfImporte";
             this.tbTransfImporte.Size = new System.Drawing.Size(147, 25);
             this.tbTransfImporte.TabIndex = 325;

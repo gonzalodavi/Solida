@@ -106,6 +106,7 @@
             this.tbBarrio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBarrio.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBarrio.Location = new System.Drawing.Point(40, 235);
+            this.tbBarrio.MaxLength = 100;
             this.tbBarrio.Name = "tbBarrio";
             this.tbBarrio.Size = new System.Drawing.Size(246, 25);
             this.tbBarrio.TabIndex = 159;
@@ -113,6 +114,7 @@
             // cbProvincia
             // 
             this.cbProvincia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbProvincia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -164,6 +166,7 @@
             // cbLocalidad
             // 
             this.cbLocalidad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbLocalidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLocalidad.Enabled = false;
             this.cbLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -196,6 +199,7 @@
             this.tbCodPostal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCodPostal.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbCodPostal.Location = new System.Drawing.Point(40, 291);
+            this.tbCodPostal.MaxLength = 8;
             this.tbCodPostal.Name = "tbCodPostal";
             this.tbCodPostal.Size = new System.Drawing.Size(246, 25);
             this.tbCodPostal.TabIndex = 159;

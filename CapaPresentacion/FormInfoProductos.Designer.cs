@@ -353,6 +353,7 @@ namespace CapaPresentacion
             this.tbBusca.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBusca.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBusca.Location = new System.Drawing.Point(120, 153);
+            this.tbBusca.MaxLength = 100;
             this.tbBusca.Name = "tbBusca";
             this.tbBusca.Size = new System.Drawing.Size(267, 25);
             this.tbBusca.TabIndex = 223;

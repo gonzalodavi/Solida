@@ -147,6 +147,7 @@
             this.tbNuevaSucursal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNuevaSucursal.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNuevaSucursal.Location = new System.Drawing.Point(41, 387);
+            this.tbNuevaSucursal.MaxLength = 10;
             this.tbNuevaSucursal.Name = "tbNuevaSucursal";
             this.tbNuevaSucursal.Size = new System.Drawing.Size(104, 25);
             this.tbNuevaSucursal.TabIndex = 207;

@@ -548,6 +548,7 @@
             this.tbImporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbImporte.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbImporte.Location = new System.Drawing.Point(651, 241);
+            this.tbImporte.MaxLength = 15;
             this.tbImporte.Name = "tbImporte";
             this.tbImporte.Size = new System.Drawing.Size(116, 25);
             this.tbImporte.TabIndex = 136;
@@ -577,6 +578,7 @@
             this.tbDetalleNota.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDetalleNota.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbDetalleNota.Location = new System.Drawing.Point(162, 330);
+            this.tbDetalleNota.MaxLength = 500;
             this.tbDetalleNota.Multiline = true;
             this.tbDetalleNota.Name = "tbDetalleNota";
             this.tbDetalleNota.Size = new System.Drawing.Size(293, 90);
@@ -664,6 +666,7 @@
             this.tbNumNota.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNumNota.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNumNota.Location = new System.Drawing.Point(377, 43);
+            this.tbNumNota.MaxLength = 20;
             this.tbNumNota.Name = "tbNumNota";
             this.tbNumNota.Size = new System.Drawing.Size(94, 25);
             this.tbNumNota.TabIndex = 135;

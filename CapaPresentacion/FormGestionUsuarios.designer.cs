@@ -611,6 +611,7 @@
             // cbRoles
             // 
             this.cbRoles.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbRoles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbRoles.Enabled = false;
             this.cbRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbRoles.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -667,6 +668,7 @@
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbEmail.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbEmail.Location = new System.Drawing.Point(530, 612);
+            this.tbEmail.MaxLength = 50;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(220, 25);
             this.tbEmail.TabIndex = 6;
@@ -681,6 +683,7 @@
             this.tbApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbApellido.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbApellido.Location = new System.Drawing.Point(530, 554);
+            this.tbApellido.MaxLength = 50;
             this.tbApellido.Name = "tbApellido";
             this.tbApellido.Size = new System.Drawing.Size(220, 25);
             this.tbApellido.TabIndex = 5;
@@ -695,6 +698,7 @@
             this.tbNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNombre.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNombre.Location = new System.Drawing.Point(530, 497);
+            this.tbNombre.MaxLength = 50;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(220, 25);
             this.tbNombre.TabIndex = 4;
@@ -721,6 +725,7 @@
             this.tbClave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbClave.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbClave.Location = new System.Drawing.Point(155, 554);
+            this.tbClave.MaxLength = 20;
             this.tbClave.Name = "tbClave";
             this.tbClave.Size = new System.Drawing.Size(220, 25);
             this.tbClave.TabIndex = 2;
@@ -748,6 +753,7 @@
             this.tbUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbUsuario.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbUsuario.Location = new System.Drawing.Point(155, 497);
+            this.tbUsuario.MaxLength = 20;
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(220, 25);
             this.tbUsuario.TabIndex = 1;

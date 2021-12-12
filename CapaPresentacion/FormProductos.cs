@@ -321,21 +321,28 @@ namespace CapaPresentacion
         {
             if (tbDescripcion.Text != "" && cbRubro.Text != "" && cbMarca.Text != "" && cbModelo.Text != "" && cbUdeMed.Text != "" && cbAli.Text != "" && tbCosto.Text != "" && tbGanancia.Text != "")
             {
-                string rpta = CN_Productos.ConsultaSiExisteProducto(tbDescripcion.Text.Trim(),Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
-                if (rpta == "OK")
+                if (Editar == false)
                 {
-                    this.MensajeError("Ya Existe un Producto con ese Nombre, Unidad de Medida y Marca");
-                }
-                else
-                {
-                    if (rpta == "NO")
+                    string rpta = CN_Productos.ConsultaSiExisteProducto(tbDescripcion.Text.Trim(), Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbUdeMed.SelectedValue));
+                    if (rpta == "OK")
                     {
-                        AgregaProducto();
+                        this.MensajeError("Ya Existe un Producto con ese Nombre, Unidad de Medida y Marca");
                     }
                     else
                     {
-                        MensajeError(rpta);
+                        if (rpta == "NO")
+                        {
+                            AgregaProducto();
+                        }
+                        else
+                        {
+                            MensajeError(rpta);
+                        }
                     }
+                }
+                else
+                {
+                    AgregaProducto();
                 }
             }
             else

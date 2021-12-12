@@ -694,5 +694,36 @@ namespace CapaPresentacion
                 MensajeError("Agregue un Producto y su Cantidad al Detalle");
             }
         }
+
+        private void chekBuscaXCuit_CheckedChanged(object sender, EventArgs e)
+        {
+            tbBuscaXCuit.Text = "";
+            if (chekBuscaXCuit.Checked == true)
+            {
+                chekVerAnulados.Checked = false;
+                CargarGrilla();
+                btnBuscarReg.Enabled = false;
+                dtpFecha1.Enabled = false;
+                dtpFecha2.Enabled = false;
+                tbBuscaXCuit.Enabled = true;
+                chekVerAnulados.Enabled = false;
+            }
+            else
+            {
+                chekVerAnulados.Checked = false;
+                CargarGrilla();
+                btnBuscarReg.Enabled = true;
+                dtpFecha1.Enabled = true;
+                dtpFecha2.Enabled = true;
+                tbBuscaXCuit.Enabled = false;
+                chekVerAnulados.Enabled = true;
+            }
+        }
+
+        private void tbBuscaXCuit_TextChanged(object sender, EventArgs e)
+        {
+            dgvCompras.DataSource = CN_Compras.BuscarRegistrosxCuit(tbBuscaXCuit.Text.Trim());
+            this.dgvCompras.Columns[0].Visible = false;
+        }
     }
 }

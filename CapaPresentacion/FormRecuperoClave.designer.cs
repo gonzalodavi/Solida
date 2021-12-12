@@ -58,6 +58,7 @@
             this.tBUsuarioMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBUsuarioMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.tBUsuarioMail.Location = new System.Drawing.Point(81, 62);
+            this.tBUsuarioMail.MaxLength = 50;
             this.tBUsuarioMail.Name = "tBUsuarioMail";
             this.tBUsuarioMail.Size = new System.Drawing.Size(240, 25);
             this.tBUsuarioMail.TabIndex = 1;

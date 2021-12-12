@@ -105,6 +105,7 @@
             this.dgvModelo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvModelo.ColumnHeadersVisible = false;
+            this.dgvModelo.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
@@ -218,6 +219,7 @@
             this.tbModelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbModelo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbModelo.Location = new System.Drawing.Point(38, 421);
+            this.tbModelo.MaxLength = 50;
             this.tbModelo.Name = "tbModelo";
             this.tbModelo.Size = new System.Drawing.Size(284, 25);
             this.tbModelo.TabIndex = 185;

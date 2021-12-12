@@ -898,6 +898,7 @@
             this.tbDescripcion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDescripcion.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbDescripcion.Location = new System.Drawing.Point(661, 212);
+            this.tbDescripcion.MaxLength = 500;
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(228, 125);
@@ -959,6 +960,7 @@
             this.tbNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNombre.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNombre.Location = new System.Drawing.Point(233, 208);
+            this.tbNombre.MaxLength = 100;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(228, 25);
             this.tbNombre.TabIndex = 7;
@@ -992,6 +994,7 @@
             this.tbTel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTel.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbTel.Location = new System.Drawing.Point(661, 106);
+            this.tbTel.MaxLength = 50;
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(228, 25);
             this.tbTel.TabIndex = 10;
@@ -1027,6 +1030,7 @@
             this.tbEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbEmpresa.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbEmpresa.Location = new System.Drawing.Point(233, 157);
+            this.tbEmpresa.MaxLength = 100;
             this.tbEmpresa.Name = "tbEmpresa";
             this.tbEmpresa.Size = new System.Drawing.Size(228, 25);
             this.tbEmpresa.TabIndex = 6;
@@ -1040,6 +1044,7 @@
             this.tbMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbMail.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbMail.Location = new System.Drawing.Point(661, 160);
+            this.tbMail.MaxLength = 100;
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(228, 25);
             this.tbMail.TabIndex = 11;
@@ -1063,6 +1068,7 @@
             this.tbApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbApellido.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbApellido.Location = new System.Drawing.Point(233, 260);
+            this.tbApellido.MaxLength = 100;
             this.tbApellido.Name = "tbApellido";
             this.tbApellido.Size = new System.Drawing.Size(228, 25);
             this.tbApellido.TabIndex = 8;
@@ -1308,6 +1314,7 @@
             this.tbBuscarDomicilio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBuscarDomicilio.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBuscarDomicilio.Location = new System.Drawing.Point(120, 39);
+            this.tbBuscarDomicilio.MaxLength = 100;
             this.tbBuscarDomicilio.Name = "tbBuscarDomicilio";
             this.tbBuscarDomicilio.Size = new System.Drawing.Size(226, 25);
             this.tbBuscarDomicilio.TabIndex = 10;
@@ -1705,6 +1712,7 @@
             this.tbDpto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDpto.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbDpto.Location = new System.Drawing.Point(191, 194);
+            this.tbDpto.MaxLength = 10;
             this.tbDpto.Name = "tbDpto";
             this.tbDpto.Size = new System.Drawing.Size(106, 25);
             this.tbDpto.TabIndex = 21;
@@ -1716,6 +1724,7 @@
             this.tbNro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNro.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNro.Location = new System.Drawing.Point(51, 109);
+            this.tbNro.MaxLength = 10;
             this.tbNro.Name = "tbNro";
             this.tbNro.Size = new System.Drawing.Size(106, 25);
             this.tbNro.TabIndex = 19;
@@ -1727,6 +1736,7 @@
             this.tbPiso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbPiso.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbPiso.Location = new System.Drawing.Point(51, 194);
+            this.tbPiso.MaxLength = 10;
             this.tbPiso.Name = "tbPiso";
             this.tbPiso.Size = new System.Drawing.Size(106, 25);
             this.tbPiso.TabIndex = 20;
@@ -1738,6 +1748,7 @@
             this.tbCalle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCalle.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbCalle.Location = new System.Drawing.Point(51, 29);
+            this.tbCalle.MaxLength = 100;
             this.tbCalle.Name = "tbCalle";
             this.tbCalle.Size = new System.Drawing.Size(246, 25);
             this.tbCalle.TabIndex = 18;

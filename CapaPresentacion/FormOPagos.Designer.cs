@@ -657,6 +657,7 @@
             this.lblTotalOPago.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblTotalOPago.ForeColor = System.Drawing.Color.Yellow;
             this.lblTotalOPago.Location = new System.Drawing.Point(461, 196);
+            this.lblTotalOPago.MaxLength = 15;
             this.lblTotalOPago.Name = "lblTotalOPago";
             this.lblTotalOPago.ReadOnly = true;
             this.lblTotalOPago.Size = new System.Drawing.Size(108, 25);
@@ -915,6 +916,7 @@
             this.tbBanco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBanco.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBanco.Location = new System.Drawing.Point(461, 150);
+            this.tbBanco.MaxLength = 15;
             this.tbBanco.Name = "tbBanco";
             this.tbBanco.ReadOnly = true;
             this.tbBanco.Size = new System.Drawing.Size(108, 25);
@@ -933,6 +935,7 @@
             this.tbDetalleOPago.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDetalleOPago.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbDetalleOPago.Location = new System.Drawing.Point(639, 69);
+            this.tbDetalleOPago.MaxLength = 500;
             this.tbDetalleOPago.Multiline = true;
             this.tbDetalleOPago.Name = "tbDetalleOPago";
             this.tbDetalleOPago.Size = new System.Drawing.Size(251, 106);
@@ -946,6 +949,7 @@
             this.tbValores.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbValores.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbValores.Location = new System.Drawing.Point(461, 109);
+            this.tbValores.MaxLength = 15;
             this.tbValores.Name = "tbValores";
             this.tbValores.ReadOnly = true;
             this.tbValores.Size = new System.Drawing.Size(108, 25);
@@ -964,6 +968,7 @@
             this.tbEfectivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbEfectivo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbEfectivo.Location = new System.Drawing.Point(461, 69);
+            this.tbEfectivo.MaxLength = 15;
             this.tbEfectivo.Name = "tbEfectivo";
             this.tbEfectivo.Size = new System.Drawing.Size(108, 25);
             this.tbEfectivo.TabIndex = 131;
@@ -982,6 +987,7 @@
             this.tbNumOPago.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNumOPago.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNumOPago.Location = new System.Drawing.Point(66, 69);
+            this.tbNumOPago.MaxLength = 20;
             this.tbNumOPago.Name = "tbNumOPago";
             this.tbNumOPago.Size = new System.Drawing.Size(94, 25);
             this.tbNumOPago.TabIndex = 131;
@@ -1847,6 +1853,7 @@
             this.tbTransfTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTransfTotal.ForeColor = System.Drawing.Color.Yellow;
             this.tbTransfTotal.Location = new System.Drawing.Point(614, 508);
+            this.tbTransfTotal.MaxLength = 15;
             this.tbTransfTotal.Name = "tbTransfTotal";
             this.tbTransfTotal.ReadOnly = true;
             this.tbTransfTotal.Size = new System.Drawing.Size(147, 25);
@@ -1969,7 +1976,7 @@
             this.tbTransfImporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTransfImporte.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbTransfImporte.Location = new System.Drawing.Point(614, 146);
-            this.tbTransfImporte.MaxLength = 20;
+            this.tbTransfImporte.MaxLength = 15;
             this.tbTransfImporte.Name = "tbTransfImporte";
             this.tbTransfImporte.Size = new System.Drawing.Size(147, 25);
             this.tbTransfImporte.TabIndex = 351;

@@ -486,21 +486,9 @@ namespace CapaPresentacion
 
         
 
-        private void btnBuscaProducto_Click_1(object sender, EventArgs e)
-        {
-            panelProductos.Enabled = true;
-            lblPanelProductos.Visible = false;
-            tabRemitos.SelectedTab = tabProductos;
-            CargarGrillaProductos();
-        }
 
-        private void btnBuscarPc_Click(object sender, EventArgs e)
-        {
-            lblPanelProveedores.Visible = false;
-            panelProveedores.Enabled = true;
-            tabRemitos.SelectedTab = tabProveedores;
-            CargarGrillaProveedores();
-        }
+
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -605,6 +593,22 @@ namespace CapaPresentacion
                 tbCantidad.Text = "0,0";
                 tbCantidad.Select(tbCantidad.Text.Length, 0);
             }
+        }
+
+        private void btnBuscarPc_Click(object sender, EventArgs e)
+        {
+            lblPanelProveedores.Visible = false;
+            panelProveedores.Enabled = true;
+            tabRemitos.SelectedTab = tabProveedores;
+            CargarGrillaProveedores();
+        }
+
+        private void btnBuscaPr_Click(object sender, EventArgs e)
+        {
+            panelProductos.Enabled = true;
+            lblPanelProductos.Visible = false;
+            tabRemitos.SelectedTab = tabProductos;
+            CargarGrillaProductos();
         }
     }
 }

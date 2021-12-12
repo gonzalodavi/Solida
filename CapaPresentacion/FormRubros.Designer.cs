@@ -75,6 +75,7 @@
             this.dgvRubros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRubros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRubros.ColumnHeadersVisible = false;
+            this.dgvRubros.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
@@ -189,6 +190,7 @@
             this.tbRubro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbRubro.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbRubro.Location = new System.Drawing.Point(26, 421);
+            this.tbRubro.MaxLength = 50;
             this.tbRubro.Name = "tbRubro";
             this.tbRubro.Size = new System.Drawing.Size(284, 25);
             this.tbRubro.TabIndex = 160;

@@ -241,6 +241,7 @@ namespace CapaPresentacion
             this.tbRazonSocial.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbRazonSocial.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbRazonSocial.Location = new System.Drawing.Point(221, 184);
+            this.tbRazonSocial.MaxLength = 100;
             this.tbRazonSocial.Name = "tbRazonSocial";
             this.tbRazonSocial.Size = new System.Drawing.Size(253, 25);
             this.tbRazonSocial.TabIndex = 195;
@@ -252,6 +253,7 @@ namespace CapaPresentacion
             this.tbProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbProvincia.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbProvincia.Location = new System.Drawing.Point(221, 374);
+            this.tbProvincia.MaxLength = 50;
             this.tbProvincia.Name = "tbProvincia";
             this.tbProvincia.Size = new System.Drawing.Size(253, 25);
             this.tbProvincia.TabIndex = 200;
@@ -275,6 +277,7 @@ namespace CapaPresentacion
             this.tbApellidoyNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbApellidoyNombre.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbApellidoyNombre.Location = new System.Drawing.Point(221, 246);
+            this.tbApellidoyNombre.MaxLength = 100;
             this.tbApellidoyNombre.Name = "tbApellidoyNombre";
             this.tbApellidoyNombre.Size = new System.Drawing.Size(253, 25);
             this.tbApellidoyNombre.TabIndex = 196;
@@ -394,6 +397,7 @@ namespace CapaPresentacion
             this.tbDniCuit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDniCuit.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbDniCuit.Location = new System.Drawing.Point(646, 184);
+            this.tbDniCuit.MaxLength = 13;
             this.tbDniCuit.Name = "tbDniCuit";
             this.tbDniCuit.Size = new System.Drawing.Size(147, 25);
             this.tbDniCuit.TabIndex = 197;
@@ -405,6 +409,7 @@ namespace CapaPresentacion
             this.tbDireccion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDireccion.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbDireccion.Location = new System.Drawing.Point(221, 499);
+            this.tbDireccion.MaxLength = 100;
             this.tbDireccion.Name = "tbDireccion";
             this.tbDireccion.Size = new System.Drawing.Size(253, 25);
             this.tbDireccion.TabIndex = 203;
@@ -428,6 +433,7 @@ namespace CapaPresentacion
             this.tbIIBB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbIIBB.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbIIBB.Location = new System.Drawing.Point(646, 246);
+            this.tbIIBB.MaxLength = 15;
             this.tbIIBB.Name = "tbIIBB";
             this.tbIIBB.Size = new System.Drawing.Size(147, 25);
             this.tbIIBB.TabIndex = 199;
@@ -459,6 +465,7 @@ namespace CapaPresentacion
             this.tbLocalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbLocalidad.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbLocalidad.Location = new System.Drawing.Point(221, 436);
+            this.tbLocalidad.MaxLength = 50;
             this.tbLocalidad.Name = "tbLocalidad";
             this.tbLocalidad.Size = new System.Drawing.Size(253, 25);
             this.tbLocalidad.TabIndex = 201;
@@ -470,6 +477,7 @@ namespace CapaPresentacion
             this.tbCodPostal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCodPostal.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbCodPostal.Location = new System.Drawing.Point(646, 436);
+            this.tbCodPostal.MaxLength = 8;
             this.tbCodPostal.Name = "tbCodPostal";
             this.tbCodPostal.Size = new System.Drawing.Size(147, 25);
             this.tbCodPostal.TabIndex = 202;

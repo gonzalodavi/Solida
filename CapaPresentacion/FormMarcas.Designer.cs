@@ -59,6 +59,7 @@
             this.tbMarca.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbMarca.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbMarca.Location = new System.Drawing.Point(32, 426);
+            this.tbMarca.MaxLength = 50;
             this.tbMarca.Name = "tbMarca";
             this.tbMarca.Size = new System.Drawing.Size(284, 25);
             this.tbMarca.TabIndex = 108;
@@ -99,6 +100,7 @@
             this.dgvMarca.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMarca.ColumnHeadersVisible = false;
+            this.dgvMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);

@@ -441,6 +441,21 @@ namespace CapaDatos
             return dt;
         }
 
+        public DataTable BuscarRegistrosxCuit(string cuit)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("BuscarVentasPorCuit", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            command.Parameters.AddWithValue("@cuit", cuit);            
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
+        }
+
         public DataTable BuscarRegistrosAnulados(string fechainicial, string fechafin)
         {
             DataTable dt = new DataTable();

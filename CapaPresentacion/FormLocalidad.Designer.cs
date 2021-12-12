@@ -42,6 +42,7 @@
             // cbProvincia
             // 
             this.cbProvincia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbProvincia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProvincia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -73,6 +74,7 @@
             this.tbLocalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbLocalidad.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbLocalidad.Location = new System.Drawing.Point(40, 210);
+            this.tbLocalidad.MaxLength = 50;
             this.tbLocalidad.Name = "tbLocalidad";
             this.tbLocalidad.Size = new System.Drawing.Size(246, 25);
             this.tbLocalidad.TabIndex = 147;

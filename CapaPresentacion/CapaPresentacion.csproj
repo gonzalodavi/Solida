@@ -180,12 +180,6 @@
     <Compile Include="FormEmpresa.Designer.cs">
       <DependentUpon>FormEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGeneraCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormGeneraCompra.Designer.cs">
-      <DependentUpon>FormGeneraCompra.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormGestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,9 +446,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmpresa.resx">
       <DependentUpon>FormEmpresa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormGeneraCompra.resx">
-      <DependentUpon>FormGeneraCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionUsuarios.resx">
       <DependentUpon>FormGestionUsuarios.cs</DependentUpon>

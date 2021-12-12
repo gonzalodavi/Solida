@@ -66,6 +66,12 @@ namespace CapaNegocio
         {
             return new CD_Ventas().BuscarRegistros(fechainicial, fechafin);
         }
+
+        public static DataTable BuscarRegistrosxCuit(string cuit)
+        {
+            return new CD_Ventas().BuscarRegistrosxCuit(cuit);
+        }
+
         public static DataTable BuscarRegistrosAnulados(string fechainicial, string fechafin)
         {
             return new CD_Ventas().BuscarRegistrosAnulados(fechainicial, fechafin);

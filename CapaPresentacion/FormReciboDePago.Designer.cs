@@ -63,6 +63,12 @@ namespace CapaPresentacion
             this.tbDetalleRecibo = new System.Windows.Forms.TextBox();
             this.tabRecibos = new System.Windows.Forms.TabControl();
             this.tabNuevoRecibo = new System.Windows.Forms.TabPage();
+            this.lblErrorLimiteAbonado = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.tbDineroEntregado = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.chekCambioJusto = new Guna.UI.WinForms.GunaMediumCheckBox();
             this.lbltotalEfectivo = new System.Windows.Forms.TextBox();
             this.tbNumFact = new System.Windows.Forms.TextBox();
             this.tbDNI = new System.Windows.Forms.TextBox();
@@ -119,12 +125,6 @@ namespace CapaPresentacion
             this.label28 = new System.Windows.Forms.Label();
             this.tbNumTransf = new System.Windows.Forms.TextBox();
             this.dtpFechaRecibo = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.label37 = new System.Windows.Forms.Label();
-            this.chekCambioJusto = new Guna.UI.WinForms.GunaMediumCheckBox();
-            this.tbDineroEntregado = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.lblErrorLimiteAbonado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.tabRecibos.SuspendLayout();
             this.tabNuevoRecibo.SuspendLayout();
@@ -154,6 +154,7 @@ namespace CapaPresentacion
             this.tbTotalAPagar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotalAPagar.ForeColor = System.Drawing.Color.Gold;
             this.tbTotalAPagar.Location = new System.Drawing.Point(199, 11);
+            this.tbTotalAPagar.MaxLength = 15;
             this.tbTotalAPagar.Name = "tbTotalAPagar";
             this.tbTotalAPagar.ReadOnly = true;
             this.tbTotalAPagar.Size = new System.Drawing.Size(116, 27);
@@ -182,6 +183,7 @@ namespace CapaPresentacion
             this.tbEfectivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbEfectivo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbEfectivo.Location = new System.Drawing.Point(199, 55);
+            this.tbEfectivo.MaxLength = 15;
             this.tbEfectivo.Name = "tbEfectivo";
             this.tbEfectivo.Size = new System.Drawing.Size(116, 25);
             this.tbEfectivo.TabIndex = 0;
@@ -221,6 +223,7 @@ namespace CapaPresentacion
             this.tbValores.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbValores.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbValores.Location = new System.Drawing.Point(199, 97);
+            this.tbValores.MaxLength = 15;
             this.tbValores.Name = "tbValores";
             this.tbValores.ReadOnly = true;
             this.tbValores.Size = new System.Drawing.Size(116, 25);
@@ -260,6 +263,7 @@ namespace CapaPresentacion
             this.tbBanco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBanco.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBanco.Location = new System.Drawing.Point(199, 140);
+            this.tbBanco.MaxLength = 15;
             this.tbBanco.Name = "tbBanco";
             this.tbBanco.ReadOnly = true;
             this.tbBanco.Size = new System.Drawing.Size(116, 25);
@@ -312,6 +316,7 @@ namespace CapaPresentacion
             this.tbTotalPagado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotalPagado.ForeColor = System.Drawing.Color.Gold;
             this.tbTotalPagado.Location = new System.Drawing.Point(199, 183);
+            this.tbTotalPagado.MaxLength = 15;
             this.tbTotalPagado.Name = "tbTotalPagado";
             this.tbTotalPagado.ReadOnly = true;
             this.tbTotalPagado.Size = new System.Drawing.Size(116, 27);
@@ -340,6 +345,7 @@ namespace CapaPresentacion
             this.tbVuelto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbVuelto.ForeColor = System.Drawing.Color.Gold;
             this.tbVuelto.Location = new System.Drawing.Point(199, 366);
+            this.tbVuelto.MaxLength = 15;
             this.tbVuelto.Name = "tbVuelto";
             this.tbVuelto.ReadOnly = true;
             this.tbVuelto.Size = new System.Drawing.Size(116, 25);
@@ -564,6 +570,86 @@ namespace CapaPresentacion
             this.tabNuevoRecibo.TabIndex = 6;
             this.tabNuevoRecibo.Text = "Recibo de Pago";
             // 
+            // lblErrorLimiteAbonado
+            // 
+            this.lblErrorLimiteAbonado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorLimiteAbonado.AutoEllipsis = true;
+            this.lblErrorLimiteAbonado.AutoSize = true;
+            this.lblErrorLimiteAbonado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblErrorLimiteAbonado.ForeColor = System.Drawing.Color.Gold;
+            this.lblErrorLimiteAbonado.Location = new System.Drawing.Point(327, 187);
+            this.lblErrorLimiteAbonado.Name = "lblErrorLimiteAbonado";
+            this.lblErrorLimiteAbonado.Size = new System.Drawing.Size(141, 17);
+            this.lblErrorLimiteAbonado.TabIndex = 314;
+            this.lblErrorLimiteAbonado.Text = "Ha superado el límite";
+            this.lblErrorLimiteAbonado.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label39.ForeColor = System.Drawing.SystemColors.Control;
+            this.label39.Location = new System.Drawing.Point(182, 336);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(15, 17);
+            this.label39.TabIndex = 313;
+            this.label39.Text = "$";
+            // 
+            // label38
+            // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label38.ForeColor = System.Drawing.SystemColors.Control;
+            this.label38.Location = new System.Drawing.Point(54, 336);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(128, 17);
+            this.label38.TabIndex = 312;
+            this.label38.Text = "Efectivo Entregado:";
+            // 
+            // tbDineroEntregado
+            // 
+            this.tbDineroEntregado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbDineroEntregado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDineroEntregado.Enabled = false;
+            this.tbDineroEntregado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbDineroEntregado.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbDineroEntregado.Location = new System.Drawing.Point(199, 332);
+            this.tbDineroEntregado.MaxLength = 15;
+            this.tbDineroEntregado.Name = "tbDineroEntregado";
+            this.tbDineroEntregado.Size = new System.Drawing.Size(116, 25);
+            this.tbDineroEntregado.TabIndex = 311;
+            this.tbDineroEntregado.Text = "0,00";
+            this.tbDineroEntregado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbDineroEntregado.TextChanged += new System.EventHandler(this.tbDineroEntregado_TextChanged);
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label37.AutoEllipsis = true;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label37.ForeColor = System.Drawing.SystemColors.Control;
+            this.label37.Location = new System.Drawing.Point(356, 336);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(92, 17);
+            this.label37.TabIndex = 310;
+            this.label37.Text = "Cambio Justo";
+            // 
+            // chekCambioJusto
+            // 
+            this.chekCambioJusto.BaseColor = System.Drawing.Color.White;
+            this.chekCambioJusto.Checked = true;
+            this.chekCambioJusto.CheckedOffColor = System.Drawing.Color.Gray;
+            this.chekCambioJusto.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekCambioJusto.FillColor = System.Drawing.Color.White;
+            this.chekCambioJusto.Location = new System.Drawing.Point(330, 335);
+            this.chekCambioJusto.Name = "chekCambioJusto";
+            this.chekCambioJusto.Size = new System.Drawing.Size(20, 20);
+            this.chekCambioJusto.TabIndex = 309;
+            this.chekCambioJusto.CheckedChanged += new System.EventHandler(this.chekCambioJusto_CheckedChanged);
+            // 
             // lbltotalEfectivo
             // 
             this.lbltotalEfectivo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -685,6 +771,7 @@ namespace CapaPresentacion
             this.tbCheqTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCheqTotal.ForeColor = System.Drawing.Color.Yellow;
             this.tbCheqTotal.Location = new System.Drawing.Point(172, 421);
+            this.tbCheqTotal.MaxLength = 15;
             this.tbCheqTotal.Name = "tbCheqTotal";
             this.tbCheqTotal.ReadOnly = true;
             this.tbCheqTotal.Size = new System.Drawing.Size(116, 25);
@@ -932,7 +1019,7 @@ namespace CapaPresentacion
             this.tbCheqImporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCheqImporte.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbCheqImporte.Location = new System.Drawing.Point(114, 61);
-            this.tbCheqImporte.MaxLength = 20;
+            this.tbCheqImporte.MaxLength = 15;
             this.tbCheqImporte.Name = "tbCheqImporte";
             this.tbCheqImporte.Size = new System.Drawing.Size(116, 25);
             this.tbCheqImporte.TabIndex = 215;
@@ -1062,6 +1149,7 @@ namespace CapaPresentacion
             this.dtpCheqCredito.BackColor = System.Drawing.Color.Transparent;
             this.dtpCheqCredito.BaseColor = System.Drawing.Color.White;
             this.dtpCheqCredito.BorderColor = System.Drawing.Color.Silver;
+            this.dtpCheqCredito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpCheqCredito.CustomFormat = null;
             this.dtpCheqCredito.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpCheqCredito.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1087,6 +1175,7 @@ namespace CapaPresentacion
             this.dtpCheqEmision.BackColor = System.Drawing.Color.Transparent;
             this.dtpCheqEmision.BaseColor = System.Drawing.Color.White;
             this.dtpCheqEmision.BorderColor = System.Drawing.Color.Silver;
+            this.dtpCheqEmision.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpCheqEmision.CustomFormat = null;
             this.dtpCheqEmision.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpCheqEmision.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1255,6 +1344,7 @@ namespace CapaPresentacion
             this.tbTransfTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTransfTotal.ForeColor = System.Drawing.Color.Yellow;
             this.tbTransfTotal.Location = new System.Drawing.Point(212, 417);
+            this.tbTransfTotal.MaxLength = 15;
             this.tbTransfTotal.Name = "tbTransfTotal";
             this.tbTransfTotal.ReadOnly = true;
             this.tbTransfTotal.Size = new System.Drawing.Size(116, 25);
@@ -1391,6 +1481,7 @@ namespace CapaPresentacion
             // cbCuentaBanco
             // 
             this.cbCuentaBanco.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCuentaBanco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCuentaBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCuentaBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCuentaBanco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1407,6 +1498,7 @@ namespace CapaPresentacion
             this.dtpTransferencia.BackColor = System.Drawing.Color.Transparent;
             this.dtpTransferencia.BaseColor = System.Drawing.Color.White;
             this.dtpTransferencia.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTransferencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpTransferencia.CustomFormat = null;
             this.dtpTransferencia.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpTransferencia.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1447,7 +1539,7 @@ namespace CapaPresentacion
             this.tbTransfImporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbTransfImporte.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbTransfImporte.Location = new System.Drawing.Point(132, 162);
-            this.tbTransfImporte.MaxLength = 20;
+            this.tbTransfImporte.MaxLength = 15;
             this.tbTransfImporte.Name = "tbTransfImporte";
             this.tbTransfImporte.Size = new System.Drawing.Size(147, 25);
             this.tbTransfImporte.TabIndex = 225;
@@ -1559,85 +1651,6 @@ namespace CapaPresentacion
             this.dtpFechaRecibo.Text = "22/10/2021";
             this.dtpFechaRecibo.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
             this.dtpFechaRecibo.Visible = false;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label37.AutoEllipsis = true;
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label37.ForeColor = System.Drawing.SystemColors.Control;
-            this.label37.Location = new System.Drawing.Point(356, 336);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(92, 17);
-            this.label37.TabIndex = 310;
-            this.label37.Text = "Cambio Justo";
-            // 
-            // chekCambioJusto
-            // 
-            this.chekCambioJusto.BaseColor = System.Drawing.Color.White;
-            this.chekCambioJusto.Checked = true;
-            this.chekCambioJusto.CheckedOffColor = System.Drawing.Color.Gray;
-            this.chekCambioJusto.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.chekCambioJusto.FillColor = System.Drawing.Color.White;
-            this.chekCambioJusto.Location = new System.Drawing.Point(330, 335);
-            this.chekCambioJusto.Name = "chekCambioJusto";
-            this.chekCambioJusto.Size = new System.Drawing.Size(20, 20);
-            this.chekCambioJusto.TabIndex = 309;
-            this.chekCambioJusto.CheckedChanged += new System.EventHandler(this.chekCambioJusto_CheckedChanged);
-            // 
-            // tbDineroEntregado
-            // 
-            this.tbDineroEntregado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbDineroEntregado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbDineroEntregado.Enabled = false;
-            this.tbDineroEntregado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tbDineroEntregado.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbDineroEntregado.Location = new System.Drawing.Point(199, 332);
-            this.tbDineroEntregado.Name = "tbDineroEntregado";
-            this.tbDineroEntregado.Size = new System.Drawing.Size(116, 25);
-            this.tbDineroEntregado.TabIndex = 311;
-            this.tbDineroEntregado.Text = "0,00";
-            this.tbDineroEntregado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbDineroEntregado.TextChanged += new System.EventHandler(this.tbDineroEntregado_TextChanged);
-            // 
-            // label38
-            // 
-            this.label38.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label38.ForeColor = System.Drawing.SystemColors.Control;
-            this.label38.Location = new System.Drawing.Point(54, 336);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(128, 17);
-            this.label38.TabIndex = 312;
-            this.label38.Text = "Efectivo Entregado:";
-            // 
-            // label39
-            // 
-            this.label39.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label39.ForeColor = System.Drawing.SystemColors.Control;
-            this.label39.Location = new System.Drawing.Point(182, 336);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(15, 17);
-            this.label39.TabIndex = 313;
-            this.label39.Text = "$";
-            // 
-            // lblErrorLimiteAbonado
-            // 
-            this.lblErrorLimiteAbonado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorLimiteAbonado.AutoEllipsis = true;
-            this.lblErrorLimiteAbonado.AutoSize = true;
-            this.lblErrorLimiteAbonado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblErrorLimiteAbonado.ForeColor = System.Drawing.Color.Gold;
-            this.lblErrorLimiteAbonado.Location = new System.Drawing.Point(327, 187);
-            this.lblErrorLimiteAbonado.Name = "lblErrorLimiteAbonado";
-            this.lblErrorLimiteAbonado.Size = new System.Drawing.Size(141, 17);
-            this.lblErrorLimiteAbonado.TabIndex = 314;
-            this.lblErrorLimiteAbonado.Text = "Ha superado el límite";
-            this.lblErrorLimiteAbonado.Visible = false;
             // 
             // FormReciboDePago
             // 

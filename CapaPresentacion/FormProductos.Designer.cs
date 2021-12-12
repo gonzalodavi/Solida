@@ -471,6 +471,7 @@
             this.tbBusca.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBusca.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBusca.Location = new System.Drawing.Point(94, 33);
+            this.tbBusca.MaxLength = 100;
             this.tbBusca.Name = "tbBusca";
             this.tbBusca.Size = new System.Drawing.Size(283, 25);
             this.tbBusca.TabIndex = 114;
@@ -880,7 +881,7 @@
             this.tbStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbStock.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbStock.Location = new System.Drawing.Point(680, 308);
-            this.tbStock.MaxLength = 5;
+            this.tbStock.MaxLength = 7;
             this.tbStock.Name = "tbStock";
             this.tbStock.Size = new System.Drawing.Size(92, 25);
             this.tbStock.TabIndex = 9;
@@ -893,6 +894,7 @@
             this.tbGanancia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbGanancia.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbGanancia.Location = new System.Drawing.Point(680, 197);
+            this.tbGanancia.MaxLength = 4;
             this.tbGanancia.Name = "tbGanancia";
             this.tbGanancia.Size = new System.Drawing.Size(92, 25);
             this.tbGanancia.TabIndex = 8;
@@ -987,7 +989,7 @@
             this.tbStockMin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbStockMin.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbStockMin.Location = new System.Drawing.Point(680, 363);
-            this.tbStockMin.MaxLength = 5;
+            this.tbStockMin.MaxLength = 7;
             this.tbStockMin.Name = "tbStockMin";
             this.tbStockMin.Size = new System.Drawing.Size(92, 25);
             this.tbStockMin.TabIndex = 10;
@@ -1001,6 +1003,7 @@
             this.tbVenta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbVenta.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbVenta.Location = new System.Drawing.Point(680, 253);
+            this.tbVenta.MaxLength = 15;
             this.tbVenta.Name = "tbVenta";
             this.tbVenta.Size = new System.Drawing.Size(92, 25);
             this.tbVenta.TabIndex = 0;
@@ -1012,6 +1015,7 @@
             this.tbCosto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCosto.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbCosto.Location = new System.Drawing.Point(680, 147);
+            this.tbCosto.MaxLength = 15;
             this.tbCosto.Name = "tbCosto";
             this.tbCosto.Size = new System.Drawing.Size(92, 25);
             this.tbCosto.TabIndex = 7;
@@ -1182,6 +1186,7 @@
             this.tbDescripcion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDescripcion.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbDescripcion.Location = new System.Drawing.Point(249, 95);
+            this.tbDescripcion.MaxLength = 100;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(223, 25);
             this.tbDescripcion.TabIndex = 1;
@@ -1279,7 +1284,7 @@
             this.tbClaveDebloq.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbClaveDebloq.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbClaveDebloq.Location = new System.Drawing.Point(9, 8);
-            this.tbClaveDebloq.MaxLength = 15;
+            this.tbClaveDebloq.MaxLength = 20;
             this.tbClaveDebloq.Name = "tbClaveDebloq";
             this.tbClaveDebloq.Size = new System.Drawing.Size(92, 25);
             this.tbClaveDebloq.TabIndex = 186;

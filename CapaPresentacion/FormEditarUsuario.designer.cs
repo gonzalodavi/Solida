@@ -125,8 +125,9 @@
             this.tBUsuario.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tBUsuario.Location = new System.Drawing.Point(30, 56);
             this.tBUsuario.MaximumSize = new System.Drawing.Size(271, 20);
+            this.tBUsuario.MaxLength = 20;
             this.tBUsuario.Name = "tBUsuario";
-            this.tBUsuario.Size = new System.Drawing.Size(265, 20);
+            this.tBUsuario.Size = new System.Drawing.Size(265, 25);
             this.tBUsuario.TabIndex = 1;
             this.tBUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -137,8 +138,9 @@
             this.tBNombre.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tBNombre.Location = new System.Drawing.Point(30, 112);
             this.tBNombre.MaximumSize = new System.Drawing.Size(271, 20);
+            this.tBNombre.MaxLength = 50;
             this.tBNombre.Name = "tBNombre";
-            this.tBNombre.Size = new System.Drawing.Size(265, 20);
+            this.tBNombre.Size = new System.Drawing.Size(265, 25);
             this.tBNombre.TabIndex = 2;
             this.tBNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -149,8 +151,9 @@
             this.tBApellido.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tBApellido.Location = new System.Drawing.Point(30, 168);
             this.tBApellido.MaximumSize = new System.Drawing.Size(271, 20);
+            this.tBApellido.MaxLength = 50;
             this.tBApellido.Name = "tBApellido";
-            this.tBApellido.Size = new System.Drawing.Size(265, 20);
+            this.tBApellido.Size = new System.Drawing.Size(265, 25);
             this.tBApellido.TabIndex = 3;
             this.tBApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -161,8 +164,9 @@
             this.tBEmail.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tBEmail.Location = new System.Drawing.Point(30, 225);
             this.tBEmail.MaximumSize = new System.Drawing.Size(271, 20);
+            this.tBEmail.MaxLength = 50;
             this.tBEmail.Name = "tBEmail";
-            this.tBEmail.Size = new System.Drawing.Size(265, 20);
+            this.tBEmail.Size = new System.Drawing.Size(265, 25);
             this.tBEmail.TabIndex = 4;
             this.tBEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -173,8 +177,9 @@
             this.tBClaveNueva.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tBClaveNueva.Location = new System.Drawing.Point(30, 331);
             this.tBClaveNueva.MaximumSize = new System.Drawing.Size(271, 20);
+            this.tBClaveNueva.MaxLength = 20;
             this.tBClaveNueva.Name = "tBClaveNueva";
-            this.tBClaveNueva.Size = new System.Drawing.Size(265, 20);
+            this.tBClaveNueva.Size = new System.Drawing.Size(265, 25);
             this.tBClaveNueva.TabIndex = 6;
             this.tBClaveNueva.UseSystemPasswordChar = true;
             this.tBClaveNueva.Visible = false;
@@ -186,8 +191,9 @@
             this.tBClaveConfirma.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tBClaveConfirma.Location = new System.Drawing.Point(30, 378);
             this.tBClaveConfirma.MaximumSize = new System.Drawing.Size(271, 20);
+            this.tBClaveConfirma.MaxLength = 20;
             this.tBClaveConfirma.Name = "tBClaveConfirma";
-            this.tBClaveConfirma.Size = new System.Drawing.Size(265, 20);
+            this.tBClaveConfirma.Size = new System.Drawing.Size(265, 25);
             this.tBClaveConfirma.TabIndex = 7;
             this.tBClaveConfirma.UseSystemPasswordChar = true;
             this.tBClaveConfirma.Visible = false;
@@ -213,8 +219,9 @@
             this.tBClaveActual.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tBClaveActual.Location = new System.Drawing.Point(30, 284);
             this.tBClaveActual.MaximumSize = new System.Drawing.Size(271, 20);
+            this.tBClaveActual.MaxLength = 20;
             this.tBClaveActual.Name = "tBClaveActual";
-            this.tBClaveActual.Size = new System.Drawing.Size(265, 20);
+            this.tBClaveActual.Size = new System.Drawing.Size(265, 25);
             this.tBClaveActual.TabIndex = 5;
             this.tBClaveActual.UseSystemPasswordChar = true;
             // 

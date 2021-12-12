@@ -65,9 +65,9 @@
             this.tabRemito = new System.Windows.Forms.TabPage();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.gbDetalleRem = new System.Windows.Forms.GroupBox();
+            this.btnBuscaPr = new System.Windows.Forms.Button();
             this.tbCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscaProducto = new FontAwesome.Sharp.IconButton();
             this.dgvDetRem = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -80,9 +80,9 @@
             this.btnAgrega = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarPc = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.btnBuscarPc = new FontAwesome.Sharp.IconButton();
             this.dtpFecha = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.tbDestinatario = new System.Windows.Forms.TextBox();
@@ -616,9 +616,9 @@
             // gbDetalleRem
             // 
             this.gbDetalleRem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbDetalleRem.Controls.Add(this.btnBuscaPr);
             this.gbDetalleRem.Controls.Add(this.tbCantidad);
             this.gbDetalleRem.Controls.Add(this.label2);
-            this.gbDetalleRem.Controls.Add(this.btnBuscaProducto);
             this.gbDetalleRem.Controls.Add(this.dgvDetRem);
             this.gbDetalleRem.Controls.Add(this.label16);
             this.gbDetalleRem.Controls.Add(this.label14);
@@ -640,13 +640,34 @@
             this.gbDetalleRem.TabStop = false;
             this.gbDetalleRem.Text = "Detalle Remito";
             // 
+            // btnBuscaPr
+            // 
+            this.btnBuscaPr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscaPr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscaPr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscaPr.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscaPr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscaPr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscaPr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscaPr.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscaPr.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaPr.Location = new System.Drawing.Point(301, 107);
+            this.btnBuscaPr.Name = "btnBuscaPr";
+            this.btnBuscaPr.Size = new System.Drawing.Size(59, 23);
+            this.btnBuscaPr.TabIndex = 206;
+            this.btnBuscaPr.TabStop = false;
+            this.btnBuscaPr.Text = "Elegir";
+            this.btnBuscaPr.UseVisualStyleBackColor = false;
+            this.btnBuscaPr.Click += new System.EventHandler(this.btnBuscaPr_Click);
+            // 
             // tbCantidad
             // 
             this.tbCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCantidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCantidad.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbCantidad.Location = new System.Drawing.Point(65, 151);
+            this.tbCantidad.Location = new System.Drawing.Point(65, 165);
+            this.tbCantidad.MaxLength = 7;
             this.tbCantidad.Name = "tbCantidad";
             this.tbCantidad.Size = new System.Drawing.Size(116, 25);
             this.tbCantidad.TabIndex = 206;
@@ -661,35 +682,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(99, 179);
+            this.label2.Location = new System.Drawing.Point(99, 193);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 11);
             this.label2.TabIndex = 205;
             this.label2.Text = "CANTIDAD";
-            // 
-            // btnBuscaProducto
-            // 
-            this.btnBuscaProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscaProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscaProducto.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscaProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscaProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscaProducto.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnBuscaProducto.ForeColor = System.Drawing.Color.White;
-            this.btnBuscaProducto.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnBuscaProducto.IconColor = System.Drawing.Color.White;
-            this.btnBuscaProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscaProducto.IconSize = 25;
-            this.btnBuscaProducto.Location = new System.Drawing.Point(333, 84);
-            this.btnBuscaProducto.Name = "btnBuscaProducto";
-            this.btnBuscaProducto.Size = new System.Drawing.Size(29, 29);
-            this.btnBuscaProducto.TabIndex = 170;
-            this.btnBuscaProducto.TabStop = false;
-            this.btnBuscaProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscaProducto.UseVisualStyleBackColor = false;
-            this.btnBuscaProducto.Click += new System.EventHandler(this.btnBuscaProducto_Click_1);
             // 
             // dgvDetRem
             // 
@@ -785,7 +782,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(365, 215);
+            this.label13.Location = new System.Drawing.Point(365, 229);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(27, 17);
             this.label13.TabIndex = 90;
@@ -797,7 +794,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(366, 154);
+            this.label12.Location = new System.Drawing.Point(366, 168);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(27, 17);
             this.label12.TabIndex = 89;
@@ -810,10 +807,10 @@
             this.tbProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbProducto.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbProducto.Location = new System.Drawing.Point(63, 87);
+            this.tbProducto.Location = new System.Drawing.Point(63, 76);
             this.tbProducto.Name = "tbProducto";
             this.tbProducto.ReadOnly = true;
-            this.tbProducto.Size = new System.Drawing.Size(264, 25);
+            this.tbProducto.Size = new System.Drawing.Size(297, 25);
             this.tbProducto.TabIndex = 88;
             this.tbProducto.TextChanged += new System.EventHandler(this.tbProducto_TextChanged);
             // 
@@ -845,7 +842,7 @@
             this.btnQuitar.IconColor = System.Drawing.Color.White;
             this.btnQuitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQuitar.IconSize = 25;
-            this.btnQuitar.Location = new System.Drawing.Point(244, 207);
+            this.btnQuitar.Location = new System.Drawing.Point(244, 221);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(116, 32);
             this.btnQuitar.TabIndex = 84;
@@ -870,7 +867,7 @@
             this.btnAgrega.IconColor = System.Drawing.Color.White;
             this.btnAgrega.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgrega.IconSize = 25;
-            this.btnAgrega.Location = new System.Drawing.Point(244, 146);
+            this.btnAgrega.Location = new System.Drawing.Point(244, 160);
             this.btnAgrega.Name = "btnAgrega";
             this.btnAgrega.Size = new System.Drawing.Size(116, 32);
             this.btnAgrega.TabIndex = 84;
@@ -886,7 +883,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(62, 67);
+            this.label10.Location = new System.Drawing.Point(62, 56);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 82;
@@ -895,9 +892,9 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.btnBuscarPc);
             this.groupBox1.Controls.Add(this.label37);
             this.groupBox1.Controls.Add(this.label35);
-            this.groupBox1.Controls.Add(this.btnBuscarPc);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.tbDestinatario);
@@ -915,6 +912,26 @@
             this.groupBox1.Size = new System.Drawing.Size(894, 124);
             this.groupBox1.TabIndex = 87;
             this.groupBox1.TabStop = false;
+            // 
+            // btnBuscarPc
+            // 
+            this.btnBuscarPc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscarPc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnBuscarPc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarPc.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscarPc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBuscarPc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnBuscarPc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPc.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscarPc.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarPc.Location = new System.Drawing.Point(301, 85);
+            this.btnBuscarPc.Name = "btnBuscarPc";
+            this.btnBuscarPc.Size = new System.Drawing.Size(59, 23);
+            this.btnBuscarPc.TabIndex = 205;
+            this.btnBuscarPc.TabStop = false;
+            this.btnBuscarPc.Text = "Elegir";
+            this.btnBuscarPc.UseVisualStyleBackColor = false;
+            this.btnBuscarPc.Click += new System.EventHandler(this.btnBuscarPc_Click);
             // 
             // label37
             // 
@@ -939,30 +956,6 @@
             this.label35.Size = new System.Drawing.Size(40, 11);
             this.label35.TabIndex = 203;
             this.label35.Text = "NÚMERO";
-            // 
-            // btnBuscarPc
-            // 
-            this.btnBuscarPc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscarPc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnBuscarPc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarPc.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBuscarPc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBuscarPc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnBuscarPc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarPc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnBuscarPc.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarPc.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnBuscarPc.IconColor = System.Drawing.Color.White;
-            this.btnBuscarPc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarPc.IconSize = 25;
-            this.btnBuscarPc.Location = new System.Drawing.Point(331, 51);
-            this.btnBuscarPc.Name = "btnBuscarPc";
-            this.btnBuscarPc.Size = new System.Drawing.Size(29, 29);
-            this.btnBuscarPc.TabIndex = 171;
-            this.btnBuscarPc.TabStop = false;
-            this.btnBuscarPc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarPc.UseVisualStyleBackColor = false;
-            this.btnBuscarPc.Click += new System.EventHandler(this.btnBuscarPc_Click);
             // 
             // dtpFecha
             // 
@@ -1012,7 +1005,7 @@
             this.tbDestinatario.Location = new System.Drawing.Point(61, 54);
             this.tbDestinatario.Name = "tbDestinatario";
             this.tbDestinatario.ReadOnly = true;
-            this.tbDestinatario.Size = new System.Drawing.Size(264, 25);
+            this.tbDestinatario.Size = new System.Drawing.Size(299, 25);
             this.tbDestinatario.TabIndex = 89;
             // 
             // tbIdDestinatario
@@ -1078,6 +1071,7 @@
             this.tbNumRemito.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbNumRemito.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbNumRemito.Location = new System.Drawing.Point(603, 52);
+            this.tbNumRemito.MaxLength = 20;
             this.tbNumRemito.Name = "tbNumRemito";
             this.tbNumRemito.Size = new System.Drawing.Size(116, 25);
             this.tbNumRemito.TabIndex = 49;
@@ -1219,6 +1213,7 @@
             this.tbBuscaProveedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBuscaProveedor.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBuscaProveedor.Location = new System.Drawing.Point(140, 24);
+            this.tbBuscaProveedor.MaxLength = 100;
             this.tbBuscaProveedor.Name = "tbBuscaProveedor";
             this.tbBuscaProveedor.Size = new System.Drawing.Size(265, 25);
             this.tbBuscaProveedor.TabIndex = 89;
@@ -1526,6 +1521,7 @@
             this.tbBuscaProductos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbBuscaProductos.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tbBuscaProductos.Location = new System.Drawing.Point(140, 16);
+            this.tbBuscaProductos.MaxLength = 100;
             this.tbBuscaProductos.Name = "tbBuscaProductos";
             this.tbBuscaProductos.Size = new System.Drawing.Size(265, 25);
             this.tbBuscaProductos.TabIndex = 99;
@@ -1778,8 +1774,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox tbBuscaProductos;
-        private FontAwesome.Sharp.IconButton btnBuscaProducto;
-        private FontAwesome.Sharp.IconButton btnBuscarPc;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
@@ -1799,5 +1793,7 @@
         private System.Windows.Forms.Label lblPanelProductos;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.TextBox tbCantidad;
+        private System.Windows.Forms.Button btnBuscarPc;
+        private System.Windows.Forms.Button btnBuscaPr;
     }
 }
