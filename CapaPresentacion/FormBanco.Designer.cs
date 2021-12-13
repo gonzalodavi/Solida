@@ -365,7 +365,7 @@ namespace CapaPresentacion
             this.tbID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbID.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tbID.Location = new System.Drawing.Point(895, 370);
+            this.tbID.Location = new System.Drawing.Point(895, 365);
             this.tbID.MaxLength = 10;
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(116, 25);

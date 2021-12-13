@@ -123,7 +123,16 @@ namespace CapaPresentacion
             }
             else
             {
-                agregarNuevaCuenta();                
+                var cadena1 = tbCBU.Text;
+
+                if (cadena1.Length < 22)
+                {
+                    MessageBox.Show("El CBU debe contener 22 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    agregarNuevaCuenta();
+                }
             }
         }
 
@@ -265,38 +274,51 @@ namespace CapaPresentacion
         {
             if (dgvCuentasBanco.SelectedRows.Count > 0)
             {
-                DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea Eliminar la cuenta de Banco seleccionada", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 try
                 {
-                    string Rpta = "";
                     int idCuenta = Convert.ToInt32(dgvCuentasBanco.CurrentRow.Cells["ID_BANCO"].Value.ToString());
-                    if (Opcion == DialogResult.OK)
+                    string rptR = CN_CuentaBancaria.ConsultaSiExisteXaEliminar(idCuenta);
+                    if (rptR == "OK")
                     {
-
-                        Rpta = CN_CuentaBancaria.Eliminar(idCuenta);
-
-                        if (Rpta.Equals("OK"))
+                        this.MensajeError("No se permite eliminar la Sucursal seleccionada");
+                    }
+                    else
+                    {
+                        if (rptR == "NO")
                         {
-                            this.MensajeOk("Se Eliminó Correctamente la Cuenta Bancaria seleccionada");
+                            DialogResult Opcion;
+                            Opcion = MessageBox.Show("Desea Eliminar la cuenta de Banco seleccionada", "¡Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (Opcion == DialogResult.OK)
+                            {
+                                string Rpta = CN_CuentaBancaria.Eliminar(idCuenta);
+
+                                if (Rpta.Equals("OK"))
+                                {
+                                    this.MensajeOk("Se Eliminó Correctamente la Cuenta Bancaria seleccionada");
+                                }
+                                else
+                                {
+                                    this.MensajeError(Rpta);
+                                }
+                                limpiarCampos();
+                                CargarGrilla();
+                            }
                         }
                         else
                         {
-                            this.MensajeError(Rpta);
+                            MensajeError(rptR);
                         }
-                        limpiarCampos();
-                        CargarGrilla();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MensajeError(ex.Message + ex.StackTrace);
+                    MessageBox.Show("No se pudo realizar la eliminación debido a: \n\n" + ex);
                 }
             }
             else
             {
                 MessageBox.Show("Seleccione una fila por favor");
-            }
+            }           
         }
 
         private void tbNumeroCuenta_KeyPress(object sender, KeyPressEventArgs e)

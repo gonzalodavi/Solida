@@ -180,19 +180,34 @@ namespace CapaPresentacion
         {
             if (dgvMarca.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("¿Desea Eliminar la Marca seleccionada?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                try
                 {
-                    try
+                    string idMarca = dgvMarca.CurrentRow.Cells["ID"].Value.ToString();
+                    string rptR = CN_Tablas.ConsultaSiExisteXaEliminar(Convert.ToInt32(idMarca), "BuscarMarcaEnProducto");
+                    if (rptR == "OK")
                     {
-                        string idMarca = dgvMarca.CurrentRow.Cells["ID"].Value.ToString();
-                        objeto.EliminarMarca(idMarca);
-                        MessageBox.Show("Se eliminó correctamente la Marca seleccionada");
-                        CargarGrillaMarcas();
+                        this.MensajeError("No se permite eliminar una Marca que contiene Productos");
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
+                        if (rptR == "NO")
+                        {
+                            if (MessageBox.Show("¿Desea Eliminar la Marca seleccionada?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+                                objeto.EliminarMarca(idMarca);
+                                MessageBox.Show("Se eliminó correctamente la Marca seleccionada");
+                                CargarGrillaMarcas();
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rptR);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo realizar la eliminación debido a: \n\n" + ex);
                 }
             }
             else

@@ -108,6 +108,39 @@ namespace CapaDatos
             this.Importe = importe;
         }
 
+        public string ConsultaSiExisteXaEliminar(int id)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "BuscarSiExisteCtaBancaria";
+                SqlCmd.Parameters.AddWithValue("@id", id);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
+
         public DataTable Mostrar()
         {
             DataTable DtResultado = new DataTable("cuentaBancaria");

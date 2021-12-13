@@ -10,6 +10,13 @@ namespace CapaNegocio
     {
         private CD_Empresa objetoCD = new CD_Empresa();
 
+        public static string ConsultaSiExisteXaEliminar(string sucursal)
+        {
+            CD_Empresa Obj = new CD_Empresa();
+            string rpta = Obj.ConsultaSiExisteXaEliminar(sucursal);
+            return rpta;
+        }
+
         public static DataTable Mostrar()
         {
             return new CD_Empresa().Mostrar();

@@ -33,7 +33,6 @@ G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\System.Configuration.Config
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\System.Security.AccessControl.xml
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\System.Security.Permissions.xml
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\System.Security.Principal.Windows.xml
-G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\CapaPresentacion.FormGeneraCompra.resources
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\RdlCompile.cache
 G:\Proyecto Solida\Solida\CapaPresentacion\obj\Debug\RdlCompile.compiled
 G:\Proyecto Solida\Solida\CapaPresentacion\bin\Debug\SqlServerTypes\x64\msvcr120.dll

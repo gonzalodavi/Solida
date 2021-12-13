@@ -175,23 +175,39 @@ namespace CapaPresentacion
         }
 
         private void btnEliminaRubro_Click(object sender, EventArgs e)
-        {
+        {            
             if (dgvRubros.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("¿Desea Eliminar el Rubro seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                try
                 {
-                    try
+                    string idRubro = dgvRubros.CurrentRow.Cells["ID"].Value.ToString();
+                    string rptR = CN_Tablas.ConsultaSiExisteXaEliminar(Convert.ToInt32(idRubro), "BuscarRubroEnProducto");
+                    if (rptR == "OK")
                     {
-                        string idRubro = dgvRubros.CurrentRow.Cells["ID"].Value.ToString();
-                        objeto.EliminarRubro(idRubro);
-                        MessageBox.Show("Se eliminó correctamente el Rubro seleccionado");
-                        CargarGrillaRubros();
-                        AcomodaTabla();
+                        this.MensajeError("No se permite eliminar un Rubro que contiene Productos");
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
-                    }
+                        if (rptR == "NO")
+                        {
+                            if (MessageBox.Show("¿Desea Eliminar el Rubro seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+
+                                objeto.EliminarRubro(idRubro);
+                                MessageBox.Show("Se eliminó correctamente el Rubro seleccionado");
+                                CargarGrillaRubros();
+                                AcomodaTabla();
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rptR);
+                        }
+                    }                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo realizar la eliminación debido a: \n\n" + ex);
                 }
             }
             else

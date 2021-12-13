@@ -10,6 +10,15 @@ namespace CapaNegocio
     {
         private CD_CuentaBancaria objetoCD = new CD_CuentaBancaria();
 
+
+        public static string ConsultaSiExisteXaEliminar(int id)
+        {
+            CD_CuentaBancaria Obj = new CD_CuentaBancaria();
+            string rpta = Obj.ConsultaSiExisteXaEliminar(id);
+            return rpta;
+        }
+
+
         public DataTable CargaCuentasBanco()
         {
             CD_CuentaBancaria Obj = new CD_CuentaBancaria();

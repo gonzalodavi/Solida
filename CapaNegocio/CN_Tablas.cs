@@ -11,6 +11,13 @@ namespace CapaNegocio
     {
         private CD_Tablas objetoCD = new CD_Tablas();
 
+        public static string ConsultaSiExisteXaEliminar(int id, string proc)
+        {
+            CD_Tablas Obj = new CD_Tablas();
+            string rpta = Obj.ConsultaSiExisteXaEliminar(id, proc);
+            return rpta;
+        }
+
         public DataTable CargarRubros()
         {
             DataTable dt = new DataTable();

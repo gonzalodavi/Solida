@@ -175,20 +175,35 @@ namespace CapaPresentacion
         {
             if (dgvModelo.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("¿Desea Eliminar el Modelo Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                try
                 {
-                    try
+                    string idModelo = dgvModelo.CurrentRow.Cells["ID"].Value.ToString();
+                    string rptR = CN_Tablas.ConsultaSiExisteXaEliminar(Convert.ToInt32(idModelo), "BuscarModeloEnProducto");
+                    if (rptR == "OK")
                     {
-                        string idModelo = dgvModelo.CurrentRow.Cells["ID"].Value.ToString();
-                        objeto.EliminarModelo(idModelo);
-                        MessageBox.Show("Se eliminó correctamente el Modelo seleccionado");
-                        CargarGrillaModelos();
-                        AcomodaTabla();
+                        this.MensajeError("No se permite eliminar un Modelo que contiene Productos");
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
+                        if (rptR == "NO")
+                        {
+                            if (MessageBox.Show("¿Desea Eliminar el Modelo Seleccionado?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+                                objeto.EliminarModelo(idModelo);
+                                MessageBox.Show("Se eliminó correctamente el Modelo seleccionado");
+                                CargarGrillaModelos();
+                                AcomodaTabla();
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rptR);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo realizar la eliminación debido a: \n\n" + ex);
                 }
             }
             else

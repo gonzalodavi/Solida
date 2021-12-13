@@ -197,19 +197,34 @@ namespace CapaPresentacion
         {
             if (dgvSucursal.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("¿Desea Eliminar la Sucursal Seleccionada?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                try
                 {
-                    try
+                    string sucursal = dgvSucursal.CurrentRow.Cells["ID_SUCURSAL"].Value.ToString();
+                    string rptR = CN_Empresa.ConsultaSiExisteXaEliminar(sucursal);
+                    if (rptR == "OK")
                     {
-                        string id = dgvSucursal.CurrentRow.Cells["ID_SUCURSAL"].Value.ToString();
-                        objeto.Eliminar(id);
-                        MensajeOk("Se eliminó correctamente la Sucursal seleccionada");
-                        CargarSucursales();
+                        this.MensajeError("No se permite eliminar la Sucursal seleccionada");
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("No se puedo realizar la eliminación debido a: \n\n" + ex);
+                        if (rptR == "NO")
+                        {
+                            if (MessageBox.Show("¿Desea Eliminar la Sucursal Seleccionada?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+                                objeto.Eliminar(sucursal);
+                                MensajeOk("Se eliminó correctamente la Sucursal seleccionada");
+                                CargarSucursales();
+                            }
+                        }
+                        else
+                        {
+                            MensajeError(rptR);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo realizar la eliminación debido a: \n\n" + ex);
                 }
             }
             else
