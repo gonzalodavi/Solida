@@ -18,6 +18,10 @@ namespace CapaNegocio
             return rpta;
         }
 
+        public static DataTable MostrarDetalleBancoxFecha(int idbanco, string fechainicio, string fechafin)
+        {
+            return new CD_CuentaBancaria().DetalleCtaBancoxFecha(idbanco, fechainicio, fechafin);
+        }
 
         public DataTable CargaCuentasBanco()
         {
@@ -57,6 +61,14 @@ namespace CapaNegocio
             CD_CuentaBancaria Obj = new CD_CuentaBancaria();
             Obj.Id = idBanco;
             return Obj.TotalImporte(Obj); ;
+        }
+
+        public static string SaldoAnterior(int idBanco,string fecha)
+        {
+            CD_CuentaBancaria Obj = new CD_CuentaBancaria();
+            Obj.Id = idBanco;
+            Obj.FechaInicio = Convert.ToDateTime(fecha);
+            return Obj.SaldoAnterior(Obj); ;
         }
 
         public static string Insertar(string numcta, string nombre, string tipocta, string titular, string cbu, string alias)

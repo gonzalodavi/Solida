@@ -37,19 +37,11 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoBanco));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblOPagos = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.lblRecibos = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblChekAnul = new Guna.UI.WinForms.GunaLabel();
             this.chekCLASIFICA = new Guna.UI.WinForms.GunaSwitch();
             this.tbDebe = new System.Windows.Forms.TextBox();
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.label8 = new System.Windows.Forms.Label();
             this.tbHaber = new System.Windows.Forms.TextBox();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.label28 = new System.Windows.Forms.Label();
             this.tbSaldo = new System.Windows.Forms.TextBox();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -70,26 +62,47 @@ namespace CapaPresentacion
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.cbCtaBancaria = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnActualizar = new FontAwesome.Sharp.IconButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.chekPORFECHA = new Guna.UI.WinForms.GunaSwitch();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbSaldoAnterior = new System.Windows.Forms.TextBox();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanco)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblOPagos);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.lblRecibos);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.lblChekAnul);
+            this.panel1.Controls.Add(this.tbSaldoAnterior);
+            this.panel1.Controls.Add(this.gunaLabel3);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.gunaLabel2);
+            this.panel1.Controls.Add(this.chekPORFECHA);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.gunaLabel5);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.gunaLabel6);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.gunaLabel7);
+            this.panel1.Controls.Add(this.btnActualizar);
+            this.panel1.Controls.Add(this.lblOPagos);
+            this.panel1.Controls.Add(this.lblRecibos);
             this.panel1.Controls.Add(this.chekCLASIFICA);
             this.panel1.Controls.Add(this.tbDebe);
-            this.panel1.Controls.Add(this.gunaLabel4);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.tbHaber);
-            this.panel1.Controls.Add(this.gunaLabel3);
-            this.panel1.Controls.Add(this.label28);
             this.panel1.Controls.Add(this.tbSaldo);
-            this.panel1.Controls.Add(this.gunaLabel2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dtpFecha2);
@@ -110,6 +123,7 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.gunaLabel1);
             this.panel1.Controls.Add(this.cbCtaBancaria);
             this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label18);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1026, 749);
@@ -122,25 +136,12 @@ namespace CapaPresentacion
             this.lblOPagos.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.lblOPagos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.lblOPagos.ForeColor = System.Drawing.Color.White;
-            this.lblOPagos.Location = new System.Drawing.Point(441, 87);
+            this.lblOPagos.Location = new System.Drawing.Point(893, 621);
             this.lblOPagos.Name = "lblOPagos";
             this.lblOPagos.Size = new System.Drawing.Size(54, 17);
             this.lblOPagos.TabIndex = 244;
             this.lblOPagos.Text = "SALIDA";
             this.lblOPagos.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoEllipsis = true;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label13.Location = new System.Drawing.Point(876, 222);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 21);
-            this.label13.TabIndex = 207;
-            this.label13.Text = "TOTALES:";
             // 
             // lblRecibos
             // 
@@ -149,36 +150,12 @@ namespace CapaPresentacion
             this.lblRecibos.BackColor = System.Drawing.Color.LightSalmon;
             this.lblRecibos.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.lblRecibos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblRecibos.Location = new System.Drawing.Point(342, 87);
+            this.lblRecibos.Location = new System.Drawing.Point(884, 587);
             this.lblRecibos.Name = "lblRecibos";
             this.lblRecibos.Size = new System.Drawing.Size(69, 17);
             this.lblRecibos.TabIndex = 245;
             this.lblRecibos.Text = "ENTRADA";
             this.lblRecibos.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoEllipsis = true;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.Gold;
-            this.label11.Location = new System.Drawing.Point(841, 313);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(15, 17);
-            this.label11.TabIndex = 206;
-            this.label11.Text = "$";
-            // 
-            // lblChekAnul
-            // 
-            this.lblChekAnul.AutoSize = true;
-            this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(598, 693);
-            this.lblChekAnul.Name = "lblChekAnul";
-            this.lblChekAnul.Size = new System.Drawing.Size(160, 15);
-            this.lblChekAnul.TabIndex = 243;
-            this.lblChekAnul.Text = "CLASIFICAR MOVIMIENTOS";
             // 
             // chekCLASIFICA
             // 
@@ -187,7 +164,7 @@ namespace CapaPresentacion
             this.chekCLASIFICA.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.chekCLASIFICA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekCLASIFICA.FillColor = System.Drawing.Color.White;
-            this.chekCLASIFICA.Location = new System.Drawing.Point(764, 690);
+            this.chekCLASIFICA.Location = new System.Drawing.Point(904, 556);
             this.chekCLASIFICA.Name = "chekCLASIFICA";
             this.chekCLASIFICA.Size = new System.Drawing.Size(28, 20);
             this.chekCLASIFICA.TabIndex = 242;
@@ -200,37 +177,13 @@ namespace CapaPresentacion
             this.tbDebe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbDebe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbDebe.ForeColor = System.Drawing.Color.Yellow;
-            this.tbDebe.Location = new System.Drawing.Point(858, 310);
+            this.tbDebe.Location = new System.Drawing.Point(127, 683);
             this.tbDebe.Name = "tbDebe";
             this.tbDebe.ReadOnly = true;
             this.tbDebe.Size = new System.Drawing.Size(116, 25);
             this.tbDebe.TabIndex = 205;
             this.tbDebe.TabStop = false;
             this.tbDebe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // gunaLabel4
-            // 
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel4.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel4.Location = new System.Drawing.Point(895, 288);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(40, 17);
-            this.gunaLabel4.TabIndex = 204;
-            this.gunaLabel4.Text = "DEBE";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoEllipsis = true;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.Gold;
-            this.label8.Location = new System.Drawing.Point(841, 397);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 17);
-            this.label8.TabIndex = 203;
-            this.label8.Text = "$";
             // 
             // tbHaber
             // 
@@ -239,37 +192,13 @@ namespace CapaPresentacion
             this.tbHaber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbHaber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbHaber.ForeColor = System.Drawing.Color.Yellow;
-            this.tbHaber.Location = new System.Drawing.Point(858, 394);
+            this.tbHaber.Location = new System.Drawing.Point(379, 683);
             this.tbHaber.Name = "tbHaber";
             this.tbHaber.ReadOnly = true;
             this.tbHaber.Size = new System.Drawing.Size(116, 25);
             this.tbHaber.TabIndex = 202;
             this.tbHaber.TabStop = false;
             this.tbHaber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // gunaLabel3
-            // 
-            this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel3.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel3.Location = new System.Drawing.Point(890, 372);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(50, 17);
-            this.gunaLabel3.TabIndex = 201;
-            this.gunaLabel3.Text = "HABER";
-            // 
-            // label28
-            // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label28.AutoEllipsis = true;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.Gold;
-            this.label28.Location = new System.Drawing.Point(838, 493);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(19, 21);
-            this.label28.TabIndex = 200;
-            this.label28.Text = "$";
             // 
             // tbSaldo
             // 
@@ -278,24 +207,13 @@ namespace CapaPresentacion
             this.tbSaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSaldo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSaldo.ForeColor = System.Drawing.Color.Yellow;
-            this.tbSaldo.Location = new System.Drawing.Point(858, 489);
+            this.tbSaldo.Location = new System.Drawing.Point(643, 680);
             this.tbSaldo.Name = "tbSaldo";
             this.tbSaldo.ReadOnly = true;
             this.tbSaldo.Size = new System.Drawing.Size(116, 29);
             this.tbSaldo.TabIndex = 199;
             this.tbSaldo.TabStop = false;
             this.tbSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(884, 465);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(62, 21);
-            this.gunaLabel2.TabIndex = 198;
-            this.gunaLabel2.Text = "SALDO";
             // 
             // label2
             // 
@@ -304,7 +222,7 @@ namespace CapaPresentacion
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(692, 185);
+            this.label2.Location = new System.Drawing.Point(692, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 18);
             this.label2.TabIndex = 189;
@@ -318,7 +236,7 @@ namespace CapaPresentacion
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label5.Location = new System.Drawing.Point(602, 185);
+            this.label5.Location = new System.Drawing.Point(602, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 18);
             this.label5.TabIndex = 197;
@@ -333,11 +251,12 @@ namespace CapaPresentacion
             this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha2.CustomFormat = null;
             this.dtpFecha2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha2.Enabled = false;
             this.dtpFecha2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dtpFecha2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha2.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(676, 135);
+            this.dtpFecha2.Location = new System.Drawing.Point(861, 323);
             this.dtpFecha2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha2.Name = "dtpFecha2";
@@ -350,7 +269,6 @@ namespace CapaPresentacion
             this.dtpFecha2.TabIndex = 195;
             this.dtpFecha2.Text = "22/10/2021";
             this.dtpFecha2.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            this.dtpFecha2.Visible = false;
             // 
             // dtpFecha1
             // 
@@ -360,11 +278,12 @@ namespace CapaPresentacion
             this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFecha1.CustomFormat = null;
             this.dtpFecha1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFecha1.Enabled = false;
             this.dtpFecha1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dtpFecha1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha1.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(533, 135);
+            this.dtpFecha1.Location = new System.Drawing.Point(861, 254);
             this.dtpFecha1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha1.Name = "dtpFecha1";
@@ -377,12 +296,12 @@ namespace CapaPresentacion
             this.dtpFecha1.TabIndex = 196;
             this.dtpFecha1.Text = "22/10/2021";
             this.dtpFecha1.Value = new System.DateTime(2021, 10, 22, 23, 29, 56, 942);
-            this.dtpFecha1.Visible = false;
             // 
             // btnBuscarReg
             // 
             this.btnBuscarReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnBuscarReg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarReg.Enabled = false;
             this.btnBuscarReg.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBuscarReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBuscarReg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -393,7 +312,7 @@ namespace CapaPresentacion
             this.btnBuscarReg.IconColor = System.Drawing.Color.White;
             this.btnBuscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarReg.IconSize = 25;
-            this.btnBuscarReg.Location = new System.Drawing.Point(858, 135);
+            this.btnBuscarReg.Location = new System.Drawing.Point(861, 380);
             this.btnBuscarReg.Name = "btnBuscarReg";
             this.btnBuscarReg.Size = new System.Drawing.Size(116, 31);
             this.btnBuscarReg.TabIndex = 194;
@@ -411,12 +330,11 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label4.Location = new System.Drawing.Point(712, 115);
+            this.label4.Location = new System.Drawing.Point(897, 303);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 193;
             this.label4.Text = "Hasta:";
-            this.label4.Visible = false;
             // 
             // lblFecha1
             // 
@@ -425,12 +343,11 @@ namespace CapaPresentacion
             this.lblFecha1.AutoSize = true;
             this.lblFecha1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblFecha1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha1.Location = new System.Drawing.Point(565, 115);
+            this.lblFecha1.Location = new System.Drawing.Point(893, 234);
             this.lblFecha1.Name = "lblFecha1";
             this.lblFecha1.Size = new System.Drawing.Size(50, 17);
             this.lblFecha1.TabIndex = 192;
             this.lblFecha1.Text = "Desde:";
-            this.lblFecha1.Visible = false;
             // 
             // lblFecha2
             // 
@@ -439,7 +356,7 @@ namespace CapaPresentacion
             this.lblFecha2.AutoSize = true;
             this.lblFecha2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblFecha2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblFecha2.Location = new System.Drawing.Point(36, 83);
+            this.lblFecha2.Location = new System.Drawing.Point(36, 57);
             this.lblFecha2.Name = "lblFecha2";
             this.lblFecha2.Size = new System.Drawing.Size(277, 21);
             this.lblFecha2.TabIndex = 191;
@@ -479,7 +396,7 @@ namespace CapaPresentacion
             this.dgvBanco.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBanco.EnableHeadersVisualStyles = false;
             this.dgvBanco.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
-            this.dgvBanco.Location = new System.Drawing.Point(40, 206);
+            this.dgvBanco.Location = new System.Drawing.Point(40, 171);
             this.dgvBanco.MaximumSize = new System.Drawing.Size(900, 800);
             this.dgvBanco.MultiSelect = false;
             this.dgvBanco.Name = "dgvBanco";
@@ -506,6 +423,8 @@ namespace CapaPresentacion
             this.dgvBanco.Size = new System.Drawing.Size(751, 469);
             this.dgvBanco.TabIndex = 183;
             this.dgvBanco.TabStop = false;
+            this.dgvBanco.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvBanco_RowsAdded);
+            this.dgvBanco.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvBanco_RowsRemoved);
             // 
             // label10
             // 
@@ -514,7 +433,7 @@ namespace CapaPresentacion
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label10.Location = new System.Drawing.Point(39, 202);
+            this.label10.Location = new System.Drawing.Point(39, 167);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(753, 474);
             this.label10.TabIndex = 190;
@@ -527,7 +446,7 @@ namespace CapaPresentacion
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label1.Location = new System.Drawing.Point(506, 185);
+            this.label1.Location = new System.Drawing.Point(506, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 188;
@@ -541,7 +460,7 @@ namespace CapaPresentacion
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label9.Location = new System.Drawing.Point(304, 185);
+            this.label9.Location = new System.Drawing.Point(304, 150);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 18);
             this.label9.TabIndex = 184;
@@ -555,7 +474,7 @@ namespace CapaPresentacion
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label7.Location = new System.Drawing.Point(351, 185);
+            this.label7.Location = new System.Drawing.Point(351, 150);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(158, 18);
             this.label7.TabIndex = 185;
@@ -569,7 +488,7 @@ namespace CapaPresentacion
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label6.Location = new System.Drawing.Point(39, 185);
+            this.label6.Location = new System.Drawing.Point(39, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 18);
             this.label6.TabIndex = 186;
@@ -583,7 +502,7 @@ namespace CapaPresentacion
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label3.Location = new System.Drawing.Point(127, 185);
+            this.label3.Location = new System.Drawing.Point(127, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 18);
             this.label3.TabIndex = 187;
@@ -605,7 +524,7 @@ namespace CapaPresentacion
             this.btnImprimir.IconColor = System.Drawing.Color.White;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 25;
-            this.btnImprimir.Location = new System.Drawing.Point(858, 614);
+            this.btnImprimir.Location = new System.Drawing.Point(861, 681);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(116, 31);
             this.btnImprimir.TabIndex = 180;
@@ -647,7 +566,7 @@ namespace CapaPresentacion
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(37, 143);
+            this.gunaLabel1.Location = new System.Drawing.Point(38, 113);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(179, 17);
             this.gunaLabel1.TabIndex = 163;
@@ -662,7 +581,7 @@ namespace CapaPresentacion
             this.cbCtaBancaria.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbCtaBancaria.FormattingEnabled = true;
             this.cbCtaBancaria.ItemHeight = 17;
-            this.cbCtaBancaria.Location = new System.Drawing.Point(222, 138);
+            this.cbCtaBancaria.Location = new System.Drawing.Point(223, 108);
             this.cbCtaBancaria.Name = "cbCtaBancaria";
             this.cbCtaBancaria.Size = new System.Drawing.Size(273, 25);
             this.cbCtaBancaria.TabIndex = 84;
@@ -680,6 +599,206 @@ namespace CapaPresentacion
             this.label12.Size = new System.Drawing.Size(190, 25);
             this.label12.TabIndex = 83;
             this.label12.Text = "CUENTAS DE BANCO";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.btnActualizar.IconColor = System.Drawing.Color.White;
+            this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizar.IconSize = 25;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(858, 150);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(116, 31);
+            this.btnActualizar.TabIndex = 246;
+            this.btnActualizar.TabStop = false;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoEllipsis = true;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label14.Location = new System.Drawing.Point(37, 646);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(78, 21);
+            this.label14.TabIndex = 256;
+            this.label14.Text = "TOTALES:";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoEllipsis = true;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.Gold;
+            this.label15.Location = new System.Drawing.Point(111, 687);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 17);
+            this.label15.TabIndex = 255;
+            this.label15.Text = "$";
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.AutoSize = true;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel5.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel5.Location = new System.Drawing.Point(65, 687);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(40, 17);
+            this.gunaLabel5.TabIndex = 253;
+            this.gunaLabel5.Text = "DEBE";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.AutoEllipsis = true;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.Gold;
+            this.label16.Location = new System.Drawing.Point(360, 686);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(15, 17);
+            this.label16.TabIndex = 252;
+            this.label16.Text = "$";
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel6.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel6.Location = new System.Drawing.Point(304, 686);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(50, 17);
+            this.gunaLabel6.TabIndex = 250;
+            this.gunaLabel6.Text = "HABER";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoEllipsis = true;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Gold;
+            this.label17.Location = new System.Drawing.Point(620, 684);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(19, 21);
+            this.label17.TabIndex = 249;
+            this.label17.Text = "$";
+            // 
+            // gunaLabel7
+            // 
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel7.Location = new System.Drawing.Point(552, 684);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(62, 21);
+            this.gunaLabel7.TabIndex = 247;
+            this.gunaLabel7.Text = "SALDO";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label18.AutoEllipsis = true;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label18.Location = new System.Drawing.Point(40, 667);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(752, 56);
+            this.label18.TabIndex = 257;
+            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel2.Location = new System.Drawing.Point(868, 428);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(70, 15);
+            this.gunaLabel2.TabIndex = 259;
+            this.gunaLabel2.Text = "POR FECHA";
+            // 
+            // chekPORFECHA
+            // 
+            this.chekPORFECHA.BaseColor = System.Drawing.SystemColors.Control;
+            this.chekPORFECHA.CheckedOffColor = System.Drawing.Color.DarkGray;
+            this.chekPORFECHA.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.chekPORFECHA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chekPORFECHA.FillColor = System.Drawing.Color.White;
+            this.chekPORFECHA.Location = new System.Drawing.Point(944, 425);
+            this.chekPORFECHA.Name = "chekPORFECHA";
+            this.chekPORFECHA.Size = new System.Drawing.Size(28, 20);
+            this.chekPORFECHA.TabIndex = 258;
+            this.chekPORFECHA.CheckedChanged += new System.EventHandler(this.chekPORFECHA_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoEllipsis = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(861, 511);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 42);
+            this.label8.TabIndex = 261;
+            this.label8.Text = "CLASIFICAR MOVIMIENTOS";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoEllipsis = true;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.Gold;
+            this.label11.Location = new System.Drawing.Point(665, 113);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(15, 17);
+            this.label11.TabIndex = 264;
+            this.label11.Text = "$";
+            // 
+            // tbSaldoAnterior
+            // 
+            this.tbSaldoAnterior.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbSaldoAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(52)))), ((int)(((byte)(119)))));
+            this.tbSaldoAnterior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbSaldoAnterior.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tbSaldoAnterior.ForeColor = System.Drawing.Color.Yellow;
+            this.tbSaldoAnterior.Location = new System.Drawing.Point(682, 109);
+            this.tbSaldoAnterior.Name = "tbSaldoAnterior";
+            this.tbSaldoAnterior.ReadOnly = true;
+            this.tbSaldoAnterior.Size = new System.Drawing.Size(109, 25);
+            this.tbSaldoAnterior.TabIndex = 263;
+            this.tbSaldoAnterior.TabStop = false;
+            this.tbSaldoAnterior.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel3.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel3.Location = new System.Drawing.Point(561, 112);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(102, 17);
+            this.gunaLabel3.TabIndex = 262;
+            this.gunaLabel3.Text = "Saldo Anterior:";
             // 
             // FormInfoBanco
             // 
@@ -724,19 +843,26 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblFecha1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tbDebe;
-        private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbHaber;
-        private Guna.UI.WinForms.GunaLabel gunaLabel3;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox tbSaldo;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private System.Windows.Forms.Label lblOPagos;
         private System.Windows.Forms.Label lblRecibos;
-        private Guna.UI.WinForms.GunaLabel lblChekAnul;
         private Guna.UI.WinForms.GunaSwitch chekCLASIFICA;
+        private FontAwesome.Sharp.IconButton btnActualizar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private System.Windows.Forms.Label label16;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
+        private System.Windows.Forms.Label label17;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
+        private System.Windows.Forms.Label label18;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaSwitch chekPORFECHA;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbSaldoAnterior;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
     }
 }

@@ -16,3 +16,4 @@ H:\Proyecto Solida\Solida\CapaEntidades\obj\Debug\netstandard2.0\CapaEntidades.c
 H:\Proyecto Solida\Solida\CapaEntidades\obj\Debug\netstandard2.0\CapaEntidades.dll
 H:\Proyecto Solida\Solida\CapaEntidades\obj\Debug\netstandard2.0\CapaEntidades.pdb
 G:\Proyecto Solida\Solida\CapaEntidades\obj\Debug\netstandard2.0\CapaEntidades.GeneratedMSBuildEditorConfig.editorconfig
+G:\Proyecto Solida\Solida\CapaEntidades\obj\Debug\netstandard2.0\CapaEntidades.csproj.AssemblyReference.cache

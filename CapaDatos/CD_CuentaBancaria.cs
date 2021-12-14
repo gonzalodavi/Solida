@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
@@ -8,6 +9,7 @@ namespace CapaDatos
 {
     public class CD_CuentaBancaria
     {
+        SqlConnection conectar = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
 
         private CD_Conexion conexion = new CD_Conexion();
         SqlDataReader leer;
@@ -24,6 +26,7 @@ namespace CapaDatos
         private decimal _Debe;
         private decimal _Haber;
         private decimal _Importe;
+        private DateTime _FechaInicio;
 
 
         //Propiedades
@@ -88,13 +91,19 @@ namespace CapaDatos
             set { _Importe = value; }
         }
 
+        public DateTime FechaInicio
+        {
+            get { return _FechaInicio; }
+            set { _FechaInicio = value; }
+        }
+
 
         //Constructores
         public CD_CuentaBancaria()
         {
         }
 
-        public CD_CuentaBancaria(int id, string nrocta, string nombre, string tipocta, string titular, string cbu, string alias,decimal debe, decimal haber, decimal importe)
+        public CD_CuentaBancaria(int id, string nrocta, string nombre, string tipocta, string titular, string cbu, string alias,decimal debe, decimal haber, decimal importe, DateTime fechai)
         {
             this.Id = id;
             this.NumeroCta = nrocta;
@@ -106,6 +115,7 @@ namespace CapaDatos
             this.Debe = debe;
             this.Haber = haber;
             this.Importe = importe;
+            this.FechaInicio = fechai;
         }
 
         public string ConsultaSiExisteXaEliminar(int id)
@@ -139,6 +149,25 @@ namespace CapaDatos
                 rpta = ex.Message;
             }
             return rpta;
+        }
+
+        public DataTable DetalleCtaBancoxFecha(int idctabco, string fechainicial, string fechafin)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("InformeDetalleBancoxFecha", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@idbanco", idctabco);
+            command.Parameters.AddWithValue("@fechainicio", fechainicial);
+            command.Parameters.AddWithValue("@fechafin", fechafin);
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
         }
 
         public DataTable Mostrar()
@@ -281,6 +310,46 @@ namespace CapaDatos
                 ParIdCtaBancaria.SqlDbType = SqlDbType.Int;
                 ParIdCtaBancaria.Value = totimporte.Id;
                 SqlCmd.Parameters.Add(ParIdCtaBancaria);
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    total = registro["TOTAL"].ToString();
+                }
+            }
+            catch
+            {
+                total = "";
+            }
+            return total;
+        }
+
+        public string SaldoAnterior(CD_CuentaBancaria saldoA)
+        {
+            string total = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "SumaSaldoAntBco";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdCtaBancaria = new SqlParameter();
+                ParIdCtaBancaria.ParameterName = "@idbanco";
+                ParIdCtaBancaria.SqlDbType = SqlDbType.Int;
+                ParIdCtaBancaria.Value = saldoA.Id;
+                SqlCmd.Parameters.Add(ParIdCtaBancaria);
+
+                SqlParameter ParFecha = new SqlParameter();
+                ParFecha.ParameterName = "@fecha";
+                ParFecha.SqlDbType = SqlDbType.DateTime;
+                ParFecha.Value = saldoA.FechaInicio;
+                SqlCmd.Parameters.Add(ParFecha);
 
                 SqlDataReader registro = SqlCmd.ExecuteReader();
                 if (registro.Read())

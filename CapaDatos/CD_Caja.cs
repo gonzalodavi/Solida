@@ -27,7 +27,8 @@ namespace CapaDatos
         private decimal _Haber;
         private decimal _Importe;
         private string _EstadoNuevo;
-
+        private DateTime _FechaInicio;
+        private DateTime _FechaFin;
 
         public int IdCaja
         {
@@ -95,14 +96,24 @@ namespace CapaDatos
             set { _EstadoNuevo = value; }
         }
 
+        public DateTime FechaInicio
+        {
+            get { return _FechaInicio; }
+            set { _FechaInicio = value; }
+        }
 
+        public DateTime FechaFin
+        {
+            get { return _FechaFin; }
+            set { _FechaFin = value; }
+        }
 
         public CD_Caja()
         {
         }
 
         public CD_Caja(int idcaja, string numComprobante, string tipoComprob, DateTime fechaCaja,
-           string titular, string estado, string dniCuit, decimal debe, decimal haber, decimal importe, string estadoNuevo)
+           string titular, string estado, string dniCuit, decimal debe, decimal haber, decimal importe, string estadoNuevo, DateTime fechainicio, DateTime fechafin)
         {
             this.IdCaja = idcaja;
             this.NumComprobante = numComprobante;
@@ -115,6 +126,8 @@ namespace CapaDatos
             this.Haber = haber;
             this.Importe = importe;
             this.EstadoNuevo = estadoNuevo;
+            this.FechaInicio = fechainicio;
+            this.FechaFin = fechafin;
         }
 
         public string Insertar(CD_Caja MovCaja)
@@ -496,6 +509,26 @@ namespace CapaDatos
             return DtResultado;
         }
 
+        public DataTable DetalleCtaCajaxFecha(string fechainicial, string fechafin)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand("InformeDetalleCajaxFecha", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@fechainicio", fechainicial);
+            command.Parameters.AddWithValue("@fechafin", fechafin);
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            da.Fill(dt);
+            da.Dispose();
+            return dt;
+        }
+
+       
+
         public string TotalDebe(CD_Caja totdebe)
         {
             string total = "";
@@ -580,6 +613,40 @@ namespace CapaDatos
             return total;
         }
 
-        
+        public string SaldoAnterior(CD_Caja saldoA)
+        {
+            string total = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "SumaSaldoAntCaja";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParFecha = new SqlParameter();
+                ParFecha.ParameterName = "@fecha";
+                ParFecha.SqlDbType = SqlDbType.Date;
+                ParFecha.Value = saldoA.FechaInicio;
+                SqlCmd.Parameters.Add(ParFecha);
+
+                SqlDataReader registro = SqlCmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    total = registro["TOTAL"].ToString();
+                }
+            }
+            catch
+            {
+                total = "";
+            }
+            return total;
+        }
+
+
     }
 }

@@ -75,6 +75,12 @@ namespace CapaNegocio
             return Obj.DetalleCtaCaja(Obj);
         }
 
+        public static DataTable MostrarDetalleCajaxFecha(string fechainicio, string fechafin)
+        {
+            return new CD_Caja().DetalleCtaCajaxFecha(fechainicio, fechafin);
+        }
+
+
         public static string TotalDebe()
         {
             CD_Caja Obj = new CD_Caja();            
@@ -91,6 +97,13 @@ namespace CapaNegocio
         {
             CD_Caja Obj = new CD_Caja();            
             return Obj.TotalImporte(Obj); ;
+        }
+
+        public static string SaldoAnterior(string fecha)
+        {
+            CD_Caja Obj = new CD_Caja();
+            Obj.FechaInicio = Convert.ToDateTime(fecha);
+            return Obj.SaldoAnterior(Obj); ;
         }
     }
 }

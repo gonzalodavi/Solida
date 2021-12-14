@@ -221,7 +221,7 @@
             this.lblChekAnul.AutoSize = true;
             this.lblChekAnul.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblChekAnul.ForeColor = System.Drawing.Color.White;
-            this.lblChekAnul.Location = new System.Drawing.Point(779, 295);
+            this.lblChekAnul.Location = new System.Drawing.Point(778, 279);
             this.lblChekAnul.Name = "lblChekAnul";
             this.lblChekAnul.Size = new System.Drawing.Size(79, 17);
             this.lblChekAnul.TabIndex = 154;
@@ -234,7 +234,7 @@
             this.chekFecha.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.chekFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekFecha.FillColor = System.Drawing.Color.White;
-            this.chekFecha.Location = new System.Drawing.Point(857, 294);
+            this.chekFecha.Location = new System.Drawing.Point(856, 278);
             this.chekFecha.Name = "chekFecha";
             this.chekFecha.Size = new System.Drawing.Size(28, 20);
             this.chekFecha.TabIndex = 153;
@@ -600,7 +600,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(778, 243);
+            this.gunaLabel1.Location = new System.Drawing.Point(778, 279);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(79, 17);
             this.gunaLabel1.TabIndex = 173;
@@ -613,7 +613,7 @@
             this.chekFechaProv.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.chekFechaProv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chekFechaProv.FillColor = System.Drawing.Color.White;
-            this.chekFechaProv.Location = new System.Drawing.Point(856, 242);
+            this.chekFechaProv.Location = new System.Drawing.Point(856, 278);
             this.chekFechaProv.Name = "chekFechaProv";
             this.chekFechaProv.Size = new System.Drawing.Size(28, 20);
             this.chekFechaProv.TabIndex = 172;
@@ -632,7 +632,7 @@
             this.dtpFecha1Prov.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha1Prov.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha1Prov.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1Prov.Location = new System.Drawing.Point(773, 124);
+            this.dtpFecha1Prov.Location = new System.Drawing.Point(773, 146);
             this.dtpFecha1Prov.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha1Prov.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha1Prov.Name = "dtpFecha1Prov";
@@ -659,7 +659,7 @@
             this.dtpFecha2Prov.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.dtpFecha2Prov.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha2Prov.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2Prov.Location = new System.Drawing.Point(773, 188);
+            this.dtpFecha2Prov.Location = new System.Drawing.Point(773, 227);
             this.dtpFecha2Prov.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha2Prov.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha2Prov.Name = "dtpFecha2Prov";
@@ -853,7 +853,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(808, 169);
+            this.label16.Location = new System.Drawing.Point(808, 208);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 17);
             this.label16.TabIndex = 158;
@@ -879,7 +879,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.SystemColors.Control;
-            this.label18.Location = new System.Drawing.Point(806, 105);
+            this.label18.Location = new System.Drawing.Point(806, 127);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(50, 17);
             this.label18.TabIndex = 157;
