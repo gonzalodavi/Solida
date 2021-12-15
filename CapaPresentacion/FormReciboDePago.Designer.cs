@@ -1082,6 +1082,20 @@ namespace CapaPresentacion
             // tbCheqBanco
             // 
             this.tbCheqBanco.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbCheqBanco.AutoCompleteCustomSource.AddRange(new string[] {
+            "Banco Pampa",
+            "Banco Nación",
+            "Banco de Córdoba",
+            "Banco Patagonia",
+            "Banco Galicia",
+            "Banco Francés",
+            "Banco Credicoop",
+            "Banco Supervielle",
+            "Banco Hipotecario",
+            "Banco Santader",
+            "Banco Macro"});
+            this.tbCheqBanco.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbCheqBanco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbCheqBanco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCheqBanco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.tbCheqBanco.ForeColor = System.Drawing.Color.MidnightBlue;

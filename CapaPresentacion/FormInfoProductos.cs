@@ -237,6 +237,7 @@ namespace CapaPresentacion
 
         private void cbRubro_SelectedIndexChanged(object sender, EventArgs e)
         {
+            tbBusca.Text = "";
             if (cbRubro.SelectedIndex != -1)
             {
                 CargarGrilla();

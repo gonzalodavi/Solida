@@ -52,13 +52,15 @@ namespace CapaPresentacion
             {
                 this.dgvRemitos.DataSource = CN_Remito.Mostrar();
                 this.dgvRemitos.Columns[0].Visible = false;
+                this.dgvRemitos.Columns[5].Visible = false;
             }
             else
             {
                 this.dgvRemitos.DataSource = CN_Remito.MostrarAnulados();
                 this.dgvRemitos.Columns[0].Visible = false;
-            }            
-            
+                this.dgvRemitos.Columns[5].Visible = false;
+            }
+
         }
 
         private void CargarGrillaProveedores()

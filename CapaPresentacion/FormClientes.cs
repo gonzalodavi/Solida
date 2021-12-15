@@ -285,44 +285,59 @@ namespace CapaPresentacion
                     {
                         try
                         {
-                            string Rpta = "";
-                            int nroiddireccion = 0;
-                            DialogResult Opcion;
-                            Opcion = MessageBox.Show("Desea registrar un Nuevo Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (Opcion == DialogResult.OK)
+                            string dnicuit = this.tbDNI.Text.Trim();
+
+                            if (cbDNICUIT.Text == "CUIT")
                             {
-                                if (tbIdDom.Text == "")
-                                {
-                                    nroiddireccion = 0;
-                                }
-                                else
-                                {
-                                    nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
-                                }
-
-                                string dnicuit = this.tbDNI.Text.Trim();
-
-                                if (cbDNICUIT.Text == "CUIT")
-                                {
-                                    dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
-                                }
-
-                                Rpta = CN_Cliente.Insertar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
-                                if (Rpta.Equals("OK"))
-                                {
-                                    this.MensajeOk("Se insertó correctamente el nuevo Cliente");
-
-                                    dgvClientes.Enabled = true;
-                                    CargarGrilla();
-                                    LimpiarTabDomicilio();
-                                    limpiarCampos();
-                                    tabClientes.SelectedTab = tabConsulta;
-                                }
-                                else
-                                {
-                                    this.MensajeError(Rpta);
-                                }
+                                dnicuit = cbPreF.Text + this.tbDNI.Text.Trim() + cbSuF.Text;
                             }
+                                                        
+                            string rptC = CN_Cliente.ConsultaClienteExisteEnCbtes(dnicuit, "BuscarSiExisteCliente");
+                            if (rptC == "OK")
+                            {
+                                this.MensajeError("Ya existe un Cliente con ese DNI/CUIT");
+                            }
+                            else
+                            {
+                                if (rptC == "NO")
+                                {
+                                    string Rpta = "";
+                                    int nroiddireccion = 0;
+                                    DialogResult Opcion;
+                                    Opcion = MessageBox.Show("Desea registrar un Nuevo Cliente?", "SOLIDA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                    if (Opcion == DialogResult.OK)
+                                    {
+                                        if (tbIdDom.Text == "")
+                                        {
+                                            nroiddireccion = 0;
+                                        }
+                                        else
+                                        {
+                                            nroiddireccion = Convert.ToInt32(this.tbIdDom.Text.Trim());
+                                        }
+
+                                        Rpta = CN_Cliente.Insertar(dnicuit, this.tbNombre.Text.Trim(), this.tbApellido.Text.Trim(), this.tbTel.Text.Trim(), this.tbMail.Text.Trim(), this.cbCondIVA.Text.Trim(), this.tbEmpresa.Text.Trim(), nroiddireccion);
+                                        if (Rpta.Equals("OK"))
+                                        {
+                                            this.MensajeOk("Se insertó correctamente el nuevo Cliente");
+
+                                            dgvClientes.Enabled = true;
+                                            CargarGrilla();
+                                            LimpiarTabDomicilio();
+                                            limpiarCampos();
+                                            tabClientes.SelectedTab = tabConsulta;
+                                        }
+                                        else
+                                        {
+                                            this.MensajeError(Rpta);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MensajeError(rptC);
+                                }                                
+                            }                            
                         }
                         catch (Exception ex)
                         {

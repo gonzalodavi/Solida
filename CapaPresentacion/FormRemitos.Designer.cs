@@ -48,7 +48,6 @@
             this.dtpFecha2 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.dtpFecha1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -185,7 +184,6 @@
             this.tabListadoRemitos.Controls.Add(this.dtpFecha2);
             this.tabListadoRemitos.Controls.Add(this.dtpFecha1);
             this.tabListadoRemitos.Controls.Add(this.label9);
-            this.tabListadoRemitos.Controls.Add(this.label8);
             this.tabListadoRemitos.Controls.Add(this.label7);
             this.tabListadoRemitos.Controls.Add(this.label6);
             this.tabListadoRemitos.Controls.Add(this.label5);
@@ -291,26 +289,12 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label9.Location = new System.Drawing.Point(605, 48);
+            this.label9.Location = new System.Drawing.Point(572, 48);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 18);
+            this.label9.Size = new System.Drawing.Size(137, 18);
             this.label9.TabIndex = 103;
             this.label9.Text = "ESTADO";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoEllipsis = true;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label8.Location = new System.Drawing.Point(499, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 18);
-            this.label8.TabIndex = 103;
-            this.label8.Text = "USER";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label7
             // 
@@ -319,9 +303,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label7.Location = new System.Drawing.Point(371, 48);
+            this.label7.Location = new System.Drawing.Point(436, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 18);
+            this.label7.Size = new System.Drawing.Size(139, 18);
             this.label7.TabIndex = 103;
             this.label7.Text = "CUIT";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -333,9 +317,9 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label6.Location = new System.Drawing.Point(280, 48);
+            this.label6.Location = new System.Drawing.Point(325, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 18);
+            this.label6.Size = new System.Drawing.Size(113, 18);
             this.label6.TabIndex = 103;
             this.label6.Text = "Nº";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -347,9 +331,9 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label5.Location = new System.Drawing.Point(165, 48);
+            this.label5.Location = new System.Drawing.Point(183, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 18);
+            this.label5.Size = new System.Drawing.Size(146, 18);
             this.label5.TabIndex = 103;
             this.label5.Text = "TIPO";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -363,7 +347,7 @@
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label3.Location = new System.Drawing.Point(57, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 18);
+            this.label3.Size = new System.Drawing.Size(127, 18);
             this.label3.TabIndex = 103;
             this.label3.Text = "FECHA";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1747,7 +1731,6 @@
         private System.Windows.Forms.Label lblFecha2;
         private System.Windows.Forms.Label lblFecha1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
